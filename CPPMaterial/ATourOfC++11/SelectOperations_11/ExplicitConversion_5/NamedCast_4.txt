@@ -1,0 +1,18 @@
+/**
+* By named casts we mean cast using const_cast, static_cast, reinterpret_cast and dynamic cast.
+* Named casts (using operators such as reinterpret_cast, const_cast, etc ..) are strictly in the hands of the 
+* programmer. Hence, they shall be avoided in unnecessary conditions.
+
+
+* For example:
+
+* Device_addr* addr = reinterpret_cast<Device_addr*>(0xff);
+
+* This implies that the device information is at this position  of the memory?
+
+* Named cast are sometimes necessary, if the type is unknown to the compiler. For example, when malloc
+* returns a void pointer, it has to be casted to the proper type it represents.This can be done
+* using static_cast.
+
+
+*/

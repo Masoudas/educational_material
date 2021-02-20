@@ -1,0 +1,4 @@
+The generated assembly object files are still not ready to be used by the machine yet. (Me: Perhaps
+one reason is that there are instructions that are undefined, like a function that is user defined.)
+
+View the object files in a hex editor.

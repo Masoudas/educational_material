@@ -1,0 +1,15 @@
+All linux commands fall into the following four categories:
+
+1- Executable program: These are written in C. cp is an example of such command
+2- Alias: Basically a name for other (group of) commands
+3- A shell builtin: The shell supports internal commands as well. The exit and cd commands are two examples of a shell builtin 
+   command.
+4- Shell functions: The sort of function we write in shell scripts, to achieve a particular goal.
+
+To get the type of a command, we can write 'type command'. Note that 'type cp' shows that (perhaps all) executable commands are
+found in the bin directory.
+
+For example, for ls we get "ls --color=auto", which indiactes ls is an alias for the 'ls --color=auto'. Now we also see why we 
+get a colorful output when we use this command.
+
+Funny enough, if we write 'type type', we see that the type command itself is a shell bulletin.

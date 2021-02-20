@@ -1,0 +1,7 @@
+The 'echo' command prints what ever is written in the terminal emulator. 'echo $PATH' prints the path variable for example.
+The 'history' command gives a history of commands that have been put on the command line. We can rerun a command listed
+by the history command by writing '!command_no'.
+
+The command !! rexecutes the last command. The command !string looks for the last commands with this string and executes it. The
+command !string1^string2 finds last command with string1, appends string2 to the end of the command, and then exectues it. 
+The command !-n executes the nth last command, starting from 1.

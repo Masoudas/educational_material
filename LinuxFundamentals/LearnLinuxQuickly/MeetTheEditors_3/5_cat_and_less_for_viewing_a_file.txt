@@ -1,0 +1,12 @@
+cat stands for concatenate, and can be used to view a single file. If we chain the name of a couple of files together, cat will
+concatenate them together (only for view)
+
+The 'tac' command is the reverse of cat, and shows the file in reverse (funny).
+
+The command 'more' displays the content of a file in a page by page manner. To go to next line, press enter. To go to next page,
+press space. To go back a page, press b.
+
+'less' is an improvement over more. with less, we can go up and down a file with the arrow keys, and page up and down.
+
+Also the commands head or tail show a certain number of lines from the beginning or end of the file.
+

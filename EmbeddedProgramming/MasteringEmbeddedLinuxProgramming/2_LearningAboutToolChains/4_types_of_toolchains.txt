@@ -1,0 +1,26 @@
+There two types of toolchains:
+
+-   Native: This toolchain runs on the same type of system (sometimes the same actual system) as the programs it generates. This is 
+    the usual case for desktops and servers, and it is becoming popular on certain classes of embedded devices. The Raspberry Pi 
+    running Debian for ARM, for example, has self-hosted native compilers.
+
+-   Cross: This toolchain runs on a different type of system than the target, allowing the development to be done on a fast desktop 
+    PC and then loaded onto the embedded target for testing.
+
+Essentially, we prefer cross-compilation for two reasons:
+1-  Having better computation power on the part of the compiler.
+2-  Host (the compiler) often receives more updates than the destination (the embedded device.) Over time, the development and 
+    target systems will diverge and you will violate the principle that the toolchain should remain constant throughout the life of 
+    the project. You can make this approach work if you ensure that the host and the target build environments are in lockstep with 
+    each other. However, a much better approach is to keep the host and the target separate, and a cross toolchain is the way to do 
+    that.
+
+The counter argument is that compiling all the C-libraries and everything needed on the host machine could be difficult to impossible,
+hence we may not be able to generate some of the tools we need for cross-compilation.
+Integrated build tools, including Buildroot and the Yocto Project, help by encapsulating the rules to cross compile a range of 
+packages that you need in typical embedded systems, but if you want to compile a large number of additional packages, then it is 
+better to natively compile them. For example, building a Debian distribution for the Raspberry Pi or BeagleBone using a cross 
+compiler would be very hard. Instead, they are natively compiled. Creating a native build environment from scratch is not easy. 
+You would still need a cross compiler at first to create the native build environment on the target, which you then use to build 
+the packages. Then, in order to perform the native build in a reasonable amount of time, you would need a build farm of 
+well-provisioned target boards, or you may be able to use QEMU to emulate the target.

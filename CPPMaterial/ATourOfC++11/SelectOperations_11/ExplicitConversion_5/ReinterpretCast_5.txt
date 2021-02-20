@@ -1,0 +1,23 @@
+/**
+As discussed, this is used for converting two pointers to one another (even if they're not related),
+and also converting unrelated types (such as int) to pointers.
+
+* Device_addr* addr = reinterpret_cast<Device_addr*>(0xff);	// reinterpret cast.
+
+Hardly any guarantees are made for reinterpret_cast, but generally it produces a value of a new type that 
+has the same bit pattern as its argument. If the target has at least as many bits as the original value, we can reinterpret_
+cast the result back to its original type and use it. The result of a reinterpret_cast is guaranteed
+to be usable only if its result is converted back to the exact original type. Note that reinterpret_cast
+is the kind of conversion that must be used for pointers to functions
+
+char x = 'a';
+int* p1 = &x; // error : no implicit char* to int* conversion
+int* p2 = static_cast<int*>(&x); // error : no implicit char* to int* conversion
+int* p3 = reinterpret_cast<int*>(&x); // OK: on your head be it
+struct B { /* ... */ };
+struct D : B { /* ... */ }; // see §3.2.2 and §20.5.2
+B* pb = new D; // OK: implicit conversion from D* to B*
+D* pd = pb; // error : no implicit conversion from B* to D*
+D* pd = static_cast<D*>(pb); //OK
+
+*/

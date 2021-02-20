@@ -1,0 +1,37 @@
+"""""""""""""""""""""""
+WHAT IS A HARD LINK?
+A soft link is a link that points to another file (like a shortcut on a Windows machine). It's also known as a symbolic link.
+"""""""""""""""""""""""
+
+To create a soft link, use the following command:
+    -   ln -s original_file  soft_link
+
+(Me: Question: Does the soft link have to have the same extension as the original file? Nope! I even created an exe file to refer
+to a text file!)
+
+Using the stat command, we see that a soft link file is linking to what file on the system. Moreover the type of the file is 
+shown to be link.
+
+Also notice in ls -l, the first letter of a link file is l, like 'lrwxrwxrwx 1 tom tom 9 May 8 21:48 soft.txt -> facts.txt'
+
+Note that accessing and editing the link file results in changes in the original file.
+
+Note that deleting the link file does nothing to the original file. However, if the original file is deleted, the link is simply
+useless and the bash throws an error. Note that this includes removal of the file too. So, if the original file is removed from 
+one place to another, the link would not follow it (why would it! Are we living in a dream world?)
+
+Note that a soft link itself has a unique innode, and particularly an index, because it's a different file afterall.
+
+Note also that we can create soft links to directories.
+
+What happens if we move the link file rather then the original file? If we get the stat of the link file, we get a line like this
+in the beginning:
+""""""""""""
+l1.txt -> ../cat.txt
+.
+.
+.
+""""""""""""
+So we see that l1, which is the soft link here, points to a file in the parent folder. In conclusion, if the path is given properly
+to the soft link (full path rather than a relative path,) rest assured that moving around the link causes no problems. However,
+if the path is relative, moving the link does cause problems.

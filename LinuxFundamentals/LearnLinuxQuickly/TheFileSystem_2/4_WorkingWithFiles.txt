@@ -1,0 +1,4 @@
+The commands cat and nano can be used to show the content of a file, so will vim, emacs, etc. These will be discussed in the next
+chapter.
+
+Note that hidden files start with '.'

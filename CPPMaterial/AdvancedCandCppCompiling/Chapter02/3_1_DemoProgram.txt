@@ -1,0 +1,48 @@
+Consider the following program. Notice that the header function.h is not added to function.c in the 
+original book exam. However, we can't have an undefined symbol in the code (MULTIPLIER). Hence, we 
+add it ourselves. Had this symbol not been here, it would have been fine not to add the header:
+
+-- function.h
+#pragma once
+#define FIRST_OPTION
+#ifdef FIRST_OPTION
+    #define MULTIPLIER (3.0)
+#else
+    #define MULTIPLIER (2.0)
+#endif
+float add_and_multiply(float x, float y);
+
+
+-- function.c
+#include "function.h"
+int nCompletionStatus = 0;
+
+float add(float x, float y)
+{
+    float z = x + y;
+    return z;
+}
+
+float add_and_multiply(float x, float y)
+{
+     float z = add(x,y);
+    z *= MULTIPLIER;
+    return z;
+}
+
+
+-- main.c
+#include "function.h"
+
+extern int nCompletionStatus;
+
+int main(int argc, char* argv[])
+{
+    float x = 1.0;
+    float y = 5.0;
+    float z;
+    z = add_and_multiply(x,y);
+    nCompletionStatus = 1;
+    
+    return 0;
+}

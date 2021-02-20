@@ -1,0 +1,4 @@
+Here's an experiment. I defined a header file, then compiled a source file in another project, and then dumped the
+object file into the other project. The code actually worked, which shows that linkage does not depend on how or
+where an object file is compiled.
+

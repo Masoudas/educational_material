@@ -1,0 +1,12 @@
+So, every file has a unique index in Linux, and contains attributes such as type, permission, timestamp, size, owner.
+
+An innode (or index node) is a structure that holds these information. Formally:
+
+""""""""""""""""""""""""""""""""""""""""""""
+Inode:
+
+An inode is simply a file data structure that stores file information (attributes), and every inode is uniquely identified by a 
+number (inode number).
+""""""""""""""""""""""""""""""""""""""""""""
+
+Note that file name is not part of the innode, but when using the stat command, it will be shown on top of the innode.

@@ -1,0 +1,52 @@
+1-
+a) It is incorrect. ? has to come after a char or a group, there's nothing to repeat.
+b) Correct. A question mark plus any char plus beginning of word (?a fs)
+c) Incorrect. Order should be {1,4}. Otherwise it means not not a digit, which is a digit. Here's something.
+This pattern in the form [^\D]{1,4} would find {11234} four matches here and a one match. That's why we need the greedy option, which we
+have in Java.
+d) Correct. Start of string, then a negate of carrot. Like the following line:
+1
+e) Incorrect. Special chars should be escaped. 
+f) Incorrect. Form \++ is correct.
+g) see f.
+h) Correct. Match two plus signs.
+
+
+2-
+a) ^[+-]?\d+(\.\d+)? A start of string. After that, zero or one plus or minus sign, then zero or one digits, then a group of
+zero or one point and a one or more digit. So like the following line:
++123.132
+
+3-
+a) Gerunds: The pattern is [a-zA-Z]{7,}(ing|ING), 
+Examples are Interesting, GroundBreaking, DISHEARTENING
+
+b) Abbrevations: 
+        We assume that we have a pattern of one alpha(bet) and one dot, ending in dot. Hence \b([A-Z]\.)+\b
+    U.S.A., U.S.S.R.
+        If there's no dot at the end, we'd write "([A-Z]\.)+[A-Z](\s|$)". The space or dollar sign are put there to indicate
+    that we want to search for single words. Otherwise, U.S.S.R. would still have been a match (which is correct, but we still
+    wanted words). 
+    U.S.A 
+
+c) Consonant-Vovel pattern: 
+        Let's assume we're really talking about CV. The pattern is "\b([BCDFGHJKLMNPQRSTVWXYZ][AEIOU])+(\s|&|\b)".
+    Hence, LENA. SONATA
+        Of course, if the reverse was needed too, we'd need to add an | to the beginning as well.
+
+d) Time-stamp:
+        We can write \d\d:\d\d:\d\d. If we wanted to get cute, we could write (\d{2}:){2}\d{2}. If 
+    If we wanted to be more precise, we could have said [0-2]\d:([0-5]\d:){2}
+
+    
+4- The regular expression to get such occurances is "[!?\.]+", which would work for !! ?? ...
+However, we can use the grouping property for replacement, by writing ([!?.]+). However, this does not
+distinguish between groups for us to override them. We have no other choice but to search three times
+I guess, same way we have to write the function with three ifs.
+
+5-
+
+6- Be careful that you can't extract a website by just saying "\w". The answer to this question depends on the 
+patten of the website name. Say for example we know that they all start with http(s)://domain_name.domain/optional_extra,
+I'd write (https?://[\w/\.-]+\.\w+[\w/\.-]+)
+

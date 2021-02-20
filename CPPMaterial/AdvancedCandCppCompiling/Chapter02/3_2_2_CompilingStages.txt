@@ -1,0 +1,9 @@
+Compiling (from source to object file) can be broken roughly into preprocessing, linguistic analysis,
+assembling, optimization, and code emission.
+
+(Me: In Layman's term, source code is preprocessed to create a text that has all symbols defined,
+then all the commands are checked for syntax, then the code is turned into assembly language,
+then assembly language code is optimized, finally that optimized code is turned into object file, aka,
+machine code).
+
+

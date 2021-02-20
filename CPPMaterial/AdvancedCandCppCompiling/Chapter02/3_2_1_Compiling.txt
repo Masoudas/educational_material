@@ -1,0 +1,30 @@
+Compiling in the broad sense can be defined as the process of transforming source code written in one programming
+language into another programming language.
+
+Note that:
+1-  The process of compiling is performed by the program called the compiler
+2-  The input for the compiler is a translation unit. A typical translation unit is a text file
+containing the source code
+3-  A program is typically comprised of many translation units. Even though it is perfectly possible
+and legal to keep all the project’s source code in a single file, there are good reasons (explained
+in the previous section) of why it is typically not the case
+4-  The output of the compilation is a collection of binary object files, one for each of the input
+translation units.
+5-  In order to become suitable for execution, the object files need to be processed through
+another stage of program building called linking.
+
+
+We also have the following definitions:
+1-  Compilation in the strict meaning denotes the process of translating the code of a higher-level
+language to the code of a lower-level language (typically, assembler or even machine code)
+production files
+2-  If the compilation is performed on one platform (CPU/OS) to produce code to be run on some
+other platform (CPU/OS), it is called cross-compilation. The usual practice is to use some of
+the desktop OSes (Linux, Windows) to generate the code for embedded or mobile devices.
+3-  Decompilation (disassembling) is the process of converting the source code of a lower-level
+language to the higher-level language.
+4-  Language translation is the process of transforming source code of one programming
+language to another programming language of the same level and complexity
+5-  Language rewriting is the process of rewriting the language expressions into a form more
+suitable for certain tasks (such as optimization).
+

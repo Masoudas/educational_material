@@ -1,0 +1,14 @@
+Well obviously, we can't link an executable to a static or dynamic library. This I think is because an executable
+has code that allow it to run, memory usage that is defined, etc.
+
+The reverse however is true, and we can link a static or dynamic library to an executable.
+
+Now, can we link a shared to a static library? Yes. For example, when we write a library, we use many functions,
+such as windows functions etc, all of which are dynamic.
+
+Can we link a static to another static library? The answer has to be yes.
+
+Can we link a static to a shared library? Probably yes. The linkage step takes care of resolving problems,
+placing code, etc.
+
+Can we link a shared to a shared library? The answer is yes.

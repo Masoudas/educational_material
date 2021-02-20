@@ -1,0 +1,3 @@
+We can use the move command to completely move a file or folder. The syntax is essentially like that of copy.
+The only difference however is that we shouldn't use the r option, and the act of moving a path moves all its content into destination,
+including its folders.

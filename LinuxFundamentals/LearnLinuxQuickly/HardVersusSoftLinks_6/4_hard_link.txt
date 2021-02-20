@@ -1,0 +1,30 @@
+In essence, a hard link is an alias for a file. This implies that both have the same innode. If the original file is deleted,
+then the hard link keeps the content of the file, and is not invalidated. If either of the link or original file is moved, they'd 
+still point to one another, because the innodes are the same. Officially:
+
+"""""""""""""""""""""""
+WHAT IS A HARD LINK?
+A hard link is simply an additional name for an existing file. It has the same inode of the original file, and hence, it's 
+indistinguishable from the original file.
+
+"""""""""""""""""""""""
+To create hard links use 'ln original_file link'. So omit the 's' compared to making soft links.
+
+To summarize the difference between soft and hard links:
+    -   A hard link has (shares) the same inode of the original file.
+    -   A hard link remains intact if the original file gets deleted.
+    -   Any change in the hard link is reflected in the original file.
+    -   You can't create hard links to directories.
+
+Note that in a long listing (ls -l) the l letter does not appear for hard links, because they're supposed to be indistinguishable 
+from the original file. Note that the stat command shows the same type as the orignal file, which makes sense because the innodes
+are the same. 
+
+Note however that when creating hard links, the number of links in innode is now equal to n, which is thr total number of file and 
+links (for example, when creating one link, that number becomes two). This is because the number of links start with one, that
+is, a file is a hard link to itself.
+
+Of course, if we move the file or the link around, they'll still point to one another, because their innodes are the same.
+
+NOTE: There's no way to distinguish between a file and it's hard link. It's impossible to determine which was created first for
+example. It's a chicken and egg problem.

@@ -1,0 +1,7 @@
+An object file contains several sections (or headers), including initialized variables, 
+uninitialized variables (.bss), etc.
+
+The objdump command can only show the required header by passing the -x -j SectionName. For example
+objdump -x -j .bss demoApp
+
+This will show the symbol table of uninitialized variables.

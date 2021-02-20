@@ -1,0 +1,4 @@
+gedit is the famous graphical text editor of GNOME, and kate is the one for KDE. So, running a file with these two, opens the 
+text editor GUI.
+
+gedit /proc/cpuinfo opens the file that holds the cpu information.

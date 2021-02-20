@@ -1,0 +1,33 @@
+The standard first step in processing the source files is running them through the special text processing program
+called a preprocessor, which performs one or more of the following actions:
+
+1-  Includes the files containing definitions (include/header files) into the source files, as
+specified by the #include keyword
+2-  Converts the values specified by using #define statements into the constants
+3-  Converts the macro definitions into code at the variety of locations in which the macros
+are invoked.
+4-  Conditionally includes or excludes certain parts of the code, based on the position of #if,
+#elif, and #endif directives
+
+
+We can see the output of preprocessing in gcc, cl and clang by searching for the correct options
+The output file format is .i for the preprocessed file.
+
+%%%%%%%%% gcc
+option -E is used for this end. The book says -i, but it doesn't exist! Note that the output file
+has to be specified, using the -o option.
+gcc -E function.h -o function.i     
+
+Note that in linux, we could also write:
+gcc -E function.h > function.i  
+
+
+%%%%%%%%% cl
+Apparently we can say:
+cl /P filenames
+
+Another option is to use visual studio, and there we can click on the file we want and in properties,
+preprocess, we can say generate the file. It will be produced in the respective configuration build.
+Note that there are so many options for each file in general. For example, we can generate the assembly file,
+or any other item! There's also one other option to directly put command line arguments.
+In fact, we can cheat as follows by noting that the command line option is written after each command.

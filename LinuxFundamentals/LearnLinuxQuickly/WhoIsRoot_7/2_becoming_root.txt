@@ -1,0 +1,20 @@
+By writing sudo -i, we can switch to the root. Note the difference in the name of the user:
+
+Before typing the command 'sudo -i':
+masoud_user@DESKTOP-F76HM9S:~$
+
+After writing the command 'sudo -i':
+root@DESKTOP-F76HM9S:~#
+
+Note that we have the usual 'user_name@hostname:pwd'. Note also that after punching in the command, pwd is ~. What is this ~?
+It's the home directory of the root, which is /root.
+
+After switching to root (or superuser,) we're allowed to create files and folders on the root.
+
+Recall also that by typing su, we can switch back to a normal user. Moreover, exit does the same job. Finally, su root switches 
+to the root as well.
+
+Note that running the su command without the root will also change to root!
+
+Note also that we can say 'sudo su -', which is essentially equivalent to 'sudo su - root', and it will take us to the how folder
+of root.

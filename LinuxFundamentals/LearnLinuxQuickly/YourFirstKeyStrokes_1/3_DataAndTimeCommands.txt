@@ -1,0 +1,6 @@
+The command 'date' shows the current date.
+The command 'cal' shows the date on the calendar. 'cal 2021' shows the calendar of 2021!
+The command 'cal feb 2021' shows the month of Feburary!
+The command 'date' shows the time at this instant.
+
+Use the clear command to clean the screen.

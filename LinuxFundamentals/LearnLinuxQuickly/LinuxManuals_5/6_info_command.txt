@@ -1,0 +1,5 @@
+The GNU project launched the info pages as an alternative documentation to the man pages. The GNU project once claimed that man
+pages are outdated and needed replacement and so they came up with the info pages.
+
+The command 'info command' therefore gives documentation on the command. Sometimes these documentations are more complete than
+man pages.

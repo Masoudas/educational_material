@@ -1,0 +1,2 @@
+In Linux, everything is file, including directories, peripheral devices such as hard disks, hard drive, etc, even the mouse is 
+represented by a file. Therefore, it's actually very important to master text editors.

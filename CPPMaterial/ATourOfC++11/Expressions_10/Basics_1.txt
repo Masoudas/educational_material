@@ -1,0 +1,2 @@
+Using the shorthand expression x@=y instead of x = x @ y has the advantage that x is calculated only once in the first expression.
+

@@ -1,0 +1,9 @@
+To add new user, we use the 'useradd -m user_name' command IN ROOT. This is because non-root users don't have the permission to
+create users.
+
+After adding the new user, we can use the tail command in the psswd file to see that the new user has indeed been added:
+
+tom:x:1001:1001::/home/tom:/bin/sh
+
+Note that in my case, the original user had UID and GID of 1000, but now, it's 1001 for the new user, so increments of one take
+place.

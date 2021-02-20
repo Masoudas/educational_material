@@ -1,0 +1,25 @@
+Figuratively speaking, an object file can be viewed as a simple tile waiting to find its place in the giant 
+mosaic of the process memory map.
+
+To generate individual object files with gcc, pass the -c flag as follows:
+gcc -c function.h function.c main.c
+
+To do the linkage, pass the object files:
+gcc function.o main.o -o demoApp
+
+
+Some notes regarding the object file visualization as assembly:
+First: Note that the left most column denotes the line count.
+Second: I think the second column indicates memory address
+Third: The next column indicates what that line of code does (call function, move memory, ...)
+Fourth: The fourth column is the description of that line in relation to other memory address. For example,
+""""33:   e8 00 00 00 00          call   38 <main+0x38>""""""
+probably means call the function that is at line 0x38 of the main.
+
+Note also that the output of binary is a machine code, i.e, object file (because it's formed of object files
+as a matter of fact). So, we can dump it and see the results.
+
+One point: As I was trying to compile this program, I declared the file extensions as main.cpp, function.c
+and function.h. Bad Idea! Because main.cpp is a C++ file, and declaring a C function there is not as easy as
+inclusion of a header. I have to actually use the extern "C" definition. Because of this, gcc was unable to find
+the external function.

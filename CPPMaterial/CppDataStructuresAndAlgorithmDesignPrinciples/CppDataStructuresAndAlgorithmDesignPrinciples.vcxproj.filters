@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues">
+      <UniqueIdentifier>{041bd43f-3087-48a0-a75a-62a296ff29ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\1_Arrays">
+      <UniqueIdentifier>{70dc2949-9c3d-46c9-bd63-c887ac2321b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\2_Vector">
+      <UniqueIdentifier>{b23aab2d-5231-4cd0-bc7c-7950ff797bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\3_ForwardList">
+      <UniqueIdentifier>{3610dac0-e119-49d0-bb6a-0f87a4b96930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\4_List">
+      <UniqueIdentifier>{0bf93357-9236-4897-96f1-a3e4e1b27856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\5_Deque">
+      <UniqueIdentifier>{ca293593-be33-4241-9d20-9924ec48d9c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListsStacksQueues\6_ContainerAdaptors">
+      <UniqueIdentifier>{61ce125c-60d0-4476-a645-6a1232635f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HashTablesAndBloomFilters">
+      <UniqueIdentifier>{9f76525a-7e5d-43b3-bb18-ffe0e4c07744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TreesHeapsGraphs">
+      <UniqueIdentifier>{9477b4cc-723d-40d0-9406-3a7d5d182308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TreesHeapsGraphs\1_Trees">
+      <UniqueIdentifier>{24c4fa43-3106-44a2-ad84-7eeb40b0adce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TreesHeapsGraphs\2_BinarySearchTree">
+      <UniqueIdentifier>{1f6d2215-260c-4a8b-b7b6-c9b1e03e414b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TreesHeapsGraphs\3_Heaps">
+      <UniqueIdentifier>{fa3133da-5ff2-43d9-a180-ff8d94088b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TreesHeapsGraphs\4_Graphs">
+      <UniqueIdentifier>{343b3ff8-66d6-4f25-a7ae-be9e80cbbd5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet">
+      <UniqueIdentifier>{90fe4d9c-d3fd-40cf-b086-cda7be81d36f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HashTablesAndBloomFilters\2_STLUnorderedMap">
+      <UniqueIdentifier>{90276136-b89b-44b0-abbe-9deba8c446a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HashTablesAndBloomFilters\3_BloomFilters">
+      <UniqueIdentifier>{fa6eac98-ff13-4981-9c32-003b910c60da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DivideAndConquer">
+      <UniqueIdentifier>{76af6dbf-ab8c-490d-8b07-3a99af1ebf2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\1_why_not_cstyle_arrays.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\2_std_array.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\3_copy_constructor.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="4_iterators.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="6_1_relational_operators.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="6_2_add_a_compare_method.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\7_create_a_dynamic_array.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\1_limitations_of_vector.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\2_vector_and_construction.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\4_emplace_v_emplace_back.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\5_pop_back_v_erase.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="5_data_and_other_function.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\7_allocators.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\1_structure_and_implementation.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\2_insertion_in_flist.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\8_2_c_approach.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\8_1_creating_an_object_like_array.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\3_deletion_in_flist.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\4_remove_and_remove_if.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\5_sorting_flist.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\6_reverse_flist.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\7_keeping_unique_elements_with_flist.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\8_logical_operators.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\9_flist_iterator.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\10_implementing_a_linked_list.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\11_circular_linked_list.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\0_0_iteration_point_of_interest.cpp">
+      <Filter>Source Files\ListsStacksQueues</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\12_exercising_remove_if_function.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\1_structure_and_constructors.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\13_size_of_forward_list.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\3_1_pushback_v_insert.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\3_2_bracket_insertion.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\2_insertion_and_emplace.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\3_working_with_the_back_of_the_list.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\6_1_resizing_methods.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\6_2_merging_two_vectors.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\1_Arrays\9_investigating_const.cpp">
+      <Filter>Source Files\ListsStacksQueues\1_Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\8_investigating_const_vectors.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\5_Deque\1_why_deque.cpp">
+      <Filter>Source Files\ListsStacksQueues\5_Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\5_Deque\2_most_important_functions.cpp">
+      <Filter>Source Files\ListsStacksQueues\5_Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\5_Deque\3_cant_compare_vectors_with_different_allocators.cpp">
+      <Filter>Source Files\ListsStacksQueues\5_Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\1_stack.cpp">
+      <Filter>Source Files\ListsStacksQueues\6_ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\2_queue.cpp">
+      <Filter>Source Files\ListsStacksQueues\6_ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\4_office_printer_activity.cpp">
+      <Filter>Source Files\ListsStacksQueues\6_ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\3_1_priority_queue.cpp">
+      <Filter>Source Files\ListsStacksQueues\6_ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\3_2_pq_of_custom_type.cpp">
+      <Filter>Source Files\ListsStacksQueues\6_ContainerAdaptors</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\1_1_what_is_a_tree.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\1_Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\1_2_traversing_a_tree.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\1_Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_1_what_is_bst.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\2_BinarySearchTree</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_2_finding_an_element.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\2_BinarySearchTree</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_3_insertion_of element.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\2_BinarySearchTree</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_4_deletion_of_element.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\2_BinarySearchTree</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\4_list_bidirectional_iterators.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\5_iterator_invalidation.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\6_simulating_a_card_game.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\2_1_tree_implementation_example.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\1_Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\2_2_tree_implementation_example.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\1_Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\9_copy_assignment.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\10_a_matrix_using_a_vector.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\1_what_is_a_graph.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\4_Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\2_1_representing_graphs_with_adjaceny_matrix.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\4_Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\2_2_representing_graphs_with_adjaceny_matrix.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\4_Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\3_Heaps\1_running_median_using_heaps.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\3_Heaps</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\3_Heaps\2_kway_merge.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\3_Heaps</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\3_file_system_tree.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\1_Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\2_bst_in_stl.cpp">
+      <Filter>Source Files\TreesHeapsGraphs\2_BinarySearchTree</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\1_unordered_set_overview.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\2_define_set_for_custom_types.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\14_merge_forward_lists.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\15_splice_after.cpp">
+      <Filter>Source Files\ListsStacksQueues\3_ForwardList</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\3_1_set_construction.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\4_modifier_methods.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\3_2_union_intersection_difference.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="5_u_set_iterators.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="6_u_set_lookup_methods.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="7_operators_and_equality.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_why_hash_tables.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\3_close_addressing_chaining.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="4_open_addressing_hash_tables.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\5_cuckoo_hashing.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\6_no_bst_for_hash_tables.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\1_overview_of_umap.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\2_STLUnorderedMap</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\2_a_note_on_contains_for_map.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\2_STLUnorderedMap</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\8_1_unordered_multisets.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\8_2_finding_an_element_in_multiset.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\1_STLUnorderedSet</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\3_unordered_multimap.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\2_STLUnorderedMap</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\7_mapping_long_to_short_urls.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\2_1_stl_hash_functions.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\2_2_boost_hash_function.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\1_why_bloom_filters.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\3_BloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\2_how_they_are_implemented.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\3_BloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\3_an_example_implementation.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\3_BloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="ListsStacksQueues\2_Vector\11_vector_of_bools.cpp">
+      <Filter>Source Files\ListsStacksQueues\2_Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\4_email_address_validator.cpp">
+      <Filter>Source Files\HashTablesAndBloomFilters\3_BloomFilters</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideAndConquer\partial_sorting_activity.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="nth_element_of_container.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="impl_1_of_nth_element.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="x_2_finding_the_median_of_container.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideAndConquer\impl_2_of_nth_element.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideAndConquer\x_x_matrix_multiplication_with_divide_and_conquer.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+    <ClCompile Include="DivideAndConquer\stl_tools_for_divide_and_conquer.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

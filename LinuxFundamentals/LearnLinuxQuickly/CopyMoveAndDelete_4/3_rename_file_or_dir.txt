@@ -1,0 +1,5 @@
+A nice property of the move command is that it can be used for renaming a file or a folder. Hence we can say:
+1- 'mv file new_file_name'
+2- 'mv folder new_folder_name'
+
+Naturally, we can only rename one file or directory at a time.

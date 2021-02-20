@@ -1,0 +1,10 @@
+Now, based on the observations we've had thus far, the only thing we need to ensure when it comes to compiling
+source files is that all symbols are defined, together with inclusions (and of course the logic and the
+syntax of the code). 
+
+The point is, once we have our machine code (object files), we can actually reuse them in any other project, because
+the object file is path and project independent. We can just dump this translation unit into another project, and
+just reuse it (of course, assuming the other project has the same compilation mechanism). This all lends to the fact
+that the compiler tiles the binary during linkage, and that the address of unknown objects is resolved at runtime.
+
+As we shall discuss, this lead us to the idea of static and dynamic linkage.

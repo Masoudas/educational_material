@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9ad47894-3389-4c13-9de7-dab869e00c1d}</ProjectGuid>
+    <RootNamespace>CPPConTalks</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_overview.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\1_heaps.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\2_2_nth_element_partial_sort_inplace_merge.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\2_1_sort_qsort_sort_heap.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\3_partioning.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\4_rotate_reverse.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\5_shuffle_and_perms.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\6_1_copy_appended_algorithms.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\6_2_stable_appended_algorithms.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\1_Permutations\6_3_is_appended_algorithms.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Parallelization.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\1_1_allof_noneof_anyof.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\1_2_ranges_allof_noneof_anyof.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_1_count_accum_reduce.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_3_adjacent_difference_partial_sum.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_2_transform.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_4_inclusive_scan_exclusive_scan.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_5_transform_scan.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\2_6_generate.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\3_1_equal_lexicographical_compare.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\3_2_mismatch.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\4_1_num_elements_equal_two_range.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\4_2_find_mirror_ends_of_string.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\4_3_string_from_words.cpp" />
+    <ClCompile Include="..\..\src\105STLAlgorithmsInLessThanAnHour_2018\2_Queries\5_includes.cpp" />
+    <ClCompile Include="3_3_check_unsorted_ranges_equal.cpp" />
+    <ClCompile Include="6_union_difference_intersection.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

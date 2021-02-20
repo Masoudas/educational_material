@@ -1,0 +1,19 @@
+The programming interface to the Unix operating system is defined in the C language, which is now defined by the POSIX standards. 
+The C library is the implementation of that interface; it is the gateway to the kernel for Linux programs. Even if you are writing 
+programs in another language, maybe Java or Python, the respective run-time support libraries will have to call the C library 
+eventually.
+
+
+There are several C libraries to choose from:
+    -   glibc: This is the standard GNU C library, available at http://www.gnu.org/software/libc. It is big and, until recently, 
+        not very configurable, but it is the most complete implementation of the POSIX API. The license is LGPL 2.1.
+    -   musl libc: This is available at https://www.musl-libc.org. The musl libc library is comparatively new, but has been 
+        gaining a lot of attention as a small and standards-compliant alternative to GNU libc. It is a good choice for systems 
+        with a limited amount of RAM and storage. It has an MIT license.
+    -   uClibc-ng: This is available at https://uclibc-ng.org/. u is really a Greek mu character, indicating that this is the 
+        micro controller C library. It was first developed to work with uClinux (Linux for CPUs without memory management units), 
+        but has since been adapted to be used with full Linux. The uClibc-ng library is a fork of the original uClibc project 
+        (https://uclibc.org/), which has unfortunately fallen into disrepair. Both are licensed with LGPL 2.1.    
+    
+The advice is to use uClibc-ng only if you are using uClinux. If you have very limited amount of storage or RAM, then musl libc is 
+a good choice, otherwise, use glibc.

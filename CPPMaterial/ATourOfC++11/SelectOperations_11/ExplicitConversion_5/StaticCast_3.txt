@@ -1,0 +1,84 @@
+Static cast is a compile time caster!
+Static cast basically checks for compile time errors, as opposed to a C-Style cast (like 
+(int*)), which has no check.
+
+Formally, converts between related types such as one pointer type to another in the same
+class hierarchy, an integral type to an enumeration, or a floating-point type to an integral
+type. It also does conversions defined by constructors (§16.2.6, §18.3.3, §iso.5.2.9) and
+conversion operators
+
+For example, 
+int a = 10;
+char c = 'c';
+
+int* p = (int*)&c;	// This may pass compile-time checks;
+int* p1 = static_cast<int*>(c);	// This will however throw compile-time errors.
+
+Consider this example:
+#include <iostream> 
+#include <string> 
+using namespace std; 
+class Int { 
+    int x; 
+  
+public: 
+    Int(int x_in = 0) 
+        : x{ x_in } 
+    { 
+        cout << "Conversion Ctor called" << endl; 
+    } 
+    operator string() 
+    { 
+        cout << "Conversion Operator" << endl; 
+        return to_string(x); 
+    } 
+}; 
+int main() 
+{ 
+    Int obj(3); 
+    string str = obj; 
+    obj = 20; 
+    string str2 = static_cast<string>(obj); 
+    obj = static_cast<Int>(30); 
+    return 0; 
+} 
+
+In main:
+	1- The first line calls the constructor.
+	2- The second line calls the converter operator.
+	3- The third line calls the implicit  constructor,
+	4- Fourth line calls the converter operator.
+	5- The fifth line calls the constructor (what if it were explicit? Even then, there's no problem!!!)
+
+Also, consider the following program:
+using namespace std; 
+class Base { 
+}; 
+class Derived : public Base { 
+}; 
+int main() 
+{ 
+    Derived d1; 
+    Base* b1 = (Base*)(&d1); // allowed 
+    Base* b2 = static_cast<Base*>(&d1); 
+  
+    return 0; 
+} 
+
+Both of the above cases are correct, and we have a pointer to base.
+
+However, with this example where inheritance is private (hence, we don't have access to base reference)
+only the static_cast method throws an exception.
+#include <iostream> 
+using namespace std; 
+class Base { 
+}; 
+class Derived : private Base { // Inherited private/protected not public 
+}; 
+int main() 
+{ 
+    Derived d1; 
+    Base* b1 = (Base*)(&d1); // allowed 
+    Base* b2 = static_cast<Base*>(&d1); 
+    return 0; 
+} 

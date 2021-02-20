@@ -1,0 +1,6 @@
+The command mkdir creates directories. mkdir n1 n2 n3 creates all three dirs.
+
+To create nested dirs, we need to use the -p option, such as mkdir -p d1/d2/d3.
+
+We can also create several dirs in a nested fashion, inside one dir. For this end, we need to use a bracket.
+mkdir -p dir1/{dir2, dir2, dir3}

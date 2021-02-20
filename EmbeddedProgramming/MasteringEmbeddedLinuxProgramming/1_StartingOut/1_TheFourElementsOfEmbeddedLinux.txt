@@ -1,0 +1,14 @@
+Every project begins by obtaining, customizing, and deploying these four elements:
+    - Toolchain: The compiler and other tools needed to create code for your target device. Everything else depends on the 
+      toolchain.
+    - Bootloader: The program that initializes the board and loads the Linux kernel.
+    - Kernel: This is the heart of the system, managing system resources and interfacing with hardware.
+    - Root filesystem: Contains the libraries and programs that are run once the kernel has completed its initialization.
+
+Of course, there is also a fifth element, not mentioned here. That is the collection of programs specific to your embedded 
+application which make the device do whatever it is supposed to do, be it weigh groceries, display movies, control a robot, or 
+fly a drone.
+
+Typically, you will be offered some or all of these elements as a package when you buy your SoC or board. But, for the reasons 
+mentioned in the preceding paragraph, they may not be the best choices for you. Later, we will see two tools that automate the 
+whole process: Buildroot and the Yocto Project.

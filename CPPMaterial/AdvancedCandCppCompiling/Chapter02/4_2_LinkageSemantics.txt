@@ -1,0 +1,4 @@
+Question: Do we link the stl library to an executable? Or Do we link an executable to a library?
+
+The book also says "When the client binary links the static library", meaning when an executable links the 
+static library.

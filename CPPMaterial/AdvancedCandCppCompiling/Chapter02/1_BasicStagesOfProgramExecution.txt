@@ -1,0 +1,8 @@
+A program written for example in CPP passes the following steps before its binary is executed
+from source code:
+
+1-  Creating the source code
+2-  Compiling
+3-  Linkage
+4-  Loading
+5-  Executing.

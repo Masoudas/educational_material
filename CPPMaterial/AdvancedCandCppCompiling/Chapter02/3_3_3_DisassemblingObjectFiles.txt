@@ -1,0 +1,2 @@
+We con disassemble object files and turn them back into text assembly files using dumpobject command
+in linux and similar command in windows.

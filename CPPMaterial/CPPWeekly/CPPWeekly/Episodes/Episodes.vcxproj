@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f48c8707-39e4-465a-945c-05e8d0b38df0}</ProjectGuid>
+    <RootNamespace>Episodes</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Ep073_std_string_view\1_strings_are_mutable_in_cpp.cpp" />
+    <ClCompile Include="..\..\src\Ep073_std_string_view\2_string_view_is_immutable.cpp" />
+    <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\1_use_static_methods.cpp" />
+    <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\2_use_const_methods.cpp" />
+    <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\3_use_constexpr.cpp" />
+    <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\4_use_constexpr_if.cpp" />
+    <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\5_implement_a_sort_algorithm.cpp" />
+    <ClCompile Include="..\..\src\Ep128_C++20TemplateSyntaxForLambdas\1_template_type_deduction_with_auto.cpp" />
+    <ClCompile Include="..\..\src\Ep128_C++20TemplateSyntaxForLambdas\2_templated_lambda.cpp" />
+    <ClCompile Include="..\..\src\Ep128_C++20TemplateSyntaxForLambdas\3_an_interesting_question_with_templates.cpp" />
+    <ClCompile Include="..\..\src\Ep157_NeverOverloadOperator&amp;&amp;or\1_NoShortCircuitingTakesPlace.cpp" />
+    <ClCompile Include="..\..\src\Ep175_SpaceshipOperatorC++20=\1_overriding_comparison_operators.cpp" />
+    <ClCompile Include="..\..\src\Ep175_SpaceshipOperatorC++20=\2_spaceship_operator.cpp" />
+    <ClCompile Include="..\..\src\Ep175_SpaceshipOperatorC++20=\3_multiple_members.cpp" />
+    <ClCompile Include="..\..\src\Ep175_SpaceshipOperatorC++20=\4_what_is_threeway_compare.cpp" />
+    <ClCompile Include="..\..\src\Ep175_SpaceshipOperatorC++20=\5_weak_partial_strong_order.cpp" />
+    <ClCompile Include="..\..\src\Ep184_WhatAreHigherOrderFunctions\1_passing_function_pointers.cpp" />
+    <ClCompile Include="..\..\src\Ep184_WhatAreHigherOrderFunctions\2_capturing_parameters_with_lambda.cpp" />
+    <ClCompile Include="..\..\src\Ep184_WhatAreHigherOrderFunctions\3_higher_order_functions.cpp" />
+    <ClCompile Include="..\..\src\Ep189_C++14VariableTemplates\1_what_are_variable_templates.cpp" />
+    <ClCompile Include="..\..\src\Ep189_C++14VariableTemplates\2_initialize_using_constant_expression.cpp" />
+    <ClCompile Include="..\..\src\Ep189_C++14VariableTemplates\3_templated_type_specialization.cpp" />
+    <ClCompile Include="..\..\src\Ep189_C++14VariableTemplates\4_2_an_implementation_of_is_same.cpp" />
+    <ClCompile Include="..\..\src\Ep189_C++14VariableTemplates\4_1_variable_template_specialization.cpp" />
+    <ClCompile Include="..\..\src\Ep225_OperatorOverloading\1_overloading_strategies.cpp" />
+    <ClCompile Include="..\..\src\Ep225_OperatorOverloading\2_in_class_overloading.cpp" />
+    <ClCompile Include="..\..\src\Ep225_OperatorOverloading\3_free_standing_function.cpp" />
+    <ClCompile Include="..\..\src\Ep225_OperatorOverloading\4_inclass_free_function.cpp" />
+    <ClCompile Include="..\..\src\Ep225_OperatorOverloading\5_overloading_arrow_operator.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_0_builtin_types_and_destruction.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_1_anonymous_unions.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_2_destruction_of_anonymous_unions.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\1_creating_an_optional.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\2_optionals_in_cpp.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\3_problem_with_destruction_of_optional.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\4_anonymous_unions_and_destruction.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\5_trivially_destructed_types.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\7_2_CRTP_with_templated_class.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\8_1_solving_union_destruction_problem.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\8_2_cpp11_solution.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\8_3_cpp20_solution.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\6_2_conditional_inheritance.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\6_1_conditional_inheritance.cpp" />
+    <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\7_1_recursuive_inheritance.cpp" />
+    <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\1_lambda_parameter_capture.cpp" />
+    <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\2_captured_calues_are_const.cpp" />
+    <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\3_mutable_lambdas.cpp" />
+    <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\4_cost_of_making_lambda_const.cpp" />
+    <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\4_make_lambdas_const_too.cpp" />
+    <ClCompile Include="..\..\src\Ep240_StartUsingNoDiscard\1_why_no_discard.cpp" />
+    <ClCompile Include="..\..\src\Ep241_UsingExplicitToAvoidAccidentalExpensiveCopies\1_1_implicit_conversion_and_argument_passing.cpp" />
+    <ClCompile Include="..\..\src\Ep241_UsingExplicitToAvoidAccidentalExpensiveCopies\1_2_copy_or_move_constructor_for_rvalue.cpp" />
+    <ClCompile Include="..\..\src\Ep241_UsingExplicitToAvoidAccidentalExpensiveCopies\2_avoiding_implicit_conversion.cpp" />
+    <ClCompile Include="..\..\src\Ep241_UsingExplicitToAvoidAccidentalExpensiveCopies\3_use_explicit_to_avoid_copy.cpp" />
+    <ClCompile Include="..\..\src\Ep241_UsingExplicitToAvoidAccidentalExpensiveCopies\4_use_explicit_to_avoid_copy_and_move.cpp" />
+    <ClCompile Include="..\..\src\Ep246_BizzareBracketExpression\1_plus_sign_and_function_pointers.cpp" />
+    <ClCompile Include="..\..\src\Ep246_BizzareBracketExpression\2_a_bit_on_lambda_syntax.cpp" />
+    <ClCompile Include="..\..\src\Ep246_BizzareBracketExpression\3_std_foreach_and_lambda.cpp" />
+    <ClCompile Include="..\..\src\Ep246_BizzareBracketExpression\4_a_bizarre_expression.cpp" />
+    <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\1_some_types_have_no_name.cpp" />
+    <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\2_lambdas_have_no_type.cpp" />
+    <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\3_local_class_has_no_type.cpp" />
+    <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\4_a_private_nested_class_has_no_type.cpp" />
+    <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\5_hiding_implementation_detail.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

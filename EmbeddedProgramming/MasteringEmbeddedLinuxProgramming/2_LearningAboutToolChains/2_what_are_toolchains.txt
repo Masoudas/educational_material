@@ -1,0 +1,11 @@
+A toolchain is the set of tools that compiles source code into executables that can run on your target device, and includes a 
+compiler, a linker, and run-time libraries. 
+
+Initially you need one to build the other three elements of an embedded Linux system: the bootloader, the kernel, and the root 
+filesystem. It has to be able to compile code written in assembly, C, and C++ since these are the languages used in the base open 
+source packages.
+
+Usually, toolchains for Linux are based on components from the GNU project (http://www.gnu.org), and that is still true in the 
+majority of cases at the time of writing. However, over the past few years, the Clang compiler and the associated Low Level Virtual 
+Machine (LLVM) project (http://llvm.org) have progressed to the point that it is now a viable alternative to a GNU toolchain.
+

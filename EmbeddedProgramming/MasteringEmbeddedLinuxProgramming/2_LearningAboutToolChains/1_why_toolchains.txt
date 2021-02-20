@@ -1,0 +1,14 @@
+(Me: Suppose you've written a C++ program. You need the proper compiler to compile the code for the particular processor you're
+working with. Toolchains are set of processors that provide that. For example, you need a C++ compiler that compiles code for 
+embedded linux for the given processor!)
+
+The toolchain is the first element of embedded Linux and the starting point of your project. You will use it to compile all the 
+code that will run on your device. The choices you make at this early stage will have a profound impact on the final outcome. 
+Your toolchain should be capable of making effective use of your hardware by using the optimum instruction set for your processor. 
+It should support the languages that you require, and have a solid implementation of the Portable Operating System Interface (POSIX) 
+and other system interfaces. Not only that, but it should be updated when security flaws are discovered or bugs are found. Finally, 
+it should be constant throughout the project. In other words, once you have chosen your toolchain, it is important to stick with it. 
+Changing compilers and development libraries in an inconsistent way during a project will lead to subtle bugs.
+
+Obtaining a toolchain can be as simple as downloading and installing a TAR file, or it can be as complex as building the whole thing 
+from source code.

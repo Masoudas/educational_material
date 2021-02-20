@@ -1,0 +1,6 @@
+The man command together with the name of the command shows the man pages for that command.
+
+There's also a man page for man. In it, it has been stated that man pages are usually under a folder like usr/share.
+
+Note shell bulletin commands don't have man pages. It also says in a documentation such as 'cd [-L|[-P [-e]] [-@]] [dir]' for the
+cd command, the | means either one of the options. [] means any or all things inside are optional.

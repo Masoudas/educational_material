@@ -1,0 +1,40 @@
+The root of the file system starts at '/'. 
+
+The 'cd' command is used for changing directory. The command cd - returns us back to the last working directory we were at.
+
+Writing the command ls -la, the letter 'd' that appears in the attributes of some the folders indicate directory, and l indicates
+link files. 
+The letter 'a' means --all. Note that only when we put this a do we see . and .. directories. This is because both of 
+these are hidden directories inside the current directory!
+
+We have the following main folders in a linux files system:
+/       This is the root of your filesystem, where everything begins.
+
+/etc    This directory contains system configuration files.
+
+/home   This is the default home directory for all users (except the root user).
+
+/root   This is the home directory for the root user.
+
+/dev    This is where your devices such as your hard disks, USB drives, and optical drives reside on your system.
+
+/opt    This is where you can install additional 3rd party software (This is not clear to me. For example, in Debian it seems
+        like a software is being installed in user/bin rather!)
+
+/bin    This is where essential binaries (programs) reside on your system.
+
+/sbin   This is where system binaries (programs) that are typically used by the system administrator are stored.
+
+/tmp    This is where temporary files are stored; they are usually deleted after a system reboot, so never store important files 
+        here!
+
+/var    This directory contains files that may change in size, such as mail spools and log files.
+
+/boot   All the files required for your system to boot are stored here.
+
+/lib    This directory contains libraries needed by the essential binaries in the /bin and /sbin directories. A library is 
+        basically a set of precompiled functions that can be used by a program.
+
+/proc   This is where information about running processes is stored.
+
+/usr    This directory contains files and utilities that are shared between users.

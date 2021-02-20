@@ -1,0 +1,3 @@
+As we already know, we tend to sort out a program functions into several files. This separation
+leads to certain indeterminism in the subsequent stages of the build process (including compilation
+and linkage).

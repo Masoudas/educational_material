@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Chapter_II">
+      <UniqueIdentifier>{f37662ae-f6c1-4717-afc5-bdae9ddd22cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_II\MergeSort_II">
+      <UniqueIdentifier>{605d2b57-a569-4811-aab5-53561f71ce9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_III">
+      <UniqueIdentifier>{0f3e91ea-35e2-4400-8d14-7bf768234428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_I">
+      <UniqueIdentifier>{af1b7639-6d08-4d3b-97c3-c4d8886b1874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_I\SectionIII">
+      <UniqueIdentifier>{686fd9d4-c2c5-44bc-8c8f-59b16c179910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_II\QuickSort_III">
+      <UniqueIdentifier>{68756866-f51e-4310-a448-9cf88e739eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_II\PriorityQueues_IV">
+      <UniqueIdentifier>{d7cad379-ad6a-4246-85e2-2052f55410a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems">
+      <UniqueIdentifier>{17593504-e37c-4136-9716-97fc21559f14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems\BasicTools">
+      <UniqueIdentifier>{f4a2c557-d82b-4132-966c-946b7407a3c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems\IndexingProblems">
+      <UniqueIdentifier>{d06139ed-81d2-40c7-8c57-73bcdc6527ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems\BasicTools\FloatingPoints">
+      <UniqueIdentifier>{a7e30936-df0d-425d-91dc-76feb8f25a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems\BasicTools\TheForLoop">
+      <UniqueIdentifier>{ae01520b-8aa4-48c5-a5bf-5e052e28e159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Chapter_II\PriorityQueues_IV\ProblemsUsingHeap">
+      <UniqueIdentifier>{f4111505-0713-44d8-8e1d-52aea617e231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MyRandomProblems\BasicTools\Comparison">
+      <UniqueIdentifier>{958a37f6-1b8a-4ecd-8182-f40bc396993f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Chapter_II\MergeSort_II\Recursive_Merge_Sort.cpp">
+      <Filter>Source Files\Chapter_II\MergeSort_II</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_III\MapsInCPP.cpp">
+      <Filter>Source Files\Chapter_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_III\Intervals.cpp">
+      <Filter>Source Files\Chapter_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\FIFOQueueAsLinkedList.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\FIFOQueueInCPP.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\LinkedListCPP.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\PushDownStack.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\StackInCPP.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\TheSelfReferencingClassParadox.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\2_Partioning.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\4_quick_sort_in_cpp.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\3_1_Looped_Quick_Sort.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\MergeSort_II\Exercises.cpp">
+      <Filter>Source Files\Chapter_II\MergeSort_II</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\3_0_Recursive_Quick_Sort.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\1_What_Is_QuickSort.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\6_avoiding_copy_when_exchanging_with_pointer.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="5_1_entropy_optimal_qsort.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\5_0_Improvements.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="5_2_analysis_of_optimal_entropy_sort.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\SectionIII\LinkedListWithPointerToPointer.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="swap_nodes_in_linked_list.cpp">
+      <Filter>Source Files\Chapter_I\SectionIII</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\Exercises.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\1_element_wise_sort.cpp">
+      <Filter>Source Files\Chapter_II</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\8_why_stop_at_elements_equal_to_pivot.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\QuickSort_III\7_why_divide_and_conquer_is_good.cpp">
+      <Filter>Source Files\Chapter_II\QuickSort_III</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\BasicTools\TwosComplement.cpp">
+      <Filter>Source Files\MyRandomProblems\BasicTools</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\1_why_priority_queues.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\2_priority_queue_api.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\3_pq_in_action.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\4_basic_implementations.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_1_bottom_up_reheapify.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_2_top_down_reheapify.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_3_insertion_remove_in_heap.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_4_number_of_comparisons.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_0_heap_definition.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_6_1_index_priority_queue.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_6_2_index_priority_queue_implementation.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\IndexingProblems\NumberOfNodesInATree.cpp">
+      <Filter>Source Files\MyRandomProblems\IndexingProblems</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_0_heap_sort.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_1_creating_heap_in_place.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_2_sorting_using_in_place_heaps.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_3_heap_sort_implementation.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_4_improvements_to_heap_sort.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_I\All_Permutations_Of_Vector.cpp">
+      <Filter>Source Files\Chapter_I</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\BasicTools\FloatingPoints\DistanceOperator.cpp">
+      <Filter>Source Files\MyRandomProblems\BasicTools\FloatingPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\BasicTools\FloatingPoints\FloatingPoint.cpp">
+      <Filter>Source Files\MyRandomProblems\BasicTools\FloatingPoints</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_5_1_notes_on_implementation.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_5_2_resizable_priority_queue.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\Exercises.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\BasicTools\TheForLoop\ForLoopDependingOnPreviousValue.cpp">
+      <Filter>Source Files\MyRandomProblems\BasicTools\TheForLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\FindingNonRepetitiveElements.cpp">
+      <Filter>Source Files\Chapter_II\PriorityQueues_IV\ProblemsUsingHeap</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRandomProblems\BasicTools\Comparison\1_in_range_with_one_comparison.cpp">
+      <Filter>Source Files\MyRandomProblems\BasicTools\Comparison</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyRandomProblems\IndexingProblems\CuttingFromMiddle.cpp">
+      <Filter>Source Files\MyRandomProblems\IndexingProblems</Filter>
+    </None>
+  </ItemGroup>
+</Project>

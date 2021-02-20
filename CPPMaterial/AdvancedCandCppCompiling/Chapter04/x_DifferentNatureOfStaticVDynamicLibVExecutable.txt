@@ -1,0 +1,9 @@
+So when we create a static lib, the object files are left as is. In other words, NO LINKAGE takes place during
+the generation of static libs. There'd still be unresolved references in the binray.
+
+As opposed to that, with an executable, a linkage takes place, and all references are resolved (I'm guessing
+even when we use a shared lib).
+
+A dynamic library however stands between the two. It's almost ready to be executed, but not quite. In fact, in
+some operating system like Linux, it can even be executed!
+

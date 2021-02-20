@@ -1,0 +1,9 @@
+Note that the su command has to modes:
+    - su user_name  (keep current environment setting)
+    - su - user_name (lose current environment setting. Essentially, minus current setting)
+
+What's the difference: When you don't add the dash before the username, the shell preserves the current user shell environment 
+settings, which includes the current working directory. On the other hand, when you add the dash, the shell acquires the 
+environment settings of the new user (the user you switched to).
+
+Consequently, 'su -' switches to the root, dropping the current environment settings.

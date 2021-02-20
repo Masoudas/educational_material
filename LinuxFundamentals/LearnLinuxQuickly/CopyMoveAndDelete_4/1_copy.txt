@@ -1,0 +1,14 @@
+To copy a file, we need only to use the cp command, where the structure is 'cp source destination'
+
+Note that we can change the name of the copied filed by assigning a name 'cp file1 path/file2'
+
+We can also copy multiple files into a new folder.
+
+To copy a directory together with its contents, we need to use the -r flag. Note that there are two cases here:
+1- If you want this directory to be copied, including the directory name, use the command 'cp -r dir1 dir2'.
+2- If you want the CONTENT of the be copied, and not its folder name, use the command 'cp -r dir/* dir2'
+Note that by content, we mean only the files inside this folder. If there's folder like dir1 inside dir, it will not be copied,
+the command line warns about it, and only the files will be copied.
+
+Note that same as with files, we can copy multiple directories or their content into a new one.
+We can't copy into multiple destinations however.

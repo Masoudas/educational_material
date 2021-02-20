@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{72d64cd4-1bd6-4c3c-9711-250531d38ca6}</ProjectGuid>
+    <RootNamespace>CppDataStructuresAndAlgorithmDesignPrinciples</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="4_iterators.cpp" />
+    <ClCompile Include="4_open_addressing_hash_tables.cpp" />
+    <ClCompile Include="5_data_and_other_function.cpp" />
+    <ClCompile Include="5_u_set_iterators.cpp" />
+    <ClCompile Include="6_1_relational_operators.cpp" />
+    <ClCompile Include="6_2_add_a_compare_method.cpp" />
+    <ClCompile Include="6_u_set_lookup_methods.cpp" />
+    <ClCompile Include="7_operators_and_equality.cpp" />
+    <ClCompile Include="DivideAndConquer\impl_2_of_nth_element.cpp" />
+    <ClCompile Include="DivideAndConquer\partial_sorting_activity.cpp" />
+    <ClCompile Include="DivideAndConquer\stl_tools_for_divide_and_conquer.cpp" />
+    <ClCompile Include="DivideAndConquer\x_x_matrix_multiplication_with_divide_and_conquer.cpp" />
+    <ClCompile Include="impl_1_of_nth_element.cpp" />
+    <ClCompile Include="nth_element_of_container.cpp" />
+    <ClCompile Include="x_2_finding_the_median_of_container.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\1_unordered_set_overview.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\3_1_set_construction.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\2_define_set_for_custom_types.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\4_modifier_methods.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\8_1_unordered_multisets.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\8_2_finding_an_element_in_multiset.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\1_why_hash_tables.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\2_2_boost_hash_function.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\1_overview_of_umap.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\2_a_note_on_contains_for_map.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\2_STLUnorderedMap\3_unordered_multimap.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\1_why_bloom_filters.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\2_how_they_are_implemented.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\3_an_example_implementation.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\3_BloomFilters\4_email_address_validator.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\3_close_addressing_chaining.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\2_1_stl_hash_functions.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\5_cuckoo_hashing.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\6_no_bst_for_hash_tables.cpp" />
+    <ClCompile Include="HashTablesAndBloomFilters\7_mapping_long_to_short_urls.cpp" />
+    <ClCompile Include="ListsStacksQueues\0_0_iteration_point_of_interest.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\1_why_not_cstyle_arrays.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\2_std_array.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\3_copy_constructor.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\7_create_a_dynamic_array.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\8_2_c_approach.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\8_1_creating_an_object_like_array.cpp" />
+    <ClCompile Include="ListsStacksQueues\1_Arrays\9_investigating_const.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\10_a_matrix_using_a_vector.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\11_vector_of_bools.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\1_limitations_of_vector.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\2_vector_and_construction.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\3_1_pushback_v_insert.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\3_2_bracket_insertion.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\4_emplace_v_emplace_back.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\5_pop_back_v_erase.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\6_1_resizing_methods.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\6_2_merging_two_vectors.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\7_allocators.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\8_investigating_const_vectors.cpp" />
+    <ClCompile Include="ListsStacksQueues\2_Vector\9_copy_assignment.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\10_implementing_a_linked_list.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\11_circular_linked_list.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\12_exercising_remove_if_function.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\14_merge_forward_lists.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\15_splice_after.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\1_structure_and_implementation.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\2_insertion_in_flist.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\3_2_union_intersection_difference.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\3_deletion_in_flist.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\4_remove_and_remove_if.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\6_reverse_flist.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\5_sorting_flist.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\7_keeping_unique_elements_with_flist.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\8_logical_operators.cpp" />
+    <ClCompile Include="ListsStacksQueues\3_ForwardList\9_flist_iterator.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\13_size_of_forward_list.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\1_structure_and_constructors.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\2_insertion_and_emplace.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\3_working_with_the_back_of_the_list.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\4_list_bidirectional_iterators.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\6_simulating_a_card_game.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\5_iterator_invalidation.cpp" />
+    <ClCompile Include="ListsStacksQueues\5_Deque\1_why_deque.cpp" />
+    <ClCompile Include="ListsStacksQueues\5_Deque\2_most_important_functions.cpp" />
+    <ClCompile Include="ListsStacksQueues\5_Deque\3_cant_compare_vectors_with_different_allocators.cpp" />
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\1_stack.cpp" />
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\2_queue.cpp" />
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\3_2_pq_of_custom_type.cpp" />
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\3_1_priority_queue.cpp" />
+    <ClCompile Include="ListsStacksQueues\6_ContainerAdaptors\4_office_printer_activity.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\1_1_what_is_a_tree.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\1_2_traversing_a_tree.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\2_1_tree_implementation_example.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\2_2_tree_implementation_example.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\1_Trees\3_file_system_tree.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_1_what_is_bst.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_2_finding_an_element.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_3_insertion_of element.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\1_4_deletion_of_element.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\2_BinarySearchTree\2_bst_in_stl.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\3_Heaps\1_running_median_using_heaps.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\3_Heaps\2_kway_merge.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\1_what_is_a_graph.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\2_1_representing_graphs_with_adjaceny_matrix.cpp" />
+    <ClCompile Include="TreesHeapsGraphs\4_Graphs\2_2_representing_graphs_with_adjaceny_matrix.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

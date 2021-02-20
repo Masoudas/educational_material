@@ -1,0 +1,19 @@
+After finding and installing the current version, we need to append the position to path variable. After doing so, we can open a
+powershell and write "qemu-img --help" to see that it's working.
+
+Note that we can emulate a linux machine, as well as embedded devices with this guy. 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+To install an Ubuntu for example on windows:
+Go to Windows Features and tick Windows Hypervisor Platform. After that, restart the computer and type this command in the 
+powershell (in the directory where the image and .iso resides): 
+"""
+qemu-system-x86_64 -accel whpx -hda .\[name].qcow2 -m 512 -net nic,model=virtio -net user -cdrom .\[name].iso -vga std -boot strict=on
+"""
+It should start up and you can proceed to install the OS.
+
+The second time you start up the machine you don't need to type -cdrom anymore. Just 
+"""
+qemu-system-x86_64 -accel whpx -hda .\[name].qcow2 -m 512 -net nic,model=virtio -net user -vga std -boot strict=on 
+"""
+should do it.

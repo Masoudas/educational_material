@@ -1,0 +1,1 @@
+The what is command is used to get a brief description of a command.

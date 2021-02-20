@@ -1,0 +1,25 @@
+The compiler reaches this stage only after the source code is verified to contain no syntax errors. In this stage, the
+compiler tries to convert the standard language constructs into the constructs specific to the actual CPU instruction
+set. Different CPUs feature different functionality treats, and in general different sets of available instructions,
+registers, interrupts, which explains the wide variety of compilers for an even wider variety of processors
+
+Never forget that assembling is equivalent to generating the machine code using assembly language. The end
+result is put in an object file. The assembly text file is a middle step here.
+
+(Me: Note also that because assembly is supposed to generate machine code, and that at this point we already
+have used header files, header files are not turned into assembly code)
+
+In gcc, gcc -S <input file> -o <output assembler file>.s generates the text assembly file. Note the .s
+for output file. Note that gcc documentation says "Compile only. Don't assemble or link" for this option.
+
+Note that we can provide the assembly text file format based on AT&T or Intel format using:
+ gcc -S -masm=intel ...
+  gcc -S -masm=att ...
+
+To generate the actual machine code, but not link, we use  gcc -c <input file> -o <output file>.o
+
+-- Optimization
+Once the first assembler version corresponding to the original source code is created, the optimization effort starts, in
+which usage of the registers is minimized. Additionally, the analysis may indicate that certain parts of the code do not
+in fact need to be executed, and such parts of the code are eliminated.
+

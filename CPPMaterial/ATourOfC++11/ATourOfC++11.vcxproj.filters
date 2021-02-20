@@ -1,0 +1,1885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\STLStrings_36">
+      <UniqueIdentifier>{db146765-61b1-4199-bae7-068ca57790ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLStrings_36\StringClass_2">
+      <UniqueIdentifier>{28e494b0-f982-4d72-b7a2-7329b9b22bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLStrings_36\StringClass_2\Operations">
+      <UniqueIdentifier>{4af20ef8-64db-4d86-be64-00f335a27d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16">
+      <UniqueIdentifier>{55c40fc0-a0db-4d80-b57e-c1feaf5d6b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\StaticKeyword_7">
+      <UniqueIdentifier>{5ff70397-cca6-4e73-96d7-1425dcfe982c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12">
+      <UniqueIdentifier>{3590d843-298e-412c-992d-cb4f7127d925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\ArgumentPassing_9">
+      <UniqueIdentifier>{abc93755-ca66-4f33-9704-eec6fec51b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\ConstexprFunctions_5">
+      <UniqueIdentifier>{b52a5072-42b9-449c-b982-f3cfefb36492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\LocalVariables_8">
+      <UniqueIdentifier>{b67eb92a-1b6f-45f2-9e11-4316af3d9554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PointersArraysReferences_7">
+      <UniqueIdentifier>{d153a293-44ba-4bd4-a6ac-88dd2afd09c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PointersArraysReferences_7\Arrays">
+      <UniqueIdentifier>{166807e7-12d3-4a3b-9f33-006ed8e844d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PointersArraysReferences_7\References_5">
+      <UniqueIdentifier>{0d797ae7-70ed-4456-96ef-082372608bf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Statement_9">
+      <UniqueIdentifier>{a1342b69-f31a-4e93-873d-599f7acbb926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\Overloading_10">
+      <UniqueIdentifier>{aa0cc4c0-9050-421d-bbef-5ab2f8806042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6">
+      <UniqueIdentifier>{7561c8cd-cb82-4a9f-b416-e046418dfbc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\CStyleStrings">
+      <UniqueIdentifier>{89b4f3ee-5cf9-471f-b7af-9259a9d8cda2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\DoubleArithmetic">
+      <UniqueIdentifier>{00508a7a-4fbb-41e9-9a02-0e80473c7432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic">
+      <UniqueIdentifier>{b9f33ef7-3903-4008-824a-99a720a184a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\Macros_13">
+      <UniqueIdentifier>{ff37e2f8-00b8-46ab-a8df-ed673f08b336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\Macros_13\DecoratedNames_1">
+      <UniqueIdentifier>{652da949-cc93-4ebc-a06b-e63019702535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Functions_12\FunctionPointers_12">
+      <UniqueIdentifier>{0abec463-2bd3-4037-b072-1748228a5704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLAlgorithms_32">
+      <UniqueIdentifier>{ca39c376-5fed-48d5-82de-d4031699df7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLAlgorithms_32\Sort">
+      <UniqueIdentifier>{b6af2cc8-b7cb-4f67-86be-a5da789fecda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17">
+      <UniqueIdentifier>{e4fa1cc0-0290-4def-9c37-6fa59e2a3af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3">
+      <UniqueIdentifier>{6356e485-7f67-4c6a-a624-a447972e762f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2">
+      <UniqueIdentifier>{116c1191-697b-4bb8-aafd-e428ca02319f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4">
+      <UniqueIdentifier>{3e26f53e-8b07-4248-b7bc-1fa29c3a9bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\DefaultConstructors_5">
+      <UniqueIdentifier>{dacd5460-83aa-4a4c-b767-06f90acd957c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\InitializerList_6">
+      <UniqueIdentifier>{a69fd84a-347c-457a-ae88-6b1c455ab3ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLRegularExpressions_37">
+      <UniqueIdentifier>{c0c2a111-de77-4390-aaf4-5da3f53ba521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLRegularExpressions_37\Regex_2">
+      <UniqueIdentifier>{604d8522-6d97-4c0a-879e-8eabd98e4e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7">
+      <UniqueIdentifier>{115b3b43-0a2b-47bb-bf93-bb6b45505d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\InClassInitializers_8">
+      <UniqueIdentifier>{d1aac144-6bc7-46ae-bd28-62f24d67b231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9">
+      <UniqueIdentifier>{1672e25f-e954-43be-9740-c949bcbf1206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SourceFilesAndPrograms_15">
+      <UniqueIdentifier>{90d06f89-6d53-406b-8658-5734c0a4eaaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SourceFilesAndPrograms_15\Linkage_2">
+      <UniqueIdentifier>{e5da0c3b-1867-4a08-b39e-fb4019e0fae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\MoveConstructor_10">
+      <UniqueIdentifier>{05edce5b-1252-45ff-8389-d4942ad49dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11">
+      <UniqueIdentifier>{86af1218-7d3d-4669-bf8a-99d6d10e1501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23">
+      <UniqueIdentifier>{e50dd266-fc34-4540-88da-8c00f4438903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\x_x_UseOfNesting">
+      <UniqueIdentifier>{b0e8df22-63e1-4f6c-87f6-cee9acd821dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\DefiningTemplates_1">
+      <UniqueIdentifier>{a0a73e45-8d8b-4022-8d18-c643273b741c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\TemplateInstantiation_2">
+      <UniqueIdentifier>{bf9e94bc-1674-479e-8a2f-eebe8c8431b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\TypeChecking_3">
+      <UniqueIdentifier>{6f53ec0c-d477-4883-b690-a5b5c52b60c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\classMembers_4">
+      <UniqueIdentifier>{68c3ab0f-7438-4f04-9c3c-ecbbd619164d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\FunctionTemplates_5">
+      <UniqueIdentifier>{1c40da76-7442-42ec-8a55-8630804e0a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\FunctionTemplateOverloading_6">
+      <UniqueIdentifier>{6fbf3add-8349-47db-a67d-146f08ec033f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20">
+      <UniqueIdentifier>{9292266e-86e7-4963-aa1c-91a41932c197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PointersArraysReferences_7\Pointers">
+      <UniqueIdentifier>{3437aef9-7a9f-4d1f-ad99-5f12b4006948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StructuresUnionsEnumerations_8">
+      <UniqueIdentifier>{704e828c-b15b-47c8-a2d3-b93381ea4ac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StructuresUnionsEnumerations_8\Enumerations_4">
+      <UniqueIdentifier>{1f3d94f8-105e-4cbd-9f7b-dbf38cb54c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14">
+      <UniqueIdentifier>{c96305f1-e36c-47eb-84f9-0d102684b0cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\Namespaces_1">
+      <UniqueIdentifier>{a6d831d1-9840-4ec9-bf96-8e3efbf2e272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SourceFilesAndPrograms_15\Cpp20Modules">
+      <UniqueIdentifier>{ec419edc-4891-4969-a665-1fc58ae2180e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\ModularizationAndInterfaces_2">
+      <UniqueIdentifier>{6008767c-018e-4af2-b308-8e664831fe49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\NamespaceComposition_3">
+      <UniqueIdentifier>{6c0dac44-b71a-4dfb-8f25-d3f2b7c10fc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\NamespacesAndOverloading_4">
+      <UniqueIdentifier>{4b5ec53b-d147-4aa4-af66-9f36ce00bba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\Versioning_5">
+      <UniqueIdentifier>{7f0a28b0-2fd5-4fe2-8885-6fa406e23d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Namespaces_14\OtherKindsOfNamespace_6">
+      <UniqueIdentifier>{451e107b-c6de-42f1-a526-e826bfa8853d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\AccessRestriction_3">
+      <UniqueIdentifier>{02f18b79-9712-429d-ada0-0ae10e682bd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\Constructors_4">
+      <UniqueIdentifier>{8503f374-3655-4478-8198-4dcde728d5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\Mutability_5">
+      <UniqueIdentifier>{bae31c95-6e3b-4750-bda0-78d506fb20fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\SelfReference_6">
+      <UniqueIdentifier>{a301b553-6ebf-4a87-a3e3-21434e73e5ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\ADiscussionOnMutability_0">
+      <UniqueIdentifier>{4adc39d8-f904-4050-a64f-aa0c04e91fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OperatorOverloading_18">
+      <UniqueIdentifier>{3d7685c8-cd6f-4afd-aea0-9043e0c641be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OperatorOverloading_18\OverloadingAndNameSpace_1">
+      <UniqueIdentifier>{7af82f63-4423-4253-9c9a-346b066bce3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes_16\MethodPostModifiers_0">
+      <UniqueIdentifier>{ed4b4df7-3ad6-4c6e-93f2-537f98000b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLStrings_36\StringView_3">
+      <UniqueIdentifier>{6e526391-a1d3-414f-a47f-8b50cbdc0581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1">
+      <UniqueIdentifier>{cb25d1a7-7df1-4112-b21f-917763b3fa61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLFileSystem_41">
+      <UniqueIdentifier>{d51e7558-bfa3-43ba-a316-6cb4f940fa6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OperatorOverloading_18\ComplexClassExample_2">
+      <UniqueIdentifier>{bb3a6a82-0840-41a0-a196-168fd2f95762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OperatorOverloading_18\TypeConversion_3">
+      <UniqueIdentifier>{dc23b2c8-7f1d-4aef-8b01-ed5d0f37cec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SpecialOperators_19">
+      <UniqueIdentifier>{d712e364-0fa5-4e72-8891-2e37487808ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SpecialOperators_19\Friends_4">
+      <UniqueIdentifier>{8882d705-b53f-4cd3-b722-4c9ef236fd83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\Aliasing">
+      <UniqueIdentifier>{9dae8902-8c87-407c-8f67-f0b966aa4d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20\ClassHierarchies_1">
+      <UniqueIdentifier>{f1799c25-7419-41e5-bea4-b5c570329f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\AutoTypeDeduction">
+      <UniqueIdentifier>{8cb8c8d9-9e4a-4daa-8833-aa13cf16d9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20\AbstractClasses_2">
+      <UniqueIdentifier>{15dc979a-7f14-463c-a653-216c747398a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20\AccessControl_3">
+      <UniqueIdentifier>{31b00905-216b-4785-8e49-746df956e51e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20\PointerToMembers_4">
+      <UniqueIdentifier>{9a6c88ea-3707-4b0b-90a6-bc2085fd35d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RunTimeInformation_22">
+      <UniqueIdentifier>{739d308a-980d-4584-b27b-da5bfd263565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory_34">
+      <UniqueIdentifier>{0e08232a-b679-46f0-b16c-8f5827db0bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory_34\ResourceManagementPointers_1">
+      <UniqueIdentifier>{f681082b-8122-471c-91c0-1cd265aa010d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Specialization_25">
+      <UniqueIdentifier>{72ab3512-7342-41a9-9376-8ba624d775e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DerivedClasses_20\ArrayOfBasePointers_5">
+      <UniqueIdentifier>{e6064864-680a-4302-9a3b-7f4e46430be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\TemplateAliases_7">
+      <UniqueIdentifier>{1b41e624-454e-403b-a3fd-8d5e53610cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\SourceCodeOrganization_8">
+      <UniqueIdentifier>{37648387-1dec-4085-ae81-d232b5e3781d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\Exercises_9">
+      <UniqueIdentifier>{d10e5fd6-9de5-4edf-8575-b37aff643631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24">
+      <UniqueIdentifier>{f34c2932-0bc2-49cc-8fac-5cf0e24847be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\Lifting_1">
+      <UniqueIdentifier>{e117f0d9-9880-4c9a-82ba-06116997c25c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\Concepts_2">
+      <UniqueIdentifier>{36cd31e8-a539-4ef0-8352-8c6e1da54a71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\Constraints_3">
+      <UniqueIdentifier>{5c03b3ca-25e8-43c8-8543-8f306bea579b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4">
+      <UniqueIdentifier>{6cca33d2-21ed-4e12-b0f1-56e1435b1deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\Axioms_5">
+      <UniqueIdentifier>{ff27e59f-85fd-4960-acd7-75fa00cb62fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GenericProgramming_24\MultiArgumentAndValueConcepts_6">
+      <UniqueIdentifier>{728134e8-e5d8-4466-967f-2d7a1ca9b83b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Specialization_25\TemplateParametersAndArguments_1">
+      <UniqueIdentifier>{9b91c332-961c-4428-a906-9a9a2e1282f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Iterators_33">
+      <UniqueIdentifier>{699ff264-738f-46cf-9af8-754ee4e9f07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Iterators_33\WritingAWrapperIterator_0">
+      <UniqueIdentifier>{f1e07639-11a8-40ea-90c0-b9c2000544af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
+      <Filter>Source Files\STLStrings_36</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\CharacterTraits_3.cpp">
+      <Filter>Source Files\STLStrings_36</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\LibraryModules_1.cpp">
+      <Filter>Source Files\STLStrings_36</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\Literals_0.cpp">
+      <Filter>Source Files\STLStrings_36</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Constructors_3.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\MaximumSize_4.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\StringsVsCStyleStrings_2.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\basic_string_class_1.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\2_Resizing.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\3_IO_Operations.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\4_Numerical_Conversion.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\5_Iterators.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\StaticKeyword_7\2_Static_Initialization_Is_Odd.cpp">
+      <Filter>Source Files\Classes_16\StaticKeyword_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\StaticKeyword_7\Basics_1.cpp">
+      <Filter>Source Files\Classes_16\StaticKeyword_7</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\6_SubStrings.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\8_Insertion.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\10_Replacement.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\1_Fundamentals.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\9_Assignment.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ConstIsIgnoredInArguments_2.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\InlineFunctions_4.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ReturnValues_3.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ConstexprFunctions_5\ConstExprAndReferences_2.cpp">
+      <Filter>Source Files\Functions_12\ConstexprFunctions_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ConstexprFunctions_5\constexprFunctions_1.cpp">
+      <Filter>Source Files\Functions_12\ConstexprFunctions_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\5_FunctionNameInParanthesis.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\LocalVariables_8\Basics_1.cpp">
+      <Filter>Source Files\Functions_12\LocalVariables_8</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Nullptr_2_2.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\PointerArithmetic_2_1.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers_2.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\PointersAndConstant_4.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\VoidPointer_2_1.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\AllocatingDynamicArrays_3_10.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\ArrayInitialization_3_2.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\Arrays_3.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\LargeCharacterSet._3_5.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\mixingPointersWithBracketAndParanthesis_3_1.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\MultiDimArrays_3_7.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\PassingArraysToFunctions_3_8.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\PointersAndArrays_3_6.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\PointerToPointerAndArrays.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\RawStrings_3_4.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\ReturningArraysFromFunctions_3_9.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\StringLiterals_3_3.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\6_PassAnArrayWithReference.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\AvoidDelayedInitialization.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\HOWISTHISPOSSIBLE.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\SwitchStatement.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\TheIfStatement.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_1_1_LValueRef_Initialization.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_1_2_Const_LValRef_Initialization.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_1_3_LValue_ref_As_Return_Type.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_2_return_and_ref.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_0_RvalueOrLvalue.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_1_std_move.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\8_2_Creating_null_reference.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\2_ReferenceArguments.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\1_FunctionComponents.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\LargeCharacterSet_3_5.cpp">
+      <Filter>Source Files\PointersArraysReferences_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\3_Bjarnes_ArgumentPassing_Rules.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\4_PassingAnArray.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\5_List_Argument.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\5_1_OverloadResolution.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\6_variable_arguments.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\7_Default_Arguments.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Overloading_10\1_AutomaticResolution.cpp">
+      <Filter>Source Files\Functions_12\Overloading_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Overloading_10\2_BaseAndDerivedOverloading.cpp">
+      <Filter>Source Files\Functions_12\Overloading_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Overloading_10\3_ResolutionForMultipleArguments.cpp">
+      <Filter>Source Files\Functions_12\Overloading_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Overloading_10\4_Manually_Overloaded_Resolution.cpp">
+      <Filter>Source Files\Functions_12\Overloading_10</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\2_1_AssigningLiteralsToTypes.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\3_1_wchar_t.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\AutoAndDecltype_10.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Basics_1.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\char_3.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Declarations_8.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Decltype_11.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Initialization_9.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\InitializationListType_9_1.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\InitializationOfClasses_9_2.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\integers_4.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\LvaluesAndRvalues_12.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Objects_13.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\SizeConsiderations_7.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\sizeof.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\TypeAliasing.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Types_2.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\TypesInOneLook_0.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\void_6.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\IntAndHigherTypeArithmetic_5.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\MixingSignedAndUnsigned_3.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\NonIntArithmetic_TheIntegerPromotionRule_4.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\SignedType_2.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\UnsignedType_1.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\1_ArraysOfStrings.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\CStyleStrings</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\2_sorting_c_style_string.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\CStyleStrings</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\3_sorting_array_of_strings.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\CStyleStrings</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\3_predefined_macros.cpp">
+      <Filter>Source Files\Functions_12\Macros_13</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\DecoratedNames_1\1_object_calling_and_decorated_names.cpp">
+      <Filter>Source Files\Functions_12\Macros_13\DecoratedNames_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\DecoratedNames_1\2_format_of_cpp_decorated_name.cpp">
+      <Filter>Source Files\Functions_12\Macros_13\DecoratedNames_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\DecoratedNames_1\3_format_of_c_decorated_name.cpp">
+      <Filter>Source Files\Functions_12\Macros_13\DecoratedNames_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\11_pre_and_post_condition.cpp">
+      <Filter>Source Files\Functions_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\FunctionPointers_12\1_functions_are_in_memory_too.cpp">
+      <Filter>Source Files\Functions_12\FunctionPointers_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\DecoratedNames_1\4_c_decl_decorated_name.cpp">
+      <Filter>Source Files\Functions_12\Macros_13\DecoratedNames_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\FunctionPointers_12\2_no_covariance_contravariance.cpp">
+      <Filter>Source Files\Functions_12\FunctionPointers_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\FunctionPointers_12\4_recast_function_pointers.cpp">
+      <Filter>Source Files\Functions_12\FunctionPointers_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\FunctionPointers_12\3_aliasing_function_pointers.cpp">
+      <Filter>Source Files\Functions_12\FunctionPointers_12</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\FunctionPointers_12\5_parametrizing_algorithms_wth_fp.cpp">
+      <Filter>Source Files\Functions_12\FunctionPointers_12</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\Sort\0_sorting_user_defined_type.cpp">
+      <Filter>Source Files\STLAlgorithms_32\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3\1_mystery_of_memberwise_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3\2_bracketless_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3\0_distinguish_empty_and_default_in_class.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithoutConstructors_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\1_Understanding_Dynamics.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\2_When_Object_Is_Copied_Or_Moved.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\1_Why_Each_Is_Needed.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\2_Construction.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\3_Destruction.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\4_Construction_And_Hierarchy.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\5_Destruction_And_Hierarchy.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\6_Calling_Destructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\7_Removing_Destructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\8_Virtual_Destructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\4_1_Integer_Literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\1_0_Negating_An_Unsigned_Type.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_1_4_Reference_Reasignment.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithConstructors_4\1_non_trivial_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithConstructors_4\2_base_and_derived_class_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithConstructors_4\3_initialization_with_paranthesis.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithConstructors_4\4_only_use_paranthesis_with_containers.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\DefaultConstructors_5\1_definition.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\DefaultConstructors_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\DefaultConstructors_5\2_built_in_type_constructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\DefaultConstructors_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\DefaultConstructors_5\3_References_And_Consts.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\DefaultConstructors_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\DefaultConstructors_5\4_mixing_arrays_with_construction.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\DefaultConstructors_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializationWithConstructors_4\5_Initialization_with_equal_and_bracket.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializationWithConstructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\2_overload_with_initializer_list.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\Regex_2\2_MatchResult.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\Regex_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\Regex_2\1_regex.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\Regex_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\3_relation_to_explicit_constructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\4_a_tale_of_paranthesis_and_brackets.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\1_1_constructor_v_method.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\1_0_initializer_list_constructor.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7\1_member_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7\2_member_assignment_or_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7\3_base_class_initialization.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7\4_constructor_delegation.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MemberAndBaseInitialization_7</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InClassInitializers_8\1_static_v_non_static.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InClassInitializers_8</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InClassInitializers_8\2_no_paranthesis.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InClassInitializers_8</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InClassInitializers_8\3_overriding_in_class_values.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InClassInitializers_8</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\0_0_AnExample.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\0_2_stl_containers_and_copy.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\3_10_deleting_from_array.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\3_copy_or_assignment.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\3_11_ArraysAndReferences.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\9_destructors_and_arrays.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
+    </ClCompile>
+    <ClCompile Include="0_cant_overload_with_reference_or_const.cpp">
+      <Filter>Source Files\Functions_12\Overloading_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\1_0_Basics.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ArgumentPassing_9\0_1_Implicit_Conversion.cpp">
+      <Filter>Source Files\Functions_12\ArgumentPassing_9</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\3_2_1_implicit_conversion_when_initialization.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\1_Definition.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\2_why_override_copy_constructor.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\3_copy_constructorVassignment.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\4_check_for_self_assignment.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\6_the_meaning_of_copy.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\7_entangled_objects_and_shared_pointers.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\8_shared_state_with_immutable_objects.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\10_copy_on_demand.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\11_beware_of_slicing.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\5_0_beware_of_default_constructors.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\5_1_copying_class_hierarchy.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MoveConstructor_10\1_MoveConstructor.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MoveConstructor_10</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MoveConstructor_10\2_dont_assume_swapped_with_nullptr.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MoveConstructor_10</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\MoveConstructor_10\3_return_with_move.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\MoveConstructor_10</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_2_what_defualt_operations_do.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_1_when_class_default_operations_are_removed.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_3_new_operator.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\1_default_operations.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\2_explicit_default.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\3_notes_on_default_operations.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\4_1_move_constructor_destructor_are_connected.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\4_2_move_constructor_destructor_are_connected.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\4_3_move_constructor_destructor_are_connected.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\4_4_move_constructor_destructor_are_connected.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\5_deleted_functions.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\ClassDefaultOperations_11</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_0_templates_are_type_safe.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_1_type_conversion_with_templates.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_2_templates_of_different_are_independent.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_3_templates_and_static_members.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_4_overloading_with_templates.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\x_x_UseOfNesting\0_associated_nested_type.cpp">
+      <Filter>Source Files\Templates_23\x_x_UseOfNesting</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\1_why_use_templates.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\2_mathematical_view_of_templates.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\1_what_happens_when_we_define_a_template.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\2_functionVclass_templates.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\3_debugging_class_with_template.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\3_12_swapping_array_element.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_5_type_or_value.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\4_2_out_of_class_template_definition.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\4_1_out_of_class_template_definition.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DefiningTemplates_1\5_no_overloading_class_with_template.cpp">
+      <Filter>Source Files\Templates_23\DefiningTemplates_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TemplateInstantiation_2\1_what_is_instantiation.cpp">
+      <Filter>Source Files\Templates_23\TemplateInstantiation_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TemplateInstantiation_2\2_what_happens_when_instantiating_a_template.cpp">
+      <Filter>Source Files\Templates_23\TemplateInstantiation_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TypeChecking_3\1_when_and_how_type_checking_is_performed.cpp">
+      <Filter>Source Files\Templates_23\TypeChecking_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TypeChecking_3\2_how_to_pass_conditions.cpp">
+      <Filter>Source Files\Templates_23\TypeChecking_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TypeChecking_3\3_type_generation.cpp">
+      <Filter>Source Files\Templates_23\TypeChecking_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TypeChecking_3\4_check_for_pointer.cpp">
+      <Filter>Source Files\Templates_23\TypeChecking_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TypeChecking_3\5_when_template_errors_are_detected.cpp">
+      <Filter>Source Files\Templates_23\TypeChecking_3</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\9_3_move_vs_forwarding.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_3_cant_assign_lvalue_to_rvalue_ref.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\6_in_class_types.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\5_static_members.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\1_class_with_template_structure.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\2_data_members.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\3_member_functions.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\7_1_member_templates.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\7_2_default_member_templates.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\7_3_no_template_member_virtual.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\8_1_implem_detail_nested_types.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\8_2_non_detail_nested_types.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="9_1_friends_and_functions.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\9_2_1_friends_and_types.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\9_2_2_friends_and_types.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\4_1_member_type_aliases.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\4_2_aliases_for_templated_classes.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\9_2_3_befriending_a_templated_type.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\10_function_template.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\1_type_deduction.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\classMembers_4\11_class_type_is_never_deduced.cpp">
+      <Filter>Source Files\Templates_23\classMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\2_type_deduction_using_functions.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\3_2_a_note_on_overloading.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\3_1_explicit_type_declaration.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\4_argument_deduction_rules.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\9_4_a_deeper_dive_in_forwarding.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\1_templated_functions_can_be_overloaded.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\2_a_more_through_example.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\3_solving_ambiguity.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\4_1_SFINAE.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\4_2_SFINAE.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\4_3_SFINAE.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_6_compile_or_run_time.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\0_1_referring_to_base_members_inside_class.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\0_0_BaseReferenceUltimateQuestion.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\0_2_pointer_vs_no_pointer_base_access.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\0_3_repeat_with_different_arguments.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\pointer_to_array_decay.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\2_mixing_two_pointers_and_ptrdiff_t.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\3_size_t_VS_ptrdiff_t.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\4_beware_of_comparing_sizet_and_ptrdiff.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\4_out_of_class_enum.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\Basics_1.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\EnumClasses_2.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\PlainEnums_3.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\5_0_iterating_over_plain_enum.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\5_1_iterating_over_enum_classes.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\6_globalizing_enum_class_scope_cpp20.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\6_cv_qualifier.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\7_constexpr_pointer.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\1_granularity_of_a_cpp_program.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\1_what_are_namespaces.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_0_0_referring_to_namespace.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_1_0_explicit_qualification.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_2_0_using_declarations.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_2_1_overloaded_methods.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_3_0_using_directive.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_3_2_dont_confuse_with_type_aliasing.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_4_0_argument_dependent_lookup.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_4_1_function_using_different_namespaces.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFilesAndPrograms_15\Linkage_2\0_0_include.cpp">
+      <Filter>Source Files\SourceFilesAndPrograms_15\Linkage_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFilesAndPrograms_15\Linkage_2\0_1_double_inclusion.cpp">
+      <Filter>Source Files\SourceFilesAndPrograms_15\Linkage_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\0_2_inclusion_compilation_linkage.cpp">
+      <Filter>Source Files\SourceFilesAndPrograms_15\Linkage_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\2_why_we_need_modularity.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_3_1_no_using_directive_in_headers.hpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_4_2_ADL_and_classes.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_4_3_ADL_in_cpp_standard.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\2_4_4_things_can_get_ugly.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Namespaces_1\5_namespace_is_open.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\1_desk_calculator_into_modules.cpp">
+      <Filter>Source Files\Namespaces_14\ModularizationAndInterfaces_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\2_using_namespace_as_module.cpp">
+      <Filter>Source Files\Namespaces_14\ModularizationAndInterfaces_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\3_implementation.cpp">
+      <Filter>Source Files\Namespaces_14\ModularizationAndInterfaces_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\4_separating_parser_implementation_detail.cpp">
+      <Filter>Source Files\Namespaces_14\ModularizationAndInterfaces_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\from_section_3-1_convenience_and_safety.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\2_5_dont_forget_name_hiding.cpp">
+      <Filter>Source Files\Namespaces_14\Namespaces_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\1_1_namespace_aliasing.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\1_2_aliasing_and_versioning.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\2_1_namespace_composition.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\2_2_resolving_clash_in_composition.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\2_3_renaming_after_composition.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespacesAndOverloading_4\1_overloaing_and_namespace.cpp">
+      <Filter>Source Files\Namespaces_14\NamespacesAndOverloading_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespacesAndOverloading_4\2_wrapping_std_into_another_namespace.cpp">
+      <Filter>Source Files\Namespaces_14\NamespacesAndOverloading_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\0_1_lesser_known_namespaces.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\0_0_every_namespace_has_its_globals.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\Versioning_5\1_perhaps_not.cpp">
+      <Filter>Source Files\Namespaces_14\Versioning_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\OtherKindsOfNamespace_6\2_anonymous_namespace.cpp">
+      <Filter>Source Files\Namespaces_14\OtherKindsOfNamespace_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\OtherKindsOfNamespace_6\1_nested_namespaces.cpp">
+      <Filter>Source Files\Namespaces_14\OtherKindsOfNamespace_6</Filter>
+    </ClCompile>
+    <ClCompile Include="0_3_copy_and_arrays.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\CopyConstructor_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Basics_1.cpp">
+      <Filter>Source Files\Classes_16</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\MemberTypesOrInners_2.cpp">
+      <Filter>Source Files\Classes_16</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\RulesToWriteAClass.cpp">
+      <Filter>Source Files\Classes_16</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\AccessRestriction_3\CircumventingPrivateMembers_2.cpp">
+      <Filter>Source Files\Classes_16\AccessRestriction_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Constructors_4\Basics_1.cpp">
+      <Filter>Source Files\Classes_16\Constructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Constructors_4\ExplicitConstructors_2.cpp">
+      <Filter>Source Files\Classes_16\Constructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Constructors_4\InClassInitializers_3.cpp">
+      <Filter>Source Files\Classes_16\Constructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Constructors_4\MemberDefaultValues_0.cpp">
+      <Filter>Source Files\Classes_16\Constructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Mutability_5\ConstantMemberFunctions_2.cpp">
+      <Filter>Source Files\Classes_16\Mutability_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Mutability_5\MakingClassMembersImmutable_1.cpp">
+      <Filter>Source Files\Classes_16\Mutability_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Mutability_5\MutabilityThroughIndirection_4.cpp">
+      <Filter>Source Files\Classes_16\Mutability_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Mutability_5\MutableModifier_3.cpp">
+      <Filter>Source Files\Classes_16\Mutability_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\SelfReference_6\ThisPointer_1.cpp">
+      <Filter>Source Files\Classes_16\SelfReference_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\NamespaceComposition_3\0_1_more_on_composition_and_adl.cpp">
+      <Filter>Source Files\Namespaces_14\NamespaceComposition_3</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\0_0_reviewing_initializer_list.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\InitializerList_6\0_1_using_stl_iterator_facilities_with_init_list.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\1_why_overload_operators.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\2_usual_precedence_rules_remain.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\3_use_of_bracket_operator.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\4_1_list_of_operators_that_can_be_overloaded.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\4_2_list_of_operators_that_cant_be_overloaded.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\5_no_custom_operator_tokens.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\6_binary_v_unary_operators.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\7_some_operators_can_only_be_member_function.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\8_no_short_circuit_overloading.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\9_predefined_operators_and_delete.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\10_there_must_be_at_least_one_custom_type.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\11_overloading_operator_for_enumerations.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\12_1_passing_objects.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\12_2_returning_objects.cpp">
+      <Filter>Source Files\OperatorOverloading_18</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\2_the_immediate_overload_takes_precedence.cpp">
+      <Filter>Source Files\OperatorOverloading_18\OverloadingAndNameSpace_1</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\OverloadingAndSpace_1\1_operator_in_namespaces.cpp">
+      <Filter>Source Files\OperatorOverloading_18\OverloadingAndNameSpace_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\MethodPostModifiers_0\1_why_post_modifiers.cpp">
+      <Filter>Source Files\Classes_16\MethodPostModifiers_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\0_2_aliasing_templated_types.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\5_1_floatType.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\0_separating_an_string.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_2_rfind.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_3_find_first_of.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_1_1_find.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_1_2_find_from_another_point_of_view.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringView_3\1_overview_of_stl_string_view.cpp">
+      <Filter>Source Files\STLStrings_36\StringView_3</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringView_3\3_1_non_modifying_operations.cpp">
+      <Filter>Source Files\STLStrings_36\StringView_3</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringView_3\3_2_non_modifying_operations.cpp">
+      <Filter>Source Files\STLStrings_36\StringView_3</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringView_3\2_1_create_and_initialize.cpp">
+      <Filter>Source Files\STLStrings_36\StringView_3</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringView_3\2_2_seriously_no_memory_allocation.cpp">
+      <Filter>Source Files\STLStrings_36\StringView_3</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\1_use_raw_string_for_regex.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\2_regex_header_facilities.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\3_regex_class.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\5_regex_match_method.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\4_match_result_and_sub_match.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\6_regex_search_method.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\7_1_regex_replace_method.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\7_2_regex_format.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\8_1_regex_iterator_class.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\8_2_regex_token_iterator_.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\8_3_separate_string_on_space.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\8_4_separate_file_and_extension.cpp">
+      <Filter>Source Files\STLRegularExpressions_37\RegexQuickOverview_2_1</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\1_a_note_on_experimental_headers.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\2_overview_of_filesystem_classes.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_1_path_class_definitions.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_3_extracting_file_name.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_2_fundamentals_path_class.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_4_canonical_v_absolute_v_relative_path.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_5_on_comparing_two_paths.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_6_on_checking_whether_a_path_exists.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\3_7_getting_all_files_in_a_folder.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes_16\Constructors_4\0_compiler_cant_do_something_twice.cpp">
+      <Filter>Source Files\Classes_16\Constructors_4</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\1_where_to_overload_each_operator.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\2_implicit_conversions_and_operators.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\3_conversion_to_complex_type.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\4_conversion_of_operands.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\5_accessing_operators_with_rvalues.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\7_helper_functions_for_complex_type.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\6_literals_using_constexpr.cpp">
+      <Filter>Source Files\OperatorOverloading_18\ComplexClassExample_2</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\1_type_conversion_principles.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\2_why_conversion_operators.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\3_custom_type_conversion_example.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\4_type_conversion_with_cin_class.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\5_avoid_overuse_of_implicit_conversions.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\6_explicit_type_conversion_operator.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\TypeConversion_3\0_type_conversion_and_static_cast.cpp">
+      <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\0_1_implicit_conversion_to_bool.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\1_defining_friendship.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\2_making_all_member_functions_friend.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\3_making_a_template_argument_friend.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\4_1_finding_friends.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\4_2_finding_friends.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\5_general_notes_on_friendship_from_standard.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\Friends_4\6_friends_or_members_or_statics.cpp">
+      <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialOperators_19\2_function_call.cpp">
+      <Filter>Source Files\SpecialOperators_19</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Aliasing\1_aliasing_according_to_standard.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Aliasing</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_1_syntax_according_to_standard.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Aliasing</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_2_cyclic_aliasing_is_not_allowed.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Aliasing</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_3_specialization_and_template_id.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Aliasing</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Aliasing\3_increment_and_decrement_operator.cpp">
+      <Filter>Source Files\SpecialOperators_19</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\1_building_from_existing_classes.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\2_derived_classes_basics.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\4_member_functions_in_inheritance.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\1_hierarchies_must_be_acyclic.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_1_virtual_functions.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\2_1_ForRangeStatement.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\2_2_for_range_statement_from_standard.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\2_3_temporary_range_expression.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\2_4_for_range_and_non_const_iterator.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_0_1_References.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_1_0_LValueReference.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_0_RValueRef.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\7_1_Reference_To_Reference.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_4_reusing_an_rvalue_ref.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\8_1_References_And_Pointers.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\7_2_auto_and_references.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\8_3_dangling_references.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\7_3_forwarding_references_and_auto_from_standard.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\1_auto_as_template.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\AutoTypeDeduction</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_return_type_deduction_from_lambda_.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\AutoTypeDeduction</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\7_4_more_on_auto_and_intializer_list.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\7_5_example_of_where_forwarding_does_not_take_place.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\3_auto_and_cv_qualifiers.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\AutoTypeDeduction</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\3_base_must_be_declared_and_defined.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\2_access_derived_class_from_base_pointer.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\5_1_constructors.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_3_explicit_qualification.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_4_1_override_control.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_4_2_override.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_4_3_final.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_5_inline_and_virtual_functions.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\4_1_using_base_members.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\4_2_using_base_class_constructors.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\3_2_virtual_function_implemenetation.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\5_2_default_ctors_is_called_in_overloaded_ctors.cpp">
+      <Filter>Source Files\DerivedClasses_20</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\5_2_5_function_returning_rvalue.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\4_1_create_delete_directory.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="STLFileSystem_41\4_2_create_file.cpp">
+      <Filter>Source Files\STLFileSystem_41</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ClassHierarchies_1\5_return_type_relaxation.cpp">
+      <Filter>Source Files\DerivedClasses_20\ClassHierarchies_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AbstractClasses_2\1_why_abstract_classes.cpp">
+      <Filter>Source Files\DerivedClasses_20\AbstractClasses_2</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\1_private_public_protected.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\2_compiler_reorders_different_sections_of_class.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\3_protected_members.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\4_access_to_base_class.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\5_multiple_inheritance_and_access_control.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\6_1_using_declarations_and_access_control.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\AccessControl_3\6_2_using_declarations_and_aliases_in_base.cpp">
+      <Filter>Source Files\DerivedClasses_20\AccessControl_3</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\PointerToMembers_4\1_why_pointer_to_members.cpp">
+      <Filter>Source Files\DerivedClasses_20\PointerToMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\PointerToMembers_4\2_virtual_method_resolution.cpp">
+      <Filter>Source Files\DerivedClasses_20\PointerToMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\PointerToMembers_4\3_pointer_to_static_members.cpp">
+      <Filter>Source Files\DerivedClasses_20\PointerToMembers_4</Filter>
+    </ClCompile>
+    <ClCompile Include="RunTimeInformation_22\1_great_quotes.cpp">
+      <Filter>Source Files\RunTimeInformation_22</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory_34\3_vector_bool.cpp">
+      <Filter>Source Files\Memory_34</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory_34\ResourceManagementPointers_1\1_why_smart_pointers.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory_34\ResourceManagementPointers_1\2_1_unique_pointer.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory_34\ResourceManagementPointers_1\2_2_unique_ptr_interface.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\3_13_can_we_delete_from_the_middle_of_an_array.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\3_we_can_mess_with_unique_pointers.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\2_3_no_assignment_of_derived_to_base_array.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ArrayOfBasePointers_5\1_deleting_derived_class_with_base_pointer.cpp">
+      <Filter>Source Files\DerivedClasses_20\ArrayOfBasePointers_5</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\CleanupInHierarchies_5\2_dont_create_an_array_of_base.cpp">
+      <Filter>Source Files\DerivedClasses_20\ArrayOfBasePointers_5</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\ArrayOfBasePointers_5\3_array_of_base_does_not_delete_derived.cpp">
+      <Filter>Source Files\DerivedClasses_20\ArrayOfBasePointers_5</Filter>
+    </ClCompile>
+    <ClCompile Include="DerivedClasses_20\CleanupInHierarchies_5\4_a_possible_work_around.cpp">
+      <Filter>Source Files\DerivedClasses_20\ArrayOfBasePointers_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_1_reference_dedection.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_2_passing_templates_with_reference.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_3_reference_type_deduction.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_4_reference_deduction_ownership_and_copy.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_5_argument_forwarding.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_6_forwarding_saves_us_a_copy.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\5_overloading_and_derivation.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\6_overloading_and_non_deduced_types.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TemplateAliases_7\1_templated_types_can_be_aliased.cpp">
+      <Filter>Source Files\Templates_23\TemplateAliases_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\TemplateAliases_7\2_alias_and_specialization.cpp">
+      <Filter>Source Files\Templates_23\TemplateAliases_7</Filter>
+    </ClCompile>
+    <ClCompile Include="0_7_2_functions_can_be_templated_and_non_templated.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="0_7_1_cant_have_type_templated_and_non_templated.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\SourceCodeOrganization_8\1_templates_and_source_code_organization.cpp">
+      <Filter>Source Files\Templates_23\SourceCodeOrganization_8</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\SourceCodeOrganization_8\2_organization_of_source_code_for_templates.cpp">
+      <Filter>Source Files\Templates_23\SourceCodeOrganization_8</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\SourceCodeOrganization_8\3_how_msvc_stl_takes_care_of_this_problem.cpp">
+      <Filter>Source Files\Templates_23\SourceCodeOrganization_8</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\SourceCodeOrganization_8\4_1_linkage.cpp">
+      <Filter>Source Files\Templates_23\SourceCodeOrganization_8</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\SourceCodeOrganization_8\4_2_reducing_dependency_on_templated_types.cpp">
+      <Filter>Source Files\Templates_23\SourceCodeOrganization_8</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_8_no_separately_templated_virtual_functions.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\6_should_I_use_U_after_hex.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\3_a_not_so_important_point.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\Exercises_9\1.cpp">
+      <Filter>Source Files\Templates_23\Exercises_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\0_9_cant_assign_derived_to_base_in_templated_types.cpp">
+      <Filter>Source Files\Templates_23</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\4_nan_inf_and_float_types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\1_why_template_programming.cpp">
+      <Filter>Source Files\GenericProgramming_24</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\4_lifting_and_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\2_type_checking_of_templates.cpp">
+      <Filter>Source Files\GenericProgramming_24</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\3_uniform_type_handling.cpp">
+      <Filter>Source Files\GenericProgramming_24</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Lifting_1\1_what_is_lifting.cpp">
+      <Filter>Source Files\GenericProgramming_24\Lifting_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Lifting_1\2_1_lifting_sum_all.cpp">
+      <Filter>Source Files\GenericProgramming_24\Lifting_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Lifting_1\2_2_lifting_sum_all_further.cpp">
+      <Filter>Source Files\GenericProgramming_24\Lifting_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\1_why_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\2_my_point_of_view_on_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\3_1_discovering_a_concept.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\7_enums_are_not_ordered.cpp">
+      <Filter>Source Files\StructuresUnionsEnumerations_8\Enumerations_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\3_2_regular_types_are_not_necessarily_ordered.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\3_3_semantics_and_inter_operator_relations.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\1_what_is_a_constraints.cpp">
+      <Filter>Source Files\GenericProgramming_24\Constraints_3</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\2_tree_balancer_as_constraint_example.cpp">
+      <Filter>Source Files\GenericProgramming_24\Constraints_3</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4\1_a_note_on_cpp_17_and_less.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\2_why_concretize_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\3_enforcing_regularity_and_ordered_on_char.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\4_a_side_note_on_semi_regular_types.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\5_weaknesses_of_assertion_checking_approach.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Constraints_3\6_constraints_can_be_any_where.cpp">
+      <Filter>Source Files\GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Axioms_5\1_what_are_axioms.cpp">
+      <Filter>Source Files\GenericProgramming_24\Axioms_5</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Axioms_5\2_implementing_axioms.cpp">
+      <Filter>Source Files\GenericProgramming_24\Axioms_5</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\MultiArgumentAndValueConcepts_6\1_why_multi_argument_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24\MultiArgumentAndValueConcepts_6</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\4_list_of_concepts_proposed_by_the_big_guy.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\MultiArgumentAndValueConcepts_6\2_why_value_concepts.cpp">
+      <Filter>Source Files\GenericProgramming_24\MultiArgumentAndValueConcepts_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Statements_9\3_ternary_if_statement.cpp">
+      <Filter>Source Files\Statement_9</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\5_1_template_definition_checking.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\0_1_an_array_is_different_from_pointer_in_specialization.cpp">
+      <Filter>Source Files\Specialization_25</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\1_even_the_big_guy_does_not_go_into_detail.cpp">
+      <Filter>Source Files\Specialization_25</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\1_what_can_be_supplied_as_template.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_1_types_as_arguments.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_1_values_as_arguments.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_1_value_templates_are_constant.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_3_templates_can_be_reused_as_values.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericProgramming_24\Concepts_2\5_2_pick_the_proper_archetype.cpp">
+      <Filter>Source Files\GenericProgramming_24\Concepts_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\1_problem_definition.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\2_defining_type_of_iterator.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\3_defining_value_type.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\4_1_difference_type.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\4_2_difference_calculation.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\5_increment_and_decrement_operators.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\6_random_access.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\7_comparison_operator.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\8_parting_thoughts.cpp">
+      <Filter>Source Files\Iterators_33\WritingAWrapperIterator_0</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\1_mixing_ptrdiff_and_pointers.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\2_AVeryCommonPitfall.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\1_FundamentalRules.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\ConstexprFunctions_5\0_a_major_difference_between_const_and_constexpr_functions.cpp">
+      <Filter>Source Files\Functions_12\ConstexprFunctions_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\0_3_defining_nested_operators_for_non_local_types.cpp">
+      <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_4_operations_as_template.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_5_1_templates_as_arguments.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFilesAndPrograms_15\0_0_precompiled_headers.cpp">
+      <Filter>Source Files\SourceFilesAndPrograms_15</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+Binutils: A set of binary utilities including the assembler and the linker. It is available at http://www.gnu.org/software/binutils.
+
+GNU Compiler Collection (GCC): These are the compilers for C and other languages which, depending on the version of GCC, 
+include C++, Objective-C, Objective-C++, Java, Fortran, Ada, and Go. They all use a common backend which produces assembler code, 
+which is fed to the GNU assembler. It is available at http://gcc.gnu.org/.
+
+C library: A standardized application program interface (API) based on the POSIX specification, which is the main interface to the 
+operating system kernel for applications. There are several C libraries to consider, as we shall see later on in this chapter.
+
+As well as these, you will need a copy of the Linux kernel headers, which contain definitions and constants that are needed when 
+accessing the kernel directly. Right now, you need them to be able to compile the C library, but you will also need them later when 
+writing programs or compiling libraries that interact with particular Linux devices, for example, to display graphics via the Linux 
+frame buffer driver. This is not simply a question of making a copy of the header files in the include directory of your kernel 
+source code. Those headers are intended for use in the kernel only and contain definitions that will cause conflicts if used in 
+their raw state to compile regular Linux applications.
+
+Instead, we will need to generate a set of sanitized kernel headers, which is illustrated in Chapter 5, Building a Root Filesystem.

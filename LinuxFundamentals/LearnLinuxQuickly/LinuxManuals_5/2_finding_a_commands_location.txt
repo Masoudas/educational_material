@@ -1,0 +1,4 @@
+We can find the location of an executable by writing the command which. for example 'which javac' was to famous command I used to
+use to determine which version (location) of java compiler I was using.
+
+Naturally, we can use which with the internal commands of linux as well.

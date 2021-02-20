@@ -1,0 +1,30 @@
+The toolchain has to be built according to the capabilities of the target CPU, which includes:
+
+    -   CPU architecture: ARM, MIPS, x86_64, and so on
+    -   Big- or little-endian operation: Some CPUs can operate in both modes, but the machine code is different for each
+    -   Floating point support: Not all versions of embedded processors implement a hardware floating point unit, in which case 
+        the toolchain has to be configured to call a software floating point library instead
+    -   Application Binary Interface (ABI): The calling convention used for passing parameters between function calls
+
+With many architectures, the ABI is constant across the family of processors. One notable exception is ARM.
+
+GNU uses a prefix to the name of each tool in the toolchain, which identifies the various combinations that can be generated. 
+It consists of a tuple of three or four components separated by dashes, as described here:
+    
+    -   CPU: This is the CPU architecture, such as ARM, MIPS, or x86_64. If the CPU has both endian modes, they may be differentiated 
+    by adding el for little-endian or eb for big-endian. Good examples are little-endian MIPS, mipsel and big-endian ARM, armeb.
+    -   Vendor: This identifies the provider of the toolchain. Examples include buildroot, poky, or just unknown. Sometimes it is 
+    left out altogether.
+    -   Kernel: For our purposes, it is always linux.
+    -   Operating system: A name for the user space component, which might be gnu or musl. The ABI may be appended here as well, 
+        so for ARM toolchains, you may see gnueabi, gnueabihf, musleabi, or musleabihf (note that abihf is the name of particular 
+        abi for ARM.)
+
+The command 'gcc -dumpmachine' shows the tuple used when building the toolchain.
+
+Another example is for a particular gcc compiler, where writing 'mipsel-unknown-linux-gnu-gcc -dumpmachine' shows the following:
+mipsel-unknown-linux-gnu
+
+So, this is a MIPS, little endinan, from unknown vendor, for linux kernel, with gnu operating system. 
+(Me: Recall that kernel is what manages system resources, which it seems is different from the OS here.)
+

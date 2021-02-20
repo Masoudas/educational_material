@@ -1,0 +1,7 @@
+As we already know, normal users are not allowed to change the root directories, because they don't have the permission to do so.
+
+""""""""""""
+WHO IS ROOT?
+
+root is a Linux user that has permission to do anything on the system. root is also known as the superuser.
+""""""""""""

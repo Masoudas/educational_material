@@ -1,0 +1,5 @@
+The apropos command is one of the most helpful commands of Linux, and it helps us search the man pages for a particular command.
+
+For example, we can write 'apropos rename' to look for commands related to renaming files.
+
+Let's say we want to check for hardware information, we write 'apropos hardware', etc.

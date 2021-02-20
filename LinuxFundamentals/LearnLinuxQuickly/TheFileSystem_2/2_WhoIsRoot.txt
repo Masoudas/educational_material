@@ -1,0 +1,7 @@
+As we already mentioned, root has its own directory in the root folder. 
+
+WHO IS ROOT?
+
+The root user is a superuser who is allowed to do anything on the system. The root user can install software, add users, 
+manage disk partitions, etc. The home directory of the root user is /root, which is NOT to be confused with / (the root of the 
+filesystem).

@@ -1,0 +1,7 @@
+To see the innode associed with a file, we can use either of these commands:
+    -   ls -i file_name
+    -   stat file_name
+
+ls -i (at least in Debian) only shows the innode number together with the file name. 
+ME: Note that a normal file (that is not a link file) is considered a regular file. The link information shown with the stat
+command has nothing to do with how many files link to this file!

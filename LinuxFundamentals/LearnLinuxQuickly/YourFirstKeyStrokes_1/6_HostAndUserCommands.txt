@@ -1,0 +1,8 @@
+The command psswd changes the password for the current user. The command hostname prints the name of the host.
+
+The command 'uname' displays the system's kernel information. When you run the uname command without any options, then it will 
+print just the kernel name. The options -r and -v are release and version, respectively.
+
+'whoami' prints the name of the current user.
+
+The command 'su' means switch user. So we can write 'su other_user' to switch to a different user.

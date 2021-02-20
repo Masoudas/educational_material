@@ -1,0 +1,21 @@
+In computing, endianness is the order or sequence of bytes of a word of digital data in computer memory. Endianness is primarily 
+expressed as big-endian (BE) or little-endian (LE). A big-endian system stores the most significant byte of a word at the smallest 
+memory address and the least significant byte at the largest. A little-endian system, in contrast, stores the least-significant 
+byte at the smallest address. Endianness may also be used to describe the order in which the bits are transmitted over a 
+communication channel, e.g., big-endian in a communications channel transmits the most significant bits first. Bit-endianness is 
+seldom used in other contexts.
+
+(Me: So big endian is where the big fat indian guy comes first. Hence, most significant bits happen sooner in memory, i.e, in
+lower addresses.)
+
+Big endian example:
+Suppose a value is 0x01020304
+
+"Big endian"
+Address:    1       2      3       4
+value:      0x01   0x02   0x03    0x04  
+
+
+"Litte endian"
+Address:    1       2      3       4
+value:      0x04   0x03   0x02    0x01

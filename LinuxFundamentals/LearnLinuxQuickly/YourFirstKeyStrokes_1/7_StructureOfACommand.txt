@@ -1,0 +1,9 @@
+Note that any command has the following structure:
+
+name option arguments
+
+We're aware of name and option. Arguments are name of files or other information that we may pass to the command. 
+For example, in ls -la ~, ~ is the argument we pass.
+
+Note that options can be passed separately, like 'ls -l -a ~'. In particular, with ls we can pass several arguments, like
+ls -la ~ /

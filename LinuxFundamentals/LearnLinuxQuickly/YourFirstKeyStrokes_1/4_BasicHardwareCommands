@@ -1,0 +1,24 @@
+'lscpu' is used for listing the characteristics of the CPU, which is equivalent to list CPU.
+We can use 'lshw' to list the hardware on the device.
+
+The command 'uptime' is used for showing how long the system has been up, how many users are logged on, etc. It's interesting
+that in my Windows virtual Debian (at least) the up time is the time the virtual Linux has started working, not the time the
+machine has fired up since this morning!
+
+The last part of this command is the load average of the system over the past, 1, 5 and 15 mins. 
+
+WHAT IS SYSTEM LOAD?
+
+In simple terms, system load is the amount of work the CPU per­forms at a given time. So the more processes (or programs) running 
+on your computer, the higher your system load is, and fewer processes running leads to a lower system load
+
+Hence, load average is the average amount of load over the past 1, 5 and 15 min.
+
+For example, load average: 1.00, 3.00, 7.00 shows that over the past minute, there's been less work done by the CPU than the past
+5 or 15 min. In other words, the system load is decreasing. However, 5.00, 3.00, 2.00 shows an increasing workload.
+
+The command 'reboot' restarts the system. There's another more sophistaced with 'sysctl reboot' as well.
+
+The command free -h shows the amount free space in humanly readable terms.
+
+The top command actually shows a summary of all we've discussed thus far.

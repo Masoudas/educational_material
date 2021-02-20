@@ -1,0 +1,14 @@
+WHAT IS AN OPERATING SYSTEM?
+
+An operating system is a software program that manages a computer's resources such as memory and disk space. It also allows a 
+computer's hardware and software to communicate with each other. Operating systems may also include other applications: 
+text editor, file manager, graphical user interface, software manager, etc.
+
+
+WHAT IS A KERNEL?
+
+A kernel is simply the core of any operating system. It is the part of the operating system that organizes access to system 
+resources like CPU, memory, and disk.
+
+Hence, an OS consists of a kernel, GUI, Web browser, etc.
+

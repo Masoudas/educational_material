@@ -1,0 +1,28 @@
+The nano text editor contains several shortcuts at the bottom of the page, all of which work with the ctrl and alt button 
+(hence ^ is a shorthand for ctrl, and M is for alt):
+
+Ctrl+O          Saves the current file (write out).
+
+Ctrl+K          Cuts the current line and stores it in the buffer.
+
+Ctrl+U          Pastes the line stored in the buffer (uncuts it!)
+
+Ctrl+W          Searches for a string (word) in the file.
+
+Ctrl+\          Replaces a string (word) in the file with another string.
+
+Ctrl+R          Reads another file.
+
+Ctrl+G          Views help information on how to use nano.
+
+Ctrl+V          Moves to the next page.
+
+Ctrl+Y          Moves to the previous page.
+
+Ctrl+X          Exits the nano editor.
+
+Alt+A           Highlights the text
+
+Alt+6           Copies highlighted text
+
+

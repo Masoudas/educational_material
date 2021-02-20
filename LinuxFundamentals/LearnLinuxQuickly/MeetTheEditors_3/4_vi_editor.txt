@@ -1,0 +1,52 @@
+vi is apparently the editor of choice for many. It has two modes:
+1- insert mode: Allows us to insert text into the file.
+2- command mode:  Allows us to work with commands, such copy, paste, etc. A file is by default opened in the command mode.
+
+i       Inserts text before the current cursor position.
+
+I       Inserts text at the beginning of the current line.
+
+a       Appends text after the current cursor position.
+
+A       Appends text after the end of the current line.
+
+o       Creates a new line below the current line.
+
+O       Creates a new line above the current line.
+
+To switch back to the command mode, pres Esc.
+
+In the command mode, there are shortcuts for commands, and there are commands that have to be fully written. The latter is done
+by pressing :, which opens a new line at the end of the editor, where we can type in the command.
+
+yy                  Copy (yank) the current line.
+3yy                 Copy (yank) three lines (starting with the current line).
+yw                  Copy (yank) one word starting at the cursor position.
+2yw                 Copy (yank) two words starting at the cursor position.
+p                   Paste after the current cursor position.
+P                   Paste before the current cursor position.
+dd                  Cut (delete) the current line.
+4dd                 Cut (delete) four lines (starting with the current line).
+dw                  Cut (delete) one word starting at the cursor position.
+x                   Delete the character at the cursor position.
+u                   Undo the last change.
+U                   Undo all changes to the line.
+/red                Search for the word red in the file.
+:%s/bad/good        Replace the word bad with good.
+:set number         Show line numbers.
+:set nonumber       Hide line numbers.
+:7                  Go to line number 7.
+G                   Jump to the end of the file.
+gg                  Jump to the beginning of the file.
+
+Tip:
+You should know that :%s/old/new will only replace the first occurrence of the word old with new on all the lines. To replace all 
+the occurrences of the word old with new on all the lines, you should use the global option :%s/old/new/g
+
+Now, to save the file and quit vi, we have the following options:
+:w	Save the file but do not quit vi.
+:wq	Save the file and quit vi.
+ZZ	Save the file and quit vi (same as :wq, just faster!).
+:x	Save the file and quit vi (same as :wq or ZZ).
+:q	Quit vi without saving.
+:q!	Forcefully quit vi without saving.

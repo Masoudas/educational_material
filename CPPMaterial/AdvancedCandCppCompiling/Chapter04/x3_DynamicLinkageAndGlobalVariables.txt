@@ -1,0 +1,11 @@
+Here's a though:
+
+Say a dynamic library has a global variable that it uses. What happens during the linkage process to this
+global variable?
+
+As the book says, the operating system does not create one variable, to be used by all the processes in the
+machine. Therefore, we probably have one copy for each process. But I'm not sure!
+
+The point however (I guess) is that the OS creates a copy of the dynamic library for all processes. Say the
+shared lib has a function, we know where the function resides in memory, and where in the memory results will
+be written. Therefore, that piece of code can be shared by all the processes running on the machine.

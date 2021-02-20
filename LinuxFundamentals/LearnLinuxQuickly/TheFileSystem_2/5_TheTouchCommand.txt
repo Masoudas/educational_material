@@ -1,0 +1,9 @@
+The touch command has two functionalities:
+
+1- To change the last modification time of a folder (whatever that is useful for.)
+2- For creating an empty file.
+
+Consequently, 'touch folder_path' is an example of the first, and 'touch file.txt' as an example of the second.
+
+Note that touch naturally changes the access time of a file as well. To only change the modification time, we can pass the -m
+option. To change the access time only, use the 'a' option.

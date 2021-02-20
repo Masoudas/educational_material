@@ -1,0 +1,27 @@
+1-
+a) It is incorrect. ? has to come after a char or a group, there's nothing to repeat.
+b) Correct. A question mark plus any char plus beginning of word (?a fs)
+c) Incorrect. Order should be {1,4}. Otherwise it means not not a digit, which is a digit. Here's something.
+This pattern in the form [^\D]{1,4} would find {11234} four matches here and a one match. That's why we need the greedy option, which we
+have in Java.
+d) Correct. Start of string, then a negate of carrot. Like the following line:
+1
+e) Incorrect. Special chars should be escaped. 
+f) Incorrect. Form \++ is correct.
+g) see f.
+h) Correct. Match two plus signs.
+
+
+2-
+a) ^[+-]?\d+(\.\d+)? A start of string. After that, zero or one plus or minus sign, then zero or one digits, then a group of
+zero or one point and a one or more digit. So like the following line: 
+(Question: Is this a greedy match in VS code? Because 3333 is found only once.)
+3333
++123.132
++123
+
+b) \b[aeiou][a-z]{,4}\b: A word boundary (start or end), then one char from aeiou, maximum of four from a-z, word boundary.
+Hence for example: axx or ouc
+
+c) [.?!]\s+([A-Z][A-Za-z]*): 
+!   Z

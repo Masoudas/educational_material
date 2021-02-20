@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{16a594a9-c3a0-4d65-a0d4-265e377d4b7f}</ProjectGuid>
+    <RootNamespace>SedgewickAlgorithm</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="5_1_entropy_optimal_qsort.cpp" />
+    <ClCompile Include="5_2_analysis_of_optimal_entropy_sort.cpp" />
+    <ClCompile Include="Chapter_III\Intervals.cpp" />
+    <ClCompile Include="Chapter_III\MapsInCPP.cpp" />
+    <ClCompile Include="Chapter_II\1_element_wise_sort.cpp" />
+    <ClCompile Include="Chapter_II\MergeSort_II\Exercises.cpp" />
+    <ClCompile Include="Chapter_II\MergeSort_II\Recursive_Merge_Sort.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\1_why_priority_queues.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\2_priority_queue_api.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\3_pq_in_action.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\4_basic_implementations.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_4_number_of_comparisons.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_0_heap_definition.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_1_bottom_up_reheapify.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_3_insertion_remove_in_heap.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_2_top_down_reheapify.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_5_1_notes_on_implementation.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_5_2_resizable_priority_queue.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_6_1_index_priority_queue.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\5_6_2_index_priority_queue_implementation.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_0_heap_sort.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_1_creating_heap_in_place.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_2_sorting_using_in_place_heaps.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_3_heap_sort_implementation.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\6_4_improvements_to_heap_sort.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\Exercises.cpp" />
+    <ClCompile Include="Chapter_II\PriorityQueues_IV\FindingNonRepetitiveElements.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\1_What_Is_QuickSort.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\2_Partioning.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\3_1_Looped_Quick_Sort.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\3_0_Recursive_Quick_Sort.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\4_quick_sort_in_cpp.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\5_0_Improvements.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\6_avoiding_copy_when_exchanging_with_pointer.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\7_why_divide_and_conquer_is_good.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\8_why_stop_at_elements_equal_to_pivot.cpp" />
+    <ClCompile Include="Chapter_II\QuickSort_III\Exercises.cpp" />
+    <ClCompile Include="Chapter_I\All_Permutations_Of_Vector.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\FIFOQueueAsLinkedList.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\FIFOQueueInCPP.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\LinkedListCPP.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\LinkedListWithPointerToPointer.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\PushDownStack.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\StackInCPP.cpp" />
+    <ClCompile Include="Chapter_I\SectionIII\TheSelfReferencingClassParadox.cpp" />
+    <ClCompile Include="MyRandomProblems\BasicTools\Comparison\1_in_range_with_one_comparison.cpp" />
+    <ClCompile Include="MyRandomProblems\BasicTools\FloatingPoints\DistanceOperator.cpp" />
+    <ClCompile Include="MyRandomProblems\BasicTools\FloatingPoints\FloatingPoint.cpp" />
+    <ClCompile Include="MyRandomProblems\BasicTools\TheForLoop\ForLoopDependingOnPreviousValue.cpp" />
+    <ClCompile Include="MyRandomProblems\BasicTools\TwosComplement.cpp" />
+    <ClCompile Include="MyRandomProblems\IndexingProblems\NumberOfNodesInATree.cpp" />
+    <ClCompile Include="swap_nodes_in_linked_list.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyRandomProblems\IndexingProblems\CuttingFromMiddle.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,25 @@
+THE DIRECTORY SEPARATOR
+
+In Linux, the forward slash (/) is the directory separator or sometimes referred to as the path separator. In Windows, 
+it's the other way around because a backward slash (\) is used instead as a directory separator. However, be careful since the 
+leading forward slash is the root of our filesystem. For example, in /home/elliot/Desktop, only the second and third forward 
+slashes are directory separators, but the first forward slash represents the root of the filesystem.
+
+
+ABSOLUTE VERSUS RELATIVE PATHS
+
+An absolute path of a file is simply the full path of that file and, it ALWAYS begins with a leading forward slash. For example, 
+/opt/- google/chrome is an example of an absolute path.
+
+On the other hand, a relative path of a file never starts with the root directory and is always relative to the current working 
+directory. For example, if you are currently at /var, then log/boot.log is a valid relative path.
+
+Note: We may want to recall absolute, canonical and relative path at this point, where canonical paths did not contain dot or 
+dot dot, but absolute ones could.
+
+
+There are two special directories under every directory in the filesystem:
+. is the current directory
+.. is the parent directory
+
+Question: What is ../../ (or ../..)? It means the parent folder of the parent folder of the current folder.

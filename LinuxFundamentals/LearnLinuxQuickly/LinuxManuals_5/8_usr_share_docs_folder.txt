@@ -1,0 +1,5 @@
+The /usr/share/doc directory is another excellent place to look for help in Linux. This directory has very intensive documentation; 
+it doesn't just show you how to use a command; sometimes, it will even show the name and contact information of the authors who 
+developed the command. Moreover, it may also include a TODO file that contains a list of unfinished tasks/features; contributors 
+usually check the TODO files to help fix bugs and develop new features.
+

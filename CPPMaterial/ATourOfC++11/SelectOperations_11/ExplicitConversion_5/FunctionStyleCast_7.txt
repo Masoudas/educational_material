@@ -1,0 +1,5 @@
+/**
+By function style cast, we mean T(e), as opposed to T{e}. 
+
+Note that T(e) is equivalent to (T)e for built-in types, hence it must be avoided for the same reason we avoid
+C-style casts.

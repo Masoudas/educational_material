@@ -1,0 +1,5 @@
+Note that compiling a library into a static or dynamic library is not enough for reusage. We still need headers
+for the definitions.
+
+How do we acquire the headers? Well, we don't copy and paste the headers all over again. An export header takes
+care of that for us.
