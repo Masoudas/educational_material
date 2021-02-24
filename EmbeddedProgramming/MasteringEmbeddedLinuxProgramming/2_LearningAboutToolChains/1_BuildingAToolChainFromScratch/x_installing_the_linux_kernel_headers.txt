@@ -1,0 +1,24 @@
+Note that for compiler to be able to compile for linux, I need to have the header files for the linux kernel. These headers need to be included inside the
+include folder of the compiler (say compiler is installed at /usr/local/compiler, then the kernel headers are put at /usr/local/compiler/include.)
+
+In particular, I need three sets of headers from the linux kernel:
+-   asm (this could be asm-cpu_architecture)
+-   asm-generic
+-   linux
+
+So, how do I obtain these headers? Note that these headers are not dependent on the distribution of the linux kernel (Debian ...), and not on the processor
+architecture. The header files are just there to introduce the libraries, and dynamic linking takes care of that.
+
+To obtain the headers, first, I need to download a version of the kernel, which I can find at kernel.org. I put "download linux kernel".
+Once downloaded, there's the always present rules for making.
+
+I need to run the following commands:
+
+cd linux-kernel
+make mrproper
+make ARCH=arm integrator_defconfig  # arm is the architecture we're building for. Note that this is not GNU, hence, we just need to tell the architectur.
+make ARCH=arm headers_check
+make ARCH=arm INSTALL_HDR_PATH=$SOMEWHERE headers_install   # Somewhere is the location where the header files will be installed. This would then be 
+                                                            # /usr/local/compiler/include.
+
+And the easiest part of the lot is done!

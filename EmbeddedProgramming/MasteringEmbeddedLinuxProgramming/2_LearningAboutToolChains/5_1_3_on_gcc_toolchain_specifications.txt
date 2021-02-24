@@ -1,0 +1,38 @@
+This is all me, and perhaps wrong, but we shall see.
+
+First, we can use the lscpu command to see what kind of cpu we have. For example, on my machine, we get:
+
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+
+So it's not ARM or MIPS cpu, but rather an x86_64 intel cpu, which is a 64 bit modification of the x86 instruction set. Moreover, the endianness
+is little, meaning a little indian guy comes first (least significant guy.)
+
+Now, I need a gcc version that's geared toward this CPU, and this byte order. I also need a gcc that compiles for Linux kernel, and that uses the same abi
+as my CPU. Note that no information is given on the ABI, so that is irrelevant.
+
+So if we go on the gcc compilers website, I need to find a gcc version that closely matches these characteristics. In fact, if we go to the page 
+"https://gcc.gnu.org/install/specific.html", we see that the x86_64 bit version is indeed supported. So, let's just for fun, build gcc for this particular
+cpu.
+
+First, to install the prerequisites, run the following command ./contrib/download_prerequisites.
+So, the installation documentation says if I want to compile the native system, I shouldn't specify any paths, but hey that's too easy. Let's compile it
+for an ARM linux that's little endian. The closest match in the list of compilers is arm-*-eabi. Note that it's suggested to build a native compiler before
+building a cross-compiler, so we need to do that as well.
+
+First, we better put the object files that result from configuration in an objdir. Then like cmake, we run the configure from inside the build directory.
+mkdir objdir
+cd objdir
+gcc/configure
+
+To build the toolchain for this particular cpu, we need to specify the --target=target option. In our case we specify  './configure --target=arm-linux-eabi'
+Note also the the option '--prefix=dirname' specifies the installation path. We can also specify the endian of the compiler with --with-endian. See the 
+option list for possible versions on https://gcc.gnu.org/install/configure.html.
+
+Say I've installed gcc using apt-get on
+my linux machine. If I use the gcc -dumpmachine command, I get the following description:
+
+x86_64_linux_gnu
+
+This is the tuple promised in the previous section. Indeed, except for the name of the vendor of the compiler, everything else seem to match.

@@ -1,0 +1,8 @@
+There are a couple of acronyms the embedded people use, which I hope to recall from now on:
+
+RTOS: Real-Time Operating System
+SoC: System on Chip
+OEM: Original Equipment Manufacturer
+MMU: Memory Management Unit
+JTAG: Joint Test Action Group
+POSIX: Portable Operating System Interface

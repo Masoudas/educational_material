@@ -8,14 +8,14 @@ The toolchain has to be built according to the capabilities of the target CPU, w
 
 With many architectures, the ABI is constant across the family of processors. One notable exception is ARM.
 
-GNU uses a prefix to the name of each tool in the toolchain, which identifies the various combinations that can be generated. 
-It consists of a tuple of three or four components separated by dashes, as described here:
+GNU uses a prefix to the name of each tool in the toolchain, which identifies the various combinations that can be generated. (Me: Meaning GNU
+comilers I guess). It consists of a tuple of three or four components separated by dashes, as described here:
     
     -   CPU: This is the CPU architecture, such as ARM, MIPS, or x86_64. If the CPU has both endian modes, they may be differentiated 
     by adding el for little-endian or eb for big-endian. Good examples are little-endian MIPS, mipsel and big-endian ARM, armeb.
     -   Vendor: This identifies the provider of the toolchain. Examples include buildroot, poky, or just unknown. Sometimes it is 
     left out altogether.
-    -   Kernel: For our purposes, it is always linux.
+    -   Kernel: For our purposes, it is always linux. (Me: The kernel it compiles for)
     -   Operating system: A name for the user space component, which might be gnu or musl. The ABI may be appended here as well, 
         so for ARM toolchains, you may see gnueabi, gnueabihf, musleabi, or musleabihf (note that abihf is the name of particular 
         abi for ARM.)

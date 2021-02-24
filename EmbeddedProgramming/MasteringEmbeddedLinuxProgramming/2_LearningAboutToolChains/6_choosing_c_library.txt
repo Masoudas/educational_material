@@ -15,5 +15,5 @@ There are several C libraries to choose from:
         but has since been adapted to be used with full Linux. The uClibc-ng library is a fork of the original uClibc project 
         (https://uclibc.org/), which has unfortunately fallen into disrepair. Both are licensed with LGPL 2.1.    
     
-The advice is to use uClibc-ng only if you are using uClinux. If you have very limited amount of storage or RAM, then musl libc is 
-a good choice, otherwise, use glibc.
+The advice is to use uClibc-ng only if you are using uClinux (a small linux kernel for micro controllets). If you have very limited amount of storage or RAM, 
+then musl libc is a good choice, otherwise, use glibc.

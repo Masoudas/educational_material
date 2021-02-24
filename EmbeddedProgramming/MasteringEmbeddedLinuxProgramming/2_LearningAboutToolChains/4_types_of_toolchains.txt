@@ -24,3 +24,7 @@ compiler would be very hard. Instead, they are natively compiled. Creating a nat
 You would still need a cross compiler at first to create the native build environment on the target, which you then use to build 
 the packages. Then, in order to perform the native build in a reasonable amount of time, you would need a build farm of 
 well-provisioned target boards, or you may be able to use QEMU to emulate the target.
+
+(Me: So consider the beaglebean board. If there were a compiler inside the embedded linux system, that would be a native one. What we use
+called cross ng is a cross-compiler. This is because we use it in the PC Linux, and we can see that it writes for example gcc-arm-unknown-uabi
+which means that it's cross compiling for that system.)

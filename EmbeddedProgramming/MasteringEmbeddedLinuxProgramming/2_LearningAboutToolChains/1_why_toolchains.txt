@@ -1,5 +1,5 @@
 (Me: Suppose you've written a C++ program. You need the proper compiler to compile the code for the particular processor you're
-working with. Toolchains are set of processors that provide that. For example, you need a C++ compiler that compiles code for 
+working with. Toolchains are a set of processors that provide that. For example, you need a C++ compiler that compiles code for 
 embedded linux for the given processor!)
 
 The toolchain is the first element of embedded Linux and the starting point of your project. You will use it to compile all the 
