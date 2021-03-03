@@ -1,0 +1,18 @@
+Building cross-tool software essentially follows the same steps as those that have a make file. The only difference we found is that rather than having an out
+of source build folder, we need the actuall downloaded folder scripts and configurations to use. Therefore, it's better to build in place. In particular, the 
+bootstrap command does not work in an out of source folder.
+
+Here are the steps required to build the software:
+-   Run the boot strap
+-   Run the configuration with enable local (as in ./configure --enable-local)
+-   'make -j5 ' to make it with 5 cores
+-   sudo make install to install the software
+
+Once the installation is complete, we can check for installation using the command './ct-ng' to check it runs properly. We do so because the binaries are 
+placed in source.
+
+Note that we use the sudo for make, because as I saw it, we need to install man-pages and other things in /usr, not the binaries.
+
+Note: This answers a question I had early on about whether or not we can change the path to the installation folder using make. The answer is that this has 
+to be done in the configuration step. Several of the things we install for generating a cross-compiler in the 'building a tool chain from scratch' actually 
+have an option called --prefix, used for defining an installation path.
