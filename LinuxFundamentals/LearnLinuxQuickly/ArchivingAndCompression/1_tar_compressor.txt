@@ -1,0 +1,35 @@
+Using tar, we can compress and decompress files and folders. The basic syntax of the command is 'tar files_folders,' and this command compresses the files 
+and foldres. But we normally supply it with the following options:
+
+-   'c'
+    Compresses and adds to the existing archives. Does not delete the content of the original archive
+
+-   'v'
+    For being verbose.
+
+- 'z'
+    Extra compression, turns the archive into what we call a tarball. We need to add .tar.gz to the archive name by hand to indicate that this is a tarball.
+
+-  'p'
+    Keep the permission of files as is, otherwise changes the permission, which is not good if we're backing up the root for example.
+
+- 'f'   
+    Give a name to this archive.
+
+Note that we should put 'f' as the last option, otherwise the name would not be associated with the tar ball, and it throws an error. Moreover, whatever folder
+name we supply to compress, it will be the first folder name in the tarbal, even if it were '.' (so archive.tar.gz has on its root '.')
+
+Example:
+tar  -cvzpf backup.tar.gz source    (source is the first folder in the archive)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To untar a tarball, we need to change the 'c' option to 'x'.
+
+- 'x'
+    Decompress the tarball
+
+We also supply the '-C' option after giving the name of the tar to indiace where we want it decompressed. Note that the destination folder is not overriden.
+
+Example:
+tar -xvpzf  backup.tar.gz -C destination/
+
