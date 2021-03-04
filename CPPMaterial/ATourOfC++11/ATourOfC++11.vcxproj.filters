@@ -304,6 +304,12 @@
     <Filter Include="Source Files\Iterators_33\WritingAWrapperIterator_0">
       <UniqueIdentifier>{f1e07639-11a8-40ea-90c0-b9c2000544af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Specialization_25\DefaultTemplateArguments_2">
+      <UniqueIdentifier>{ed71897f-a8ab-4387-ae56-14644c48e996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Specialization_25\TemplateSpecialization_3">
+      <UniqueIdentifier>{b203684f-2f1f-43a9-96bd-044ed0b7d5a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -1880,6 +1886,51 @@
     </ClCompile>
     <ClCompile Include="SourceFilesAndPrograms_15\0_0_precompiled_headers.cpp">
       <Filter>Source Files\SourceFilesAndPrograms_15</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_5_2_templates_as_arguments.cpp">
+      <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\1_why_default_template_arguments.cpp">
+      <Filter>Source Files\Specialization_25\DefaultTemplateArguments_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\2_default_function_template_arguments.cpp">
+      <Filter>Source Files\Specialization_25\DefaultTemplateArguments_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\3_function_template_deduction_and_defaults.cpp">
+      <Filter>Source Files\Specialization_25\DefaultTemplateArguments_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\x_order_of_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\0_2_the_elluding_fact_regarding_specialization.cpp">
+      <Filter>Source Files\Specialization_25</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_1_why_need_for_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_2_reducing_code_bloat.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_interface_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\3_implementation_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_1_the_primary template.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_2_concepts_go_in_the_primary_template.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_3_primary_need_not_be_defined.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

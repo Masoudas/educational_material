@@ -807,11 +807,25 @@ struct TwentyFive_B {
 	* indeed! To keep track of i and j, we use tuple from std.
 	* 
 	* For the second part, we can simply start from the top element of the queue mentioned before. Then we pop
-	* everytime, and we count the number of times we get equal values. No, the problem mentions finding distinct
-	* (a,b,c,d). For example for (0,0), we know that there's only one distinct pair, namely (0,0,0,0). Moreover,
-	* for (i1,j2)=...(iN,jN), we need only to choose perm(N,2)*4, and then each (a,b,c,d) would be distinct. Note
-	* that we can't have situtation where (i,i)=(j,j), where i is not equal to j, otherwise, we would have had to
-	* consider such situtations
+	* everytime, and we count the number of times we get equal values. Now, the problem mentions finding distinct
+	* (a,b,c,d). So, note that (a,b) and (c,d) go over the two sides of the equality together. Hence, we have a
+	* total possiblity of 8 permutations, namely (a,b,c,d), (b,a,c,d), (a,b,d,c), (b,a,d,c), (c,d,a,b), (c,d,b,a),
+	* (d,c,a,b), (d,c,b,a).
+	* 
+	* Now, let's say we have a==b or c==d. Each of these equalities imply that we halve the number of equalities,
+	* Note that a==b==c==d implies only 1 distinct permutation, and that only happens for (0,0), (1,1) pairs, and
+	* there's only one such pair. On the other hand, each of a==c, a==d, b==d, b==c in and of themselves halve the
+	* number of equalities. In face, note that if either of these hold, then we have no choice, but having the other
+	* pair equal. Therefore, we only need to check for a==c or a == d. Consequently, we have the following:
+	* 1- If there's only one pair, then n-distinct is 1.
+	* 2- Else if a == b or c == d, then n-disctint is 4.
+	* 3- Else if a == c or a == d, then n-distinct is 4.
+	* 4- Else, n-distinct is 8.
+	* Note that in this schema, a pair should never be compared to itself. This is because permutations involving
+	* (i,j) = (i,j) are computed using the pair (j,i).
+	* 
+	* Note: It appears that we don't actually need the vector and comparison of elements, because it's possible
+	* to have only two pairs, and those are permutations of one another, but I don't have a proof for this!
 	* 
 	* I'm really glad I spent as much time as I did on this exercise. I really learned a lot!
 	*/
@@ -862,16 +876,19 @@ public:
 	static void equal_pairs(int N) {
 		auto tuple_minPQ = _generate_pq(N);
 
-		auto p_min = tuple_minPQ.top(); tuple min = tuple_minPQ.top(); tuple_minPQ.pop();
-		int mini_ctr = 0; int total_ctr = 0;
+		std::vector<tuple> equal_pairs{};
+		tuple p_min = tuple_minPQ.top(); tuple min = tuple_minPQ.top(); tuple_minPQ.pop();
+		int total_ctr = 0;
 		while (true)
 		{
 			if (std::get<2>(min) == std::get<2>(p_min)) {
-				mini_ctr++;
+				equal_pairs.push_back(min);
 			}
 			else {
-				total_ctr += mini_ctr > 1 ? mini_ctr * (mini_ctr - 1) * 2 : 1;
-				mini_ctr = 1;
+				total_ctr += count_equal_pairs(equal_pairs);
+				equal_pairs.clear();
+
+				equal_pairs.push_back(min);
 				p_min = min;
 			}
 
@@ -882,7 +899,8 @@ public:
 			}
 
 			if (tuple_minPQ.empty()) {
-				total_ctr += mini_ctr > 1 ? mini_ctr * (mini_ctr - 1) * 2 : 1;
+				total_ctr += count_equal_pairs(equal_pairs);
+				equal_pairs.clear();
 				break;
 			}
 			
@@ -893,9 +911,68 @@ public:
 		std::cout << "Total number of equal pairs is: " << total_ctr;
 	}
 
+private:
+	static int count_equal_pairs(const std::vector<tuple>& equals) {
+		if (equals.size() == 1) return 1;
+
+		int count = 0;
+		for (int i = 0; i < equals.size(); ++i) {
+			for (int j = i + 1; j < equals.size(); ++j) {
+				int a = std::get<0>(equals[i]); int b = std::get<1>(equals[i]);
+				int c = std::get<0>(equals[j]); int d = std::get<1>(equals[j]);
+
+				if (a == b || c == d) {
+					count += 4;
+				}
+				else if (a == c || a == d) {
+					count += 4;
+				}
+				else {
+					count += 8;
+				}
+			}
+		}
+
+		return count;
+	}
+
 };
 
-struct TwentySix {
+struct TwentySix_A {
+	/**
+	* First, regarding the insertion sort (exercise 2.1.25) we can use a midpoint search to find the location 
+	* where the elements are smaller, and then swap all elements from that location to the current location. 
+	* The solution manual just keeps the current compare value in memory, but I don't think that's what's intended
+	* here.
+	* 
+	* Now, coming back to the current exercise, assume that we want to swim. So keep the node from which we want to
+	* swim, and using binary search from [1, ... i/2], find the parent node where the node to swim is smaller than.
+	* By doing so, we only require to exchange the nodes in between. This solution however requires many a log
+	* calculation, so I don't think binary searching the parents is actually a great idea! Perhaps, just comparing
+	* the child value only with the parent and then exchaning is a good enough solution.
+	* 
+	* For the sink, go over the children, find the max, and compare it with the node to be sank. Continue this op
+	* until reaching a point where the child node is no longer smaller. Then, starting from that child node, push
+	* the child node one up. Finally, put the original parent node into the child.
+	*/
+	int pq[];
+
+	void swim(int i) {	// i is the index of the node to swim.
+		if (i <= 1) return;
+
+		int child = pq[i];
+		int j = i >> 1;
+		while (j > 1 && pq[j] < child) { j >>= 1; };
+
+		int k = i >> 1;
+		while (k != j) {
+			std::swap(pq[k], pq[k << 1]);
+			k = k >> 1;
+		}
+
+	}
+
+
 
 };
 
@@ -914,6 +991,208 @@ struct TwentySeven {
 	*/
 };
 
+struct TwentyNine {
+	/**
+	* I was hoping for a solution that didn't involve indexing, but that's apparently the only way.
+	* 
+	* So, the idea is this. We create an struct called Element for each inserted element. This struct would
+	* contain the location of the element in both minPQ and maxPQ, together with their value. Now, what we 
+	* do is that everytime an element is inserted, swims, or sinks, we just update the index of the corresponding
+	* pq. Then, when it's time to remove min or max element, we go to the other tree. Then, we remove that 
+	* element from the other tree, place the last element in there, and then we sink AND swim the node. That 
+	* way, both trees will be updated.
+	* 
+	* I thought of another solution that would take O(n), namely, we could just minHeap or MaxHeap the array 
+	* based on the demand of the user. This solution would use far less memory. However, the computational
+	* complexity of computing min or max is O(n).
+	* 
+	* In the following implementation, we could think of ways of dropping the Type enum to judge the type based
+	* on the supplied operation, or we can define another struct that contains both operation and Type.
+	* 
+	* Note that when removing elements, we need to first sink from position so that the child elements are
+	* Ok, then we need to swim.
+	*/
+private:
+	struct Element {
+		int val;
+		int pos_min;	// position in the min tree
+		int pos_max;	// position in the max tree.
+	};
+
+	enum class PQType {min, max};
+
+	using PQ = std::vector<Element*>;
+	using minOp = std::greater<int>;
+	using maxOp = std::less<int>;
+
+	PQ min_pq{ new Element{0,0,0} };
+	PQ max_pq{ new Element{0,0,0} };
+	minOp greater_op{};
+	maxOp less_op{};
+	int N = 0;
+
+	void swap_index(PQType t, Element* e1, Element* e2) {
+		switch (t)
+		{
+		case TwentyNine::PQType::min:
+			std::swap(e1->pos_min, e2->pos_min);
+			break;
+		case TwentyNine::PQType::max:
+			std::swap(e1->pos_max, e2->pos_max);
+			break;
+		}
+	}
+
+	template<typename Op>
+	void swim(PQType t, int k, PQ& pq, const Op& op) {
+		while (k > 1 && op(pq[k>>1]->val, pq[k]->val)) {
+			std::swap(pq[k], pq[k >> 1]);
+			swap_index(t, pq[k], pq[k >> 1]);
+			k >>= 1;
+		}
+	}
+
+	template<typename Op>
+	void sink(PQType t, int k, PQ& pq, const Op& op) {
+		while ((k << 1) <= N) {
+			int j = k << 1;
+
+			if ((j + 1) <= N && op(pq[j]->val, pq[j + 1]->val)) ++j;
+			if (!op(pq[k]->val, pq[j]->val)) break;
+			std::swap(pq[j], pq[k]);
+			swap_index(t, pq[j], pq[k]);
+			k = j;
+		}
+	}
+
+public:
+	void insert(int val) {
+		++N;
+		// The new element is placed at the last position of both PQs
+		Element* new_elem = new Element{ val, N, N };
+		min_pq.emplace_back(new_elem);
+		max_pq.emplace_back(new_elem);
+
+		swim(TwentyNine::PQType::max, N, max_pq, less_op);
+		swim(TwentyNine::PQType::min, N, min_pq, greater_op);
+	}
+
+	int max() {
+		if (N == 0) {
+			throw "min/max PQ is empty";
+		}
+
+		return max_pq[1]->val;
+	}
+
+	int min() {
+		if (N == 0) {
+			throw "min/max PQ is empty";
+		}
+
+		return min_pq[1]->val;
+	}
+
+	void remove_max() {
+		int min_pos = max_pq[1]->pos_min;	// Position of this element in the minPQ
+
+		--N;	// N is decremented here, so that there's no problem during sinking.
+		// Here, we take care of max_pq as usuall
+		std::swap(max_pq[1], max_pq[N+1]);	// Put last element on top.
+		max_pq[1]->pos_max = 1;	// Notice that the position of this element is now 1.
+		max_pq.pop_back();	// Now pop the last element.
+		sink(TwentyNine::PQType::max, 1, max_pq, less_op);
+
+		// Now, going to the minPQ, we need to replace last index with min_pos, and then swim once, and next
+		// sink so that all elements are in proper order.
+		if (min_pos == N + 1) {	// If min_pos is incidentally the last position 
+			min_pq.pop_back();	// Just pop the last element, and we're done.
+		} else {
+			std::swap(min_pq[min_pos], min_pq[N+1]);	// Put last element on the position
+			min_pq[min_pos]->pos_min = min_pos;	// Correct the position of this element.
+			min_pq.pop_back();	// Get rid of the removed element.
+			sink(TwentyNine::PQType::min, min_pos, min_pq, greater_op); // sink first
+			swim(TwentyNine::PQType::min, min_pos, min_pq, greater_op);	// then swim.
+		}
+		
+
+	}
+
+	void remove_min() {
+		int max_pos = min_pq[1]->pos_max;	// Position of this element in the maxPQ
+		
+		--N;	// N is decremented here, so that there's no problem during sinking.
+		// Here, we take care of the min_pq as usuall
+		std::swap(min_pq[1], min_pq[N+1]);	// Put last element on top.
+		min_pq[1]->pos_min = 1;	// Notice that the position of this element is now 1.
+		min_pq.pop_back();	// Now pop the last element.
+		sink(TwentyNine::PQType::min, 1, min_pq, greater_op);
+
+		// Now, going to the maxPQ, we need to replace last index with max_pos, and then swim once, and next
+		// sink so that all elements are in proper order.
+		if (max_pos == N + 1) {	// If incidentally, max_pos is the last element of this array
+			max_pq.pop_back();	// Get rid of the removed element, and we're done!
+		}
+		else {
+			std::swap(max_pq[max_pos], max_pq[N + 1]);	// Put last element on the position
+			max_pq[max_pos]->pos_max = max_pos;	// Correct the position of this element.
+			max_pq.pop_back();	// Get rid of the removed element.
+			sink(TwentyNine::PQType::max, max_pos, max_pq, less_op); // then sink
+			swim(TwentyNine::PQType::max, max_pos, max_pq, less_op);	// swim first
+		}
+		
+		
+
+	}
+
+	int size() {
+		return N;
+	}
+
+	static void test() {
+		TwentyNine minMaxPQ{};
+
+		minMaxPQ.insert(1); minMaxPQ.insert(2); minMaxPQ.insert(3); minMaxPQ.insert(4); minMaxPQ.insert(0);
+
+		print_min_max(minMaxPQ);
+		
+		std::cout << "\nAfter removing max\n";
+		minMaxPQ.remove_max();
+		print_min_max(minMaxPQ);
+
+		std::cout << "\nAfter removing min\n";
+		minMaxPQ.remove_min();
+		print_min_max(minMaxPQ);
+
+		std::cout << "\nAfter removing max\n";
+		minMaxPQ.remove_max();
+		print_min_max(minMaxPQ);
+
+		std::cout << "\nAfter removing max\n";
+		minMaxPQ.remove_max();
+		print_min_max(minMaxPQ);
+
+		std::cout << "\nAfter removing max\n";
+		minMaxPQ.remove_max();
+		print_min_max(minMaxPQ);
+
+		minMaxPQ.insert(1);
+		std::cout << "\nAfter reinserting 1\n";
+		print_min_max(minMaxPQ);
+
+	}
+
+private:
+	static void print_min_max(TwentyNine& minMaxPQ) {
+		if (!minMaxPQ.size()) {
+			std::cout << "Size is now zero\n";
+			return;
+		}
+		std::cout << "current min and max are (" << minMaxPQ.min() << "," << minMaxPQ.max() << ")\n";
+	}
+
+};
+
 int main() {
-	TwentyFive_B::equal_pairs(2);
+	TwentyNine::test();
 }

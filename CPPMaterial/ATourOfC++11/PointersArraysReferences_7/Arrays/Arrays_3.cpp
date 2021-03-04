@@ -30,7 +30,7 @@ void allocate_static_or_dynamic(){
  * Bjarne says arrays should not be passed as function parameters, because that is the source of
  * many problems. This is because an array is converted to its pointer when being passed.
  * 
- * Arrays usually should not be used directly, but rather be capsualted.
+ * Arrays usually should not be used directly, but rather be encapsualted.
  * 
  * Arrays allocated on the free store should be deleted, only once, and only
  * when they go out of scope. That’s most  easily  andmost  reliably  done  by  having  the  lifetime  

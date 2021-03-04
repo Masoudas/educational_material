@@ -10,10 +10,10 @@
 * latest version, multiple importers for important frameworks such as TensorFlow and Caffe have been added.
 */
 
-#include <opencv2/core.hpp>
+//#include <opencv2/core.hpp>
 
-using namespace cv;
+//using namespace cv;
 
-int main() {
-	cv::abs(5);
-}
+//int main() {
+//	cv::abs(5);
+//}

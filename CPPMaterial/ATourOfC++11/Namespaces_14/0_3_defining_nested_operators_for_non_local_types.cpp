@@ -29,7 +29,7 @@ struct S {
 	//friend std::ostream& operator<<(std::ostream& o, const my_tuple&);
 	void using_stream_operator(S& o1, S& o2) {
 		// std::cout << m;
-		o1 + o1;
+		// o1 + o1;
 	}
 };
 
