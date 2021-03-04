@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+WHAT IS A GROUP?
+
+A group is a collection of users who share the same role or purpose.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+All groups have their information stored in the file /etc/group. And just like with the /etc/passwd file, every line in /etc/group corresponds to exactly one group, 
+and each line consists of 4 fields. For example, one of the most famous groups in Linux is the sudo group:
+
+1       2  3    4
+sudo:x:27:masoud
+masoud:x:1000:
+
+    1           This field stores the group name.
+    2           This field usually has an X in it, which means the group password is encrypted and stored in the file /etc/gshadow.
+    3           This field stores the GID (Group ID) number.
+    4           This field stores the usernames of the group members.

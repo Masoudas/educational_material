@@ -1,0 +1,3 @@
+We can remove a user simply using the command 'userdel user_name'.  Such a delete does not remove the home directory of the user, which is a good thing!
+
+To remove the home directory of the deleted user, we need to make the deletion recursive, using -r.

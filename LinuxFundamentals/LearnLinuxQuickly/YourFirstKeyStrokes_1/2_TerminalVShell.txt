@@ -16,3 +16,5 @@ You should also know that command options are either preceded by a single hyphen
 hyphen if you are using the abbreviated name of the command option. On the other hand, if you are using the full name of the 
 command option, then you need to use a double hyphen.
 
+The complete list of shells on the system can be found on /etc/shells, which is a file containing the name of all the shells on the linux distro.
+

@@ -1,0 +1,23 @@
+Every user must belong to a primary group, which is used for login. They can also belong to a secondary (or supplementary) group as well. 
+
+By default, whenever a new user is created, a group is also created with the same name as the user, and this group becomes the primary group of the new user.
+This is the reason why for example if I created the first user on this computer as masoud, I'd see in /etc/group:
+
+1            2   3       4
+masoud:x:1000:masoud
+
+This suggests that a user with encrypted passwd was made, with default gid of 1000, who belongs to the same group named masoud, which is used for log in.
+
+To get all the ids of  a user, just punch in id. A sample output is shown below for a user named masoud:
+
+uid=1000(masoud) gid=1000(masoud) groups=1000(masoud),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),131(lxd),132(sambashare),
+888(developers)
+
+It's interesting to note that:
+    -   gid: indicates the PRIMARY group in this context, not the secondary group.
+    -   uid=gid : This implies that this id is primary group, because it's the same as the user id.
+    -   groups: This field shows the secondary groups this user belong to.
+
+Note that the above discussion does not imply that when building a user, it has to be built with the same primary group name as its name. Indeed, we can
+create another group called 'child' and set its primary group to masoud as follows:
+useradd -m child --gid masoud
