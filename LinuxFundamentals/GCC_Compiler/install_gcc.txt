@@ -1,0 +1,7 @@
+To install gcc and g++ and the associated C libraries, it's been recommended to install the package called 'build-essential' which contains:
+	-	GCC
+	-	G++
+	-	make	
+	-	A whole bunch of c and c++ libraries
+
+The command 'gcc -dumpmachine' will tell us the cpu architecture the compiler is designed for,

@@ -1,0 +1,14 @@
+As we already mentioned, usr is normally where new software binary or libraries are installed. The opt folder is apparently rarely 
+used these days for this purpose.
+
+However, an important distinction should be made. Often, we install software using apt-get or such. However, sometimes, we compile
+software from the source.
+
+    - If software is installed from apt-get or such sources directly, it will go to the usr/bin or usr/lib folders.
+    - On the other hand, software compiled from software is installed in usr/local/bin or usr/local/lib.
+
+Note that the latter, is a normal behavior of software packages being compiled. Often, however, upon configuration there's an option
+called '--prefix', which allow us to set the installation path. There's also usually another option called '--enable-local' that 
+allow us to install software in the folder of download. In any case, the point is that it's preferable to install software not in
+the 'usr' folder in general, unless we're certain about what we're doing. If so, then usr/local/bin is the place to install for 
+compiled from source software. 
