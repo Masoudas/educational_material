@@ -1,0 +1,17 @@
+A cronjob is set using crontab. It can be set by the superuser or other users.
+
+The command 'crontab -e' opens the file to set such jobs. On the top we notice
+
+m                h                d                   m           dow                                                        command
+0 to 59     0 to 23         1-31            1-12            0 (sunday) to 6 (saturday)                      command-name
+
+Examples: 
+Every two hours, list a folder:
+
+*               2                   *                   *               *                   ls
+
+Every Tuesday at 8 o'clock, get a backup of the entire system:
+*               8                   *                   *               2                           tar -cvzpf                      /           
+
+Every minute, of every hour, of everyday, of every month, get a backup
+*               8                   *                   *               2                           tar -cvzpf                      /           
