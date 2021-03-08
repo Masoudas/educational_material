@@ -1,0 +1,27 @@
+Create a tasks.json file to tell VS Code how to build (compile) the program. This task will invoke the g++ compiler 
+to create an executable file from the source code.
+
+????? Add -L and -I, and std=
+????? The build folder for not getting messy.
+
+An example of such a file is given below:
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Defining link and include paths is easy in Linux:
+
+    - To define an include a path, just add -I paths. For example:
+     'gcc -g main.cpp -o main  -I /usr/include /usr/local/include
+
+    - To define search path for linker (where it would search for static or dynamic libraries), use the '-L' option.
+      Usage option would be like that of the above.
+
+As a reminder, the link libraries are put in the /lib folder. Whereas these have '.lib' in Windows, there's no
+particular format associated with them in Linux. For example, openCV dynamic libraries are like 
+libopencv-world.so.4.5.2.
+
+

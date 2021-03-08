@@ -1,0 +1,15 @@
+There are three build files associated with a project that essentiall determine what's going to happen:
+
+    -   c_cpp_properties.json
+        This file holds the fundamental settings of the C++ compiler. We can generate this file by finding in VS 
+        commands menu (Shift+Ctrl+p) then C/C++ configuration edit. Simply put, this file contains compiler path 
+        and IntelliSense settings.
+
+    -   tasks.json
+        This file defines a basic task for VS Code. In other words, it says for example "start debugging from this
+        particular file's main function, the put the generated binary in that folder, etc. We can also see the field
+        args, which contain the arguments passed to g++. In essence, compiler build settings information is there.
+
+    -   launch.json
+        This is file is generated for every project in any language I've seen so far. It contains the debug 
+        information. Mostly, we don't need to touch this one.
