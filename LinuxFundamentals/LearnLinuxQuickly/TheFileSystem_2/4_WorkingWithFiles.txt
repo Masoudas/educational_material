@@ -1,3 +1,6 @@
+Recall there's no file extension in Linux. Hence, file.txt is just the same as file in Linux, except that .txt is there for us to 
+recognize the format of the file.
+
 The commands cat and nano can be used to show the content of a file, so will vim, emacs, etc. These will be discussed in the next
 chapter.
 

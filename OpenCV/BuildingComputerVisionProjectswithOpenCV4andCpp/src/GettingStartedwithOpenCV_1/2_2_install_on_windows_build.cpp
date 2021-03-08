@@ -1,6 +1,6 @@
 /**
 * At this point, it's time to build the actual object files, and dlls and libs. Before we proceed, we 
-* should note three things as a reminder:
+* should note three things as a reminder that are generated after the built process concludes:
 *	1-	There's an include path generated after built, which contains the header files
 *	2-	There's a lib folder, which the MSVC linker uses to link against.
 *	3-	Then there's the dll files, which are in the lib folder of installed opencv, which are used at
