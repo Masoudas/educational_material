@@ -1,0 +1,2 @@
+While it's true that qemu is a system compiler, still, we need to build compilers for it. Now, building compilers for qemu is rather
+easy, and it requires the following steps:
