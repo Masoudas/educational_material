@@ -23,7 +23,7 @@ public:
 	complex(const complex<X>&) {}; // conversion from complex<X> to complex<T>
 	
 	template<typename X>
-	complex<T>& operator=(const complex<X>& x) { return complex<T>{x} };
+	complex<T>& operator=(const complex<X>& x) { return complex<T>{x}; };
 };
 
 template<>

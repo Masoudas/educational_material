@@ -325,6 +325,7 @@
     <ClCompile Include="GenericProgramming_24\MakingConceptsConcreteBeforeCpp20_4\1_a_note_on_cpp_17_and_less.cpp" />
     <ClCompile Include="GenericProgramming_24\MultiArgumentAndValueConcepts_6\1_why_multi_argument_concepts.cpp" />
     <ClCompile Include="GenericProgramming_24\MultiArgumentAndValueConcepts_6\2_why_value_concepts.cpp" />
+    <ClCompile Include="IOStream_38\0_1_noskipws_for_not_skipping_white_spaces.cpp" />
     <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\1_problem_definition.cpp" />
     <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\2_defining_type_of_iterator.cpp" />
     <ClCompile Include="Iterators_33\WritingAWrapperIterator_0\3_defining_value_type.cpp" />
@@ -522,6 +523,7 @@
     <ClCompile Include="STLFileSystem_41\3_7_getting_all_files_in_a_folder.cpp" />
     <ClCompile Include="STLFileSystem_41\4_1_create_delete_directory.cpp" />
     <ClCompile Include="STLFileSystem_41\4_2_create_file.cpp" />
+    <ClCompile Include="STLIterators_33\0_1_1_even_more_beautiful_way_of_getting_input_stream.cpp" />
     <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\1_use_raw_string_for_regex.cpp" />
     <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\2_regex_header_facilities.cpp" />
     <ClCompile Include="STLRegularExpressions_37\RegexQuickOverview_2_1\3_regex_class.cpp" />

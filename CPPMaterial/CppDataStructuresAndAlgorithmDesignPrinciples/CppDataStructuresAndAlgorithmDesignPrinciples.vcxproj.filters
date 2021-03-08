@@ -369,5 +369,8 @@
     <ClCompile Include="DivideAndConquer\stl_tools_for_divide_and_conquer.cpp">
       <Filter>Source Files\DivideAndConquer</Filter>
     </ClCompile>
+    <ClCompile Include="DivideAndConquer\x_x_finding_prime_numbers_using_map_reduce.cpp">
+      <Filter>Source Files\DivideAndConquer</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

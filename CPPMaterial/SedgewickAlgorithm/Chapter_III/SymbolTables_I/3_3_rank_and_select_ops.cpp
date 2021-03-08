@@ -1,6 +1,6 @@
 /**
 * The 'rank' operation in STs determine how many elements are below a particular key (me: essentially the 
-* number of keys less than the given key with the given comparison method).
+* number of keys less than equal the given key with the given comparison method).
 * 
 * The select operation selects a key with the given rank.
 * 

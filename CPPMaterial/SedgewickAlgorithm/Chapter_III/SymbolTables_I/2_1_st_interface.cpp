@@ -7,12 +7,10 @@
 * of the key-value pair, key does. However, when the value is null, it is logical to assume that no information
 * is provided for this key, hence the key is not needed, and it should be eliminated (like the word 
 * 'shastashobbaghzah' has null definition in the Farsi dictionary, hence it must be eliminated.) 
-* In the C++ case, however, we can't supply null, unless we're dealing with pointer to objects. Even in that 
-* case, the only problem (for example in an unordered_map) is that we can't compare values if two keys have
-* the same hash value. Consequently, nullpointer is allowed, as long as it does not cause any problems (does
-* not use the compare method on values). The second reason which is more important is that the get method in
-* a Java like language returns nullptr if there's no associated object, which however is not the case in C++
-* (The bracket method returns an empty constructed object for such cases)
+* In the C++ case, however, we can't supply null for objects, unless we're dealing with pointer to objects. 
+* Hence essentially, this does not happen in C++ by default! The second reason which is more important is that 
+* the 'get' method in a Java like language returns nullptr if there's no associated object, which however is 
+* not the case in C++ (The bracket method returns an empty constructed object for such cases)
 */
 
 // We shall never forget that a virtual class has virtual destructor. Thus it has virtual copy and move 

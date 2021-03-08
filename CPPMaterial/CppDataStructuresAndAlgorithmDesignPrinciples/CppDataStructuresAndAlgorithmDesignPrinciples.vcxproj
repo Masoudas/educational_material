@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\boost-1.71.0\include\boost-1_71\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,6 +154,7 @@
     <ClCompile Include="DivideAndConquer\impl_2_of_nth_element.cpp" />
     <ClCompile Include="DivideAndConquer\partial_sorting_activity.cpp" />
     <ClCompile Include="DivideAndConquer\stl_tools_for_divide_and_conquer.cpp" />
+    <ClCompile Include="DivideAndConquer\x_x_finding_prime_numbers_using_map_reduce.cpp" />
     <ClCompile Include="DivideAndConquer\x_x_matrix_multiplication_with_divide_and_conquer.cpp" />
     <ClCompile Include="impl_1_of_nth_element.cpp" />
     <ClCompile Include="nth_element_of_container.cpp" />
