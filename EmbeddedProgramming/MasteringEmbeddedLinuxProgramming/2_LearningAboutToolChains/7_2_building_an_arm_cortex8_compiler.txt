@@ -45,12 +45,16 @@ It appears that a general build is going to be easy, so we can follow these step
 - Fine-tuning the compiler:
     We can further fine-tune the compiler at this point, using an interactive command-line window. This window is essentially the same as that of configuring
     a linux kernel. We can execute the window by writing './ct-ng menuconfig' and it opens up the window for us. The book recommends changing two settings:
-    -    
+    - In Paths and misc options > Render the toolchain read-only : Untick this option
         This would allow the compiler (probably permission) not be read-only, allowing us to install additional libraries later on.
-        ???????????
-    
-
-
+    - In Target options > Floating point (Hardware FPU):
+        Here, choose hardware fpu, which is apparently faster to arm cpus
+        
+- Building the compiler:
+    At this point, we need to sit back and let the toolchain do its thing. It usually takes something close to half an hour to build 
+    the compiler. Any errors that may occur are logged in log.out file that can be analyzed and remedied.
 
 It's very interesting to follow the build steps of the tool. We can see that it first downloads the libraries required for gcc (such as GMP, zlib, etc.)
 Then, it first install binutils, then gcc of stage 1 and so on and so forth. So essentially, it does all the steps we require to do manually.
+
+Once the toolchain is installed, we can find the toolchain in ~/xtools.

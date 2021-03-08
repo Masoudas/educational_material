@@ -1,0 +1,13 @@
+gzip and uz according to linux documentation are the same as 'tar -xzf file', and are provided in some linux distros. It's however interesting to me that some
+packages that I've downloaded that (I think have) .2gz can't be extracted with the tar command.
+
+gunzip  takes  a  list of files on its command line and replaces each file whose name ends with .gz, -gz, .z, -z, or _z (ignoring case) and which begins with 
+the correct magic number with an uncompressed file without the original extension.  gunzip also recognizes the special extensions .tgz and .taz as shorthands 
+for .tar.gz and .tar.Z respectively.  When compressing, gzip uses the .tgz extension if necessary instead of truncating a file with a .tar extension.
+
+Example usage are:
+gzip -c file1  > foo.gz         # It appears we cannot add more than one file here!
+gzip -c file2 >> foo.gz         # Double > means add to existing, otherwuse using only one > completely overrides the archive.
+
+Then for unzip:
+gunzip -c foo
