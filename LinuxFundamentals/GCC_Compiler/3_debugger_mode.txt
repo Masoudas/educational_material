@@ -1,0 +1,5 @@
+As already mentioned, the build-essential package installs the gdb package, which is used for debuggin C++ code with
+gcc. Now, to compile in the debugger mode, all we need to do is to add the -g flag:
+
+Example:
+    gcc -g -Wall -Werror main.cpp -o binary -std=c++2a

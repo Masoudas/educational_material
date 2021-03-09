@@ -1,0 +1,9 @@
+To install gcc and g++ and the associated C libraries, it's been recommended to install the package called 
+'build-essential' which contains:
+	-	GCC
+	-	G++
+	-	make	
+	-	A whole bunch of c and c++ libraries
+	-	gdb: gdb is the debugger for the linux environment. For example, VS code uses it in the debugger mode.
+
+The command 'gcc -dumpmachine' will tell us the cpu architecture the compiler is designed for,

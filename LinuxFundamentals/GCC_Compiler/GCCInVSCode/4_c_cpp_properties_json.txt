@@ -1,0 +1,34 @@
+If you want more control over the C/C++ extension, you can create a c_cpp_properties.json file, which will allow you 
+to change settings such as the path to the compiler, include paths, C++ standard (default is C++17), and more.
+
+Note: At this point, it does appear that specifying the version of std forces the compiler to use the version we 
+asked in the debugger mode. However, when I checked, it does appear that the debug mode does not use the 'std='
+option when running the debug session. I think it would be a lot safer to set the std flag in the task file's 
+arguments (discussed next.)
+
+You can view the C/C++ configuration UI by running the command C/C++: Edit Configurations (UI) from the Command 
+Palette.
+
+An example of such a file is given below. Note that we need to use the /** after the include path to ensure that the
+included path is traced recursively.
+
+{
+    "configurations": [
+        {
+            "name": "Linux",    // Current OS
+            "includePath": [
+                "${workspaceFolder}/**",        // Mind the ** please!
+                "/usr/local/include/opencv4/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",           // C library to be used.
+            "cppStandard": "gnu++14",       // CPP library to be used.
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
+
+

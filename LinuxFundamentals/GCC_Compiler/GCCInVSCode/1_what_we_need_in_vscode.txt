@@ -1,0 +1,14 @@
+Essentially, VS code provides an editor which then uses GCC to compile C++ codes. Interestingly enough, what VS Code
+uses is not gcc, but rather g++. If g++ is installed in the proper /usr/bin, then it will be easily detected by VS
+and we can build or debug with it.
+
+Aside from that however, there are several questions we need to ask ourselves:
+    - How does VS find std?
+    - Where does it build the object files or the final binary? And how can we change the path? (Unlike Windows VS,
+      not everything is cut and dry, and we need to define paths explicitly.) 
+    - How can we change the include and linker paths, to find possible additional C++ libraries?
+    - How can we debug, as oppose to build?
+    - How can we change the standard version and compilation flags?
+
+Once again, we stress that g++ is what is must be used to compile c++ programs, and not gcc. Experimentally, I found
+out with gcc, the std library can't be found for example.
