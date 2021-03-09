@@ -23,6 +23,6 @@ void capturing_scope_parameters() {
 	lambda();
 }
 
-int main() {
-	capturing_scope_parameters();
-}
+//int main() {
+//	capturing_scope_parameters();
+//}

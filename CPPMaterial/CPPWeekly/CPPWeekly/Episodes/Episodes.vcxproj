@@ -117,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +141,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\1_paranthesis_initialization_of_classes.cpp" />
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\2_why_initializer_list_takes_precedence.cpp" />
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\3_the_vexing_parsing_problem.cpp" />
     <ClCompile Include="..\..\src\Ep073_std_string_view\1_strings_are_mutable_in_cpp.cpp" />
     <ClCompile Include="..\..\src\Ep073_std_string_view\2_string_view_is_immutable.cpp" />
     <ClCompile Include="..\..\src\Ep104_ConstAndConstexpr\1_use_static_methods.cpp" />
@@ -204,6 +208,9 @@
     <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\3_local_class_has_no_type.cpp" />
     <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\4_a_private_nested_class_has_no_type.cpp" />
     <ClCompile Include="..\..\src\Ep249_TypesThatShallNotBeNamed\5_hiding_implementation_detail.cpp" />
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\1_substring_construction.cpp" />
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\2_ambiguous_string_ctors_cpp17.cpp" />
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\3_resolving_ambiguity_in_cpp20.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
