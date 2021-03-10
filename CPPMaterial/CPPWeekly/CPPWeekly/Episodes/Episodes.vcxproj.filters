@@ -55,6 +55,12 @@
     <Filter Include="Source Files\Ep157_NeverOverloadOperator&amp;&amp;or||">
       <UniqueIdentifier>{c301fcd0-99eb-4d45-9aae-b9b6937b0401}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Ep260_CPPsMostVexingParsingProblem">
+      <UniqueIdentifier>{e9ad4d82-ae8e-45e6-bd0e-f0254e58e90f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ep262_StringsConfusingConstructors">
+      <UniqueIdentifier>{5a92129d-fc14-4474-8a2f-18647ee6a01e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_0_builtin_types_and_destruction.cpp">
@@ -248,6 +254,24 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Ep157_NeverOverloadOperator&amp;&amp;or\1_NoShortCircuitingTakesPlace.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\1_paranthesis_initialization_of_classes.cpp">
+      <Filter>Source Files\Ep260_CPPsMostVexingParsingProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\1_substring_construction.cpp">
+      <Filter>Source Files\Ep262_StringsConfusingConstructors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\2_why_initializer_list_takes_precedence.cpp">
+      <Filter>Source Files\Ep260_CPPsMostVexingParsingProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\3_the_vexing_parsing_problem.cpp">
+      <Filter>Source Files\Ep260_CPPsMostVexingParsingProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\2_ambiguous_string_ctors_cpp17.cpp">
+      <Filter>Source Files\Ep262_StringsConfusingConstructors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\3_resolving_ambiguity_in_cpp20.cpp">
+      <Filter>Source Files\Ep262_StringsConfusingConstructors</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

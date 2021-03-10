@@ -18,6 +18,6 @@ void const_mutable_lambda() {
 
 	// lambda(); Error!
 
-	auto lambda = [i = 0, &s, s1]() mutable { return i++; }; // Fine!
+	auto lambda1 = [i = 0, &s, s1]() mutable { return i++; }; // Fine!
 
 }
