@@ -1,0 +1,2 @@
+The rules for creating new users are defined in '/etc/default/useradd.' By changing this file, we can change the 
+default values associated with a user once we build a new user. For example, we can set the default shell, or etc.

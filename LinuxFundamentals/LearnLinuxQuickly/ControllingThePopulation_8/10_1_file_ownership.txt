@@ -1,0 +1,9 @@
+Every file in Linux is owned by a specific user and a specific group. We can demonstrate this by long listing a 
+folder.
+                (1)      (2)
+-rw-r--r-- 1 masoudas masoudas 3834 mars  10 09:51 .bashrc
+
+    (1): user id
+    (2): group id
+
+A file has a group id, because it must have been made by a particular user, which has a primary group.

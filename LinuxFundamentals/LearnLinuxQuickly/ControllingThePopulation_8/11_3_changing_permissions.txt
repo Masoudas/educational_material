@@ -1,0 +1,20 @@
+To change the permissions of a file, we can use the chmod command.
+
+$ chmod o+w filename # Change the write permission of others to allow write.
+
+Using the help option, we can see that we have the followng modes. Note that this is written in regex, meaning
+zero or more of ugoa, then one or more of -+= etc. But then there's a | meaning or use -+= with 0 to 7.
+Note that based on this, we can't say for example 'ug-wgx'.
+
+%%%%%%%%%%%%%%%%
+'[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'  
+    # Note that a means all or everyone. 
+    # = is used to explictly state the permissions
+
+
+%%%%%%%%%%%%%%%%
+
+Examples:
+$ chmod og+x filename
+$ chmod g=rwx filename  # Allow read, write and execute to the group.
+$ chmod a= filename     # Gives zero permission

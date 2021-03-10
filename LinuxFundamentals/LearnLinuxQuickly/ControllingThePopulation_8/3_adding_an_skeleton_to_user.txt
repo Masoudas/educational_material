@@ -1,2 +1,3 @@
-We should notice that once we create the new user, there are no files and folders inside it's home folder. If, however, we add content to the folder /etc/skel,
-then that content would be copied in the home folder when we create the new user inside the home folder.
+We should note that once we create the new user, there are no files and folders inside it's home folder. If, however, 
+we add content to the folder /etc/skel, then that content would be copied in the home folder when we create the new 
+user inside the home folder.

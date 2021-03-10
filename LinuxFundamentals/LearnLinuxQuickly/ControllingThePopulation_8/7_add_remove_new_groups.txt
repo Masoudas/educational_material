@@ -1,0 +1,16 @@
+We can add new group (names) using 'groupadd name'. We can also supply a GID to this group using the option '--gid'. The new groups would be visible 
+inside /etc/group. Don't forget that only the super user is allowed to do so.
+
+Example:
+$ groupadd group_name --gid 888
+
+
+Note: There's also a addgroup command, same as there's one for useradd (adduser.)
+It's been noted over the internet that groupadd and useradd are more cross-linux compatible, but the other counter
+parts are more userfriendly. In some casses, addgroup and adduser are just wrappers.
+
+To remove groups, we need only to use the groupdel command:
+$ groupdel group_name
+
+Note that primary groups cannot be deleted with this command. Hence, if a group is also a primary group, it can't be
+deleted here.

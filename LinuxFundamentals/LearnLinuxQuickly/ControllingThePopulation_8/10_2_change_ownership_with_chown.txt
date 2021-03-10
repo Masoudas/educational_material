@@ -1,0 +1,11 @@
+We can change the owner of a file using the 'chown' command. Notice that only the root can change the ownership.
+
+$ sudo chown user:group file_name
+
+We can change the user owner without changing the group owner by dropping the group name.
+
+$ sudo chown user file_name
+
+To change only the group owner of a file, we can use chgrp as the following example shows:
+
+$ sudo chgrp group filename

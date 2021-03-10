@@ -1,0 +1,21 @@
+We can view the permissions of a file by long listing the file. It will be the first field in the long list:
+
+1 2 3 4 5 6 7 8 9 10
+- r w x r w x r - x
+
+    (1) is the type of the file (d for directory, l for symbolic link and - for normal file)
+    (2) user can read
+    (3) user can write
+    (4) user can execute
+    (5) group ...
+    (6) group ...
+    (7) group ...
+    (8) others ...
+    (9) others can't write
+    (10) others can't execute.
+
+Note from me: The superuser supercedes all the permissions. It can read and write to, and execute any file on the 
+system.
+
+
+
