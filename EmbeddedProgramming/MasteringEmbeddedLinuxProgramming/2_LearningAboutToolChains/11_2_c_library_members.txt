@@ -1,0 +1,26 @@
+The C library is not a single library file. It is composed of four main parts that together implement the 
+POSIX API:
+
+-   libc 
+    The main C library that contains the well-known POSIX functions such as printf, open, close, read, write, 
+    and so on.
+
+-   libm
+    Contains maths functions such as cos, exp, and log.
+
+-   libpthread 
+    Contains all the POSIX thread functions with names beginning with pthread_
+
+-   librt 
+    Has the real-time extensions to POSIX, including shared memory and asynchronous I/O
+
+
+Note: These libraries appear to be in the sysroot as dlls.
+
+The first one, libc, is always linked in but the others have to be explicitly linked with the -l option. The 
+parameter to -l is the library name with lib stripped off. For example, a program that calculates a sine function by 
+calling sin() would be linked with libm using -lm. (Me: recall that include path is done using -I)
+
+"""
+arm-cortex_a8-linux-gnueabihf-gcc myprog.c -o myprog -lm
+"""

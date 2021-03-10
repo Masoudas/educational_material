@@ -1,0 +1,133 @@
+It's interesting to note that we can change many of the properties of the compiler. For example, there's a range
+of CPUs associated with a gcc compiler that can be listed using the option "--target-help".
+
+Let's investiage this for a second. The first section of the command shows target specific option, which can be used
+to change target options on the fly. See below for examples.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  -mabi=                      Specify an ABI.
+  -mabort-on-noreturn         Generate a call to abort if a noreturn function returns.
+  -mandroid                   Generate code for the Android platform.
+  -mapcs-frame                Generate APCS conformant stack frames.
+  -mapcs-reentrant            Generate re-entrant, PIC code.
+  -march=                     Specify the name of the target architecture.
+  -marm                       Generate code in 32 bit ARM state.
+  -masm-syntax-unified        Assume unified syntax for inline assembly code.
+  -mbe32                      When linking for big-endian targets, generate a legacy BE32 format image.
+  -mbe8                       When linking for big-endian targets, generate a BE8 format image.
+  -mbig-endian                Assume target CPU is configured as big endian.
+  -mbionic                    Use Bionic C library.
+  -mbranch-cost=              Cost to assume for a branch insn.
+  -mcallee-super-interworking Thumb: Assume non-static functions may be called from ARM code.
+  -mcaller-super-interworking Thumb: Assume function pointers may go to non-Thumb aware code.
+  -mcmse                      Specify that the compiler should target secure code as per ARMv8-M Security Extensions.
+  -mcpu=                      Specify the name of the target CPU.
+  -mfdpic                     Enable Function Descriptor PIC mode.
+  -mfix-cortex-m3-ldrd        Avoid overlapping destination and address registers on LDRD instructions that may trigger Cortex-M3
+                              errata.
+  -mfloat-abi=                Specify if floating point hardware should be used.
+  -mfp16-format=              Specify the __fp16 floating-point format.
+  -mfpu=                      Specify the name of the target floating point hardware/format.
+  -mgeneral-regs-only         Generate code which uses the core registers only (r0-r14).
+  -mglibc                     Use GNU C library.
+  -minline-thumb1-jumptable   Inline Thumb1 Jump table code
+  -mlittle-endian             Assume target CPU is configured as little endian.
+  -mlong-calls                Generate call insns as indirect calls, if necessary.
+  -mmusl                      Use musl C library.
+  -mneon-for-64bits           This option is deprecated and has no effect.
+  -mpic-data-is-text-relative Assume data segments are relative to text segment.
+  -mpic-register=             Specify the register to be used for PIC addressing.
+  -mpoke-function-name        Store function names in object code.
+  -mprint-tune-info           Print CPU tuning information as comment in assembler file.  This is an option used only for
+                              regression testing of the compiler and not intended for ordinary use in compiling code.
+  -mpure-code                 Do not allow constant data to be placed in code sections.
+  -mrestrict-it               Generate IT blocks appropriate for ARMv8.
+  -msched-prolog              Permit scheduling of a function's prologue sequence.
+  -msingle-pic-base           Do not load the PIC register in function prologues.
+  -mslow-flash-data           Assume loading data from flash is slower than fetching instructions.
+  -mstructure-size-boundary=  Specify the minimum bit alignment of structures. (Deprecated).
+  -mthumb                     Generate code for Thumb state.
+  -mthumb-interwork           Support calls between Thumb and ARM instruction sets.
+  -mtls-dialect=              Specify thread local storage scheme.
+  -mtp=                       Specify how to access the thread pointer.
+  -mtpcs-frame                Thumb: Generate (non-leaf) stack frames even if not needed.
+  -mtpcs-leaf-frame           Thumb: Generate (leaf) stack frames even if not needed.
+  -mtune=                     Tune code for the given processor.
+  -muclibc                    Use uClibc C library.
+  -munaligned-access          Enable unaligned word and halfword accesses to packed data.
+  -mvectorize-with-neon-double Use Neon double-word (rather than quad-word) registers for vectorization.
+  -mvectorize-with-neon-quad  Use Neon quad-word (rather than double-word) registers for vectorization.
+  -mword-relocations          Only generate absolute relocations on word sized values
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The seconf portion specifies what target options are available with the given compiler. For example, for our case
+the "arm-cortex_a8-linux-gnueabihf," we have the following options:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Known ARM ABIs (for use with the -mabi= option):
+    aapcs aapcs-linux apcs-gnu atpcs iwmmxt
+
+  Known __fp16 formats (for use with the -mfp16-format= option):
+    alternative ieee none
+
+  Known ARM FPUs (for use with the -mfpu= option):
+    auto crypto-neon-fp-armv8 fp-armv8 fpv4-sp-d16 fpv5-d16 fpv5-sp-d16 neon neon-fp-armv8 neon-fp16 neon-vfpv3 
+    neon-vfpv4 vfp vfp3 vfpv2 vfpv3 vfpv3-d16 vfpv3-d16-fp16 vfpv3-fp16 vfpv3xd vfpv3xd-fp16 vfpv4 vfpv4-d16
+
+  Valid arguments to -mtp=:
+    auto cp15 soft
+
+  Known floating-point ABIs (for use with the -mfloat-abi= option):
+    hard soft softfp
+
+  TLS dialect to use:
+    gnu gnu2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The get a list of cpus that's supported, we have to compile something, but specify the -arch with 'help' or another
+nonsensical value:
+
+"""
+arm-cortex_a8-linux-gnueabihf-gcc -mtune=help main.cpp -o main
+"""
+
+This would print the following long list of architectures for this compiler:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+arm8 arm810 strongarm strongarm110 fa526 fa626 arm7tdmi arm7tdmi-s arm710t arm720t arm740t arm9 arm9tdmi arm920t 
+arm920 arm922t arm940t ep9312 arm10tdmi arm1020t arm9e arm946e-s arm966e-s arm968e-s arm10e arm1020e arm1022e xscale 
+iwmmxt iwmmxt2 fa606te fa626te fmp626 fa726te arm926ej-s arm1026ej-s arm1136j-s arm1136jf-s arm1176jz-s arm1176jzf-s 
+mpcorenovfp mpcore arm1156t2-s arm1156t2f-s cortex-m1 cortex-m0 cortex-m0plus cortex-m1.small-multiply 
+cortex-m0.small-multiply cortex-m0plus.small-multiply generic-armv7-a cortex-a5 cortex-a7 cortex-a8 cortex-a9 
+cortex-a12 cortex-a15 cortex-a17 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 cortex-m7 cortex-m4 cortex-m3 
+marvell-pj4 cortex-a15.cortex-a7 cortex-a17.cortex-a7 cortex-a32 cortex-a35 cortex-a53 cortex-a57 cortex-a72 
+cortex-a73 exynos-m1 xgene1 cortex-a57.cortex-a53 cortex-a72.cortex-a53 cortex-a73.cortex-a35 cortex-a73.cortex-a53 
+cortex-a55 cortex-a75 cortex-a76 cortex-a76ae cortex-a77 neoverse-n1 cortex-a75.cortex-a55 cortex-a76.cortex-a55 
+cortex-m23 cortex-m33 cortex-m35p cortex-m55 cortex-r52
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We can also in the same way get the list of architectures:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+rmv4 armv4t armv5t armv5te armv5tej armv6 armv6j armv6k armv6z armv6kz armv6zk armv6t2 armv6-m armv6s-m armv7 armv7-a 
+armv7ve armv7-r armv7-m armv7e-m armv8-a armv8.1-a armv8.2-a armv8.3-a armv8.4-a armv8.5-a armv8.6-a armv8-m.base 
+armv8-m.main armv8-r armv8.1-m.main iwmmxt iwmmxt2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+After these basic structure options, we get two sections regarding assember and linker options, which we shan't dive
+into at this point
+
+
+Examples: 
+Here's an example of compiling for an a5 cpu. The point is that when generating the toolchain, the only option we 
+had was an a8 cortex, but the compiler can change the cpu version (which makes us wonder how we can integrate this
+into our cmake codes.)
+
+Note: The gcc warns us that mcpu is deprecated, as the book uses it. We better then use -march or -mtune instead
+
+""""
+arm-cortex_a8-linux-gnueabihf-gcc -mtune=cortex_a5 -march=armv5t main.cpp -o app   // Generate code 
+""""
