@@ -8,9 +8,9 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceFolderBasename}/build/${fileBasenameNoExtension}",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
                 "-I", "/usr/local/include/opencv4",
-                "-L", "/usr/local/lib",
+                "-L", "/usr/local/lib/lib*",
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
