@@ -1,6 +1,9 @@
 /**
+* Let's for a moment talk about how to generate empty images in OpenCV using cv::Mat matrix. Also, let's forget 
+* about tiff images and consider only simple 2D images that can be grayscale or colored.
+*
 * It's important to understand how the matrix is stored inside the class, to access image elements by pointer. This
-* is always faster calling functions.
+* is always faster than calling functions.
 *
 * So here's the layout structure: Every pixel location contains the number of channels. We traverse every column,
 * and then go to the next row.In this schema, it's obvious that if we wanted to access row 'r', column 'c', and
