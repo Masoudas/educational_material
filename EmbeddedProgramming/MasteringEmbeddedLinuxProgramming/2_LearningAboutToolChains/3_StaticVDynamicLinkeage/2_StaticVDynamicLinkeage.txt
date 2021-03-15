@@ -1,0 +1,33 @@
+-   Static linkeage
+All the library functions your application calls and their dependencies are pulled from the library archive and 
+bound into your executable.
+
+Note: In static binary, we want to perform certain optimization and other things when generating the binary from 
+our code and code of the library. Therefore, WE CAN'T USE THE BINARY OF THE LIBRARY. We need to have more degree
+of freedom to play with the content of the library, to integrate it into our code. This is why we need the object
+files of the library, and having the binaries is not useful. We shall see very soon that we use these object files
+to generate an independent code.
+
+-   Dynamic linkeage:
+References to the library files and functions in those files are generated in the code but the actual linking is 
+done dynamically at runtime.
+
+Note: As opposed to static linkeage, here we need to have the binaries of the libraries ready at run-time. At the
+same time, we need to know the trace of where a function is in the binary (we don't have time to dump and analyze
+the binary everytime to find the address of every single function.) The dynamic libraries probably provide the two
+for us, which is why they're something between object files (raw assembly) and binaries (where the address and
+information is lost.) In fact, it's said over the internet that A shared library is actually an executable in a 
+special format with entry points specified (and some sticky addressing issues included). It does not have all the 
+information needed to link statically
+
+Note: I must not confuse two things:
+    1-  Whether or not a library is built static or dynamic.
+    2-  Whether or not I want to use it statically or dynamically.
+
+Consequently, based on the above discussions:
+    -   If a library is static, I can't link to it dynamically.
+    -   If a library is dynamic, I can't link to it statically. This is because I don't have object files to integrate
+        them into my code.
+    -   If a library is static, I can link to it statically.
+    -   If a library is dynamic, I can link to it dynamically.
+

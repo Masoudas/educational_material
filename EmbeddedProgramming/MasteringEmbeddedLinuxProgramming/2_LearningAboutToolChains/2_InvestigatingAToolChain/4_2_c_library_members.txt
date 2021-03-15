@@ -17,6 +17,9 @@ POSIX API:
 
 Note: These libraries appear to be in the sysroot as dlls.
 
+Note: Note that the C libraries as discussed are in "sysroot/usr/lib". I bring your attention to the fact that there's
+libc.a and libc.so. The first one is the static version, whereas the second one is the dynamic version.
+
 The first one, libc, is always linked in but the others have to be explicitly linked with the -l option. The 
 parameter to -l is the library name with lib stripped off. For example, a program that calculates a sine function by 
 calling sin() would be linked with libm using -lm. (Me: recall that include path is done using -I)

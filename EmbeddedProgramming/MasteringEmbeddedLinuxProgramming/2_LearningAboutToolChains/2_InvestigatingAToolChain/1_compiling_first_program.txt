@@ -3,7 +3,7 @@ As usuall, with any C program, we can compile it using the corresponding gcc com
 $ arm-cortex_a8-linux-gnueabi-gcc -g main.cpp -o app
 
 Note that -g means we want configuration to be debug, which hinges on installing gdb. After the binary has been 
-generated, we can check the ELF header of the file using the file command:
+generated, we can check the ELF header of the file using the file command (or readelf of gcc):
 
 $ file app
 helloworld: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked (uses shared libs), 

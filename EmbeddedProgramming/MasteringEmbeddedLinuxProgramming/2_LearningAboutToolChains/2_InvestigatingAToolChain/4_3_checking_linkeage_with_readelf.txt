@@ -10,7 +10,7 @@ $ arm-cortex_a8-linux-gnueabihf-readelf -a my_program | grep "Shared library"
 0x00000001 (NEEDED) Shared library: [libc.so.6]     // Meaning uses libc version 6 dll.
 
 
-Shared libraries need a runtime linker, which we can expose using:
+Shared libraries need a runtime linker, which we can be exposed using:
 """
 $ arm-cortex_a8-linux-gnueabihf-readelf -a myprog | grep "program interpreter"
 """

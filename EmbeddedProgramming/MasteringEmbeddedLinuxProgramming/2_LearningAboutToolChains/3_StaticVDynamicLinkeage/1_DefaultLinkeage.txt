@@ -1,0 +1,6 @@
+As mentioned earlier, libc contains the most basic OS POSIX operations such as printf, etc.. Any application you 
+write for Linux, whether it be in C or C++, will be linked with the C library libc. This is so fundamental that you 
+don't even have to tell gcc or g++ to do it because it always links libc. Other libraries that you may want to link 
+with have to be explicitly named through the -l option.
+
+My Note: In case of C++, they standard libraries have to be linked with -std option.

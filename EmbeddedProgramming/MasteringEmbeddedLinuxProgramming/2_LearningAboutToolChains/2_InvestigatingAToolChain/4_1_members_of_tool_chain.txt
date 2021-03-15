@@ -1,5 +1,5 @@
 A tool chain (me: or for my sake a compiler, like gcc on my machine for that matter) comes with several tools, which
-are discussed below in the order of importance and familiarity for me:
+are discussed below in the order of importance and familiarity to me:
 
 - gcc
     This is the GNU C frontend, which assumes that source files contain C code. (Me: so I should not forget that I
@@ -59,7 +59,7 @@ are discussed below in the order of importance and familiarity for me:
     This lists symbols from object files.
 
 - readelf
-    This displays information about files in ELF object format.
+    This displays information about files in ELF object format (which is essentially like the dumpobj program).
 
 - size
     This lists section sizes and the total size (me: we can use it for example to see the size of the sections in a 

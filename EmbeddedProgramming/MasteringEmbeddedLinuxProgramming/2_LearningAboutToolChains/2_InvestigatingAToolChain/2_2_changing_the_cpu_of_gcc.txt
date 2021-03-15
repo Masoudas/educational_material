@@ -60,7 +60,7 @@ to change target options on the fly. See below for examples.
   -mword-relocations          Only generate absolute relocations on word sized values
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The seconf portion specifies what target options are available with the given compiler. For example, for our case
+The second portion specifies what target options are available with the given compiler. For example, for our case
 the "arm-cortex_a8-linux-gnueabihf," we have the following options:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,13 +116,11 @@ armv8-m.main armv8-r armv8.1-m.main iwmmxt iwmmxt2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 After these basic structure options, we get two sections regarding assember and linker options, which we shan't dive
 into at this point
 
-
 Examples: 
-Here's an example of compiling for an a5 cpu. The point is that when generating the toolchain, the only option we 
+Here's an example of compiling for an 'a5' cpu. The point is that when generating the toolchain, the only option we 
 had was an a8 cortex, but the compiler can change the cpu version (which makes us wonder how we can integrate this
 into our cmake codes.)
 

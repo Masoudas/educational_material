@@ -1,6 +1,7 @@
 The commands to get the linked libraries and the run-time interpreter are so useful that's best to create a shell
 program for them. Note that $n in a shell file indicates the nth argument supplied.
 
+Note: As we may recall, $n reads the n-th argument from shell.
 """
 #!bin/bash
 ${CROSS-COMPILER}-readelf -a $1 | grep "Shared library"
