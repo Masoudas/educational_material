@@ -1,0 +1,7 @@
+TCP/IP is the "Transmission Control Protocol / Internet Protocol."
+
+There are two wildly different versions:
+    - v4
+    - v6
+
+This chapter is on v4.

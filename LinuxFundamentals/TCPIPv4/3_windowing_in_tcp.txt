@@ -1,0 +1,6 @@
+Windowing is the process of data transmission from one computer to another.
+
+The protocol was devised for doomsday military scenarios. Supposedly, the communication lines would be too noisy,
+hence data will be transmitted in windows by this protocl. First, one computer sends a couple of bytes, then upon
+receipt and acknowledgement, the amount of data is doubled (or something to that effect.) If acknowledgement is not
+received, then transmission is halted, and once again everything restarts from a couple of bytes.
