@@ -1,10 +1,9 @@
 /**
-* The website states: "The first thing you need to know about Mat is that you no longer need to manually allocate its
-* memory and release it as soon as you do not need it. While doing this is still a possibility, most of the OpenCV 
+* The OpenCV doc states: "The first thing you need to know about Mat is that you no longer need to manually allocate 
+* its memory and release it as soon as you do not need it. While doing this is still a possibility, most of the OpenCV 
 * functions will allocate its output data automatically. As a nice bonus if you pass on an already existing Mat 
 * object, which has already allocated the required space for the matrix, this will be reused. In other words we use 
 * at all times only as much memory as we need to perform the task."
-*
 *
 * It further goes on to state that "The idea is that each Mat object has its own header, however a matrix may be 
 * shared between two Mat objects by having their matrix pointers point to the same address. Moreover, the copy 
