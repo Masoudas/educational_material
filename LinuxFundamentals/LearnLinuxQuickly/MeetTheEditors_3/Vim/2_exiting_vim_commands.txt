@@ -1,0 +1,2 @@
+    -   To exit Vim without saving, type :q!
+    -   To exit and override, type :wq

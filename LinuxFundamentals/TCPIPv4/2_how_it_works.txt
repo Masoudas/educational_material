@@ -1,0 +1,11 @@
+TCP/IP is a suite of protocols, used for various purposes.
+
+    - IP: It's the protocol that controls routing of information through various routers, servers, etc. It deals
+        with subnetmasking, DNS, etc. It's the protocol that allows two machines to find one another.
+
+    - TCP: It's the protocol for transmission of data. It comes after IP protocol has worked.
+
+Note that IP is a routable protocol. It implies that we can divide the network into sub-networks. Withing those 
+subnetworks, the computers are all connected to one another, but not on the outside. In non-routable networks, all
+computers are connected to one another. In other words, a router is a boundary of a subnetwork.
+
