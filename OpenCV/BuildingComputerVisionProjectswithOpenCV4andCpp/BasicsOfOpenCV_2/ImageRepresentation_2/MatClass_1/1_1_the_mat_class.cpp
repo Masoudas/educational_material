@@ -1,11 +1,9 @@
 /**
-* CV::Mat is the basic structure (class) for representing an image. In the case of a grayscale image, we use a
-* single m*n matrix. In the case of a colored image, we use three such matrices.
+* CV::Mat is the basic structure (class) for representing an image. We can use Mat for any algebraic operation that 
+* involves matrices too, so not just images.
 * 
-* We can use Mat for any algebraic operation that involves matrices, so not just images.
-* 
-* Mat has been implemented in such a way that it's not a templated type, which is quite interesting, and challenging
-* too during implementation.
+* Mat has been implemented in such a way that it's not a templated type, which is quite interesting. In fact, Mat
+* is a wrapper for a type called Mat_, which itself is templated.
 * 
 * Historically, the OpenCV website says "OpenCV has been around since 2001. In those days the library was built 
 * around a C interface and to store the image in the memory they used a C structure called IplImage. This is the one 

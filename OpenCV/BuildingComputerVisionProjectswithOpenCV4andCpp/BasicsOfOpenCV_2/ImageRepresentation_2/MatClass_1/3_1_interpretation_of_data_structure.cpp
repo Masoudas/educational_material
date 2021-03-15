@@ -24,7 +24,7 @@
  * implies an 8 bit unsigned image of three channels.
  * 
  * Note: As we shall show later, the number of channels only indicate how many channels we need. This is independent
- * of the way we translate the channels. These are merely numberical values, and it's up to us to indicate to the
+ * of the way we translate the channels. These are merely numerical values, and it's up to us to indicate to the
  * algorithms or visualization methods how we want to express them. Consequently, when creating matrices, we only
  * indicate the number of channels, not the colorspace, which is irrelevant information.
  * 
