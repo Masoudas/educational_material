@@ -1,4 +1,4 @@
-This is taken from a couple of videos.
+Vim operations are broken into verbs and nouns.
 
 To allow for insertion of text to begin, press a.
 
@@ -9,12 +9,22 @@ In the command mode, most operations in Vim are compounded ones. Hence, we 'dele
     - Pressing dot repeats last operation.
 
 The verbs in Vim are:
-    - d: delete
+    - d: delete (and cut)
     - c: change (delete and insert)
     - y: yank (copy)
     - >: Indent (note that if > is on dot, then it will repeat the last operation. Hence, don't forget to press
                 shift for this one!)
     - v: Visually select
+        - Press shift + V to select entire line.
+    
+
+Note that:
+    - 'l' means the current line.
+    - 'j' means the line below. 
+    
+Hence, a compund command like "> + j" indents the current line and the line 
+below.
+
 
 
 
