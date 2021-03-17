@@ -1,0 +1,22 @@
+A more common way to deploy libraries is as shared objects that are linked at runtime, which makes more efficient 
+use of storage and system memory, since only one copy of the code needs to be loaded. It also makes it easy to 
+update the library files without having to re-link all the programs that use them.
+
+Note that by default, gcc links in a shared manner. Hence, we needn't specify any further options to stress dynamic
+linkeage. Consider the following program, where we use cmath, which is linked with the option -lm in gcc.
+
+%%%%%%%
+main.c
+
+#include <math.h>
+
+int main(){
+    int v = exp2(10);
+}
+
+%%%%%%%
+
+We can compile this code in gcc as follows:
+$ arm-cortex_a8-linux-gnueabihf-gcc main.c -o app -lm       # Linking the math library.
+
+Reminder: To be able to link dynamically, all libraries used must have a shared version.

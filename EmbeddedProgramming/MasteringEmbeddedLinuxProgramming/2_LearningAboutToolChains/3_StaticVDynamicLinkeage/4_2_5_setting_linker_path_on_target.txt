@@ -1,0 +1,15 @@
+Just to reiterate the discussion we just had, we should point out that we need to define the linker path for two
+instances:
+    -   When generating the binary.
+    -   During runtime.
+
+Now, we have two scenarios:
+    -   Same host and target
+        We have access to both LD_LIBRARY_PATH or ldconfig. Hence, after setting them up properly, we can just
+        link using the -l option. The runtime is taken care of.
+
+
+    -   Cross compilation
+        In this case, we don't have access to the LD_LIBRARY_PATH or the ldconfig of the target machine. Hence,
+        we need to define the path directly using the -L and -l options together. For run-time, we need to go 
+        on the machine and set these variables properly.

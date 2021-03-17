@@ -1,0 +1,4 @@
+To create a shared library, as usuall, we need to first compile our files and then create a shared library.
+In what follows, we shall first discuss how to create the proper position independent object files, then we 
+discuss how to link them and how to set the gcc variables to find the library for linkeage.
+

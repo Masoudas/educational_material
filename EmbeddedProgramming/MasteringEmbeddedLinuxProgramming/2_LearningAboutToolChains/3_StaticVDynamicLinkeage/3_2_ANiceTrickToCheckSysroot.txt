@@ -4,8 +4,10 @@ $ arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot
 $ /home/masoudas/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot
 
 Now, here's a nice trick to export this path in Linux:
-$ export SYSROOT = $(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)   # Add the result of this execution to this
-                                                                         # variable.
+$ export SYSROOT=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)   # Add the result of this execution to this
+                                                                       # variable. (Interestingly enough, there 
+                                                                       # should be no space between '=' and other
+                                                                       # text.)
 
 Now, we can use this variable like any other variable, and we can see the list of system C libraries. Notice that for
 each library, there's a static and a dynmaic version:

@@ -8,7 +8,7 @@ gcc.
 
 
 Example of creating a static library:
-$ arm-cortex_a8-linux-gnueabihf-gcc -c file1.c file2.c  # Generates file1.obj file2.obj
+$ arm-cortex_a8-linux-gnueabihf-gcc -c file1.c file2.c  # Generates file1.o file2.o
 $ arm-cortex_a8-linux-gnueabihf-ar rc libstatic.a  file1.o file2.o # r means replace, c creates file and does
                                                                    # warn if it already exists. 
 Or:                                            

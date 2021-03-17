@@ -1,0 +1,80 @@
+To better understand how dynamic linkeage takes place, suppose we've created libtest.so in ~/masoud. Now, we can:
+    -   Either add this path to where the linker looks for libraries and then just give the name of the library
+        (not using the initial lib). The compilation command then looks like
+        $ ...gcc main.cpp -o app -ltest
+
+    -   Or, we can explicitly define the path to library for the linker.
+        $ ...gcc main.cpp -o app -L"~/masoud/*"
+
+So we address two points below:
+    - Difference of L and l options
+    - How to configure (runtime) linker search paths
+
+-   l v L options (from gcc command line documents):
+In simpleton words, l is used to indicate the name of the library directly that's on the linker path (static or dynamic.), 
+whereas L defines a search path or a library directly. If we use l, we must drop the 'lib' part from the name of the 
+library. The library extension is never mentioned with l. If we use L to define path, we must define lib names using
+-l option. I found only the latter to work with cross compilation.
+
+    -larchive or  --library=archive
+    Add archive file archive to the list of files to link. This option may be used any number of times. ld will 
+    search its path-list for occurrences of libarchive.a for every archive specified. On systems which support 
+    shared libraries, ld may also search for libraries with extensions other than .a. Specifically, on ELF and S
+    unOS systems, ld will search a directory for a library with an extension of .so before searching for one with 
+    an extension of .a. By convention, a .so extension indicates a shared library. The linker will search an 
+    archive only once, at the location where it is specified on the command line. If the archive defines a symbol 
+    which was undefined in some object which appeared before the archive on the command line, the linker will 
+    include the appropriate file(s) from the archive. However, an undefined symbol in an object appearing later 
+    on the command line will not cause the linker to search the archive again. See the -( option for a way to 
+    force the linker to search archives multiple times. You may list the same archive multiple times on the command 
+    line. This type of archive searching is standard for Unix linkers. However, if you are using ld on AIX, note 
+    that it is different from the behaviour of the AIX linker. 
+    
+    
+    -Lsearchdir or --library-path=searchdir
+    Add path searchdir to the list of paths that ld will search for archive libraries and ld control scripts. You 
+    may use this option any number of times. The directories are searched in the order in which they are specified 
+    on the command line. Directories specified on the command line are searched before the default directories. 
+    All -L options apply to all -l options, regardless of the order in which the options appear. The default set 
+    of paths searched (without being specified with `-L') depends on which emulation mode ld is using, and in some 
+    cases also on how it was configured.
+    Note 1 from me: We can explicitly declare the library with L. Hence, "-L"usr/lib/libtest.so"" for example. If
+                    we want all libs, we could say "-L"usr/lib/lib*""
+
+-   Configure linker search path:
+So the following discussion has two faces, when we're compiling the code, and when we're executing it:
+    -   If the host and target are the same machine, then setting the linker paths work for both binary 
+        generation and runtime
+    -   If we're cross compiling, we CAN'T define the linker search paths, because those are valid only for the 
+        target (for example we don't have access to the LD_LIBRARY_PATH of the target machine, or its ldconfig.)
+        Consequently, we can't define the search path for the cross compiler, and we need to provide the search
+        path using -L option directly (and always complement with l.)
+
+Now, considering the above, below we discuss how to set the linker search path. When we want to run our code on
+the target machine, we need to set these variables there.
+
+The linker search path depends on the operating system. It's either the variable LD_LIBRARY_PATH. or ldconfig,
+setting the path seems to work for all distros.
+
+    - Setting the LD_LIBRARY_PATH:
+      We can export the path to the library with the following usual command. Note that it should be added to
+      the .bashrc file of the use to be executed everytime:
+      $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/masoud >> ~/.bashrc
+
+    - Using ldconfig:
+      Under ubuntu, we need to add a 'LIB_NAME.conf' file to the /etc/ld.so.config.d folder. Then we need to 
+      execute 'sudo ldconfig' to update the linker configuration. 
+
+      Note. The ldconfig is located in "../sysroot/usr/sbin/ldconfig" But note that we can't run it on the host
+      machine. 
+
+
+Question: Suppose like in this example, we're doing a cross compilation. Should the path to the linked library be
+the one we've compiled on the source machine or the target machine?
+Note that the linker uses the symbols from the library to create the machine code. At the same time, during execution
+we need to have access to the binary code. Hence, the library should be in a path that can be accessed at both 
+generation of binary and during exectution. Therefore, we must place it where we can find it at runtime. 
+How we find it is still unclear to me. Do we just search in all paths?
+
+
+
