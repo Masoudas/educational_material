@@ -1,0 +1,22 @@
+One of the main principles in Linux is that Each program does one thing well and thus, every Linux command is 
+designed to accomplish a single task efficiently. Unleash the real power of Linux commands by combining their 
+functionality to carry out more complex tasks!
+
+The piping structure of Linux is as follows:
+
+command 1 | command 2 | ...
+
+where | means pipe.
+
+As an example, suppose we want to show only the fifth line of a text file. Here's the command we will use:
+$ head -n 5 file.txt | tail -n 1
+
+Notice that we use tail to show the fifth line. If I had said:
+
+$ head -n 5 file.txt | head -n 1
+
+it would have shown only the first line.
+
+We can use more than one pipe as follows:
+
+$ lscpu | head -n 4 | tail -n 1     # Display fourth line of lscpu

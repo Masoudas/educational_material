@@ -1,0 +1,9 @@
+The man page for sudo command states that:
+
+    -   sudo allows a permitted user to execute a command as the superuser or another user, as specified by the 
+        security policy.  The invoking user's real (not effective) user-ID is used to determine the user name with 
+        which to query the security policy.
+
+More specifically, sudo means 'switch user + do.' As an example, we can say:
+$ sudo -u masoud id    # Switch user to masoudas and do.
+$ sudo id              # Switch user to root and do.

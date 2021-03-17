@@ -1,0 +1,15 @@
+The standard output (stdout) is linked to file descriptor 1.
+
+WHAT IS A FILE DESCRIPTOR?
+
+    A file descriptor is a number that uniquely identifies an open file in a computer's operating system.
+
+Therefore, running the command:
+
+$ date > mydate.txt
+
+is equivalent to running the following command:
+
+% date 1> mydate.txt
+
+Notice that the 1 in 1> references file descriptor 1 (stdout).

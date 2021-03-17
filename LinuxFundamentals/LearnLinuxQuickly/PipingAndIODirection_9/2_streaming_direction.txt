@@ -1,0 +1,13 @@
+Most Linux commands work with three different streams of data:
+
+    - Standard input (also referred to as stdin)
+    - Standard output (also referred to as stdout)
+    - Standard error (also referred to as stderr)
+
+Most of the commands we have discussed so far produce some output. This output is sent to a special file called 
+standard output (also referred to as stdout). By default, the standard output file is linked to the terminal, and 
+that's why every time you run a command, you see the output on your terminal. Also, sometimes commands will produce 
+error messages. These error messages are sent to another special file called standard error (also referred to as 
+stderr), and it's also linked to the terminal by default.
+
+

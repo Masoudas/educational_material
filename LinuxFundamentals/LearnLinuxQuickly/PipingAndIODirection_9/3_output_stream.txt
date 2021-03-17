@@ -1,0 +1,16 @@
+To direct the output of a command to file, use the single > command. To append to an exisitng file, use the normal
+stream operator. It appends the output to the end of the file.
+
+Note: Sometimes some commands have no output. In such cases, we need to use the echo command to first ensure that
+there's an output (that is the thing we write is echoed,) then we can stream it.
+
+Example 1:
+Suppose we want to stream 'cd /' to a file. Here's what we do:
+
+$ echo "cd / ">> file.txt  # Note that cd does not have any output by itself.
+
+Example 2:
+Suppose we want to export a new environment variable to .bashrc. Note again that the export command has no output.
+Hence, we echo it:
+
+$ echo "export my_var=/home/masoudas" >> .bashrc    # If you write > .bashrc, you're screwed!

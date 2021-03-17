@@ -19,3 +19,5 @@ The meaning of each of these access permissions is not the same for files and di
         * Read: Read the file
         * Write: Write to the file
         * Execute: Execute the file (if executable)
+
+Note: Only the root or owner of the file can change its permission.

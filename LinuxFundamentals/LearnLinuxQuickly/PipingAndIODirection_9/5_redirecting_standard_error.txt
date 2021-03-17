@@ -1,0 +1,9 @@
+Note that errors cannot be directed to files using > or >> (or more precisely 1> or 1>>.) For example, suppose we type
+
+$ more non_existent_file > f
+more: stat of non_existent_file failed: No such file or directory
+
+This message is not directed to the file. To actually stream this error message into the file, we need use file
+descriptor 2 as follows:
+
+$ more non_existent_file 2> f
