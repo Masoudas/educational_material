@@ -1,5 +1,5 @@
 To direct the output of a command to file, use the single > command. To append to an exisitng file, use the normal
-stream operator. It appends the output to the end of the file.
+stream operator. It appends the output to the end of the file. Note that > creates the file if it does not exist.
 
 Note: Sometimes some commands have no output. In such cases, we need to use the echo command to first ensure that
 there's an output (that is the thing we write is echoed,) then we can stream it.

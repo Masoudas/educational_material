@@ -13,7 +13,7 @@ The meaning of each of these access permissions is not the same for files and di
     - Directories
         * Read: List content of the directory
         * Write: Be able to create and remove files INSIDE the directory
-        * Execute: Be able to change the directory (move it, rename it, etc)
+        * Execute: Be able to change the directory (move it, rename it, cd to it etc)
 
     - Files
         * Read: Read the file
