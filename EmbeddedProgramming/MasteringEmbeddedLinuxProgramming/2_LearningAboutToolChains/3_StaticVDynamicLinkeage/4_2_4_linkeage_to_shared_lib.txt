@@ -59,7 +59,7 @@ setting the path seems to work for all distros.
     - Setting the LD_LIBRARY_PATH:
       We can export the path to the library with the following usual command. Note that it should be added to
       the .bashrc file of the use to be executed everytime:
-      $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/masoud >> ~/.bashrc
+      $ echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/masoud >> ~/.bashrc  # Don't forget echo
 
     - Using ldconfig:
       Under ubuntu, we need to add a 'LIB_NAME.conf' file to the /etc/ld.so.config.d folder. Then we need to 
