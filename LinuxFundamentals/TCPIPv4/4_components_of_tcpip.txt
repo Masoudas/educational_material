@@ -20,3 +20,17 @@
     can with domain names.
     Once we get the IP address and communicate with the DNS, we again search for it on the local network, and then
     over the net, like before.
+
+-   DHCP (Dynamic Host Control Protocol)
+    It's a mechinais for generating IP address, DNS host and default gateway for a machine without having to make it
+    unique over the entire Internet, or a static IP address. A static IP address is an IP address, subnetmask, DNS
+    server and default gateway for a machine that is determined one and uniquely for a machine.
+    A dynamic IP address is allocated to the machine once the machine connects to the net and demands one (first 
+    thing) for DHCP. DHCP will then have a database holding the IPs, and reallocate IP addresses once they're 
+    out of use. The amount time a computer is allowed to own an IP address is called the lease time. 
+    
+-   NAT (Network Address Translation):
+    The worry in the beginning was that every machine (computer, printer, etc) would require a unique IP address.
+    In reality, most networks have an internal IP address ranging from 192.168.1.1 to 254. What happens is that 
+    every router that connects to the Internet has a UNIQUE IP address, however inside the router, we can reuse
+    IP addresses.
