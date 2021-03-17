@@ -15,4 +15,7 @@
  * 
  * In any case, we need to add an 'opencv.conf' in the aforementioned folder, and then sudo run the ldconfig command,
  * and this concludes the inclusion of link path for the system.
+ * 
+ * Now, once we've done this, the opencv libraries can be detected at the linkeage stage. Therefore, we can use the
+ * '-l' option (rather than '-L'. See Discussion about gcc compiler in Embedded stuff) to link at run-time.
  */

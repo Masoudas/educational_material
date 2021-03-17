@@ -33,6 +33,6 @@ void create_sample_matrix(){
 
 }
 
-// int main(){
-//     create_sample_matrix();
-// }
+int main(){
+     create_sample_matrix();
+}

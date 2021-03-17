@@ -3,7 +3,7 @@
  * discussed on gcc fundamentals:
  * 
  *  - header inclusion happens through the -I option of g++
- *  - linkeage happens thtough the -L option of g++.
+ *  - linkeage happens through the -l (or -L) option of g++.
  * 
  * As we have guessed, we need to add these options manually for the debugger (bugger!) The way to do this as we
  * discussed on gcc discussion is:
@@ -12,8 +12,13 @@
  *  - Now, assuming the headers are at '/usr/local/include' and libs are at '/usr/local/lib', add the following two
  *    lines to the args:
  *      -   '-I', '/usr/local/include'
- *      -   '-L', '/usr/local/lib'
- * 
+ *      -   '-l', 'opencv-core', 'opencv-calib'
+ *          -- Note that we need to link to as many opencv dynamic libs as we need here.
+ *          -- Note that if we've generated opencv-world, we can use it in place of individual libraries.
+ *          -- Note finally that for linkeage, we need to drop the 'lib' from the name of the library, as is
+ *             the convention.
+ *          -- Equivalently, we could say "'-L', '/usr/local/lib/lib*'"
+ *  
  * Now, these are for the compiler. We also need to add the include header for the intellisense, and VS Code purposes.
  * This feat is accomplished by adding the include path to the inclusion path of c_cpp_properties.json of vs code.
  * 
