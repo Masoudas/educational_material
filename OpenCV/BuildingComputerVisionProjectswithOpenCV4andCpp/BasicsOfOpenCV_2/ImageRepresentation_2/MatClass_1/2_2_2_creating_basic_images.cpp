@@ -24,15 +24,24 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
+
 void create_sample_matrix(){
     cv::Mat m1{1, 3, CV_8UC3, cv::Scalar{0,0,255}};
     std::cout << "Created matrix is:" << m1;
 
-    cv::Mat m2{1, 2, CV_8UC3}; // Caution: A matrix with three elements! Not what we expected.
+    cv::Mat m2{1, 2, CV_8UC3}; // Caution: A matrix with three elements! Not what we expected. Uses init_list
+                               // constructor. 
     std::cout << "\nCreated matrix is:"; std::cout << m2;
-
 }
 
-int main(){
-     create_sample_matrix();
+void create_image_with_size_vector(){
+    int sz[] = {1, 2};
+    cv::Mat m1{2, sz, CV_16UC3, cv::Scalar{0,0,255}};    // Create a 2 dim image, with 1 row and 2 columns and 
+                                                         // three channels
+
+    std::cout << "Image has (row, column)=(" << m1.rows << "," << m1.cols << ")\n";
 }
+
+// int main(){
+//     create_image_with_size_vector();
+// }

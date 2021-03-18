@@ -53,10 +53,10 @@ void copy_rows(cv::Mat& m){
     std::cout << "\nThe original matrix is: \n"; 
     std::cout << m;
 
-    // m.row(0) = m.col(1); // Subtle error. Row i remains unchanged.
+    // m.row(0) = m.row(1); // Subtle error. Row i remains unchanged.
     m.row(0).copyTo(m.row(1));     // Fine.
 
-    std::cout << "\nThe transposed matrix is: \n"; 
+    std::cout << "\nAfter replacing row 1 with row 0, the matrix is: \n"; 
     std::cout << m << '\n';
 }
 
