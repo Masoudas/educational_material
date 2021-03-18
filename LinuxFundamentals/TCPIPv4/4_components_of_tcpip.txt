@@ -34,3 +34,5 @@
     In reality, most networks have an internal IP address ranging from 192.168.1.1 to 254. What happens is that 
     every router that connects to the Internet has a UNIQUE IP address, however inside the router, we can reuse
     IP addresses.
+    Hence, the external server wanting to send us information mostly cares about the external IP address (that is,
+    the address of our router.)

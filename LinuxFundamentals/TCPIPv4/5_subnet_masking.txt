@@ -1,0 +1,13 @@
+TCP/IP consist of four octets (8 bit numbers.) Hence, we have 
+_ _ _ _ _ _ _ _ .  _ _ _ _ _ _ _ _ . _ _ _ _ _ _ _ _ . _ _ _ _ _ _ _ _
+
+Hence the value 192.168.1.1
+
+Note that we can have multiple machines connected to the same router, but they can be part of different subnets,
+making it impossible to connect to one another.
+
+The IP address tells us both about the sub-net and the machine on the subnet. The subnet contains for example the
+first 8 (or 10, etc) bits of the address, and the rest of the bits are dedicated to the machine address. Hence, it
+depends on how many subnets we want (for machines not be able to connect to one another,) and how many mahcines 
+we have on that subnet.
+

@@ -1,30 +1,39 @@
-Vim operations are broken into verbs and nouns.
+-   Verbs
+Verbs are the actions we take, and they can be performed on nouns. Here are some examples:
 
-To allow for insertion of text to begin, press a.
+    -   d: delete
+    -   c: change
+    -   y: yank (copy)
+    -   v: visually select (V for line vs. character)
 
-In the command mode, most operations in Vim are compounded ones. Hence, we 'delete + word' or 'yank + word' or 
-'paste':
-    - delete word with 'd + w'.
-    - delete line with 'd + l'.
-    - Pressing dot repeats last operation.
+-   Modifiers
+Modifiers are used before nouns to describe the way in which you're going to do something. Some examples:
 
-The verbs in Vim are:
-    - d: delete (and cut)
-    - c: change (delete and insert)
-    - y: yank (copy)
-    - >: Indent (note that if > is on dot, then it will repeat the last operation. Hence, don't forget to press
-                shift for this one!)
-    - v: Visually select
-        - Press shift + V to select entire line.
-    
+    -   i: inside
+    -   a: around
+    -   NUM: number (e.g.: 1, 2, 10)
+    -   t: searches for something and stops before it
+    -   f: searches for that thing and lands on it
+    -   /: find a string (literal or regex)
 
-Note that:
-    - 'l' means the current line.
-    - 'j' means the line below. 
-    
-Hence, a compund command like "> + j" indents the current line and the line 
-below.
+-   Nouns
+In English, nouns are objects you do something to. They are objects. With Vim it's the same. Here are some Vim 
+nouns:
 
+    -   w: word
+    -   s: sentence
+    -   ): sentence (another way of doing it)
+    -   p: paragraph
+    -   }: paragraph (another way of doing it)
+    -   t: tag (think HTML/XML)
+    -   b: block (think programming)
 
+You can also use nouns as motions, meaning you can move around your content using them as the size of your jump. 
 
-
+Examples:
+$ d2w     # Delete two words (from the position of curser. A space between words is not considered a word. However,
+          # If I stand on a space, it's considered a word. A punctutation mark at the end is not a word.)
+$ cis     # Delete the current, and enter insertion mode (c or change) inside sentence.  
+$ ct<     # Change till bracket.
+$ dt.     # Delete (cut) to dot
+$ yt;     # Yank to semicolon.  
