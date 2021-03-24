@@ -1,0 +1,17 @@
+Typical pain points include:
+    -   Home-grown build systems; zlib, for example, has a configure script, but it does not behave like the 
+        Autotools configure described in the previous section
+    -   Configure scripts that read pkg-config information, headers, and other files from the host, disregarding 
+        the --host override
+    -   Scripts that insist on trying to run cross compiled code 
+
+Each case requires careful analysis of the error and additional parameters to the configure script to provide the 
+correct information, or patches to the code to avoid the problem altogether. Bear in mind that one package may 
+have many dependencies, especially with programs that have a graphical interface using GTK or QT, or that handle 
+multimedia content. As an example, mplayer, which is a popular tool for playing multimedia content, has 
+dependencies on over 100 libraries. It would take weeks of effort to build them all.
+
+Therefore, we would not recommend manually cross compiling components for the target in this way, except when there 
+is no alternative or the number of packages to build is small. A much better approach is to use a build tool such 
+as Buildroot or the Yocto Project, or avoid the problem altogether by setting up a native build environment for 
+your target architecture. Now we can see why distributions like Debian are always compiled natively.

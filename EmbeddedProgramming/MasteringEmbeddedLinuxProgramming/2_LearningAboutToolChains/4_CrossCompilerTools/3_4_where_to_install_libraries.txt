@@ -1,0 +1,11 @@
+Here's an important question. Suppose we generate a library or a binary etc. Where do we want them installed?
+
+    - Native compiler: Often for this case, we want things to be installed in the /usr/* or /usr/local/*. In such
+      a case, we don't have to define additional paths, etc.
+    - Cross-compiler: In this case, the cross-compiler by default looks for the libraries inside the <sysroot/usr>
+      folder. Hence, it would be best to install the libraries there.\
+
+To specify a destination for where the library, include files or executables can be installed, we can use the 
+"--prefix" option. Another option is to define the prefix as a relative path to usr/, then using the DESTDIR 
+variable of the make script, define the path to install as the sysroot. We shall take a look at how this is done
+next by trying to compile the sqlite library.

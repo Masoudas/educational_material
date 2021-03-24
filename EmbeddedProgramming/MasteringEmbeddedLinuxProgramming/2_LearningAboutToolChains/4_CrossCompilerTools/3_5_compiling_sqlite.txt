@@ -1,0 +1,34 @@
+Consider trying to compile the sqlite library for our arm-cortex_a8 cpu. To download the source folder containg the
+configure script, we go as follows:
+
+$ wget https://www.sqlite.org/2021/sqlite-autoconf-3350200.tar.gz
+$ tar -xf sqlite-autoconf-3081101.tar.gz
+$ cd sqlite-autoconf-3081101
+
+Now, as always, we need to accomplish three tasks:
+    1-  Define the compiler to cross-compile with for autotool
+    2-  Possibly define the host and the target
+    3-  Define the installation path of the compiled library (which was the sysroot/usr folder)
+
+As we promised, we shall first directly define prefix using configure, then we use make.
+
+$export HOST=arm-cortex_a8-linux-gnueabihf   
+$export CROSS_COMPILER=$HOST-gcc
+$export SYSROOT=$($HOST-gcc -print-sysroot)
+
+# Method I
+$ CC=$CROSS_COMPILER ./configure --host=$HOST --prefix="/home/masoudas/..sysroot/usr"
+$ make -j5
+$ make install
+
+# Method II
+$ CC=$CROSS_COMPILER ./configure --host=$HOST --prefix="usr"
+$ make -j5
+$ make DESTDIR=$SYSROOT install
+
+Of course, now we can compile programs with the sqlite library as follows (note that we needn't specify the inclusion
+path, because it's in the usr folder:)
+$ arm-cortex_a8-linux-gnueabihf-gcc -lsqlite3 sqlite-test.c -o sqlite-test
+
+Naturally, there will be runtime dependencies as well, and you will have to install the appropriate files into the 
+target directory as described in Chapter 5, Building a Root Filesystem.

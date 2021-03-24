@@ -1,7 +1,8 @@
 Once the position independent object files are generated, we can generate the shared library by supplying the 
 gcc compiler with the -shared option. The extension for shared libraries as we recall in the linux world is '.so'
-Notice that as is the convention in many Linux contexts, we first supply the name of the output object, the the
-files that are included in it.
+Notice once again the convention for generating an output in Linux contexts: We first tell the compiler what we
+want (a shared library with -shared,) then we specify what the output file is (lib name, using -o,) and then finally
+list the participants in the creation of the library (PIC files.)
 
 $ arm-cortex_a8-linux-gnueabihf-gcc -shared -o libtest.so test1.o test2.o
 

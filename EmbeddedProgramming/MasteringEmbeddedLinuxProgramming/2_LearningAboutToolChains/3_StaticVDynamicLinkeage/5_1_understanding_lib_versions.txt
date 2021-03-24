@@ -1,0 +1,39 @@
+An important advantage of shared libraries is that they can be updated independently of the code generated. If the
+code was statically linked, we wouldn't be able to change the content of the binary. But with dynamic libs, we only
+use the symbols, which would allow us to change the content of the library.
+
+Library updates are of two types: those that fix bugs or add new functions in a backwards-compatible way, and those 
+that break compatibility with existing applications. GNU/Linux has a versioning scheme to handle both these cases.
+
+Each library has a release version and an interface number. The release version is simply a string that is appended 
+to the library name; for example, the JPEG image library libjpeg is currently at release 8.0.2 and so the library 
+is named libjpeg.so.8.0.2. There is a symbolic link named libjpeg.so to libjpeg.so.8.0.2, so that when you compile 
+a program with –ljpeg, you link with the current version. If you install version 8.0.3, the link is updated and you 
+will link with that one instead.
+
+Now suppose that version 9.0.0. comes along and that breaks the backwards compatibility. The link from libjpeg.so 
+now points to libjpeg.so.9.0.0, so that any new programs are linked with the new version, possibly throwing compile 
+errors when the interface to libjpeg changes, which the developer can fix. Any programs on the target that are not 
+recompiled are going to fail in some way, because they are still using the old interface. This is where an object 
+known as the soname (probably so name) helps. The soname encodes the interface number when the library was built 
+rand is used by the runtime linker when it loads the library. It is formatted as: 
+""""                            
+<library name>.so.<interface number>. 
+""""
+For libjpeg.so.8.0.2, the soname is libjpeg.so.8:
+
+$ readelf -a /usr/lib/libjpeg.so.8.0.2 | grep SONAME
+0x000000000000000e (SONAME) Library soname:
+ [libjpeg.so.8]
+
+Any program compiled with it will request libjpeg.so.8 at runtime, which will be a symbolic link on the target to 
+libjpeg.so.8.0.2. When version 9.0.0 of libjpeg is installed, it will have a soname of libjpeg.so.9, and so it is 
+possible to have two incompatible versions of the same library installed on the same system. Programs that were 
+linked with libjpeg.so.8.*.* will load libjpeg.so.8, and those linked with libjpeg.so.9.*.* will load libjpeg.so.9.
+
+Therefore, when we look at the libs folder of the system, we see that we have the following:
+
+    -   libjpeg.a:  This is the library archive used for static linking
+    -   libjpeg.so -> libjpeg.so.8.0.2:     This is a symbolic link, used for dynamic linking
+    -   libjpeg.so.8 -> libjpeg.so.8.0.2:   This is a symbolic link, used when loading the library at runtime
+    -   libjpeg.so.8.0.2:   This is the actual shared library, used at both compile time and runtime

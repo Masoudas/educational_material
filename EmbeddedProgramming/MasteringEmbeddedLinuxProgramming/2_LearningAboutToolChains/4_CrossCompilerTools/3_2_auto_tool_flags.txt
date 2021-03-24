@@ -1,0 +1,29 @@
+After typing in $./configure --help, we get the following list of options, which are pretty much self-explanatory.
+There are actually many more options, but I bring the most important ones here:
+
+  --prefix=PREFIX install architecture-independent files in PREFIX [/usr/local]
+  --build=BUILD     configure for building on BUILD [guessed]
+  --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+
+  INSTALL     Specify the full path to a BSD-compatible install
+  CC          C compiler command
+  CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+              nonstandard directory <lib dir>
+  LIBS        libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+              you have headers in a nonstandard directory <include dir>
+  CXX         C++ compiler command
+  CXXFLAGS    C++ compiler flags
+  CPP         C preprocessor
+  YACC        The `Yet Another Compiler Compiler' implementation to use.
+              Defaults to the first program found out of: `bison -y', `byacc',
+              `yacc'.
+
+And many more address to programs like AWK, BASH, etc.
+
+For example, to change the C compiler, we use the famous CC option (no idea why they put it before ./configure.
+probably fine to put it after too.)
+$ CC=arm-cortex_a8-linux-gnueabihf ./configure -CFLAGS="-Iusr/local/include" -LDFLAG="-lopencv"
+
+

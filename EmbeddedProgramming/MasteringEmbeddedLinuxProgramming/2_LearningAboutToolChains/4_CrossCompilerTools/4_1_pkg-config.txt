@@ -1,0 +1,10 @@
+Keeping track of the dependencies of a package and their required installation flags is a quite difficult task.
+The package configuration utility pkg-config (https://www.freedesktop.org/wiki/Software/pkg-config/) helps track 
+which packages are installed and which compile flags each needs by keeping a database of Autotools packages in 
+[sysroot]/usr/lib/pkgconfig.
+
+For instance, the one for SQLite3 is named sqlite3.pc and contains essential information needed by other packages 
+that need to make use of it.
+
+Essentially, pkg-config does what the cmake scripts of a cmake project do. They contain the flags and the information
+we need to bind to a library.

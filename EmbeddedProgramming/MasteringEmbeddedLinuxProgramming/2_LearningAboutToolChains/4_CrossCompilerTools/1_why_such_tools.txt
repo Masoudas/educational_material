@@ -1,0 +1,7 @@
+At some point, we want to start cross-compiling many tools and libraries for our target system. Many of them will 
+be open source packages—each of which has its own method of compiling and its own peculiarities. There are some 
+common build systems, including:
+    - Pure makefiles, where the toolchain is usually controlled by the make variable CROSS_COMPILE
+    - The GNU build system known as Autotools
+    - CMake (https://cmake.org/)
+

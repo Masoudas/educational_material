@@ -3,7 +3,7 @@ will be done statically.
 
 $ arm-cortex_a8-linux-gnueabihf-gcc -static -g main.cpp -o main-static
 
-Now, using 'ls -lh' to get a long humanly readable listing of the both statically linked and dynamically linked, we
+Now, using 'ls -lh' to get a long humanly readable listing of both the statically and dynamically linked, we
 see that:
 
 -rwxrwxr-x 1 masoudas masoudas  14K mars  13 11:53 main

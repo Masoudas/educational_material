@@ -53,7 +53,7 @@ So the following discussion has two faces, when we're compiling the code, and wh
 Now, considering the above, below we discuss how to set the linker search path. When we want to run our code on
 the target machine, we need to set these variables there.
 
-The linker search path depends on the operating system. It's either the variable LD_LIBRARY_PATH. or ldconfig,
+The linker search path depends on the operating system. It's either with the variable LD_LIBRARY_PATH. or ldconfig,
 setting the path seems to work for all distros.
 
     - Setting the LD_LIBRARY_PATH:
@@ -63,7 +63,8 @@ setting the path seems to work for all distros.
 
     - Using ldconfig:
       Under ubuntu, we need to add a 'LIB_NAME.conf' file to the /etc/ld.so.config.d folder. Then we need to 
-      execute 'sudo ldconfig' to update the linker configuration. 
+      execute 'sudo ldconfig' to update the linker configuration. For example, if the name of the library is opencv,
+      then we need make a file opencv.conf (note that we're dropping the lib from the name.)
 
       Note. The ldconfig is located in "../sysroot/usr/sbin/ldconfig" But note that we can't run it on the host
       machine. 
@@ -74,7 +75,8 @@ the one we've compiled on the source machine or the target machine?
 Note that the linker uses the symbols from the library to create the machine code. At the same time, during execution
 we need to have access to the binary code. Hence, the library should be in a path that can be accessed at both 
 generation of binary and during exectution. Therefore, we must place it where we can find it at runtime. 
-How we find it is still unclear to me. Do we just search in all paths?
+How we find it is still unclear to me. Do we just search in all paths? The runtime linker program is probably the 
+one responsible for this task.
 
 
 
