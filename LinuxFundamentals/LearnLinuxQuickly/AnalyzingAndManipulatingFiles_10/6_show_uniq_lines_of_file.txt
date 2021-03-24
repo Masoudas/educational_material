@@ -1,0 +1,5 @@
+To show the unique lines of files, we can use the unique command. Note however that by unqiue here we mean adjacent
+lines that are unique. If a file has repeated lines, we have to sort it first, then show the unique lines.
+
+$ unique file
+$ sort file | unique

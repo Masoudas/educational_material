@@ -1,0 +1,5 @@
+Sometimes, we just want to discard the output of a command, and neither show either the error messages nor the
+output. What we can do in this situation is to stream the output into the /dev/null file, which I like to call
+the blackhole of linux (or more precisely, the garbage collector of linux):
+
+$ ls non_existent 2> /dev/null

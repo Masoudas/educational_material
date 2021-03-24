@@ -1,0 +1,18 @@
+So far, we saw that the normal output of a command can be redirected using file descriptor one, and the error
+messages with file descriptor 2. Now, normally a command has both of these outputs, so the question would be how
+can we direct both outputs?
+
+Obviously, if we wanted to add them to separate files, we could do as follows:
+
+$ command 1> output_file 2> error_file
+
+Now, if we wanted both output to go the same file, assuming both files exist before hand, we can do:
+
+$ touch all_output
+$ command 1 >> all_output 2>> all_output
+
+Now, another solution here would be to get output 2, and stream it to output one, naturally. To do so, we can't 
+write 2>1, which would imply create a file 1 and put output 2 in it. Instead, we say 2 should be streamed to a
+REFERENCE to output one, as follows:
+
+$ command 1>all_output 2>&1

@@ -1,0 +1,14 @@
+The file command is the famous command we often use to determine the type of a file. A couple of examples is given
+below:
+
+$ file ~
+/home/masoudas: directory
+
+$ file f.txt
+f.txt: ASCII text
+
+$ file /usr/lib/gcc/x86_64-linux-gnu/9/libatomic.a
+/usr/lib/gcc/x86_64-linux-gnu/9/libatomic.a: current ar archive
+
+$ file f
+f: symbolic link to f.txt
