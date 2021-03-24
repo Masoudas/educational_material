@@ -1,0 +1,4 @@
+Search for text is done through the "/Regular_Expression". Note that this a downward search. For an upward search,
+we need to use "?Regular_Expression". this or that or that or this.
+
+To go the next instance, press n, and to go the previous instance, press N.

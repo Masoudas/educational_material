@@ -11,3 +11,10 @@ first 8 (or 10, etc) bits of the address, and the rest of the bits are dedicated
 depends on how many subnets we want (for machines not be able to connect to one another,) and how many mahcines 
 we have on that subnet.
 
+We have three famous subnet classes that have the following IP address ranges:
+    - class A: 255.0.0.0
+    - class B: 255.255.0.0
+    - class C: 255.255.255.0
+
+Final word: If two machines are on different subnet masks, we need a router between them to allow them to communicate
+with one another.

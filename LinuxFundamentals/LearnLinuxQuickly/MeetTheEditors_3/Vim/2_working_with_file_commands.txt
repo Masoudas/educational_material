@@ -1,0 +1,4 @@
+    -   :w      --      write your changes to the file
+    -   :q!     --      get out of vim (quit), but without saving your changes (!)
+    -   :wq     --      write your changes and exit vim
+    -   :saveas --      ~/some/path/: save your file to that location
