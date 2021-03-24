@@ -17,11 +17,12 @@ Modifiers are used before nouns to describe the way in which you're going to do 
     -   /: find a string (literal or regex)
 
 -   Nouns
+
 In English, nouns are objects you do something to. They are objects. With Vim it's the same. Here are some Vim 
 nouns:
 
-    -   w: word
-    -   s: sentence
+    -   w: word (or W for anything up to a blank space or end of line)
+    -   s: sentence (or S for an entire line.)
     -   ): sentence (another way of doing it)
     -   p: paragraph
     -   }: paragraph (another way of doing it)
