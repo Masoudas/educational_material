@@ -1,7 +1,8 @@
 /**
- * At this point, it would be best to consider the copy ctors and assignments of OpenCV. It's important to understand
- * the 'Range' class prior to understanding those constructors however:
+ * At this point, it would be best to consider the copy ctors and assignment ops of OpenCV. It's important to 
+ * understand the 'Range' class prior to understanding those constructors however:
  * 
+ * Range class:
  * Template class specifying a continuous subsequence (slice) of a sequence.
  * The class is used to specify a row or a column span in a matrix ( Mat ) and for many other purposes. 
  * Range{start_inclusive, end_exclusive} specifies '[start_inclusive, end_exclusive)'.
@@ -39,7 +40,7 @@
  *          row-column range only in the way it accepts arguments.
  * 
  *      -     Mat(const Mat &m, const std::vector< Range > &ranges)
- *          Sameas above, but only accepts ranges through a vector.
+ *          Same as above, but only accepts ranges through a vector.
  * 
  * The copy assignment operators are:
  *      -   Mat & 	operator=(const Mat &m)

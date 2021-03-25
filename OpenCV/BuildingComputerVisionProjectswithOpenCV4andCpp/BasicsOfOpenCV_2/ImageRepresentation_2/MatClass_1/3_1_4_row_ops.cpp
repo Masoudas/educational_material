@@ -37,12 +37,14 @@ void row_or_col_ops(cv::Mat& m1){
 }
 
 void legitimate_reassignment_of_rows(cv::Mat& m, int r, int r_o, int alpha){
-    m.row(r) = m.row(r_o) * alpha;  // A new data instance is generated.
+    std::cout << "The original row was: " << m.row(r);
+    m.row(r) = m.row(r) + m.row(r_o) * alpha;  // Now, properly changes the content of row_r
+    // m.row(r) = m.row(r) + m.row(r_o);    // Even though no alpha, still changes the content of row_r
 
-    std::cout << "The original row was: " << m.row(r_o);
-    std::cout << "\n The changed reassigned row is: " << m.row(r_o);
+    std::cout << "\n The changed reassigned row is: " << m.row(r);
 
-    // An equivalent implementation.
+    // Another operation that changes the content of row
+    m.row(r_o) = 3;
     m.row(r_o) *= 2;
     m.row(r_o).copyTo(m.row(r));
 }
@@ -60,8 +62,13 @@ void copy_rows(cv::Mat& m){
     std::cout << m << '\n';
 }
 
+void transpose_matrix(cv::Mat& m){
+   m = m.t();   // Note the need for reassignmend
+}
+
 //int main(){
-    //cv::Mat m(2, 2, CV_8S, cv::Scalar{0,0,255});
+    //cv::Mat m(2, 2, CV_8S, cv::Scalar{0,-128,127});
     //m.at<schar>(0, 0) = 1; m.at<schar>(0,1) = 1;   // schar is among the typedifs of opencv
-    //copy_rows(m);
+    //m.at<schar>(1, 0) = 2; m.at<schar>(1,1) = 2;   
+    //transpose_matrix(m);
 //}

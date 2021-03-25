@@ -1,10 +1,14 @@
 /**
  * How do we create a matrix of higher dimensions? We already mentioned that the convention is 
- * {..., cube, plane, row, column}.
+ * {..., cube, plane, row, column}. We need to feed this array as the size to cv::Mat, and that's the way to create
+ * higher dimension images.
  * 
  * We must not forget to define the number of channels as one. We should also not forget that except for the
  * step variable and number of dimensions and size, none of the other dimensionality functions (including row, column
  * number of channels) work for such matrices.
+ * 
+ * As a final point, we must NEVER define a higher dimensional image with more than one channel. Hence, the image
+ * type (or macro) must always be chosen from the ones that have no channel, like CV_8U or CV_64F, etc.
  * 
  */
 

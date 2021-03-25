@@ -8,7 +8,7 @@
  * 
  * Also, note that step is independent of the number of channels, because:
  *  -   For a 2D image, we have two steps, even if it has multiple channels (number of dimensions)
- *  -   For higher dim images, the step dim equals the number of dimensions.
+ *  -   For higher dim images, the step size equals the number of dimensions.
  * 
  * 
  */

@@ -3,7 +3,8 @@
  * 
  *  -   static MatExpr cv::Mat::eye(int	rows, int cols, int type)
  *      Returns an identity matrix of the specified size and type.
- *      The method returns a Matlab-style identity matrix initializer, similarly to Mat::zeros. 	
+ *      The method returns a Matlab-style identity matrix initializer, similarly to Mat::zeros. 
+ *      Note that for images with more than one channel, only the first channel is set to one.	
  * 
  *  -   static MatExpr cv::Mat::eye(Size size, int type)
  *      An overload for creating an arbitrary size.

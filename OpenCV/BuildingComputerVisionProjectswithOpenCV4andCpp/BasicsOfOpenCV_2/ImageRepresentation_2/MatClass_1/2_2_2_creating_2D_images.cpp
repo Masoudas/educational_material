@@ -1,8 +1,8 @@
 /**
- * Now that we know how to feed the define the pixel resolution and the number of channels, it's time to build a
+ * Now that we know how to define the pixel resolution and the number of channels, it's time to build a
  * matrix.
  * 
- * The constructor of the Mat that we use here are these:
+ * The constructors of the Mat class that we use here are these:
  *      - 	Mat (int rows, int cols, int type)
  *  	-   Mat (Size size, int type)
  *      -   Mat (int rows, int cols, int type, const Scalar &s)
@@ -12,7 +12,7 @@
  * we've created.
  * 
  * Very important note: Mat has an initializer_list constructor, which as we know through the overload resolution
- * rules of constructors takes place over argumentative constructors. Now, consider the following initialization:
+ * rules of constructors takes precedence over argumentative constructors. Now, consider the following initialization:
  
  cv::Mat m{1,2,CV_8UC1}
   
@@ -42,6 +42,14 @@ void create_image_with_size_vector(){
     std::cout << "Image has (row, column)=(" << m1.rows << "," << m1.cols << ")\n";
 }
 
-// int main(){
-//     create_image_with_size_vector();
-// }
+void trivial_image(){
+    // Note that this image has dim zero, but every non-trivial image has dim >= 2
+    cv::Mat m{};
+
+    std::cout << "\nTrivially constructed image has dimension " << m.dims << '\n';
+}
+
+//int main(){
+    //trivial_image();
+    //create_image_with_size_vector();
+//}

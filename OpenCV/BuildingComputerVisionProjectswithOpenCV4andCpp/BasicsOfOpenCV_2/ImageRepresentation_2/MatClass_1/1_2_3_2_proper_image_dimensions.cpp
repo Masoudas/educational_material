@@ -1,5 +1,6 @@
 /** This is from me:
- * Based on the evidence I've gathered so far, especifically the definition of the total function below:
+ * Essentially, we must consider a normal 2D image separately from higher dimensional images. Moreover, Based on 
+ * the evidence I've gathered so far, especifically the definition of the total function below:
 
 size_t Mat::total() const
 {
@@ -17,7 +18,7 @@ size_t Mat::total() const
  *      If however we supply an empty vector, we can create a 0 dim image! As soon as we supply an element, the
  *      matrix dim would be two.
  * 
- *  -   Two dim
+ *  -   Two dim:
  *      In this case, the definition of element is the number of pixels in the image. Note that even if the number
  *      of channels is not 1, the matrix returns rows * cols.
  * 

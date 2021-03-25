@@ -3,11 +3,10 @@
  *      -   CV_nuC2   (n=8,16,32,64) (u=S,U,F)   
  * 
  * constitute a special form of image. Essentially, These are your typical complex images, and normally instead of 
- * 2 channel images are called complex images. 
+ * 2 channel images, these images are called complex images. 
  * 
  * To create an instance of such images, we can supply a particular 2 argument Scalar (a complex scalar), which
  * would initialize all the elements with the given COMPLEX value.
- * 
  */
 
 #include <opencv2/core.hpp>

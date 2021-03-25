@@ -32,4 +32,6 @@
  *    -   typedef int64_t 	int64
  *    -   typedef uint64_t 	uint64
  * 
+ * Final thought: Note that we don't have all combinations of bit size and float or signed. For example, we
+ * famously don't have 32 bit signed to unsigned image.
  */

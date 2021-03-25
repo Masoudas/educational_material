@@ -8,7 +8,7 @@
 #include <iostream>
 void creating_sub_images(cv::Mat& o){
     cv::Mat sub1{o, cv::Rect{10, 10, 100, 100}};    // Using the copy constructor
-    cv::Mat sub2{o, cv::Range{10, 111}, cv::Range{10, 111}};    // Using range, copy from ro 10 to 110 inclusive.
+    cv::Mat sub2{o, cv::Range{10, 111}, cv::Range{10, 111}};    // Using range, copy from ro 10 to 111 exclusive.
 
     cv::Mat sub3 = o(cv::Range::all(), cv::Range(1,4));    // Copy all the rows, but only three columns.
     std::cout << "\n(rows,columns)=(" << sub3.rows << "," << sub3.cols << ")\n\n";
@@ -17,8 +17,8 @@ void creating_sub_images(cv::Mat& o){
     sub4 = o(cv::Rect{10, 10, 100, 100});    // Using the assignment operator!
 }
 
-int main(){
-    cv::Mat sub1(200, 200, CV_16U, cv::Scalar::all(0));    // Using the copy constructor
-    creating_sub_images(sub1);
-}
+// int main(){
+//     cv::Mat sub1(200, 200, CV_16U, cv::Scalar::all(0));    // Using the copy constructor
+//     creating_sub_images(sub1);
+// }
 

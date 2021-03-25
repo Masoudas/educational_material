@@ -14,3 +14,23 @@
  * 
  * Me: Note that we don't measure depth in terms of the bits, to distinguish between signed and unsigned values.
  */
+
+#include <opencv2/core.hpp>
+#include <iostream>
+
+void getting_depth(){
+    cv::Mat m{2, 2, CV_8U, cv::Scalar::all(0)};
+    std::cout << "depth of 8 bit unsigned image is " << m.depth() << '\n';  // Would be 0 and not 1 (standing for one
+                                                                        // byte.)
+    
+    cv::Mat m1{2, 2, CV_16S, cv::Scalar::all(0)};
+    std::cout << "depth of 16 bit unsigned image is " << m1.depth() << '\n'; // Would be 3, and not 2 (standing for
+                                                                        // two bytes.)
+
+    cv::Mat m2{2, 2, CV_32F, cv::Scalar::all(0)};
+    std::cout << "depth of 32 bit float image is " << m2.depth() << '\n'; // Would be 5, rather than 4.
+}
+
+// int main(){
+//     getting_depth();
+// }
