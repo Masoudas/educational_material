@@ -3,5 +3,5 @@ be open source packages—each of which has its own method of compiling and its 
 common build systems, including:
     - Pure makefiles, where the toolchain is usually controlled by the make variable CROSS_COMPILE
     - The GNU build system known as Autotools
-    - CMake (https://cmake.org/)
+    - CMake 
 

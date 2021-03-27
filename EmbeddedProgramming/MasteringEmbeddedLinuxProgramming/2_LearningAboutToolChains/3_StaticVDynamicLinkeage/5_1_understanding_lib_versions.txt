@@ -15,7 +15,7 @@ Now suppose that version 9.0.0. comes along and that breaks the backwards compat
 now points to libjpeg.so.9.0.0, so that any new programs are linked with the new version, possibly throwing compile 
 errors when the interface to libjpeg changes, which the developer can fix. Any programs on the target that are not 
 recompiled are going to fail in some way, because they are still using the old interface. This is where an object 
-known as the soname (probably so name) helps. The soname encodes the interface number when the library was built 
+known as the soname (me: probably so name) helps. The soname encodes the interface number when the library was built 
 rand is used by the runtime linker when it loads the library. It is formatted as: 
 """"                            
 <library name>.so.<interface number>. 

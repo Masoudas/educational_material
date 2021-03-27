@@ -3,7 +3,8 @@ compiler. To do so on the NATIVE COMPILER, we can run:
 
 $ pkg-config sqlite3 --libs --cflags
 
-However, if run the same command, forgetting that we need to define the path to the cross-compiler:
+However, if run the same command, forgetting that we need to define the path to the cross-compiler libraries,
+we get:
 
 $ pkg-config sqlite3 --libs --cflags
 Package sqlite3 was not found in the pkg-config search path.

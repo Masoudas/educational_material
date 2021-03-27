@@ -1,7 +1,7 @@
 After typing in $./configure --help, we get the following list of options, which are pretty much self-explanatory.
 There are actually many more options, but I bring the most important ones here:
 
-  --prefix=PREFIX install architecture-independent files in PREFIX [/usr/local]
+  --prefix=PREFIX   install architecture-independent files in PREFIX [/usr/local]
   --build=BUILD     configure for building on BUILD [guessed]
   --host=HOST       cross-compile to build programs to run on HOST [BUILD]
 
@@ -23,7 +23,8 @@ There are actually many more options, but I bring the most important ones here:
 And many more address to programs like AWK, BASH, etc.
 
 For example, to change the C compiler, we use the famous CC option (no idea why they put it before ./configure.
-probably fine to put it after too.)
-$ CC=arm-cortex_a8-linux-gnueabihf ./configure -CFLAGS="-Iusr/local/include" -LDFLAG="-lopencv"
+probably fine to put it after too.) Note that this is not a real package, but rather just an illustration:
+$ CC=arm-cortex_a8-linux-gnueabihf-gcc ./configure -CFLAGS="-Iusr/local/include" -LDFLAG="-lopencv" 
+  --host=arm-cortex_a8linux-gnueabihf --prefix=$SYSROOT/usr/
 
 

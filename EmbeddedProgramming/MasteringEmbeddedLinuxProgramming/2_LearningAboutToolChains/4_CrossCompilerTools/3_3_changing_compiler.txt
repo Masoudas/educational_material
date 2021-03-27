@@ -26,5 +26,5 @@ Build, Host or Target. Sometimes for example, the target option is not even avai
 Hence, to cross-compile, we need only to write:
 $ CC=arm-cortex_a8-linux-gnueabihf-gcc ./configure --host=arm-cortex_a8-linux-gnueabihf
 
-IMPORTANT NOTE: We should not get confused that for the compiler, we need to add the "gcc", but for the host
-system, we must not. Some people seem to always forget this!
+IMPORTANT NOTE: We should remember that for the compiler, we need to add the "gcc", but for the host system, we 
+must not. Some people seem to always forget this!

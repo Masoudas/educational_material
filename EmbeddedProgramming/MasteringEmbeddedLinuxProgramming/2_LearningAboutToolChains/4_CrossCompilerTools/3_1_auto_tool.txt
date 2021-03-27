@@ -4,7 +4,6 @@ autotool is a GNU build tool, which consists of the following subpackages:
     - GNU Libtool
     - Gnulib
 
-
 The role of Autotools is to smooth over the differences between the many different types of systems that the 
 package may be compiled for, accounting for different versions of compilers, different versions of libraries, 
 different locations of header files, and dependencies with other packages. Packages that use Autotools come with a 
