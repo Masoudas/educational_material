@@ -4,7 +4,7 @@ Static cast basically checks for compile time errors, as opposed to a C-Style ca
 
 Formally, converts between related types such as one pointer type to another in the same
 class hierarchy, an integral type to an enumeration, or a floating-point type to an integral
-type. It also does conversions defined by constructors (§16.2.6, §18.3.3, §iso.5.2.9) and
+type. It also does conversions defined by constructors (16.2.6, 18.3.3, iso.5.2.9) and
 conversion operators
 
 For example, 
