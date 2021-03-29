@@ -6,7 +6,8 @@
  * 
  *          The methods return the matrix read-only or read-write iterators. The use of matrix iterators is very 
  *          similar to the use of bi-directional STL iterators 
- *          Me: Therefore, the iterators are not random access ones!
+ *          Me: Despite saying this, the iterators are in fact random access, and we can add or subtract ptr_diffs
+ *          from them.
  *          
  *     -    MatConstIterator_<_Tp> cv::Mat::begin() const
  *          The corresponding constant iterator.
@@ -40,7 +41,7 @@ void alphaBlendRGBA(const Mat& src1, const Mat& src2, Mat& dst)
                 inv_scale = 1.f/alpha_scale;
 
     CV_Assert( src1.type() == src2.type() &&
-               src1.type() == traits::Type<VT>::value &&
+               src1.type() == traits::Type<VT>::value &&    // Couldn't we have just checked for 4 channels here?
                src1.size() == src2.size());
 
     Size size = src1.size();

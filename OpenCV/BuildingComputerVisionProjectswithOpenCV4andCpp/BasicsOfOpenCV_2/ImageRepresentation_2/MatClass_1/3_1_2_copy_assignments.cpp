@@ -91,4 +91,8 @@
  *          Same as row, but for column
  *      	
  *      -   Mat 	colRange(const Range &r) const
+ *
+ * Note that some of the properties of the copied image (like for example the step vector) is inherited from the
+ * original matrix (to allow checking for continuous images. See 6_2_is_continuous,) whereas other properties are
+ * created for the copied image (like size, cols, etc)
  */

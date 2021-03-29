@@ -14,7 +14,8 @@
  * As a reminder, note that we can't directly print the uchar 3D point, because as we may recall, a char is printed
  * as ASCII when used with cout, and not its literal number.
  * 
- * Note that for four channel images, we can't use Point, and we need to use vector.
+ * Note that for four channel images, we can't use Point, and we need to use vector, because each point has exactly
+ * four dimensions that need attending.
  */
 
 #include <opencv2/core.hpp>
@@ -49,7 +50,18 @@ void reading_complex_image(){
     }
 }
 
-??? Four channel
+void reading_four_channel_images(cv::Mat& m){
+    CV_Assert(m.size.dims() == 2);  // Ensure that we're dealing with a 2D image.
+    CV_Assert( m.type() == CV_8U);
+    using Pixel = cv::Vec4b;    // Our pixel type is a vector of four uchars.
+
+    for (int row = 0; row < m.rows; row++){
+        for (int col = 0; col < m.cols; col++){
+            m.at<Pixel>(row, col) = {0, 0, 0, 0};   // Setting each pixel to zero.
+        }
+    }
+
+}
 
 // int main(){
 //     reading_RGB_image();

@@ -13,6 +13,8 @@
  *  -   CV_64F - 64-bit floating-point numbers ( -DBL_MAX..DBL_MAX, INF, NAN )
  * 
  * Me: Note that we don't measure depth in terms of the bits, to distinguish between signed and unsigned values.
+ * Me: Also note that the good thing about the depth function is that we measure the depth regardless of channels
+ * (as we should.) Hence, two images with different number of channels may have the same depth.
  */
 
 #include <opencv2/core.hpp>

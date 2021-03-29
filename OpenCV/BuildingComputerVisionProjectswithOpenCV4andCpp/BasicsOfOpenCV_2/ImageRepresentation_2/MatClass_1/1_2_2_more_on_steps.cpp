@@ -3,6 +3,8 @@
  * More accurately, step should have been called the number of bytes we need to move forward to get to the next
  * element (pixel in 2D images, element in higher dim images.)
  * 
+ * It does appear that we're generally more interested in the size matrix rather than the step matrix.
+ *   
  * The definition of step is in terms of number of bytes required to go to the next element, sort of an equivalent
  * to sizeof. Conseuqently, if the image depth (int terms of bytes) doubles, so will the size of step.
  * 
@@ -10,7 +12,10 @@
  *  -   For a 2D image, we have two steps, even if it has multiple channels (number of dimensions)
  *  -   For higher dim images, the step size equals the number of dimensions.
  * 
- * 
+ * Finally, note the following cast definition in MatSize:
+ *      - operator size_t () const
+ *       There's no formal definition for this operator in the openCV documentation! It does seem to cast to the 
+ *       step of the first dimension.
  */
 #include <opencv2/core.hpp>
 #include <iostream>
@@ -43,6 +48,7 @@ void step_size(){
     std::cout << "Four times the depth: \n";
     cv::Mat m4(1, 2, CV_32SC2);
     print_step(m4);
+
 }
 
 // int main(){

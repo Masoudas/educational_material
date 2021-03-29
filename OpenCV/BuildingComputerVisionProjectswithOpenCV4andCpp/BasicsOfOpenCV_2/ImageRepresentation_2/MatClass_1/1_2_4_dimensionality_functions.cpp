@@ -17,6 +17,9 @@
  *  -   cv::MatSize cv::Mat::size
  *      The size of image dimensions as a structure. Note that this a field of the cv::Mat class.
  * 
- *  
+ * The size structure returns the size of each dimension (and does not consider the number of channels for 2D 
+ * images.) There's also a very interesting cast operator to size_t inside of it:
+ *  -   operator size_t()()
+ *  Returns the size of the first dimension.
  * 
  */
