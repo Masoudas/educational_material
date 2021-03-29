@@ -3,8 +3,8 @@
  * the fact if the images to be alpha blended are continuous or not (assuming a 2D image.) The idea is that we
  * want to write one loop to take care of this.
  *
- * Note that if the image is continuous, we just need to go over row * col elements in one loop, and we can get
- * a pointer to the first element just once for that.
+ * To start, assume that the image is single channel. Note that if the image is continuous, we just need to go over 
+ * row * col elements in one loop, and we can get a pointer to the first element just once for that.
  * If the image is not continuous, we need to call the ptr method once for each row, and then iterate over the
  * column, and then repeat.
  *
@@ -18,14 +18,18 @@
  *  height = rows; width = cols
  *
  * Now, considering the above, essentially our loop would look something like this:
+
  for (height)
     for (width)
         ptr* = image_ptr(height, width);
         f(ptr);
-
+ * Now, we can see that if the image is in fact continuous, the outer loop is executed only once. 
+ *
  * Under this new light, we can now easily understand the code below. Note two things:
- *  - T: and accessing each element
- *  - width multiplication by four:
+ *  - T: Note that the template parameter is the image data type. Hence, when we get a pointer to it, we access 
+ *    each element separately.
+ *  - Width multiplication by four: Now, because we access each channel individually, we need to multiply the width
+ *    by four, to read and write to each pixel.
  */
 
 #include <opencv2/core.hpp>
@@ -42,9 +46,6 @@ void alphaBlendRGBA(const Mat& src1, const Mat& src2, Mat& dst)
     Size size = src1.size();
     dst.create(size, src1.type());
 
-    // here is the idiom: check the arrays for continuity and,
-    // if this is the case,
-    // treat the arrays as 1D vectors
     if( src1.isContinuous() && src2.isContinuous() && dst.isContinuous() )
     {
         size.width *= size.height;

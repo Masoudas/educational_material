@@ -1,7 +1,8 @@
 /**
  * In these examples, we create new headers for sections of the image, which allow us to work with those sections,
  * or index them from zero for example.
- * 
+ *
+ * Note that the method cv::Mat::isSubmatrix() returns true if a matrix is in fact a sub-matrix.
  */
 
 #include <opencv2/core.hpp>
