@@ -1,0 +1,20 @@
+To get the default gateway, we use the "route" option of the ip command. It essentially tells us how the traffic
+is routed from our computer to other computers.
+
+$ ip route
+    default via 10.188.0.1 dev wlp0s20f3 proto dhcp metric 600 
+    10.188.0.0/16 dev wlp0s20f3 proto kernel scope link src 10.188.246.192 metric 600 
+    169.254.0.0/16 dev wlp0s20f3 scope link metric 1000 
+
+Note that the default is indicated with the default word actually. (me: dev above means device, and not developer
+you morron :D)
+
+To add a non-default gateway for an ip address, we need to specify for which ip address we want to add it and what
+its value is. For example, below, we add the default 192.168.2.254 for the ethernet ip address 192.168.2.0/24:
+$ ip route add 192.168.2.0/24 via 192.168.2.254 dev eth0
+
+and we can delete the address as follows:
+$ ip route add 192.168.2.0/24 via 192.168.2.254 dev eth0
+
+In order to add a default gateway, we just need to add the word default and recall the name of the network:
+$ ip route add 192.168.1.0/24 dev eth0 # Same command for delete.

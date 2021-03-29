@@ -1,0 +1,7 @@
+To delete the rest of:
+    - sentence, type D.
+    - paragraph, visually select to the end of paragraph with v} and x for delete.
+    - document from where you're: We know that gg is the beginning of document, and G$ goes to the end of the
+     document. We also need to visually select and delete. Hence, vG$x deletes from current position out of the
+     end of the file.
+
