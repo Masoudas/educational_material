@@ -343,6 +343,12 @@
     <Filter Include="Source Files\Concurrency_41\ThreadClass_">
       <UniqueIdentifier>{1b313114-b03f-4912-aeb7-ea4b1a37f695}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28">
+      <UniqueIdentifier>{e57f7952-038c-4ad2-a837-5dc9c9836c7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\TypeFunctions_">
+      <UniqueIdentifier>{c630a115-44c5-4f7e-80dc-c1b159d3f0fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -1914,9 +1920,6 @@
     <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\3_function_template_deduction_and_defaults.cpp">
       <Filter>Source Files\Specialization_25\DefaultTemplateArguments_2</Filter>
     </ClCompile>
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\x_order_of_specialization.cpp">
-      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
-    </ClCompile>
     <ClCompile Include="Specialization_25\0_2_the_elluding_fact_regarding_specialization.cpp">
       <Filter>Source Files\Specialization_25</Filter>
     </ClCompile>
@@ -1927,9 +1930,6 @@
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp">
-      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
-    </ClCompile>
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_interface_specialization.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp">
@@ -2105,6 +2105,42 @@
     </ClCompile>
     <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\5_pointers_are_special.cpp">
       <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\8_a_cool_trick_regarding_conversion.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_1_interface_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_2_program_organization_and_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_5_exact_specialization_is_called.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\5_1_function_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\5_2_example.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_3_relation_to_template_deduction.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_4_specialization_that_is_not_overloading.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_2_conditional_statement.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_1_example_allocating_on_heap_or_stack.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_3_final_implementation.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\6_cant_specialize_with_templated_types.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

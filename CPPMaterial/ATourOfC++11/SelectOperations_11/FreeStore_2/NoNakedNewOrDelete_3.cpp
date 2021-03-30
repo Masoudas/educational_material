@@ -7,7 +7,7 @@
 #include <memory>
 #include <stdexcept>
 
-int main(){
+void some_examples_(){
     int n = 3;
 
     int* p = new int[n];

@@ -22,13 +22,13 @@ class X {
 	friend int f3(X);
 };
 
-void g()
+void usage()
 {
 	// 99.m1(); // error : X(99).m1() not tried
 	// 99.m2(); // error : X(99).m2() not tried
 }
 
-void h()
+void more_usage()
 {
 //	f1(99); // error : f1(X(99)) not tried: non-const X& argument
 //	f2(99); // OK: f2(X(99)); const X& argument, but f2 is not defined yet!

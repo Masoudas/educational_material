@@ -8,6 +8,7 @@ class Matrix {
 };
 
 // As an stand-alone operation, we need to overload with two parameters.
-Matrix& operator+(const Matrix& a, const Matrix& b) {
-
+Matrix operator+(const Matrix& a, const Matrix& b) {
+	Matrix m{};
+	return m;
 }

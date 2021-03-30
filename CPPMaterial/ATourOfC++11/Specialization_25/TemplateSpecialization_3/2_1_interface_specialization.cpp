@@ -1,8 +1,8 @@
 /** 
 * Sometimes, a specialization is not an algorithmic optimization, but a modification of an interface 
 * (or even a representation).For example, the standard library complex uses specializations to adjust the 
-* set of constructorsand the argument types for important operations for important specializations (such 
-* as complex<float> and complex<double>).The general(primary) template looks like shown below.
+* set of constructors and the argument types for important operations for important specializations (such 
+* as complex<float> and complex<double>).The general (primary) template looks like shown below.
 * 
 * Note that the scalar assignment operators take reference arguments. That’s not efficient for floats, so 
 * complex<float> passes those by value.
@@ -13,11 +13,13 @@
 * implicit constructor from complex<float>. Howev er, the constructor from complex<long double> is 
 * explicit to make narrowing less likely.
 */
+
+#include <complex>
 template<typename T>
 class complex {
 public:
 	complex(const T& re = T{}, const T& im = T{}) {};
-	complex(const complex&) {}; // copy constr uctor
+	complex(const complex&) {}; // copy ctor uctor
 
 	template<typename X>
 	complex(const complex<X>&) {}; // conversion from complex<X> to complex<T>

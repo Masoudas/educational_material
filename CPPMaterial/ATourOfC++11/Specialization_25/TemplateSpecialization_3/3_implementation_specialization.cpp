@@ -9,7 +9,7 @@ template<typename T, int N>
 class Matrix {}; // N-dimensional Matrix of Ts
 
 template<typename T>
-class Matrix<T, 0> { // specialization for N==1
+class Matrix<T, 0> { // specialization for N==1 (me: N=0, but this means trivial matrix)
 	T val;
 	// ...
 };

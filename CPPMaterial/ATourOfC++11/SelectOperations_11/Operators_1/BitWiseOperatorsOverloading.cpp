@@ -54,7 +54,7 @@ public:
 
 };
 
-int main(){
+void bitwise_ops(){
     BitwiseOL o1{true};
     BitwiseOL o2{true};
 

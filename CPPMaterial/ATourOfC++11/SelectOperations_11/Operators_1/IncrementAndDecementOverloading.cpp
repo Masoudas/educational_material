@@ -45,7 +45,7 @@ public:
     }
 };
 
-int main(){
+void inc_dec_examples(){
     Increment c;
     Increment d;
     Increment e;

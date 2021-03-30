@@ -27,20 +27,19 @@ void print_hello() {
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	std::cout << "Hello from thread " << std::this_thread::get_id() << '\n';
 }
-
-int main() {
-	std::thread t1{ print_hello };
-	t1.detach();
-
-
-	std::thread t2{ print_hello };
-	t2.detach();
-
-	std::thread t3{ print_hello };
-	t3.detach();
-	
-	std::thread t4{ print_hello };
-	t4.detach();
-
-	std::this_thread::sleep_for(std::chrono::seconds(6));
-}
+//int main() {
+//	std::thread t1{ print_hello };
+//	t1.detach();
+//
+//
+//	std::thread t2{ print_hello };
+//	t2.detach();
+//
+//	std::thread t3{ print_hello };
+//	t3.detach();
+//	
+//	std::thread t4{ print_hello };
+//	t4.detach();
+//
+//	std::this_thread::sleep_for(std::chrono::seconds(6));
+//}

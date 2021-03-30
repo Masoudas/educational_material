@@ -8,13 +8,13 @@
 #include <iostream>
 
 using namespace std;
-int main(){
-    int x{};
-    cout << ~x << endl; // Complement, minus -1.
-    cout << !x << endl; // Nothing here!
-
-    
-    if (!x){    // This would be true.
-        cout << "We're here baby";
-    }
-}
+//int main(){
+//    int x{};
+//    cout << ~x << endl; // Complement, minus -1.
+//    cout << !x << endl; // Nothing here!
+//
+//    
+//    if (!x){    // This would be true.
+//        cout << "We're here baby";
+//    }
+//}

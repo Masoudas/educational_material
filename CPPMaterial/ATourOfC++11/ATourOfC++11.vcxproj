@@ -460,6 +460,7 @@
     <ClCompile Include="PointersArraysReferences_7\Pointers\4_beware_of_comparing_sizet_and_ptrdiff.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\6_cv_qualifier.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\7_constexpr_pointer.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Pointers\8_a_cool_trick_regarding_conversion.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers_2.cpp" />
     <ClCompile Include="PointersArraysReferences_7\References_5\5_2_5_function_returning_rvalue.cpp" />
     <ClCompile Include="PointersArraysReferences_7\References_5\7_2_auto_and_references.cpp" />
@@ -493,6 +494,8 @@
     <ClCompile Include="Specialization_25\0_1_an_array_is_different_from_pointer_in_specialization.cpp" />
     <ClCompile Include="Specialization_25\0_2_the_elluding_fact_regarding_specialization.cpp" />
     <ClCompile Include="Specialization_25\1_even_the_big_guy_does_not_go_into_detail.cpp" />
+    <ClCompile Include="Specialization_25\5_1_function_specialization.cpp" />
+    <ClCompile Include="Specialization_25\5_2_example.cpp" />
     <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\1_why_default_template_arguments.cpp" />
     <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\2_default_function_template_arguments.cpp" />
     <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\3_function_template_deduction_and_defaults.cpp" />
@@ -508,12 +511,16 @@
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_2_reducing_code_bloat.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp" />
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_interface_specialization.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_1_interface_specialization.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_2_program_organization_and_specialization.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\3_implementation_specialization.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_1_the_primary template.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_2_concepts_go_in_the_primary_template.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\4_3_primary_need_not_be_defined.cpp" />
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\x_order_of_specialization.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_5_exact_specialization_is_called.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_3_relation_to_template_deduction.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_4_specialization_that_is_not_overloading.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\6_cant_specialize_with_templated_types.cpp" />
     <ClCompile Include="SpecialOperators_19\2_function_call.cpp" />
     <ClCompile Include="SpecialOperators_19\Friends_4\1_defining_friendship.cpp" />
     <ClCompile Include="SpecialOperators_19\Friends_4\2_making_all_member_functions_friend.cpp" />
@@ -594,6 +601,9 @@
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\Basics_1.cpp" />
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\EnumClasses_2.cpp" />
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\PlainEnums_3.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_2_conditional_statement.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_1_example_allocating_on_heap_or_stack.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_3_final_implementation.cpp" />
     <ClCompile Include="Templates_23\0_0_templates_are_type_safe.cpp" />
     <ClCompile Include="Templates_23\0_1_type_conversion_with_templates.cpp" />
     <ClCompile Include="Templates_23\0_2_templates_of_different_are_independent.cpp" />

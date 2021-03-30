@@ -45,4 +45,6 @@ void using_templated_func() {
 	
 	const int c = 13;
 	templated_func(c); // P = T, A = const int, adjusted to int: deduced T = int
+
+	templated_func("aaa");	// This one however is A = const char*!!!
 }

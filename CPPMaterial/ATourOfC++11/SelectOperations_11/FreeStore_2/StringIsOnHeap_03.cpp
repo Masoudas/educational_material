@@ -50,8 +50,9 @@ std::string* reverse_string2(const std::string& s ){
 /** Vector and array and I'm guessing all other structures do the same as well.
 */
 
-std::vector<int>& vecIsTheSame(){
-    return std::vector<int>{1,2,3};
+std::vector<int> vecIsTheSame(){
+    std::vector<int> v{1,2,3};
+    return v;
 }
 
 //int main(){

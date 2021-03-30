@@ -24,6 +24,6 @@ constexpr unsigned short calculateMiddle16Bits(int val){
 }
 
 #include <iostream>
-int main(){
+void stream(){
     std::cout << calculateMiddle16Bits(2048);
 }

@@ -39,7 +39,7 @@
  * 
  */
 #include <initializer_list>
-int main(){
+void using_init_list(){
     std::initializer_list<int> l{1, 2, 3};   // It could be interpreted as const int a[] = {1, 2, 3}
     //*l.begin() = 2; // Wrong. This is a constant;
 

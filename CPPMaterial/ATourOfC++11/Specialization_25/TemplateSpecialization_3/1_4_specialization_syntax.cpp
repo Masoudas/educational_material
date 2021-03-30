@@ -25,8 +25,26 @@
 * here's the difficult part: the template (in name) in the above example is still T. However, this special
 * case is instantiated if we pass pointers (like int*.) The point being implied here is that inside the 
 * class, if we wrote for example 'T t', then this t is still an instance of T (an int for example). It is
-* not T* (or int*). This is an obvious point, which is evident based on the usuall syntax of templates.
-* 
-* A specialization with a pattern containing a template parameter is called a partial specialization in 
-* contrast to complete specializations
+* not T* (or int*). When writing the specialization, this is an obvious point. However, when using the class, the ambiguity
+* is that the user writes type<int*>, but is surprised it has to pass an int, as is shown below. Hence, it does make perfect
+* sense when writing the class, but not as much when we use it. 
 */
+#include <iostream>
+template<typename T>
+struct t_ptr {};
+
+template<typename T>	// T is instantiated with int* for example
+struct t_ptr <T*> {
+	t_ptr(T t) {	// We're passing an int*
+		std::cout << "The content of the passed value is " << t;
+	}
+};
+
+void instantiate_ptr_templated_struct() {
+	int val{ 5 };
+	t_ptr<int*> t{val};
+}
+
+//int main() {
+//	instantiate_ptr_templated_struct();
+//}
