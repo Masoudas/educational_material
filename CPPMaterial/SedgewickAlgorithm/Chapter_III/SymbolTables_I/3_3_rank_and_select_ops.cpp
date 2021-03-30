@@ -9,9 +9,11 @@
 * with that rank. Consequently, we can write for key 'k' with rank 'r':
 * 
 * r == rank(select(r));
-* k == select(rank(r));
+* k == select(rank(k));
 * 
 * For symbol tables, our challenge is to perform these operations quickly, intermixed with insertions, 
 * deletions, and searches.
 * 
+* Note that rank and select operations are only applicable in an ordered symbol table, not an ordinary
+* symbol table.
 */

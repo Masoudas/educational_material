@@ -225,12 +225,6 @@
     <ClCompile Include="Chapter_III\SymbolTables_I\2_4_deletion_of_key.cpp">
       <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter_III\SymbolTables_I\2_1_st_interface.cpp">
-      <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter_III\SymbolTables_I\3_1_ordered_st_interface.cpp">
-      <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
-    </ClCompile>
     <ClCompile Include="Chapter_III\SymbolTables_I\3_2_minimum_and_maximum.cpp">
       <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
     </ClCompile>
@@ -250,6 +244,15 @@
       <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
     </ClCompile>
     <ClCompile Include="Chapter_III\SymbolTables_I\5_linked_list_symbol_tables.cpp">
+      <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_III\SymbolTables_I\2_1_ST_interface.cpp">
+      <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_III\SymbolTables_I\3_1_ordered_ST_interface.cpp">
+      <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter_III\SymbolTables_I\6_2_sorted_vector_ordered_ST.cpp">
       <Filter>Source Files\Chapter_III\SymbolTables_I</Filter>
     </ClCompile>
   </ItemGroup>

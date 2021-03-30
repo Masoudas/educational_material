@@ -4,11 +4,13 @@
 * saying vector<int> v{10} creates a vector with 10, rather than a vector with 10 elements.
 * 
 * (Me: With functions, because we use (), there would be no ambiguity. We'd use {} for initializer list.
-*	Note that supplying arguments without brackets to an initializer list in a function is impossible.)
+* Note that supplying arguments without brackets to an initializer list in a function is impossible.)
 * 
 * If either a default constructor or an initializer-list constructor could be invoked, prefer the
 * default constructor. This is common sense, as it chooses the simplest constructor
-
+* 
+* Me: Note that as I saw this in the standard! The default constructor has the highest priority, which makes
+* sense, so that X{} is always interpreted as making a default class, not making X with an empty init list!
 */
 #include <iostream>
 using namespace std;
@@ -25,7 +27,7 @@ struct with_initializer_list {
 };
 
 void initializer_list_or_single_element() {
-	with_initializer_list c{ };	// Between default an initializer list, initalizer list is chosen, naturally!
+	with_initializer_list c{ };	// Between default an initializer list, default ctor is chosen, naturally!
 
 	with_initializer_list c1{ 10 };	// Initializer list constructor takes precedence.
 

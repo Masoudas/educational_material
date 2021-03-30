@@ -979,7 +979,8 @@ struct TwentySix_A {
 struct TwentySeven {
 	/**
 	* So, the way the solution manual has solved this problem is to keep track of the minimum everytime it's 
-	* inserted. 
+	* inserted. Note that the only case in which the min is changes is when the queue is fully empty, in which
+	* case it's time to change the min.
 	* 
 	* While this is the solution required by the book, and the natural one, we can keep another point in mind.
 	* That is, note that the children of each node are smaller than their parents. Consequently, the smallest
@@ -989,6 +990,62 @@ struct TwentySeven {
 	* method is considered O(N), because we may have to check N/2 nodes! I can't see any use for this method,
 	* so let's just stick to keeping track of the min!
 	*/
+	int* pq;
+	int N;
+	int min_;	// The minimum value of the queue
+
+	int min() {
+		if (N == 0) {
+			throw "The queue is empty";
+		}
+
+		return min_;
+	}
+
+	void insert(int val) {
+		if (N == 0) {	// I know, we can write this in one loop.
+			min_ = val;	
+		}
+		else if (val < min_) {
+			min_ = val;
+		}
+
+		// ... rest of insertion method
+	}
+};
+
+struct TwentyEight {
+	/**
+	* So a pointer is closer to the origin if x^2+y^2+z^2 is smaller. Therefore, We need only to create a
+	* priority queue, and pass the written method as compare. We use a structure with the operator() as
+	* the comparison method.
+	*/
+	struct point {
+		int x, y, z;
+
+		int norm2_sqrd() const {
+			return  x * x + y * y + z * z;
+		}
+
+		bool operator()(const point& lhs, const point& rhs) {
+			return (lhs.norm2_sqrd() - rhs.norm2_sqrd()) > 0;
+		}
+	};
+
+	std::priority_queue<point, std::vector<point>, point> pts{};
+
+	void insert(point pt) {
+		pts.push(std::move(pt));
+	}
+
+	point get_top() {
+		if (pts.empty()) { throw "Queue is empty"; }
+
+		point pt = pts.top();
+		pts.pop();
+
+		return pt;
+	}
 };
 
 struct TwentyNine {
@@ -1193,6 +1250,62 @@ private:
 
 };
 
-int main() {
-	TwentyNine::test();
-}
+struct Thirty {
+	/**
+	* I've solved this exercise in the solutions to the book data structures in C++ by Carey
+	*/
+};
+
+// CHECK THIS WITH THE SOLUTION MANUAL!
+struct ThirtyOne {
+	/**
+	* Note that this exercise is only implemented for minPQ. For the general case, we need to ask for comp
+	* and modify the binary search method.
+	* 
+	* To implement this solution, first we need to implement a binary search for the root node. In this 
+	* schema, instead of looking for the mid point of parent and child node, we have find the log mid, and
+	* this is because every parent's node is half that of the child. In this manner, if we want to search
+	* between nodes lo and hi, we calculate the depth of them, and then divide them by half the difference
+	* between the depth of the nodes. Note that our schema for search returns returns the greatest index
+	* that's less than equal the value, up to and including 1.
+	* 
+	* Now, swim in this schema is quite easy. We binary search for the parent node that's smaller than
+	* our current node, and then we just swap starting from the last node up to and excluding that node.
+	* Note that because lo never decreases, then we need an additional check to ensure that it's child is
+	* always greater than it, for which we need an additional check.
+	* 
+	* Note that for the deletion, we can't use such a schema, and we have to use the ordinary deletion we
+	* already discussed in exercise 32.
+	*/
+	std::vector<int> pq{};
+
+	int log_binary_search(int lo, int hi, int val) {
+		if (lo >= hi) return lo;
+
+		int d_lo = std::log2(lo);
+		int d_hi = std::log2(hi);	
+
+		int mid = hi / (std::pow(2, d_hi - d_lo)); // dividing by double, converting to int.
+
+		if (pq[mid] > val) return log_binary_search(lo, mid / 2, val);
+		else if (pq[mid] < val) return log_binary_search(mid, hi, val);
+		else return mid;
+	}
+
+	void swim(int node, int val) {
+		int less_parent = log_binary_search(1, node, val);	// First parent less than.
+
+		while ((node >> 1) > less_parent) {	// Parent has not been reached.
+			std::swap(pq[node], pq[node >> 1]);
+		}
+
+		// Checking either left or right hand side node depending on the node index.
+		int depth = log2(node);
+		int child_one = node / std::pow(2, depth - 1);
+
+		if (pq[child_one] < pq[1]) {
+			std::swap(pq[child_one], pq[1]);
+		}
+	}
+};
+

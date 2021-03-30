@@ -20,10 +20,14 @@ void my_container_initialization() {
 
 	my_container c2{ 1, 2, 3 };	// Calling explicit list constructor. 
 
-	my_container c3 = { 1 };	// Will not be confused with int constructor.
-	my_container c4{ 1 };	// Initializer list takes precedence.
+	my_container c3 = { 1 };	// Will not be confused with int constructor. It has to be explicit.
+	my_container c4{ 1 };	// Initializer list takes precedence, by the default overload resolution rules!
 
 	my_container c5(1);		// Int constructor.
+
+	// my_container c6 = 1; // Error! Does not explicitly use my_container!
+	my_container c6 = my_container(1);	// Int constructor!
+	my_container c7 = my_container{ 1 };	// init-list constructor takes precedence in resolution!
 }
 
 //int main() {

@@ -4,6 +4,9 @@
 * We need to use brackets for that purpose. However, the constructors allow us to do so, to simplify
 * object construction, IF AND ONLY IF we have an initializer list in the constructor (and not any other
 * parameters).
+* 
+* Me: It's very important to stress that not any other parameters. See 5, mixing_init_list_with_other_arguments
+* and the examples below.
 */
 #include <iostream>
 #include <string>
@@ -21,7 +24,7 @@ void using_initializer_list() {
 	// my_struct s2{ "", 1, 2, 3 }; Error. Can't distinguish where initializer list starts and ends.
 	my_struct s2{ "", {1, 2, 3} }; // Ok. Using string together with initializer list 
 
-	// my_struct::method(1, 2, 3); This is wrong. Can't use initializer_list without brackets.
+	// my_struct::method(1, 2, 3); This is wrong. Passing three arguments.
 	my_struct::method({ 1, 2, 3 });	// This is Ok!
 
 }

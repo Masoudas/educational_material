@@ -3,10 +3,10 @@
 * particular, suppose an array is sorted, we're interested in a rank-based binary search, where:
 * 
 * 1-	If an element actually exists in the tree, we return its index
-* 2-	If an element does not exist, we return the index of the last item less than it.
+* 2-	If an element does not exist, we return the index of the greatest item less than it.
 * 
-* Where 2 works because the array is sorted. Hence, in an array like [1, 2, 3, 5], the rank of 2 is 2, whereas
-* the rank of 4 is also 3.
+* Where 2 works because the array is sorted. Hence, in an array like [1, 2, 3, 5], rank of 2 is 2, whereas
+* rank of 4 is also 3.
 * 
 * Perhaps we could think of binary search as follows. The goal is to find the interval of size two for which 
 * the first element is always smaller and the last elemnt is always greater than the item we search. 
