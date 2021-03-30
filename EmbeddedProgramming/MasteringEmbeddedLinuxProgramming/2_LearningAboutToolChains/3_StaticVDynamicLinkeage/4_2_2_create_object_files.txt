@@ -1,0 +1,9 @@
+To create object files that are suitable to be placed in a shared library, the object code for a shared library must 
+be position-independent, so that the runtime linker is free to locate it in memory at the next free address. To do 
+this, add the -fPIC parameter to gcc, where
+    -  PIC stands for Position Independent Code. See next a discussion on position independent code.
+    -  f probably stands for flag, but no one knows. 
+
+$ arm-cortex_a8-linux-gnueabihf-gcc -fPIC -c test1.c test2.c   # Generates test1.o, test2.o that are position 
+                                                            # independent.
+

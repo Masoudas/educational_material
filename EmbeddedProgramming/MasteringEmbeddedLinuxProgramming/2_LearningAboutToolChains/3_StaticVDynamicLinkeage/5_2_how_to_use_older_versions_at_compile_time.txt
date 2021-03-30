@@ -1,0 +1,6 @@
+This is my estimation, but the discussion we just had was about run-time linkeage. But one might ask, how can we 
+link to older versions of the library at compile time?
+
+The answer probably is this. The older library is put in a separate folder, then using the -L and -l options, we
+find its location and link to it. In such a case, the link file (for example libjpeg.so like in the previous discussion) 
+is compiled with the version we intend.

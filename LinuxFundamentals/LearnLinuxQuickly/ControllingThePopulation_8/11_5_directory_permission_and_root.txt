@@ -1,0 +1,16 @@
+Consider the /root folder. If we try to long list it from an ordinary user, permission would be denied. Why?
+Because root is the owner of this folder, and does not give read permissions to anyone
+
+$ ls -l /
+drwx------   5 root root       4096 mars   8 12:39 root
+
+Hence, we cannot read the content of this folder, write to it, and change its name, unless we're the root.
+Note also as part of execution permission, a user cannot even cd even to this folder! So no ops that involve
+the folder.
+
+Now, note that no other user (including what I call the primary user such as masoudas) is not in the same group
+as root (it's in sudoers, but that's another matter.) If we give the permission 701, it can now list it.
+
+Now, the important point is this. Say I want to create a file inside this folder. I need both execution permission
+(to run the folder with a command,) and write permission (to change its content.) Therefore, for example to use
+the touch command, I need to first write chmod 703 and then make the file. 

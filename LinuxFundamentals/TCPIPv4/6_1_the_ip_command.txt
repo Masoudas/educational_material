@@ -1,0 +1,23 @@
+The ip command is a Linux net-tool for system and network administrators. IP stands for Internet Protocol and as 
+the name suggests, the tool is used for configuring network interfaces.
+
+The general format of the command is:
+
+$ ip [OPTION] OBJECT {COMMAND | help}
+
+OBJECTS (or subcommands) that you will use most often include:
+    1. link (l) – used to display and modify network interfaces.
+    2. address (addr/a) – used to display and modify protocol addresses (IP, IPv6).
+    3. route (r) – used to display and alter the routing table.
+    4. neigh (n) – used to display and manipulate neighbor objects (ARP table).
+
+Hence for example, we write:
+$ ip link       # More precisely, ip link show
+$ ip address    # More precisely, ip address show
+
+and to get help for these commands, we can write:
+$ ip link help
+$ ip address help
+
+
+

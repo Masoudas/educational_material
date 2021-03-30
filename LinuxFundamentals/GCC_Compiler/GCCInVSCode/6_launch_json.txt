@@ -1,0 +1,46 @@
+Once we've created the binary, assuming linkeage is complete and eveything goes fine when trying to generate the 
+binary, VS Code tries to launch the program. For this end, it uses the launch.json file. The structure of this file
+is shown below. The points here are:
+    (1) This file determines which binary is launched in the debug mode. Note that the task file is only responsible
+        for creating the binary in vs, not launching it.
+    (2) We can determine which binary is being launched by changing this file.
+
+In particular, if we've changed the path of where the files are being built, using the "-o" option for the gcc compiler
+in the task file, we need to modify the program field in the launch json to launch the correct program.
+
+Example: Consider the project root as ${workspacedir}. Now imagine, we've created a folder called 'build' inside this
+folder to put our binaries in. Therefore, in the task file, we define this option for the gcc compiler:
+
+    - "-o", "${workspacedir}/build/${fileBasenameNoExtension}"
+
+Now, the binaries go here. To actually launch them inside VS Code, we need to change the default launch path of the
+binary, otherwise, Code can't find it:
+
+    - "program" : "${workspacedir}/build/${fileBasenameNoExtension}"
+
+To demonstrate, here's how the launch json looks like:
+
+"version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]

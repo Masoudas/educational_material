@@ -1,0 +1,14 @@
+autotool is a GNU build tool, which consists of the following subpackages:
+    - GNU Autoconf 
+    - GNU Automake
+    - GNU Libtool
+    - Gnulib
+
+The role of Autotools is to smooth over the differences between the many different types of systems that the 
+package may be compiled for, accounting for different versions of compilers, different versions of libraries, 
+different locations of header files, and dependencies with other packages. Packages that use Autotools come with a 
+script named configure that checks dependencies and generates makefiles according to what it finds. The configure 
+script may also give you the opportunity to enable or disable certain features. You can find the options on offer 
+by running: 
+
+$ ./configure --help.

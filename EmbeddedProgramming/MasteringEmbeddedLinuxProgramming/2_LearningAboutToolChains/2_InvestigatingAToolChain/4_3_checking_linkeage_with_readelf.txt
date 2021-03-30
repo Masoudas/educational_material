@@ -1,0 +1,21 @@
+Using the 'readelf' tool from the toolchain, we can read the ELF header to check which dlls are linked to the file. 
+
+"""
+$ arm-cortex_a8-linux-gnueabihf-readelf -a my_program | grep "Shared library"
+"""
+
+An example output would be:
+$ arm-cortex_a8-linux-gnueabihf-readelf -a my_program | grep "Shared library"
+0x00000001 (NEEDED) Shared library: [libm.so.6]     // Meaning uses libm version 6 dll.
+0x00000001 (NEEDED) Shared library: [libc.so.6]     // Meaning uses libc version 6 dll.
+
+
+Shared libraries need a runtime linker, which we can be exposed using:
+"""
+$ arm-cortex_a8-linux-gnueabihf-readelf -a myprog | grep "program interpreter"
+"""
+
+[Requesting program interpreter: /lib/ld-linux-armhf.so.3]
+
+
+

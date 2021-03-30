@@ -1,24 +1,25 @@
-In Linux, user information is stored in the /etc/passwd file. Every line in /etc/passwd corresponds to exactly one user.
-(Me: The actuall encrypted password is stored in the file 'shadow' in the same folder.)
+In Linux, user information is stored in the /etc/passwd file. Every line in /etc/passwd corresponds to exactly one
+user. (Me: The actuall encrypted password is stored in the file 'shadow' in the same folder.)
 
-When we first open this file, we see lots of different users. These are services which are part of linux. System user however are
-the main focus here, as they're the real world users of linux.
+When we first open this file, we see lots of different users. These are services which are part of linux. System user 
+however are the main focus here, as they're the real world users of linux.
 
 An entry for a system user looks something like this:
     1       2   3   4          5            6               7 
 masoud_user:x:1000:1000:masoud sharbaf:/home/masoud_user:/bin/bash
 
 Each field is explained below:
-1   This field stores the username.
+    1   This field stores the username.
 
-2   This field usually has an X in it, which means the user's password is encrypted and stored in the file /etc/shadow.
+    2   This field usually has an 'x' in it, which means the user's password is encrypted and stored in the file 
+        /etc/shadow.
 
-3   This field stores the UID (User ID) number.
+    3   This field stores the UID (User ID) number.
 
-4   This field stores the primary GID (Group ID) of the user.
+    4   This field stores the primary GID (Group ID) of the user.
 
-5   This field stores a comment on the user, which is usually the user's first and last name.
+    5   This field stores a comment on the user, which is usually the user's first and last name.
 
-6   This field stores the path of the user's home directory.
+    6   This field stores the path of the user's home directory.
 
-7   This field stores the user's default shell.
+    7   This field stores the user's default shell.

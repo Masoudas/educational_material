@@ -1,7 +1,16 @@
 To add a user to a new user group, all we need to do is either add them at the point of creation, or add them using the usermod command,
 The -a is very important here, as it APPENDS to the list of previous groups. Also, we use the '-G' to append secondary groups.
 
+"""
 Example:
-usermod -aG group_name user_name
+$ usermod -aG group_name user_name
+"""
 
-Question: Can we just use -g and then write the group id? Note that this would set the primary group, not secondary (as we discuss next.) Hence, no!
+Note: As we see above, a is used together with G. This is important, because in the documentation "a" is set to
+append, but G is said to define a list. So, we need to use them together. In fact, the documentation says
+"append the user to the supplemental GROUPS mentioned by the -G option without removing the user from other groups,"
+which we now know means use the option G.
+
+
+Question: Can we just use -g and then write the group id? Note that this would set the primary group, not secondary 
+(as we discuss next.) Hence, no!

@@ -1,0 +1,14 @@
+To get the disk usage of a file (i.e, size of the file) we can use the 'du' command, which of course stands for 
+disk usage. The two options -b and -h show the size in bytes and humanly readable, respectively.
+
+$ du -b file
+$ du -h file dir
+
+Note: Something that's of interest here is that if human readably print the file size, for even a two byte file
+size I get:
+4,0K	f.txt
+
+Finally, note that this command is recursive:
+$ du -h dir     # Prints the size of every file and subfolder in dir, including dir. dir would be last output
+$ du -h dir/*   # Prints the disk usage of every file, including dir.   
+

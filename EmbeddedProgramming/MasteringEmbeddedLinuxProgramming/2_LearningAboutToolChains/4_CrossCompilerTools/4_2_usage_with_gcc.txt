@@ -1,0 +1,25 @@
+Using the actuall pkg-config, we can extract information from the library that can be fed directly into the gcc
+compiler. To do so on the NATIVE COMPILER, we can run:
+
+$ pkg-config sqlite3 --libs --cflags
+
+However, if run the same command, forgetting that we need to define the path to the cross-compiler libraries,
+we get:
+
+$ pkg-config sqlite3 --libs --cflags
+Package sqlite3 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `sqlite3.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'sqlite3' found
+
+Hence, we need to define the search path for pkg-config. Note that pkg-config need not be installed separately
+for the compiler, as it can be used similarly to find the info for any compiled version of library.
+
+To change the search path of pkg-config, we do as follows:
+$ export PKG_CONFIG_LIBDIR=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)/usr/lib/pkgconfig
+$ pkg-config sqlite3 --libs --cflags
+-I/home/masoudas/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot/usr/include 
+-L/home/masoudas/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot/usr/lib -lsqlite3
+
+It's pretty clear now that this is ready to be fed directly into gcc:
+$ arm-cortex_a8-linux_gnueabihf $(pkg-config sqlite3 --libs --cflags) testsql.c -o testsql 

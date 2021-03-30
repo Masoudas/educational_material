@@ -1,0 +1,72 @@
+It appears that a general build is going to be easy, so we can follow these steps:
+
+-   Listing the available compilers:
+    First, we need to identify the closest compiler to our CPU. There's an option with ct-ng called 'list-samples' that allow us to look at the list of predefined
+    compilers. If we run './ct-ng list-samples' we can see the list, partially copied here:
+
+            [L...]   arm-cortex_a8-linux-gnueabi
+            [L..X]   arm-cortexa9_neon-linux-gnueabihf
+            [L..X]   x86_64-w64-mingw32,arm-cortexa9_neon-linux-gnueabihf
+            [L...]   armeb-unknown-eabi
+            [L...]   armeb-unknown-linux-gnueabi
+            [L...]   armeb-unknown-linux-uclibcgnueabi
+            [L...]   arm-multilib-linux-uclibcgnueabi
+            [L...]   arm-nano-eabi
+            [L...]   arm-unknown-eabi
+            [L...]   arm-unknown-linux-gnueabi
+            [L..X]   arm-unknown-linux-musleabi
+            [L...]   arm-unknown-linux-uclibcgnueabi
+            [L..X]   arm-unknown-linux-uclibcgnueabihf
+            [L...]   armv6-nommu-linux-uclibcgnueabi
+
+    At first glance, one is tempted to use arm-unknown-eabi for an arm cortex_a8 cpu. However, upon further inspection we find that the option 
+    'arm-cortex_a8-linux-gnueabi' perfectly suits our needs.
+
+-   Checking compiler content:
+    To check and see which version of the linux kernel is used together with the C-library, we run the command './ct-ng show-COMPILER_NAME' that 
+    would show the content of the compiler. A sample output is as follows:
+
+            [L...]   arm-cortex_a8-linux-gnueabi
+            Languages       : C,C++
+            OS              : linux-4.20.8
+            Binutils        : binutils-2.32
+            Compiler        : gcc-8.3.0
+            C library       : glibc-2.29
+            Debug tools     : duma-2_5_15 gdb-8.2.1 ltrace-0.7.3 strace-4.26
+            Companion libs  : expat-2.2.6 gettext-0.19.8.1 gmp-6.1.2 isl-0.20 libelf-0.8.13 libiconv-1.15 mpc-1.1.0 mpfr-4.0.2 ncurses-6.1 zlib-1.2.11
+            Companion tools :
+
+    So we see which version of each tool is being used, compilers that are generated, etc.
+
+- Configuring cross-tool:
+    At this point, we can configure cross-tool to generate our desired compiler by simply writing './ct-ng COMPILER_NAME'. A build-script is prepared for
+    this compiler, which can be built later on.
+
+- Fine-tuning the compiler:
+    We can further fine-tune the compiler at this point, using an interactive command-line window. This window is essentially the same as that of configuring
+    a linux kernel. We can execute the window by writing './ct-ng menuconfig' and it opens up the window for us. The book recommends changing two settings:
+    - In Paths and misc options > Render the toolchain read-only : Untick this option
+        This would allow the compiler (probably permission) not be read-only, allowing us to install additional libraries later on.
+    - In Target options > Floating point (Hardware FPU):
+        Here, choose hardware fpu, which is apparently faster to arm cpus
+        
+- Building the compiler:
+    At this point, we need to sit back and let the toolchain do its thing. It usually takes something close to half an hour to build 
+    the compiler. Any errors that may occur are logged in log.out file that can be analyzed and remedied.
+
+It's very interesting to follow the build steps of the tool. We can see that it first downloads the libraries required for gcc (such as GMP, zlib, etc.)
+Then, it first install binutils, then gcc of stage 1 and so on and so forth. So essentially, it does all the steps we require to do manually.
+
+Once the toolchain is installed, we can find the toolchain in ~/xtools.
+
+- Cleaning the generated files:
+So after generating a compiler, we need to clean the crosstool folder to make room for new configuration. Otherwise,
+it's possible to get some conflicts.
+
+The commands we seek are 
+    - clean              Remove generated files
+    - distclean          Remove generated files, configuration and build directories
+
+It's proposed to use distclean to completely remove the artifacts any relevant build information.
+
+Note: It's advisable to add the path to the compiler to the path variable. Hence, add the bin folder to PATH.

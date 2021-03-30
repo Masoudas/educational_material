@@ -1,0 +1,30 @@
+Often when we want to change the compiler for the autotool, it suffices to supply the CC or CXX option. Sometimes,
+however, doing so results in the following error:
+
+""""""""""""""
+[...]
+checking whether we are cross compiling... configure: error: in '/home/chris/MELP/build/sqlite-autoconf-3081101':
+configure: error: cannot run C compiled programs.
+If you meant to cross compile, use '--host'.
+See 'config.log' for more details
+""""""""""""""
+
+The reason for the failure is that configure often tries to discover the capabilities of the toolchain by compiling 
+snippets of code and running them to see what happens, which cannot work if the program has been cross compiled. 
+Nevertheless, there is a hint in the error message on how to solve the problem. Autotools understands three 
+different types of machines that may be involved when compiling a package:
+
+    -   Build is the computer that builds the package, which defaults to the current machine.
+    -   Host is the computer the program will run on; for a native compile, this is left blank and it defaults to 
+        be the same computer as build. When you are cross compiling, set it to be the tuple of your toolchain.
+    -   Target is the computer the program will generate code for; you would set this when building a cross compiler, 
+        for example.
+
+Note: If I search the $./configure --help, I usually find invaluable information on whether or not I should set 
+Build, Host or Target. Sometimes for example, the target option is not even available.
+
+Hence, to cross-compile, we need only to write:
+$ CC=arm-cortex_a8-linux-gnueabihf-gcc ./configure --host=arm-cortex_a8-linux-gnueabihf
+
+IMPORTANT NOTE: We should remember that for the compiler, we need to add the "gcc", but for the host system, we 
+must not. Some people seem to always forget this!

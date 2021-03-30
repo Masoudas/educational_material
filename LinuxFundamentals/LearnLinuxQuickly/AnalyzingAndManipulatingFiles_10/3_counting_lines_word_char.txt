@@ -1,0 +1,8 @@
+A useful command is wc, that does not stand for bathroom, but rather "Word Count". If used without options, it
+would display a triple of number of lines, number of words and number of chars. We can however use the options
+-l, -w, -c to display them individually.
+
+$ wc file
+$ wc -l file
+$ wc -w file
+$ wc -c file

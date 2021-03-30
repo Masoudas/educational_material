@@ -1,0 +1,12 @@
+
+Question: Suppose we give no permission on anything to any user. Question is, can the superuser still do everything
+with a file, including read, write and execute?
+Note that to give no permission for a file, we should 
+$ chmod -a= file
+
+Answer: The root in such a case:
+    -   can read this file and write to it.
+    -   can't execute this file.
+
+To allow the root to execute the file, any of the execution permission should be set. Hence, the root can change 
+the permission of execution for a user that owns a file!

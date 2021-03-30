@@ -1,0 +1,73 @@
+A tool chain (me: or for my sake a compiler, like gcc on my machine for that matter) comes with several tools, which
+are discussed below in the order of importance and familiarity to me:
+
+- gcc
+    This is the GNU C frontend, which assumes that source files contain C code. (Me: so I should not forget that I
+    can't compile C++ codes with this one.)
+
+- g++
+    This is the GNU C++ frontend, which assumes that source files contain C++ code. (Me: So, I should compile C++
+    with this, and not gcc.)
+
+- cpp
+    This is the C preprocessor and is used to expand #define, #include, and other similar directives. You seldom 
+    need to use this by itself.
+
+- gdb
+    This is the GNU debugger.
+
+- ld
+    This is the GNU linker. This one is very familiar, because I often get a lot of errors at linkeage time.
+
+- as
+    This is the GNU assembler.
+
+- ar
+    This is the gnu archiver, used for creating static libraries.
+
+- objdump
+    This is used to display information from object files (Me: The famous program in the C++ compiler book. We use
+    it to generate an assembly from an object file, or machine code if you will)
+
+- ranlib
+    This creates or modifies an index in a static library, making the linking stage faster.
+
+- objcopy
+    This is used to copy and translate object files.
+
+- strings
+    This displays strings of printable characters in files (Note: Apparently then, the famous strings command comes
+    with the gcc compiler.)
+
+- addr2line
+    Converts program addresses into filenames and numbers by reading the debug symbol tables in an executable file. 
+    It is very useful when decoding addresses printed out in a system crash report.
+
+- c++filt
+    This is used to demangle C++ and Java symbols.
+
+- elfedit
+	This is used to update the ELF header of the ELF files.
+
+- gcov
+    Code coverage tool.
+
+- gprof
+    This is a program profiling tool.
+
+- nm
+    This lists symbols from object files.
+
+- readelf
+    This displays information about files in ELF object format (which is essentially like the dumpobj program).
+
+- size
+    This lists section sizes and the total size (me: we can use it for example to see the size of the sections in a 
+    dynamic library file.)
+
+- strip
+    This is used to strip an object file of debug symbol tables, thus making it smaller. Typically, you would strip 
+    all the executable code that is put onto the target.
+
+
+

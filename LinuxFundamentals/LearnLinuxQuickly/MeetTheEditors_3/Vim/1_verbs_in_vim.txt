@@ -1,0 +1,40 @@
+-   Verbs
+Verbs are the actions we take, and they can be performed on nouns. Here are some examples:
+
+    -   d: delete
+    -   c: change
+    -   y: yank (copy)
+    -   v: visually select (V for line vs. character)
+
+-   Modifiers
+Modifiers are used before nouns to describe the way in which you're going to do something. Some examples:
+
+    -   i: inside
+    -   a: around
+    -   NUM: number (e.g.: 1, 2, 10)
+    -   t: searches for something and stops before it
+    -   f: searches for that thing and lands on it
+    -   /: find a string (literal or regex)
+
+-   Nouns
+
+In English, nouns are objects you do something to. They are objects. With Vim it's the same. Here are some Vim 
+nouns:
+
+    -   w: word (or W for anything up to a blank space or end of line)
+    -   s: sentence (or S for an entire line.)
+    -   ): sentence (another way of doing it)
+    -   p: paragraph
+    -   }: paragraph (another way of doing it)
+    -   t: tag (think HTML/XML)
+    -   b: block (think programming)
+
+You can also use nouns as motions, meaning you can move around your content using them as the size of your jump. 
+
+Examples:
+$ d2w     # Delete two words (from the position of curser. A space between words is not considered a word. However,
+          # If I stand on a space, it's considered a word. A punctutation mark at the end is not a word.)
+$ cis     # Delete the current, and enter insertion mode (c or change) inside sentence.  
+$ ct<     # Change till bracket.
+$ dt.     # Delete (cut) to dot
+$ yt;     # Yank to semicolon.  

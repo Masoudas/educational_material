@@ -1,0 +1,23 @@
+In linux, every file has a set of permission for the following:
+    - The owner of the file (user)
+    - The group the owner belongs To
+    - Everyone else (also referred to as others/world)
+
+Each file has three sets of access:
+    - Read
+    - Write
+    - Execute
+
+The meaning of each of these access permissions is not the same for files and directories. 
+
+    - Directories
+        * Read: List content of the directory
+        * Write: Be able to create and remove files INSIDE the directory
+        * Execute: Be able to change the directory (move it, rename it, cd to it etc)
+
+    - Files
+        * Read: Read the file
+        * Write: Write to the file
+        * Execute: Execute the file (if executable)
+
+Note: Only the root or owner of the file can change its permission.

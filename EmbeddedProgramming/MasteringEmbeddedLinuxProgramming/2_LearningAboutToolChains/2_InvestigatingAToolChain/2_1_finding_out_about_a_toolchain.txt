@@ -1,0 +1,18 @@
+Suppose we're provided with a toolchain. How can we find out more about it? One easy solution is to use the following
+options with gcc:
+    -   dumpmachine
+    -   v
+    -   version
+
+Particularly with 'v' we get a lot of information, some of which are:
+
+-   --with-sysroot=/home/masoud/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot: This is 
+    the default sysroot directory
+
+-   --enable-languages=c,c++: Using this, we have both C and C++ languages enabled
+
+-   --with-cpu=cortex-a8: The code is generated for an ARM Cortex A8 core
+
+-   --with-float=hard: Generates opcodes for the floating point unit and uses the VFP registers for parameters
+
+-   --enable-threads=posix: This enables the POSIX threads

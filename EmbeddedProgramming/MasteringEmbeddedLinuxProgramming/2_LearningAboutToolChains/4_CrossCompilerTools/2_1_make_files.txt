@@ -1,0 +1,14 @@
+Some important packages are very simple to cross compile, including the Linux kernel, the U-Boot bootloader, and 
+BusyBox. For each of these, you only need to put the toolchain prefix in the make variable CROSS_COMPILE, for 
+example arm-cortex_a8-linux-gnueabi-. Note the trailing dash -.
+
+So for example, if we wanted to compile busybox, we'd type:
+
+$ wget https://www.busybox.net/downloads/busybox-1.33.0.tar.bz2
+$ uz busybox-1.33.0.tar.bz2 
+$ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf-
+
+
+In the case of U-Boot and Linux, you also have to set the make variable ARCH to one of the machine architectures 
+they support, which we will cover in Chapter 3 and 4.
+

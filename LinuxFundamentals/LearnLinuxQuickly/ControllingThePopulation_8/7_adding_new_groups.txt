@@ -1,5 +1,0 @@
-We can add new group (names) using 'groupadd name'. We can also supply a GID to this group using the option '--gid'. The new groups would be visible 
-inside /etc/group. Don't forget that only the super user is allowed to do so.
-
-Example:
-groupadd group_name --gid 888

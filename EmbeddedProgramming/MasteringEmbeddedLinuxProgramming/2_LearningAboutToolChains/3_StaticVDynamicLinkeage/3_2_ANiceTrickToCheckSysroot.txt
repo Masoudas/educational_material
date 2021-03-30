@@ -1,0 +1,33 @@
+Here's something interesting. As we already know, the command gcc -print-sysroot prints the sysroot of gcc for us.
+
+$ arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot
+$ /home/masoudas/x-tools/arm-cortex_a8-linux-gnueabihf/arm-cortex_a8-linux-gnueabihf/sysroot
+
+Now, here's a nice trick to export this path in Linux:
+$ export SYSROOT=$(arm-cortex_a8-linux-gnueabihf-gcc -print-sysroot)   # Add the result of this execution to this
+                                                                       # variable. (Interestingly enough, there 
+                                                                       # should be no space between '=' and other
+                                                                       # text.)
+
+Now, we can use this variable like any other variable, and we can see the list of system C libraries. Notice that for
+each library, there's a static and a dynmaic version:
+
+$ cd $SYSROOT
+$ ls usr/lib
+
+audit               libcurses.so        libmenu.a          libpanel.so.5
+crt1.o              libdl.a             libmenu.so         libpanel.so.5.9
+crti.o              libdl.so            libmenu.so.5       libpthread.a
+crtn.o              libelf.a            libmenu.so.5.9     libpthread.so
+gconv               libexpat.a          libm.so            libresolv.a
+gcrt1.o             libexpat.la         libncurses.a       libresolv.so
+libanl.a            libexpat.so         libncurses.so      librt.a
+libanl.so           libexpat.so.1       libncurses.so.5    librt.so
+libBrokenLocale.a   libexpat.so.1.6.11  libncurses.so.5.9  libthread_db.so
+libBrokenLocale.so  libform.a           libnss_compat.so   libutil.a
+libc.a ##static##   libform.so          libnss_db.so       libutil.so
+libc_nonshared.a    libform.so.5        libnss_dns.so      locale
+libcrypt.a          libform.so.5.9      libnss_files.so    Mcrt1.o
+libcrypt.so         libg.a              libnss_hesiod.so   pkgconfig
+libc.so ##shared##  libm.a              libpanel.a         Scrt1.o
+libcurses.a         libmcheck.a         libpanel.so        terminfo

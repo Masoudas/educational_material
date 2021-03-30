@@ -28,7 +28,8 @@ To untar a tarball, we need to change the 'c' option to 'x'.
 - 'x'
     Decompress the tarball
 
-We also supply the '-C' option after giving the name of the tar to indiace where we want it decompressed. Note that the destination folder is not overriden.
+We also supply the '-C' option after giving the name of the tar to indiace where we want it decompressed. Note that 
+the destination folder is not overriden.
 
 Example:
 tar -xvpzf  backup.tar.gz -C destination/

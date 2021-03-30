@@ -1,0 +1,4 @@
+If we want to show the lines for which no match exists, we use -v which stands for inverse. Moreover, -n shows
+the line number of found matches.
+
+$ grep -vn "the" BSD

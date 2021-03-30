@@ -1,0 +1,10 @@
+We may be wondering if it matters that we get the configuration exactly right at this point, since we can always 
+change it as discussed? 
+
+The answer depends on the way we anticipate using it. If we plan to create a new toolchain for each target, then it 
+makes sense to set everything up at the beginning, because it will reduce the risks of getting it wrong later on. 
+Jumping ahead a little to Chapter 6, Selecting a Build System, we call this the Buildroot philosophy. If, on the 
+other hand, we want to build a toolchain that is generic and we are prepared to provide the correct settings when 
+we build for a particular target, then we should make the base toolchain generic, which is the way the Yocto Project 
+handles things. The preceding examples follow the Buildroot philosophy.
+

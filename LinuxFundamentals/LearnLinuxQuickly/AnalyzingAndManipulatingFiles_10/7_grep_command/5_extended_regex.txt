@@ -1,0 +1,5 @@
+To use extended possiblity of grep, use -E. The following three expressions are equivalent:
+
+$ grep "\(grouping\)" file.txt
+$ grep -E "(grouping)" file.txt
+$ egrep "(grouping)" file.txt

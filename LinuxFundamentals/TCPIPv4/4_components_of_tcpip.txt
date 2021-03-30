@@ -1,0 +1,38 @@
+-   IP address:
+    It's used to signify the devices on the network. Example is 192.168.1.1
+
+-   Subnet mask:
+    It's a way to segment a network, so that some devices can't talk to each other, even though they might be on 
+    the same physical network.
+
+-   Default gateway:
+    The router for the subnet we're on. If we want to connet to a device (IP address,) our machine first starts to
+    look for it on the local network. If it can't be found, then we connect to the default gateway to look for it
+    all over the world. 
+
+-   DNS:
+    How is www.microsoft.com server reached? Note that we only have IP addresses, and the domain name is superficial.
+    Hence, we need a global mechanism to convert domain names to IP addresses. This would be done through a data 
+    base that holds the correspondence between domain name and IP addresses. Of course, we don't want to implement
+    such a huge DB per machine, so we implement a global one and each machine over the net sends requests to it.
+    This what we call a DNS sever (Domain Name Server).
+    So in fact, if we put IP addresses in the internet explorer, we will be able to connect to serves, same as we 
+    can with domain names.
+    Once we get the IP address and communicate with the DNS, we again search for it on the local network, and then
+    over the net, like before.
+
+-   DHCP (Dynamic Host Control Protocol)
+    It's a mechinais for generating IP address, DNS host and default gateway for a machine without having to make it
+    unique over the entire Internet, or a static IP address. A static IP address is an IP address, subnetmask, DNS
+    server and default gateway for a machine that is determined one and uniquely for a machine.
+    A dynamic IP address is allocated to the machine once the machine connects to the net and demands one (first 
+    thing) for DHCP. DHCP will then have a database holding the IPs, and reallocate IP addresses once they're 
+    out of use. The amount time a computer is allowed to own an IP address is called the lease time. 
+    
+-   NAT (Network Address Translation):
+    The worry in the beginning was that every machine (computer, printer, etc) would require a unique IP address.
+    In reality, most networks have an internal IP address ranging from 192.168.1.1 to 254. What happens is that 
+    every router that connects to the Internet has a UNIQUE IP address, however inside the router, we can reuse
+    IP addresses.
+    Hence, the external server wanting to send us information mostly cares about the external IP address (that is,
+    the address of our router.)

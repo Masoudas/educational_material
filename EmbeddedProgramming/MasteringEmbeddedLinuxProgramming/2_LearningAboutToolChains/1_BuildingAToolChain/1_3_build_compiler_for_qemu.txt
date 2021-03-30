@@ -1,0 +1,8 @@
+While it's true that qemu is a system emulator, still, we need to build compilers for it. This is because, well, we
+need to compile code for it like we do any other machines.
+
+Now, the closest target that we can find for arm on qemu is apparently arm-linux-abi. Using the same procedure as 
+the one for arm-cortexa8, we can build a new compiler for here as well.
+
+Note that for this build, we only remove the option to make chain read-only in menuconfig, and don't change the 
+float passing option.

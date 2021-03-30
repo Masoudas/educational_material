@@ -1,0 +1,11 @@
+Note that grep searches for entire words. For example:
+
+$ grep "txt" file
+
+This command will fine txt, mytext or mytextmy. To search for only whole words, supply the -w option.
+
+$ grep -w "txt" file
+
+An example with regular expressions:
+
+$ grep -w "t[wo]o" file

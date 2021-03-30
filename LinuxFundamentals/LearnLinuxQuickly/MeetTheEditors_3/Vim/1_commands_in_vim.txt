@@ -1,0 +1,6 @@
+    -   Commands in Vim are combinations of verb + noun
+    -   Commands are repeatable and undoable in the command mode:
+        -   Use dot to repeat a command
+        -   Use u to undo change. A combination 4u undoes the last four operations.
+        -   To redo changes, ctrl+R or a version with quantifiers (4ctrl+R) can be used.
+        

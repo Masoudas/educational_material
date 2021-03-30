@@ -1,0 +1,14 @@
+It's easy as pie to create a static library. First, we need to generate object files. Then, we need to archive them 
+(zip them) in such a way that all of them are accessible in tp the compiler. I don't suppose we can use tarballs 
+to generate this archive, because afterall, a compiler does not necessarily know how to read a tarball. To generate 
+such a an archive, we use 'ar' archiver of gcc.
+
+Reminder: In order to compile a CPP file (and not generate a binary by linkeage,) we need to supply the -c option to
+gcc.
+
+Example of creating a static library:
+$ arm-cortex_a8-linux-gnueabihf-gcc -c file1.c file2.c  # Generates file1.o file2.o
+$ arm-cortex_a8-linux-gnueabihf-ar rc libstatic.a  file1.o file2.o # r means replace, c creates file and does
+                                                                   # warn if it already exists. 
+Or:                                            
+$ arm-cortex_a8-linux-gnueabihf-ar rc libstatic.a *.o
