@@ -3,6 +3,8 @@ For example, the read command reads input from the user and stores it in a varia
 command read weather:
 
 $ read weather # Waits for the user to input text for the weather variable.
+The weather is sunny    # This is what we type in.
+                        # By pressing enter, a new local variable is created.
 $ echo $weather
 
 Note that the stream from the keyboard is read AS LONG AS we don't hit enter. So, if we hit enter before typing in

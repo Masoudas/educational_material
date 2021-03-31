@@ -3,5 +3,5 @@ context. We normally pipe it with the output of commands to search the std, or w
 for a pattern.
 
 $ ls . | grep .txt  # look for txt files.
-$ grep -i my_pattern file   # Look for "my_pattern" in the txt file.
+$ grep -i my_pattern file   # Look for "my_pattern" in the txt file. -i stands for ignore case.
 

@@ -1,0 +1,8 @@
+Essentially, every character is allowed in linux as part of a file name, except for the reserved forward slash:
+
+$ touch @#$%^*()_-=+    # Ok!
+$ touch /   # Error! Can't change the modification time of the root folder!
+
+Note that:
+    -   File names are case sensitive
+    -   Of course, they have to be unique inside a folder.

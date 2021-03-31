@@ -1,10 +1,14 @@
-Note that grep searches for entire words. For example:
+Note that grep by default does not search for whole words. For example:
 
 $ grep "txt" file
 
-This command will fine txt, mytext or mytextmy. To search for only whole words, supply the -w option.
+This command will fine txt, mytext or mytextmy. To search for only whole words, supply the -w option. Just as 
+a reminder, this is independent of how we define the pattern. A word by default is something that's between two
+spaces, or beginning of line to space, or from space to end of line. Hence, if I didn't want to use -w, I have to 
+use a fairly complicated regex:
 
 $ grep -w "txt" file
+$ grep [$\s]txt[^\s]
 
 An example with regular expressions:
 
