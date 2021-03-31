@@ -9,8 +9,9 @@
 * 
 * Me: Note that this does not imply that checking is always done by the primary template, and we needn't
 * supply the check to specialization, nor that we should or should not do so. Checks in the primary are
-* solely checked in the primary. What the big guy says is that if someone reads the code, the primary 
-* template is where they go first, not the specialization!
+* solely checked in the primary, and if we use a specialization, then if needed, the checks should be repeated there too. 
+* What the big guy says is that if someone reads the code, the primary template is where they go first, not the 
+* specialization!
 */
 
 template<typename T>

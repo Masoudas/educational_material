@@ -8,14 +8,17 @@
 * Such alternative definitions of a template are called user-defined specializations, or simply user 
 * specializations
 * 
-* Me: This discussion gives us a big hint as to how we can bound the template to a particular type (interface.)
-* For example below, we use specialization to throw an error for which ever type that cannot be converted to
-* our interface, by just throwing an exception in the template definition. Question, however, is that is this
-* among C++ design patterns? Or am I again thinking in Java terms here! Also note that we only need the
-* interface for templated here, and if it's not being used, then it shouldn't necessarily be defined, and
-* it can be left without implementation! See discussion in 4_3.
-* 
-* 
+* Me: This discussion begs a question. Can we bound the template to an interface using templates? The answer is a 
+* resound NO, with an stipulation. So imagine in the following example, we define an specialization for the base*.
+* It's true that now, the templated class can only be initialized with the base* (because the actual definition of the
+* class does throw.) However, this templated class ONLY works with this pointer template. In other words, if we try
+* and instantiate this class with derived* (or an int* for that matter,) the specialization to base* is not invoked.
+* Therefore, NO, we can't bound the template to an interface as such. However, note that if we actually have a ctor
+* that for example takes T, then that T can be derived*, because an implicit conversion would take place from derived*
+* to base*. Consequently, this method somewhat works, but not quite.
+* This discussion once again brings an important point to our attention. Types are not objects. Therefore conversion
+* among them when we use templates does not make sense. Hence for example, a template that is specialized for type base 
+* is NOT instantiated for the derived type.
 */
 #include <iostream>
 
@@ -41,7 +44,8 @@ struct templated<base*>{
 void instantiation_of_templated() {
 	templated<base*> t1{};
 
-	templated<int> t{};	// Will throw!
+	templated<derived*> t{}; // Will throw!	
+	//templated<int> t{};	// Will throw!
 }
 
 //int main() {

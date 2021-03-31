@@ -4,6 +4,8 @@
  * If goal is assignment to a new variable, e2 and e3 must have the same type, or a common
  * base type to which they can be implicitly converted. We can also put an exception there too. 
  */
+#include <exception>
+
 void checkPtr(int* ptr){
-    int val = ptr ? *ptr : std::runtime_error{"Dude!"};
+    int val = ptr ? *ptr : throw "Dude!";
 }

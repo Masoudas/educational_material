@@ -4,4 +4,4 @@
  * 
  * while (p && !whitespace(∗p)) ++p;
  * Here, p is not dereferenced.
- * 
+ */

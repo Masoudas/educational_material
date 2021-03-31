@@ -34,7 +34,7 @@ public:
     };
 };
 
-int main(){
+void some_examples(){
     int* arr1 = new int[5];
 
     int (*arr2)[3] = new int[2][3];
@@ -46,7 +46,7 @@ int main(){
     std::cout << ref[0].x << std::endl;
 
     A* ref1 = new A[n]{A{6}}; // Initialize everything with default constructor. The rest are initalized with default constructor.
-    std::cout << ref1[0].x << std << endl;
+    std::cout << ref1[0].x << std::endl;
     std::cout << ref1[3].x;
 
     // B* ref2 = new B[n]; Can't do this, because there's no default constructor.

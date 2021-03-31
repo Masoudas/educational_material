@@ -10,7 +10,7 @@
  */
 #include <new>          // std::nothrow
 #include <iostream>
-int main(){
+void no_throw_new_example(){
     int* ptr = new (std::nothrow) int[5];
 
     if (!ptr){

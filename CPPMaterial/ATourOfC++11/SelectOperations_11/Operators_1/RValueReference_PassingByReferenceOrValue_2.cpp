@@ -6,6 +6,7 @@
  * or lvalue. This is used mostly for cases when we don't want to overload a function once with
  * value and once with reference.
  */
+#include <memory>
 
 template <typename T, typename A1>
 std::unique_ptr<T> factory(A1& a1)   // If passed by value like factory(A1), this retuns an error.

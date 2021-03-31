@@ -13,29 +13,30 @@ from an integer literal that can be exactly represented.)
 is not considered well behaved here, which is reasonable, because we don't know if double actually represents a greater
 range than int!!! Beware of this. We should for such circumstances use the narrow cast, as discussed in _1 of here. */
 
-void f(int);
-void f(double);
+void a_function(int) {};
+void a_function(double) {};
 void g(int i, double d)
 {
-f(i); //call f(int)
-f(double{i}); //error : {} doesn’t do int to floating conversion
-f(d); //call f(double)
-f(int{d}); //error : {} doesn’t truncate
-f(static_cast<int>(d)); // call f(int) with a truncated value
-f(round(d)); //call f(double) with a rounded value
-f(static_cast<int>(lround(d))); // call f(int) with a rounded value
-// if the d is overflows the int, this still truncates
+	a_function(i); //call a_function(int)
+	//a_function(double{i}); //error : {} doesn’t do int to floating conversion
+	a_function(d); //call f(double)
+	//a_function(int{d}); //error : {} doesn’t truncate
+	a_function(static_cast<int>(d)); // call a_function(int) with a truncated value
+	//a_function(round(d)); //call a_function(double) with a rounded value
+	//a_function(static_cast<int>(lround(d))); // call a_function(int) with a rounded value
+	// if the d is overflows the int, this still truncates
 }
 
 // It does not allow bad-behaved pointer assignments as well.
 void g2(char* p)
 {
-int x = int{p}; // error : no char* to int conversion
-using Pint = int*;
-int* p2 = Pint{p}; // error : no char* to int* conversion
+    //int x = int{p}; // error : no char* to int conversion
+    using Pint = int*;
+    //int* p2 = Pint{p}; // error : no char* to int* conversion
 // ...
 }
 
+/*
 For T{v}, ‘‘reasonably well behaved’’ is defined as having a ‘‘non-narrowing’’ (§10.5) conversion
 from v to T or having an appropriate constructor for T.
 */
@@ -62,20 +63,20 @@ public:
 
 enum A{a=1};
 
-void f(Date& date){}
+void a_second_function(Date date){}
 
 void g(){
-    f(Date{});   // Default constructor of A, one with no parameter.
-    f({});   // Default constructor of A, one with no parameter.
+    a_second_function(Date{});   // Default constructor of A, one with no parameter.
+    a_second_function({});   // Default constructor of A, one with no parameter.
 
     Date d = Date{};    // One again, default date. What if there's no default value?
 
-    Date d{};   // This I'm hoping mean default constructor!!!
+    Date d1{};   // This I'm hoping mean default constructor!!!
 
     int a{};     // Default integer value.
     int b = int{};  // Default integer value.
 
-    A a{};  // Default constructor of A, one with no parameter
-    A a = A{};  // Again, the  default value.
+    A a2{};  // Default constructor of A, one with no parameter
+    A a1 = A{};  // Again, the  default value.
 
 }

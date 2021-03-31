@@ -1,4 +1,7 @@
-/** Back to what the big guy talks about.
+/**
+* Me: I suggest at this point to take a look at section 10 and then come back here.
+* 
+* Back to what the big guy talks about.
 * It can be useful to have different actions taken for lvalues and rvalues. Consider a class for holding an 
 * {integer,pointer} pair like below.
 * 

@@ -24,7 +24,7 @@ public:
     }
 };
 
-int main(){
+void application(){
     OverloadDeref o{};
 
     cout << o->x;

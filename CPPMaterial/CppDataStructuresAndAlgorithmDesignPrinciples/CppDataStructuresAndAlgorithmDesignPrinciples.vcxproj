@@ -157,6 +157,7 @@
     <ClCompile Include="DivideAndConquer\x_x_finding_prime_numbers_using_map_reduce.cpp" />
     <ClCompile Include="DivideAndConquer\x_x_matrix_multiplication_with_divide_and_conquer.cpp" />
     <ClCompile Include="impl_1_of_nth_element.cpp" />
+    <ClCompile Include="ListsStacksQueues\4_List\7_shuffle_a_list.cpp" />
     <ClCompile Include="nth_element_of_container.cpp" />
     <ClCompile Include="x_2_finding_the_median_of_container.cpp" />
     <ClCompile Include="HashTablesAndBloomFilters\1_STLUnorderedSet\1_unordered_set_overview.cpp" />

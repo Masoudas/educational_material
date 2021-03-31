@@ -372,5 +372,8 @@
     <ClCompile Include="DivideAndConquer\x_x_finding_prime_numbers_using_map_reduce.cpp">
       <Filter>Source Files\DivideAndConquer</Filter>
     </ClCompile>
+    <ClCompile Include="ListsStacksQueues\4_List\7_shuffle_a_list.cpp">
+      <Filter>Source Files\ListsStacksQueues\4_List</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

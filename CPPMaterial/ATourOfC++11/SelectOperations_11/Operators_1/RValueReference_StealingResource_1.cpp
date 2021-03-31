@@ -8,19 +8,25 @@
  *  Simply put however, an rvalue reference steals the resource from other object. Hence, after 
  * assignment, the original resource would point to null.
 */
+
+#include <algorithm>
+
 class foo {
-    public :
-        foo(foo const& other){
+    int length;
+    int* ptr;
+
+public:
+    foo(foo const& other) {
         this->length = other.length;
         this->ptr = new int[other.length];
-        copy(other.ptr, other.ptr + other.length, this->ptr);
-        }
+        std::copy(other.ptr, other.ptr + other.length, this->ptr);
+    }
 
-    public :
-        foo(foo const&& other){
+public:
+    foo(foo&& other) {
         this->length = other.length;
         this->ptr = other.ptr;
         other.length = 0;
         other.ptr = nullptr;
-        }
-}
+    }
+};

@@ -3,4 +3,7 @@
 * which we shall discuss, note an important difference between Sts and priority queues. In priority queses,
 * we're allowed to have repetitive keys, where as this can't be the case in symbol tables. Hence, an ST is 
 * essentially like an indexed PQ (again, with the exception that it can't accept repetitive keys.)
+* 
+* Recall that we can't have repetitive keys, because due to the definition of STs, we replace the value of
+* a given key if it already exists.
 */

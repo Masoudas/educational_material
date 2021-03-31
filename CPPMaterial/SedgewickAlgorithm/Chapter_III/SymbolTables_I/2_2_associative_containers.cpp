@@ -15,7 +15,7 @@
 * In a convential array, keys are integer indexes that we use to quickly identify values. In an associative 
 * array (symbol table), keys are of arbitrary type, but we can still use them to quickly access values.
 * 
-* As a point of interest, if for example a symbol table contains an array or list as value, and we append
+* As a point of interest, if for example a symbol table has an array or list as values and we append
 * new values to it, it still is an associative array. This is because each key has one and only one array,
 * and not two such arrays.
 */

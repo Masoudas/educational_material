@@ -26,10 +26,10 @@ void signedShift(){
     int a3 = (a1 >> 1) - 0xC0000000;
 
     std::cout << a2 << std::endl;
-    std::cout << a3 std::endl;
+    std::cout << a3 << std::endl;
 }
 
-int main(){
+void shift_examples(){
     unsignedShift();
     signedShift();
 }

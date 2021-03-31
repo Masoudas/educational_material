@@ -13,8 +13,8 @@
 * not the case in C++ (The bracket method returns an empty constructed object for such cases)
 */
 
-// We shall never forget that a virtual class has virtual destructor. Thus it has virtual copy and move 
-// assignments, though not necessary, as a reminder of overriding the constructors.
+// We shall never forget that a virtual class has a virtual destructor. Thus it has virtual copy and move 
+// assignment and ctors.
 // Don't forget that there's no such thing as virtual constructors!
 template<typename Key, typename Val>
 class symbol_table_java {

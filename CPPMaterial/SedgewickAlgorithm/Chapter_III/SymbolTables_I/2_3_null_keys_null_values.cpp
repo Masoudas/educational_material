@@ -11,7 +11,7 @@
 * 
 * Note on the C++ case: In C++, we don't check the existence of a key using the bracket operator. Instead, we
 * directly use a method such as find. This is because the bracket method would create a default object for us
-* if no value is associated with the key. In consequence and expression such as table[key] = value first 
+* if no value is associated with the key. Consequently, an expression such as table[key] = value first 
 * constructs a value type by default (assuming it does not exist,) then uses the copy assignment to assign to
-* that value.
+* that value. This is the reason why value types in standard C++ disctionary must be default constructible.
 */

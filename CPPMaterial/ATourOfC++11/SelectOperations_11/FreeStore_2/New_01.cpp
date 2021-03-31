@@ -29,7 +29,7 @@
  * Naturally, we can use auto in this situation as well.
  */
 #include <iostream>
-int main(){
+int using_new(){
     auto p = new int;
     *p = 7;    
 

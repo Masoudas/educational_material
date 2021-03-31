@@ -313,6 +313,42 @@
     <Filter Include="Source Files\IOStream_38">
       <UniqueIdentifier>{6cf3f3d5-70fa-4103-9783-98fe3f46e862}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Concurrency_41">
+      <UniqueIdentifier>{bb9aa9b1-ac49-42f1-b97f-fd7117433eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Concurrency_41\AdvancedCppBook_Chapter5">
+      <UniqueIdentifier>{d02b8de6-ca8e-49b3-9053-89e806cad860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities_35">
+      <UniqueIdentifier>{0b5c840f-9afd-4781-90ea-343d631fdc1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities_35\TypeFunctions_">
+      <UniqueIdentifier>{e9394d87-9d72-4b01-b171-50c6e878156b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities_35\TypeFunctions_\TypeTraits_">
+      <UniqueIdentifier>{ba9c2274-0961-4e3a-bfd1-fa88fd84a976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities_35\TypeFunctions_\TypeGenerators_">
+      <UniqueIdentifier>{946e667d-8084-4917-a6e4-4ced004cdca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Iterators_33\FunctionalObjects_">
+      <UniqueIdentifier>{e0631faf-d348-4373-ae59-4e260ba77c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10">
+      <UniqueIdentifier>{195002fa-9f7b-4ec3-b86d-e3fefb80def7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities_35\MinorUtilities_">
+      <UniqueIdentifier>{0abbc322-1927-499d-a1fd-92547090d32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Concurrency_41\ThreadClass_">
+      <UniqueIdentifier>{1b313114-b03f-4912-aeb7-ea4b1a37f695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28">
+      <UniqueIdentifier>{e57f7952-038c-4ad2-a837-5dc9c9836c7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\TypeFunctions_">
+      <UniqueIdentifier>{c630a115-44c5-4f7e-80dc-c1b159d3f0fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -1662,24 +1698,6 @@
     <ClCompile Include="DerivedClasses_20\CleanupInHierarchies_5\4_a_possible_work_around.cpp">
       <Filter>Source Files\DerivedClasses_20\ArrayOfBasePointers_5</Filter>
     </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_1_reference_dedection.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_2_passing_templates_with_reference.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_3_reference_type_deduction.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_4_reference_deduction_ownership_and_copy.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_5_argument_forwarding.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
-    <ClCompile Include="Templates_23\FunctionTemplates_5\5_6_forwarding_saves_us_a_copy.cpp">
-      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
-    </ClCompile>
     <ClCompile Include="Templates_23\FunctionTemplateOverloading_6\5_overloading_and_derivation.cpp">
       <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
     </ClCompile>
@@ -1902,9 +1920,6 @@
     <ClCompile Include="Specialization_25\DefaultTemplateArguments_2\3_function_template_deduction_and_defaults.cpp">
       <Filter>Source Files\Specialization_25\DefaultTemplateArguments_2</Filter>
     </ClCompile>
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\x_order_of_specialization.cpp">
-      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
-    </ClCompile>
     <ClCompile Include="Specialization_25\0_2_the_elluding_fact_regarding_specialization.cpp">
       <Filter>Source Files\Specialization_25</Filter>
     </ClCompile>
@@ -1915,9 +1930,6 @@
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp">
-      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
-    </ClCompile>
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_interface_specialization.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp">
@@ -1938,8 +1950,197 @@
     <ClCompile Include="IOStream_38\0_1_noskipws_for_not_skipping_white_spaces.cpp">
       <Filter>Source Files\IOStream_38</Filter>
     </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\1_introduction.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\2_the_philosophers_dinner.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\3_concurrency_v_parallelism.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\4_what_is_a_thread.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="5_mixing_init_list_with_other_arguments.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17\InitializerList_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_1_decay_function.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_2_why_the_need_for_decay_from_standard.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_3_why_the_need_for_decay_from_internet.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_4_the_big_guys_example.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_5_1_a_beautiful_way_to_circumvent_decay.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_5_2_reference_wrapper_in_std.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="STLIterators_33\FunctionalObjects_\x_1_invoke.cpp">
+      <Filter>Source Files\Iterators_33\FunctionalObjects_</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions_12\Macros_13\2_macros_are_not_part_of_namespace.cpp">
+      <Filter>Source Files\Functions_12\Macros_13</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_3_reference_type_deduction.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_2_passing_templates_with_reference.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_1_reference_dedection.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_1_reference_deduction_ownership_and_copy.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_2_argument_forwarding.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\5_3_forwarding_saves_us_a_copy.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplates_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\1_1_the_delicacy_of_template_deduction.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\1_2_calling_templated_function_syntax.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\2_2_init_list_deduction.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\2_3_corner_case_value_template_as_list.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\2_4_parameter_pack.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\2_5_overloaded_functions.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\MinorUtilities_\1_1_forward.cpp">
+      <Filter>Source Files\Utilities_35\MinorUtilities_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\MinorUtilities_\1_2_forward_does_not_deduce.cpp">
+      <Filter>Source Files\Utilities_35\MinorUtilities_</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\3_1_before_deduction_begins.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\3_3_if_argument_is_cv_qualified.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\3_4_if_argument_is_reference.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\3_5_if_rvalue_reference.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\3_6_summary_of_the_rules.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
     <ClCompile Include="STLIterators_33\0_1_1_even_more_beautiful_way_of_getting_input_stream.cpp">
       <Filter>Source Files\Iterators_33</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_1_thread_class.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_2_1_passing_method_of_execution_to_thread.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_2_2_passing_arguments_and_method.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_2_3_exceptions_and_threads.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_2_4_passing_argument_by_reference.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_2_thread_id.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_3_exceptions_of_thread.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_4_1_thread_joinable_join_detach.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_4_2_thread_is_alive_in_the_process.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_4_3_example_of_join.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_4_4_example_of_detach.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\5_4_5_only_process_has_to_be_extended.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClass_</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\5_synchronous_execution.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\6_asynchronous_execution.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\2_1_2_types_must_exactly_match.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\2_1_1_terminology_of_standard.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\DeductionFromStandard_10\3_2_if_argument_is_not_reference.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\4_templated_class_argument_is_not_deduced.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplateDeductionFromStandard_10\5_pointers_are_special.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateDeductionFromStandard_10</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\8_a_cool_trick_regarding_conversion.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_1_interface_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_2_program_organization_and_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_5_exact_specialization_is_called.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\5_1_function_specialization.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\5_2_example.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_3_relation_to_template_deduction.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_4_specialization_that_is_not_overloading.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_2_conditional_statement.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_1_example_allocating_on_heap_or_stack.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_\x_2_3_final_implementation.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\6_cant_specialize_with_templated_types.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
