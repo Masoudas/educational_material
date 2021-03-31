@@ -1,0 +1,12 @@
+The MAC address (Media Access Control Address) as we may recall is the unique identifier of the network device.
+
+To get the MAC address, we can use the ip command one more time. Note that the address appears under the option
+"link" and not "maddress":
+
+$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 9c:29:76:43:35:eb brd ff:ff:ff:ff:ff:ff
+
+MAC address appears after the label ether. Hence, my wifi module has the address 9c:29:76:43:35:eb.

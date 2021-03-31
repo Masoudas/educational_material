@@ -1,0 +1,17 @@
+Typically, on most computers and wifi modules, the module itself works as the DHCP server too. Hence, right now that
+this computer is connected to a wifi module (of my phone,) it has allocated an IP address.
+
+We can see the name of the dhcp server using the "ip route" command one more time. 
+
+$ ip route
+default via 10.188.0.1 dev wlp0s20f3 proto dhcp metric 600  # Default gateway is also my dhcp!
+10.188.0.0/16 dev wlp0s20f3 proto kernel scope link src 10.188.246.192 metric 600 
+169.254.0.0/16 dev wlp0s20f3 scope link metric 1000 
+
+As stated, we can see clearly that the default gateway is also my DHCP server.
+
+To request a new ip address, we use the dhclient command with the -v (verbose) and -r (release) options.
+$ sudo dhclient -v -r
+
+Of course this does not change the dhcp server allocated ip on my phone, because the allocated ip does not change
+that easily! It's not a big DHCP afterall!

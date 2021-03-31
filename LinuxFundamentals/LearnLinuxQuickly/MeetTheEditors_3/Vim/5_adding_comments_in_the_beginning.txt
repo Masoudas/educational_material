@@ -1,0 +1,9 @@
+A common problem that I face in VIM is that I want to put the "//" comment in C++ codes. How does one go about 
+that?
+
+    - First, we need to locate the line numbers for which we want to comment.
+    - We know that the search and replace command is ":n0,n1 s / /", where n0 and n1 are the line numbers.
+    - The problem is that if we write :n0,n1 s/^////g, the command is ambiguous.
+    - We replace the / with !, hence writing ":n0,n1s!^!//!g"
+    - Note that VIM has a command history, so if we wanted to repeat this operation, we can just type in : and
+      then go back in history of the commands
