@@ -1,0 +1,49 @@
+Each node in the device tree has properties that describe the characteristics of the node. Properties consist of a 
+name anda value.
+
+-   Property names: character sets such as:
+    compatible,
+    part-number,
+    version
+    fsl,channel-fifo-lenibm,
+    ppc-interrupt-server#slinux,
+    network-index
+
+-   Propery values: Value of properties, which fall in the following categories:
+    -   <empty>     For conveying true or false.
+    -   <u32>       A 32 bit number. A 32-bit integer in big-endian format.  
+                    Example: the 32-bit value 0x11223344 wouldbe represented in memory as:
+                    address    11
+                    address+1  22
+                    address+2  33
+                    address+3  44
+                    (ME: by address in memory we mean the value of this propery, which as we can see is in big
+                    endian format. So where the device tree is written in memory.)
+    -   <u64>       Same as 32, but 64.
+    -   <phandle>   A <u32> value. A phandle value is a way to reference another node in the device tree. Any node 
+                    that can be referenced defines a phandle property with a unique<u32>value. That number is used 
+                    for the value of properties with a phandle value type.
+    -   <stringlist> Several strings.
+
+Example: 
+/dts-v1/;
+/{                                          # Root node
+    model = "TI AM335x BeagleBone";         # Property (of parent node)
+    compatible = "ti,am33xx";               # Property
+    #address-cells = <1>;                   # Property
+    #size-cells = <1>;      
+    cpus {                                  # child of root
+        #address-cells = <1>;
+        #size-cells = <0>;
+        cpu@0 {
+            compatible = "arm,cortex-a8";
+            device_type = "cpu";
+            reg = <0>;
+        };
+    };
+    memory@0x80000000 {
+        device_type = "memory";
+        reg = <0x80000000 0x20000000>; /* 512 MB */
+    };
+};
+

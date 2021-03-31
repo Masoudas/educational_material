@@ -1,0 +1,18 @@
+Each node in the devicetree is named according to the following convention:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+node-name@unit-address
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The node-name component specifies the name of the node. It shall be 1 to 31 characters in length and consist solely 
+of characters from the set of characters (including +, -, etc)
+The node-name shall start with a lower or uppercase character and should describe the general class of device.
+
+
+The unit-address component of the name is specific to the bus type on which the node sits. 
+The root node does not have a node-name or unit-address. It is identified by a forward slash (/). Also, some
+other nodes may not have adress (like multiple CPU cores)
+
+Example: cpus node has children cpu@1 and cpu@2, which means it sits on these buses.
+
+Hence for example, the path to a particular node can be described as /cpus/cpu@1

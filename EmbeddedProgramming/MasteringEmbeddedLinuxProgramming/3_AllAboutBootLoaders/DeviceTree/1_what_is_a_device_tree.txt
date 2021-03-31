@@ -1,0 +1,11 @@
+The operating system needs to know information about the hardware when it starts to boot up, otherwise, it cannot
+connect to the CPU or memory, or do other things. The way to provide this information for ARM and FreeScale MPS
+processors is through something called the device tree.
+
+As the official documentation of device tree at www.devicetree.org specifies:
+
+"DTSpec specifies a construct called adevicetreeto describe system hardware.  A boot program loads a devicetree 
+into a client program’s memory and passes a pointer to the devicetree to the client."
+
+Note that we may not find the EXACT device tree for a device, hence we generally need to find the closest one,
+and possibly add information in there.

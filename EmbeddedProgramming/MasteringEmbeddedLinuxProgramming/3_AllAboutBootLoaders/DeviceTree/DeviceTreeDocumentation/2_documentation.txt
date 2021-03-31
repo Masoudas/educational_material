@@ -1,0 +1,2 @@
+The documentation of devicetree is the go to source to understand the device tree. It can be found at devicetree.org
+Once again, recall that device tree is the structure used for arm and mps processors.

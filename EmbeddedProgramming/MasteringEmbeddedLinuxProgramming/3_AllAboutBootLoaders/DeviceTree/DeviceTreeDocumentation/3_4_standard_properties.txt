@@ -1,0 +1,71 @@
+The properties we discussed are not arbitrary and there's a particular set of famous properties:
+
+-   compatible:
+    The compatible property value consists of one or more strings that define the specific programming model for
+    the device.  This list of strings should be used by a client program for device driver selection.  The property
+    value consists of a concatenated list of null terminated strings, from most specific to most general. They
+    allow a device to express its compatibility with a family of similar devices, potentially allowing a single
+    device driver to match against several devices.
+
+    Example:
+    compatible = "fsl,mpc8641", "ns16550"; # Most compatible with fsl, least with ns
+
+-   model
+    The model property value is a<string>that specifies the manufacturer’s model number of the device.
+
+-   phandle
+    property handle. The phandle property specifies a numerical identifier for a node that is unique within the 
+    devicetree.  The phandle property value is used by other nodes that need to refer to the node associated with 
+    the property.
+    Example:
+        pic@10000000 {
+            phandle = <1>;
+            interrupt-controller;
+        };
+        So another device can now refer to it:
+        another-device-node{
+            interrupt-parent = <1>;
+        };
+
+-   status:
+    between "disabled", "okay", "reserved", etc.
+
+-   #address-cells, #size-cells:
+    The #address-cells and#size-cells properties may be used in any device node that has children in the device-tree 
+    hierarchy and describes how child device nodes should be addressed. The #address-cells property defines the 
+    number of <u32> cells used to encode the address field in a child node’s reg property. The #size-cells property 
+    defines the number of<u32> cells used to encode the size field in a child node’s reg property.
+
+    Example: In this example, the#address-cellsand#size-cellsproperties of thesocnode are both set to 1. This setting
+    specifies that one cell is required to represent an address and one cell is required to represent the size of 
+    nodes that are children of this node.
+    
+    soc{
+        #address-cells = <1>;
+        #size-cells = <1>;
+        serial@4600 {
+            compatible = "ns16550";
+            reg = <0x4600 0x100>;
+            clock-frequency = <0>;
+            interrupts = <0xA 0x8>;
+            interrupt-parent = <&ipic>;
+            };
+        };
+
+-   reg:
+    The reg property describes the address of the device’s resources within the address space defined by its 
+    parent bus. Most commonly this means the offsets and lengths of memory-mapped IO register blocks, but may have
+    a different meaning on some bus types. Addresses in the address space defined by the root node are CPU real
+    addresses.
+
+    Example:
+        reg = <0x80000000 0x20000000>; # 512 MB memory that starts at address 0x80000000
+        Or Suppose a device within a system-on-a-chip had two blocks of registers, a 32-byte block at offset 0x3000 in
+        the SOC and a 256-byte block at offset 0xFE00.  The reg property would be encoded as follows (assuming
+        #address-cells and #size-cells values of 1
+        reg = <0x3000 0x20 0xFE00 0x100>    # (Me: Question: if cell size was two, then this would have been
+                                               halved?)
+
+-   ...
+
+
