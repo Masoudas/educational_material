@@ -1,0 +1,13 @@
+Life is hard, suck it up!
+
+To search for reqular expressions, we need to supply the type of regex, together with the regex. The problem with
+regex is that regexes are read as whole words, hence the path need to be supplied by a '\.*/pattern", meaning 
+search for all the paths.
+
+Hence, for example, to search for a pattern '1_*.txt' (meaning like 1_1_f.txt or 1_3_f.txt) we must write:
+$ find . -type f -regextype egrep -regex '1_\w+.txt' # (note that 1_*.txt means zero or more _, which is
+wrong.)
+
+Note that egrep stands for extended grep, allowing for additional meta regex chars, like regex -E.
+
+

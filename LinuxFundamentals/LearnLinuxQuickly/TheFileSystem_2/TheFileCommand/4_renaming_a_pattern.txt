@@ -1,0 +1,21 @@
+So let's say I want to rename a pattern like 1_\w+.txt to another pattern like 1_\w+.txt. I need to first:
+    -   Find the files
+    -   Then pass them to bash using -exec to mv them using the mv command.
+
+For that:
+    -   I need to keep everthing after 1.
+    -   Reuse that bit in the move command, and just change 1.
+
+This is the find portion:
+
+$ find . -maxdepth 1 -type f -regextype egrep -regex "\.*/1_\w+.txt"
+
+I've no idea how the second part is done though!
+
+Over the internet, it's been suggested to use the mass move command:
+$ mmv 'Friends - 6x?? - Tow *.srt' 'S06E#1#2.srt' 
+
+For example, moves Friends - 6x05 - Tow Joey's Porshe.srt to S06E05.srt
+
+
+
