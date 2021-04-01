@@ -13,9 +13,6 @@
  * Such clipping is done when the target type is unsigned char , signed char , unsigned short or signed short. 
  * For 32-bit integers, no clipping is done.
  *
- * When the parameter is a floating-point value and the target type is an integer (8-, 16- or 32-bit), the 
- * floating-point value is first rounded to the nearest integer and then clipped if needed (when the target type 
- * is 8-or 16-bit).
  */
 #include <opencv2/core.hpp>
 #include <iostream>
