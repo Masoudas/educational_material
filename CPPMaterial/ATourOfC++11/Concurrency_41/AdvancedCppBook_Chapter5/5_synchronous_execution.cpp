@@ -7,15 +7,12 @@
 * will eat one after the other.
 * 
 * The first philosopher takes two chopsticks and eats their sushi. Then, the second philosopher takes 
-* two chopsticks and eats their sushi. They take turns until all of them have finished their sushi. Take 
-* a look at the following diagram, which represents the synchronous execution of four tasks in a single
-* thread. Here, each of the tasks waits for the previous task to finish. Tasks can also be performed 
-* synchronously in multiple threads. This is illustrated in the example below.
+* two chopsticks and eats their sushi. They take turns until all of them have finished their sushi. 
 * 
 * Note that synchronous execution means that the finishing time of each task is synchronized. The order 
 * of the execution of tasks is the main point here.
 * 
-* Note from me: This example is important in illustration of the difference between parallel execution
+* Note from me: This example is an important illustration of the difference between parallel execution
 * and synchronous execution. The latter means tasks would be accomplished one after another, whereas the
 * former means tasks would be accomplished simultaneously.
 * 
@@ -34,8 +31,8 @@ void task_two() {
 }
 
 void synchronization_in_one_thread() {
-	task_one();
-	task_two();
+	task_one();	// Task one executes and finished
+	task_two();	// Then task two starts.
 }
 
 void synchronization_using_multiple_threads() {
