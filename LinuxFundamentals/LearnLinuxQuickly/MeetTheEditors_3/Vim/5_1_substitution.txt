@@ -1,0 +1,10 @@
+The command :s is used for substitution, where:
+    -   :s/expression/replacement/  substitues only the first instance in the current line
+    -   :s/expression/replacement/g  substitues globally in the current line
+    -   :s/expression/replacement/c  substitues first instance in the current line, but asks permission first
+    -   :%s... Meaning with any of the above, searches the entire document and then substitutes.
+
+Do note that: 
+    -   n goes to the next instance, and b goes back.
+    -   / can be replaced with !
+    -   Vim has a command history, hence we can press : and then lookup for older commands.

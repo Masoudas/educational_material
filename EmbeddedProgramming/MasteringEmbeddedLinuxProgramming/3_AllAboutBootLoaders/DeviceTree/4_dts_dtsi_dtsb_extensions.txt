@@ -1,0 +1,32 @@
+We must think of the device trees as C programs that: 
+    1-  Have a compiler called dtc or DeviceTreeCompiler
+    2-  "include" files that have the extension "dtsi"
+    3-  "program" files that have the extension "dts"
+    4-  Output binaries that have the extension "dtsb"
+
+Why the need for such a structure? Because many of the hardware is common among different architectures. Therefore,
+we use include files so that we won't have to write everything from scratch.
+
+Hence for example, if we wanted to compile a chosen device tree, we write:
+$ dtc sample_device.dts -o  sampledevice.dtsb.
+
+Where can we find the compiler?
+    -   The linux kernel in our case comes with a dtc compiler, but I personally checked and the file is a 
+        dtc.c file, meaning we need to compile it (using a cross compiler as it appears.)
+    -   dtc comes as a linux package. Hence, we can for example in Ubuntu atp-get it and then compile.
+
+Now that we have the compiler, we can compile the source tree file as follows:
+    -   dtc -I dts -O dtb -o devicetree_file_name.dtb devicetree_file_name.dts
+
+we can convert dts to dtb by this command:
+    -   dtc -I dts -O dtb -f devicetree_file_name.dts -o devicetree_file_name.dtb
+
+we can convert dtb to dts by this command:
+    -   dtc -I dtb -O dts -f devicetree_file_name.dtb -o devicetree_file_name.dts
+
+The problem however maybe that all the include files are not present in the same folder in linux (they are 
+scattered all over the place, in the arch boot folders too). Which is why, it's been suggested to generate the 
+device trees using the make files of the kernel builder:
+
+$ make ARCH=arm CROSS_COMPILE=arm-none-eabi- imx_v6_v7_defconfig    # Or arm-cortex_a8_linux_gnueabihf
+$ make ARCH=arm CROSS_COMPILE=arm-none-eabi- dtbs

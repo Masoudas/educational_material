@@ -1,0 +1,7 @@
+Essentiall, a complete device tree starts from the root / and then goes on to children such as cpu, memory etc.
+So in a tree structure, it looks something like this:
+
+-   /
+-       cpu
+-       memory
+-       ...

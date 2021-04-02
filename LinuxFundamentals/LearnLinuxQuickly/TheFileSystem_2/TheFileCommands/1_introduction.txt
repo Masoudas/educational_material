@@ -1,0 +1,21 @@
+The file command is useful for performing several operations on files and folders, including search for a particular
+pattern, replace the pattern, etc.
+
+The basic syntax is:
+
+$ find . -name name
+
+This exprssion looks for the given expression RECUSIVELY from this location to all subfolders, among files and
+folders. Note the recursiveness. Especially if we're thinking about changing file names in the current folder,
+we'd be screwed!
+Also note that we used the -name. To use regular expression, we need to supply -regex.
+
+
+To set the depth of search, use the -maxdepth option
+
+$ find . -maxdepth 1 -name expression     # Search only in the current folder.
+
+To search for files or folders, use the -type option together with f or d
+$ find . -type f -maxdepth 0 -name expression
+
+

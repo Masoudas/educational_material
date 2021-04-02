@@ -3,3 +3,12 @@ To use extended possiblity of grep, use -E. The following three expressions are 
 $ grep "\(grouping\)" file.txt
 $ grep -E "(grouping)" file.txt
 $ egrep "(grouping)" file.txt
+
+What's the difference between normal and extended regular expressions?
+A regular expression is a search pattern that grep command matches in specified file or in provided text. In order 
+to allow a user to express the regular expression in more customized way, grep assigns special meanings to few 
+characters. These characters are known as Meta characters. Initially, grep assigned the characters ^ $ . [ ] and 
+* as Meta characters. Later few more characters were added in this list. These were ( ) { } ? + and |.
+
+Consequently, it always best to add the -E before the grep command.
+

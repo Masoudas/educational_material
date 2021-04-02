@@ -1,0 +1,44 @@
+Just so that we stress the definition of static ip and what we mean by it:
+"A static IP address is simply an address that doesn't change. Once your device is assigned a static IP address, 
+that number typically stays the same until the device is decommissioned or your network architecture changes. 
+Static IP addresses generally are used by servers or other important equipment."
+
+"Static IP addresses are assigned by Internet Service Providers (ISPs). Your ISP may or may not allocate you a 
+static IP address depending on the nature of your service agreement. We describe your options a little later, but 
+for now assume that a static IP address adds to the cost of your ISP contract."
+
+Now, question is, how can we set a static ip address? Well, we can go through each individual step using the ip
+command, by setting ip, setting DNS server, setting default gateway (not the DHCP, because that would imply that
+the network is dynamic.) The netplan folder in etc contains a file(s) "01-network-manager-all.yall in my case", in 
+which we can write the information for each individual internet module.
+
+A sample of this file would contain something like this:
+
+%%%%%%%%%%%%%%%%%%%%%%%
+network
+    ethernets:
+        enp0s3:
+            dhcp4: yes
+    version: 2
+%%%%%%%%%%%%%%%%%%%%%%%
+
+So we see that this particular example uses dhcp4 for module 'enp0s3' to dynamically (not statically) allocate ip.
+If we wanted to make ip allocation static, we'd do as follows. Note that as always in the linux world, once we 
+change a config file, we have to execute it, which is done below. Note that if we had any errors or typos, it will
+appear once we apply the netplan.
+
+%%%%%%%%%%%%%%%%%%%%%%%
+network
+    ethernets:
+        enp0s3:
+            dhcp4: no
+            addresses: 
+                -   192.168.1.1/24
+            gateway: 192.255.1.0
+            nameservers:
+                addresses: [8.8.8.8, 1.1.1.1] 
+    version: 2
+%%%%%%%%%%%%%%%%%%%%%%%
+
+The execute:
+$ sudo netplan apply

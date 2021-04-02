@@ -1,0 +1,5 @@
+When it comes to manufacturers:
+    -   ti: I think stands for Texas Instruments, that produces ARM processors. So something like "ti am33xx"
+        stands for texas instruments, arm processor, then version.
+    -   fsl: Stands for FreeScaLe. So something like fsl MPC8349EMITX stands for free scale, MPC processor or
+        deriver, then version.

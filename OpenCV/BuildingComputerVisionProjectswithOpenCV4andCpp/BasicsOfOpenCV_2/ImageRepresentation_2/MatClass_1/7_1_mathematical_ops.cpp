@@ -4,7 +4,8 @@
  * called MatExpr, which we shall discuss next.
  *
  *      -   MatExpr cv::Mat::mul(InputArray	m, double scale = 1) const
- *          Performs an element-wise multiplication or division of the two matrices.
+ *          Performs an element-wise multiplication or division of the two matrices (So this is no normal matrix
+ *          multiplication.)
  *          The method returns a temporary object encoding per-element array multiplication, with optional scale. 
  *          Note that this is not a matrix multiplication that corresponds to a simpler "\*" operator.
  *          m: Must have same size and type as this.

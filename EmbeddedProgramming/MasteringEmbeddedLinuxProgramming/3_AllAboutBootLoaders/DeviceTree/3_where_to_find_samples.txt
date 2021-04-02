@@ -1,0 +1,6 @@
+An abundant number of device trees can be found on the Linux kernel. These are located at (if I download a linux
+kernel) at the address "scripts/dtc".
+
+These files being there imply that when we generate a kernel, a device tree is generated, again, or ARM or MPS
+devices.
+

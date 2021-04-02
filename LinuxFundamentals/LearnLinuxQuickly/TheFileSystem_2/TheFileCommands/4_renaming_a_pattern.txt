@@ -1,0 +1,17 @@
+Over the internet, it's been suggested to use the mass move command:
+$ mmv 'Friends - 6x?? - Tow *.srt' 'S06E#1#2.srt' 
+
+For example, this command moves Friends - 6x05 - Tow Joey's Porshe.srt to S06E05.srt
+
+Now, the question is, how can I keep a part of the regex? Like for example if I have a pattern that starts with
+5 (say 5_file 5_5_file,) and I want to change the five in the beginning to 1, how do I go about it?
+I can use a wild card as follows (note that the quotes are necessary):
+
+$ mmv '1*' '2#1'
+
+For mor complicated patterns, I can use a combination of '?' and '*' to perform the actions:
+
+$ mmv '?_1*' '#2_2#1'   So move the first character to last position, move remiander to beginning, and then
+                        change _1 to _2
+
+

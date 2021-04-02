@@ -2,3 +2,7 @@ If we want to show the lines for which no match exists, we use -v which stands f
 the line number of found matches.
 
 $ grep -vn "the" BSD
+
+Of course, -n by itself just gives the line numbers that contain the pattern:
+
+$ grep -n "the" BSD

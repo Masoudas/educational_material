@@ -1,0 +1,16 @@
+We can pass the result of the find command outside to be used by other commands using the following four options:
+
+-   exec command ;
+
+
+-   exec command {} +
+    find . -type f -exec file '{}' \;
+
+    Runs `file' on every file in or below the current directory.  Notice that the braces are enclosed in single 
+    quote marks to protect them from interpretation as shell script punctuation. The semicolon is similarly 
+    protected by the use of a backslash, though single quotes could have been used in that case also.
+
+-   execdir command ;
+
+-   execdir command {} +
+

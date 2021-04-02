@@ -24,9 +24,14 @@
  *       constructors and operators that extract sub-matrices (see Mat description).
  *  -    Mat_<destination_type>() constructors to cast the result to the proper type. 
  *
- * Question: Is MatExpr a view of the original matrix? Yes! Note that through the constructor of MatExpr, we can
- * convert a Mat into a MatExpr. Moreover, MatExpr has an implicit cast to Mat. Once the cast operation takes place,
- * the new matrix is ready for use.
+ * Question: Is MatExpr a view of the original matrix? Yes! But more precisely, it's an intermediary stage between
+ * the result of an operation and the actual result of that operation. Note that through the constructor of MatExpr, 
+ * we can convert a Mat into a MatExpr. Moreover, MatExpr has an implicit cast to Mat. Once the cast operation takes 
+ * place, the new matrix is ready for use.
+ *
+ * What's implied here is that we can make as many complicated expressions as we desire, and once we convert to Mat,
+ * then that new mat is generated. Note that each cast to Mat generates a new underlying structure, which is quite
+ * interesting!
  * 
  */
 
@@ -48,11 +53,14 @@ void MatExpr_is_a_view(){
     auto result_ptr = ((cv::Mat&)result_matExpr).ptr<uchar>();
     if (m.ptr<uchar>() != result_ptr && m1.ptr<uchar>() != result_ptr)
     {
-        std::cout << "\n\nNote that the pointer is not the same for the three mats\n\n";
+        std::cout << "\n\nNote that the pointer is not the same for the three mats\n";
     }
     
+    cv::Mat result_2 = result_matExpr;  // A new cast to Mat does not generate a new matrix.
+    if (result_2.ptr<uchar>() != result_ptr){
+        std::cout << "Result of new cast produces a new data structure.\n\n";
+    }
 }
-
 // int main(){
 //     MatExpr_is_a_view();
 // }

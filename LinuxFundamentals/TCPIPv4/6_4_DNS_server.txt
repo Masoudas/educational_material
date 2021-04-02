@@ -1,0 +1,6 @@
+Apparently, we can't find the DNS server using the ip command. However, we can find it using the resolv.conf file
+in the etc folder. In particular, we can use the grep command as follows:
+
+$ grep nameserver /etc/resolv.conf 
+nameserver 127.0.0.53
+

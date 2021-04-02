@@ -1,0 +1,11 @@
+The capital G is the command that takes to a particular line. Hence we can go to a particular line by just typing
+the line number plus capital G.
+
+    -   10G takes us to the beginning of line 10.
+
+Now, we can combine this command with various verbs to for example delete or yank from current position to the
+specified line. 
+    -   d10G deletes the current cursor position till line 10 (end of it).
+    -   y2G yanks from this position till line two (end of it). Note that this can be downward or upward.
+
+This can be very useful when I want to delete something that's not part of a paragraph or etc.
