@@ -20,6 +20,6 @@ void reshape_higher_order_to_two_dim_images(){
     << "and has " << new_m.channels() << " channel\n\n";
 }
 
-int main(){
-    reshape_higher_order_to_two_dim_images();
-}
+//int main(){
+//    reshape_higher_order_to_two_dim_images();
+//}
