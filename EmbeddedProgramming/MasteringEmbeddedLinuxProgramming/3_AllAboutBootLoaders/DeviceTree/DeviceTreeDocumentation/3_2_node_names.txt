@@ -14,5 +14,4 @@ The root node does not have a node-name or unit-address. It is identified by a f
 other nodes may not have adress (like multiple CPU cores)
 
 Example: cpus node has children cpu@1 and cpu@2, which means it sits on these buses.
-
-Hence for example, the path to a particular node can be described as /cpus/cpu@1
+Hence for example, the path to core one of the cpu can be described as /cpus/cpu@1

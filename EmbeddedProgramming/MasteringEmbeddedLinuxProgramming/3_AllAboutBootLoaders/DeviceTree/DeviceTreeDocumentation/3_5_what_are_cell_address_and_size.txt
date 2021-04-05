@@ -1,0 +1,38 @@
+This is all me:
+I figured this out using the example of trying to define the memory node in chapter "Device node requirements" of
+the standard. In that chapter, we have this example:
+
+""""
+Examples
+Given a 64-bit Power system with the following physical memory layout:
+    -    RAM: starting address 0x0, length 0x80000000 (2 GB)
+    -    RAM: starting address 0x100000000, length 0x100000000 (4 GB)
+
+Memory nodes could be defined as follows, assuming #address-cells = <2> and #size-cells = <2>
+
+Model I:
+
+memory@0 {
+device_type = "memory";
+reg = <0x000000000 0x00000000 0x00000000 0x80000000
+       0x000000001 0x00000000 0x00000001 0x00000000>;
+};
+
+
+Model II:
+
+memory@0 {
+device_type = "memory";
+reg = <0x000000000 0x00000000 0x00000000 0x80000000>;
+};
+
+memory@100000000 {
+device_type = "memory";
+reg = <0x000000001 0x00000000 0x00000001 0x00000000>;
+};
+
+""""
+
+So now, it has become more clear to us. Note that the second memory address and size requires more that 32 bits
+to be described (essentially 64 bits or <u64> for both the address and the size.) Hence, the cell address (for
+location of memory address) and cell size (for size of memory) are given as 2, or u64.

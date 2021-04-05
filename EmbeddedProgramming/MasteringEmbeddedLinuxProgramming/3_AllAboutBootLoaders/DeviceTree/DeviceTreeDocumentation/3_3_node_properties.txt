@@ -1,10 +1,12 @@
 Each node in the device tree has properties that describe the characteristics of the node. Properties consist of a 
-name anda value.
+name and a value.
 
 -   Property names: character sets such as:
-    compatible,
-    part-number,
-    version
+        -   compatible (discussed next), 
+        -   part-number (discussed next),
+        -   version (discussed next)
+    
+    Example:
     fsl,channel-fifo-lenibm,
     ppc-interrupt-server#slinux,
     network-index
