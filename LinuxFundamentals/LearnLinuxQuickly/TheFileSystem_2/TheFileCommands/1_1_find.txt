@@ -1,4 +1,4 @@
-The file command is useful for performing several operations on files and folders, including search for a particular
+The find command is useful for performing several operations on files and folders, including search for a particular
 pattern, replace the pattern, etc.
 
 The basic syntax is:

@@ -1,0 +1,31 @@
+To search using regex, it's always recommended to supply the type of regular expression, which can be done using
+the regextype option.
+
+To search for reqular expressions, we need to supply the type of regex, together with the regex. The subtle point
+here is that find searches for files based on pwd, hence the normal outcome of a find starts with the '.', as
+
+./LearnLinuxQuickly/TheFileSystem_2/TheFileCommands/1_2_find_pass_result_to_bash.txt
+./LearnLinuxQuickly/TheFileSystem_2/TheFileCommands/1_2_find_regex.txt
+./LearnLinuxQuickly/TheFileSystem_2/TheFileCommands/1_1_find.txt
+
+Hence, if we want to search for a pattern we have to supply it with the starting '.' In particular, if we wanted
+to search in the recursive paths, we need to supply a '.*' meaning whatever set of chars that come first (like
+for example './folder_1/folder_2/...')
+
+The good news is that if we write the regular expression with just one dot, we needn't supply the maxdepth.
+
+Example 1:
+Search for all files that start with '1_*.txt' in the current folder.
+
+$ find . -type f -regextype egrep -regex '\./1_.+.txt'  # Or
+$ find . -type f -maxdepth 1 -regextype egrep -regex '\..*1_.+.txt'     # This is the pattern to search in all files.
+
+Note that 1_*.txt means zero or more _, which is wrong! Also note that egrep stands for extended grep, allowing for 
+additional meta regex chars, like regex -E.
+
+Example 2:
+Look for all the folders in all subfolders that contain the word 'the' or case combinations of it.
+
+$ find . -type d -regextype -egrep -regex '\..*/.*[tT][hH][eE].*'   # 
+
+

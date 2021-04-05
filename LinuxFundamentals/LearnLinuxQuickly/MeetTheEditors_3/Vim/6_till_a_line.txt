@@ -1,4 +1,4 @@
-The capital G is the command that takes to a particular line. Hence we can go to a particular line by just typing
+The capital G is the command that takes us to a particular line. Hence we can go to a particular line by just typing
 the line number plus capital G.
 
     -   10G takes us to the beginning of line 10.
