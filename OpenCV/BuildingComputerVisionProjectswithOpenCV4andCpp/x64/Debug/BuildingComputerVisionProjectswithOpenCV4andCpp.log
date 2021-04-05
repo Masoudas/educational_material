@@ -1,4 +1,0 @@
-﻿  1_the_mat_class.cpp
-  2_2_install_on_windows_build.cpp
-  Generating Code...
-LINK : fatal error LNK1104: cannot open file 'opencv_highgui451.lib'
