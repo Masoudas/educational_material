@@ -1,0 +1,31 @@
+Naturally, if we install gcc as a package, then its components (its include files and the lib files) will be
+installed under /usr/include and /usr/lib.
+
+In particular, say if I install gcc 9, then we have the following paths:
+    -   include: /usr/include/c++/9
+    -   lib:    /usr/lib/gcc/x86_64-linux-gnu/9
+
+Note the differences between the two paths:
+    -   Headers are in a c++ folder, but libs are in gcc folder 
+    -   lib files are in a x86_64-linux-gnu folder, indicating the version they're compiled for.
+
+Now, if we for example investigate the include header, we see many of the familiar std headers:
+$ ls /usr/include/c++/9
+
+algorithm  cassert   cinttypes  condition_variable  cstdio   cxxabi.h      fenv.h            ios       map              
+ostream   scoped_allocator  string        typeindex      vector any        ccomplex  ciso646    csetjmp             
+cstdlib  debug         filesystem        iosfwd    math.h           parallel  set               string_view   
+typeinfo       version ...
+
+Moreover, the lib folder will have something like this:
+$ ls /usr/lib/gcc/x86_64-linux-gnu/9
+crtprec64.o        libasan.so         libgcc.a        libgomp.so    liblsan.a          liblto_plugin.so.0.0.0  
+libstdc++.a         libtsan.so    plugin crtbeginS.o  crtoffloadbegin.o  crtprec80.o        libatomic.a        
+libgcc_eh.a     libgomp.spec  liblsan_preinit.o  libquadmath.a           libstdc++fs.a       libubsan.a
+...
+
+For example, libstdc++fs.a is the static version of the filesystem header. Hence, if were to link explicitly to
+it, we'd write the following for g++:
+$ g++ ... -static -lstdc++fs
+
+Of course, this can be taken care of by just explicitly declaring the -std version.
