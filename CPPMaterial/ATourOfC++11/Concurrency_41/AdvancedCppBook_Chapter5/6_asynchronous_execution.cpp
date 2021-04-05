@@ -23,22 +23,21 @@
 #include <thread>
 #include <chrono>
 
-void print_hello() {
+void asynch_task() {
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	std::cout << "Hello from thread " << std::this_thread::get_id() << '\n';
 }
 //int main() {
-//	std::thread t1{ print_hello };
+//	std::thread t1{ asynch_task };
 //	t1.detach();
 //
-//
-//	std::thread t2{ print_hello };
+//	std::thread t2{ asynch_task };
 //	t2.detach();
 //
-//	std::thread t3{ print_hello };
+//	std::thread t3{ asynch_task };
 //	t3.detach();
 //	
-//	std::thread t4{ print_hello };
+//	std::thread t4{ asynch_task };
 //	t4.detach();
 //
 //	std::this_thread::sleep_for(std::chrono::seconds(6));

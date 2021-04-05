@@ -13,7 +13,8 @@
 * associated, default constructed std::thread::id is returned. (Me: We can't check if a thread has terminated
 * execution with this check. For example, and empty constructed thread is still joinable! We see that in the
 * definition of joinable method, this check is done for just checking whether a thread is joinable!)
-* std::thread has a member function called get_id() that returns the unique ID of the std::thread 
-*  instance. If the std::thread instance wasn't initialized or was joined or detached, get_id() returns a default std::thread::id object
+* 
+* me: Note that as discussed in AdvancedCppBook_Chapter5, 7_note_on_thread_id, we use the thread id to check on whether
+* a thread is joinable or not, to be able to join it. This is the function of the joinable method, the avoid daemon
+* threads from calling std::terminate.
 */
-//??????

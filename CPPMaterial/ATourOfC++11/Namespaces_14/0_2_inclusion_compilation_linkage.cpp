@@ -133,21 +133,21 @@
 *
 */
 
-void my_f();
-void my_f();
+void my_func();
+void my_func();
 
 class my_class;
 class my_class;
 
-void my_f() {
+void my_func() {
 
 }
 
-//void my_f() { Error. Repeated function body.
+//void my_func() { Error. Repeated function body.
 //	int x = 10;
 //}
 
 
 //int main() {
-//	my_f();
+//	my_func();
 //}
