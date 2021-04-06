@@ -1,0 +1,9 @@
+This issue was particularly important when I was trying to capture images with video camera using opencv.
+
+Like any other device, the video cameras (like webcam) are under the /dev folder, under the 'video*' Each video
+device is associated with one integer, which is why for example in the VideoCapture class of openCV we call them
+by integers.
+
+To get the list of available video devices, a long listing with a wildcard is a good idea:
+$ ls -l /dev/video*
+

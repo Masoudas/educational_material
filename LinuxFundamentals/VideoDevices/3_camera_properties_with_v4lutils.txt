@@ -1,0 +1,20 @@
+To get some more sophistaced properties of the camera, we can install the v4l-utils package:
+
+$ sudo apt-get install v4l-utils
+
+The running the following command gives us the properties of video0:
+
+$ sudo v4l2-ctl --device=/dev/video0 --all
+...
+Card type        : Integrated_Webcam_HD: Integrate
+Bus info         : usb-0000:00:14.0-5
+...
+    Width/Height      : 1280/720
+	Pixel Format      : 'YUYV' (YUYV 4:2:2)
+	Field             : None
+	Bytes per Line    : 2560
+	Size Image        : 1843200
+	Colorspace        : sRGB
+	Transfer Function : Default (maps to sRGB)
+	YCbCr/HSV Encoding: Default (maps to ITU-R 601)
+	Quantization      : Default (maps to Limited Range)

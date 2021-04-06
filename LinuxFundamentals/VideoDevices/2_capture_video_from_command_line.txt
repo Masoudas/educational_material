@@ -1,0 +1,7 @@
+Now, to capture video from the command line, all we have to do is to install the ffmpeg package, and then just
+feed the camera number to the ffplay command:
+
+$ ffplay /dev/video0    # Live feed of the current camera.
+
+To take a single photo:
+ffmpeg -f v4l2 -video_size 1280x720 -i /dev/video0 -frames 1 out.jpg

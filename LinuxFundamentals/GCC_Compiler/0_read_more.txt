@@ -1,0 +1,4 @@
+Most of the information about gcc can be found at chapter two of the embedded programming material book called 
+learn embedded linux programming, more on toolchains.
+
+The material followed here are mostly complementary.
