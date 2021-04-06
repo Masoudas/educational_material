@@ -16,6 +16,6 @@
 * 
 * me: Regarding two: This one is fairly obvious, specially given that once again, for particular input arguments, we can
 * choose particular functions, classes, etc. Note that this is not the same as overloading rules for example, which are
-* done by the compiler alone.
+* done by the compiler alone. These are choices that we can make based on some logic the compiler may not understand.
 * 
 */

@@ -18,8 +18,8 @@
 * of it.
 * 
 * For the types on stack, we can just return T. That way, Obj_Holder<int>::type would be int and no problem. The problem
-* however would be that in this case, there would be no uniformity with On_Heap. So, we define the following uniform
-* interface for the two types:
+* however would be that in this case, there would be no uniformity with On_Heap's interface. So, we define the following 
+* uniform interface for the two types:
 * 
 * interface{
 *		T& operator*();
@@ -32,7 +32,7 @@
 * Note: The big guy does not define any constructor for these two objects, so they're default constructed, and then I
 * can assign values to them. This does make sense, because we can access them by reference and assign to them then.
 * 
-* Ok! Next, we consider how to make the conditional statement.
+* Ok! In the next file, we consider how to make the conditional statement. 
 */
 
 template<typename T>

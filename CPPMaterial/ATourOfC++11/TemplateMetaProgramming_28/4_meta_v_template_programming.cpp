@@ -31,13 +31,13 @@ constexpr int instantiate_value_meta_programming() {
 	}
 }
 
-// Note that this class is not enabled if type has size less than four. This is fortunate and necessary, because otherwise
-// we would have had two inheritance hierarchies, which would imply violating the type system!
+// If enable_if fails, this class is not compiled! This is fortunate and necessary, because otherwise we would have had 
+// two inheritance hierarchies, which would imply violating the type system! 
 template<typename T>
 struct template_meta_program : std::enable_if_t<sizeof(T) <= 4, meta_programming> {	// Inherits if the template size is
 																					// less than equal four.
 	void f() {
-		template_meta_program<int>::int_32 x;	// Fine!
+		//template_meta_program<int>::int_32 x;	// Fine!
 		// template_meta_program<double>::int_32 y;	// Error, does not inherit from meta_programming.
 	}
 };
