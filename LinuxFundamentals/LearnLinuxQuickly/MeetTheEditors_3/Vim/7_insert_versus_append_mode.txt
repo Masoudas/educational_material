@@ -1,0 +1,9 @@
+We can start typing in two modes: 
+    -   append mode: By pressing 'a'
+    -   insert mode: By pressing 'i'
+
+What's the difference between the two modes?
+    -   Pressing 'a' starts typing from the position after the cursor. Once we press escape, it jumps back a postition
+        and waits there.
+    -   Pressing 'i' does the reverse. It starts from the current position. Again, once we press escape it jumps back
+        a position.
