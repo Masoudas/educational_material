@@ -1,0 +1,11 @@
+awk is a very powerful tool that Seyed likes that we can use in Linux to analyze and process text. In fact, awk 
+is actually a programming language. We will find books that are solely written to explain and discuss the use of 
+awk.
+
+To print the first word in each line of the text, we can use:
+$ awk '{print $1}' file.txt     # Prints first word.
+
+Note that we didn't specify the delimiter in this case, and in fact, it can be any form space (like tab for 
+example.) This however, wasn't the case with the cut command.
+
+$ ls lha | awk '{print $1, $2}'    # First and second words

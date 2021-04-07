@@ -1,0 +1,7 @@
+Say we wanted to just list regular files, or folders. How do we go about that?
+
+The answer relies on the fact that in long listing, the first letter indicates the type of the file. Hence,
+we can use a egrep command to extract what we desire:
+
+$ ls -l | egrep '^-'    # Regular files.
+$ ls -l | egrep '^d'    # directories.

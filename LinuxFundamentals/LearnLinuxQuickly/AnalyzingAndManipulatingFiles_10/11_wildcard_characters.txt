@@ -1,0 +1,35 @@
+Finally, what I've been looking for!
+
+The wildcard characters are special characters in Linux, and they are used to specify a group (class) of 
+characters. The following specifies those chars (note from me that by default, we can mix these freely with
+any command that does not accept regular expressions, because they are accepted all throughout linux.)
+Note that these can also be used in regular expressions:
+
+    -   *           :       Matches any character(s)
+    -   ?           :       Matches one character.
+    -   []          :       Matches the characters that are members of the set characters. For example, 
+                            [abc] will match the characters a, b, or c (like a regex)
+    -   [!]         :       The negate of this set
+    -   [[:class:]] 	Matches any character that is a member of the character class. The outer brackets should
+                        be present too.
+        - [:alnum:] 	Represents all the alphanumeric letters, that is, any letter or number.
+        - [:alpha:] 	Represents all alphabetic letters, that is, any letter.
+        - [:digit:] 	Represents all digits, that is, any number.
+        - [:lower:] 	Represents any lower case letter.
+        - [:upper:] 	Represents any upper case letter.
+        - [:blank:]     Space and tab.
+    
+
+Examples:
+$ ls *.txt
+$ ls ???.txt
+$ ls [m][M]asoudas
+$ ls [!m]
+$ ls -l [af]*       # a or f followed by any char (and not zero or more a or f)
+$ ls -l *[[:upper:]]    # any char followed by an upper case
+
+Apparently we can't just freely mix these classes, this is because at least with some commands,
+they'll be considered an actual name, like below. Essentially, it appears that we should not get too
+adventerous with these expressions, and we should instead rely on actual regular expressions.
+
+$ ls -l [[:digit:]][[:upper:]]??     # No such file!
