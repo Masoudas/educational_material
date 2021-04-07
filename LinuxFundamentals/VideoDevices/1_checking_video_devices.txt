@@ -6,4 +6,7 @@ by integers.
 
 To get the list of available video devices, a long listing with a wildcard is a good idea:
 $ ls -l /dev/video*
+crw-rw----+ 1 root video 81, 0 avril  5 08:39 /dev/video0
+crw-rw----+ 1 root video 81, 1 avril  5 08:39 /dev/video1
+
 
