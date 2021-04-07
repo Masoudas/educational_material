@@ -10,6 +10,9 @@
 * The same story would happen for a file too, that is, one thread would try to access the file, it reads a little 
 * bit of it, but then has to make room for the other thread. Hence, in such a situation, perhaps, we breakdown the
 * lines in a file. Consequently, we must NOT access a resource by two threads, even for reading them.
+* 
+* As I've read more books, this hypothesis has been validated and it has even been mentioned explicitly (for example,
+* in the advanced C++ book by Gazikhan.)
 */
 
 #include <vector>

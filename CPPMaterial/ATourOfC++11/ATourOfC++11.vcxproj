@@ -173,6 +173,8 @@
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\6_asynchronous_execution.cpp" />
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\4_2_note_on_thread_id.cpp" />
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\7_more_complex_asynchronous_example.cpp" />
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\1_2_race_condition_example.cpp" />
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\1_1_reads_dont_cause_problems.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\1_1_thread_class.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\1_2_1_passing_method_of_execution_to_thread.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\1_2_2_passing_arguments_and_method.cpp" />
@@ -186,6 +188,8 @@
     <ClCompile Include="Concurrency_41\ThreadClass_\1_4_4_example_of_detach.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\1_4_5_only_main_process_has_to_be_extended.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\1_5_two_threads_can_access_a_resource.cpp" />
+    <ClCompile Include="Concurrency_41\ThreadClass_\2_threads_are_not_copiable_but_movable.cpp" />
+    <ClCompile Include="Concurrency_41\ThreadClass_\3_create_an_array_of_threads.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\1_Understanding_Dynamics.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\2_When_Object_Is_Copied_Or_Moved.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\3_copy_or_assignment.cpp" />
@@ -369,6 +373,8 @@
     <ClCompile Include="Namespaces_14\0_0_every_namespace_has_its_globals.cpp" />
     <ClCompile Include="Namespaces_14\0_2_aliasing_templated_types.cpp" />
     <ClCompile Include="Namespaces_14\0_3_defining_nested_operators_for_non_local_types.cpp" />
+    <ClCompile Include="Namespaces_14\0_4_use_name_space_key_word_to_alias_or_declare_namespace.cpp" />
+    <ClCompile Include="Namespaces_14\0_5_define_a_macro_for_namespace.cpp" />
     <ClCompile Include="Namespaces_14\1_granularity_of_a_cpp_program.cpp" />
     <ClCompile Include="Namespaces_14\0_2_inclusion_compilation_linkage.cpp" />
     <ClCompile Include="Namespaces_14\2_why_we_need_modularity.cpp" />
@@ -528,6 +534,9 @@
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_3_relation_to_template_deduction.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\5_4_specialization_that_is_not_overloading.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\6_cant_specialize_with_templated_types.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\7_1_partial_specialization.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\7_2_value_partial_specialization.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\7_3_standard_docs.cpp" />
     <ClCompile Include="SpecialOperators_19\2_function_call.cpp" />
     <ClCompile Include="SpecialOperators_19\Friends_4\1_defining_friendship.cpp" />
     <ClCompile Include="SpecialOperators_19\Friends_4\2_making_all_member_functions_friend.cpp" />
@@ -611,7 +620,8 @@
     <ClCompile Include="TemplateMetaProgramming_28\2_why_use_metaprogramming.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\3_distinction_between_generic_and_meta_programming.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\4_meta_v_template_programming.cpp" />
-    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\1_introduction.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\1_1_introduction.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\1_2_runtime_usage.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\2_multiple_arguments.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\3_no_argument_type_functions.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\4_prefer_constexpr_for_computations.cpp" />

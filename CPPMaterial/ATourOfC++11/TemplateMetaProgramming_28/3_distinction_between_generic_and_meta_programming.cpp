@@ -30,7 +30,9 @@
 *
 * Question from me: Does specialization fall into metaprogramming or generic programming? I think it would fall into meta
 * programming. This is because we're not changing the interface of the type (generic programming.) Rather we're manipulating
-* the type (specialize it) to provide a more compatible interface for a type. Hence, metaprogramming.
+* the type (specialize it) to provide a more compatible interface for a type. Hence, metaprogramming. Although, I can as 
+* well argue that with specialization, we can change the interface as well. Hence, we're dealing with some form of generic
+* programming there too.
 * 
 * Question: Is using concepts metaprogramming or generic programming? Again, we're not changing the interface of the 
 * class or function. Rather, we're manipulating (setting conditions) on the type, which would fall in category IV. Hence,

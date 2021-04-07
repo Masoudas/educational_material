@@ -6,25 +6,28 @@
 * The answers to many such questions are known to the compiler and exposed to the programmer through a set of 
 * standard-library type predicates
 * 
-* Reminder: POD (Plain Old Data) as we may recall are structures that contain data only (could pointers too.) For these,
+* Reminder: POD (Plain Old Data) as we may recall are structures that contain data only (possibly pointers too.) For these,
 * no constructor or destructors are defined. For such types, it's much faster to copy memory explicitly than to use copy
-* ctors.
+* ctors. Note that built-in types themselves are considered POD.
 * 
 * The standard contains a is_pod predicate that allow us to determine if we're dealing with such types, which therefore
 * allow us to copy them more seemlessly. Note that a pointer if existed in POD in this case would be copied by value of
 * course, which is perhaps what we intended.
 * 
 * The std::is_pod predicate is one of the many provided by the standard library. Since the rules for being a POD are 
-* tricky, is_pod is most likely a compiler intrinsic rather than implemented in the library as C++ code.
+* tricky, is_pod is most likely a compiler intrinsic rather than implemented in the library as C++ code. The following
+* example demonstrates how to copy by checking we're dealing with a POD or not.
 * 
-* Note one: First, the big guy didn't ask for the size of the object in the first instance. I added that myself! May God
-* forgive me for doing so!
+* me: Note the following on this implementation:
+*	-	 Note one: First, the big guy didn't ask for the size of the object in the first instance. I added that myself! 
+*		 Saying copy size * n, rather than just n. May God forgive me for this atrocity!
 * 
-* Note two: the condition the big guy uses is not constexpr, which is odd to me. I guess it's fine not to make the condition
-* constexpr, but I'm going to make it such anyway.
+*	-	 Note two: the condition the big guy uses is not constexpr, which is odd to me. I guess it's fine not to make the 
+*		 condition constexpr, but I'm going to make it as such anyway. Because afterall, it's best to make this decision
+*		 at compile time.
 * 
-* Now, interestingly enough, we can call is_pod as a function too, which we've shown below, and we're going to talk
-* about next.
+* Something to note about the implementation below is that we used is_pod_v to get the boolean true or false of whether
+* or not a type T is pod or not. This is fine, but we can also call is_pod as a function, which we shall discuss next.
 */
 #include <type_traits>
 #include <memory>
