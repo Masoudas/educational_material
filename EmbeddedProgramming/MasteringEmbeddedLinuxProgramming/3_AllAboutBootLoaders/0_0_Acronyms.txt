@@ -1,0 +1,25 @@
+Once again, we need to go over the acronyms used in this chapter:
+
+    -   MMC: Multi-Media Card. A device used for storage of information.
+    -   eMMC: Apparently same as MMC, only difference is the way it's mounted.
+    -   ROM: Read Only Memory, filled in by the vendor of CPU. For ARM CPUs it's inside the CPU.
+    -   sRAM and dRAM: Static and Dynamic Random Access Memory. 
+        -   SRAM is an on-chip memory whose access time is small while DRAM is an off-chip memory which has a large 
+            access time. Therefore SRAM is faster than DRAM. DRAM is available in larger storage capacity while SRAM 
+            is of smaller size. SRAM is expensive whereas DRAM is cheap.
+        -   SRAM is used as cache memory. dRAM is used as main memory.
+        -   RAM is known as Volatile memory because once power is lost, data is lost as well.
+
+    -   Flash memory: Electrical, non-volatile memory (does not use power to keep its data). SSD and HDD hard
+        drives are both considered flash. NVMe (Non-Volatile Memory express) is an interface to access flash 
+        storage, which is why an df command would show that the main device on this PC that contains an SDD hard 
+        drive is actually nvme0:
+        
+        $ df -h
+        Filesystem      Size  Used Avail Use% Mounted on
+        ...
+        /dev/nvme0n1p5   59G   29G   27G  52% /
+
+        NVMe is an interface protocol for accessing flash storage via a PCI Express (PCIe) bus. Unlike traditional 
+        all-flash architectures, which are limited to a single, serial command queue, NVMe supports tens of thousands 
+        of parallel queues, each with the ability to support tens of thousands of concurrent commands.

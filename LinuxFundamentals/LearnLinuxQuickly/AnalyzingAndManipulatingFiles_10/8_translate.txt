@@ -1,0 +1,13 @@
+The translate command is used to change one character form into another. We can for example change all characters
+to lower case or upper case.
+
+$ ls -lha | tr [:lower:] [:upper:]   # Translate lower cases to upper cases of the result of the list command.
+
+We can also use the -d option to remove certain characters, like for example white space:
+
+$ ls -lha | tr -d ' '
+
+Note that if we apply such changes to a file, the result is not overriden, or are not in place. Hence, we need
+to stream the content.
+
+$ less file.txt | tr -d ' ' > no_space.txt

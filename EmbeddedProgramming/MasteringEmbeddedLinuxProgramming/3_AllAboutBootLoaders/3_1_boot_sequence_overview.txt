@@ -1,0 +1,12 @@
+From the broadest perspective:
+
+ROM program: Initializes one core of CPU and internal RAM. Gives control to the first stage boot program (which
+in BeagleBone resides in an SD card FAT partition)
+
+First stage: Contains a short boot that can be stored in RAM (like UBoot MLO). Is loaded in internal RAM, and
+prepares loading UBoot inside RAM
+
+Second stage:
+
+Thanks to the video over youtube. In short, the boot sequence
+is read from an SD card, which has three things:

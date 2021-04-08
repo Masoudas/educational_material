@@ -1,0 +1,16 @@
+It's possible to cut the text inside the file to be viewed, allowing us to show certain parts of the file using
+the 'cut' command. 
+
+For example:
+
+$ cut -d ' ' -f1 facts.txt 
+
+In this example:
+    -  'd' stands for delimeter
+    -   f1 stands for the first instance.
+
+$ ls -lha  | cut -d ' ' -f1     # Shows only the permission part of the directory.
+
+The following version shows the first AND third word:
+
+$ cut -d ' ' -f1,3 file.txt

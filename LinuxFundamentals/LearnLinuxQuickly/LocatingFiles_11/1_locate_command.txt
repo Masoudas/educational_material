@@ -1,0 +1,21 @@
+To locate a file in the linux file system, we need only to use the locate command. But before we do that, we need
+to update the file database, which we discuss next as follows:
+
+$ updatedb  # update the file database
+$ locate -w expression   # Finds any file that partially contains the expression. The -w does not seem to help!
+
+For example, the following two expressions returned the same number of lines:
+$ locate -w AAA | wc -l
+$ locate -b AAA | wc -l
+
+Hence, the only way I say how to search for a particular file was with a regular expression that had word 
+boundary in it!!
+
+$ locate -regex '\bexpression\b'
+
+The manpage of updatedb states that "updatedb creates or updates a database used by locate(1). If the database 
+already exists, its data is reused to avoid rereading directories that have not changed." Hence, this database
+is part of the locate command, and not part of the linux shell.
+
+Note that when we create a file in an open shell, the instance of db that's already loaded inside this shell
+does not contain this file. Hence, we need to run the 'updatedb' command to ensure that it's updated.

@@ -1,0 +1,5 @@
+A simple search pattern is like that of vim:
+
+$ awk '/pattern/{print}' file
+
+In that sense, awk can replace the famous grep command.

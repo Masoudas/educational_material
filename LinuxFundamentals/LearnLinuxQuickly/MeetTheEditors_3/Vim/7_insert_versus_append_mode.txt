@@ -7,3 +7,6 @@ What's the difference between the two modes?
         and waits there.
     -   Pressing 'i' does the reverse. It starts from the current position. Again, once we press escape it jumps back
         a position.
+
+Note that another insertion mode happens with 'c', which stands for cut and insert. This mode depends on whether
+it's mixed with 'w', '(', '{' or anthing else. The point is that the cursor remains where it is.

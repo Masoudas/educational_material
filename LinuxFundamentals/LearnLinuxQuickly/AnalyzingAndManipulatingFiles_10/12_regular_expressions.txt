@@ -1,0 +1,45 @@
+The famous regular expression syntax:
+
+
+    ‘\w’ matches a character within a word
+    ‘\W’ matches a character which is not within a word
+    ‘\<’ matches the beginning of a word
+    ‘\>’ matches the end of a word
+    ‘\b’ matches a word boundary
+    ‘\B’ matches characters which are not a word boundary
+    ‘\`’ matches the beginning of the whole input
+    ‘\'’ matches the end of the whole input 
+    The character ‘.’ matches any single character.
+    ‘\+’ indicates that the regular expression should match one or more occurrences of the previous atom or 
+    regexp. 
+    ‘\?’  indicates that the regular expression should match zero or one occurrence of the previous atom or 
+    regexp. 
+    ‘+ and ?’ match themselves.
+    * 	Matches zero or more of the preceding characters or expressions.
+    + 	Matches one or more of the preceding characters or expressions.
+    ^ 	Matches the following expression at the beginning of the line. For example, ^dog will match all lines 
+        that begin with the word dog.
+    $ 	Matches the preceding expression at the end of the line. For example, bird$ will match all lines that 
+        end with the word bird.
+    \ 	Used as an escape character to match a special character following the backslash. For example, \* matches 
+        a star (asterisk).
+    [characters] 	Matches the characters that are members of the set characters. For example, [abc] will match 
+    the characters a,b, or c.
+    [^characters] 	Matches any character that is not a member of the set characters. It is basically the negation 
+                    of [characters]. For example, [!abc] will match any character that is not a,b, or c.
+    {x,y} 	Matches x to y occurrences of the preceding expression.
+    {x} 	Matches exactly x occurrences of the preceding expression.
+    {x,} 	Matches x or more occurrences of the preceding expression.
+    {,x} 	Matches no more than x occurrences of the preceding expression.
+    -   [[:class:]] 	Matches any character that is a member of the character class. The outer brackets should
+                        be present too.
+        - [:alnum:] 	Represents all the alphanumeric letters, that is, any letter or number.
+        - [:alpha:] 	Represents all alphabetic letters, that is, any letter.
+        - [:digit:] 	Represents all digits, that is, any number.
+        - [:lower:] 	Represents any lower case letter.
+        - [:upper:] 	Represents any upper case letter.
+        - [:blank:]     Space and tab.
+
+Example:
+$ egrep "[[:digit:]]{3}-[[:digit:]]{3}-[[:digit:]]{3}" 
+Matches something like 123-456-789

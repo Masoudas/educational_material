@@ -1,0 +1,8 @@
+Here's an abstract view of what happens when an embedded device is loaded:
+
+When the boot starts, the CPU is not aware of what sort of hardware is available. It can only access its own
+internal chips (such as ROM, internal RAM, etc.) Moreover, we can't have a big ROM inside the SoC, because it
+would be costly (the size of ROM and internal RAM is about 176kb and 64kb.) Hence, booting takes place in 
+two or three or four small stages. First, the vendor supplied code in ROM starts one core, and copies the first
+boot program into internal RAM. Then first stage boot loads second stage boot (usually kernel at this point and
+device information known as device tree) into RAM. Kernel then loads the file system and we're good to go.

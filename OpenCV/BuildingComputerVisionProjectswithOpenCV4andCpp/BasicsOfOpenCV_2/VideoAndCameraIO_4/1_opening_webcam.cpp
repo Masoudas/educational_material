@@ -30,6 +30,6 @@ void read_webcam(){
     }
 }
 
-int main(){
-    read_webcam();
-}
+//int main(){
+//    read_webcam();
+//}

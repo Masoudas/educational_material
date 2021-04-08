@@ -1,0 +1,21 @@
+Using the df command, we can see the list of all mounted devices, and in particular the location where they're
+mounted.
+
+Suppose we want to unmount something. All we need to do is to run the 'umount' command (note that this is umount
+and not unmount, there's no n.)
+
+$ umount /dev/sda
+
+Once again, suppose we want to mount the device (something I used to do often at Inmed) All we need to do is to 
+recall the command "mount device_name | ip_address destination"
+
+$ sudo mount /dev/sda   ~/USB   # Some folder I've created with the 700 permission for example.
+$ sudo mount 192.167.0.1    ~/server    # Folder with proper permission
+
+And this way, we've mounted the device.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To format the device, we need to first umount the device, then we need to make a file system for the device,
+using the mkfs command as follows:
+
+$ mkfs.ext4 /dev/sda # Or could be mkfs.fat /dev/sda, etc.

@@ -1,0 +1,28 @@
+In an embedded Linux system, the bootloader has two main jobs: to initialize the system to a basic level and to 
+load the kernel. In fact, the first job is somewhat subsidiary to the second, in that it is only necessary to get 
+as much of the system working as is needed to load the kernel.
+
+Me: As we shall see:
+    -   The first level of loading the bare hardware is done through ROM program.
+    -   Kernel together with the device tree are loaded inside the RAM thanks to bootloader.
+    -   File system is the last thing that's setup thanks to kernel.
+
+When the first lines of the bootloader code are executed, following a power-on or a reset, the system is in a 
+very minimal state. The DRAM controller would not have been set up, and so the main memory would not be 
+accessible. (Me: Why? Because ROM program is not large enough to be able to do that.)
+
+Likewise, other interfaces would not have been configured, so storage accessed via NAND flash controllers, MMC 
+controllers, and so on, would also not be usable. Typically, the only resources operational at the beginning are 
+a single CPU core and some on-chip static memory. As a result, system bootstrap consists of several phases of 
+code, each bringing more of the system into operation. The final act of the bootloader is to load the kernel into 
+RAM and create an execution environment for it.
+
+The details of the interface between the bootloader and the kernel are architecture-specific, but in each case it 
+has to do two things. First, bootloader has to pass a pointer to a structure containing information about the 
+hardware configuration, and second it has to pass a pointer to the kernel command line. The kernel command line 
+is a text string that controls the behavior of Linux. Once the kernel has begun executing, the bootloader is no 
+longer needed and all the memory it was using can be reclaimed.
+
+A subsidiary job of the bootloader is to provide a maintenance mode for updating boot configurations, loading new 
+boot images into memory, and, maybe, running diagnostics. This is usually controlled by a simple command-line user 
+interface, commonly over a serial interface.
