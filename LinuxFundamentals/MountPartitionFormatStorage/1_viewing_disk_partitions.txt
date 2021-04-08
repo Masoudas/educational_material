@@ -1,0 +1,47 @@
+The command fdisk (stands for format disk) allows us to list all partitions with the -l option, and we better
+run such operations as superuser (note that the output is more comprehensive than that). The problem with this
+command is that it does not show where the devices are mounted:
+
+$ fdisk -l
+Disk /dev/loop0: 55,48 MiB, 58159104 bytes, 113592 sectors
+...
+Disk /dev/loop6: 32,28 MiB, 33841152 bytes, 66096 sectors
+Disk /dev/nvme0n1: 476,96 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: KBG40ZNS512G NVMe KIOXIA 512GB          
+Device             Start        End   Sectors   Size Type
+/dev/nvme0n1p1      2048     309247    307200   150M EFI System
+/dev/nvme0n1p2    309248     571391    262144   128M Microsoft reserved
+/dev/nvme0n1p3    571392  420485119 419913728 200,2G Microsoft basic data
+/dev/nvme0n1p4 420485120  831524863 411039744   196G Microsoft basic data
+/dev/nvme0n1p5 831524864  957354942 125830079    60G Microsoft basic data
+/dev/nvme0n1p6 957356032  959383551   2027520   990M Windows recovery environment
+/dev/nvme0n1p7 959383552  997292031  37908480  18,1G Windows recovery environment
+/dev/nvme0n1p8 997294080 1000187903   2893824   1,4G Windows recovery environment
+
+Disk /dev/sda: 1,9 GiB, 2021654528 bytes, 3948544 sectors
+/dev/sda1  *       2048 1000000  997953 487,3M  5 Extended
+/dev/sda2       1000001 3948543 2948543   1,4G  6 FAT16
+
+
+Another command that's less comprehensive is the df (disk free) command, which can be made humanly readable
+using -h as well. The advantage of this command is that it shows where the partitions are mounted:
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7,7G     0  7,7G   0% /dev
+tmpfs           1,6G  2,3M  1,6G   1% /run
+/dev/nvme0n1p5   59G   30G   27G  53% /
+tmpfs           7,8G     0  7,8G   0% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           7,8G     0  7,8G   0% /sys/fs/cgroup
+/dev/loop1       56M   56M     0 100% /snap/core18/1997
+/dev/loop2       65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/loop0       56M   56M     0 100% /snap/core18/1988
+/dev/loop3       33M   33M     0 100% /snap/snapd/11402
+/dev/loop5       52M   52M     0 100% /snap/snap-store/518
+/dev/loop6      219M  219M     0 100% /snap/gnome-3-34-1804/66
+/dev/nvme0n1p1  146M  100M   47M  68% /boot/efi
+tmpfs           1,6G   16K  1,6G   1% /run/user/125
+tmpfs           1,6G   40K  1,6G   1% /run/user/1000
+/dev/loop7       33M   33M     0 100% /snap/snapd/11588
+/dev/sda        1,9G   96K  1,9G   1% /media/masoudas/885C-1C70
