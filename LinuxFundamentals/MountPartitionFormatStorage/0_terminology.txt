@@ -1,0 +1,31 @@
+Let's first make a distinction between partitioning a disk and formatting it. 
+
+Disk partitioning is a useful, yet often overlooked tool for optimizing system storage, performance, and even 
+security. Conceptually akin to taking one whole pie and cutting it into slices, partitioning means taking your 
+system and dividing it into subsystems that run independently on the same hardware. That being said, users need 
+to be careful that they’re not doing more harm than good when partitioning their systems. Think of this like 
+having a plastic storage bin, three feet tall and one foot wide. By putting drawers in the bin you optimize the 
+space, so that you can group and access items separately instead of going through everything all at once. In the 
+same way, disk partitioning compartmentalizes your system so that each region can run and be utilized 
+independently, without affecting one another (like having a Windows and a Linux partition.) Some benefits of 
+disk partitioning include:
+    -   Running more than one OS on your system 
+    -   Separating valuable files to minimize corruption risk  
+    -   Allocating specific system space, applications, and data for specific uses 
+    -   Storing frequently used programs and accessed data nearby to improve performance 
+
+If done incorrectly, partitioning can unintentionally reduce total storage space. Multiple partitions require 
+the system to duplicate certain file administration areas, and having the same (duplicate) files on different 
+partitions will also take up more space than normal. Duplicated files on the same partition just require the 
+system to update the metadata, but on separate partitions you will need to copy the entirety of the file, 
+essentially doubling the space used.
+
+We tend to place the partitions that are boot related in the beginning, to allow easy access and fast boot.
+
+Formatting disk involves clearing a partition of information. 
+
+In linux word, mounting a file system involves assigning a directory name to a particular partition in the file 
+system, allowing it to be visualized (like say a partition is often assigned to /, and one to root, etc.)
+We mount the entire partition in a folder, not the disk as it happens. Hence, for example if a usb disk has
+partitions sda1 and sda2, we must mount each in a separate folder (or for example in two folders inside a 
+folder called USB)

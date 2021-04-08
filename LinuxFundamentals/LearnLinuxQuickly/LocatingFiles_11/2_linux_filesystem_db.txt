@@ -1,7 +1,0 @@
-The manpage of updatedb states that "updatedb creates or updates a database used by locate(1). If the database 
-already exists, its data is reused to avoid rereading directories that have not changed."
-
-
-
-Note that when we create a file in an open shell, the instance of db that's already loaded inside this shell
-does not contain this file. Hence, we need to run the 'updatedb' command to ensure that it's updated.
