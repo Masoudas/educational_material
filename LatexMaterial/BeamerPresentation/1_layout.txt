@@ -1,0 +1,34 @@
+Note that overleaf also has a very nice documentation on beamer.
+
+A frame can contain one slide or multiple slides.
+
+\begin{document}
+
+\usetheme{Warsaw}   % The theme of the beamer.
+\usecolortheme{crane}   % Changes the color theme.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To use a custom color theme, define name and color as follows:
+\definecolor{my_theme}{rgb=0.125,0.5,0.25}  % Use latexcolor.com to find different nice color themes.
+
+Then instead apply the following command for color theme:
+\usecolortheme[named=my_theme]{structure}       % structure means use custom color theme. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Frame Title}
+Text inside frame       % Text is automatically centered.
+\end{frame}
+
+\end{document}
+
+A more sophisticated theme is as follows:
+\usetheme[progressbar=frametitle]{metropolis}    % The metropolis theme showing frame progress bar.
+                                            % If you look closely, progress bar appears under each frame's title, moving forward
+                                            % based on number of pages passed so far.
+\setbeamertemplate{frame numbering}[fraction]  % Shows the slide number as a fraction
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{spruce}
+\setbeamercolor{background canvas}{bg=white}

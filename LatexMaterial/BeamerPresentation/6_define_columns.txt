@@ -1,0 +1,13 @@
+We can define a multi-column text inside the frame using the columns command. We can use this for example to put our text on the
+left and images on the right. Use include graphics to place the image in the second column.
+
+\begin{frame}
+\begin{columns}[onlytextwidth]
+\column{0.5\textwidth} ...
+
+\column{0.5\textwidth} \includegraphics[]{}
+
+\end{columns}
+\end{frame}
+
+Note: Use \begin{case} inside $$ math environment to write piecewise functions!

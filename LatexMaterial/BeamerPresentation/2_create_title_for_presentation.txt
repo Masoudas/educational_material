@@ -1,0 +1,21 @@
+Don't be afraid to make a text bold use \textbf, \large or anything else, or add any other highlights you hear desires in the
+title. It's a normal text there.
+
+\documentclass{beamer}
+
+\title[Short title]{Here's the title}   % Short title will appear later on where title appears. Like for example in the Warsaw theme.
+\subtitle{subtitle}     % appears under the original title
+\author{Masoud A. Sharbaf}
+\institute{Ferdowsi University of Mashhad}
+\date{\today}
+
+\begin{document}
+...
+
+Note that as such, nothing appears as a title page. For that, we need to make another frame.
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}

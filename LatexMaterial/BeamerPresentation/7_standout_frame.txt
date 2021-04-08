@@ -1,0 +1,4 @@
+\begin{frame}[standout]     // Makes an standout frame, like the one we use to summarize in the beginning the slides.
+\flushleft  // Everything flushes to left.
+
+\end{frame]
