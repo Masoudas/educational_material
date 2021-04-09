@@ -30,7 +30,7 @@ void divide(float& divisor, float& dividend) {
 	}
 }
 
-int main() {
+void causing_race() {
 	float divisor = 10; float dividend = 5;
 
 	std::thread t{ divide, std::ref(divisor), std::ref(dividend) };
@@ -42,3 +42,7 @@ int main() {
 
 	std::this_thread::sleep_for(2s);
 }
+
+//int main() {
+//	causing_race();
+//}

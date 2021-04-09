@@ -5,4 +5,5 @@
 #include <thread>
 
 using namespace std::chrono_literals;	// Using declarative
-namespace fs = std::filesystem;	// Creates a new space for filesystem.
+namespace fs = std::filesystem;	// Creates a new space for filesystem, hence, we don't have to scope to std::filesystem
+								// every time.
