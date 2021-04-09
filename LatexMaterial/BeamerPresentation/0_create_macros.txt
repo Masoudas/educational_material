@@ -1,0 +1,3 @@
+Note that it's possible to write macros instead of typing commands from scratch all the time. In TexMaker, this can be done using
+using the user>user tags> edit user tags. We can assign hot keys to them as well.
+

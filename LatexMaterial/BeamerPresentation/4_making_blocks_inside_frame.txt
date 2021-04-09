@@ -1,0 +1,14 @@
+Inside a frame, we can use the block command to create nice text blocks with a title. The block would span the entire slide and
+naturlich does not have indexing.
+
+Now, with the particular metropolis theme, we can fill the block, by typing the following command inside the \begin{docment}
+to create nice highlighted blocks
+
+\begin{document}
+\metroset{block=fill}
+
+\begin{block}{Block title}
+\vspace{5pt}
+
+\vspace{5pt}
+\end{block}

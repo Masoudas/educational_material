@@ -1,0 +1,35 @@
+Now, inside a frame, we can place a line to indicate missing text:
+
+\begin{frame}
+This has a missing \line(1,0){50} \,  that's place on a line. \\[10pt]   % 50 is the size of the line. \, places an empty space after line.
+                                                            % (1,0) makes the line horizontal, whereas (0,1) makes it vertical!                                    
+                                                            % \\[10pt] creates an space of 10 pts after this line
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Now, to make the text appear after the click (or second slide in this frame,) all we need to is use the \only<n>{text}, where 
+n is the slide inside the frame where each text would appear. Note that pressing an enter has no effect between text.
+Note that we can use this technique with our enumerations as well, to make each bulletpoint appear in one click.
+
+\begin{frame}
+This has a missing 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\only<1> {\line(1,0){50} \,}
+\only<2> { \textbf{\textcolor{magenta}{text}}}        % May need to use the color package for this
+\only<2-> {This means everything from slide two and after.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+that's place on a line. \\[10pt]   
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Similarly, we can use \onslide<n>{} or \onslide<n->{} for the same end. This one is particularly used with enumerations. The 
+difference between only and onslide is that only changes the arrangment of the items, whereas onslide does not. It will assume that
+the content is always there, and then arranges the slides.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There's one final trick with \onslide<>{}. If we want the text to be transparent rather than completely hidden, define the following
+before \begin{document}. Note that this ONLY works with onslide.
+
+\setbeamercovered{transparent=15}   % Percentage

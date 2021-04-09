@@ -1,0 +1,36 @@
+Now, inside each frame, we can work as follows.
+
+Note that by default, the content is aligned in the middle. If we didn't want that, we need to work with the alignment bracket
+of frame:
+\begin{frame}[?]{Title here}\vspace{10pt}    % ? = t for top, b for bottom. We're optionally using vspace to change space to top.
+
+Don't forget to use $$ to write math equations inside the text if you need to.
+
+\begin{frame}{Title here}
+
+\begin{enumerate}   % To create bullet points
+    \item This is item 1
+
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+With enumerate, note that we can change the bullets as follows:
+
+\begin{enumerate}[(A)]  % Displays A, B, ... inside paranthesis.
+Also, don't forget to use \small, \scriptsize to change the font size of subenumerations if needed.
+
+Finally, note that if we have several bullet points that don't fit in one page, we can break them down, using the multicol package
+as follows:
+
+\usepackage{multicol}
+
+\begin{document}
+
+\begin{enumerate}
+\begin{multicols}{3}
+\item ...
+\end{multicols}
+\end{enumerate}
+
