@@ -352,6 +352,12 @@
     <Filter Include="Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1">
       <UniqueIdentifier>{ab47d9ef-3875-4ea6-ba65-88052f8ed1fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\ControlStructures_2">
+      <UniqueIdentifier>{495a2531-e052-4003-a643-1b2107f56f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\IterationAndRecursion_3">
+      <UniqueIdentifier>{cc80496c-3990-4dd4-bf67-fe6604d7c153}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2237,6 +2243,72 @@
     </ClCompile>
     <ClCompile Include="Namespaces_14\0_5_define_a_macro_for_namespace.cpp">
       <Filter>Source Files\Namespaces_14</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\8_1_selecting_a_function.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\8_2_a_note_on_the_syntax.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_1_traits.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_2_application_of_iterator_trait.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_3_it_is_probably_overcooked.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\1_categories.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\2_1_select_between_two_types.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\2_2_compile_v_run_time.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\3_1_select_among_several_types.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\3_2_select_using_variadic_templates.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\3_3_usage_in_get_function.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ControlStructures_2</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\IterationAndRecursion_3\1_2_recursion_with_classes.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\IterationAndRecursion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\IterationAndRecursion_3\1_1_recursion_with_constexpr_functions.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\IterationAndRecursion_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\2_1_data_hazards.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\2_2_RAW_dependency.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\2_3_WAR_dependency.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\2_4_WAW_dependency.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\3_1_data_synchronization.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\3_2_event_synchronization.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\3_3_race_in_synchronization.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\4_deadlock.cpp">
+      <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClass_\3_use_move_to_avoid_copy_with_threads.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
