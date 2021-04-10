@@ -1,0 +1,37 @@
+(me: Here's the most important part of the boot sequence we should know first.)
+The ROM code is capable of loading a small chunk of code from one of several pre-programmed locations into the 
+SRAM. As an example, TI OMAP and Sitara chips try to load code from:
+
+    - The first few pages of NAND flash memory, or 
+    - from flash memory connected through a Serial Peripheral Interface (SPI), or 
+    - from the first sectors of an MMC device (which could be an eMMC chip or an SD card), or 
+    - from a file named MLO on the first partition of an MMC device.
+    - If reading from all of these memory devices fails, then it tries reading a byte stream from Ethernet, USB, 
+      or UART; the latter is provided mainly as a means of loading code into flash memory during production, 
+      rather than for use in normal operation
+
+Me: Now we see why:
+    - We use an SD card to load the beaglebone black card
+    - Why the secondary boot is called MLO.
+
+Note that the ARM processor of BeagleBone is AM3358, which Sitara (check on the Texas Instrument page of the 
+chip.) Hence, paritioning an SD card with FAT and putting the MLO there signals to the processor to go read the
+next boot program from the Flashcard. Now, I suspect that we can use the internal flash memory of the device 
+as well, and in fact that's the first place the CPU will try and access.
+
+Now, going back to more detail on the ROM boot program, "In the absence of reliable external memory, the code that 
+runs immediately after a reset or power-on has to be stored on-chip in the SoC; this is known as ROM code. It is 
+loaded into the chip when it is manufactured, and hence the ROM code is proprietary and cannot be replaced by an 
+open source equivalent. Usually, it does not include code to initialize the memory controller, since DRAM configurations
+are highly device-specific, and so it can only use Static Random Access Memory (SRAM), which does not require a 
+memory controller.
+
+Most embedded SoC designs have a small amount of SRAM on-chip, varying in size from as little as 4 KB to several 
+hundred KB (for ARM3358 it's 64KBi shared and 128KBi static, which makes the total 176KBi.)
+
+Most embedded SoCs have a ROM code that works in a similar way (me: Good!). In SoCs where the SRAM is not large 
+enough to load a full bootloader like U-Boot (me: like ARM3358), there has to be an intermediate loader called 
+the secondary program loader, or SPL (me: which is the MLO we just talked about.)
+
+At the end of the ROM code phase, the SPL is present in the SRAM and the ROM code jumps to the beginning of that 
+code.

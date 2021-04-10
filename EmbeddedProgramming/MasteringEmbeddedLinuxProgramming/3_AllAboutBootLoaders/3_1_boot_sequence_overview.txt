@@ -1,12 +1,29 @@
-From the broadest perspective:
+I recommended taking a look at Fig.1, where the boot process is fully captured.
 
-ROM program: Initializes one core of CPU and internal RAM. Gives control to the first stage boot program (which
-in BeagleBone resides in an SD card FAT partition)
+Here's an abstract view of what happens when an embedded device is loaded:
 
-First stage: Contains a short boot that can be stored in RAM (like UBoot MLO). Is loaded in internal RAM, and
-prepares loading UBoot inside RAM
+When the boot starts, the CPU is not aware of what sort of hardware is available. It can only access its own
+internal chips (such as ROM, internal RAM, etc.) Moreover, we can't have a big ROM inside the SoC, because it
+would be costly (the size of ROM and internal RAM is about 176kb and 64kb.) Hence, booting takes place in 
+two or three or four small stages. First, the vendor supplied code in ROM starts one core, and copies the first
+boot program into internal RAM. Then first stage boot loads second stage boot (usually kernel at this point and
+device information known as device tree) into RAM. Kernel then loads the file system and we're good to go.
 
-Second stage:
+Now, From the broadest perspective:
 
-Thanks to the video over youtube. In short, the boot sequence
-is read from an SD card, which has three things:
+    -   ROM program: Initializes one core of CPU and internal RAM. Gives control to the primary program loader 
+        (which resides in an SD card first partition which must be FAT.) 
+
+    -   Primary Program Loader (PPL): Contains a short boot that can be stored in RAM (like UBoot MLO). Is loaded 
+        in internal RAM, and prepares loading a secondary program loader (like UBoot) inside (the main) RAM. 
+
+    -   Secondary Program Loader (SPL): Prepares loading the zImage linux kernel inside the RAM (The kernel is 
+        always in the RAM for fast OS ops executions recall.) The kernel as we said prepares to copy the 
+        filesystem inside the RAM as well.
+
+    -   Tertiary Program Loader (TPL): The kernel loads the file system inside RAM.
+
+So, in general don't forget that we have the ROM code, then the first boot program, then the second.
+
+
+
