@@ -1,0 +1,73 @@
+A question that may arise is that are RAMs partitioned like Hard drives, where har drives are partitioned for
+management of data, and ease of access, and nothing further? Also see this article "https://en.wikipedia.org/wiki/Memory_management"
+
+Internally, RAM is arranged as a matrix of "memory cells" laid out in rows and columns, like a spreadsheet. Each 
+memory cell is used to store a bit of data, which can be instantaneously retrieved by indicating the row and 
+column location (or address) of the data. 
+
+This is an interesting answer I found over the Internet:
+Hard disks and flash memories do not actually need partitions at all! You can simply write raw data on a hard disk
+and then read it back and it will work fine. Some relatively simple computer systems aren't using partitions even
+today, because there's no need to use them. For example I have right here right now on my desk a computer which
+is based on ATmega 162 microcontroller and it uses flash fine with no partitions.
+
+Basically, what partitions do is enable separation of labor responsibilities among system designers. On my 162, 
+I need to know where each bit of data is stored and how many times is each flash cell accessed, so I can implement
+wear leveling. To do that, I don't even need files. The problem however is that my miniature computer has only 
+16 KiB of flash and that amount can be managed by hand and source code comments. It's like having a desk with a 
+single drawer. I can put anything there and it will be easy to reach and access.
+
+On a large computer system, such as today's desktop computers, software is a product of work of thousands of 
+programmers working separately. They need to have some way of storing data and that's why we need files and 
+partitions. When we have them, programmer can focus only on data he needs to work with and doesn't need to worry 
+about damaging other data. He can let programmers working on filesystem programming worry about physical storage 
+of data. To continue my drawer example, that's like having a system of warehouses and trying to find one single 
+item if you have hundreds of thousands of items in stock. So while you could just reach into the simple drawer 
+and get a pencil for example, in warehouse case, the pencil would be in warehouse 3, section P, shelf 273, 
+level 3, box 5.
+
+Now to move to RAM. It's also untrue that there are no partitions in RAM. The basic reason why we use partitions 
+is organization and RAM is organized too. In RAM's case, however, it's system's kernel which decides where each bit 
+of information is going to go and it keeps track of space usage.
+
+Let's compare how a program on my simple ATmega 162 works and how a program on a modern operating system like Windows 
+works. On 162, program is preprogrammed with addresses of memory locations which it is going to use to store data. 
+Since 162 only has one program, I don't need to worry about overwriting data used by another program or about 
+allocation of memory. I can just write whatever I want into each memory cell and it will remain there while the computer 
+is running.
+
+On the other hand, on Windows we can have large number of programs running at the same time and all of them would 
+be writing and reading data into and from the memory. That is we can't allow individual programs to directly 
+access memory cells (and the fact that the programmer would have to know how to access memory on that particular 
+computer and how much RAM that computer has and so on. At this point we get back to thousands vs. one programmer 
+discussion.). Instead, when each program starts, kernel allocates memory for it and to the program, it looks as 
+if it's the only program running on the computer. Kernel is there to make sure that our program doesn't try to 
+read or write memory given out to other programs and that it doesn't try to execute memory marked as data and 
+that it doesn't bring entire system into danger. So basically on Windows and many many other modern operating 
+systems each program gets its own partition of RAM. It's also interesting to note that on 32bit systems, each 
+program could take only up to 2 GiB of RAM, because that was the upper limit of the "partition"'s size.
+
+I'd like to make a small digression here. There are some programs which are hurt by partitions in RAM. For example, there were programs called trainers which would allow cheating in computer games. They worked by finding memory location where game stores its data on for example number of lives or health and then they would directly access the data and change it. On the other hand we also had viruses which worked by trying to access memory used by important system services and corrupting it to enable them to do their nefarious deeds.
+
+Another thing worth brining up is pagefile or swap partition. To a programmer writing an application, it's not 
+important if the program is in pagefile or if it is in RAM, because kernel takes care of that. On my ATmega 162, 
+situation is a bit more complicated. When I need to use more RAM than it is available, I must first detect by 
+hand situation when I have used up all RAM, after that I need to manually copy data from RAM to flash, free up 
+the RAM, use it for whatever I need to use it for, free it up again, move data from flash to RAM and then free 
+up taken space in flash memory. On a desktop computer, program can't even see if it has been swapped onto disk 
+and then moved back into RAM.
+
+One more interesting thing is performance. Let's go back to the drawer and warehouse example. Let's take all items 
+from our warehouses and dump them at one pile. So if we need to take one pencil from the drawer, we'll just open 
+the drawer and take the pencil. If we need to take one particular pencil from a pile of thousands of other 
+pencils, notebooks, rulers, candy bars, erasers and what not, we'll have to spend considerable time searching for 
+it. That time (in average case) is much longer compared to time needed to find the same pencil in a well
+organized warehouse. On the other hand the time needed to find pencil in an organized warehouse is much longer 
+than time needed to find pencil in a drawer. So some methods work well on small amounts of data and some work 
+well on large amounts of data. Filesystems improve performance by storing data in a logical way on the disk in 
+which each individual datum can be easily found. Some filesystems also provide other benefits. In case of JFFS2, 
+a filesystem designed for flash memories, filesystem implements wear leveling so that user or hardware designed 
+don't have to.
+
+Yet another interesting thing is that we can use standard filesystems for RAM too! There are programs which will 
+take up RAM and organize it just like a filesystem and allow programs to use it as if it was disk space.

@@ -24,14 +24,16 @@ Disk /dev/sda: 1,9 GiB, 2021654528 bytes, 3948544 sectors
 
 
 Another command that's less comprehensive is the df (disk free) command, which can be made humanly readable
-using -h as well. The advantage of this command is that it shows where the partitions are mounted:
+using -h as well. The advantage of this command is that it shows where the partitions are mounted. Another 
+advantage is that it shows the RAM file system (Note that RAM's don't have a partition in the sense of hard
+drives, but rather they're assigned partitions by OS). We shall later discuss which ones are the RAM ones:
 
 $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            7,7G     0  7,7G   0% /dev
-tmpfs           1,6G  2,3M  1,6G   1% /run
+tmpfs           1,6G  2,3M  1,6G   1% /run                  # RAM file system.
 /dev/nvme0n1p5   59G   30G   27G  53% /
-tmpfs           7,8G     0  7,8G   0% /dev/shm
+tmpfs           7,8G     0  7,8G   0% /dev/shm                  
 tmpfs           5,0M  4,0K  5,0M   1% /run/lock
 tmpfs           7,8G     0  7,8G   0% /sys/fs/cgroup
 /dev/loop1       56M   56M     0 100% /snap/core18/1997
@@ -45,3 +47,8 @@ tmpfs           1,6G   16K  1,6G   1% /run/user/125
 tmpfs           1,6G   40K  1,6G   1% /run/user/1000
 /dev/loop7       33M   33M     0 100% /snap/snapd/11588
 /dev/sda        1,9G   96K  1,9G   1% /media/masoudas/885C-1C70
+
+
+Some commands that may interest us in that regard are:
+$ top   # All processes, and RAM and SWAP usage
+$ free  # Free space on RAM and swap.

@@ -1,0 +1,47 @@
+When we 'df -h', we see a couple of weird partitions as follows:
+
+    -   /dev/loopN       56M   56M     0 100% /snap/c    where N=0,...
+dev/loopX are virtual devices to mount image files, these are -read only- so do not get larger or smaller than 
+they are when created.
+
+
+    -   ramfs or tmpfs (See the Mater Embedded Linux Program, chapter two as well)
+tmpfs is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to 
+appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. 
+A similar construction is a RAM disk, which appears as a virtual disk drive and hosts a disk file system. 
+
+Me: Recall that a volatile memory like RAM can store data as long as there's power.
+
+Everything stored in tmpfs is temporary in the sense that no files will be directly created on non-volatile 
+storage such as a hard drive (although swap space is used as backing store in case of low memory situations). 
+On reboot, everything in tmpfs will be lost. 
+
+The memory used by tmpfs grows and shrinks to accommodate the files it contains.
+Many Unix distributions enable and use tmpfs by default for the /tmp branch of the file system or for shared 
+memory (me: though in my Ubuntu20, they're mounted on /dev/shm, /run/user, etc)
+
+Note that in a listing, we have more than a number of tmpfs:
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   50G  3.6G   47G   8% /
+devtmpfs                 3.9G     0  3.9G   0% /dev
+tmpfs                    3.9G  148K  3.9G   1% /dev/shm
+tmpfs                    3.9G  9.1M  3.9G   1% /run
+tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda6                494M  159M  336M  33% /boot
+/dev/mapper/centos-home   73G   62M   73G   1% /home
+tmpfs                    782M   32K  782M   1% /run/user/1000
+
+This is because sections of RAM are shared between various purposes (like for example /dev/shm stands for
+shared memory used by all programs.) The OS is responsible for managing these shared RAMs.
+
+    -   udev
+Another RAM partition. Apparently, tmpfs is normally restricted to 50% of RAM, and udev to another 50. As we can
+see, it's associated with the /dev folder in a "df -h" meaning that it's related to devices, and therefore, an
+essential part of the OS. unmounting it causes a system crash.
+
+
+
+
+
+
+    
