@@ -1,6 +1,7 @@
 #include <opencv2/highgui.hpp>
 
-// In this exercise, we shall prove that RGB images are read as BGR.
+// In this exercise, we shall prove that RGB images are always read as BGR.
+// Note this is the case even if they have a different color space.
 void setting_red_of_rose_to_zero(){
     auto rose_original = cv::imread("Images/Rose.jpg", cv::IMREAD_UNCHANGED);   // Read as colored image.
 
@@ -21,6 +22,22 @@ void setting_red_of_rose_to_zero(){
     cv::waitKey(0);
 }
 
-int main(){
-    setting_red_of_rose_to_zero();
+// Even though this image is HSV, it's converted to BGR upon reading, and then we can play with it.
+// Images are always assumed to be in BGR space.
+void read_HSV_image(){
+    auto rose_hsv = cv::imread("Images/Rose-HSV.png", cv::IMREAD_UNCHANGED);   // Read as colored image.
+
+    // Once again, removing all the reds.
+    auto ptr = rose_hsv.ptr<uchar>();
+    for (int i = 2; i < rose_hsv.total() * 3; i+=3 ){
+        *(ptr + i) = 0;
+    }
+
+    cv::imshow("HSV image is converted to RGB", rose_hsv);
+    cv::waitKey(0);
 }
+
+//int main(){
+    //setting_red_of_rose_to_zero();
+    //read_HSV_image();
+//}

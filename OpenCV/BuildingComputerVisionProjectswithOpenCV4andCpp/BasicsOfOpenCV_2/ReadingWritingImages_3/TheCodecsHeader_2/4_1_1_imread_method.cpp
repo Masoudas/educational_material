@@ -42,7 +42,7 @@
  *           and thus the image will be rotated accordingly except if the flags IMREAD_IGNORE_ORIENTATION or 
  *           IMREAD_UNCHANGED are passed.        
  *      -    Use the IMREAD_UNCHANGED flag to keep the floating point values from PFM image.         
- *      -    By default number of pixels must be less than 2^30. Limit can be set using system variable 
+ *      -    By default, number of pixels must be less than 2^30. Limit can be set using system variable 
  *           OPENCV_IO_MAX_IMAGE_PIXELS
  * 
  */
