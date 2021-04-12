@@ -1,0 +1,35 @@
+A FAT file system is a specific type of computer file system architecture and a family of industry-standard file 
+systems utilizing it.
+
+The FAT file system is a legacy file system which is simple and robust. It offers good performance even in very 
+light-weight implementations, but cannot deliver the same performance, reliability and scalability as some modern 
+file systems. It is, however, supported for compatibility reasons by nearly all currently developed operating 
+systems for personal computers and many home computers, mobile devices and embedded systems, and thus is a well 
+suited format for data exchange between computers and devices of almost any type and age from 1981 through the 
+present.
+
+FAT is also utilized for the EFI system partition (partition type 0xEF) in the boot stage of EFI-compliant 
+computers.
+
+The name of the file system originates from the file system's prominent usage of an index table, the File Allocation 
+Table (FAT), statically allocated at the time of formatting. The table contains entries for each cluster, a 
+contiguous area of disk storage. Each entry contains either the number of the next cluster in the file, or else a 
+marker indicating end of file, unused disk space, or special reserved areas of the disk.
+
+Originally designed as an 8-bit file system, the maximum number of clusters has been significantly increased as disk 
+drives have evolved, and so the number of bits used to identify each cluster has grown. The successive major versions 
+of the FAT format are named after the number of table element bits: 12 (FAT12), 16 (FAT16), and 32 (FAT32). 
+Except for the original 8-bit FAT precursor, each of these variants is still in use. 
+
+
+
+Why is the /boot partition a FAT filesystem? Why on an embedded linux system is the /boot partition a FAT 
+filesystem? Apart from fragmentation, FAT filesystems are weak and easily corrupted if the partition is not 
+cleanly unmounted, or power supply disconnects suddenly.
+
+Unfortunately the FAT file system is very universaly supported. The SoCs built in loader only knows how to 
+read from FAT, so it must at least load its firmware from FAT. The power stuff is not really an issue, because
+load ops are usually read-only ops.
+
+Note that a fat16 can have a size of around at most 4GB, so we need to check out the size of the file systems
+when we create them!

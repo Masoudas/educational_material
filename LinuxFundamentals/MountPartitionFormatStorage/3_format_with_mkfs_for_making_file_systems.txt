@@ -1,3 +1,6 @@
+Note that fdisk commands only create PARTITIONS. To actually make a file system, we need to use the mkfs, in which
+case the partition would be mountable.
+
 The mkfs (or make file system) command as the manpages say "is used to build a Linux filesystem on a device, 
 usually a hard disk partition.  The device argument is either the device name (e.g. /dev/hda1, /dev/sdb2), or a 
 regular file that shall contain the filesystem. The size argument is the number of blocks to be used for the 
