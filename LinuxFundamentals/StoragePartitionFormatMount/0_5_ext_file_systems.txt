@@ -1,0 +1,36 @@
+The extended file system, or ext, was implemented in April 1992 as the first file system created specifically 
+for the Linux kernel. It has metadata structure inspired by traditional Unix filesystem principles, and was 
+designed by Rémy Card to overcome certain limitations of the MINIX file system.[2][3] It was the first 
+implementation that used the virtual file system (VFS), for which support was added in the Linux kernel in 
+version 0.96c, and it could handle file systems up to 2 gigabytes (GB) in size.
+
+There are three versions:
+    -   ext2:
+        The ext2 or second extended file system. 
+        ext2 was the default filesystem in several Linux distributions, including Debian and Red Hat Linux, until 
+        supplanted by ext3, which is almost completely compatible with ext2 and is a journaling file system. ext2 is 
+        still the filesystem of choice for flash-based storage media (such as SD cards and USB flash drives) because 
+        its lack of a journal increases performance and minimizes the number of writes, and flash devices can endure 
+        a limited number of write cycles. Since 2009,[5] the Linux kernel supports a journal-less mode of ext4 which 
+        provides benefits not found with ext2, such as larger file and volume sizes.
+
+        The space in ext2 is split up into blocks. 
+        Every file or directory is represented by an inode. The term "inode" comes from "index node" (over time, it 
+        became i-node and then inode). The inode includes data about the size, permission, ownership, and location on 
+        disk of the file or directory. 
+
+        Each directory is a list of directory entries. Each directory entry associates one file name with one 
+        inode number, and consists of the inode number, the length of the file name, and the actual text of the 
+        file name. Use stat command to get the inode.
+
+    -   ext3:
+        Its main advantage over ext2 is journaling, which improves reliability and eliminates the need to check 
+        the file system after an unclean shutdown.
+        ext3 does not support the recovery of deleted files. The ext3 driver actively deletes files by wiping 
+        file inodes for crash safety reasons. 
+
+    -   ext4:
+        The ext4 filesystem can support volumes with sizes up to 1 exbibyte (EiB) and single files with sizes up to 16 
+        tebibytes (TiB) with the standard 4 KiB block size.
+        ext4 does not limit the number of subdirectories in a single directory, except by the inherent size limit of 
+        the directory itself. (In ext3 a directory can have at most 32,000 subdirectories.
