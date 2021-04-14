@@ -1,0 +1,14 @@
+U-Boot, or to give its full name, Das U-Boot, began life as an open source bootloader for embedded PowerPC boards. 
+Then, it was ported to ARM-based boards and later to other architectures, including MIPS and SH. It is hosted and 
+maintained by Denx Software Engineering. There is plenty of information available, and a good place to start is 
+http://www.denx.de/wiki/U-Boot. There is also a mailing list at u-boot@lists.denx.de.
+
+Download the git project, and possibly checkout a version or branch you're interested in. In this example, I
+checkout version v2017.01.
+
+$ git checkout v2017.01
+
+There are more than 1,000 configuration files for common development boards and devices in the configs/ directory. 
+In most cases, you can make a good guess of which to use, based on the filename, but you can get more detailed 
+information by looking through the per-board README files in the board/ directory, or you can find information in 
+an appropriate web tutorial or forum.

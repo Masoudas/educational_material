@@ -1,0 +1,4 @@
+Note that uefi has a shell, which can be used justlike a u-boot shell, and some motherboards support it. For 
+example Gholam (my current laptop) does not have such capability.
+
+Apparently, we can install it in any case as well, but for now, we move on.

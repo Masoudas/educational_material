@@ -1,0 +1,29 @@
+When the bootloader passes control to the kernel it has to pass some basic information, which may include some of 
+the following:
+
+    -   The machine number, which is used on PowerPC, and ARM platforms without support for a device tree, to 
+        identify the type of the SoC (me: So that the kernel would know what sort of hardware it's dealing with)
+    -   Basic details of the hardware detected so far, including at least the size and location of the physical 
+        RAM, and the CPU clock speed
+    -   The kernel command line    
+    -   Optionally, the location and size of a device tree binary (me: on ARM devices for example)    
+    -   Optionally, the location and size of an initial RAM disk, called the initial RAM file system (initramfs)
+        (me: Discussed in StoragePartitionMount in Linux fundamendtals)
+
+The kernel command line is a plain ASCII string which controls the behavior of Linux by giving, for example, the 
+name of the device that contains the root filesystem.
+
+It is common to provide the root filesystem as a RAM disk, in which case it is the responsibility of the bootloader 
+to load the RAM disk image into memory.
+
+The way this information is passed is dependent on the architecture and has changed in recent years. For instance, 
+with PowerPC, the bootloader simply used to pass a pointer to a board information structure, whereas, with ARM, it 
+passed a pointer to a list of A tags. There is a good description of the format of A tags in the kernel source in 
+Documentation/arm/Booting (me: which is depracated it appears).
+
+In both cases, the amount of information passed was very limited, leaving the bulk of it to be discovered at runtime
+or hard-coded into the kernel as platform data. The widespread use of platform data meant that each board had to have
+a kernel configured and modified for that platform. A better way was needed, and that way is the device tree. In 
+the ARM world, the move away from A tags began in earnest in February 2013 with the release of Linux 3.8. Today, 
+almost all ARM systems use device tree to gather information about the specifics of the hardware platform, allowing 
+a single kernel binary to run on a wide range of those platforms.

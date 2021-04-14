@@ -1,0 +1,8 @@
+Let's remember this moment, in which I know absolutely nothing about the inner dynamics of UBoot. Let's also hope
+I pick up at least a couple of things about it in the future.
+
+That being said, I must point out that over the ARM community website, people said they much more prefer UEFI
+over u-boot, given it's ease of use and Advanced Configuration and Power Interface (ACPI) capabilities, which
+is the graphical menu that appears when we load for example a normal PC, it's superior to u-boot. 
+
+Anyways, I'm a newb, and we need guidance and direction.
