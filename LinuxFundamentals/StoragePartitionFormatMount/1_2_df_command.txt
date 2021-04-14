@@ -30,3 +30,4 @@ has a dualboot linux and Windows.
 Note that we can use df with a particular destination to see the amount of space available for that file system
 as well.
 $ df -h /home
+lists how much space we have available in the home folder. Compare to du command.

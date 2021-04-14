@@ -34,10 +34,12 @@ load ops are usually read-only ops.
 Note that a fat16 can have a size of around at most 4GB, so we need to check out the size of the file systems
 when we create them!
 
-FAT32 is the older of the two drive formats. FAT32 is the most common version of the FAT (File Allocation Table) 
-file system created back in 1977 by Microsoft. FAT32 is read/write compatible with a majority of recent and recently 
-obsolete operating systems, including DOS, most flavors of Windows (up to and including 8), Mac OS X, and many 
-flavors of UNIX-descended operating systems, including Linux and FreeBSD. 
+    -   FAT32
+FAT32 is the most common version of the FAT (File Allocation Table.) file system created back in 1977 by Microsoft. 
+FAT32 is read/write compatible with a majority of recent and recently obsolete operating systems, including DOS, 
+most flavors of Windows (up to and including 8), Mac OS X, and many flavors of UNIX-descended operating systems, 
+including Linux and FreeBSD. 
+
 FAT32 file size support tops out at 4GB and volume size tops out at 2TB. This means that you're limited to 2TB 
 FAT32 partitions if you want to use a 4TB drive. It also means that you are limited to 4GB files. This is a concern 
 with uncompressed high-definition movie files, where 30GB files are not unheard of.

@@ -1,10 +1,14 @@
+In essence, a primary partition contains boot and OS related files (the word primary comes because they're loaded
+first by the boot loader.) Extended ar partitions that are used for keeping unrelated data. Hence, for example
+drive D on Windows is an extended partition.
+
 Taken from Wekipedia:
 
 This section describes the master boot record (MBR) partitioning scheme, as used historically in DOS, Microsoft 
 Windows and Linux (among others) on PC-compatible computer systems. As of the mid-2010s, most new computers use 
 the GUID Partition Table (GPT) partitioning scheme instead. 
 
-The total data storage space of a PC HDD on which MBR partitioning is implemented can contain at most four primary 
+The total data storage space of a PC HDD on which MBR partitioning is implemented can contain AT MOST four primary 
 partitions, or alternatively three primary partitions and an extended partition. The Partition Table, located in 
 the master boot record, contains 16-byte entries, each of which describes a partition.
 
