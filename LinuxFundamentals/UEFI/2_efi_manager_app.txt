@@ -1,0 +1,27 @@
+A very powerful on linux for managing efi boot can be installed as follows:
+
+$ sudo apt-get install efibootmgr
+
+Once the program is installed, running the command name lists all the EFI boot loaders on the system (note that
+my current system has a dual boot Windows and Linux):
+$ efibootmgr
+BootCurrent: 0002
+Timeout: 0 seconds
+BootOrder: 0000, 0002 0005
+Boot0000* UEFI KBG40ZNS512G NVMe KIOXIA 512GB 80CPD0NFQ2D1 1
+Boot0002* ubuntu
+Boot0005* Windows Boot Manager
+
+We can see all three efi boots listed. A hex number has been assigned to each (we can't have more than four 
+primary partitions on MBR.) Also, the star next to each one indicates that they're active. Finally, we can also
+see the current boot program, as well as the order of boot.
+
+Note: Boot0 is the one that probably load GRUB and prepare both Linux and Windows boot for us. Although interestingly
+enough, setting boot to ubuntu does the same thing as well.
+
+As always, we can run --help to see what options we have available with this command. Hence for example, to change
+the boot, we run as follows:
+
+$ sudo efibootmgr -o 0005 0002 0000
+Now, Windows would be the main boot, and goodness me, it doesn't care about other efi, just jumps straight into
+Windows asking to switch to Ubuntu efi for example!

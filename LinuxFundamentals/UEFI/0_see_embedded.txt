@@ -1,0 +1,1 @@
+To better understand the inner dynamics of the UEFI boot, check MateringEmbeddedLinuxProgramming, chapter II.
