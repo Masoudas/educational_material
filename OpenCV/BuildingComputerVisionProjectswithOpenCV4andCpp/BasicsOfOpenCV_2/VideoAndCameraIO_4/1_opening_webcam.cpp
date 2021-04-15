@@ -9,10 +9,13 @@
 #include <iostream>
 
 void read_webcam(){
-    cv::VideoCapture cap{"Images/AVI-Video.avi", cv::CAP_FFMPEG};
+    cv::VideoCapture cap{0};
     cap.setExceptionMode(true);
     
-    
+    if (!cap.isOpened()){
+        return;
+    }
+
     cv::Mat frame{};
     const char* window_name = "Webcam live feed";
     cv::namedWindow(window_name, cv::WINDOW_FULLSCREEN);
@@ -20,10 +23,9 @@ void read_webcam(){
     for (;;){
         cap >> frame;
 
-        std::cout << frame;
         if (!frame.empty()){
             cv::imshow(window_name, frame);
-            if (cv::waitKey(30) >= 0) break;
+            if (cv::waitKey(20) >= 0) break;
         }
     }
 }

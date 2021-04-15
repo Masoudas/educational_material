@@ -32,7 +32,8 @@
  *      will display the video frame-by-frame) 	
  * 
  * The following flags for the basic GUI (non-Qt version) are of interest:
- *      -   WINDOW_NORMAL: This flag allows the user to resize the window
+ *      -   WINDOW_NORMAL: This flag allows the user to resize the window. Also on Qt installed systems, uses
+ *          non-expanded window.
  *      -   WINDOW_AUTOSIZE: If this flag is set, the window size is automatically adjusted to fit the display 
  *          image and it is not possible to resize the window
  * 
