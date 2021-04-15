@@ -1,0 +1,5 @@
+To supply a cross compiler, first make sure that the cross-compiler is found on the path. Assuming that's the 
+case, then ALWAYS supply the cross compiler up to and including the final dash before gcc, to the CROSS_COMPILER
+option
+
+$ make ARCH=arm CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- 

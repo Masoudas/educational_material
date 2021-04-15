@@ -1,0 +1,10 @@
+To search based on the size of the files, we can use the -size option:
+
+$ find paths -name file -size 0c    #0c means zero chars or bytes. 
+
+We can specify various sizes according to the following table:
+    -   find / -size +100M 	Will search for all the files that are bigger than 100 MB.
+    -   find / -size -5c 	Will search for all the files that are smaller than 5 bytes.
+    -   find / -size +50M -size -100M 	Will search for all the files that are bigger than 50 MB, 
+        but smaller than 100 MB.
+    -   find / -size +1G 	Will search for all the files that are bigger than 1 GB.

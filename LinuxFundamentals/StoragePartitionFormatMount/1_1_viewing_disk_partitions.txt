@@ -24,7 +24,7 @@ Disk /dev/sda: 1,9 GiB, 2021654528 bytes, 3948544 sectors
 
 
 Another command that's less comprehensive is the df (disk free) command, which can be made humanly readable
-using -h as well. The advantage of this command is that it shows where the partitions are mounted. Another 
+using -h as well. The advantage of this command is that it shows the file systems, as opposed to fdisk. Another 
 advantage is that it shows the RAM file system (Note that RAM's don't have a partition in the sense of hard
 drives, but rather they're assigned partitions by OS). We shall later discuss which ones are the RAM ones:
 

@@ -1,0 +1,5 @@
+The two options -mtime and -atime search for files based on their modification or access times.
+To pass the time
+
+$ find $HOME -mtime 0
+Finds all files on the home folder that have been modified over the past 24 hours.

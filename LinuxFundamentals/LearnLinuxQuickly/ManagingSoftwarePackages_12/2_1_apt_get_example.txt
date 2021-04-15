@@ -1,0 +1,23 @@
+On Ubuntu and other Debian Linux distributions, you can use the command-line utility apt-get to manage packages. 
+Behind the scenes, apt-get makes use of the package manager dpkg. To download a package, you can run the command 
+apt-get download followed by the package name:
+
+# Change to a directory like tmp to download
+$ su -
+$ cd /tmp
+$ apt-get download cmatrix code
+
+And as such, the debian package is downloaded. We can list the content of the package using -c option, which
+stands for content using the dpkg command
+
+$ dpkg -c cmatrix
+drwxr-xr-x root/root     0 2018-04-03 06:17 ./
+drwxr-xr-x root/root     0 2018-04-03 06:17 ./usr/
+drwxr-xr-x root/root     0 2018-04-03 06:17 ./usr/bin/
+-rwxr-xr-x root/root 18424 2018-04-03 06:17 ./usr/bin/cmatrix
+drwxr-xr-x root/root     0 2018-04-03 06:17 ./usr/share/
+...
+
+Notice that everything is ready to be installed directly in the usr folder as we expected.
+
+To install a package of course we need to use the -i option.

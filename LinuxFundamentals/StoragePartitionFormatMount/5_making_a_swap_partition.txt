@@ -1,0 +1,4 @@
+As a final example, consider how we can make a swap parition:
+
+    1- Create a swap partition as close to the top of the disk as possible
+    2- Make the file system for it using 'mkfs -t swap partition'

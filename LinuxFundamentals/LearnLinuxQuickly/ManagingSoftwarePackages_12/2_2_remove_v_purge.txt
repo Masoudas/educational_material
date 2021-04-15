@@ -1,0 +1,6 @@
+A package can be removed using the remove option:
+$ apt-get remove package_name
+
+However, this leaves traces of the package, particularly it's config files. To purge everything from the disk,
+use the purge command:
+$ apt-get purge package_name

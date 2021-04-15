@@ -1,0 +1,13 @@
+Using the apt-cache command, we can search for packages:
+
+$ apt-cache search keyword
+
+The -n option would display only packages that have keyword in their package names:
+$ apt-cache search -n keyword
+
+Note also that we can search for a package with dpkg too:
+$ dpkg -s package_name
+
+We can show the information and dependency of the packages as follows:
+$ apt-cache show package_name
+$ apt-cache depends package_name
