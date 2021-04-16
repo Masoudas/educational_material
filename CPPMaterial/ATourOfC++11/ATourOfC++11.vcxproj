@@ -514,6 +514,7 @@
     <ClCompile Include="SourceFilesAndPrograms_15\Linkage_2\0_1_double_inclusion.cpp" />
     <ClCompile Include="Specialization_25\0_1_an_array_is_different_from_pointer_in_specialization.cpp" />
     <ClCompile Include="Specialization_25\0_2_the_elluding_fact_regarding_specialization.cpp" />
+    <ClCompile Include="Specialization_25\0_3_specialization_with_a_templated_type.cpp" />
     <ClCompile Include="Specialization_25\1_even_the_big_guy_does_not_go_into_detail.cpp" />
     <ClCompile Include="Specialization_25\5_1_function_specialization.cpp" />
     <ClCompile Include="Specialization_25\5_2_example.cpp" />
@@ -531,8 +532,9 @@
     <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\2_2_5_2_templates_as_arguments.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_1_why_need_for_specialization.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_2_reducing_code_bloat.cpp" />
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_1_specialization_syntax.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp" />
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_2_clinet_v_programmer_point_of_view.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_1_interface_specialization.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\2_2_program_organization_and_specialization.cpp" />
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\3_implementation_specialization.cpp" />
@@ -625,10 +627,25 @@
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\Basics_1.cpp" />
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\EnumClasses_2.cpp" />
     <ClCompile Include="StructuresUnionsEnumerations_8\Enumerations_4\PlainEnums_3.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\0_1_check_for_built_in_types.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\1_introduction.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\2_why_use_metaprogramming.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\3_distinction_between_generic_and_meta_programming.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\4_meta_v_template_programming.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\5_1_tips_on_use_conditions.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\5_1_when_to_use_meta_programming.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\1_motivation.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_1_use_of_enable_if.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_2_use_of_enable_if.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_3_only_for_template_functions.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_4_usage_according_to_msvc.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_5_dont_use_with_condition_and_its_negate.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_check_operator_exists.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\3_implementation.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\4_use_with_concepts.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1\1_1_can_we_call_f_if_x_is_X.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1\1_3_can_we_call_f_if_x_is_X.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\1_2_why_it_is_wrong.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\1_categories.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\2_1_select_between_two_types.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\2_2_compile_v_run_time.cpp" />
@@ -637,6 +654,7 @@
     <ClCompile Include="TemplateMetaProgramming_28\ControlStructures_2\3_3_usage_in_get_function.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\IterationAndRecursion_3\1_2_recursion_with_classes.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\IterationAndRecursion_3\1_1_recursion_with_constexpr_functions.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\10_1_value_functions_and_aliasing.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\1_1_introduction.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\1_2_runtime_usage.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\2_multiple_arguments.cpp" />
@@ -727,6 +745,7 @@
     <ClCompile Include="Templates_23\FunctionTemplates_5\5_1_reference_deduction_ownership_and_copy.cpp" />
     <ClCompile Include="Templates_23\FunctionTemplates_5\5_2_argument_forwarding.cpp" />
     <ClCompile Include="Templates_23\FunctionTemplates_5\5_3_forwarding_saves_us_a_copy.cpp" />
+    <ClCompile Include="Templates_23\FunctionTemplates_5\7_1_optionals_are_ignored.cpp" />
     <ClCompile Include="Templates_23\SourceCodeOrganization_8\1_templates_and_source_code_organization.cpp" />
     <ClCompile Include="Templates_23\SourceCodeOrganization_8\2_organization_of_source_code_for_templates.cpp" />
     <ClCompile Include="Templates_23\SourceCodeOrganization_8\3_how_msvc_stl_takes_care_of_this_problem.cpp" />
@@ -788,12 +807,15 @@
     <ClCompile Include="TypesAndDeclarations_6\void_6.cpp" />
     <ClCompile Include="Utilities_35\MinorUtilities_\1_2_forward_does_not_deduce.cpp" />
     <ClCompile Include="Utilities_35\MinorUtilities_\1_1_forward.cpp" />
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\10_2_use_true_type_for_predicates.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_1_decay_function.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_3_why_the_need_for_decay_from_internet.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_2_why_the_need_for_decay_from_standard.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_4_the_big_guys_example.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_5_1_a_beautiful_way_to_circumvent_decay.cpp" />
     <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\x_5_2_reference_wrapper_in_std.cpp" />
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\y_1_declval_function.cpp" />
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\y_1_uses_of_decltype.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,6 +28,7 @@ Iter search(Iter p, iter q, Value_type<Iter> val)
 * He continues "I suspect that traits are currently overused. Consider how to write the previous example without any 
 * mention of traits or other type functions:
 
+// Note from me: We could also use auto instead of val as well.
 template<typename Iter, typename Val>
 Iter search(Iter p, iter q, Val val)
 {
@@ -51,7 +52,7 @@ Iter search(Iter p, iter q, Val val)
 * that already has a perfectly good name, such as pointer for value_type∗ and reference for value_type&, the utility is 
 * less clear and the potential for confusion greater. Don’t blindly define traits for everything "just in case."
 * 
-* Me: On that last, I argue that unfortunately sometimes this is out of my hand. For example, with custom iterators as
-* I show in Chapter 35, WritingAnIteratorWrapper_0, I need to the such aliases to allow my iterator to be used together
+* Me: On that last note, I argue that unfortunately sometimes this is out of my hand. For example, with custom iterators
+* as I show in Chapter 35, WritingAnIteratorWrapper_0, I need to the such aliases to allow my iterator to be used together
 * with std functions.
 */
