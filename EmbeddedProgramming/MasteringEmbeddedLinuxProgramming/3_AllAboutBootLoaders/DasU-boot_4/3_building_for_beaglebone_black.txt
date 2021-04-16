@@ -1,0 +1,24 @@
+Taking the BeagleBone Black as an example, we find that there is a likely configuration file named 
+configs/am335x_boneblack_defconfig and we find the text The binary produced by this board supports … Beaglebone 
+Black in the board README files for the am335x chip, board/ti/am335x/README. With this knowledge, building 
+U-Boot for a BeagleBone Black is simple. You need to inform U-Boot of the prefix for your cross compiler by 
+setting the make variable CROSS_COMPILE, and then selecting the configuration file using a command of the type
+make [board]_defconfig. (The cross compiler is the one we made in chapter 2)
+
+Now, as we may recall, the boot can be done through an SD card, or eMMC, ... and finally the USB. Now, for each
+of these, the u-boot need to be compiled with the proper configuration. That being said, for beaglebone black,
+we find that all configs are the same:
+    -   SD Boot     :   am335x_evm_defconfig  	
+    -   eMMC Boot 	:   am335x_evm_defconfig
+    -   NAND Boot 	:   am335x_evm_defconfig
+    -   UART Boot   :   am335x_evm_defconfig
+
+These were taken from the following linux on TI website:
+https://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/AM335X/linux/Foundational_Components_U-Boot.html
+
+Now, assuming that's the case, first ensure that the cross-compiler is on the path. Then run the following two
+make commands:
+$ make CROSS_COMPILER=arm-cortex_a8-linux-gnueabihf o=write_folder am335x_evm_defconfig
+$ make CROSS_COMPILER=arm-cortex_a8-linux-gnueabihf o=write_folder
+
+

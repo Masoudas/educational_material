@@ -1,0 +1,32 @@
+Most embedded x86/x86_64 designs (me: I think intell), and some ARM designs, have firmware based on the Universal 
+Extensible Firmware Interface (UEFI) standard. You can take a look at the UEFI website at http://www.uefi.org/ 
+for more information. The boot sequence is fundamentally the same as that described in the preceding section:
+
+    -   Phase I: 
+    The processor loads the platform initialization firmware from flash memory. In some designs, it is loaded 
+    directly from NOR flash memory, while in others, there is ROM code on-chip which loads the firmware from 
+    SPI flash memory into some on-chip static RAM. (me: This is equivalent to the SD card phase in the previous
+    section. Hence, we're past the ROM stage at this point.)
+
+    -   Phase II:
+    The platform initialization firmware performs the role of SPL. It initializes the DRAM controller and other 
+    system interfaces, so as to be able to load an EFI boot manager from the EFI System Partition (ESP) on a 
+    local disk, or from a network server via PXE boot. The ESP must be formatted using FAT16 or FAT32 format and 
+    it should have the well-known GUID value of C12A7328-F81F-11D2-BA4B-00A0C93EC93B. The path name of the boot 
+    manager code must follow the naming convention <efi_system_partition>/boot/boot<machine_type_short_name>.efi.
+    For example, the file path to the loader on an x86_64 system would be /efi/boot/bootx64.efi.
+    (Note: See LinuxFundamentals/StorageParitionMount chapter on MBR vs GUID and what the identifier is.)
+    (Note: running df -h, we can see that efi of linux is on /boot/efi as a matter of fact. We can ls to see
+    all the efi files used when booting on my PC. Apparently, the ROM program is capable of loading directly from
+    my hard drive.)
+
+    -   Phase III:
+    The UEFI boot manager is the tertiary program loader. The TPL in this case has to be a bootloader that is 
+    capable of loading a Linux kernel and an optional RAM disk into memory. Common choices are:
+        -   systemd-boot: This used to be called gummiboot. It is a simple UEFI-compatible bootloader, 
+            licensed under LGPL v2.1. The website is https://www.freedesktop.org/wiki/Software/systemd/systemd-boot/.
+        -   Tummiboot: This is the gummiboot with trusted boot support (Intel's Trusted Execution Technology 
+            (TEX)).
+
+    Note: The arm community says that UEFI can be just a replacement for U-boot.
+

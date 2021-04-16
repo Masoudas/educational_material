@@ -1,35 +1,35 @@
 /**
- * Apparently, we can do very crazy things like openning youtube videos with VideoCapture as well, which we 
- * discuss next.
+ * Note: Apparently, we can do very crazy things like openning youtube videos with VideoCapture as well.
+ * 
+ * Note II: On my current Linux machine, my Laptop Webcam is video0 for
  */
 
+#include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
 
 void read_webcam(){
-    //std::string videoFile= cv::parser.get<std::string>(0);
-    cv::VideoCapture cap{};
+    cv::VideoCapture cap{0};
+    cap.setExceptionMode(true);
     
-
-    if (!cap.open(0) || !cap.isOpened()){ // Redundant checks
+    if (!cap.isOpened()){
         return;
     }
 
-    cv::Mat frame;
+    cv::Mat frame{};
     const char* window_name = "Webcam live feed";
     cv::namedWindow(window_name, cv::WINDOW_FULLSCREEN);
-
+    
     for (;;){
         cap >> frame;
 
-        std::cout << frame;
         if (!frame.empty()){
             cv::imshow(window_name, frame);
-            if (cv::waitKey(30) >= 0) break;
+            if (cv::waitKey(20) >= 0) break;
         }
     }
 }
 
-//int main(){
-//    read_webcam();
-//}
+int main(){
+    read_webcam();
+}

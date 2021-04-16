@@ -1,0 +1,2 @@
+Essentially, hit v to enter the move. Then use the navigation commands to highlight what you desire, and the apply
+the verbs (v, d, etc) to perform an action.

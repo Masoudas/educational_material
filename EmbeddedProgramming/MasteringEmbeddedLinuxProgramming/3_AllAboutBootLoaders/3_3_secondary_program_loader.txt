@@ -1,0 +1,12 @@
+The Secondary Program Loader (SPL) must set up the memory controller and other essential parts of the system 
+preparatory to loading the Tertiary Program Loader (TPL) into DRAM. The functionality of the SPL is limited by 
+the size of the SRAM (me: 128KB in case of ARM3358). It can read a program from a list of storage devices, as 
+can the ROM code, once again using pre-programmed offsets from the start of a flash device. If the SPL has file 
+system drivers built in, it can read well known file names, such as u-boot.img, from a disk partition. The SPL 
+usually doesn't allow for any user interaction, but it may print version information and progress messages, 
+which you can see on the console. (me: Actually, we can print customary boot messages in the secondary stage,
+which we shall try later.)
+
+Note that the uboot image is written in the very first addresses of the DRAM.
+
+At the end of the second phase, the TPL is present in DRAM, and the SPL can make a jump to that area.

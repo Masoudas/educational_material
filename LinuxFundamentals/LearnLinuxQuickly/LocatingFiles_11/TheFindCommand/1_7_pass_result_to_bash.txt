@@ -1,0 +1,4 @@
+To pass the result of the find command to shell line by line, we need to add the -exec COMMAND {} + option.
+Note that {} + means reference to all. Without this, only the first result will be executed.
+
+$ find $HOME -name file -exec ls -l {} +

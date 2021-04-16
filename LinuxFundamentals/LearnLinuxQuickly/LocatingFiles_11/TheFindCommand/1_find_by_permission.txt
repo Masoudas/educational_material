@@ -1,0 +1,6 @@
+Consider the following two examples:
+
+$ find . -perm 664
+
+$ find /sbin /usr/sbin -executable \! -readable -print
+Searches for all files that are executable but not readableq

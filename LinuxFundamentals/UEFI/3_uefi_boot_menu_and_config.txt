@@ -1,0 +1,7 @@
+On most computers, as of 2015, there's a bios setup in which we can navigate with mouse, and it has a very good
+graphics. This is the UEFI bios menu. If we have to run with keyboard and we have a dos like menu, then it's 
+legacy bios menu.
+
+Essentially, we want to always disable legacy boots, particularly when installing new OS, especially with Linux,
+because Windows just automatically does it for us. Exceptionally, I checked and my current machine does not
+support legacy boot (the Vostro machine, AKA Gholam.)

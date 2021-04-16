@@ -1,0 +1,4 @@
+The make the search case insensitive, we can pass the -iname option:
+
+$ find location(s) -iname file
+This will find file, FILE, File, fILE, etc.

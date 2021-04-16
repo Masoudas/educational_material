@@ -1,0 +1,13 @@
+Here's something interesting we can do as an experiment. We can read and write to a portion of RAM directly.
+
+Using ramfs or tmpfs you can allocate part of the physical memory to be used as a partition. You can mount this 
+partition and start writing and reading files like a hard disk partition. Since you’ll be reading and writing 
+to the RAM, it will be faster.
+
+When a vital process becomes drastically slow because of disk writes, you can choose either ramfs or tmpfs file 
+systems for writing files to the RAM.
+
+    1. How to mount Tmpfs
+This is done like a normal partition. That is, create a folder, then mount.
+    -   mkdir -p /mnt/tmp
+    -   mount -t tmpfs -o size=20m tmpfs /mnt/tm        # t limits the type of file system. -o is for options.

@@ -1,0 +1,4 @@
+Me: Something that occured to me while working with the embedded boot process is that we actually do the same
+procedure when installing an OS on a normal computer. That is, we insert a flash-drive, and the boot loader is
+capable of reading from it. So, a normal PC, among other things perhaps, can also support loading a kernel from
+a flash drive as well.

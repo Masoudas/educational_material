@@ -1,0 +1,10 @@
+Package managers are programs that we use in Linux to manage packages; that is, to download, install, remove, 
+search, and update packages. Keep in mind that different Linux distributions have different package managers. 
+For example, dpkg, which stands for Debian package manager, is the package manager for Ubuntu and other 
+Debian-based Linux distributions. On the other hand, RedHat-based Linux distributions like Fedora and CentOS use 
+rpm, which stands for RedHat Package Manager. Other Linux distributions like SUSE use zypper as the package manager 
+and so on.
+
+Very rarely will you find experienced Linux users going to a website to download a software package as Windows 
+or macOS users do. Instead, each Linux distribution has its list of sources from where it gets the majority of 
+its software packages. These sources are also referred to as repositories. 

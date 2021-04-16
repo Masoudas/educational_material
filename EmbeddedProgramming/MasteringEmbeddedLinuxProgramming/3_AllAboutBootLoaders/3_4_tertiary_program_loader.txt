@@ -1,0 +1,13 @@
+Now, at last, we are running a full bootloader, such as U-Boot or BareBox. Usually, there is a simple command-line 
+user interface that lets you perform maintenance tasks, such as loading new boot and kernel images into flash 
+storage, and loading and booting a kernel, and there is a way to load the kernel automatically without user 
+intervention.
+
+TPL loads, kernel, optional FDT and initramfs into dRAM. At the end of the third phase, there is a kernel in 
+memory, waiting to be started.
+
+Me: What's initramfs: Stands for initial RAM fs. The basic initramfs is the root filesystem image used for 
+booting the kernel provided as a compressed cpio archive. 
+
+Embedded bootloaders usually disappear from memory once the kernel is running, and perform no further part in 
+the operation of the system.

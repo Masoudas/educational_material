@@ -1,0 +1,15 @@
+Often times you will want to change some piece of text for another one, and there's a command just for that c. 
+The change command allows you to remove a portion of text and immediately enter an insert mode. Change is a 
+compound command, meaning that it needs to be followed by a command which tells Vim what needs to be changed. 
+Note also that the removed content goes into the clipboard.
+
+Note that as an odd exception, cw acts like ce! Hence, it does not cut the space after the word.
+
+Sometimes we just want to cut things, without putting anything instead, and d does just that. It stands for 
+delete. It behaves similarly to c, except that the behavior of w and e is more standard. One again, the deleted
+content will go into the clipboard.
+
+There are also two more nifty shortcuts which allow you to change or delete a whole line:
+    cc 	Clears the whole line and enters insert mode. Preserves current indentation level, which is useful when 
+        coding.
+    dd 	Deletes an entire line.

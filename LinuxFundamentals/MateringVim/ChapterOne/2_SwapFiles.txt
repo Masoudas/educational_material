@@ -1,0 +1,16 @@
+By default, Vim keeps track of the changes you make to files in swap files. The swap files are created as you edit 
+the files, and are used to recover the contents of your files in case either Vim, your SSH session, or your 
+machine crashes. If you don't exit Vim cleanly, you'll be greeted by the screen asking us what to do with the
+swap file.
+
+You can either hit r to recover the swap file contents, or d to delete the swap file and dismiss the changes. If 
+you decide to recover the swap file, you can prevent the same message from showing up next time you open the 
+file in Vim by reopening a file and running :e, and pressing d to delete the swap file.
+
+By default, Vim creates files like <filename>.swp and .<filename>.swp in the same directory as the original file. 
+If you don't like your file system being littered by swap files, you can change this behavior by telling Vim to 
+place all the swap files in a single directory. To do so, add the following to your .vimrc:
+
+"""""""""
+set directory=$HOME/.vim/swap//
+"""""""""

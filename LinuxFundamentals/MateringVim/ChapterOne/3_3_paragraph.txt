@@ -1,0 +1,5 @@
+Everything separated by TWO new lines is considered a paragraph. The { goes back one paragraph (the empty line 
+on top of the paragraph), and the } goes to the beginning of the next one (the empty line at the end of the 
+paragraph, or the last word of the text if there are no further ones.)
+
+As always, we can combine these with numbers, and say for example go down two paragraphs.

@@ -1,0 +1,4 @@
+To define an output folder, to which the files would be written, just like gcc we can use the o option:
+
+$ make rule o=path
+Note that path if given as relative would be from the current folder.

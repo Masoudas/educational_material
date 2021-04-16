@@ -1,0 +1,29 @@
+The keys for moving the cursor:
+    - h:    Move left
+    - j:    Move down
+    - k:    Move up
+    - l:    Move right.
+
+Hence, we can combine these words with numbers to, for example 5j, 2k, 3h, 10l, to move around as many 
+positions.
+
+To move around as much as a word:
+    - w: Move forward
+    - b: Move backward.
+
+Note: Vim has two kinds of word objects: referred to as lowercase "word" and uppercase "WORD". In Vim world, word 
+is a sequence of letters, digits, and underscores separated by white space. WORD is a sequence of any non-blank 
+characters separated by white space.
+
+Consider for example animal_farm(pig, horse). Hitting w from a brings us to ( and on it (first letter after the
+set of chars mentioned), wheres hitting W brings us to the next letter after blank space and on it. In fact, 
+space is skipped in both cases. The same goes for b or B. (Hence, if we copy, white space is taken as well with
+each of w, W, b, B.) If I were on the white space on the other had, it will go to the word adjacent to the white
+space.
+
+Note that with w, if we have a series of chars like (^#) etcetra attached to one another as standalone, they are 
+also considered one word.
+
+Now, contrary to w which stands in the beginning of the word, e go to the end of the word. If it's currently
+on a word, it goes to the end of that word, otherwise to the end of the next word (if it's on a whitespace or
+the end of current word.)

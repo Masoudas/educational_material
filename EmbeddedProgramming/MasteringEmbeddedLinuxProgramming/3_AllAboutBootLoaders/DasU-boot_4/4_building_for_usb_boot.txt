@@ -1,0 +1,14 @@
+Also, I found the following approach for booting from usb, taken form the following git link, but it may be 
+outdated:
+https://github.com/ungureanuvladvictor/BBBlfs
+
+Instructions:
+    -   Grab the latest U-Boot sources from git://git.denx.de/u-boot.git
+    -   Checkout commit id 524123a70761110c5cf3ccc5f52f6d4da071b959
+    -   Install your favourite cross-compiler, I am using arm-linux-gnueabihf-
+    -   Apply this patch to U-Boot sources 
+        https://raw.githubusercontent.com/ungureanuvladvictor/BBBlfs/master/tools/USB_FLash.patch
+
+Then run:
+$ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- am335x_evm_usbspl_config
+$ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-

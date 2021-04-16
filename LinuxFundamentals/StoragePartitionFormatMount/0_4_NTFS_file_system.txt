@@ -1,0 +1,14 @@
+NTFS (New Technology Files System) is the newer drive format. Microsoft introduced NTFS in 1993. NTFS, on the 
+other hand, is fully read/write compatible with Windows from Windows NT 3.1 and Windows XP up to and including 
+Windows 8. Mac OS X 10.3 and beyond have NFTS read capabilities, but writing to a NTFS volume requires a third 
+party software utility like Paragon NTFS for Mac. Theoretically, NTFS is limited by design to 16EB (Exabytes). 
+One Exabyte is the equivalent of one billion Gigabytes, so we're quite a ways away from maxing out NTFS. In 
+practice, 2 to 4TB volumes are the limit at this time. Larger volumes will require a 64-bit OS and compatible 
+hardware.
+
+While file transfer speed and maximum throughput is limited by the slowest link (usually the hard drive interface 
+to the PC like SATA or a network interface like 3G WWAN), NTFS formatted hard drives have tested faster on 
+benchmark tests than FAT32 formatted drives. Other factors will be in play, however, including drive technology 
+(HDD vs. SDD, Flash vs. non-Flash, etc.) and file fragmentation (on spinning drives). 
+
+

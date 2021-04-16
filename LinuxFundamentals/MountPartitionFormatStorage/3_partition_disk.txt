@@ -1,2 +1,0 @@
-see here https://www.binarytides.com/linux-command-check-disk-partitions/
-cfdisk is easy and good

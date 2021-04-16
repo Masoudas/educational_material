@@ -1,0 +1,3 @@
+When inside VIM, entering :e filename opens up the file, which like always is not saved until we actually wq it.
+
+Note also that writing a :w only writes the file.

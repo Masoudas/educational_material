@@ -1,0 +1,58 @@
+This file, which is your /etc folder, is the operating system’s file system table. In the old days, it was the 
+primary way that the system mounted files automatically, which is why it's called the static file system mount.
+Back then, your only alternative was the tell the computer that anytime a specific device was plugged in, it 
+should be automatically mounted in a specific place. This is where fstab came in. Suppose you swapped hard disks 
+on your IDE or SCSI controller. The computer could load the file systems in a different order, potentially 
+messing things up. Fstab is configured to look for specific file systems and mount them automatically in a 
+desired way each and every time, preventing a myriad of disasters from occurring.
+
+The following is a snippet of this file:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p5 during installation
+UUID=efa74d8c-92a8-4235-a180-e01fa4127e79 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=16EE-B4BC  /boot/efi       vfat    umask=0077      0       1
+/swapfile                                 none            swap    sw              0       0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Notice all of the entries begin with UUIDs. Each file system, during formatting, gets assigned a Universally 
+Unique Identifier, which it takes to the grave.  Since it cannot be changed, this is the ideal way to select 
+file systems for mounting, especially for important ones
+
+Let’s say your /home partition is on a second hard drive and you end up moving it to an external hard drive; 
+fstab will still find that partition and mount it correctly, avoiding a failed boot.  If you switch to (or are 
+stuck using) the old method of using device identifiers to select partitions (i.e. /dev/sda1), this advantage 
+disappears because hard drives and partitions are counted by their controllers, and can thus change.
+
+The following the choices for options. Note that options are separated by a comma:
+    -   auto/noauto:  Specify whether the partition should be automatically mounted on boot. You can block 
+        specific partitions from mounting at boot-up by using “noauto”.
+    -   exec/noexec:  Specifies whether the partition can execute binaries.  If you have a scratch partition 
+        that you compile on, then this would be useful, or maybe if you have /home on a separate file system.  
+        If you’re concerned about security, change this to “noexec”.
+    -   ro/rw:  “ro” is read-only, and “rw” is read-write.  If you want to be able to write to a file-system as 
+        the user and not as root, you’ll need to have “rw” specified.
+    -   sync/async:  This one is interesting.  “sync” forces writing to occur immediately on execution of the 
+        command, which is ideal for floppies (how much of a geek are you?) and USB drives, but isn’t entirely 
+        necessary for internal hard disks.  What “async” does is allow the command to execute over an elapsed 
+        time period, perhaps when user activity dies down and the like.  Ever get a message asking to your 
+        “wait while changes are being written to the drive?”  This is usually why.
+    -   nouser/user:  This allows the user to have mounting and unmounting privileges.  An important note is 
+        that “user” automatically implies “noexec” so if you need to execute binaries and still mount as a 
+        user, be sure to explicitly use “exec” as an option.
+
+As an example, we may have the following options
+
+UUID=16EE-B4BC  /boot/efi       vfat    auto,exec,rw,sync,user      0       1
+
+The next option for dump is outdated, and it was for backup. We should leave it to zero.
+The last option is a numeric value for “passing.” This tells the system the order in which to fsck (pronounce 
+that however you like), or perform a file system check. If a disk has an option of “0” it will be skipped, 
+like an NTFS-formatted storage drives. The root file system should always be “1” and other file systems can go 
+afterward. This works best for journaling file systems like ext3/4 and ReiserFS. Older file systems like 
+FAT16/32 and ext2 can take a while, so it’s better to turn their fscking off and do it periodically yourself.
+
+
+5f3b9afc-01

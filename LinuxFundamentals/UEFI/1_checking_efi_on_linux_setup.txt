@@ -1,0 +1,7 @@
+When installing linux, we want to ensure that boot occurs via UEFI, and not our legacy boot systems. For this,
+we just need to ensure the firmware manager has figured out the UEFI on INSTALLATION. For that, when we're 
+installing linux, we can check in the shell (before starting actuall installation):
+
+$ ls /sys/firmware/efi
+
+If this folder is not empty, then we're fine.

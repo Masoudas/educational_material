@@ -1,0 +1,5 @@
+It's assigned after FORMAT, not after PARTIONING.
+
+sudo blkid | grep UUID=
+ls -l /dev/disk/by-uuid
+sudo lsblk -f

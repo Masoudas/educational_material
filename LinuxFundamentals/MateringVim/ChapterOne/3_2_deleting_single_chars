@@ -1,0 +1,2 @@
+Note that to delete or change single chars, we need to use 'l', which would delete the char on the current cursor
+position, and h deletes the char on the previous position.
