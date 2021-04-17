@@ -31,6 +31,16 @@ struct select<1, T, Cases...> : select<0, Cases>{}
 * 
 * There also doesn't seem to be such a class in the type_traits header!
 * 
+* A silly question: Can't we just start by writing the following expression?
+
+template<unsigned n, typename T, typename... Cases>
+struct select<n, T, Cases...> : select<n-1, Cases...>{};
+
+* The answer is no, because a specialization can only be defined once the primary template has been defined.
+*
+* Note: Recall my self made rule for variadic templates "When define, dots go after typename (typename...Args.) When 
+* expand or use, dots  go after name, (Args...arg)"
+* 
 */
 
 template<unsigned i, typename... Cases>

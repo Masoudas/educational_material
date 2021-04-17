@@ -1,6 +1,6 @@
 /**
-* It is surprisingly simple to implement Conditional, as used in §28.2. The conditional template is part of the standard 
-* library (in <type_traits>), so we don’t have to implement it, but it illustrates an important technique.
+* It is surprisingly simple to implement Conditional. The conditional template is part of the standard library (in 
+* <type_traits>), so we don’t have to implement it, but it illustrates an important technique.
 * 
 * The primary template simply defines its type to be T (the first template parameter after the condition). If the 
 * condition is not true, the specialization for false is chosen and type is defined to be F.
@@ -15,6 +15,7 @@ struct conditional {
 	using type = T;	// True case
 };
 
+// Partial specialization (chapter 23)
 template<typename T, typename F>
 struct conditional<false, T, F> {
 	using type = F;

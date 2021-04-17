@@ -26,8 +26,7 @@
 * case is instantiated if we pass pointers (like int*.) The point being implied here is that inside the 
 * class, if we wrote for example 'T t', then this t is still an instance of T (an int for example). It is
 * not T* (or int*). When writing the specialization, this is an obvious point. However, when using the class, the ambiguity
-* is that the user writes type<int*>, but is surprised it has to pass an int, as is shown below. Hence, it does make perfect
-* sense when writing the class, but not as much when we use it. 
+* is that the user writes type<int*>
 */
 #include <iostream>
 template<typename T>

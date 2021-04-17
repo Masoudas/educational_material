@@ -358,6 +358,12 @@
     <Filter Include="Source Files\TemplateMetaProgramming_28\IterationAndRecursion_3">
       <UniqueIdentifier>{cc80496c-3990-4dd4-bf67-fe6604d7c153}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4">
+      <UniqueIdentifier>{9ba1563e-2cc2-432e-93bd-ddc11145eefb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1">
+      <UniqueIdentifier>{a521bb38-4fb9-429a-abba-8f12640a4eee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -1938,9 +1944,6 @@
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_3_type_erasure.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
-    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_specialization_syntax.cpp">
-      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
-    </ClCompile>
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\3_implementation_specialization.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
@@ -2309,6 +2312,75 @@
     </ClCompile>
     <ClCompile Include="Concurrency_41\ThreadClass_\3_use_move_to_avoid_copy_with_threads.cpp">
       <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\5_1_when_to_use_meta_programming.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\5_1_tips_on_use_conditions.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\1_motivation.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\0_1_check_for_built_in_types.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_1_use_of_enable_if.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_2_use_of_enable_if.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_3_only_for_template_functions.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_4_usage_according_to_msvc.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_5_dont_use_with_condition_and_its_negate.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\0_3_specialization_with_a_templated_type.cpp">
+      <Filter>Source Files\Specialization_25</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_1_specialization_syntax.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Specialization_25\TemplateSpecialization_3\1_4_2_clinet_v_programmer_point_of_view.cpp">
+      <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\3_implementation.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\4_use_with_concepts.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1\1_1_can_we_call_f_if_x_is_X.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\y_1_declval_function.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\y_1_uses_of_decltype.cpp">
+      <Filter>Source Files\Utilities_35\TypeFunctions_\TypeGenerators_</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\10_1_value_functions_and_aliasing.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities_35\TypeFunctions_\TypeGenerators_\10_2_use_true_type_for_predicates.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\TypeFunctions_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1\1_3_can_we_call_f_if_x_is_X.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\1_2_why_it_is_wrong.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_check_operator_exists.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Templates_23\FunctionTemplates_5\7_1_optionals_are_ignored.cpp">
+      <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

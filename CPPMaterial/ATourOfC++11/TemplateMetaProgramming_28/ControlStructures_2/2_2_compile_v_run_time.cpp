@@ -8,12 +8,14 @@
 * My_cond<T>() is computed at compile time. Thus, an ordinary if-statement is useful for ordinary expressions, but not 
 * for type selection.
 * 
-* me: Note also that those condition would be scoped to local if. Hence, they can't be seen outside, meaning a using
-* statement is valid only inside the scope. Hence, even if I define a using statement outside the if (justlike I do
-* with a normal int for example and then change it inside the if) then that would not cut it, because the using statement
-* inside is valid only for that scope and that's it. Note again that this has nothing do to with if constexpr, because 
-* the aliasing IS ONLY VALID inside the scope, and not outside it. Hence, the outside using always overrides whatever is
-* on the inside.
+* me: Recall that an alias is local to the scope. That is, we can't see it outside the scope we defined it, unless we
+* have access to the name of that scope. Now consider the example below. Note that each branch of if creates a new scope,
+* both of which are nested inside the function scope. Now, if I define an alias inside each of these, they're only seen 
+* there (like an alias inside an struct is not seen directly in the namespace scope that structure is defined in, or
+* we'd be screwed with the conflict of aliases!) Hence, I can't access the alises outside the scope of if loops, chiefly
+* because I don't have access to the name of the if scopes. On the other hand, once outside the if loops, the function
+* scope has its own alias, and it's not changed by the if scope aliases (like the aliases of a namespace are not affected
+* by the aliases inside a class.) Hence, I'm free to use them.
 * 
 * The big guy continues: Using "conventional control structures," one would be tempted to write:
 
@@ -24,14 +26,11 @@
 (My_cond<T>()?Square{}:Cube{})(99);
 
 * because as we may recall, we should return a compatible type from ternary if (Square and Cube don't have a common 
-* parent.) Finally, this works:
+* parent.) Finally, this works (me: but is calculated at run-time):
 
 My_cond<T>()?Square{}(99):Cube{}(99);
 
 */
-
-
-
 
 struct Square {
 	constexpr int operator()(int i) { return i*i; }
@@ -51,11 +50,12 @@ void choose_between_types() {
 	if (My_cond<T>())
 		using Type = Square; // error : declaration as if-statement branch
 	else
-	using Type = Cube; // error : declaration as if-statement branch
+		using Type = Cube; // error : declaration as if-statement branch
 
 	//Type x; // error : Type is not in scope
 }
 
+// Alias defined in the function scope is unaffected by inside scopes.
 template<typename T>
 void choose_between_types_alternative() {
 	using Type = Square;

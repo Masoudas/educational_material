@@ -8,7 +8,7 @@
 * of working your way through a sequence of values is to recurse until you reach a terminating specialization.
 * 
 * me: I wonder if actually writing the contexpr if is slowing the computation. Perhaps not, because after all, the compiler
-* has to choose the 1 case. Perhaps the big guy argues this because if constexpr hadn't been invented yet in C++11.
+* has to choose the 1 case. Perhaps the big guy argues this because 'if constexpr' hadn't been invented yet in C++11.
 */
 
 template<unsigned N>
@@ -26,7 +26,7 @@ constexpr unsigned fact() {
 template<int N>
 constexpr int fac()
 {
-	return N*fac<N−1>();
+	return N * fac<N−1>();
 }
 
 template<>
