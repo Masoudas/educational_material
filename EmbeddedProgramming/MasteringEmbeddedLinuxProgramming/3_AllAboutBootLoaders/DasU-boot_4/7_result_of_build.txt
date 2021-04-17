@@ -1,0 +1,10 @@
+After build is complete, we see the SPL file named MLO in the build folder.
+
+Moreover, the TPL files can be found as follows:
+    -   u-boot: U-Boot in ELF object format, suitable for use with a debugger
+    -   u-boot.map: The symbol table
+    -   u-boot.bin: U-Boot in raw binary format, suitable for running on your device
+    -   u-boot.img: This is u-boot.bin with a U-Boot header added, suitable for uploading to a running copy 
+        of U-Boot
+    -   u-boot.srec: U-Boot in Motorola S-record (SRECORD or SRE) format, suitable for transferring over a 
+        serial connection
