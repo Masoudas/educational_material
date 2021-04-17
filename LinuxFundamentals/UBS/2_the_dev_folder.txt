@@ -1,0 +1,28 @@
+Once again, every device that's attached to a linux kernel can be found in the /dev folder. In particular,
+the usb devices will appear as ttyUBSn, n=0,....
+
+Reminder: Once again, don't forget that "$ ls /dev | grep ttyUSB*" greps ttyUS as well ttyUSB. This is 
+because in the grep context, * means zero or one. Use the following instead
+
+$ ls /dev | grep ttyS   # ttyS is found in the line, not whole word.
+ttyS0
+ttyS1
+ttyS10
+ttyS11
+ttyS12
+...
+
+Why do we have these many ttySn? Apparently, not all ttys or ttySs are physical ports, and some of them are
+virtual ones, for sending commands like Ctrl+C for example.
+
+Note: apparently tty0 to ttyn are the same terminals that we open by pressing alt+ctrl+f1 for example.
+
+More precisely:
+    -   First, /dev/tty is at process level, it can be ttyn(tty1, tty2,...), ttySn(ttyS0, ttyS1), 
+        pty(pts/0, pts/1), and something else.
+
+    -   /dev/tty0 is a alias of current(foreground) virtual console, so it could be tty1, tty2, and so on. 
+        Notice that ttyS0 is not a alias; It's the first serial port.
+
+    -   /dev/console is the system console, it points to /dev/tty0 as a default. It can be ttyn, ttySn, 
+        ttyUSBn, lpn, and so on.

@@ -1,0 +1,15 @@
+The simplest way to list usb devices is to use the lsusb command
+
+Note: a simple trick to see to which usb port a device is connected is to just disconnect, list usbs, and 
+then reconnect the usb port.
+
+$ lsusb
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:565a Realtek Semiconductor Corp. Integrated_Webcam_HD
+Bus 001 Device 002: ID 046d:c52f Logitech, Inc. Unifying Receiver
+Bus 001 Device 004: ID 8087:0026 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+The Bus ID, Device ID, USB ID, and a title is displayed in the output of lsusb command.
+As we can see, several devices are attached to bus 1, including the integrated webcam on this device, as well
+as other things.

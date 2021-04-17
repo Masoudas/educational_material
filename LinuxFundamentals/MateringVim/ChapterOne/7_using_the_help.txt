@@ -1,0 +1,14 @@
+The help command comes with :help or :h. Use ':h command' to search for a particular command. Also, use
+arrow keys. or ctrl+b and ctrl+f to navigate forward and backward.
+
+:help is a command which navigates a set of help files. As you look through the help files, you'll notice that 
+certain words are highlighted in color. These are tags, and can be searched for using the :help command. 
+Unfortunately, not every tag name is intuitive. For instance, if we wanted to learn how to search for a string 
+in Vim, we could try using the following:
+
+$ :h search
+
+However, it looks like this command takes us to the entry on expression evaluation, which is not exactly what 
+we were looking for. To find the right entry, type in :h search (don't hit Enter yet) followed by Ctrl + d. 
+This will give you a list of help tags containing the substring search.
+

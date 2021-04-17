@@ -1,0 +1,18 @@
+Vim keeps track of changes on the file. Use u to undo changes, and ctrl+r to redo the changes. Use '.' to
+repeat the last action you performed, which is different from redo.
+
+Vim also allows you to persist undo history between sessions, which is great if you want to undo (or remember) 
+something you've done a few days ago!
+
+You can enable persistent undo by adding the following line to your .vimrc:
+set undofile
+
+However, this will litter your system with an undo file for each file you're editing. You can consolidate the 
+undo files in a single directory, as seen in the following example:
+" Set up persistent undo across all files.
+set undofile
+if !isdirectory(expand("$HOME/.vim/undodir"))  
+    call mkdir(expand("$HOME/.vim/undodir"), "p")
+endif
+set undodir=$HOME/.vim/undodir
+
