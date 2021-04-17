@@ -66,7 +66,7 @@ void threadFnc(int tid) {
     values_mtx.unlock();
 }
 
-int main(){
+void multi_threaded_app(){
     values.push_back(42);
 
     thread tr1(threadFnc, 1);
@@ -82,5 +82,6 @@ int main(){
     cout << "Input: " << values[0] << ", Result 1: " << values[1] << ", Result 2: " << values[2] << ", Result 3: "
     << values[3] << ", Result 4: " << values[4] << "\n";
 
-    return 1;
 }
+
+//int main(){ multi_threaded_app();}
