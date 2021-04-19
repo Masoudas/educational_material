@@ -24,6 +24,10 @@
  *      occured, we need to check on the event number and flag. So, they're not classes.
  *  -   The event setter allows us to pass data as void pointer. Hence for example in this case, we passed a
  *      structure that contains our image.
+ * 
+ * Note: An important note when dealing with events is that events don't update the image automatically. Hence,
+ * we need to always update the image inside the event function by EXPLICITLY calling the imshow function.
+ * 
  */
 
 
