@@ -1,0 +1,17 @@
+One thing I tend to forget about CMake is that CMake (as opposed to make for example) does not actually create
+or generate object files, binaries or anything! Rather it generates the build system that can be use to make
+those things. Hence, on Windows it would create a VS solution, and on Linux it would create a MakeFile as a
+make script, etc.
+
+Hence when we run the make command:
+$ cd build
+$ cmake ..  # Meaning in source build, and CMakeLists.txt is in the parent folder of build
+
+The build files are generated. However at this point, it's still possible to actually generate the binaries
+using the --build option of cmake:
+
+$ cmake -- build .  # Naturlich, build the current folder.
+
+Or, if we're on Linux for example, we can build it using make
+
+$ make all
