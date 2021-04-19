@@ -1,0 +1,47 @@
+Like any other device, the attached storage devices appear in the /dev folder. In fact, one of the ways to
+ensure that the disk has been recognized (and not necessarily mounted) by the OS is to check and see if 
+a file appears corresponding to the disk in this folder.
+
+Consider a simple usb derive I attached to the PC (and it has two partitions). As soon as I did that, the
+following three files appeared in this folder:
+
+$ ls /dev
+...     sda 
+sda1    sda2
+...
+
+In fact, here's how we check whether these devices have been recognized by the machine in this rather crammed
+folder. We get an ls, and store it in a file. Then we get another ls, and then we compare the diff of the two,
+to see if any new files have been added. Note that we use ls -l to have one line per folder, to use diff
+a bit more effectively.
+
+Note: I had to search for "pipe diff to get to the formula for finding diff with std out, which is using -
+for the argument"
+
+$ ls -l /dev > ~f
+# Attach device
+$ ls -l | diff f -
+
+
+We get the following then:
+4,5c4
+< drwxr-xr-x  2 root     root           480 avril 19 08:50 block
+< drwxr-xr-x  2 root     root            60 avril 19 08:50 bsg
+---
+> drwxr-xr-x  2 root     root           420 avril 19 08:51 block
+8c7
+< drwxr-xr-x  2 root     root          4900 avril 19 08:50 char
+---
+> drwxr-xr-x  2 root     root          4840 avril 19 08:51 char
+89c88
+< crw-rw-rw-  1 root     tty       5,     2 avril 19 08:50 ptmx
+---
+> crw-rw-rw-  1 root     tty       5,     2 avril 19 08:51 ptmx
+95,99c94
+< brw-rw----  1 root     disk      8,     0 avril 19 08:50 sda
+< brw-rw----  1 root     disk      8,     1 avril 19 08:50 sda1
+< brw-rw----  1 root     disk      8,     2 avril 19 08:50 sda2
+< crw-rw----  1 root     disk     21,     0 avril 19 08:50 sg0
+< drwxrwxrwt  2 root     root            40 avril 19 08:50 shm
+---
+> drwxrwxrwt  2 root     root            40 avril 19 08:51 shm
