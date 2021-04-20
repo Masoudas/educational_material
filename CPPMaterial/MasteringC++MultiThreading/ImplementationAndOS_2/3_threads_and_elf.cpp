@@ -30,12 +30,13 @@
  * a process are stored both on the stack (variables exist within the scope) and heap (using the new operator). 
  * The stack is a section of memory (one allocated per thread), the size of which depends on the operating 
  * system and its configuration. One can generally also set the stack size programmatically when creating a 
- * new thread.
+ * new thread (me: Really?).
  * 
  * In an operating system, a process consists of a block of memory addresses, the size of which is constant and 
  * limited by the size of its memory pointers. For a 32-bit OS, this would limit this block to 4 GB. Within this 
  * virtual memory space, the OS allocates a basic stack and heap, both of which can grow until all memory 
  * addresses have been exhausted, and further attempts by the process to allocate more memory will be denied.
+ * (Me: Again, note that as stated, memory is allocated to a process, not individual threads.)
  * (Me: This is why a C++ program might crash, but this does not cause the entire system to falter.)
  * 
  * The stack is a concept both for the operating system and for the hardware. In essence, it's a collection 

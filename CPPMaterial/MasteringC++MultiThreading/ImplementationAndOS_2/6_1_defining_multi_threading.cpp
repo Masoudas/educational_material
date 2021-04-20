@@ -1,11 +1,12 @@
 /**
  * Me: Let's summarize this discussion as follows:
- *  -   Multiprogramming – A computer running more than one program at a time (like running Excel and Firefox simultaneously).
+ *  -   Multiprogramming – A computer running more than one program at a time (like running Excel and Firefox 
+ *      simultaneously).
  *  -   Multiprocessing – A computer using more than one CPU at a time.
- *  -   Multitasking – Tasks sharing a common resource (like 1 CPU).
+ *  -   Multitasking – Tasks sharing a common resource (like 1 CPU). It's an extention of multiprocessing.
  *  -   Multithreading is an extension of multitasking.
  * Fig 5 illustrates this perfectly. We see that multi-processing is using multiple CPUs in a computer. 
- * Multi-tasking is time sharing between different tasks on one CPU. Multi-threading is sharing a CPU among
+ * Multi-tasking is time sharing between different tasks on ONE CPU. Multi-threading is sharing a CPU among
  * different units of ONE task, possibly, or different tasks. Many people use task and process interchangeably.
  * Once again, process is OS level, whereas threads are something we define in our program for a process (or
  * task.)
@@ -26,5 +27,5 @@
  * time-slices in order to run multiple threads (me: of tasks) on a single processor core. This is different 
  * from multithreading in the sense that in a multitasking system, no tasks will ever run in a concurrent 
  * fashion on the same CPU core, though tasks can still be interrupted. 
- * Me: Possibly this means a task is not broken down to threads to be executed on one CPU. Why? I've no idea 
+ * Me: I don't understand this last sentence!
  */
