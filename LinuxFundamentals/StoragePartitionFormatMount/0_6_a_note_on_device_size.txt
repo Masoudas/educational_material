@@ -1,0 +1,9 @@
+This is taken from MasteringLinuxEmbeddedProgramming:
+
+Although a microSD card has 8 GB printed on the outside, it was only 7.2 GB on the inside. In part, this is 
+because of the different units used. The advertised capacity is measured in Gigabytes, 10^9, but the sizes 
+reported by software are in Gibibytes, 2^30. Gigabytes are abbreviated GB, Gibibytes as GiB. The same applies 
+for KB and KiB, and MB and MiB. 
+
+In simple plain English, one measures in powers of two (in computer,) the vendor measures in powers of ten
+(in scientific units.)

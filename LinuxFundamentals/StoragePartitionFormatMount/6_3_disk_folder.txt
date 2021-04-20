@@ -1,0 +1,23 @@
+The disk folder inside the /dev folder is a more detailed accout of what's going on inside this folder. 
+Indeed, if I go inside of it, I find the following subfolders:
+
+$ ls /dev/disk
+by-id  by-label  by-partlabel  by-partuuid  by-path  by-uuid
+
+As we can see, our devices are partitioned in this folder by id, uuid, etc. For example, if I go inside the
+by path folder and then long list it, I'll see the following on my disk, which we see are the links to any
+of the partitions. Repeat this for every folder and we shall see the same thing is happening.
+
+$ ls -l /dev/disk/by-path
+lrwxrwxrwx  ... pci-0000:00:14.0-usb-0:1:1.0-scsi-0:0:0:0 -> ../../sda
+lrwxrwxrwx  ... pci-0000:00:14.0-usb-0:1:1.0-scsi-0:0:0:0-part1 -> ../../sda1
+lrwxrwxrwx  ... pci-0000:00:14.0-usb-0:1:1.0-scsi-0:0:0:0-part2 -> ../../sda2
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1 -> ../../nvme0n1
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part1 -> ../../nvme0n1p1
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part2 -> ../../nvme0n1p2
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part3 -> ../../nvme0n1p3
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part4 -> ../../nvme0n1p4
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part5 -> ../../nvme0n1p5
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part6 -> ../../nvme0n1p6
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part7 -> ../../nvme0n1p7
+lrwxrwxrwx  ... pci-0000:3a:00.0-nvme-1-part8 -> ../../nvme0n1p8

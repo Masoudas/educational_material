@@ -1,0 +1,29 @@
+Installing a bootloader on a board for the first time requires some outside assistance. If the board has a 
+hardware debug interface, such as JTAG, it is usually possible to load a copy of U-Boot directly into RAM 
+and set it running. From that point, you can use U-Boot commands to copy itself into flash memory. The 
+details of this are very board-specific and outside the scope of this book.
+
+Many SoC designs have a boot ROM built in, which can be used to read boot code from various external sources, 
+such as SD cards, serial interfaces, or USB mass storage. This is the case with the am335x chip in the 
+BeagleBone Black, which makes it easy to try out new software. (me: This is what we discussed in the beginning
+of this chapter)
+
+You will need an SD card reader to write the images to a card. There are two types: external readers that 
+plug into a USB port, and the internal SD readers that are present on many laptops. A device name is 
+assigned by Linux when a card is plugged into the reader. The command lsblk is a useful tool to find out 
+which device has been allocated. For example, this is what I see when I plug a nominal 8 GB microSD card 
+into my card reader (me: Note that df or fdisk as well as cfdisk come handy here. See LinuxFundamentals,
+PartitionMount... folder:)
+
+Reminder: Don't forget to make a file system using mkfs after partitioning the disks.
+
+Now, we partition it as follows:
+    -   the first is 64 MiB, formatted as FAT32, and will contain the bootloader. We shall name it boot
+    -   the second is 1 GiB, formatted as ext4, which we will use in Chapter 5, Building a Root Filesystem.
+        We shall name it rootfs
+
+Naturlish, we copy the MLO and boot image file inside it:
+$ cp MLO u-boot.img /media/chris/boot
+
+Now, with no power on the board, install the SD card. The apply the usb port to the PC, and a serial port
+such as /dev/ttyUSB0 will appear on the pc. 

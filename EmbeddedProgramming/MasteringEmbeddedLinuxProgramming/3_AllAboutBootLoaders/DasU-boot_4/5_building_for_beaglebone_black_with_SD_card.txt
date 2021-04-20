@@ -1,3 +1,19 @@
+    -   From the official docs:
+The README file in the base folder says we must set the CROSS_COMPILER flag in the shell before we run the 
+cmake files.
+
+$      # As always, no gcc, but with a dash
+$ export CROSS_COMPILE
+
+Now, we choose the configuration we seek from the configs folder, and after that, we make it from the root
+folder:
+$ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- O=write_folder am335x_evm_defconfig # O is not small o
+$ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- all  # This should be done inside the write folder
+
+If we want to jumpstart another build, first clean the destination folder, then repeat the above.
+$ make O=write_folder distclean
+
+    -   From the book:
 Taking the BeagleBone Black as an example, we find that there is a likely configuration file named 
 configs/am335x_boneblack_defconfig and we find the text The binary produced by this board supports … Beaglebone 
 Black in the board README files for the am335x chip, board/ti/am335x/README. With this knowledge, building 
@@ -18,7 +34,7 @@ https://software-dl.ti.com/processor-sdk-linux/esd/docs/latest/AM335X/linux/Foun
 
 Now, assuming that's the case, first ensure that the cross-compiler is on the path. Then run the following two
 make commands:
-$ make CROSS_COMPILER=arm-cortex_a8-linux-gnueabihf o=write_folder am335x_evm_defconfig
-$ make CROSS_COMPILER=arm-cortex_a8-linux-gnueabihf o=write_folder
+$ make CROSS_COMPILE=arm-cortex_a8-linux-gnueabihf- O=write_folder am335x_evm_defconfig
+$ make all
 
 
