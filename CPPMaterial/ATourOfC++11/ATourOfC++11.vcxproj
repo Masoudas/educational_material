@@ -199,6 +199,7 @@
     <ClCompile Include="Concurrency_41\ThreadClass_\2_threads_are_not_copiable_but_movable.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\3_create_an_array_of_threads.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClass_\3_use_move_to_avoid_copy_with_threads.cpp" />
+    <ClCompile Include="ConstructionCleanupCopyMove_17\0_1_just_how_bad_copies_can_get.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\1_Understanding_Dynamics.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\2_When_Object_Is_Copied_Or_Moved.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\3_copy_or_assignment.cpp" />
@@ -443,6 +444,7 @@
     <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\5_accessing_operators_with_rvalues.cpp" />
     <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\6_literals_using_constexpr.cpp" />
     <ClCompile Include="OperatorOverloading_18\ComplexClassExample_2\7_helper_functions_for_complex_type.cpp" />
+    <ClCompile Include="OperatorOverloading_18\IndexOperator_4\1_stand_alone_version.cpp" />
     <ClCompile Include="OperatorOverloading_18\OverloadingAndSpace_1\1_operator_in_namespaces.cpp" />
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\0_type_conversion_and_static_cast.cpp" />
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\1_type_conversion_principles.cpp" />
@@ -634,6 +636,14 @@
     <ClCompile Include="TemplateMetaProgramming_28\4_meta_v_template_programming.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\5_1_tips_on_use_conditions.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\5_1_when_to_use_meta_programming.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\1_tuple_idea.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\2_base_derived_hierarchy.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\3_implementing_bases.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\4_implement_stream_operator.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_1_accessing_elements.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_2_why_not_index_operator.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_3_const_get_method.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\6_make_tuple.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\1_motivation.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_1_use_of_enable_if.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\2_2_use_of_enable_if.cpp" />

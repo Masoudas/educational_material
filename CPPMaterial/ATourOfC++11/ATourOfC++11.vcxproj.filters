@@ -364,6 +364,12 @@
     <Filter Include="Source Files\TemplateMetaProgramming_28\ConditionalDefinitionUsing_Enable_if_4\MoreExamples_1">
       <UniqueIdentifier>{a521bb38-4fb9-429a-abba-8f12640a4eee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5">
+      <UniqueIdentifier>{173d681f-25a2-472a-8171-a6fe762f3dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OperatorOverloading_18\IndexOperator_4">
+      <UniqueIdentifier>{6659d260-40d2-4d38-83b1-83b8356351c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2381,6 +2387,36 @@
     </ClCompile>
     <ClCompile Include="Templates_23\FunctionTemplates_5\7_1_optionals_are_ignored.cpp">
       <Filter>Source Files\Templates_23\FunctionTemplateOverloading_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\2_base_derived_hierarchy.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\3_implementing_bases.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\4_implement_stream_operator.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_1_accessing_elements.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_2_why_not_index_operator.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorOverloading_18\IndexOperator_4\1_stand_alone_version.cpp">
+      <Filter>Source Files\OperatorOverloading_18\IndexOperator_4</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\5_3_const_get_method.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\6_make_tuple.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\ACompileTimeList-Tuple_5\1_tuple_idea.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\ACompileTimeList-Tuple_5</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\0_1_just_how_bad_copies_can_get.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
