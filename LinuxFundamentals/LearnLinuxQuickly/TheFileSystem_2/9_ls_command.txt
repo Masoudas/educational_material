@@ -1,0 +1,33 @@
+Here we summarize the ls command:
+
+Writing the command ls -la, the letter 'd' that appears in the attributes of some the folders indicate directory, and l indicates
+link files. 
+The letter 'a' means --all. Note that only when we put this a do we see . and .. directories. This is because both of 
+these are hidden directories inside the current directory!
+
+$ ls    # lists in rows. sorts by name from a to z, numbers first
+$ ls -l # long. Prints all attributes of files
+The output of the ls -l command (except for some particular folders like /dev folder) is as follows:
+-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.exe
+
+    -   file permissions (-rwxrw-r--),
+    -   number of (hard) links (1), (me or the number of folders inside, including .. and ., hence minimum
+        is always two)
+    -   owner name (root),
+    -   owner group (root),
+    -   file size in bytes (2048),
+    -   time of last modification (Jan 13 07:11), and
+    -   file/directory name (afile.exe)
+
+$ ls -d     # Only shows the dirs, not their contents. No idea what it is!
+$ ls -lu    # shows the access time of the file, and does not change the order based on name.
+$ ls -R     # Recursively shows the folders as well.
+$ ls -lt    # t sorts by modification time
+$ ls -lr    # Reverses the order of list
+$ ls -lh    # Prtins disk usage in humanly readable manner.
+
+The most popuular format of listing a folder is by ls -latr, where t sorts by modification time, and r 
+reverses it, making oldest modified first.
+
+Note that we can't sort based on change time.
+

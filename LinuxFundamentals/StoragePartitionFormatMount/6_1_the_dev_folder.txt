@@ -1,6 +1,7 @@
 Like any other device, the attached storage devices appear in the /dev folder. In fact, one of the ways to
 ensure that the disk has been recognized (and not necessarily mounted) by the OS is to check and see if 
-a file appears corresponding to the disk in this folder.
+a file appears corresponding to the disk in this folder. It's rather interesting that usb storage devices are 
+not mounted as ttyusb, but rather as sda or sdb (which stands for storage device.)
 
 Consider a simple usb derive I attached to the PC (and it has two partitions). As soon as I did that, the
 following three files appeared in this folder:

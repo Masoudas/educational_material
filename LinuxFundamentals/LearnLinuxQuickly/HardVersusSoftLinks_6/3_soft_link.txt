@@ -1,5 +1,5 @@
 """""""""""""""""""""""
-WHAT IS A HARD LINK?
+WHAT IS A SOFT LINK?
 A soft link is a link that points to another file (like a shortcut on a Windows machine). It's also known as a symbolic link.
 """""""""""""""""""""""
 
@@ -8,6 +8,10 @@ To create a soft link, use the following command:
 
 (Me: Question: Does the soft link have to have the same extension as the original file? Nope! I even created an exe file to refer
 to a text file!)
+
+Note that whatever path we give to the original_file is the path stored in soft_link. If we give it a relative
+path, it will be that path, and if we give it a full path, it will be that path. If we want the link to work
+if we remove it around, we better use the full path.
 
 Using the stat command, we see that a soft link file is linking to what file on the system. Moreover the type of the file is 
 shown to be link.

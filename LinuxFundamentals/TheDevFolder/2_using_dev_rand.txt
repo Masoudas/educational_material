@@ -1,0 +1,19 @@
+
+You can use od to get numbers out of /dev/random and /dev/urandom.
+
+For example, 2 byte unsigned decimal integers,
+
+$ od -vAn -N2 -tu2 < /dev/urandom
+24352
+
+1 byte signed decimal integer,
+
+$ od -vAn -N1 -td1 < /dev/urandom
+-78
+
+4 byte unsigned decimal integers,
+
+$ od -vAn -N4 -tu4 < /dev/urandom
+3394619386
+
+Use man od for more information on od.

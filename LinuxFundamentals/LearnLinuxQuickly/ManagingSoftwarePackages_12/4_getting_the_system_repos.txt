@@ -1,0 +1,11 @@
+There are two ways to get the repos through which we look for repositories:
+
+-   Using the policy option:
+$ apt-cache policy
+
+If we supply the package name after policy, it will tell us which repo was used to get the package from:
+
+-   list files
+The repositories are included in the file /etc/apt/sources.list and in any file with the suffix .list under 
+the directory /etc/apt/sources.list.d/. You can check the man page:
+$ manpage sources.list

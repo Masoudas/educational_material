@@ -1,0 +1,57 @@
+We should distinguish between the following three times:
+
+    -   Access time: When a file was last accessed. This is known as atime
+    -   Modification time: Time of last modification of the file (known as mtime.) This is when for example
+        we edit the content of the file.
+    -   Change time: Time of last change of file innode (ctime.) A file innode changes by modification as
+        well as by change permission, attributes, links, etc. It changes by modification because size is
+        part of stat as well.
+
+Note: Apparently Linux file system is not very fond of creation time or birth, which is why this field is
+empty with the stat command. But creation time is kept in the ext4 file system.
+
+Example:
+
+$ touch f
+$ stat f
+ File: f
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 2373620     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/masoudas)   Gid: ( 1000/masoudas)
+Access: 2021-04-21 15:21:41.108348055 +0200
+Modify: 2021-04-21 15:21:41.108348055 +0200
+Change: 2021-04-21 15:21:41.108348055 +0200
+ Birth: -
+
+$ vim f # writing a char inside
+$ stat f    # Modification, access and change all have changed.
+stat f
+  File: f
+  Size: 2         	Blocks: 8          IO Block: 4096   regular file
+Device: 10305h/66309d	Inode: 2407106     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/masoudas)   Gid: ( 1000/masoudas)
+Access: 2021-04-21 15:24:42.593213764 +0200
+Modify: 2021-04-21 15:24:42.593213764 +0200
+Change: 2021-04-21 15:24:42.597214318 +0200
+ Birth: -
+
+$ ln f f2   # A hard link to f to change innode
+File: f
+  Size: 2         	Blocks: 8          IO Block: 4096   regular file
+Device: 10305h/66309d	Inode: 2407106     Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/masoudas)   Gid: ( 1000/masoudas)
+Access: 2021-04-21 15:24:42.593213764 +0200
+Modify: 2021-04-21 15:24:42.593213764 +0200
+Change: 2021-04-21 15:28:01.386629227 +0200     # Only change time modified
+ Birth: -
+
+$ less f    # reading f, or f2 for that matter
+$ stat f
+File: f2
+  Size: 2         	Blocks: 8          IO Block: 4096   regular file
+Device: 10305h/66309d	Inode: 2407106     Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/masoudas)   Gid: ( 1000/masoudas)
+Access: 2021-04-21 15:30:15.149780010 +0200     # Only access time has changed.
+Modify: 2021-04-21 15:24:42.593213764 +0200
+Change: 2021-04-21 15:28:01.386629227 +0200
+ Birth: -

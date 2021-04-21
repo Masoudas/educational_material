@@ -1,0 +1,37 @@
+Here, we have some of the most important files in this folder documented:
+
+-   /dev/loop
+The first loopback device. Loopback devices are used for mounting filesystems which are not located on other 
+block devices such as disks. For example if you wish to mount an iso9660 CD ROM image without burning it to 
+CD then you need to use a loopback device to do so. This is usually transparent to the user and is handled 
+by the mount command. 
+
+-   /dev/null # The famous null to which we send things we don't want! $ ls > /dev/null
+The bit bucket. A black hole where you can send data for it never to be seen again. Anything sent to /dev/null will disappear. This can be useful if, for example, you wish to run a command but not have any feedback appear on the terminal. It is a character device on major node 1 and minor node 3.
+
+- /dev/stoud, /dev/stdin, dev/stderr
+The famous command line operations. ls > /dev/stdout is equivalent to ls.
+
+- /dev/random or /dev/urandom
+These are kernel random number generators. /dev/random is a non-deterministic generator which means that the 
+value of the next number cannot be guessed from the preceding ones. It uses the entropy of the system 
+hardware to generate numbers. When it has no more entropy to use then it must wait until it has collected 
+more before it will allow any more numbers to be read from it. /dev/urandom works similarly. Initially it 
+also uses the entropy of the system hardware, but when there is no more entropy to use it will continue to 
+return numbers using a pseudo random number generating formula. This is considered to be less secure for 
+vital purposes such as cryptographic key pair generation. If security is your overriding concern then use 
+/dev/random, if speed is more important then /dev/urandom works fine. They are character devices on major 
+node 1 with minor nodes 8 for /dev/random and 9 for /dev/urandom.
+
+-   /dev/sda
+The first SCSI (Small Computer System Interface ) drive on the first SCSI bus. The following drives are named 
+similar to IDE drives. /dev/sdb is the second SCSI drive, /dev/sdc is the third SCSI drive, and so forth.
+
+-   /dev/ttyS0
+The first serial port. Many times this it the port used to connect an external modem to your system.
+
+-   /dev/zero
+This is a simple way of getting many 0s. Every time you read from this device it will return 0. This can be 
+useful sometimes, for example when you want a file of fixed length but don't really care what it contains. 
+It is a character device on major node 1 and minor node 5.
+

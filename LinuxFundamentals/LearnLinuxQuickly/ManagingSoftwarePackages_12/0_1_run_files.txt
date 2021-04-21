@@ -1,0 +1,6 @@
+Another way packages are provided is through run files. For these files, we tend to need to change the permission
+to 777 and owner as the user before being able to execute them like a binary:
+
+$ chmod 777 package.run
+$ chmown username package.run
+$ sudo ./package.run

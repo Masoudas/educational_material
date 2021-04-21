@@ -1,0 +1,8 @@
+To list all packages installed, try:
+$ dpkg -l
+
+To count the number of packages, try this:
+$ dpkg -l | wc -l
+2021
+
+So I have this many packages installed!
