@@ -32,5 +32,5 @@ Enable_if<!Has_not_equals<Iter>(),Iter> find(Iter first, Iter last, Val v)
 
 template<typename T>
 auto operator!=(const T& lhs, const T& rhs) -> decltype(!(lhs == rhs)){
-	return !(lhs == rhs)
+	return !(lhs == rhs);
 }
