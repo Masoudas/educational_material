@@ -1,0 +1,7 @@
+As always, we can either build from source, or install directly.
+
+In particular, in Ubuntu, we can use package manager to install qtcreator:
+sudo apt-get install qtcreator qt5-default
+
+This however, does not seem to work properly, and the best way to do so is to use the installer of qt.
+It will install all the libraries and qtcreator.

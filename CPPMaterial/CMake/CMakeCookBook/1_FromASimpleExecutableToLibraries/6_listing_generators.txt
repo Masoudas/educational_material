@@ -1,0 +1,12 @@
+Typing cmake --help lists the generators for cmake:
+
+$ cmake --help
+
+For example on Linux, we have make, as well as for example Ninja.
+
+We can pass new generators to cmake using the -G option.
+
+$ cmake -S. -Bbuild -G Ninja
+
+In this way, we see that the build system generated has the build.ninja and rules.ninja files. Finally, running
+the "cmake --build ." wrapps the ninja command in a unified, cross-platform interface.

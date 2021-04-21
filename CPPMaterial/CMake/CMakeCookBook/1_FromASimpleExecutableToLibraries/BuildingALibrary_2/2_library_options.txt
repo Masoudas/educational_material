@@ -1,0 +1,15 @@
+The following library types can be built with CMake:
+
+    -   STATIC, which we have already encountered, will be used to create static libraries, that is, 
+        archives of object files for use when linking other targets, such as executables.
+    -   SHARED will be used to create shared libraries, that is, libraries that can be linked dynamically 
+        and loaded at runtime. Switching from a static library to a dynamic shared object (DSO) is as easy 
+        as using add_library(message SHARED Message.hpp Message.cpp) in CMakeLists.txt. 
+    -   OBJECT can be used to compile the sources in the list given to add_library to object files, but then 
+        neither archiving them into a static library nor linking them into a shared object. The use of object 
+        libraries is particularly useful if one needs to create both static and shared libraries in one go. We 
+        will demonstrate this in this recipe.
+    -   MODULE libraries are once again DSOs. In contrast to SHARED libraries, they are not linked to any 
+        other target within the project, but may be loaded dynamically later on. This is the argument to use 
+        when building a runtime plugin.
+    

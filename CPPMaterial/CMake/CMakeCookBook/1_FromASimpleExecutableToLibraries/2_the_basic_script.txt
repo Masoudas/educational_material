@@ -1,0 +1,24 @@
+The basic script resides in the source folder as CMakeLists.txt. Note that this is case sensitive.
+
+A basic script looks something like this.   The CMake language is case insensitive, but the arguments 
+are case sensitive:
+
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+project(MyProject LANGUAGES CXX)    # It's strongly advised to declare the language.
+add_executable(hello_world main.cpp)    # This would be for example the name of a solution in VS.
+
+Then, we perform the famous commands to configure the project from command line, where the build is in source,
+but in a subfolder called build:
+
+$ mkdir -p build
+$ cd build
+$ cmake ..  # Configure.
+
+At this point, we can either use the native build system, or we can directly build with cmake in our desired
+configuration mode:
+$ cmake --build . -config RELEASE  (Assumes we're in the build folder.)
+
+This command is a generic, cross-platform wrapper to the native build command for the chosen generator, make 
+in the case of Linux for example.
+
+

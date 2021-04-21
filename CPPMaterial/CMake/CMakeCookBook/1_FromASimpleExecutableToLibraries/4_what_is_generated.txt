@@ -1,0 +1,9 @@
+On GNU/Linux, CMake will by default generate Unix Makefiles to build the project:
+
+    -   Makefile: The set of instructions that make will run to build the project.
+    -   CMakeFiles: Directory which contains temporary files, used by CMake for detecting the operating 
+        system, compiler, and so on. In addition, depending on the chosen generator,it also contains 
+        project-specific files.
+    -   cmake_install.cmake: A CMake script handling install rules, which is used at install time.
+    -   CMakeCache.txt: The CMake cache, as the filename suggests. This file is used by CMake when re-running 
+        the configuration.
