@@ -1,0 +1,11 @@
+Can we generate the static and dynamic libraries with the same name, and link against the one that we desire?
+
+Yes! A target property called OUTPUT_NAME helps us with that:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+add_library(MSG_LIB_SHARED SHARED Message.hpp Message.cpp)
+
+set_target_properties(MESSAGE_LIB_SHARED
+    PROPERTIES
+    OUTPUT_NAME MSG_LIB
+)

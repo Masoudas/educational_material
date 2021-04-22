@@ -2,13 +2,12 @@ In this basic example, we convert two files Messages.cpp and Messages.hpp into a
 create another target called app.
 
 
-
 Note: As we can see below, we don't declare how linkage should take place (static or dynamic) with the target
 link libraries. Rather, we create the target either static or shared, and upon linkeage, we just use the
 library we like. Hence below for example, we build both the shared and static libraries, but we use the 
 shared one. An interesting question that arises here is this: if we build both shared and static libs with
 the same name, it would be fine. But then how can we distinguish linkage to static or dynamic? Apparently,
-we can't, because I checked to cmake documentation and there wasn't any examples. Hence, in such cases,
+we can't, because I checked the cmake documentation and there wasn't any examples. Hence, in such cases,
 we need to distinguish between the names of the libraries. 
 
 Note: Notice that lib is added to the library name in Linux, and that the output format is properly set to
@@ -22,7 +21,7 @@ add_library(MSG_LIB_STATIC STATIC Message.hpp Message.cpp)
 add_library(MSG_LIB_SHARED SHARED Message.hpp Message.cpp)
 
 add_executable(app main.cpp)
-target_link_libraries(app MSG_LIB_STATIC)
+target_link_libraries(app MSG_LIB_STATIC)   # Linking to static, hence built with static.
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 Note that:

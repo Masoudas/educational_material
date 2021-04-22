@@ -13,3 +13,21 @@ The following library types can be built with CMake:
         other target within the project, but may be loaded dynamically later on. This is the argument to use 
         when building a runtime plugin.
     
+Note that OBJECT does not generate any output, which is quite interesting.
+
+CMake is also able to generate other special forms of libraries that generate no output:
+    -   IMPORTED: This type of library target represents a library located outside the project. The main use 
+        for this type of library is to model pre-existing dependencies of the project that are provided by 
+        upstream packages. As such IMPORTED libraries are to be treated as immutable
+
+    -   INTERFACE: This special type of CMake library is similar to an IMPORTED library, but is mutable and 
+        has no location. Its main use case is to model usage requirements for a target that is outside our 
+        project.
+
+    -   ALIAS, as the name suggests, a library of this type defines an alias for a pre-existing library target 
+        within the project. It is thus not possible to choose an alias for an IMPORTED library.
+        Synatx is:
+        add_library(<name> ALIAS <target>)
+
+Hence for example, to create an alias for the MSG_LIB_SHARED called MSG_LIB:
+add_library(MSG_LIB ALIAS MG_LIB_SHARED)
