@@ -388,6 +388,13 @@
     <ClCompile Include="Namespaces_14\1_granularity_of_a_cpp_program.cpp" />
     <ClCompile Include="Namespaces_14\0_2_inclusion_compilation_linkage.cpp" />
     <ClCompile Include="Namespaces_14\2_why_we_need_modularity.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_1_motivation.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_4_operator_v_function.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_2_adl_rules.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_2_motivation.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_3_motivation.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_1_the_standard_docs.cpp" />
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_3_adl_rules.cpp" />
     <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\1_desk_calculator_into_modules.cpp" />
     <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\2_using_namespace_as_module.cpp" />
     <ClCompile Include="Namespaces_14\ModularizationAndInterfaces_2\3_implementation.cpp" />
@@ -684,6 +691,7 @@
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_1_traits.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_2_application_of_iterator_trait.cpp" />
     <ClCompile Include="TemplateMetaProgramming_28\TypeFunctions_1\9_3_it_is_probably_overcooked.cpp" />
+    <ClCompile Include="TemplateMetaProgramming_28\VariadicTemplates_6\0_1_a_famous_example.cpp" />
     <ClCompile Include="Templates_23\0_0_templates_are_type_safe.cpp" />
     <ClCompile Include="Templates_23\0_10_using_typename_before_aliases.cpp" />
     <ClCompile Include="Templates_23\0_1_type_conversion_with_templates.cpp" />

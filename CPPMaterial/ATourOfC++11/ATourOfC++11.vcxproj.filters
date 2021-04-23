@@ -370,6 +370,12 @@
     <Filter Include="Source Files\OperatorOverloading_18\IndexOperator_4">
       <UniqueIdentifier>{6659d260-40d2-4d38-83b1-83b8356351c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Namespaces_14\ADLFromStandard_7">
+      <UniqueIdentifier>{6eceb338-145a-4705-8818-6d3083e68e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TemplateMetaProgramming_28\VariadicTemplates_6">
+      <UniqueIdentifier>{f9b63df3-b182-44b2-869d-ae036d1a7aea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2417,6 +2423,30 @@
     </ClCompile>
     <ClCompile Include="ConstructionCleanupCopyMove_17\0_1_just_how_bad_copies_can_get.cpp">
       <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_1_motivation.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_2_motivation.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_3_motivation.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_1_the_standard_docs.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_2_adl_rules.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\1_4_operator_v_function.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="Namespaces_14\ADLFromStandard_7\2_3_adl_rules.cpp">
+      <Filter>Source Files\Namespaces_14\ADLFromStandard_7</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMetaProgramming_28\VariadicTemplates_6\0_1_a_famous_example.cpp">
+      <Filter>Source Files\TemplateMetaProgramming_28\VariadicTemplates_6</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
