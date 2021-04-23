@@ -1,0 +1,4 @@
+lp dev files are then ones associated with printer (I guess on the lpt ports, but I may be wrong.)
+
+It's interesting that we can directly send a file to these using the same stream commands:
+$ cat file.pdf > /dev/lp0

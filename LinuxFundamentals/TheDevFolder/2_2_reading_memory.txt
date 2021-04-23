@@ -1,0 +1,21 @@
+We can for example try and read from memory instead of rand as follows:
+
+$ dd if=/dev/mem bs=2048 count=100
+
+However, this does not work. Because if we long list this file we see that:
+crw-r----- 1 root kmem 1, 1 avril 23 08:31 /dev/mem
+
+Hence, we see that no one is supposed to execute this file (including the root, as we discussed.)
+This is more evident if we checkout the log messages of the system at /var/log/messages
+(Actually, such a file does not exist on my machine. However, there are various log file.)
+
+$ tail -n 2 /var/log/messages
+Nov 14 14:37:31 david kernel:
+usercopy: kernel memory exposure attempt detected from ffff9f78c0010000 (dma-kmalloc-512) (2048 bytes)
+
+What this error means is that the kernel is doing its job by protecting memory that belongs to other 
+processes which is exactly how it should work. So, although you can use /dev/mem to display data stored in 
+RAM memory, access to most memory space is protected and will result in errors. Only that virtual memory 
+which is assigned by the kernel memory manager to the BASH shell running the dd command should be accessible 
+without causing an error. Sorry, but you cannot snoop in memory that does not belong to you unless you find 
+a vulnerability to exploit.
