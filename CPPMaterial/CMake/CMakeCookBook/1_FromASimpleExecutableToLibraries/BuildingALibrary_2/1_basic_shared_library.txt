@@ -1,0 +1,37 @@
+In this basic example, we convert two files Messages.cpp and Messages.hpp into a library, then use them to
+create another target called app.
+
+
+Note: As we can see below, we don't declare how linkage should take place (static or dynamic) with the target
+link libraries. Rather, we create the target either static or shared, and upon linkeage, we just use the
+library we like. Hence below for example, we build both the shared and static libraries, but we use the 
+shared one. An interesting question that arises here is this: if we build both shared and static libs with
+the same name, it would be fine. But then how can we distinguish linkage to static or dynamic? Apparently,
+we can't, because I checked the cmake documentation and there wasn't any examples. Hence, in such cases,
+we need to distinguish between the names of the libraries. 
+
+Note: Notice that lib is added to the library name in Linux, and that the output format is properly set to
+so or a.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(myProj LANGUAGES CXX)
+
+add_library(MSG_LIB_STATIC STATIC Message.hpp Message.cpp)
+add_library(MSG_LIB_SHARED SHARED Message.hpp Message.cpp)
+
+add_executable(app main.cpp)
+target_link_libraries(app MSG_LIB_STATIC)   # Linking to static, hence built with static.
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+Note that:
+    -   add_library(message STATIC Message.hpp Message.cpp): This will generate the necessary build tool 
+        instructions for compiling the specified sources into a library. The first argument to add_library 
+        is the name of the target. The same name can be used throughout CMakeLists.txt to refer to the 
+        library. The actual name of the generated library will be formed by CMake by adding the prefix lib 
+        in front and the appropriate extension as a suffix. The library extension is determined based on 
+        the second argument, STATIC or SHARED, and the operating system. 
+
+    -   target_link_libraries(hello-world message): Links the library into the executable. This command will 
+        also guarantee that the hello-world executable properly depends on the message library. We thus ensure 
+        that the message library is always built before we attempt to link it to the hello-world executable.

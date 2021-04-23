@@ -1,0 +1,15 @@
+We can access memory devices throught the /dev/mem folder
+
+$ ls -l /dev/dem
+crw-r----- 1 root kmem 1, 1 avril 23 08:31 /dev/mem
+
+Note that we are able to mount memory and actually read files from it and write to it, as discussed in
+"StoragePartitionFormatMount" folder.
+
+Note that not all the devices have dev file, one of which for example is the moniter, and that's because
+it deals with the graphics card, and not with the OS. The video however is associated with the fb0 file,
+which we know because it's group is video! then there's also the media files which is video, but is 
+associated with CD-ROMs, etc.
+
+crw-rw----  1 root     video    29,     0 avril 23 08:31 fb0
+crw-rw----  1 root     video   237,     0 avril 23 08:31 media0 # CD-ROM devices.

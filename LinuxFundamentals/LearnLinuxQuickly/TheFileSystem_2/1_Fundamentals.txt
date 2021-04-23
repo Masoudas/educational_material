@@ -2,11 +2,6 @@ The root of the file system starts at '/'.
 
 The 'cd' command is used for changing directory. The command cd - returns us back to the last working directory we were at.
 
-Writing the command ls -la, the letter 'd' that appears in the attributes of some the folders indicate directory, and l indicates
-link files. 
-The letter 'a' means --all. Note that only when we put this a do we see . and .. directories. This is because both of 
-these are hidden directories inside the current directory!
-
 We have the following main folders in a linux files system:
 /       This is the root of your filesystem, where everything begins.
 

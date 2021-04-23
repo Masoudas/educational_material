@@ -1,0 +1,53 @@
+To list the tty devices (only,) I use the following command:
+
+$ ls -l /dev/tty[[:digit:]]
+crw--w---- 1 root     tty 4, 0 avril 23 08:31 /dev/tty0
+crw--w---- 1 root     tty 4, 1 avril 23 08:31 /dev/tty1
+crw--w---- 1 masoudas tty 4, 2 avril 23 08:31 /dev/tty2
+crw--w---- 1 root     tty 4, 3 avril 23 08:31 /dev/tty3
+crw--w---- 1 root     tty 4, 4 avril 23 08:31 /dev/tty4
+crw--w---- 1 root     tty 4, 5 avril 23 08:31 /dev/tty5
+crw--w---- 1 root     tty 4, 6 avril 23 08:31 /dev/tty6
+crw--w---- 1 root     tty 4, 7 avril 23 08:31 /dev/tty7
+crw--w---- 1 root     tty 4, 8 avril 23 08:31 /dev/tty8
+crw--w---- 1 root     tty 4, 9 avril 23 08:31 /dev/tty9
+
+As we very soon will discuss, tty2 on my Ubuntu machine is the graphical terminal. The thing to notice is
+that the owner of this process is me (masoudas,) whereas root is for others. This is because right now,
+I'm on the graphical terminal, typing this discussion!
+
+As we may already know, virtual consoles of Linux can be accessed using alt+ctrl+F keys.
+
+Press Ctrl-Alt-F2 to switch to console 2. On some distributions, the login information includes the tty 
+(Teletype) device associated with this console, but many do not. It should be tty2 because you are in 
+console 2. To come back to GUI, we should normally press alt+ctrl+F7, because terminal 7 is where the GUI
+is being run. In my Ubuntu distro, it was with F2.
+
+Login as a non-root user. Then you can use the who am i command—yes, just like that, with spaces—to 
+determine which tty device is connected to this console.
+
+Let's do the following long listing of tty2 and 3. 
+$ ls -l /dev/tty[23]    # Insteresting way of listing similar file names
+crw--w---- 1 masoudas tty 4, 2 avril 22 08:30 /dev/tty2
+crw--w---- 1 root     tty 4, 3 avril 22 08:37 /dev/tty3
+
+As device files, there is nothing special about them; they are simply character type devices. We will use 
+these devices for this experiment. The tty2 device is attached to virtual console 2 and the tty3 device is 
+attached to virtual console 3. Also, notice that the major and minor number on this machine are 4, and then
+2 and 3 respectively. 
+
+Note: It's also interesting that the owner of one is masoudas and the other is root. This is because right
+before I long listed, I opened up the terminal! This implies that everytime a user accesses a terminal, they
+become its owner.
+
+Now if we type the following in terminal three, it will be printed in termina four (we should become 
+super user for it. Just sudo is not enough):
+$ echo "Printing in terminal 4 from terminal 3" > /dev/tty4
+
+Me: As another experimet, pts is the terminal we open in GUI. We can do the same experiment and see the same
+result. In particular, note that for example when you open a bash in VS Code, there's a number there that
+says "3:bash". Everytime we open a terminal one of these pts (pseude terminal) is created in the /dev/pts
+folder, to which we can send messages. How many can we open? I went as far as 126, and then gave up!
+
+Note: To print which pseudo terminal a console is connected to, type:
+$ tty

@@ -1,0 +1,11 @@
+Along the left-hand side of the screen are a series of icons that let you select various views in your 
+application. They are as follows:
+
+    -   The Welcome mode, which shows basic information about Qt Creator
+    -   The Edit mode, which lets you edit the files that make up your application
+    -   The Design mode, which lets you use Qt Designer to design the user interface for your application
+    -   The Debug mode, which lets you debug your application while it's running, including doing things 
+        such as viewing the memory and variables, setting breakpoints, and stepping through the application
+    -   The Projects mode, which lets you adjust the build and link settings for your project
+    -   The Analyze mode, which lets you profile your application's runtime performance
+    -   The Help mode, which provides documentation on Qt Creator and the Qt framework

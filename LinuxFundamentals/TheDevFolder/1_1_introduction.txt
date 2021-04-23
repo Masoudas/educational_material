@@ -1,0 +1,57 @@
+Device files are also known as device special files. Device files are employed to provide the operating 
+system and users an interface to the devices that they represent. All Linux device files are located in 
+the /dev directory which is an integral part of the root (/) filesystem because these device files must be 
+available to the operating system during the boot process.
+
+One of the most important things to remember about these device files is that they are most definitely not 
+device drivers. They are more accurately described as portals to the device drivers. Data is passed from an 
+application or the operating system to the device file which then passes it to the device driver which then 
+sends it to the physical device (Fig1-HWToOSAndBack).
+
+In Figure 1, a simplified data flow is shown for a common command. Issuing the cat /etc/resolv.conf command 
+from a GUI terminal emulator such as Konsole or xterm causes the resolv.conf file to be read from the disk 
+with the disk device driver handling the device specific functions such as locating the file on the hard 
+drive and reading it. The data is passed through the device file and then from the command to the device 
+file and device driver for pseudo-terminal 6 where it is displayed in the terminal session
+
+
+-   Classification
+Device files can be classified in at least two ways. The first and most commonly used classification, is that 
+of the data stream commonly associated with the device. For example tty and serial devices are considered to 
+be character based because the data stream is transferred and handled one character or byte at a time. Block 
+type devices such as hard drives transfer data in blocks, typically a multiple of 256 bytes 
+Me: Hence, we have the term block file and character file. In fact, if we ls the /dev folder we see that
+
+$ ls -lha /dev
+...
+brw-rw----  1 root     disk    259,     8 avril 21  2021 nvme0n1p8
+...
+crw--w----  1 masoudas tty       4,     2 avril 21  2021 tty2
+...
+
+where the c stands for "char file" and b for "block file."
+
+The more detailed and explicit way to identify device files is using the device major and minor numbers. The 
+disk devices have a major number of 8 which designates them as SCSI block devices. Note that all PATA and 
+SATA hard drives have been managed by the SCSI subsystem because the old ATA subsystem was many years ago 
+deemed as not maintainable due to the poor quality of its code. As a result hard drives that would 
+previously been designated as “hd[a-z]” are now referred to as “sd[a-z]”.
+
+$ ls -l /dev
+brw-rw---- 1 root disk 8,  0 Nov 7 07:06 sda
+brw-rw---- 1 root disk 8,  1 Nov 7 07:06 sda1
+brw-rw---- 1 root disk 8, 16 Nov 7 07:06 sdb
+brw-rw---- 1 root disk 8, 17 Nov 7 07:06 sdb1
+brw-rw---- 1 root disk 8, 18 Nov 7 07:06 sdb2
+
+Note: When we ls the /dev folder, two additional numbers appear, as shown above, after the group name. These
+are the numbers we're going to talk about next:
+
+You can probably infer the pattern of disk drive minor numbers in the small sample shown above. Minor numbers 
+0, 16, 32 and so on up through 240 are the whole disk numbers. So major/minor 8/16 represents the whole disk 
+/dev/sdb and 8/17 is the device file for the first partition, /dev/sdb1. Numbers 8/34 would be /dev/sdc2.
+
+
+
+
+

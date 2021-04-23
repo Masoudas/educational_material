@@ -1,0 +1,10 @@
+When building with CMake, we have to switch between dirs to configure and generate, and then build. We can
+skip this using the following command:
+
+Note: The book says H instead of S, but S is in the documentation, so I use it.
+
+$ cmake -S. -Bbuild     # H is the root folder, and B is the build folder.
+
+Using the help, we can see that:
+    -S <path-to-source>          = Explicitly specify a source directory.
+    -B <path-to-build>           = Explicitly specify a build directory.

@@ -1,0 +1,8 @@
+To connect to a network, we need only to pass in the netwrok name and password to the c or connect or 
+connection option:
+
+$ nmcli dev DEVICE connect "network name" password ""
+
+For example
+
+$ nmcli dev wifi connect "Nokia 7.1" password "Like there's any way I write my password here"

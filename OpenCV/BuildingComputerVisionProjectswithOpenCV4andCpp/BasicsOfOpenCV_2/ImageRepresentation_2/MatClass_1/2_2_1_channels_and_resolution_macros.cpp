@@ -7,7 +7,7 @@
  *  - c:    The number of channels.
  * 
  * Exceptionally, we have the following types too. These types don't have a channel, which make them ideal for storing
- * data as matrices.:
+ * data as matrices:
  *   -	#define CV_8U    0
  *   -	#define CV_8S    1
  *   - 	#define CV_16U   2
@@ -20,15 +20,18 @@
  * Question: Is there a difference between CV_8U and CV_8UC1? Nope. Note that in the macro definitions we have:
  * #define CV_8UC1   CV_MAKETYPE(CV_8U,1)   where 
  * #define CV_MAKETYPE(depth, cn)   (CV_MAT_DEPTH(depth) + (((cn)-1) << CV_CN_SHIFT))
- * 
  * and the second defintion leads to 0+((1-1) << 3) == 0, which is the same value as CV_8U.
+ * 
+ * Note: There's no 32 bit unsigend int, but there's a signed version of that. 32 bits should be made
+ * float.
  * 
  * Now, there are a couple of exceptional macros here that are interesting. The following are good for getting the 
  * pointer to the underlying image data, as we shall describe later:
- *    -   typedef uint32_t 	uint
- *    -   typedef signed char 	schar
+ *    -   typedef signed char 	schar       # Don't forget this one!
  *    -   typedef unsigned char 	uchar
  *    -   typedef unsigned short 	ushort
+ *    -   typedef uint32_t 	uint
+ *    -   typedef int32_t   int
  *    -   typedef int64_t 	int64
  *    -   typedef uint64_t 	uint64
  * 

@@ -1,0 +1,11 @@
+We first create a console application. Choose Application, then Qt Console Application, and then click on 
+Choose.
+
+Qt asks for the build system, which for now we set to qmake. We shall use cmake later on as well.
+
+Qt Creator can support various kits and libraries against which you can build an application. Select the 
+desktop Qt Kit, which should have been installed by default. If you're running Qt on Windows, please make 
+sure that you select the desktop Qt Kit with MinGW, as it is installed by default. Make sure that you have 
+installed Microsoft Visual Studio beforehand if you pick the desktop Qt MSVC Kit. Then, click on Next.
+
+Note: We may need to manually define the qmake and Qt version in the settings of this step.

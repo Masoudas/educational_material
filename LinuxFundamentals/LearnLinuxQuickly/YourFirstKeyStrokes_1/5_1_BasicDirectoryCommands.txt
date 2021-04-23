@@ -1,15 +1,1 @@
 'pwd' prints the present working directory, where ~ is always the path /home/current_user.
-
-ls lists the pwd. ls -la lists the pwd with permissions associated. Also, ls path lists the given path. Note that the date
-shown in front of each file name is the 'Last Modification Date'.
-
-The command 'ls -l -d dir_path' shows what's going on with only the given dir path. The -u option shows the access time of the file
-instead of modification time. The option -t sorts the listing based on modification time, and if passed with -u based on access
-time.
-
-The -R option in the ls command allows us to list the content of each sub-directory as well.
-
-The most popuular format of listing a folder is by ls -latr, where t sorts by modification time, and r reverses it, making oldest
-modified first.
-
-The command df -h shows the amount of space available in each basic folder of linux in a humanly readable format.

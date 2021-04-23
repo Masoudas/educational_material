@@ -1,0 +1,19 @@
+To list the devices available for connection, we can add a d or dev or device to the command:
+
+$ nmcli dev
+DEVICE             TYPE      STATE         CONNECTION                  
+wlp0s20f3          wifi      connected     Wifirst/B Estudines Nedelec 
+p2p-dev-wlp0s20f3  wifi-p2p  disconnected  --                          
+lo                 loopback  unmanaged     -- 
+
+So now that we have the name of the devices, we can search for the name of the wifi networks just by adding
+the wifi device type right after the dev, and ir prints a very beautiful output:
+
+$ nmcli dev wifi    # We can't write the device name,
+IN-USE  BSSID              SSID                         MODE   CHAN  RATE        SIGNAL  BARS  SECURITY    
+*       C4:A8:1D:91:9C:20  Wifirst/B Estudines Nedelec  Infra  11    130 Mbit/s  44      ▂▄__  --          
+        CC:2D:1B:05:24:A5  HALAAK                       Infra  6     260 Mbit/s  34      ▂▄__  WPA1 WPA2   
+        68:A3:78:6A:29:2F  FreeWifi_secure              Infra  9     195 Mbit/s  32      ▂▄__  WPA2 802.1X 
+        34:27:92:43:12:2E  FreeWifi                     Infra  11    195 Mbit/s  27      ▂___  --          
+        34:27:92:43:12:2D  Wormhole                     Infra  11    195 Mbit/s  24      ▂___  WPA2
+

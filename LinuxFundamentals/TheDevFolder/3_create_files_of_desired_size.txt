@@ -1,0 +1,16 @@
+The dd Unix utility program reads octet streams from a source to a destination, possibly performing data 
+conversions in the process. Destroying existing data on a file system partition (low-level formatting):
+
+dd if=/dev/zero of=/dev/ <destination partition>
+
+Creating a 1 MiB file, called foobar, filled with null characters:
+
+dd if=/dev/zero of=foobar count=1024 bs=1024
+
+Note: The block size value can be given in SI (decimal) values, e.g. in GB, MB, etc. To create a 1 GB file 
+one would simply type:
+
+dd if=/dev/zero of=foobar count=1 bs=1GB
+
+Note: Instead of creating a real file with only zero bytes, many file systems also support the creation of 
+sparse files which returns zeros upon reading but use less actual space.

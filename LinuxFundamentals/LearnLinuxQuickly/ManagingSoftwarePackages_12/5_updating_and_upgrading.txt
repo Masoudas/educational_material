@@ -1,0 +1,14 @@
+To update a particular package, we pass the only-upgrade option
+
+$ apt-get install --only-upgrade Package
+
+Then we have two commands to update and upgrade the packages on the system:
+
+$ sudo apt-get update 
+It will update the list of available packages and their versions, but does not do any installation.
+
+$ sudo apt-get upgrade
+The actuall installation and unpacking.
+
+In Linux lingo, the process of upgrading all the installed packages on your system is called patching 
+the system.

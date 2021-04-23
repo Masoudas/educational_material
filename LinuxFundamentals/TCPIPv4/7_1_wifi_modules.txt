@@ -1,0 +1,33 @@
+Often, it's the wifi module that has many networks available to it (because an ethernet connection comes from
+one source by cable.) We can list the available wifi networks using the nmcli command.
+
+NMCLI stands for command line tools for controlling network manager.
+
+A simple run of the nmcli on my machine leads the following (equivalent to passing the status option):
+
+$ nmcli
+wlp0s20f3: connected to Wifirst/B Estudines Nedelec     # The local network I'm connected to on this machine
+        "Intel Wi-Fi"
+        wifi (iwlwifi), 9C:29:76:43:35:EB, hw, mtu 1500
+        ip4 default
+        inet4 10.188.246.192/16
+        route4 0.0.0.0/0
+        route4 10.188.0.0/16
+        route4 169.254.0.0/16
+        inet6 fe80::127e:8cc4:24f5:d40e/64
+        route6 fe80::/64
+
+p2p-dev-wlp0s20f3: disconnected
+        "p2p-dev-wlp0s20f3"
+        wifi-p2p, hw
+
+lo: unmanaged
+        "lo"
+        loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
+
+DNS configuration:
+        servers: 10.188.0.1
+        interface: wlp0s20f3
+
+So, we see that command list many featurs, especially the DNS server, which we need to check for from the 
+/etc/resolv.conf file.
