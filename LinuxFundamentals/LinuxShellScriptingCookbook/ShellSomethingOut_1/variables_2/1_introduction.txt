@@ -1,0 +1,10 @@
+All programming languages use variables to retain data for later use or modification. Unlike compiled 
+languages, most scripting languages do not require a type declaration before a variable is created. The type 
+is determined by usage. The value of a variable is accessed by preceding the variable name with a dollar 
+sign. The shell defines several variables it uses for configuration and information like available printers, 
+search paths, and so on. These are called environment variables.
+
+Variables are named as a sequence of letters, numbers, and underscores with no whitespace. Common 
+conventions are to use UPPER_CASE for environment variables and camelCase or lower_case for variables used 
+within a script.
+

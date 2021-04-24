@@ -1,0 +1,28 @@
+Environment variables are inherited from the parent processes. For example, HTTP_PROXY is an environment 
+variable that defines which proxy server to use for an Internet connection as follows:
+
+HTTP_PROXY=192.168.1.23:3128
+export HTTP_PROXY
+
+The export command declares one or more variables that will be inherited by child tasks. After variables are 
+exported, any application executed from the current shell script, receives this variable. There are many 
+standard environment variables created and used by the shell, and we can export our own variables.
+
+For example, the PATH variable lists the folders, which the shell will search for an application. A typical 
+PATH variable will contain the following:
+
+$ echo $PATH 
+/home/slynux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+Directory paths are delimited by the : character. Usually, $PATH is defined in /etc/environment, /etc/profile 
+or ~/.bashrc
+
+To add a new path to the PATH environment, use the following command:
+PATH=$PATH:new_path
+
+Reminder note:
+When using single quotes, variables will not be expanded and will be displayed as it is. This means, 
+$ echo '$var' will display $var.
+
+Whereas, $ echo "$var" will display the value of the $var variable if it is defined, or nothing if it is not 
+defined.

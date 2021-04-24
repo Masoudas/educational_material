@@ -1,0 +1,14 @@
+When we open a terminal or run a shell, we see a prompt such as user@hostname: /home/$. Different GNU/Linux 
+distributions have different prompts and different colors. The PS1 environment variable defines the primary 
+prompt. The default prompt is defined by a line in the ~/.bashrc file.
+
+$ cat ~/.bashrc | grep PS1 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+
+Note that \h means host, \w means current working dir and \u means user name.
+
+To modify it, try for example:
+slynux@localhost: ~$ PS1="PROMPT> " # Prompt string changed 
+PROMPT> Type commands here.

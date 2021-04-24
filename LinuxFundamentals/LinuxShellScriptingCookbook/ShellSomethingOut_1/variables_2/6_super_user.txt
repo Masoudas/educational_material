@@ -1,0 +1,23 @@
+The id of the super user is always 0. Now, we can check this by:
+    [1] logging in as super user and then "$id -u"
+    [2] echoing the $UID variable, which contains the userid of the current user
+
+In fact, here's a sample script that checks whether the current user is the super user:
+
+if [ $UID -ne 0]; then
+    echo Not super user, exiting
+    exit
+else
+    echo super user
+fi
+
+Or equivalently
+
+if $UID -ne 0:1
+    echo Not super user, exiting
+    exit
+else
+    echo super user
+fi
+
+Note that [ is actually a command and must be separated from the rest of the string with spaces.

@@ -1,0 +1,11 @@
+Commands are typed and executed in a terminal session. When a terminal is opened, a prompt is displayed. The 
+prompt can be configured in many ways, but frequently resembles this:
+
+%%%%
+username@hostname$
+%%%%
+
+Alternatively, it can also be configured as root@hostname # or simply as $ or #.
+
+The $ character represents regular users and # represents the administrative user root. Root is the most 
+privileged user in a Linux system.

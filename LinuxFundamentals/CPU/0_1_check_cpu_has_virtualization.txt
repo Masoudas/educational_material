@@ -1,0 +1,16 @@
+Installing a 64-bit Linux guest requires that CPU virtualization extension support (Intel VT-x or AMD-SV) be 
+turned on within the host system's basic input/output system (BIOS) settings.
+
+Thus, the flag we're looking for in Intel CPUs is vmx, and svm is the flag we look for in AMD CPUs.
+
+We can check this flag in two ways. Note that we're writing one expression to look for both flags, but in
+reality, we must check vms only for Intel and svm only for AMD:
+
+1-  Through lshw -class cpu:
+$ sudo lshw -class cpu | egrep --color "vmx|svm"
+
+2-  Through checking the /proc/cpuinfo file
+$ egrep --color "vmx|svm" /proc/cpuinfo
+
+Note that these flags indicate that this property is available. Thus, we can actually enable it in the bios
+setting. I also wonder if we can enable it from the "efibootmgr" or something similar.

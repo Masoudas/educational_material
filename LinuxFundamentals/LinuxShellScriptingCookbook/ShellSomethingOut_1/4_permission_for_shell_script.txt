@@ -1,0 +1,10 @@
+I feel the need to demonstrate this point once again. Note that a user needs execution permission to execute
+a BINARY. We don't need to have access to the internals of a binary (read it.) We just need execution perms.
+
+However, with shell scripts, the shell actually need to read the shell script. Now, because the owner of a
+pseudo shell is the current user (for example masoud, and this can be verified by long listing the /dev/pts
+folder,) then, because we need to load the content of the shell script, we need read access first. Then,
+of course we need to execute it. Hence, chmod 755 allows other users to execute the script.
+
+Technically, however, we only need the read permission. This is because we can read the content into another
+file, and then execute that other file!
