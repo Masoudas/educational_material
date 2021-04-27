@@ -1,0 +1,23 @@
+Me: Note a very important distinction between using and not using export.
+
+When we use export, all the child processes of this shell will be using this variable (like a bash script
+for example.) However, if we didn't do that, and just defined a variable, then they wouldn't inherit it.
+
+You can check this as follows:
+
+$ v1=a
+$ export v1
+
+$ v2=b
+
+Now, typing these two in a bash script:
+
+$ echo -e "$v1\t$v2"
+
+will just print v1 and empty for v2 (me: Again, like CMake, we print empty for empty variables!)
+
+As a final reminder, note that each time a new shell is opened, the .bashrc is executed before it. Hence,
+if we have a variable exported, it will be automatically exported to each terminal everytime we open a new
+terminal (using alt+ctrl+t.) At the same time, I don't think every background process would have it, and 
+those use the environment files.
+

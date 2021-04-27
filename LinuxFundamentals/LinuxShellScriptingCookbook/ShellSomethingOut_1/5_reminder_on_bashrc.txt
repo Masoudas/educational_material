@@ -1,0 +1,9 @@
+When an interactive shell starts, it executes a set of commands to initialize settings, such as the prompt 
+text, colors, and so on. These commands are read from a shell script at ~/.bashrc (or ~/.bash_profile for 
+login shells), located in the home directory of the user. The Bash shell maintains a history of commands 
+run by the user in the ~/.bash_history file.
+
+
+A login shell is created when you log in to a machine. However, terminal sessions you create while logged in 
+to a graphical environment (such as GNOME, KDE, and so on), are not login shells. (Me: I think the virtual
+terminal shells that we create by pressing alt+ctrl+f are an example of login shells.) 

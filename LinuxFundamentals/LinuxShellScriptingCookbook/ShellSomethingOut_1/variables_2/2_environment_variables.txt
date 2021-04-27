@@ -1,0 +1,22 @@
+To print all of the current environment variable, use either of the following (these include those that are
+defined in the .bashrc file):
+
+$ env
+$ printenv
+
+To view the variables of other processes, chech their environment variables in the /proc/$PID/environ
+folder:
+
+$ cat /proc/$PID/environ
+
+To get the process id of an application on this username:
+$ ps --user $(id - u) | grep process_name       # Method 1
+$ pgrep process_name    # Method 2: Use process grep
+
+Note that the containing files have variables terminated in '\0'. Use the translate command to translate
+them into \n (it asks whether to show a binary file. Say yes):
+
+$ less /proc/$PID/environ | tr '\0' '\n'
+
+Some of the well-known environment variables are HOME, PWD, USER, UID, and SHELL, HOSTNAME, USERNAME,
+

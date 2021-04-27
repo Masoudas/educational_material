@@ -43,5 +43,5 @@ void draw_histogram(std::vector<cv::Mat>& hist_planes){
     cv::normalize(hist_planes[0], hist_planes[0], 0, 512, cv::NormTypes::NORM_MINMAX);
     cv::normalize(hist_planes[1], hist_planes[0], 0, 512, cv::NormTypes::NORM_MINMAX);
     cv::normalize(hist_planes[2], hist_planes[0], 0, 512, cv::NormTypes::NORM_MINMAX);
-    ??
+
 }

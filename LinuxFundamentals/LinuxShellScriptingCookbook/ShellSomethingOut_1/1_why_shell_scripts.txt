@@ -1,0 +1,18 @@
+When Bell Labs created an interactive user interface for the brand new Unix operating system, it had a 
+unique feature. It could read and evaluate the same commands from a text file (called a shell script), as it 
+accepted being typed on a terminal.
+
+This facility was a huge leap forward in productivity. Instead of typing several commands to perform a set 
+of operations, programmers could save the commands in a file and run them later with just a few keystrokes. 
+Not only does a shell script save time, it also documents what you did.
+
+Initially, Unix supported one interactive shell, written by Stephen Bourne, and named it the Bourne Shell 
+(sh).
+
+In 1989, Brian Fox of the GNU Project took features from many user interfaces and created a new shell—the 
+Bourne Again Shell (bash). The bash shell understands all of the Bourne shell constructs and adds features 
+from csh, ksh, and others.
+
+Users interact with the shell environment via a terminal session. If you are running a GUI-based system, 
+this will be a terminal window. If you are running with no GUI, (a production server or ssh session), you 
+will see the shell prompt as soon as you log in.

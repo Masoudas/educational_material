@@ -1,0 +1,25 @@
+Shell scripts can be created same as shell, that is, with an equal sign:
+
+$ myVar=value
+
+The name of the variable is varName and value is the value to be assigned to it. If value does not contain 
+any space character (such as space), it need not be enclosed in quotes, otherwise it must be enclosed in 
+single or double quotes.
+
+Note: Consider the difference between the two, and remember not to make this mistake!
+varName=value   # defines a new variable name
+varName = value # Checks for equality of the two!
+
+Access the contents of a variable by prefixing the variable name with a dollar sign ($).
+var="value" #Assign "value" to var
+echo $var
+echo ${var} # The CMake version!
+
+Variable values within double quotes can be used with printf, echo, and other shell commands, but then
+again, not with single quotes:
+fruit=Apple
+number=5
+echo "The $fruit tree has ${number} ${fruit}s"
+
+Note that because the shell uses a space to delimit words, we need to add curly braces to let the shell know 
+that the variable name is fruit, not fruits.

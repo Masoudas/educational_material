@@ -1,0 +1,1 @@
+Histogram Equalization: gray or colored image. Uses accumulate histogram distribution to enhance image contrast.

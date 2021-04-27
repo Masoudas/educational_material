@@ -1,0 +1,23 @@
+A shell script typically begins with a shebang:
+
+#!/bin/bash
+
+Shebang is a line on which #! is prefixed to the interpreter path. /bin/bash is the interpreter command path 
+for Bash. A line starting with a # symbol is treated by the bash interpreter as a comment. Only the first 
+line of a script can have a shebang to define the interpreter to be used to evaluate the script.
+
+A bash script can be executed in two ways:
+    -   Pass it to bash binary as:
+        $ bash myscript.sh
+    -   Execute it directly (from inside the folder) after setting the execution permission:
+        $ chmod 775 myscript.sh
+        $ ./myscript.sh
+
+If a script is run as a command-line argument for bash, the shebang is not required. The shebang facilitates 
+running the script on its own. Executable scripts use the interpreter path that follows the shebang to 
+interpret a script.
+
+The following command makes a script executable by all users:
+$ chmod a+x sample.sh   # Me: In actually, we need chmod 755 sample.h because we need both read and execute
+                        # permission for other users to perform it. A shell has to be read I guess first.
+

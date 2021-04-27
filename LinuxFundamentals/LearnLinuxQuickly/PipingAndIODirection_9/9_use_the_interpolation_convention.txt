@@ -1,0 +1,6 @@
+Often, when a command wants the username, kernal name or whatever of the shell, or hosname, don't be afraid
+to use the execution interpolation convention (as I like to call it) in linux. For example, consider trying
+to list the current user's processes in linux. We can do as follows:
+
+$ ps --user $(id -u)    # Prints the processes associated with this user id.
+$ sudo apt-get upgrade linux-headers-$(uname -r)

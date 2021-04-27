@@ -1,0 +1,4 @@
+We can use the pound sign to get the length of the shell variable (content)
+
+$ echo ${#PATH}
+$ str_len=${#SHELL}

@@ -1,0 +1,20 @@
+printf is the same as the corresponding C command and can be used as follows:
+
+#!/bin/bash
+#Filename: printf.sh
+
+printf  "%-5s %-10s %-4s\n" No Name  Mark
+printf  "%-5s %-10s %-4.2f\n" 1 Sarath 80,3456      # Notice that the numbers have comma rathen than dot.
+printf  "%-5s %-10s %-4.2f\n" 2 James 90,9989
+printf  "%-5s %-10s %-4.2f\n" 3 Jeff 77,564
+
+The %s, %c, %d, and %f characters are format substitution characters, which define how the following argument 
+will be printed. The %-5s string defines a string substitution with left alignment (- represents left 
+alignment) and a 5 character width. If - was not specified, the string would have been aligned to the right. 
+The width specifies the number of characters reserved for the string. For Name, the width reserved is 10. 
+Hence, any name will reside within the 10-character width reserved for it and the rest of the line will be 
+filled with spaces up to 10 characters total.
+
+For floating point numbers, we can pass additional parameters to round off the decimal places. For the Mark 
+section, we have formatted the string as %-4.2f, where .2 specifies rounding off to two decimal places. Note 
+that for every line of the format string, a newline (\n) is issued
