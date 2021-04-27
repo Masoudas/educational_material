@@ -5,5 +5,6 @@
 * There are three types smart pointers:
 * -	unique_ptr: to represent exclusive ownership
 * - shared_ptr: to represent shared ownership
-* - weak_ptr: to break loops in circular shared data structures
+* - weak_ptr: to break loops in circular shared data structures. We can become owner of object if we wish to
+* do so.
 */

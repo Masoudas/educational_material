@@ -346,9 +346,6 @@
     <Filter Include="Source Files\TemplateMetaProgramming_28\TypeFunctions_1">
       <UniqueIdentifier>{c630a115-44c5-4f7e-80dc-c1b159d3f0fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Concurrency_41\ThreadClassFromStandard_">
-      <UniqueIdentifier>{1b313114-b03f-4912-aeb7-ea4b1a37f695}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1">
       <UniqueIdentifier>{ab47d9ef-3875-4ea6-ba65-88052f8ed1fa}</UniqueIdentifier>
     </Filter>
@@ -375,6 +372,33 @@
     </Filter>
     <Filter Include="Source Files\TemplateMetaProgramming_28\VariadicTemplates_6">
       <UniqueIdentifier>{f9b63df3-b182-44b2-869d-ae036d1a7aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Concurrency_41\ThreadClassFromStandard_1">
+      <UniqueIdentifier>{1b313114-b03f-4912-aeb7-ea4b1a37f695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11">
+      <UniqueIdentifier>{62c3f583-5db1-46f6-be0b-f241917fd580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\ExplicitConversion_5">
+      <UniqueIdentifier>{48a33d0d-6326-41f4-834b-57fcc2bc4dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\FreeStore_2">
+      <UniqueIdentifier>{e43fe520-9f27-4bab-98c8-9bf8ea02ee2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\Lists_3">
+      <UniqueIdentifier>{de2c2361-f8c4-4f4a-a950-03a35fd76ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\Operators_1">
+      <UniqueIdentifier>{e442123d-6cd7-4022-a8b3-567553f38e6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Concurrency_41\LocksFromStandard_2">
+      <UniqueIdentifier>{af5e9fd3-e485-4023-a78d-50912a12f4d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\Lambdas_4">
+      <UniqueIdentifier>{ada53ce7-3785-4af1-b337-59ec7182c1ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SelectOperations_11\RAIIFromStandard_6">
+      <UniqueIdentifier>{1944b636-7180-49c9-846c-8a822a174578}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -2112,39 +2136,6 @@
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\6_cant_specialize_with_templated_types.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_1_thread_class.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_2_1_passing_method_of_execution_to_thread.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_2_2_passing_arguments_and_method.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_2_3_exceptions_and_threads.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_2_4_passing_argument_by_reference.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_2_thread_id.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_3_exceptions_of_thread.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_4_1_thread_joinable_join_detach.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_4_2_thread_is_alive_in_the_process.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_4_3_example_of_join.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_4_4_example_of_detach.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\4_1_what_is_a_thread.cpp">
       <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
     </ClCompile>
@@ -2153,12 +2144,6 @@
     </ClCompile>
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\7_more_complex_asynchronous_example.cpp">
       <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_4_5_only_main_process_has_to_be_extended.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\1_5_two_threads_can_access_a_resource.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
     </ClCompile>
     <ClCompile Include="Specialization_25\TemplateParametersAndArguments_1\1_1_what_can_be_supplied_as_template.cpp">
       <Filter>Source Files\Specialization_25\TemplateParametersAndArguments_1</Filter>
@@ -2241,12 +2226,6 @@
     <ClCompile Include="Specialization_25\TemplateSpecialization_3\7_3_standard_docs.cpp">
       <Filter>Source Files\Specialization_25\TemplateSpecialization_3</Filter>
     </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\2_threads_are_not_copiable_but_movable.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\3_create_an_array_of_threads.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
-    </ClCompile>
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\1_2_race_condition_example.cpp">
       <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
     </ClCompile>
@@ -2321,9 +2300,6 @@
     </ClCompile>
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\4_deadlock.cpp">
       <Filter>Source Files\Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardRaceConditions_1</Filter>
-    </ClCompile>
-    <ClCompile Include="Concurrency_41\ThreadClass_\3_use_move_to_avoid_copy_with_threads.cpp">
-      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_</Filter>
     </ClCompile>
     <ClCompile Include="TemplateMetaProgramming_28\5_1_when_to_use_meta_programming.cpp">
       <Filter>Source Files\TemplateMetaProgramming_28</Filter>
@@ -2448,5 +2424,193 @@
     <ClCompile Include="TemplateMetaProgramming_28\VariadicTemplates_6\0_1_a_famous_example.cpp">
       <Filter>Source Files\TemplateMetaProgramming_28\VariadicTemplates_6</Filter>
     </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_1_thread_class.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_1_passing_method_of_execution_to_thread.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_2_passing_arguments_and_method.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_3_exceptions_and_threads.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_4_passing_argument_by_reference.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_thread_id.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_3_exceptions_of_thread.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_4_1_thread_joinable_join_detach.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_4_2_thread_is_alive_in_the_process.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_4_3_example_of_join.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_4_4_example_of_detach.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_4_5_only_main_process_has_to_be_extended.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_5_two_threads_can_access_a_resource.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\2_threads_are_not_copiable_but_movable.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\3_create_an_array_of_threads.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\3_use_move_to_avoid_copy_with_threads.cpp">
+      <Filter>Source Files\Concurrency_41\ThreadClassFromStandard_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\ArrowOperatorOverloading.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\BitwiseOperators.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\BitWiseOperatorsOverloading.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\IncrementAndDecementOverloading.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\IncrementAndDecrement.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\LogicalOperators.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\OverridingOperatosInsideOutsideClass.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\RValueReference_PassingByReferenceOrValue_2.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\RValueReference_StealingResource_1.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\ShiftOperators.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\TernaryIfs.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\TheEqualityOperator.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Operators_1\TheInequalOperator.cpp">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\Arrays_4.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\NewWithArrays_02.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\NoNakedNewOrDelete_3.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\NoThrowNew_6.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\RAIIPrinciple.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\StringIsOnHeap_03.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Lists_3\BracketListUses_1.cpp">
+      <Filter>Source Files\SelectOperations_11\Lists_3</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\Lists_3\QualifiedVsUnqualifiedLists_2.cpp">
+      <Filter>Source Files\SelectOperations_11\Lists_3</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\ExplicitConversion_5\3_1_static_cast_throws_error.cpp">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\ExplicitConversion_5\Basics_1.cpp">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\ExplicitConversion_5\VariousUsesOfBracket_2.cpp">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_1_lock_guard_motivation.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_2_standard_documentation.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\FactoriesAndResourceManagement_2_2.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\Delete_2_1.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\New_1.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\new_header_5_1.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\overloading_new_in_global_name_space_5_2.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\overloading_new_for_custom_type_5_3.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\OverloadingNewAndDelete_5_4.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\mem_management_with_non_operators_5_5_1.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\rare_occassion_of_calling_destructor_5_5_2.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\delete_and_destructor_2_3.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\1_motivation.cpp">
+      <Filter>Source Files\SelectOperations_11\RAIIFromStandard_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory_34\ResourceManagementPointers_1\2_2_make_unique.cpp">
+      <Filter>Source Files\Memory_34\ResourceManagementPointers_1</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\2_standard_definition.cpp">
+      <Filter>Source Files\SelectOperations_11\RAIIFromStandard_6</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\3_std_and_RAII.cpp">
+      <Filter>Source Files\SelectOperations_11\RAIIFromStandard_6</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="SelectOperations_11\Operators_1\Modulo.txt">
+      <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
+    </Text>
+    <Text Include="SelectOperations_11\ExplicitConversion_5\DynamicCast_6.txt">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
+    <Text Include="SelectOperations_11\ExplicitConversion_5\FunctionStyleCast_7.txt">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
+    <Text Include="SelectOperations_11\ExplicitConversion_5\NamedCast_4.txt">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
+    <Text Include="SelectOperations_11\ExplicitConversion_5\ReinterpretCast_5.txt">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
+    <Text Include="SelectOperations_11\ExplicitConversion_5\StaticCast_3.txt">
+      <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
   </ItemGroup>
 </Project>

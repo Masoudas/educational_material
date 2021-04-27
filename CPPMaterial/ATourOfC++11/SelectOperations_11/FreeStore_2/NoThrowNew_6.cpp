@@ -5,7 +5,8 @@
  * In this version, if the resource cannot be acquired, the pointer would be null.
  * 
  * There's an equivalent delete version for completenes, however we don't use it. Because delete by default
- * does not throw any exceptions.
+ * does not throw any exceptions. (Me: it does though, if memory is already deleted. However, I get his 
+ * point that a nullptr does not throw.)
  * 
  */
 #include <new>          // std::nothrow
