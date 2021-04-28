@@ -1,0 +1,30 @@
+ttyS are serial terminal lines.
+
+Terminal emulators go by many names, and, due to the varied use of the word terminal, there can often be 
+some confusion about what someone means when they say terminal.
+
+Terminal in old computers was the interface. Today, terminal programs are "emulating" the experience that 
+was working on one of these terminals. They are known as emulators, applications, programs, terms, TTYs, and 
+so on.
+
+When working on a modern operating system, the word terminal window will often be used to describe working
+within one of these applications.
+
+COM Port (Serial Port) - Each device you connect to your computer will be assigned a specific port number. 
+This helps to identify each device connected. Once a device has a port assigned to it, that port will be 
+used every time that device is plugged into the computer.
+
+Your device will show up on your computer as either COM# (if you’re on a Windows machine) or 
+/dev/tty.usbserial-######## (if you’re on a Mac/Linux computer), where the #’s are unique numbers or 
+alphabetic characters.
+
+TTY - TTY stands for teletypewriter or teletype. Much like terminal is synonymous with the terminals of old, 
+so too is teletype. These were the electromechanical typewriters used to enter information to the terminal and, 
+thus, to the mainframe. When working with terminals on Mac and Linux, you will often see tty used to 
+represent a communication port rather than 'COM port'.
+
+Serial Port Profile (SPP) - The Serial Port Profile is a Bluetooth profile that allows for serial communication 
+between a Bluetooth device and a host/slave device. With this profile enabled, you can connect to a Bluetooth 
+module through a serial terminal. This can be used for configuration purposes or for communication purposes. 
+While not exactly pertinent to this tutorial, it's still good to know about this profile if you want to use 
+Bluetooth in a project.

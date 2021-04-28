@@ -1,0 +1,5 @@
+As we can see inside the .bashrc file, there are a couple of aliases for the ls command:
+
+la  --> ls -A       :   Almost all, do not list implied . or ..
+ll  --> ls -alF     :   F appends a / to directories
+l   --> ls -CF      :   C means list as column (hence no single rows)

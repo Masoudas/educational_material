@@ -5,15 +5,16 @@ $ echo "Hello world!"
 Double quotes allow the shell to interpret special characters within the string. Single quotes disable this 
 interpretation.
 
-echo "cannot include exclamation - ! within double quotes"
+echo "cannot include exclamation - !within double quotes"
 
-This is reflected on the shell as (note: Not on my shell or script though!):
+This is reflected on the shell as (note: Not in my scripts though!):
 bash: !: event not found error
 
-f you need to print special characters such as !, you must either not use any quotes, use single quotes, or 
-escape the special characters with a backslash (again, not on my shell. It prints \! on terminal).
+If you need to print special characters such as !, you must either not use any quotes, use single quotes, or 
+escape the special characters with a backslash
 
-echo "Hello World\!"
+echo Hello World\!ad   # This prints fine. With quotes it prints \!
+
 
 -   With single quotation
 $ echo 'Hello world'

@@ -1,5 +1,8 @@
 Here we summarize the ls command:
 
+Note that by default, ls shows the modification time. We can use u to show access time and sort by it. We can
+use t to sort by modification time. r for both means reverse order.
+
 Writing the command ls -la, the letter 'd' that appears in the attributes of some the folders indicate directory, and l indicates
 link files. 
 The letter 'a' means --all. Note that only when we put this a do we see . and .. directories. This is because both of 
@@ -19,12 +22,13 @@ The output of the ls -l command (except for some particular folders like /dev fo
     -   time of last modification (Jan 13 07:11), and
     -   file/directory name (afile.exe)
 
-$ ls -d     # Only shows the dirs, not their contents. No idea what it is!
+$ ls -d     # Only shows the dirs, not their contents. Means shows the path to it I guess!
 $ ls -lu    # shows the access time of the file, and does not change the order based on name.
 $ ls -R     # Recursively shows the folders as well.
 $ ls -lt    # t sorts by modification time
 $ ls -lr    # Reverses the order of list
 $ ls -lh    # Prtins disk usage in humanly readable manner.
+$ ls -1     # One file per line (no long listing)
 
 The most popuular format of listing a folder is by ls -latr, where t sorts by modification time, and r 
 reverses it, making oldest modified first.

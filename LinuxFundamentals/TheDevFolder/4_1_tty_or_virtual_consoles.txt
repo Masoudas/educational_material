@@ -49,5 +49,6 @@ result. In particular, note that for example when you open a bash in VS Code, th
 says "3:bash". Everytime we open a terminal one of these pts (pseude terminal) is created in the /dev/pts
 folder, to which we can send messages. How many can we open? I went as far as 126, and then gave up!
 
-Note: To print which pseudo terminal a console is connected to, type:
+Note: To print which pseudo terminal a console is connected to, type in either the virtual console or pseudo
+terminal:
 $ tty

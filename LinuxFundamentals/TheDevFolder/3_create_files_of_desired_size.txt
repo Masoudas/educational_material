@@ -14,3 +14,9 @@ dd if=/dev/zero of=foobar count=1 bs=1GB
 
 Note: Instead of creating a real file with only zero bytes, many file systems also support the creation of 
 sparse files which returns zeros upon reading but use less actual space.
+
+Exercise: Write a file of 2KiB to RAM?
+Answer:
+$ df    # Find a ram partition tmpfs
+$ cd /dev/shm
+$ dd if=/dev/zero of=f bs=1024 count=2
