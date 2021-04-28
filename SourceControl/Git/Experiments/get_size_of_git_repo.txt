@@ -1,0 +1,4 @@
+One might wonder we can get the size of a repo without having to download it:
+
+We can apparently, using the weird command:
+$ echo https://github.com/hlamer/enki.git | perl -ne 'print $1 if m!([^/]+/[^/]+?)(?:\.git)?$!' | xargs -i curl -s -k https://api.github.com/repos/'{}' | grep size
