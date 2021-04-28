@@ -1,0 +1,7 @@
+The community has developed and evolved the Linux kernel documentation into a good state over many years of effort. The latest 
+version of the kernel documentation, presented in a nice and modern "web" style, can always be accessed online here: 
+https://www.kernel.org/doc/html/latest/.
+
+We can also make the kernel documentation from source using the make command on the root folder:
+$ make help   # shows the documentation version available
+$ make pdfdocs

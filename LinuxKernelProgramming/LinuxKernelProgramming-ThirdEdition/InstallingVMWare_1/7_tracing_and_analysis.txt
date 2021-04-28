@@ -1,0 +1,26 @@
+An extension of the well-known Berkeley Packet Filter or BPF, eBPF is the extended BPF. (FYI, modern usage of the term is simply to 
+refer to it as BPF, dropping the 'e' prefix). Very briefly, BPF used to provide the supporting infrastructure within the kernel to 
+effectively trace network packets. BPF is a very recent kernel innovation – available only from the Linux 4.0 kernel onward. It 
+extends the BPF notion, allowing you to trace much more than just the network stack. Also, it works for tracing both kernel space 
+as well as userspace apps. In effect, BPF and its frontends are the modern approach to tracing and performance analysis on a Linux 
+system.
+
+To use BPF, you will need a system with the following:
+
+-   Linux kernel 4.0 or later
+-   Kernel support for BPF (https://github.com/iovisor/bcc/blob/master/INSTALL.md#kernel-configuration)
+-   The BCC or bpftrace frontends installed (link to install them on popular Linux distributions: 
+    https://github.com/iovisor/bcc/blob/master/INSTALL.md#installing-bcc) Root access on the target system
+
+Using the BPF kernel feature directly is very hard, so there are several easier front ends to use. Among them, BCC and bpftrace are 
+regarded as useful. Check out the following link to a picture that opens your eyes to just how many powerful BCC tools are available 
+to help trace different Linux subsystems and hardware: 
+https://github.com/iovisor/bcc/blob/master/images/bcc_tracing_tools_2019.png.
+
+Important: You can install the BCC tools for your regular host Linux distro by reading the installation instructions here: 
+https://github.com/iovisor/bcc/blob/master/INSTALL.md. Why not on our guest Linux VM? You can, when running a distro kernel 
+(such as an Ubuntu- or Fedora-supplied kernel). The reason: the installation of the BCC toolset includes (and depends upon) the 
+installation of the linux-headers-$(uname -r) package; this linux-headers package exists only for distro kernels (and not for our 
+custom 5.4 kernel that we shall often be running on the guest).
+
+The main site for BCC can be found at https://github.com/iovisor/bcc.

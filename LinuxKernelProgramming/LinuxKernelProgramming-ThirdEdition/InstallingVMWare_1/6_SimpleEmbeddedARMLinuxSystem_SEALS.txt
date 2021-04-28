@@ -1,0 +1,9 @@
+SEALS or Simple Embedded ARM Linux System is a very simple "skeleton" Linux base system running on an emulated ARM machine. It 
+provides a primary Bash script that asks the end user what functionality they want via a menu, then accordingly proceeds to 
+cross-compile a Linux kernel for ARM, then creates and initializes a simple root filesystem. It can then call upon QEMU 
+(qemu-system-arm) to emulate and run an ARM platform (the Versatile Express CA-9 is the default board emulated). The useful thing 
+is, the script builds the target kernel, the root filesystem, and the root filesystem image file, and sets things up for boot. It 
+even has a simple GUI (or console) frontend, to make usage a bit simpler for the end user. 
+
+The project's GitHub page is here: https://github.com/kaiwan/seals/. Clone it and give it a try... we definitely recommend you have 
+a look at its wiki section pages at https://github.com/kaiwan/seals/wiki for help.

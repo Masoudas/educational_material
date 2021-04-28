@@ -1,0 +1,22 @@
+To see the kernel version number, simply run uname -r on your shell. How do you precisely interpret the output of uname -r? On our 
+Ubuntu distribution version 18.04 LTS guest VM, we run uname(1), passing the -r option switch to display just the current kernel 
+release or version:
+
+$ uname -r  # r stands for release
+5.8.0-50-generic
+
+The modern Linux kernel release number nomenclature is as follows:
+major#.minor#[.patchlevel][-EXTRAVERSION]
+
+The square brackets around the patchlevel and EXTRAVERSION components indicate that they are optional. The following table 
+summarizes the meaning of the components of the release number:
+
+Release # component	Meaning	Example numbers
+Major # (or w)  :	Main or major number; currently, we are on the 5.x kernel series, thus the major number is 5. Example:	
+                    2, 3, 4, and 5
+Minor # (or x)  :	The minor number, hierarchically under the major number. Example: 0 onward
+[patchlevel] (or y) :	Hierarchically under the minor number – also called the ABI or revision – applied on occasion to the stable 
+                        kernel when significant bug/security fixes are required. Example:	0 onward
+[-EXTRAVERSION] (or -z) :	Also called localversion; typically used by distribution kernels to track their internal changes.	
+                            Varies; Ubuntu uses w.x.y-'n'-generic
+

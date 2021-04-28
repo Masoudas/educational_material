@@ -1,0 +1,26 @@
+Static analyzers are tools that, by examining the source code, attempt to identify potential errors within it. They can be 
+tremendously useful to you as the developer, though you must learn how to "tame" them – in the sense that they can result in false 
+positives.
+
+Among them, the ones that are more relevant for Linux kernel code analysis include the following:
+
+    -   Sparse: https://sparse.wiki.kernel.org/index.php/Main_Page
+    -   Coccinelle: http://coccinelle.lip6.fr/ (requires the ocaml package installed)
+    -   Smatch: http://smatch.sourceforge.net/, http://repo.or.cz/w/smatch.git
+    -   Flawfinder: https://dwheeler.com/flawfinder/
+    -   Cppcheck: https://github.com/danmar/cppcheck
+
+For example, to install and try Sparse, do the following:
+$ sudo apt-get install sparse
+$ cd <kernel-src-tree>
+$ make C=1 CHECK="/usr/bin/sparse"
+
+Moreover clang is a frontend to GCC that is becoming more popular even for kernel builds. 
+$ apt install clang clang-tools.
+
+Static analysis tools can save the day. Time spent learning to use them effectively is time well spent.
+Me: Here's a good documentation on how to use it:
+http://btorpey.github.io/blog/2015/04/27/static-analysis-with-clang/#:~:text=Integrated%20with%20a%20typical%20build%20%20%20,%20%20ditto%20%202%20more%20rows%20
+
+Me: Which code analyzer does VS code use? It seems to work fine too. I checked at the extension, and there was no mention. We can 
+of course change it in the configuration.

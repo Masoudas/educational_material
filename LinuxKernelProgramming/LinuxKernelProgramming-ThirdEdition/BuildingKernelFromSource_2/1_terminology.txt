@@ -1,0 +1,10 @@
+A vanilla kernel: By vanilla kernel, we mean the plain and regular default kernel source code released by the Linux kernel community 
+on its repository, https://www.kernel.org
+
+Note that any Linux system, be it a supercomputer or a tiny embedded device, has three required components: 
+    -   a bootloader    :   Responsible for providing hardware information for the kernel (three stages in arm335x)
+    -   an Operating System (OS) kernel :   The kernel, loaded into memory, managing system resources.
+    -   and a root filesystem   :   The file system of linux.
+
+In this chapter, we concern ourselves only with the building of the Linux kernel from source. We do not delve into the root 
+filesystem details, and (in the next chapter) learn to minimally configure the (very x86-specific) GNU GRUB bootloader.

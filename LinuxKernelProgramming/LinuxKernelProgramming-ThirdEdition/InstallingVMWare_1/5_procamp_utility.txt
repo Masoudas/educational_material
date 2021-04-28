@@ -1,0 +1,8 @@
+Visualizing the complete memory map of the kernel Virtual Address Space (VAS) as well as any given process's user VAS is what the 
+procmap utility is designed to do.
+
+The description on its GitHub page sums it up:
+"It outputs a simple visualization of the complete memory map of a given process in a vertically-tiled format ordered by descending 
+virtual address. The script has the intelligence to show kernel and userspace mappings as well as calculate and show the sparse 
+memory regions that will be present. Also, each segment or mapping is scaled by relative size (and color-coded for readability). On 
+64-bit systems, it also shows the so-called non-canonical sparse region or 'hole' (typically close to 16,384 PB on the x86_64)."

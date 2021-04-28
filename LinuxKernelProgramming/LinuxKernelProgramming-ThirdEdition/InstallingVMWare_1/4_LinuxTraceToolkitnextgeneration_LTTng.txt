@@ -1,0 +1,9 @@
+A superb tool for tracing and profiling is the powerful Linux Tracing Toolkit next generation (LTTng) toolset, a Linux Foundation 
+project. LTTng allows you to trace both userspace (applications) and/or the kernel code paths in minute detail. This can tremendously 
+aid you in understanding where performance bottlenecks occur, as well as aiding you in understanding the overall code flow and thus 
+in learning about how the code actually performs its tasks.
+
+In order to learn how to install and use it, I refer you to its very good documentation here: https://lttng.org/docs​ 
+(try https://lttng.org/download/ for installation for common Linux distributions). It is also highly recommended that you install the 
+Trace Compass GUI: https://www.eclipse.org/tracecompass/. It provides an excellent GUI for examining and interpreting LTTng's 
+output.
