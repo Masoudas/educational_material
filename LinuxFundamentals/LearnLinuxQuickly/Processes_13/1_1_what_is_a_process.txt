@@ -9,6 +9,9 @@ To list all the processes that are owned by a specific user, you can run the com
 username:
 
 $ ps -u username
+$ ps -u $(id -u)  # Alternatively
+$ ps -u $USERNAME # Alternatively
+  
     PID TTY          TIME CMD
    1510 ?        00:00:01 systemd
    1511 ?        00:00:00 (sd-pam)

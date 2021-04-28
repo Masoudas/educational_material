@@ -1,0 +1,17 @@
+The curl command (let's say) reads a webpage from the Internet on the command line. As such, the page is read
+from whatever format it's in (could be a raw html, or CSS, or whatever.) 
+
+For example:
+$ curl https://www.kernel.org/category/releases.html > release.html
+
+Reads the html page into our command line, and then we write into an html file, which we can read.
+
+The following command reads the finger banner of the site, and thus prints the latest versions of the kernel
+for us, where L stands for location, meaning if address is changed, it will follow it:
+
+$ curl -L https://www.kernel.org/finger_banner
+The latest stable version of the Linux kernel is:             5.12
+The latest mainline version of the Linux kernel is:           5.12
+...
+
+

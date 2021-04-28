@@ -1,0 +1,23 @@
+A foreground process is a process that is attached to your terminal. You have to wait for a foreground process to 
+finish before you can continue using your terminal.
+
+On the other hand, a background process is a process that is not attached to your terminal, and so you can use 
+your terminal while a background process is running.
+
+For example, when we run firefox, or cmake-gui, the terminal has to wait for these processes to finish, before
+another process could run in the terminal. Another example is the famous yes command:
+
+$ yes MY_SENTENCE
+
+This would run for eternity, unless we kill the process (find it by pgrep and kill it.)
+
+To send a process to background, it suffices to place an ampersand in front of the process name:
+$ cmake-gui &
+[1] 7830
+
+The number is the process id. If we fully print the process with this id, we get:
+$ ps -fp 7830
+masoudas    7862    5456  1 15:55 pts/2    00:00:00 cmake-gui
+
+We see that it's still being run as part of the process 5456 (which is the bash of this terminal) Consequently,
+the process is still attached to the terminal, but runs in the background.
