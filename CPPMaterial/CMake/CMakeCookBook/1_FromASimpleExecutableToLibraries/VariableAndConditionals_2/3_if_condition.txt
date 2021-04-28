@@ -1,0 +1,11 @@
+The if condition as we may recall had a paranthesis in front of every condition:
+
+if()
+else()
+endif()
+
+Recall that:
+    -   A logical variable is true if it is set to any of the following: 1, ON, YES, TRUE, Y, or a non-zero number.
+    -   A logical variable is false if it is set to any of the following: 
+        0, OFF, NO, FALSE, N, IGNORE, NOTFOUND, an empty string, or it ends in the suffix -NOTFOUND
+        A raw string is false. A variable set to a non-empty string is true.

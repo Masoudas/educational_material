@@ -1,0 +1,14 @@
+The Russian Linux Verification Center, founded in 2005, is an opensource project; it has specialists in, and thus specializes in, 
+automated testing of complex software projects. This includes comprehensive test suites, frameworks, and detailed analyses (both 
+static and dynamic) being performed on the core Linux kernel as well as on the primarily device drivers within the kernel. This 
+project puts a great deal of focus on the testing and verification of kernel modules as well, which many similar projects tend to 
+skim.
+
+Of particular interest to us here is the Online Linux Driver Verification Service page 
+(http://linuxtesting.org/ldv/online?action=rules); it contains a list of a few verified Rules.
+
+By glancing through these rules, we'll be able to not only see the rule but also instances of actual cases where these rules were 
+violated by driver/kernel code within the mainline kernel, thus introducing bugs. The LDV project has successfully discovered and 
+fixed (by sending in patches in the usual manner) several driver/kernel bugs. In a few of the upcoming chapters, we shall mention 
+instances of these LDV rule violations (for example, memory leakage, Use After Free (UAF) bugs, and locking violations) having been 
+uncovered, and (probably) even fixed.

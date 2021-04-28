@@ -1,0 +1,78 @@
+A detailed description can be found within the kernel documentation here: 
+https://www.kernel.org/doc/html/latest/process/2.Process.html#how-the-development-process-works.
+
+A common misconception, especially in its baby years, was that the Linux kernel is developed in a very ad hoc fashion. This is not 
+true at all! The kernel development process has evolved to become a (mostly) well-oiled system with a thoroughly documented process 
+and expectation of what a kernel contributor should know in order to use it well. I refer you to the preceding link for the complete 
+details.
+
+As mentioned earlier, as of the time of writing, the 5.4 kernel is the latest Long-Term Stable (LTS) version, so we shall use it in 
+the materials that follow. So, how did it come to be? Obviously, it has evolved from the release candidate (rc) kernels and the 
+previous stable kernel release that precedes it, which in this case would be the v5.4-rc'n' kernels and the stable v5.3 one before it. 
+We use the git log command as follows to get a human-readable log of the tags in the kernel Git tree ordered by date. Here, we are 
+only interested in the work that has lead to the release of the 5.4 LTS kernel, hence we have deliberately truncated the following 
+output to reveal only that portion:
+
+$ git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
+* 2019-11-24 16:32:01 -0800 219d54332a09  (tag: v5.4)
+* 2019-11-17 14:47:30 -0800 af42d3466bdc  (tag: v5.4-rc8)
+* 2019-11-10 16:17:15 -0800 31f4f5b495a6  (tag: v5.4-rc7)
+* 2019-11-03 14:07:26 -0800 a99d8080aaf3  (tag: v5.4-rc6)
+* 2019-10-27 13:19:19 -0400 d6d5df1db6e9  (tag: v5.4-rc5)
+* 2019-10-20 15:56:22 -0400 7d194c2100ad  (tag: v5.4-rc4)
+* 2019-10-13 16:37:36 -0700 4f5cafb5cb84  (tag: v5.4-rc3)
+* 2019-10-06 14:27:30 -0700 da0c9ea146cb  (tag: v5.4-rc2)
+* 2019-09-30 10:35:40 -0700 54ecb8f7028c  (tag: v5.4-rc1)
+* 2019-09-15 14:19:32 -0700 4d856f72c10e  (tag: v5.3)
+* 2019-09-08 13:33:15 -0700 f74c2bb98776  (tag: v5.3-rc8)
+* 2019-09-02 09:57:40 -0700 089cf7f6ecb2  (tag: v5.3-rc7)
+* 2019-08-25 12:01:23 -0700 a55aa89aab90  (tag: v5.3-rc6)
+
+Aha! In the preceding code block, you can clearly see that the stable 5.4 kernel was released on 24 November 2019 and the 5.3 tree on 
+15 September 2019 (you can also verify this by looking up other useful kernel resources, such as 
+https://kernelnewbies.org/LinuxVersions).
+
+Kernel development workflow – the basics
+Here, we provide a brief overview of the typical kernel development workflow. Anyone like you who is interested in kernel development should at least minimally understand the process.
+
+A detailed description can be found within the kernel documentation here: https://www.kernel.org/doc/html/latest/process/2.Process.html#how-the-development-process-works.
+A common misconception, especially in its baby years, was that the Linux kernel is developed in a very ad hoc fashion. This is not true at all! The kernel development process has evolved to become a (mostly) well-oiled system with a thoroughly documented process and expectation of what a kernel contributor should know in order to use it well. I refer you to the preceding link for the complete details.
+
+In order for us to take a peek into a typical development cycle, let's assume we have the latest mainline Linux Git kernel tree cloned on to our system.
+
+The details regarding the use of the powerful git(1) Source Code Management (SCM) tool is beyond the scope of this book. Please see the Further reading section for useful links on learning how to use Git. Obviously, I highly recommend gaining at least basic familiarity with using git(1).
+
+As mentioned earlier, as of the time of writing, the 5.4 kernel is the latest Long-Term Stable (LTS) version, so we shall use it in the materials that follow. So, how did it come to be? Obviously, it has evolved from the release candidate (rc) kernels and the previous stable kernel release that precedes it, which in this case would be the v5.4-rc'n' kernels and the stable v5.3 one before it. We use the git log command as follows to get a human-readable log of the tags in the kernel Git tree ordered by date. Here, we are only interested in the work that has lead to the release of the 5.4 LTS kernel, hence we have deliberately truncated the following output to reveal only that portion:
+
+The git log command (that we use in the following code block, and in fact any other git sub-commands) will only work on a git tree. We use the following one purely for demonstrating the evolution of the kernel. A bit later, we will show how you can clone a Git tree.
+Copy
+$ git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %d'
+* 2019-11-24 16:32:01 -0800 219d54332a09  (tag: v5.4)
+* 2019-11-17 14:47:30 -0800 af42d3466bdc  (tag: v5.4-rc8)
+* 2019-11-10 16:17:15 -0800 31f4f5b495a6  (tag: v5.4-rc7)
+* 2019-11-03 14:07:26 -0800 a99d8080aaf3  (tag: v5.4-rc6)
+* 2019-10-27 13:19:19 -0400 d6d5df1db6e9  (tag: v5.4-rc5)
+* 2019-10-20 15:56:22 -0400 7d194c2100ad  (tag: v5.4-rc4)
+* 2019-10-13 16:37:36 -0700 4f5cafb5cb84  (tag: v5.4-rc3)
+* 2019-10-06 14:27:30 -0700 da0c9ea146cb  (tag: v5.4-rc2)
+* 2019-09-30 10:35:40 -0700 54ecb8f7028c  (tag: v5.4-rc1)
+* 2019-09-15 14:19:32 -0700 4d856f72c10e  (tag: v5.3)
+* 2019-09-08 13:33:15 -0700 f74c2bb98776  (tag: v5.3-rc8)
+* 2019-09-02 09:57:40 -0700 089cf7f6ecb2  (tag: v5.3-rc7)
+* 2019-08-25 12:01:23 -0700 a55aa89aab90  (tag: v5.3-rc6)
+[...]
+Aha! In the preceding code block, you can clearly see that the stable 5.4 kernel was released on 24 November 2019 and the 5.3 tree on 15 September 2019 (you can also verify this by looking up other useful kernel resources, such as https://kernelnewbies.org/LinuxVersions).
+
+For the development series that ultimately led to the 5.4 kernel, this latter date (15 September 2019) marks the start of what is 
+called the merge window for the next stable kernel for a period of (approximately) two weeks. In this period, developers are allowed 
+to submit new code to the kernel tree (in reality, the actual work would have been going on from a lot earlier; the fruit of this 
+work is now merged into mainline at this time).
+
+Two weeks later (on 30 September 2019), the merge window was closed and the rc kernel work started, with 5.4-rc1 being the first of 
+the rc versions, of course. The -rc (also known as prepatch) trees work primarily on merging patches and fixing (regression) bugs, 
+ultimately leading to what is determined by the chief maintainers (Linus Torvalds and Andrew Morton) to be a "stable" kernel tree. 
+The number of prepatches (-rc releases) varies. Typically, though, this "bugfix" window takes anywhere between 6 to 10 weeks, after 
+which the new stable kernel is released. In the preceding code block, we can see that eight release candidate kernels finally resulted 
+in the stable release of the v5.4 tree on 24 November 2019 (taking a total of 70 days).
+
+The same can be seen more visually via the releases page at https://github.com/torvalds/linux/releases

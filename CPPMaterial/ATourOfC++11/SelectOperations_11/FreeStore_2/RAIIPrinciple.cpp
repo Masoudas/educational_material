@@ -1,6 +1,5 @@
 /**
- * (This is not complete!).
- * 
+ * The
  * (Me: When we say resource acquisition is initialization, we mean that if the resource is acquired successfully,
  * it has been allocated in the memory, without throwing any exception.)
  * 

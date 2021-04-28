@@ -11,7 +11,7 @@
  * 
  * Also don't forget that Dynamically allocating arrays is required when your dimensions are given at runtime.
  * As we remember, for example the array size on the stack must be a constant (or constant expression?).
- * (Apparently, memory allocated to pointer is stored on the heap).
+ * (Memory allocated to pointer is stored on the heap).
  * 
  * How does one create the built-in types on the heap? Using the new operator
  * hence an expression like this:
@@ -30,10 +30,10 @@
  */
 #include <iostream>
 int using_new(){
-    auto p = new int;
+    auto p = new int;   // Uninitialized
     *p = 7;    
 
-    auto p1 = new int{};
+    auto p1 = new int{};    // Initialized
     std::cout << *p1;   // prints zero.
     return *p;
 }

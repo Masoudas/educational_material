@@ -1,0 +1,16 @@
+Only points to recall is that we can mount the disk drive using the media option, which we use to install Ubuntu from an iso file.
+
+Morever, in the Settings/General/Advanced, you want to have bi-directional clipboard and Drag'n drop, to be able to communicate
+with the host machine. This may not work properly, and we need to install additional packages, discussed over the internet.
+We might want to install additional features, which is in the download page as well. Once it's installed, we need to run the
+"Insert Guest Additional CD Images" from the devices menu.
+
+Once the virtual Ubuntu is installed, we need to have the following additional packages:
+
+sudo apt install git fakeroot build-essential tar ncurses-dev tar xz-utils libssl-dev bc stress python3-distutils libelf-dev 
+linux-headers-$(uname -r) bison flex libncurses5-dev util-linux net-tools linux-tools-$(uname -r) exuberant-ctags cscope 
+sysfsutils gnome-system-monitor curl perf-tools-unstable gnuplot rt-tests indent tree pstree smem libnuma-dev numactl hwloc 
+bpfcc-tools sparse flawfinder cppcheck tuna hexdump openjdk-14-jre trace-cmd virt-what
+
+
+In particular, pay attention to how the linux-headers are installed, as linux-headers-$(uname -r).

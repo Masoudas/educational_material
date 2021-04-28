@@ -1,0 +1,20 @@
+As we may recall, we can define variables (which are visible only inside the script and not available as options) with the set
+command:
+
+set(MyVariable Value)
+
+We can use the option command to provide a binary variable that the user can set:
+option(var_name "Doc" ON)
+
+Now, there's another way to create a magical option, that would only come conditionally. That is, for example if the user sets
+option A to True and option B to false, this third option will be generated for them, which they can choose on the GUI window
+for example:
+
+include(CMakeDependentOption)   # Note the inclusion of the dependent option.
+option(A ON)
+option(B OFF)
+cmake_dependent_option(C "Doc" OFF "A;NOT B" ON)    # This third option C appears only if A is ON and B is OFF. If it appears
+                                                    # it's set to OFF, otherwise, it's set to ON.
+
+It's important to note that we need to configure with our choice of A and B first (press configure on the GUI) before the third
+option appears. Hence, always click the configure button twice.

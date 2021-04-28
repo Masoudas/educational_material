@@ -1,0 +1,37 @@
+There are several types of Linux kernel source trees. The key one is the Long Term Support (LTS) kernel. It’s simply a "special" 
+release in the sense that the kernel maintainers will continue to backport important bug and security fixes upon it (well, security 
+issues are typically nothing but bugs), until a given EOL date.
+
+The "life" of an LTS kernel will usually be a minimum of 2 years, and it can go for several more (it's extended at times). The 5.4 
+LTS kernel that we will use throughout this book is the 20th LTS kernel and has a lifespan of just over 6 years – from November 2019 
+to December 2025.
+
+Me: If we go on the Release menu of the kernel.org, we see that the last LTS is version 5.10, EOL of 2022. Hence, not every stable
+release (like 5.12 that I'm using right now) is LTS.
+
+There are several types of release kernels in the repository. However, here, we mention an incomplete list, ordered from least to 
+most stable (thus, their life, from shortest to longest time span):
+
+    -   next trees: This is indeed the bleeding edge, subsystem trees with new patches collected here for testing and review. This 
+        is what an upstream kernel contributor will work on.
+    -   Prepatches, also known as -rc or mainline: These are release candidate kernels that get generated prior to a release.
+    -   Stable kernels: As the name implies, this is the business end. These kernels are typically picked up by distributions and 
+        other projects (at least to begin with). They are also known as vanilla kernels.  
+    -   Distribution and LTS kernels: Distribution kernels are (obviously) the kernels provided by the distributions. They typically 
+        begin with a base vanilla/stable kernel. LTS kernels are the specially maintained-for-a-longer-while kernels, making them 
+        especially useful for industry/production projects and products.
+    -   Super LTS (SLTS) kernels: Even longer maintained LTS kernels (by the Civil Infrastructure Platform 
+        (https://www.cip-project.org/), a Linux Foundation project).
+
+Querying the repository, www.kernel.org, in a non-interactive scriptable fashion can be done using curl(1):
+$ curl -L https://www.kernel.org/finger_banner
+The latest stable version of the Linux kernel is:             5.12
+The latest mainline version of the Linux kernel is:           5.12
+The latest stable 5.11 version of the Linux kernel is:        5.11.16
+The latest longterm 5.10 version of the Linux kernel is:      5.10.32
+The latest longterm 5.4 version of the Linux kernel is:       5.4.114
+The latest longterm 4.19 version of the Linux kernel is:      4.19.188
+The latest longterm 4.14 version of the Linux kernel is:      4.14.231
+The latest longterm 4.9 version of the Linux kernel is:       4.9.267
+The latest longterm 4.4 version of the Linux kernel is:       4.4.268
+The latest linux-next version of the Linux kernel is:         next-20210428

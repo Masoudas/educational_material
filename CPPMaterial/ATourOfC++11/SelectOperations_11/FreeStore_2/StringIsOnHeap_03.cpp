@@ -2,7 +2,7 @@
  * Because std::string is in fact a pointer to char, the content of it are located on the heap.
  * However, it will automatically manage its memory, hence there's no need to delete its elements
  * when we're done with it. However, the string itself if like an automatic variable, and goes
- * out of scope one it's done.
+ * out of scope once it's done.
  */
 
 #include <string>
@@ -31,7 +31,7 @@ std::string& reverse_string1(const std::string& s ){
         ss.push_back(s[i]);
     }
     
-    return ss;  // We use the copy constructor of string here.
+    return ss; // Disaster. Returning reference to an automatic variable.
 }
 
 /**
@@ -52,7 +52,7 @@ std::string* reverse_string2(const std::string& s ){
 
 std::vector<int> vecIsTheSame(){
     std::vector<int> v{1,2,3};
-    return v;
+    return v;   // Using move semantics
 }
 
 //int main(){
@@ -62,4 +62,5 @@ std::vector<int> vecIsTheSame(){
 //
 //    std::string& ref = reverse_string1();   // This will throw an exception if used. Resource is already deleted.
 //    std::string* ptr = reverse_string2();   // This is fine.
+//    delete ptr;
 //}

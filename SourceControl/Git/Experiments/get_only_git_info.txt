@@ -1,0 +1,6 @@
+A question that may arise is, how can I get only the version history of a repo, without actually downloading the entire repo.
+
+The answer is use the "--bare" option when cloning
+$ git clone --bare source
+
+This way, for example, we can access the log info of the repo.
