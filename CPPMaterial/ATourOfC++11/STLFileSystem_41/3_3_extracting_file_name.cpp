@@ -17,6 +17,15 @@
 * treated as an extension. Me: hidden files in Linux are not returned if they don't have an extension)
 * If the pathname is either . or .., or if filename() does not contain the . character, then empty path is 
 * returned.
+* 
+* The third useful method in this category is in fact the stem method. This method actually returns the stem of
+* the filename. The std documentation says "Returns the filename identified by the generic-format path stripped 
+* of its extension. Returns the substring from the beginning of filename() up to and not including the last 
+* period (.) character, with the following exceptions:
+*   -   If the first character in the filename is a period, that period is ignored (a filename like ".profile" 
+*       is not treated as an extension)
+*   -   If the filename is one of the special filesystem components dot or dot-dot, or if it has no periods, the 
+        function returns the entire filename(). "
 *
 */
 
@@ -37,6 +46,15 @@ void check_extension()
         << fs::path("/foo/.").extension() << '\n'
         << fs::path("/foo/..").extension() << '\n'
         << fs::path("/foo/..bar").extension() << '\n';          
+}
+
+void check_file_stem(){
+     std::cout << fs::path("/foo/bar.txt").stem() << '\n'   // prints bar
+              << fs::path("/foo/.bar").stem() << '\n';      // prints .bar
+ 
+    for (fs::path p = "foo.bar.baz.tar"; !p.extension().empty(); p = p.stem())  
+        std::cout << p.extension() << '\n'; // Prints .tar first, then .baz, then .bar
+                                            
 }
 
 //int main() {
