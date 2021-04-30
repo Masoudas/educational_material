@@ -1,0 +1,22 @@
+A parent process is a process that has started one or more child processes. A perfect example will be your 
+terminal and your bash shell; when you open your terminal, your bash shell is started as well.
+
+For example right now in my vscode, there's a bash open, which I can check by typing tty:
+$ tty
+/dev/pts/2
+
+To get the id of the parent of this process, we can use grep with pts/2 for example:
+$ ps -fu $(id -u) | grep pts/2
+
+And then it prints, funny enough:
+masoudas    5456    4868  0 14:58 pts/2    00:00:00 /bin/bash
+masoudas    6722    5456  0 15:13 pts/2    00:00:00 ps -fu 1000     # :D The first process I ran here!
+masoudas    6723    5456  0 15:13 pts/2    00:00:00 grep --color=auto pts/2 # The second process I ran here!
+
+And this clearly shows that the parent process of this bash is 4868. To get what process that is, I run the
+ps command with pid:
+
+$ ps -f --pid 4868  # Or simply -p instead of pid
+masoudas    4868    4825  0 14:57 ?        00:00:01 /usr/share/code/code /usr/share/code/resources/app/out/bootstrap-fork --type
+
+Voila! We see that this process is run as part of vscode.

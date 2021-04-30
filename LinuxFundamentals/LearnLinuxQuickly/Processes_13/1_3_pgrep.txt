@@ -1,0 +1,23 @@
+The pgrep command returns the process id of a process name. 
+
+For example, inside the shell, we can run:
+$ pgrep terminal    # Process id of this terminal
+3528    
+
+$ pgrep bash    # Id of all bash instances running
+3536    
+3937
+5456
+
+Note: I guess several bashes can run together, because everytime the ELF is copied into memory for each bash.
+Hence, a terminal is associated with one bash instance everytime (just like I can run several instances of
+vs code together.) Naturlish of course, a terminal is responsible for fetching a bash. This is very important
+to remember. A terminal is just a means of communication with kernel, thus responsible for starting the bash
+process
+
+Once again, we can use the -fp to see which bash is the bashes
+$ ps -fp 3536 3937 5456
+UID          PID    PPID  C STIME TTY      STAT   TIME CMD
+****masoudas    3536    3528  0 14:49 pts/0    Ss+    0:00 bash The bash being run by this terminal
+masoudas    3937    3528  0 14:51 pts/1    Ss+    0:00 bash
+masoudas    5456    4868  0 14:58 pts/2    Ss     0:00 /bin/bash

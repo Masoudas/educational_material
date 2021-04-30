@@ -43,7 +43,7 @@
 * because that won't flush! The workaround is to use getline of course. 
 * 
 * With that in mind, consider the very elegeant code we write below to read from the command line and convert
-* to int. int could have been replaced with string of course, but it's interesting the stl has these conversion
+* to int. int could have been replaced with string of course, but it's interesting that stl has these conversion
 * inherit to the implementation!
 */
 #include <iterator>

@@ -1,0 +1,37 @@
+Every process in Linux is represented by a directory in /proc. The numbers correspond to the process ids.
+
+Inside a process' directory, you can find a lot of valuable and insightful information about the process. For  
+example, you will find a soft link named exe that points to the process' executable file.
+
+You will also find the status file, which stores various pieces of information about a process; these include the 
+process state, the PPID, the amount of memory used by the process, and so on:
+root@ubuntu-linux:/proc/6849# head status 
+Name: firefox
+Umask: 0022
+State: S (sleeping) Tgid: 6849
+Ngid: 0
+Pid: 6849
+PPid: 1990
+TracerPid: 0
+Uid: 1000 1000 1000 1000
+Gid: 1000 1000 1000 1000
+
+The limits file displays the current limits set for the process:
+Limit                  Soft Limit   Hard Limit   Units
+Max cpu time           unlimited    unlimited    seconds
+Max file size          unlimited    unlimited    bytes
+Max data size          unlimited    unlimited    bytes
+Max stack size         8388608      unlimited    bytes
+Max core file size     0            unlimited    bytes
+Max resident set       unlimited    unlimited    bytes
+...
+
+The fd directory will show you all the files that the process is currently using on your system
+
+You can also use the lsof command to list all the files a process is using:
+$ lsof -p PID_NUMBER | tail
+
+Note: We may recall also that the list of environment variables passed to a process is in the env file, for which
+we needed to use the tr command to print properly:
+$ less env | tr '\0' '\n'
+

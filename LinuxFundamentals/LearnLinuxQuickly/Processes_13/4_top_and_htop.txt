@@ -1,0 +1,1 @@
+top and htop are two other commands that can be used to get the processes information in real-time.

@@ -1,0 +1,29 @@
+Me: Environment variables are read from the environment (like env variables in Linux.) I guess we really don't
+want to rely on these for a clean build!
+
+Environment Variables are like ordinary Variables, with the following differences:
+
+Scope
+
+    Environment variables have global scope in a CMake process. They are never cached.
+References
+
+    Variable References have the form $ENV{<variable>}.
+
+Initialization
+    Initial values of the CMake environment variables are those of the calling process. Values can be changed 
+    using the set() and unset() commands. These commands only affect the running CMake process, not the system 
+    environment at large. Changed values are not written back to the calling process, and they are not seen by 
+    subsequent build or test processes.
+    Me: I think these are the variables that are actually read from bash environment variables for example in
+    Linux. So, I really don't want to deal with these!
+
+Examples of environment variables:
+    CMAKE_GENERATOR:    Generator used.
+    CXX:                C++ compiler from the environment
+    CXXFLAGS:           C++ compiler flags
+
+Access env variables:
+    -   In presence of other variables (that may have the same name, and cmake starts from current function,
+        current file, ...) use $ENV{variable}
+    -   Set and unset them using set($ENV{name}) or unset them.

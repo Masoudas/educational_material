@@ -8,10 +8,15 @@ line of a script can have a shebang to define the interpreter to be used to eval
 
 A bash script can be executed in two ways:
     -   Pass it to bash binary as:
-        $ bash myscript.sh
+        $ bash myscript.sh  
     -   Execute it directly (from inside the folder) after setting the execution permission:
         $ chmod 775 myscript.sh
         $ ./myscript.sh
+
+The way "bash myscript.sh" works is that it reads the commands and executes them line by line. Note that a 
+bash file is not a binary. Hence because we're not executing a binary as such, no execute permission is required.
+Hence, we only need read privileges to execute the command. Hence, even if I don't give myself the permission to 
+execute, yet I still can read the bash, I can execute it. 
 
 If a script is run as a command-line argument for bash, the shebang is not required. The shebang facilitates 
 running the script on its own. Executable scripts use the interpreter path that follows the shebang to 
@@ -20,4 +25,6 @@ interpret a script.
 The following command makes a script executable by all users:
 $ chmod a+x sample.sh   # Me: In actually, we need chmod 755 sample.h because we need both read and execute
                         # permission for other users to perform it. A shell has to be read I guess first.
+Indeed, with the ./script.sh command, we're executing something, which is why we need both read and execute 
+privileges. With "bash script" it's bash that's (reading and) executing the command. Here, it's the user.                     
 

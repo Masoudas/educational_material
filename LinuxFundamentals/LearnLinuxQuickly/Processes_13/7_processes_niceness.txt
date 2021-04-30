@@ -1,0 +1,21 @@
+The niceness scale of a process (ranging from -20 to 19) determines the priority of a process, with -20 being
+the highest, and 19 being the lowest. 
+
+In fact, in a linux system, priorities are 0 to 139 in which 0 to 99 for real-time and 100 to 139 for users. 
+Consequently, a value of -20 indicates a lower value from 120, or higher priority.
+
+To get the niceness of a process, we can do as follows:
+$ ps -o nice -p PID_NUMBER
+NI
+0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We can also set the niceness of a process using the nice command:
+$ nice -n -20 PROCESS_NAME    # Set it to -20. Note that this runs the command with the given priority.
+                              # We can't reset the priority of current process with this commadn
+
+$ sudo ice -n -20 apt-get upgrade
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To reset the niceness of a process, use the renice command.
+renice -n 19 -p PID_NUMBER

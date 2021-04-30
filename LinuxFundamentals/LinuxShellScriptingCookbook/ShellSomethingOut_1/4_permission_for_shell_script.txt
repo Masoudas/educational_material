@@ -4,7 +4,8 @@ a BINARY. We don't need to have access to the internals of a binary (read it.) W
 However, with shell scripts, the shell actually need to read the shell script. Now, because the owner of a
 pseudo shell is the current user (for example masoud, and this can be verified by long listing the /dev/pts
 folder,) then, because we need to load the content of the shell script, we need read access first. Then,
-of course we need to execute it. Hence, chmod 755 allows other users to execute the script.
+of course we need to execute it. Hence, chmod 755 allows other users to execute the script with the ./script
+command.
 
 Technically, however, we only need the read permission. This is because we can read the content into another
-file, and then execute that other file!
+file, and then execute that other file! Or we can use "bash myscript" as discussed to directl execute it.

@@ -1,0 +1,40 @@
+The variable that holds the compiler name is in the flag CMAKE_<LANG>_COMPILER, where <LANG> is C or CXX.
+Hence, we can set both the generator system and the compiler with cmake.
+
+cmake_minimum_required(VERSION 3.18.0)
+project(ChoosingCompiler LANGUAGES CXX C)   # If languages are specified, must be both, otherwise it's not looked
+                                            # for
+
+message(STATUS ${CMAKE_CXX_COMPILER} ${CMAKE_C_COMPILER})   # I always forget the interpolation $!
+
+$ cmake ..
+/usr/bin/c++/usr/bin/cc
+
+Notice the two symbolic variables that are printed here. These are the default symbolic links the compilers are
+read from.
+
+Naturlich, we can set this flag on the command line:
+$ cmake -DCMake_CXX_COMPILER=clang++ -DCMake_C_COMPILER=clang
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+The second option that I see a lot of people use, but actually does not seem to work for me is to export CXX,
+CC and FC variables for C++, C and Fortran compilers, respectively, and then run cmake (or make for that
+matter.) Again, I checked it, and it doesn't seem to work:
+
+$ env CXX=clang++ cmake ..
+
+Note that all over the Internet, they say that's how to change compiler Make, so I assume they're correct, even
+though I've been burnt a couple of times by this.
+
+Evidently, however, we better set options rather than variables, because who knows what the values of another
+environment might be.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+At configure time, CMake performs a series of platform tests to determine which compilers are available and if 
+they are suitable for the project at hand. A suitable compiler is not only determined by the platform we are 
+working on, but also by the generator we want to use. The first test CMake performs is based on the name of the 
+compiler for the project language. For example, if cc is a working C compiler, then that is what will be used as
+the default compiler for a C project. On GNU/Linux, using Unix Makefiles or Ninja, the compilers in the GCC 
+family will be most likely chosen by default for C++, C, and Fortran. On Microsoft Windows, the C++ and C 
+compilers in Visual Studio will be selected, provided Visual Studio is the generator. MinGW compilers are the 
+default if MinGW or MSYS Makefiles were chosen as generators.

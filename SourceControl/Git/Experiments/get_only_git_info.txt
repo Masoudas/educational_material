@@ -3,4 +3,5 @@ A question that may arise is, how can I get only the version history of a repo, 
 The answer is use the "--bare" option when cloning
 $ git clone --bare source
 
-This way, for example, we can access the log info of the repo.
+This way, for example, we can access the log info of the repo. Note this still has to resolve objects, hence it
+will use a lot of traffic. It does not, however, copy the project files.
