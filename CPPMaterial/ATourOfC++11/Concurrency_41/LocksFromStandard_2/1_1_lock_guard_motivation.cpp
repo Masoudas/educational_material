@@ -4,7 +4,7 @@
 * Apparently, what lock_guard does is simply to ensure that no matter what happens, even if an exception is
 * thrown, when we reach the end of a block in which a lock_guard has been defined, the lock is unlocked!
 * 
-* This apparently is very important, because in the case of having an exception, the lock may not be released.
+* This apparently is very important, because in the case of having an exception, the lock is not be released.
 * 
 * Of course, because the lock is released at the end of a block, we need to have brackets in the middle of 
 * the code, indicating release of lock (Ok! So that's why they define those blocks in the middle of multi-threaded
@@ -60,3 +60,7 @@ void using_mutex_lock_in_print_thread()
 
     for (auto& th : threads) th.join();
 }
+
+//int main() {
+//    using_mutex_lock_in_print_thread();
+//}

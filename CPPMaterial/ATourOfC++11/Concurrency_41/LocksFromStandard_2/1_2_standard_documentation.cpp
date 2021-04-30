@@ -15,6 +15,10 @@
 * 
 * Template parameters
 *	-	Mutex	-	the type of the mutex to lock. The type must meet the BasicLockable requirements
+* 
+* Note also the constructor:
+*   -   lock_guard( mutex_type& m, std::adopt_lock_t t );
+* which acquires the ownership of the mutex without trying to lock it.
 */
 
 #include <thread>
@@ -32,8 +36,7 @@ void safe_increment()
     std::cout << "g_i: " << g_i << "; in thread #"
               << std::this_thread::get_id() << '\n';
  
-    // g_i_mutex is automatically released when lock
-    // goes out of scope
+    // g_i_mutex is automatically released when lock goes out of scope
 }
  
 void test_lock_guard()

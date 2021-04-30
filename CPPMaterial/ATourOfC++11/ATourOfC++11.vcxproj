@@ -183,8 +183,16 @@
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\3_2_event_synchronization.cpp" />
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\3_3_race_in_synchronization.cpp" />
     <ClCompile Include="Concurrency_41\AdvancedCppBook_Chapter5\SynchronizationDataHazardsRaceConditions_1\4_deadlock.cpp" />
+    <ClCompile Include="Concurrency_41\ConditionVariablesFromStandard_3\1_1_motivation.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_0_definitions.cpp" />
     <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_1_lock_guard_motivation.cpp" />
     <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_2_standard_documentation.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\3_1_unique_lock.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_2_lock_function.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_3_try_lock_function.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\2_1_scoped_lock.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\2_2_standard_example.cpp" />
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_1_fail_to_lock_mutex.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_1_thread_class.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_1_passing_method_of_execution_to_thread.cpp" />
     <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\1_2_2_passing_arguments_and_method.cpp" />
