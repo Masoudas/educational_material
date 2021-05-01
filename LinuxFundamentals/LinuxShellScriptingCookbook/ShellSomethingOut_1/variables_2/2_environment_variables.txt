@@ -18,5 +18,5 @@ them into \n (it asks whether to show a binary file. Say yes):
 
 $ less /proc/$PID/environ | tr '\0' '\n'
 
-Some of the well-known environment variables are HOME, PWD, USER, UID, and SHELL, HOSTNAME, USERNAME,
+Some of the well-known environment variables are HOME, PWD, USER, UID, and SHELL, HOSTNAME, USERNAME, ...
 

@@ -13,7 +13,7 @@ will be printed. The %-5s string defines a string substitution with left alignme
 alignment) and a 5 character width. If - was not specified, the string would have been aligned to the right. 
 The width specifies the number of characters reserved for the string. For Name, the width reserved is 10. 
 Hence, any name will reside within the 10-character width reserved for it and the rest of the line will be 
-filled with spaces up to 10 characters total.
+filled with spaces up to 10 characters total. (Me: But naturlich, we may exceed this at least 10 chars)
 
 For floating point numbers, we can pass additional parameters to round off the decimal places. For the Mark 
 section, we have formatted the string as %-4.2f, where .2 specifies rounding off to two decimal places. Note 

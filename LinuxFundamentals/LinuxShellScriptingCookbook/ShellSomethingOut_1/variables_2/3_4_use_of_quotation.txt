@@ -1,0 +1,12 @@
+What is the difference between the following expressions?
+
+my="Has Space and; semicolon"
+
+var1=${my}
+var2="${my}"
+var3=\"${my}\"
+
+The first and second expressions are similar, and they result in var1 and var2 to be set to the content of 
+my. The white space or semicolon have no effect here.
+
+The third one keeps " as part of the variable.

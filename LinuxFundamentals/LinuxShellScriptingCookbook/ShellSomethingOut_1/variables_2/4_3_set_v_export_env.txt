@@ -1,0 +1,55 @@
+So we can set environment variables in three different ways, using a direct set, using export, or using env.
+What's the difference?
+
+Consider the grep command, which is a process that uses the GREP_OPTIONS variable. Consider the file f as
+%%%%
+line one
+line two
+%%%%
+
+    1-  Normal set:
+
+$ GREP_OPTIONS=-v   # Invert results, showing lines that don't contain.
+$ grep one f   
+line one
+    
+    This is because the GREP_OPTIONS variable is only used in the current environment, and is not passed to the
+    child environment.
+
+    2-  export:
+    Using export, we actually export the variable to the child process.
+
+$ export GREP_OPTIONS=-v   
+$ grep one f   
+line two        # Result is inverted.
+
+        2-1 Passing variable only for this process
+
+    However, if we decided to pass the variable only for this process, we can prepend the process command with
+    the variables we want to pass to it:
+
+$ GREP_OPTIONS=-v grep one f    
+
+    Note that this what we do normally for example when we want to pass a cross-compiler to a make command:
+
+$ CC=arm-linux-gnueabihf-gcc  make all
+
+    3-  env:
+    env is a program. The function of env is somewhat like 2-1, that is passing temporary environment variables
+    to the process. It does NOT export the variable. In essense:
+        -   The command env gets executed as a new process
+        -   env modifies the environment, and
+        -   calls the command that was provided as an argument. The env process is replaced by the command 
+            process.
+
+$ env GREP_OPTIONS='-v' grep one test.txt
+
+This command will launch two new processes: (i) env and (ii) grep (actually, the second process will replace the 
+first one). From the point of view of the grep process, the result is exactly the same as running:
+
+$ GREP_OPTIONS='-v' grep one test.txt
+
+However, you can use this idiom if you are outside of bash or don't want to launch another shell (for example, 
+when you are using the exec() family of functions rather than the system() call).
+
+

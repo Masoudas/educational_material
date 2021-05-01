@@ -39,7 +39,7 @@ echo " are printed on the same line"
 
 Example 2:
 echo "This one\t does not escape"
-echo -e "This one\t does escape"
+echo -e "This one\t does \nescape"
 
 -   Printing a colored output
 A script can use escape sequences to produce colored text on the terminal.

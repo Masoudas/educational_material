@@ -1,0 +1,36 @@
+We can define functions in SS (Shell Scripts) the same way we do a C function. Normally, we want to write the
+semicolon at the end of the command. Especially when we write functions in the shell itself, to ensure that
+the carriage return takes place after ;.
+
+#!/bin/bash
+printer(){
+    printf "Hello %s\n" world!;
+}
+
+printer
+
+The function portion is not executed unless called of course. Note also that as always, it's very important to
+have a separation between the bracket and text, otherwise, we get an error:
+
+printer(){echo "Hello world"}   # Error on the attached e to { and attached " to }.
+
+Naturlich, the variables will be scoped to the function itself, and we can use them to pass variables:
+
+#!/bin/bash
+printer(){
+    printf "Hello \"%-10s\" on this day:" $1
+    date
+}
+
+printer Masoud
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Other than the above mentioned access to local variables, note that there's no scoping with variables. If a var
+is defined inside the function, it's available on the outside, and vice versa.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Functions can have return values, with the return code. Note however that only numeric values can be returned,
+and not bools or strings for example.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that functions are defined inside the shell, and are not exported outside to be used.

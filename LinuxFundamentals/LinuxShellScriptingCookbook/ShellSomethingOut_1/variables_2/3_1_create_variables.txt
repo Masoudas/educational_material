@@ -1,4 +1,4 @@
-Shell scripts can be created same as shell, that is, with an equal sign:
+Shell scripts variables can be created same as shell, that is, with an equal sign:
 
 $ myVar=value
 

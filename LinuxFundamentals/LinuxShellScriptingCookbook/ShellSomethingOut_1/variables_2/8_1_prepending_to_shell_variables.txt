@@ -1,0 +1,10 @@
+To prepend to shell variables, we need to expand the current variable content right after what we prepend:
+
+$ var=Prepended_Value:$var  # Puts a colon after the addition
+$ var=Prepended_Value;$var  # Puts a semicolon after the addition.
+
+Example:
+$ PATH=/opt/myapp/bin:/usr/bin:/bin 
+$ LD_LIBRARY_PATH=/opt/myapp/lib:/usr/lib;/lib
+
+Of course, it's up to us whether we want to export these variables or not.

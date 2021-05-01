@@ -4,7 +4,7 @@ The id of the super user is always 0. Now, we can check this by:
 
 In fact, here's a sample script that checks whether the current user is the super user:
 
-if [ $UID -ne 0]; then
+if [ $UID -ne 0 ]; then      # Note that the space is also important after [
     echo Not super user, exiting
     exit
 else
@@ -20,4 +20,12 @@ else
     echo super user
 fi
 
-Note that [ is actually a command and must be separated from the rest of the string with spaces.
+Note that [ is actually a command and must be separated from the rest of the string with spaces. 
+
+Me: This is a command that checks for true or false, and then returns true or false. [condition]->True or False
+Another example is (chaining conditions):
+
+if [ -d $1 ] && [ $1 = . ]; then
+    echo "On the current folder"
+fi
+

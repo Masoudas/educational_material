@@ -1,0 +1,22 @@
+Me: Note that variable indexing (meaning those that are passed to shell) start from 1. The zeroeth variable is
+actually the name passed to execute this script (be it to bash, or execute it directly:)
+
+%%%%%
+# script
+echo $0
+echo $1
+
+%%%%%
+
+$ ./script 1
+./script
+1
+
+$ bash script
+script
+1
+
+Anoter useful operation is the $@, which means all variables passed to the shell script.
+
+#!/bin/bash
+echo "variables passed are $@"
