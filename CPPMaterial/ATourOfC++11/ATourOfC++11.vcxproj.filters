@@ -400,6 +400,9 @@
     <Filter Include="Source Files\SelectOperations_11\RAIIFromStandard_6">
       <UniqueIdentifier>{1944b636-7180-49c9-846c-8a822a174578}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Concurrency_41\ConditionVariablesFromStandard_3">
+      <UniqueIdentifier>{644c544a-173f-44da-b332-300d6dbf2414}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2591,6 +2594,30 @@
     </ClCompile>
     <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\3_std_and_RAII.cpp">
       <Filter>Source Files\SelectOperations_11\RAIIFromStandard_6</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\2_1_scoped_lock.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\2_2_standard_example.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_2_lock_function.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_3_try_lock_function.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\4_1_fail_to_lock_mutex.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\3_1_unique_lock.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_0_definitions.cpp">
+      <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Concurrency_41\ConditionVariablesFromStandard_3\1_1_motivation.cpp">
+      <Filter>Source Files\Concurrency_41\ConditionVariablesFromStandard_3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
