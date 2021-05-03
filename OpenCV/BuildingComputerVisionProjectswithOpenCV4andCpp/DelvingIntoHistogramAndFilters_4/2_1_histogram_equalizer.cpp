@@ -89,7 +89,7 @@ cv::Mat equalize_gray(cv::Mat src){
     return dst;
 }
 
-int main(int argc, const char** argv){
+void equalize_histogram(int argc, const char** argv){
     using cv::CommandLineParser;
     using std::string;
     
@@ -100,7 +100,7 @@ int main(int argc, const char** argv){
 
     if (parser.has("h")){
         parser.printMessage();
-        return 0;
+        return;
     }    
 
     auto src = parser.get<string>("src");
@@ -114,7 +114,7 @@ int main(int argc, const char** argv){
     
     if (!parser.check()){
         parser.printErrors();
-        return 0;
+        return;
     }
 
     // Get images as separate strings
@@ -147,3 +147,7 @@ int main(int argc, const char** argv){
         cv::imwrite(p_write, equalized);
     }
 }
+
+//int main(int argc, char** argv){
+//    equalize_histogram(argc, argv);
+//}

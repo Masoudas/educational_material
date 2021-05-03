@@ -4,3 +4,4 @@
  * 
  * Hence, for example, if wanted to draw the histogram of an image as a continuous line, we use this
  * function. We could at the same time, draw rectangles, etc.
+ */
