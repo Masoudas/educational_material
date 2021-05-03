@@ -29,6 +29,9 @@ though I've been burnt a couple of times by this.
 Evidently, however, we better set options rather than variables, because who knows what the values of another
 environment might be.
 
+As always, don't forget that we can pass the environment variable directly to the sub-process
+$ CXX=clang++ cmake ..
+
 %%%%%%%%%%%%%%%%%%%%%%%%%
 At configure time, CMake performs a series of platform tests to determine which compilers are available and if 
 they are suitable for the project at hand. A suitable compiler is not only determined by the platform we are 

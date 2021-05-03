@@ -1,0 +1,39 @@
+Note that by the build type, we actually here mean the configuration in multi-configuration compilers, and not
+generator (make, ninja, VS, etc)
+
+The variable "CMAKE_BUILD_TYPE" is an string by default that contains the build type. The values recognized for
+this flag are:
+
+    -   Debug for building your library or executable without optimization and with debug symbols,
+    -   Release for building your library or executable with optimization and without debug symbols,
+    -   RelWithDebInfo for building your library or executable with less aggressive optimizations and with debug 
+        symbols,
+    -   MinSizeRel for building your library or executable with optimizations that do not increase object code 
+        size.
+
+This variable is an example of a cache variable, we as we may recall we set as follows:
+
+#########################################################
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
+project(setting_build_type LANGUAGES C CXX)
+
+if(NOT CMAKE_BUILD_TYPE)    # Empty string evaluates to false.
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
+message(STATUS "C flags, Debug configuration: ${CMAKE_C_FLAGS_DEBUG}")
+message(STATUS "C flags, Release configuration: ${CMAKE_C_FLAGS_RELEASE}")
+message(STATUS "C flags, Release configuration with Debug info: ${CMAKE_C_FLAGS_RELWITHDEBINFO}")
+message(STATUS "C flags, minimal Release configuration: ${CMAKE_C_FLAGS_MINSIZEREL}")
+
+message(STATUS "C++ flags, Debug configuration: ${CMAKE_CXX_FLAGS_DEBUG}")
+message(STATUS "C++ flags, Release configuration: ${CMAKE_CXX_FLAGS_RELEASE}")
+message(STATUS "C++ flags, Release configuration with Debug info: ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
+message(STATUS "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}")
+###########################################################
+
+
+Note of course that we can set the build-type from the command line, using either of the following options:
+
+$ cmake .. -DCMAKE_BUILD_TYPE=Debug
+$ cmake .. --config DEBUG

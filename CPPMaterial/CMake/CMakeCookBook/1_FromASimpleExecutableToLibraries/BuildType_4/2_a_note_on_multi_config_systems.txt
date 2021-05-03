@@ -1,0 +1,14 @@
+In VS or XCode for example, we can configure several modes as follows:
+
+$ mkdir -p build
+$ cd build
+$ cmake .. -G"Visual Studio 12 2017 Win64" -D CMAKE_CONFIGURATION_TYPES="Release;Debug"
+
+And then decide which version we want to actually build using the config option (which is the actuall use of the
+config option:)
+
+$ cmake --build . --config Release
+
+Also note that it has been suggested that "When developing code with single-configuration generators, create separate 
+build directories for the Release and Debug build types, both configuring the same source. With this, you can 
+switch between the two without triggering a full reconfiguration and recompilation."

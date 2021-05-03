@@ -1,0 +1,36 @@
+The following command dumps the system information inside the file:
+
+$ cmake --system-information information.txt
+
+It's actually a quite interesting file, and has several information, the most important of which are:
+    -   CMAKE_<LANG>_COMPILER_LOADED: This is set to TRUE if the language, <LANG>, was enabled for the project.
+    -   CMAKE_<LANG>_COMPILER_ID: The compiler identification string, unique to the compiler vendor. This is, for 
+        example, GCC for the GNU Compiler Collection, AppleClang for Clang on macOS, and MSVC for Microsoft Visual 
+        Studio Compiler. Note, however, that this variable is not guaranteed to be defined for all compilers or 
+        languages.
+    -   CMAKE_COMPILER_IS_GNU<LANG>: This logical variable is set to TRUE if the compiler for the language <LANG>
+        is part of the GNU Compiler Collection. Notice that the <LANG> portion of the variable name follows the GNU 
+        convention: it will be CC for the C language, CXX for the C++ language, and G77 for the Fortran language.
+    -   CMAKE_<LANG>_COMPILER_VERSION: This variable holds a string with the version of the compiler for the given 
+        language. The version information is given in the major[.minor[.patch[.tweak]]] format. However, as for 
+        CMAKE_<LANG>_COMPILER_ID, this variable is not guaranteed to be defined for all compilers or languages.
+
+Consider then the following snippet, in which we try and set the compiler flag if it has been loaded:
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
+project(recipe-06 LANGUAGES C CXX)
+
+message(STATUS "Is the C++ compiler loaded? ${CMAKE_CXX_COMPILER_LOADED}")
+if(CMAKE_CXX_COMPILER_LOADED)
+  message(STATUS "The C++ compiler ID is: ${CMAKE_CXX_COMPILER_ID}")
+  message(STATUS "Is the C++ from GNU? ${CMAKE_COMPILER_IS_GNUCXX}")
+  message(STATUS "The C++ compiler version is: ${CMAKE_CXX_COMPILER_VERSION}")
+endif()
+
+message(STATUS "Is the C compiler loaded? ${CMAKE_C_COMPILER_LOADED}")
+if(CMAKE_C_COMPILER_LOADED)
+  message(STATUS "The C compiler ID is: ${CMAKE_C_COMPILER_ID}")
+  message(STATUS "Is the C from GNU? ${CMAKE_COMPILER_IS_GNUCC}")
+  message(STATUS "The C compiler version is: ${CMAKE_C_COMPILER_VERSION}")
+endif()
