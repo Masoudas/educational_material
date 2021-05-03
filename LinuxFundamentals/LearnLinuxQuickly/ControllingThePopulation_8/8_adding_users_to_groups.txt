@@ -1,5 +1,7 @@
-To add a user to a new user group, all we need to do is either add them at the point of creation, or add them using the usermod command,
-The -a is very important here, as it APPENDS to the list of previous groups. Also, we use the '-G' to append secondary groups.
+To add a user to a new user group, all we need to do is either add them at the point of creation, or add them using 
+the usermod command.
+The -a is very important here, as it APPENDS to the list of previous groups. Also, we use the '-G' to append secondary 
+groups.
 
 """
 Example:

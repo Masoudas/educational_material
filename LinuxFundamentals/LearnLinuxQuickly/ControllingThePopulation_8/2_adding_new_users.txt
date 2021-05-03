@@ -12,7 +12,7 @@ tom:x:1001:1001::/home/tom:/bin/sh
 Note that in my case, the original user had UID and GID of 1000, but now, it's 1001 for the new user, so increments 
 of one take place by default
 
-Note that we can change the default termian from bin/sh for example to bin/bash, or change GID or many other things, 
+Note that we can change the default termianl from bin/sh for example to bin/bash, or change GID or many other things, 
 all of which are possible by checking out the options on this command. This can also be achieved using usermod after
 creating the user.
 

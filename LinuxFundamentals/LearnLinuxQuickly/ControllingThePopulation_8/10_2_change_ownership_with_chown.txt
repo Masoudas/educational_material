@@ -6,6 +6,14 @@ We can change the user owner without changing the group owner by dropping the gr
 
 $ sudo chown user file_name
 
+Or, we can change the group of a file without chaniging the owner as follows:
+
+$ sudo chown :group filename
+
 To change only the group owner of a file, we can use chgrp as the following example shows:
 
 $ sudo chgrp group filename
+
+To change the ownership of a file recursively, one can use the -R option:
+
+$ sudo chown -R user:group filename

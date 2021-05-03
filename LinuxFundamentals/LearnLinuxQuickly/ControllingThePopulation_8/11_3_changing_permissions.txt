@@ -32,4 +32,8 @@ Examples:
 $ chmod 011 filename # Group and others can execute.
 $ chmod 070 filename # Allow read, write execute to the group
 $ chmod 000 filename # Give zero permission   
+
+Note that just like the chown command, we can change the content of a folder recursively using the -R command:
+
+$ chmod -R 755 dir
     

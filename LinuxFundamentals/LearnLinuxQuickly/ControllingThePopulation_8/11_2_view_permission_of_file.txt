@@ -15,7 +15,8 @@ We can view the permissions of a file by long listing the file. It will be the f
     (10) others can't execute.
 
 Note from me: The superuser supercedes all the permissions. It can read and write to, and execute any file on the 
-system.
+system. Except if it doesn't have any execution permissions, in which case he can't execute it, and he needs at
+least one execution permission.
 
 
 

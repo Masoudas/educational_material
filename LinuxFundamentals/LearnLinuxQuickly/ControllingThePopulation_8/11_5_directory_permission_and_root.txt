@@ -6,7 +6,8 @@ drwx------   5 root root       4096 mars   8 12:39 root
 
 Hence, we cannot read the content of this folder, write to it, and change its name, unless we're the root.
 Note also as part of execution permission, a user cannot even cd even to this folder! So no ops that involve
-the folder.
+the folder, like cd, dir, rm, cp, or anything. We can't even serialize the content of the folder to a file to
+see it, because that would involve execution.
 
 Now, note that no other user (including what I call the primary user such as masoudas) is not in the same group
 as root (it's in sudoers, but that's another matter.) If we give the permission 701, it can now list it.

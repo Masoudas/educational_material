@@ -1,0 +1,13 @@
+We can get the groups a user is member of, using the groups command:
+
+$ groups    # Prints the groups this user is member of.
+$ groups $USERNAME # Same as above
+$ groups another_user   # The groups another user is member of
+
+Another question is, how can we get the members of a particular group? The usual famous way as we may recall is
+to use the /etc/group file. There's also a command that's not installed by default, but can be used as well, 
+called members:
+
+$ members group_name
+$ members sudo
+masoudas
