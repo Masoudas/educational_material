@@ -1,4 +1,16 @@
-In VS or XCode for example, we can configure several modes as follows:
+In VS or XCode for example, it's possible to have several config modes at the same type in the IDE. To set which build systems
+to have, we need to set the CMAKE_CONFIGURATION_TYPES variable:
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+cmake_minimum_required(VERSION 3.10.0 FATAL_ERROR)
+project(myproj)
+
+set(CMAKE_CONFIGURATION_TYPES Release;Debug CACHE STRING "build types of the project" FORCE)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "The mode the project is built by from command line" FORCE)
+
+
+%%%%%%%%%%%%%%%%%%%%%%
 
 $ mkdir -p build
 $ cd build

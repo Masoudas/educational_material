@@ -1,0 +1,9 @@
+Setting the cache variables (the variables that are cached by cmake in the CMakeCache.txt file) is done as follows:
+
+Note: Be careful to always put the control keywords in capital letters, otherwise, CMake will go grazy:
+
+set(CMAKE_CACHE_VARIABLE value CACHE TYPE doc_string FORCE)
+
+Recall that the type is STRING, BOOLEAN, etc.
+
+Most of the cache variables that I've encountered start with CMAKE_

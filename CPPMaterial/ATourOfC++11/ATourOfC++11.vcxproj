@@ -487,6 +487,11 @@
     <ClCompile Include="PointersArraysReferences_7\Arrays\pointer_to_array_decay.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\RawStrings_3_4.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\ReturningArraysFromFunctions_3_9.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\1_1_motivation.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\1_2_subspan.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_1_standard_documentation.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_2_standard_example.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_3_subspan_documentation.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\StringLiterals_3_3.cpp" />
     <ClCompile Include="PointersArraysReferences_7\LargeCharacterSet_3_5.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Nullptr_2_2.cpp" />

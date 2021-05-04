@@ -403,6 +403,9 @@
     <Filter Include="Source Files\Concurrency_41\ConditionVariablesFromStandard_3">
       <UniqueIdentifier>{644c544a-173f-44da-b332-300d6dbf2414}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard">
+      <UniqueIdentifier>{bd3342c5-f0cc-4704-80f3-387bceb9da99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2618,6 +2621,21 @@
     </ClCompile>
     <ClCompile Include="Concurrency_41\ConditionVariablesFromStandard_3\1_1_motivation.cpp">
       <Filter>Source Files\Concurrency_41\ConditionVariablesFromStandard_3</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\1_1_motivation.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\1_2_subspan.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_1_standard_documentation.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_2_standard_example.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_3_subspan_documentation.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
