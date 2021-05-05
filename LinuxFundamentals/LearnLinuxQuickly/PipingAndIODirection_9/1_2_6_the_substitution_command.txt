@@ -1,0 +1,4 @@
+The substitution command $() acts in the same manner as xargs:
+
+$ ls $(echo "/")    # lists /. Equivalent to echo "/" | ls
+$ echo $(ls /)      # Echos the result of the list.

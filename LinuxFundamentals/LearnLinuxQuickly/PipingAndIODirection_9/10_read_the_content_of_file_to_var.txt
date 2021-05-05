@@ -1,0 +1,3 @@
+We can read the content of a file directly into a variable, using the substitution command:
+
+$ myVar=$(< f)      # Executes the read, and then sets the result in myVar.

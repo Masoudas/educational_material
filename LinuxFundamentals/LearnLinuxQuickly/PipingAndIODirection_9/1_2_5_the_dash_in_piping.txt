@@ -1,0 +1,6 @@
+A lone dash means "Read from stdin".
+
+For example, in a pipe, the result of stdout of last command is piped into stdin. We can explicitly use it
+in any place we want using dash.
+
+echo "My My My" | diff - file   # Comapre stdin with file.
