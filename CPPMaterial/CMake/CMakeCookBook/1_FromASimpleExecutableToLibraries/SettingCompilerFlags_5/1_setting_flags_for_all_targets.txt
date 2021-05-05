@@ -1,0 +1,14 @@
+Apparently, we can set the compiler for all targets as well as for particular targets. Moreover, the compiler
+flags can be set for each configuration (build type) as well.
+
+To set the compiler flags for all targets, use the CMAKE_<Lang>_FLAG_<Config> CMake variables:
+    -   CMAKE_CXX_FLAGS_DEBUG
+    -   CMAKE_CXX_FLAGS_RELEASE
+    -   CMAKE_C_FLAGS_DEBUG
+    -   CMAKE_C_FLAGS_RELEASE
+
+Question: Would the global options be passed together with those defined for local targets? Or will they be
+passed together as complements?
+
+Answer: Yes. Flags specified for a particular target override those given by the above global flags.
+

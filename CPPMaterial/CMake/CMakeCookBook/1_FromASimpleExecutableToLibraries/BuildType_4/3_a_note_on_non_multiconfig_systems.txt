@@ -1,0 +1,30 @@
+As opposed to MSVC or XCode, in systems such as Make or Ninja, we need to actually set the CMAKE_BUILD_TYPE
+before configuration and generation to set the system build type up. 
+
+The point is that just passing the config option does not suffice in this scenario, because the corresponding
+CXXFLAGS would not be passed when running "cmake --build".
+
+First, to check this fact, I experimented with the following command:
+
+$ cmake -S. -Bbuild
+$ cmake --build build --verbose --config Debug
+
+Note that by default, the build type is set to Release. In this mode, I saw that no -g flags were passed.
+Whereas if I tried something like:
+
+$ cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Debug    # Note that cache variable must be set on first run!
+$ cmake --build build --verbose 
+
+I immediately saw that the -g flag is being passed.
+
+As another experiment, I tried to directly pass to -g option to the make file, and it didn't work!
+
+$ cmake -S. -Bbuild
+$ cd build
+$ make CXXFALGS="-g3"   # Didn't work!
+
+Which is kind of odd to me.
+
+The point:
+Set CMAKE_BUILD_TYPE flag to determine the configuration type, not the config option from the command line.
+config option is for multi-config systems like MSVC or XCode.
