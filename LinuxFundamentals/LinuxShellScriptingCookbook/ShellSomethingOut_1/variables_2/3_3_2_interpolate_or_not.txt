@@ -1,19 +1,9 @@
-Here's a question, what's the difference between the following two:
-
-$1=10
-myvar=10
-
-Well, we know that the second one sets myvar to 10. But what about the first one? Again, note that we can't set
-bash variables, because they're read-only. 
-
-But here's a thought, why can't we do it in a normal terminal? Say for example
-
+Following up on the discussion we just had, consider the following set of commands written on the shell itself:
 $ myvar=PATH
 $ $myvar=/:$PATH        
 bash: PATH=/:aa: No such file or directory  # OR
 $ $mayvar=a
 PATH=a: command not found
-
 
 So what does not happen is a form of piping. That is, myvar is interpolated, and then together is passed to bash.
 Aha! What happens is that this entire line is considered a command. This is "PATH=a" is read as a COMMAND, and

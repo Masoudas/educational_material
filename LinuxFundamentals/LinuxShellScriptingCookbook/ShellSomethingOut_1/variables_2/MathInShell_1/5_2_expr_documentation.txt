@@ -1,0 +1,33 @@
+The tldr documentation provides the following uses of this command for us:
+
+ - Get string length:
+   expr length {{string}}
+
+ - Evaluate logical or math expression with an operator ('+', '-', '*', '&', '|', etc.). Special symbols 
+   should be escaped:
+   expr {{first_argument}} {{operator}} {{second_argument}}
+
+ - Get position of the first character in 'string' that matches 'substring':
+   echo $(expr index {{string}} {{substring}})
+
+ - Extract part of the string (me: start from 1, and not 0):
+   echo $(expr substr {{string}} {{position_to_start}} {{number_of_characters}})  
+
+ - Extract part of the string which matches a regular expression:
+   echo $(expr {{string}} : '\({{regular_expression}}\)')
+
+Example:
+$ expr length my_string
+$ expr 1 + 2 + 3 \& 4 \* 5      
+$ expr substr masoudas 1 10     # Why! I mean why should the first position be 1, and not zero!
+$ expr masoudas '\([mM]aso\)'   
+
+Regarding the last command, note that strictly speaking, there's no equivalent from in grep for this command.
+This is because grep is suited only for files (), and returns the entire line that's associated with it.
+It's true that we can get around using a file by using an echo command as follows:
+
+$ echo "masoudas is masoud" | grep "mas"
+masoudas is masoud
+
+Meaning, this would print the entire line. Note also that the -w option does not help either, because w means
+whole words, an in fact because no whole word matches mas, it will print nothing!

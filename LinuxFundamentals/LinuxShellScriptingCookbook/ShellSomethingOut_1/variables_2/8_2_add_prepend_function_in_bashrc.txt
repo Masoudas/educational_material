@@ -26,5 +26,11 @@ First of all, note that this is exactly like the definition of a function in C. 
     - export $1
     After finising the evaluation and setting $1 to its new value, then we export it.
 
-Question: Why are we anding these commands? So that it returns a bool I guess? But echo does not seem to return
-any thing as a matter of fact. In any case, should we assume that this function returns a zero or one?
+Question: Why are we anding these commands? From what I've seen over a couple of examples, anding commands is
+a nice way of chaining a couple of commands, some of which may return a boolean as well to allow for termination
+of the rest of the command, like:
+
+$ ls . && ls ..
+
+
+

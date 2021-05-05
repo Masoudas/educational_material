@@ -1,0 +1,12 @@
+We can use bracket in pretty much the same way as let (me: except that to ensure that it's not confused with
+condition, we need to prefix it with $)
+
+#!/bin/bash
+no1=1
+no2=2
+
+result=$[ no1 + no2 ]   # Always mind the space between brackets.
+
+We can also use the interpolation notion inside brackets with no problem:
+
+result=$[ $no1 + 5 ]

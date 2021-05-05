@@ -1,12 +1,26 @@
-What is the difference between the following expressions?
+Let's start from the basics. We know that the following assignment is incorrect:
+
+my=Has space and; semicolon
+
+And it should be confined inside quotes to make sense:
+
+my="Has space and; semicolon"
+
+On the other hand, the following encodes " as part of the expression, increasing the length of the variable:
+
+my="Has space and; semicolon"
+my1=\"Has space and; semicolon\"
+
+echo ${#my} ${#my1}     # prints 24 and 26
+
+Now, when it comes to assignment from variables, it's safe to assume that once a variable is expanded, it has
+that virtual "" around it, which allows to assign from a variable, without having to everytime write a ""
+around it:
 
 my="Has Space and; semicolon"
 
 var1=${my}
 var2="${my}"
-var3=\"${my}\"
 
-The first and second expressions are similar, and they result in var1 and var2 to be set to the content of 
-my. The white space or semicolon have no effect here.
-
-The third one keeps " as part of the variable.
+So either of these expressions work, but the upper one is simpler. In fact, I may assume that whenever a string
+is passed, it's registered as a pointer to char, allowing it not to be broken down.

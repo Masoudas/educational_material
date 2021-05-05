@@ -1,0 +1,64 @@
+Assume that we write the following shell script, which I enumerate for convenience. In what follows, we
+try and understand what happens when each line of this script is executed:
+
+%%%%%%%%%%%%%%%%%%%%%
+script
+#!/bin/bash
+(1) $1
+(2) $1=$2
+(3) eval $1=$2
+%%%%%%%%%%%%%%%%%%%%%
+
+
+    -   Line 1
+    Inside the script, we replace the $1 with the value passed. When we try and execute this script, the line
+    $1 (meaning content of variable 1) is passed to bash. Hence, if we passed for example ls:
+
+    username@host:~$ script ls ..     # lists the current line
+
+    Then the first line would replace $1 with ls and execute that line, and we list the current dir.
+
+    -   $1=$2
+    The strings are interpolated. Then an string is generated, and that string is passed directly to shell.
+    Say we pass myVar=10. Then this string is formed, and is passed to shell directly:
+    
+    username@host:~$ myvar=10     # my var is set to ten.
+    // forget first line
+    // Now passing this string to shell:
+    myVar=10
+
+    Notice the difference between an assignment and passing a string to the shell. We could now assume that 
+    the following string (with artificial quotes) is being passed to the shell:
+    
+    "myVar=10"
+
+    and recall that this is not an assignment. An assignment takes place before the command is being executed.
+    As such, the shell throws an error when reaching this line.
+
+    -   eval $1=$2
+    In this example, the string is formed as myVar=10, and this is passed to the eval command. The evam command
+    treats an string as if we've written it ourselves in the command line before hitting enter. Hence, it
+    evaluates the following command:
+
+    $ myVar=10
+
+    Hence, this would be considered an assignment in the shell, and this variable is set.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To make this latter point a bit more concrete, consider the following example shell script:
+
+%%%%%%%%%%%%%%%%%%
+my=ThisVar
+eval $my=12
+echo $ThisVar
+echo $my    
+# echo ${$my}   
+%%%%%%%%%%%%%%%%%%
+
+First, we set my to this string. Then, we set the content of my to 12. Finally, we print the content of ThisVar,
+which is of course 12. It's always best to recall that this piece of code is being executed line by line in
+bash. The last line prints ThisVar by the vay.
+
+The line ${$my} throws an error, because the inside variable must not start with $. It will not be 
+reinterpolated.
