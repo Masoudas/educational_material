@@ -1,0 +1,17 @@
+SSH or Secure SHell, is a way of accessing the Linux machine remotely. 
+
+To have ssh available on the Linux system, one needs only to install openssh-server. Once this package is
+installed, ssh is provided as a service, and it can be checked via the systemctl command:
+
+$ systemctl status ssh
+
+After this step, all it remains is to connect to the machine which has ssh on it. To that end, first we need
+to figure out the ipaddress of the hosting machine, which is done using the ip command:
+
+$ ip -4 addr
+
+Once the ip address of the linux is found, we can simply connect to a user with the ssh command:
+
+$ ssh username@ip_address       # Same as user@hostname
+
+Once this is run, the ssh keys are generated, and then we can connect by prompting the password.
