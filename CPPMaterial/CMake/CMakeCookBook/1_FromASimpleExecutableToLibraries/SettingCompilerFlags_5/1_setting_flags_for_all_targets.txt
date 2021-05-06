@@ -6,6 +6,7 @@ To set the compiler flags for all targets, use the CMAKE_<Lang>_FLAG_<Config> CM
     -   CMAKE_CXX_FLAGS_RELEASE
     -   CMAKE_C_FLAGS_DEBUG
     -   CMAKE_C_FLAGS_RELEASE
+    -   CMAKE_CXX_FLAGS # Common among all compilations
 
 Question: Would the global options be passed together with those defined for local targets? Or will they be
 passed together as complements?
