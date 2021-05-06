@@ -37,7 +37,8 @@
 void draw_various_shapes(){
     cv::Mat img{1024, 1024, CV_8UC3, {255, 255, 255}};
 
-    // Draw a circle and fill it as well.
+    // Draw a circle and fill it as well. Note: Setting thickness equal to -1 fills the circle, or we can
+    // use the approach given below.
     cv::circle(img, {512, 512}, 100, {0, 0, 255}, 12);
 
     /// Getting area of circle points.
@@ -53,6 +54,6 @@ void draw_various_shapes(){
     cv::waitKey(0);
 }
 
-int main(){
-    draw_various_shapes();
-}
+//int main(){
+//    draw_various_shapes();
+//}

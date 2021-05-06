@@ -1,0 +1,6 @@
+-   Focus by creating a halo: 
+Multiply an image with a mask of values ranging from zero to one. Values closer to zero mask the image, values 
+to one focus. Use a float value mask with initial 0 and 1 values, then blur the image.
+Example: Chapter 2, DrawingOnImage_7, 6_2_draw_a_halo
+
+-   

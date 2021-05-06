@@ -48,7 +48,7 @@ void lomoGraphy(Mat img)
     result.convertTo(resultf, CV_32FC3); 
      
     // Multiply our result with halo 
-    multiply(resultf, halo, resultf); 
+    //multiply(resultf, halo, resultf); 
      
     // convert to 8 bits 
     resultf.convertTo(result, CV_8UC3); 
