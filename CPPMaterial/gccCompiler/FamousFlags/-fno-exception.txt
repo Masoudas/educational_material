@@ -1,0 +1,11 @@
+Before detailing the library support for -fno-exceptions, first a passing note on the things lost when this 
+flag is used: it will break exceptions trying to pass through code compiled with -fno-exceptions whether or 
+not that code has any try or catch constructs. If you might have some code that throws, you shouldn't use 
+-fno-exceptions. If you have some code that uses try or catch, you shouldn't use -fno-exceptions. 
+
+And what it to be gained, tinkering in the back alleys with a language like this? Exception handling overhead 
+can be measured in the size of the executable binary, and varies with the capabilities of the underlying operating 
+system and specific configuration of the C++ compiler. On recent hardware with GNU system software of the same 
+age, the combined code and data size overhead for enabling exception handling is around 7%. Of course, if code 
+size is of singular concern than using the appropriate optimizer setting with exception handling enabled (ie, 
+-Os -fexceptions) may save up to twice that, and preserve error checking. 
