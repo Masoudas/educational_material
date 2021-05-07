@@ -2,14 +2,18 @@ Apparently, we can set the compiler for all targets as well as for particular ta
 flags can be set for each configuration (build type) as well.
 
 To set the compiler flags for all targets, use the CMAKE_<Lang>_FLAG_<Config> CMake variables:
+    -   CMAKE_CXX_FLAGS # Common among all compilations
     -   CMAKE_CXX_FLAGS_DEBUG
     -   CMAKE_CXX_FLAGS_RELEASE
     -   CMAKE_C_FLAGS_DEBUG
     -   CMAKE_C_FLAGS_RELEASE
-    -   CMAKE_CXX_FLAGS # Common among all compilations
 
-Question: Would the global options be passed together with those defined for local targets? Or will they be
-passed together as complements?
+Question: Would the global options be passed together with those defined for local targets? 
 
-Answer: Yes. Flags specified for a particular target override those given by the above global flags.
+Answer: Yes. Flags specified for a particular target complement those given by the above global flags. Hence,
+if the flags change on a per target basis, we better set these global flags to empty and specify them for each
+particular target. Consequently:
+    -   An option set by CMAKE_CXX_FLAGS is used for ALL targets
+    -   An option set by CMAKE_CXX_FLAGS_DEBUG is used for all debug builds
+    -           ...      CMAKE_CXX_FLAGS_RELEASE    ...        release builds     
 

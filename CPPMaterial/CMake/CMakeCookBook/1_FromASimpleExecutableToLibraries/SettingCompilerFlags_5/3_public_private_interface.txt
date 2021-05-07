@@ -1,0 +1,20 @@
+As we saw earlier with this example, we can set the flags as PRIVATE, PUBLIC and INTERFACE. What's the difference
+between these notions:
+
+    -   With the PRIVATE attribute, compile options will only be applied to the given target and not to other 
+        targets consuming it. In our examples, compiler options set on the geometry target will not be inherited 
+        by the compute-areas, even though compute-areas will link against the geometry library.
+    -   With the INTERFACE attribute, compile options on a given target will only be applied to targets 
+        consuming it.
+    -   With the PUBLIC attribute, compile options will be applied to the given target and all other targets 
+        consuming it.
+
+Hence for example, if I'm using the -fno-exception option which disables exceptions for geometry, then a PRIVATE 
+would only disable exceptions when generating the library. But when the target is being used, the exceptions
+flag would be on. This implies that the compute-areas target in the previous example is not compiled with the
+-fno-exceptions flag. Note, however, that the library geometry has been compiled -fno-exceptions.
+
+With the interface options, the user of this library has to use a flag, but not when the library is being
+compiled itself!
+
+Of course, as always public means both upon compilation and use that flag has to be used.
