@@ -1,4 +1,10 @@
 Feature detection algorithms involve those algorithms that extract features from an image.
 
     -   Canny edge detection:
-Developed by canny for detecting edges in the image. Uses Sobel filter for derivates of x and y.
+Developed by canny for detecting edges in the image. Uses Sobel filter for derivates of x and y. See 
+FeatureDetectionAlgorithms_4_2, 1_1_Sobol_Derviate_filter.cpp
+
+    -   Blob detectors
+Used for detecting blobs in images. See FeatureDetectionAlgorithms_4_2, BlobDetectors.
+
+

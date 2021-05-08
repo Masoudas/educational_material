@@ -1,0 +1,3 @@
+Github is also using the same ssh communication structure. Note that everytime we clone a repository, the
+clone Window actually says "Clone with SSH." This implies that once copying takes place, there's no further
+need to define an ssh key.
