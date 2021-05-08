@@ -1,0 +1,14 @@
+Question: What's the difference between the following two commands:
+
+$ find . -name *.txt | grep stream
+$ find . -name *.txt | xargs grep stream - # Or without the dash
+
+Answer:
+So note that the first one directly directs stdout to the command. Hence, we grep the string stream inside 
+each line of the output. Hence, it will find text files that have stream as part of their names.
+
+In the second one we say first, write the output string in xargs, then evaluate the result. This implies that
+the second command becomes something like:
+
+$ grep stream /path/file.txt
+Hence, it will actually look inside the content of the file! Cool.
