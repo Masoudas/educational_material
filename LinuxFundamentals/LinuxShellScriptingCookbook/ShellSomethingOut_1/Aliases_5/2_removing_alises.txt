@@ -1,0 +1,16 @@
+We can remove aliases in two obvious ways:
+
+    -   Use "unalias alias_name"
+    -   Set alias to empty, "alias alias_name="
+
+Alternatively, we can remove the command from .bashrc, using for example stream editor:
+
+$ sed -i "/alias line/" ~/.bashrc
+
+Or we can use grep:
+$ grep -v alias_name ~/.bashrc > temp && mv temp ~/.bashrc  # We can't read and write from a file at the same
+                                                            # time
+
+Or we can use awk:
+gawk -i inplace '!/alias_name/' myfile.txt
+

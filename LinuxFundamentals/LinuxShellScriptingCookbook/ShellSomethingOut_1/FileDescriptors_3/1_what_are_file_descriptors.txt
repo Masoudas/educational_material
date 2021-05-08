@@ -1,0 +1,10 @@
+File descriptors are integers associated with the input and output streams. The best-known file descriptors are 
+stdin, stdout, and stderr. The contents of one stream can be redirected to another. 
+
+As we discussed, when we use the < >, we're redirecting the input output streams from keyboard or screen from
+or to files, respectively.
+
+Note that:
+    -   0   :   stdin
+    -   1   :   stdout
+    -   2   :   stderr

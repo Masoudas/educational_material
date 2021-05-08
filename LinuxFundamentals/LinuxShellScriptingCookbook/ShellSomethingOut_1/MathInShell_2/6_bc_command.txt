@@ -1,9 +1,9 @@
 Note that none of the previously mentiond commands can perfom floating point arithmetic. To perform floating
 point math, we use the bc command.
 
-echo "4 * 0.56" | bc
-2.24
+echo "4 * 0.56" | bc # 2.24
 no=54;
-result=`echo "$no * 1.5" | bc`
+result=`echo "$no * 1.5" | bc`  # Whaaat is this?
 echo $result
 81.0
+

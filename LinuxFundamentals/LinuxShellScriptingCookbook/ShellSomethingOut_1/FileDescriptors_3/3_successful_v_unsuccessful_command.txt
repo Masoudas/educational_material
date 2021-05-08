@@ -1,0 +1,12 @@
+When a command exits because of an error, it returns a nonzero exit status. The command returns zero when it 
+terminates after successful completion. The return status is available in the special variable $? (run echo 
+$? immediately after the command execution statement to print the exit status).
+
+$ ls +
+...
+$ echo $?
+2
+
+$ ls 
+$ echo $?
+0

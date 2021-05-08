@@ -1,0 +1,15 @@
+So as we may recall, one famous way of writing a piece of text to a file is to use the echo command in the
+script:
+
+#!/bin/bash
+echo "This is a generated file. Do not edit. Changes will be overwritten." > file
+
+As it turns out, we can do the same task, using the cat command in the following bizzare fashion:
+
+#!/bin/bash
+cat<<EOF>log.txt
+This is a generated file. Do not edit. Changes will be overwritten.
+EOF
+
+$ cat log.txt
+This is a generated file. Do not edit. Changes will be overwritten.

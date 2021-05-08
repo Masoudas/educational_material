@@ -1,13 +1,7 @@
 #!/bin/bash
 
-result=`expr 3 + 4`
-result=$(expr $no1 + 5)
 
-echo $result
-
-no1=1
-no2=2
-
-let result=no1+no2
-
+no=1
+ls + 2>errors 
+result=`echo "$no * 1.5" | bc`
 echo $result

@@ -1,0 +1,25 @@
+As we already know, in pipes, stdout is redirected to the stdin of the next command. Question is, how can we
+write the result to a file, and then also pass it on to the next command?
+
+One solution would be to write to the file, then open that file in the next command. Hence something like:
+
+$ ls > file | cat file | grep regex
+
+But we can have our cake and eat it too, using the tee command. tee writes stdout to a file, and the hands
+out the content of stdout intact to the next command:
+
+$ ls | tee file file2 | grep regex    
+
+IMPORTANLY however, note that this command DOES NOT send the stderr to stdin. That one should be taken care of
+properly.
+
+Note that by default, tee overrides the file. Using -a appends to the file:
+
+$ ls | tee -a appended_file | egrep regex
+
+If we use - with tee, then stdout of tee is redirected to stdout once again, instead of to a file. Therefore, 
+we see the output message twice, once because of tee printing it, once because of -:
+
+$ ls | tee -
+
+Although, weirdly enough, in my Ubuntu machine, tee created a file named '-'!!!
