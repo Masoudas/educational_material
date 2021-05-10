@@ -1,0 +1,41 @@
+A second approach, which is preferred is to once again use target_compile_options. The point here is that we
+may want to use some flags for debug, and others for release. What we can do then is to use a generator expression
+that is conditional based on debug or release.
+
+In particular, we may recall that a genex has the following form:
+$<condition:string> condition=0,1
+
+In particular, we can check for configuration:
+$<CONFIG:cfgs>
+
+and then chain the two genex together.
+Hence, we may define our flags prior for each compiler id, and then use the generator expression:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+set(CXX_FLAGS)
+set(CXX_FLAGS_DEBUG)
+set(CXX_RELEASE)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+  list(APPEND CXX_FLAGS "-fno-rtti" "-fno-exceptions")
+  list(APPEND CXX_FLAGS_DEBUG "-Wsuggest-final-types" "-Wsuggest-final-methods" "-Wsuggest-override")
+  list(APPEND CXX_FLAGS_RELEASE "-O3" "-Wno-unused")
+endif()
+
+if(CMAKE_CXX_COMPILER_ID MATCHES Clang)  
+  list(APPEND CXX_FLAGS "-fno-rtti" "-fno-exceptions" "-Qunused-arguments" "-fcolor-diagnostics")
+  list(APPEND CXX_FLAGS_DEBUG "-Wdocumentation")
+  list(APPEND CXX_FLAGS_RELEASE "-O3" "-Wno-unused")
+endif()
+
+target_compile_options(
+    PRIVATE
+    ${CXX_FLAGS}
+    $<$<CONFIG:DEBUG>:${CXX_FLAGS_DEBUG}>
+    $<$<CONFIG:RELEASE>:${CXX_FLAGS_RELEASE}>
+)
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
