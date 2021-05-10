@@ -1,0 +1,5 @@
+Warn about types with virtual methods where code quality would be improved if the type were declared with the 
+C++11 final specifier, or, if possible, declared in an anonymous namespace. 
+
+This allows GCC to more aggressively devirtualize the polymorphic calls. This warning is more effective with 
+link time optimization, where the information about the class hierarchy graph is more complete. 

@@ -1,0 +1,11 @@
+-Wunused A set of four flags warning about various unused things:
+
+    -Wunused-function: Warn whenever a static function is declared but not defined or a non-inline static 
+        function is unused. This warning is enabled by -Wall.   
+    -Wunused-label: Warn whenever a label is declared but not used. This warning is enabled by -Wall.      
+    -Wunused-value: Warn whenever a statement computes a result that is explicitly not used. To suppress this 
+        warning cast the unused expression to void. This includes an expression-statement or the left-hand side 
+        of a comma expression that contains no side effects. For example, an expression such as x[i,j] causes a 
+        warning, while x[(void)i,j] does not.      
+    -Wunused-variable: Warn whenever a local or static variable is unused aside from its declaration. This 
+        option implies -Wunused-const-variable=1 for C, but not for C++. This warning is enabled by -Wall.  
