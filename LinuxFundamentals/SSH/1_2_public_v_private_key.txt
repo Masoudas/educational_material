@@ -1,0 +1,18 @@
+We should never forget that the public key is the key that we put in the authorized_key file of the server we
+want to connect to. 
+
+The private key always remains in our own remote machine. It shall never be divulged to anyone. We add the
+private key which is generated in a particular to our keys using the ssh-add command.
+
+$ ssh-add ~/.ssh/private_key
+
+Note that in the remote machine, we don't have authorized keys, because it doesn't make sense.
+
+An key is added to the authorized_keys on the server (the machine we want to connect to.) Yet, we add the private
+key to the keys the remote machine checks (the machine that wants the connection) using ssh-add.
+
+As reminder, note that for example if we're using a remote server, and we add a new user (other than root
+let's say) then we need to make a new key for that particular user. Authentication is per user, not per 
+machine. So if I want to connect to other_user@ip_address and I've created a key for root, I need to create
+another key for other_user.
+

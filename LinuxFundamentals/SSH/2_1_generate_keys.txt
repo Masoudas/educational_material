@@ -14,3 +14,8 @@ time, the key file must remain in the remote machine's folder.
 Note that it's best to set to the permission of the .ssh folder as 700.
 
 $ chmod 700 .ssh
+
+Finally, note that we can copy the key to the authorized key directly from the remote using the following 
+command, which makes the folder and the file on the server (authorized_key file):
+
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub YOUR_USER_NAME@IP_ADDRESS_OF_THE_SERVER

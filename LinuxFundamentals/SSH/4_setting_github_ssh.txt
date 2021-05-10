@@ -1,3 +1,11 @@
 Github is also using the same ssh communication structure. Note that everytime we clone a repository, the
 clone Window actually says "Clone with SSH." This implies that once copying takes place, there's no further
 need to define an ssh key.
+
+We can however set up an authorized key for a remote, by taking the following steps:
+
+    -   Create an ssh key on the remote.
+    -   Copy the PUBLIC key into the setting->SSH and GPG keys
+    -   Add the private key to your ssh, using the ssh-add ~/.ssh/private_key
+
+We see that Github actually adds the public key into its authorized keys as such.
