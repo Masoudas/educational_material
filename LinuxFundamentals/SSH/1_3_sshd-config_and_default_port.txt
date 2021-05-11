@@ -1,0 +1,12 @@
+The /etc/ssh folder contains a configuration file for ssh called sshd_config
+
+If we open that file, we see that it's Port 22 that's used for ssh. Therefore, if we're using that port, we
+need to free it (using netstat I guess) to allow sshd to do its thing.
+
+Usually, people set rootLoging option in this file to no, which stops remotes from loggin as root, which is
+good because it stops brute-force attacks or such.
+
+As always, don't forget that once we make a change to a service, for it to take place, we have to reload the
+service. We can reload the sshd service using systemctl (similarly, we can say systemctl restart sshd):
+
+$ systemctl reload openssh
