@@ -1,0 +1,6 @@
+As was the case with build type and compiler options, there are global variables for the standard as well.
+These are:
+
+    -   CMAKE_<LANG>_STANDARD
+    -   CMAKE_<LANG>_EXTENSIONS
+    -   CMAKE_<LANG>_STANDARD_REQUIRED

@@ -1,0 +1,6 @@
+CMake offers an even finer level of control over the language standard by introducing the concept of compile 
+features. These are features introduced by the language standard, such as variadic templates and lambdas in 
+C++11, and automatic return type deduction in C++14. You can ask for certain features to be available for 
+specific targets with the target_compile_features() command and CMake will automatically set the correct 
+compiler flag for the standard. It is also possible to have CMake generate compatibility headers for optional 
+compiler features.
