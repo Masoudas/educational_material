@@ -1,0 +1,38 @@
+Naturlich, every widget that we use, including for example the MainWindow or Window, Button, Menu, MenuBar
+(not action) inherit from QWidget. Hence, we shall explore this class.
+
+The Qt documentation specifies that:
+The widget is the atom of the user interface: it receives mouse, keyboard and other events from the window 
+system, and paints a representation of itself on the screen. Every widget is rectangular, and they are sorted 
+in a Z-order. A widget is clipped by its parent and by the widgets in front of it.
+
+A widget that is not embedded in a parent widget is called a window. Usually, windows have a frame and a title 
+bar, although it is also possible to create windows without such decoration using suitable window flags). 
+In Qt, QMainWindow and the various subclasses of QDialog are the most common window types.
+
+Every widget's constructor accepts one or two standard arguments:
+    -   QWidget *parent = nullptr is the parent of the new widget. If it is nullptr (the default), the new 
+        widget will be a window. If not, it will be a child of parent, and be constrained by parent's geometry 
+        (unless you specify Qt::Window as window flag).
+    -   Qt::WindowFlags f = { } (where available) sets the window flags; the default is suitable for almost all 
+        widgets, but to get, for example, a window without a window system frame, you must use special flags.
+
+QWidget has many member functions, but some of them have little direct functionality; for example, QWidget has 
+a font property, but never uses this itself. There are many subclasses which provide real functionality, such 
+as QLabel, QPushButton, QListWidget, and QTabWidget.
+
+-   Top-Level and Child Widgets
+A widget without a parent widget is always an independent window (top-level widget). For these widgets, 
+setWindowTitle() and setWindowIcon() set the title bar and icon respectively.
+
+Me: For example, we can set the icon of a Window to the icons of our application.
+
+Non-window widgets are child widgets, displayed within their parent widgets. Most widgets in Qt are mainly 
+useful as child widgets. For example, it is possible to display a button as a top-level window, but most 
+people prefer to put their buttons inside other widgets, such as QDialog. (See Fig1)
+
+Fig1 shows a QGroupBox widget being used to hold various child widgets in a layout provided by QGridLayout. 
+The QLabel child widgets have been outlined to indicate their full sizes.
+
+If you want to use a QWidget to hold child widgets you will usually want to add a layout to the parent QWidget. 
+See Layout Management for more information.

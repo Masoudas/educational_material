@@ -1,0 +1,49 @@
+The main window of QGuiApplication includes a menu bar into which you can add menu items. On Microsoft Windows, 
+the menu bar is a part of the window; on macOS X, it's the menu bar at the top of the screen; while 
+X-Windows-based applications, such as Linux, put them where the window manager dictates. Qt provides the QMenuBar 
+class to implement the functionality of a horizontal menu bar; this class has zero or more QMenu instances 
+associated with it, each corresponding to a single menu (such as File, and Edit). Menu items themselves are 
+represented as actions, implemented in Qt as instances of the QAction class. It's easiest to understand the flow 
+if we work bottom-up, from actions to menus to menu bars.
+
+A QAction class is an abstract user interface action that can be embedded in Qt Widgets such as menus. An 
+action can have the following properties
+
+    -   enabled: This is a Boolean flag indicating whether the action is enabled (selectable).
+    -   font: This is used to show any text associated with the action.
+    -   icon: This is to represent an action.
+    -   iconVisibleInMenu: This is a flag that is used to check whether an icon is visible in a menu.
+    -   shortcut: This is a keyboard shortcut associated with an action.
+    -   text: This is a textual description of the action.
+    -   toolTip: This is a tooltip for the action.
+    -   visible: This shows whether the action is visible.
+
+Actions have a trigger signal that fires when the action is triggered, such as when the user selects the 
+corresponding menu item. (Their properties also have change signals, so you can monitor when they change, but 
+that's a less common thing to do.) If you need to have an action trigger its events as if it were invoked, 
+call its activate method.
+
+An instance of QMenu groups one or more logically related actions; you can use it as either a pull-down menu, 
+as part of a menu bar, or as a context menu. QMenu provides the following methods you can use to build up a 
+menu hierarchy (me: Note that we usually design the menus in the designer menu:)
+
+    -   addAction and removeAction: These methods add and remove a single QAction instance, respectively.
+    -   clear: This method removes all actions.
+    -   addSeparator: This method adds a menu separator between two actions.
+    -   addMenu: This method adds a submenu to a menu
+
+Finally, QMenuBar groups all of the drop-down menus; it has the addMenu and insertMenu methods to add and 
+insert menus after and before their specified menu argument. You can check out the documentation regarding 
+QMenu.
+
+In conclusion, every action we add emits the triggered signal, for which we can define our slots, as the 
+following example shows:
+
+MainWindow::MainWindow(QWidget *parent) : 
+    QMainWindow(parent), 
+    ui(new Ui::MainWindow) 
+{ 
+    ui->setupUi(this); 
+    connect(ui->actionAbout, &QAction::triggered, this, &MainWindow:
+      :handleAbout); 
+} 

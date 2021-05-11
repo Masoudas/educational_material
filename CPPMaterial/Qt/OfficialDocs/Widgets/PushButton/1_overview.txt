@@ -1,0 +1,27 @@
+Qt's button classes that implement push-buttons, checkboxes, and radio buttons all inherit from the QAbstractButton 
+class. You can drag out any of the concrete subclasses of QAbstractButton in Qt Creator's Designer or 
+instantiate them programmatically. (Me: These include QPushButton, QToolButton, QRadioButton, QCheckBox, 
+QCommandLinkButton.)
+
+Through QAbstractButton, all buttons have the following properties:
+
+    -   checkable: This is a Boolean flag indicating whether the button has a checkbox behavior. By default, 
+        the value for this property is false.
+    -   checked: This indicates whether or not the button is presently checked.
+    -   down: This is a type of Boolean indicating whether or not the button is currently in the pressed 
+        state. (Me: Can be checked via the isDown method)
+    -   icon: This property holds the icon shown on the button.
+    -   shortcut: This property holds the mnemonic associated with the button.
+    -   text: This property holds the text shown on the button.
+
+Buttons also provide the following signals:
+    -   The button emits the clicked signal when the button is clicked.
+    -   The button emits the pressed signal when the button is pressed (that is, receives a mouse or pen-down 
+        event).
+    -   The button emits a released signal when the button is released (that is, receives a mouse or pen-up 
+        event).
+    -   The button emits the toggled signal when it changes the state from checked to unchecked or vice versa.
+
+Hence essentially, we define slots for the signals, but then again, inside the signal, we check for or not for
+example the button is down when a toggle signal is applied.
+

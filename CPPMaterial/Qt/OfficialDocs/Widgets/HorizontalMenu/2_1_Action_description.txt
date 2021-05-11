@@ -1,0 +1,33 @@
+In applications many common commands can be invoked via menus, toolbar buttons, and keyboard shortcuts. Since 
+the user expects each command to be performed in the same way, regardless of the user interface used, it is 
+useful to represent each command as an action.
+
+Actions can be added to menus and toolbars, and will automatically keep them in sync. For example, in a word 
+processor, if the user presses a Bold toolbar button, the Bold menu item will automatically be checked.
+
+Actions can be created as independent objects, but they may also be created during the construction of menus; 
+the QMenu class contains convenience functions for creating actions suitable for use as menu items.
+
+A QAction may contain an icon, menu text, a shortcut, status text, "What's This?" text, and a tooltip. Most of 
+these can be set in the constructor. They can also be set independently with setIcon(), setText(), setIconText(), 
+setShortcut(), setStatusTip(), setWhatsThis(), and setToolTip(). For menu items, it is possible to set an 
+individual font with setFont() (Me: Then again, we can set most of these in the design window. Set 
+iconVisibleInMenu : bool to see the icon as well)
+
+Actions are added to widgets using QWidget::addAction() or QGraphicsWidget::addAction(). Note that an action 
+must be added to a widget before it can be used; this is also true when the shortcut should be global (i.e., 
+Qt::ApplicationShortcut as Qt::ShortcutContext).
+
+Once a QAction has been created it should be added to the relevant menu and toolbar, then connected to the slot 
+which will perform the action. For example:
+
+    const QIcon openIcon = QIcon::fromTheme("document-open", QIcon(":/images/open.png"));
+    QAction *openAct = new QAction(openIcon, tr("&Open..."), this);
+    openAct->setShortcuts(QKeySequence::Open);
+    openAct->setStatusTip(tr("Open an existing file"));
+    connect(openAct, &QAction::triggered, this, &MainWindow::open);
+    fileMenu->addAction(openAct);
+    fileToolBar->addAction(openAct);
+
+We recommend that actions are created as children of the window they are used in. In most cases actions will 
+be children of the application's main window.

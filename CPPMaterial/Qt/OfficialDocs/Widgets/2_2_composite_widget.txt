@@ -1,0 +1,17 @@
+When a widget is used as a container to group a number of child widgets, it is known as a composite widget. 
+These can be created by constructing a widget with the required visual properties - a QFrame, for example - 
+and adding child widgets to it, usually managed by a layout. 
+
+Composite widgets can also be created by subclassing a standard widget, such as QWidget or QFrame, and adding 
+the necessary layout and child widgets in the constructor of the subclass.
+
+    -   Custom Widgets and Painting
+Since QWidget is a subclass of QPaintDevice, subclasses can be used to display custom content that is composed 
+using a series of painting operations with an instance of the QPainter class. This approach contrasts with the 
+canvas-style approach used by the Graphics View Framework where items are added to a scene by the application 
+and are rendered by the framework itself.
+
+Each widget performs all painting operations from within its paintEvent() function. This is called whenever the 
+widget needs to be redrawn, either as a result of some external change or when requested by the application.
+
+The Analog Clock example shows how a simple widget can handle paint events.

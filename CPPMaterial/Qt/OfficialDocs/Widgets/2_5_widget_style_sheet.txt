@@ -1,0 +1,6 @@
+In addition to the standard widget styles for each platform, widgets can also be styled according to rules 
+specified in a style sheet. This feature enables you to customize the appearance of specific widgets to 
+provide visual cues to users about their purpose. For example, a button could be styled in a particular way to 
+indicate that it performs a destructive action.
+
+The use of widget style sheets is described in more detail in the Qt Style Sheets document.

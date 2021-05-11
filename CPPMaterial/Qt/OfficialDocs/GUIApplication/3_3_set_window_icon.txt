@@ -1,0 +1,5 @@
+So note that normally when we run a gui application, the icon that appears for the app is a black window.
+We can actually set the application icon for all the windows using the setWindowIcon method.
+
+
+Also note that each particular widget has a method that we can use to set the icon for that as well.

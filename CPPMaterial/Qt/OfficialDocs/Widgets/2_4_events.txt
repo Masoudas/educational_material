@@ -1,0 +1,8 @@
+Widgets respond to events that are typically caused by user actions. Qt delivers events to widgets by calling 
+specific event handler functions with instances of QEvent subclasses containing information about each event.
+
+If your widget only contains child widgets, you probably do not need to implement any event handlers. If you 
+want to detect a mouse click in a child widget call the child's underMouse() function inside the widget's 
+mousePressEvent().
+
+The documentation contains more information on this, but I skipped it.

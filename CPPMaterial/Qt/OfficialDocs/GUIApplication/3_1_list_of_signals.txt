@@ -1,0 +1,16 @@
+The following are the signals provided by this class:
+
+void 	applicationDisplayNameChanged()
+void 	applicationStateChanged(Qt::ApplicationState state)
+void 	commitDataRequest(QSessionManager &manager)
+void 	focusObjectChanged(QObject *focusObject)
+void 	focusWindowChanged(QWindow *focusWindow)
+void 	fontChanged(const QFont &font)
+void 	fontDatabaseChanged()
+void 	lastWindowClosed()      # This is the most important one
+void 	layoutDirectionChanged(Qt::LayoutDirection direction)
+void 	paletteChanged(const QPalette &palette)
+void 	primaryScreenChanged(QScreen *screen)
+void 	saveStateRequest(QSessionManager &manager)
+void 	screenAdded(QScreen *screen)
+void 	screenRemoved(QScreen *screen)
