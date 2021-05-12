@@ -1,0 +1,3 @@
+To list the sudo commands a user can run, run sudo with l (list) and U (user) options:
+
+$ sudo -lU $(whoami)

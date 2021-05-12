@@ -1,0 +1,6 @@
+WHAT IS LOOPBACK?
+
+Loopback (or lo) is a virtual interface that your computer uses to communicate with itself; it is mainly used 
+for troubleshooting purposes. The IP address of the loopback interface is 127.0.0.1.
+
+We can ping the loop too.

@@ -1,0 +1,10 @@
+Internally, dates are stored as an integer number of seconds since 00:00:00 1970-01-01. This is called epoch or 
+Unix time.
+
+To get the epoch time, use the +%s flag with date:
+
+$ data +%s
+
+Note also that we can convert a particular time stamp into epoch time:
+$ date --date "Wed mar 15 08:09:16 EDT 2017" +%s
+

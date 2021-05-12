@@ -1,6 +1,6 @@
 We can create an alias for a command using the command alias:
 
-$ alias alias_name="command command_string" # The phrase command cab be present or not!
+$ alias alias_name="command_string" 
 
 $ alias install='sudo apt-get install'
 

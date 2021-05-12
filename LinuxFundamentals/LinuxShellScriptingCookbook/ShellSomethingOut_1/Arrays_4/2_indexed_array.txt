@@ -1,0 +1,28 @@
+Use paranthesis to define an array. Indexes start from 0.
+
+$ arr=(val1 val2 val3)
+
+Note that we can directly define the array as well:
+
+#!/bin/bash
+arr[0]="val1"
+arr[1]="val2"
+arr[2]="val3"
+
+
+Use [] notation to access elements.
+
+$ echo ${arr[0]}        
+
+Note that $arr[0] is actually a syntax error. The pointer increment has to go inside interpolation. However,
+funny enough:
+
+$ echo $arr[0]  # Prints val1[0] :D
+
+Use the famous @ to read all entries directly:
+$ echo ${arr[@]}    # Equivalently, echo ${array_var[*]}
+val1 val2 val3
+
+We can also print the number of elements, using a combination of # and @:
+$ echo ${#arr[@]}
+

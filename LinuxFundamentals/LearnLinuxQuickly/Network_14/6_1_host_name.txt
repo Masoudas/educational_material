@@ -1,0 +1,15 @@
+There are several ways to get the host name of current machine:
+
+$ hostname
+$ echo $HOSTNAME
+$ less /etc/hostname
+$ hostnamectl   # Discussed next.
+
+If several hosts are on the same network, we can ping them. For example, if another host name called RAT_BABY
+is on this network, I can ping it as follows:
+
+$ ping RAT_BABY
+
+I can also ping myself in the following way, which uses the loopback:
+$ ping $HOSTNAME
+

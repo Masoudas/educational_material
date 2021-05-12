@@ -1,0 +1,3 @@
+Note that we can give a group the power of sudo, rather than just a particular user:
+
+%group_name ALL=(ALL) NOPASSWD: ALL  # Give permission for all commands to group_name

@@ -1,0 +1,9 @@
+The terminal put command can be used to perfom all sorts of operations on the appearance of the terminal, as
+well as getting information about it's appearance. 
+
+$ tput lines    # How many lines the terminal (screen) contains (changing screen size changes this value)
+$ tput cols     # How many columns the terminal (screen) contains ( ... )
+
+$ tput cup  10  10  # Position cursor (meaning beginning of username@hos_name) at row 10, col 10
+$ tput longname # Name of the terminal kind.
+

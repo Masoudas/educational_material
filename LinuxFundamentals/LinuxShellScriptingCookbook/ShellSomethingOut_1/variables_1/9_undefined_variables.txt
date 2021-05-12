@@ -1,0 +1,3 @@
+A question that may arise is that what if we use an undefined variable? 
+
+Undefined variables are considered empty (just like CMake.)

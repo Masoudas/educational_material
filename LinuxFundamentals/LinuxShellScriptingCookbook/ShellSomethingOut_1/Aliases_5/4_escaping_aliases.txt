@@ -1,0 +1,5 @@
+We can escape aliases and run the original command, using a escape character \ (meaning escape aliases.)
+
+In particular, we want to do this in an OS we're not familiar with:
+$ \rm
+

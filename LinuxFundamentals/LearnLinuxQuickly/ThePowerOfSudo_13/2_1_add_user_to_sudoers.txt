@@ -1,0 +1,31 @@
+To add a user to the group of sudoers, we can directly edit the /etc/sudoers file. However, its recommended
+to use the editor dedicated to this file, which allows us to detect error upon recompilation of this file.
+
+The editor dedicated to this file is a vi editor (I guess), called visudo, which is funny enough, a nano
+editor:
+
+$ sudo visudo
+
+The most interesting lines are in a plain such file:
+root   ALL=(ALL:ALL) ALL
+%admin ALL=(ALL) ALL
+%sudo  ALL=(ALL:ALL) ALL
+
+The syntax to add a new user to the group of sudoers is as follows:
+user hosts=(user:group) commands    # Commands have to reference the actuall binary file.
+
+Example:
+masoudas ALL=(ALL) NOPASSWD: /usr/sbin/useradd, /usr/bin/apt-get install terminator # A package
+
+So note that in the above:
+    - We passed two commands, separated by ','
+    - The second command has options passed to it
+
+We can also use aliases inside this file to manage a certain group of users together:
+User_Alias MANAGERS = smurf,bob
+
+The same way, we can define aliases for commands:
+Cmnd_Alias USER_CMDS = /usr/sbin/useradd, /usr/sbin/userdel, /usr/sbin/usermod
+
+And this is how they are used:
+MANAGERS ALL=(ALL) USER_CMDS

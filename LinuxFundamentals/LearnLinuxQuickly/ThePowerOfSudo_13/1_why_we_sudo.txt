@@ -1,0 +1,29 @@
+Recall that sudo implies switch user and do, to which we can apply user names as well
+
+$ sudo -u user_name id -u
+
+We use sudo to let non-root users have super-user priviliges. Note that the sudo password does not necessarily
+have to be the same as the root password, and we can change the root password as follows:
+
+$ sudo su
+# passwrd
+
+Ok. So now, notice that in the above command, we said sudo su, and not su. In fact, in my Ubuntu machine,
+I can't switch with su as long as I haven't set the password like above. Why?
+
+First, note that sudo means perform one command as the root user. So when I say sudo su, I'm switching user 
+as sudo. Note that when we install ubuntu, we set the password for sudo (and not for root.) In fact, root
+does not have a password as long as we don't set one like above. However, with the above command I'm saying
+    [1] Let me become the super user
+    [2] Now, as super user, let me change account to root!
+
+Now, inside I'm setting the password. Therefore:
+$ su    # Asks for the root password (the one I just set)
+$ sudo su   # Asks for sudo password
+
+In conclusion, the obvious difference between sudo an su is that, when run as root:
+    -   sudo does not change user. It just runs the command. su changes to root
+    -   su asks for root user password, sudo asks for sudo password.
+
+Famously over the Internet, they say "When you install Ubuntu, the standard root account is created, but no 
+password is assigned to it. You can’t log in as root until you assign a password to the root account."

@@ -1,0 +1,14 @@
+We can use the hostnamectl command to see and change hostname information
+
+$ hostnamectl
+   Static hostname: masoudas-Vostro-7500
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: 6c537fb533e74e3c9a9762a87eaf0993
+           Boot ID: 6c5783715afa4331bb01c1170bf118de
+  Operating System: Ubuntu 20.04.2 LTS
+            Kernel: Linux 5.8.0-50-generic
+      Architecture: x86-64
+
+To change the hostname, use the hostname option:
+$ hostnamectl set-hostname new_hostname

@@ -1,0 +1,9 @@
+Beside using the ip command, the folder that contains all the available network interface on the machine is
+found at /sys/class/net:
+
+$ ls /sys/class/net
+lo  wlp0s20f3
+
+This shows that I have a wifi and a loop on my machine at this point, and nothing else is available. Note
+that is NOT the list of all available network devices, because right now on my machine, I have an ethernet
+as well. That I can check with lshw.

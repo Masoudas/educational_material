@@ -1,0 +1,11 @@
+The data granularity is in seconds. We can use it then to benchmark a script. That being said, the proper way
+of doing so is to use 'time':
+
+#!/bin/bash
+#Filename: time_take.sh
+start=$(date +%s)
+commands;
+statements;
+end=$(date +%s)
+difference=$(( end - start))
+echo Time taken to execute commands is $difference seconds.
