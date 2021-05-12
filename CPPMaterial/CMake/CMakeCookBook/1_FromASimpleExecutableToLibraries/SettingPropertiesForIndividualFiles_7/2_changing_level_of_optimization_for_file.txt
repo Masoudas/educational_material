@@ -1,0 +1,47 @@
+As an example, in this receipe we try and set the optimization flag for some of the files in this project.
+
+Notice that in this recipe, the flags are added ON TOP OF the original flags. Therefore, files are compiled
+with flags O2 and O3 being supplied together! Which takes effect God only knows.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
+
+project(set_flags LANGUAGES CXX)
+
+add_library(
+geometry
+  STATIC
+    geometry_circle.cpp
+    geometry_circle.hpp
+    geometry_polygon.cpp
+    geometry_polygon.hpp
+    geometry_rhombus.cpp
+    geometry_rhombus.hpp
+    geometry_square.cpp
+    geometry_square.hpp
+)
+
+target_compile_options(
+    geometry
+    PRIVATE
+    "-o3"
+)
+
+list(APPEND sources_with_lower_optimization
+    geometry_circle.cpp
+    geometry_rhombus.cpp)
+
+foreach(_file IN LISTS sources_with_lower_optimization)
+    set_source_files_properties(${_source} PROPERTIES COMPILE_FLAGS -O2)
+    message(STATUS "Appending -O2 flag for ${_source}")
+endforeach()
+
+message(STATUS "Querying sources properties using plain syntax:")
+foreach(_source ${sources_with_lower_optimization})
+  get_source_file_property(_flags ${_source} COMPILE_FLAGS)
+  message(STATUS "Source ${_source} has the following extra COMPILE_FLAGS: ${_flags}")
+endforeach()
+
+add_executable(compute-areas compute-areas.cpp)
+
+target_link_libraries(compute-areas geometry)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

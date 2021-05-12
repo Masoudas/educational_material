@@ -1,0 +1,13 @@
+For each loops can be used in four different forms:
+
+    -   Over explicit elements
+We say foreach(arg val1 val2 ...). We then interpolate ${arg}, which would be the value of val1.
+
+    -   Over content of lists:
+We say foreach(item IN LISTS list1 list2 ...)
+
+    -   Over an integer range
+We say foreach(loop_var RANGE [START] STOP [STEP]), where both start and stop are inclusive.
+
+    -   As a loop over items
+foreach(var IN ITEMS ${list1}) is equivalent to for each IN LISTS.
