@@ -1,0 +1,5 @@
+In the meantime, we can install an apache server on our linux machine:
+
+$ apt-get install apache2 -y   # Say yes to all questions
+
+And once we have the ip address of our machine, we can connect to our website from our web browser. Cool!

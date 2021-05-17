@@ -1,0 +1,19 @@
+Recall the famous sink-hole of Linux, to which we can divert all non-desired streams:
+$ command 2 > /dev/null
+
+For example, imagine we have three files a1, a2, a3, but the first one has no read permissions. In order not
+to see the printed error message, we can do
+
+$ cat a* 2>> errors.txt  # Note that we musn't divert 1 to the file :D. Unless we want to append the files 
+                        # together
+
+Now that we're here, we should note an important property of shell script files. The shell does not wait at
+a command that it can't continue. It just prints the error message and moves on.
+
+#!/bin/bash
+ls + 2> error   # Write the error message, and move on
+echo $? # Print the exit status of the command
+
+$ ./script
+# Creates error file first
+2

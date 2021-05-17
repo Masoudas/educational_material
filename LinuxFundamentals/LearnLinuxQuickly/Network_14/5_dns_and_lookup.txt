@@ -1,0 +1,21 @@
+As we may recall, we can set the DNS server using the /etc/resolv.conf file.
+
+There's a command called nslookup that will give us the ip address of a particular name:
+
+$ nslookup asroma27.com
+Server:         127.0.0.53          # Address of the DNS server, and not the website in the resolv.conf file
+Address:        127.0.0.53#53   
+
+Non-authoritative answer:       # Ok, it says non-authoritative answer. This is because we connect to 
+                                # Asroma27.com/v16 I guess
+Name:   asroma27.com
+Address: 74.208.236.115     # Website ip address.
+Name:   asroma27.com
+Address: 2607:f1c0:100f:f000::2b2
+
+Note that if we messed with resolv.config, we get the following error:
+root@ubuntu-linux:~# ping facebook.com
+ping: facebook.com: Temporary failure in name resolution
+
+We can also for example use the DNS server of google at 8.8.8.8. By doing so, for example the ip address of
+a famous website like facebook changes. This is because facebook has different ips on various servers.

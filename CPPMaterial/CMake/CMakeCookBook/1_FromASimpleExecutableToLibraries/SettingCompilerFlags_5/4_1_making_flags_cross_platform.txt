@@ -1,0 +1,21 @@
+As we already discussed, flags are compiler specific, and in particular, MSVC and gcc flags are quite different.
+So, how do we solve this problem?
+
+We can think of three solutions:
+
+    -   Check for compiler id:
+The cache variable CMAKE_CXX_COMPILER_ID contains the name of the compiler to be used. We can use an if structure
+to set the flags on a per compiler basis:
+
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)   # Don't forget to use MATCHES for comparing strings And that we don't
+                                        # interpolate with ${}
+  list(APPEND CMAKE_CXX_FLAGS "-fno-rtti" "-fno-exceptions")
+  list(APPEND CMAKE_CXX_FLAGS_DEBUG "-Wsuggest-final-types" "-Wsuggest-final-methods" "-Wsuggest-override")
+  list(APPEND CMAKE_CXX_FLAGS_RELEASE "-O3" "-Wno-unused")
+endif()
+
+if(CMAKE_CXX_COMPILER_ID MATCHES Clang)  
+  list(APPEND CMAKE_CXX_FLAGS "-fno-rtti" "-fno-exceptions" "-Qunused-arguments" "-fcolor-diagnostics")
+  list(APPEND CMAKE_CXX_FLAGS_DEBUG "-Wdocumentation")
+  list(APPEND CMAKE_CXX_FLAGS_RELEASE "-O3" "-Wno-unused")
+endif()

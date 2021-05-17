@@ -1,0 +1,5 @@
+Disable generation of information about every class with virtual functions for use by the C++ run-time type 
+identification features (dynamic_cast and typeid). If you don’t use those parts of the language, you can save 
+some space by using this flag. Note that exception handling uses the same information, but G++ generates it as 
+needed. The dynamic_cast operator can still be used for casts that do not require run-time type information, 
+i.e. casts to void * or to unambiguous base classes. 

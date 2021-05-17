@@ -1,0 +1,10 @@
+The help of the alias command shows that we can list all our aliases using the -p command, or just no option:
+
+$ alias -p
+$ alias
+
+Note: Of course, if we've aliased a command with a function as we discussed previously, we don't get the function
+name here.
+
+To get the list of all functions, use 
+$ declare -F

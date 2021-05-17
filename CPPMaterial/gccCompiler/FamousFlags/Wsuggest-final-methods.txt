@@ -1,0 +1,6 @@
+Warn about virtual methods where code quality would be improved if the method were declared with the C++11 
+final specifier, or, if possible, its type were declared in an anonymous namespace or with the final specifier. 
+
+This warning is more effective with link time optimization, where the information about the class hierarchy 
+graph is more complete. It is recommended to first consider suggestions of -Wsuggest-final-types and then 
+rebuild with new annotations.

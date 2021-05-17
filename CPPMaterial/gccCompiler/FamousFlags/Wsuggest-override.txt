@@ -1,0 +1,1 @@
+Warn about overriding virtual functions that are not marked with the override keyword. 

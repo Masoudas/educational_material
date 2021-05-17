@@ -1,1 +1,5 @@
-Histogram Equalization: gray or colored image. Uses accumulate histogram distribution to enhance image contrast.
+    -   Histogram Equalization: 
+Gray or colored image. Uses accumulate histogram distribution to enhance image contrast.
+
+    -   Make dark darker, bright brighter (AKA Lomography):
+Apply a LUT to the pixel values with the transformation 1 / ( 1 + exp([-x + 0.5]/s)), where s is a scale.

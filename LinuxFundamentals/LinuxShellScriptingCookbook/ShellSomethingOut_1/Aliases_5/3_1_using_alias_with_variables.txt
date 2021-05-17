@@ -1,0 +1,7 @@
+So, an alias for a command that accepts arguments can access the arguments using $. Hence, we can use those
+arguments, and expand them for example. 
+
+The following example aliases the rm command, so that whenever we remove a file, it will go to the backup
+folder, before being totally eliminated.
+
+$ alias rm="cp $@ ~/backup && rm $@'

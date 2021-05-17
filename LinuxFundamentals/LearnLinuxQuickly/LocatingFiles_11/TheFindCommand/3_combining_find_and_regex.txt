@@ -1,0 +1,3 @@
+ls -l | find ./ -type f -name "*.txt" -exec grep "program" {} \;
+
+This command as a pipe finds text files, and then inside each one greps the regular expression "program"

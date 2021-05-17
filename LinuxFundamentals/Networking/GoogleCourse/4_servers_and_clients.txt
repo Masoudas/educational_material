@@ -1,0 +1,4 @@
+A server is something that provides data for something that requests it. A client is something that requests
+data. We say thing because servers can be clients as well. Like a web application working on the local machine
+browsed on the same machine. OR a database. An email server is the client of a DNS server.
+

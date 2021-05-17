@@ -1,0 +1,78 @@
+Whereas in the previous example we showed that aliases accept variables, we tend not to use them with variables,
+as I found over the internet. We much rather use functions for such a case.
+
+In particular, say I wanted to alias the rm command to move everything into a backup folder. If I write the
+alias with $@ as discussed in 3_1, it doesn't work for very complicated reasons I copy below.
+
+$ echo alias rm='cp $@ ~/backup && rm $@' >> .bashrc
+
+Instead, we prefer to use functions for such cases:
+
+rm() { 
+	mv $@ $HOME/.backup
+}
+
+This alias takes over the rm command, because it has been defined last, after the .bashrc script is run.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Don't read the following unless a couple of years have passed!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Clarification
+
+bash aliases do accept arguments, but only at the end:
+
+$ alias speak=echo
+$ speak hello world
+hello world
+
+Putting arguments into the middle of command via alias is indeed possible but it gets ugly.
+Don't try this at home, kiddies!
+
+If you like circumventing limitations and doing what others say is impossible, here's the recipe. Just don't blame me if your hair gets frazzled and your face ends up covered in soot mad-scientist-style.
+
+The workaround is to pass the arguments that alias accepts only at the end to a wrapper that will insert them in the middle and then execute your command.
+Solution 1
+
+If you're really against using a function per se, you can use:
+
+$ alias wrap_args='f(){ echo before "$@" after;  unset -f f; }; f'
+$ wrap_args x y z
+before x y z after
+
+You can replace $@ with $1 if you only want the first argument.
+
+Explanation 1
+
+This creates a temporary function f, which is passed the arguments (note that f is called at the very end). The unset -f removes the function definition as the alias is executed so it doesn't hang around afterwards.
+Solution 2
+
+You can also use a subshell:
+
+$ alias wrap_args='sh -c '\''echo before "$@" after'\'' _'
+
+Explanation 2
+
+The alias builds a command like:
+
+sh -c 'echo before "$@" after' _
+
+Comments:
+
+    The placeholder _ is required, but it could be anything. It gets set to sh's $0, and is required so that the first of the user-given arguments don't get consumed. Demonstration:
+
+    sh -c 'echo Consumed: "$0" Printing: "$@"' alcohol drunken babble
+    Consumed: alcohol Printing: drunken babble
+
+    The single-quotes inside single-quotes are required. Here's an example of it not working with double quotes:
+
+    $ sh -c "echo Consumed: $0 Printing: $@" alcohol drunken babble
+    Consumed: -bash Printing:
+
+    Here the values of the interactive shell's $0 and $@ are replaced into the double quoted before it is passed to sh. Here's proof:
+
+    echo "Consumed: $0 Printing: $@"
+    Consumed: -bash Printing:
+
+    The single quotes ensure that these variables are not interpreted by interactive shell, and are passed literally to sh -c.
+
+    You could use double-quotes and \$@, but best practice is to quote your arguments (as they may contain spaces), and \"\$@\" looks even uglier, but may help you win an obfuscation contest where frazzled hair is a prerequisite for entry.

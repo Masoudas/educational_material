@@ -1,0 +1,23 @@
+The let command is used to perform basic operations directly. Within a let command, we use variable names 
+without the $ prefix. Consider this example:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash
+no1=1
+no2=2
+
+let result=no1+no2
+let re=${no1} + ${no2}  # Error thrown by shell, because operand was expected, but given an string.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We can also use let for increment and decrement and shorthand:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash
+no1=1
+
+let no1++
+let no--
+let no+=6   # Equivalent to let no=no+6
+let no-=6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

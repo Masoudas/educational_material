@@ -1,0 +1,31 @@
+The header QGuiApplication and the corresponding class are responsible for the flow of a GUI application,
+as opposed to QCoreApplication, which is responsible for the flow of a non-Gui application.
+
+Note that we need gui added in the .pro file of the project.
+
+In fact, we don't directly use this class to jump start a QTGuiApplication, but a QApplication class can be
+converted to a REFRENCE of this class (don't forget not to slice.)
+
+For example, in the following small snippet, we get the pid of the GUI applicatin using this class:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#include "mainwindow.h"
+
+#include <QApplication>
+#include <QDebug>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    QGuiApplication& app = a;
+    auto pid = app.applicationPid();
+    qDebug() << pid;
+
+    qDebug() << app.
+
+    MainWindow w;
+    w.show();
+    return a.exec();
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%

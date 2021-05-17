@@ -1,0 +1,40 @@
+The command "target_compile_options" is the command to go to when we want to pass flags to the compiler.
+Note that as it happens, the flags are at least in this form platform dependent. Hence, a flag passed to gcc
+is explicit "Like -Wall" but in MSVC it's something like "/Wall" I guess.
+
+Note that passing options as such complements (and not override) all default options.
+
+Another option is that we can set PUBLIC, PRIVATE and INTERFACE flags, allowing a target to be compiled in
+different formats. For example, consider the following receipe:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+project(recipe-08 LANGUAGES CXX)
+
+message("C++ compiler flags: ${CMAKE_CXX_FLAGS}")   # General flags for all config modes
+
+list(APPEND flags "-fPIC" "-Wall")
+if(NOT WIN32)
+  list(APPEND flags "-Wextra" "-Wpedantic")
+endif()
+
+add_library(geometry STATIC file1 ...)
+
+target_compile_options(geometry
+  PRIVATE
+    ${flags}
+  )
+
+add_executable(compute-areas compute-areas.cpp)
+
+target_compile_options(compute-areas
+  PRIVATE
+    "-fPIC"
+  )
+
+target_link_libraries(compute-areas geometry)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As we can see, for each target we've added a couple of options, and in particular -fPIC is added for both.
+
+Note: I don't really understand why he passes -fPIC to an executable or a static library!

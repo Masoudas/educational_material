@@ -1,0 +1,21 @@
+The public key provided by the ssh command is the key to access the server linux machine. Once both remote
+machines have the same key in their key repository, it can be trusted among both of them, and we're not 
+prompted to put our password every single time.
+
+To do so, we can actually generate keys, and then configure them in both our remote and server machine. To
+generate a key, we can just use the ssh-keygen command:
+
+$ ssh-keygen    # Some people suggest we should give the "-t rsa" option here to.
+
+Once pressing enter, the command will ask us for a path to the file, together with a password for it. 
+We want to put all our authorized keys in the .ssh folder, in a file called authorized_keys. Then at the same
+time, the key file must remain in the remote machine's folder.
+
+Note that it's best to set to the permission of the .ssh folder as 700.
+
+$ chmod 700 .ssh
+
+Finally, note that we can copy the key to the authorized key directly from the remote using the following 
+command, which makes the folder and the file on the server (authorized_key file):
+
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub YOUR_USER_NAME@IP_ADDRESS_OF_THE_SERVER

@@ -1,0 +1,3 @@
+Note that by passing -y after the package name, we're answering yes to all questions:
+
+$ sudo apt-get install package_name -y

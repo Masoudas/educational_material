@@ -1,0 +1,30 @@
+We can create custom file descriptors using the exec command (me: why we do it is the question, however!)
+
+Note that a file descriptor is an abstract indicator for accessing a file. Each file access is associated 
+with a special number called a file descriptor. 0, 1, and 2 are reserved descriptor numbers for stdin, stdout, 
+and stderr.
+
+Usually in a programming language, we have three modes for accessing a file:
+    -   Read mode
+    -   Write with append mode
+    -   Write with truncate mode
+
+The < operator reads from the file to stdin. The > operator writes to a file with truncation (data is written 
+to the target file after truncating the contents). The >> operator writes to a file by appending (data is 
+appended to the existing file contents and the contents of the target file will not be lost). File descriptors 
+are created with one of the three modes.
+
+$ exec 3<input.txt # open for reading with descriptor number 3
+
+And then use it in the following way (note that we can't use a descriptor twice. We have to create a new one
+every time:)
+
+$ cat<&3
+this is a test line
+
+Create a truncate write mode:
+$ exec 4>output.txt
+$ echo newline >&4
+$ cat output.txt
+newline
+

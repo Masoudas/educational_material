@@ -1,0 +1,12 @@
+TCP has five layers (OSI has seven:)
+
+    -   The physical layer: IT represents the physical layer for connecting, like cables, network cards.
+    -   The Data link layer: This is the ethernet and wifi layer, the module used for sending information.
+    -   The network layer (or network access layer:) Responsible for delivering data across networks. We have 
+        the concept of ip in this layer indeed. IP (internet protocol) is the most common protocol in this
+        layer. There's client and servers on each node.
+    -   The transport layer: Sorts out which servers and clients are supposed to get the data transported in
+        the network layer. The TCP protocol is the most famous example in this layer, which stands for transmission
+        control protocol.
+    -   The application layer: These are the applications that use the data. Like browsers, email apps, etc.
+        (Me: I think the https and ftp fall into this category.)

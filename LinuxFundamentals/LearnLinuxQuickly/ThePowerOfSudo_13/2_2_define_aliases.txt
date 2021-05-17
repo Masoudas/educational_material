@@ -1,0 +1,8 @@
+We can also use aliases inside this file to manage a certain group of users together:
+User_Alias MANAGERS = smurf,bob
+
+The same way, we can define aliases for commands:
+Cmnd_Alias USER_CMDS = /usr/sbin/useradd, /usr/sbin/userdel, /usr/sbin/usermod
+
+And this is how they are used:
+MANAGERS ALL=(ALL) USER_CMDS

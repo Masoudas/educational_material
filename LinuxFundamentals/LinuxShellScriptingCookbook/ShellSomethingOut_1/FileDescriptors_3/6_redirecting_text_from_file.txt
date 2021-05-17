@@ -1,0 +1,5 @@
+As we may recall, for commands that can read from a file, we can use the stdin stream to read from the command
+
+An example of such a command is cat:
+
+$ cat < file

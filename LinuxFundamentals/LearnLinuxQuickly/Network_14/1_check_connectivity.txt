@@ -1,0 +1,18 @@
+An easy way to check connectivity is to use the ping command with a particular website for example:
+
+$ ping google.com
+
+The ping command sends a packet (unit of data) called an ICMP echo request to the specified host and waits for 
+the host to send back a packet called an ICMP echo reply to confirm that it did receive the initial packet. If 
+the host replies as we see in our example, then it proves that we were able to reach the host. This is like 
+
+Notice that without any options, the ping command keeps sending packets continuously, and it won't stop until 
+you hit Ctrl + C. with the -c option, we can specify how many packets we want to send:
+$ ping -c 3 google.com
+
+If we're not connected to any network, we get
+$ ping -c 3 google.com
+ping: google.com: Name or service not known
+
+
+The other way to check RX/TX is to use the ip -s addr

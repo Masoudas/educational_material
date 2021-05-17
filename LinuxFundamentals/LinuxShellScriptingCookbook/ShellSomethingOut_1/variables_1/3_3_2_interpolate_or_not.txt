@@ -1,0 +1,32 @@
+Following up on the discussion we just had, consider the following set of commands written on the shell itself:
+$ myvar=PATH
+$ $myvar=/:$PATH        
+bash: PATH=/:aa: No such file or directory  # OR
+$ $mayvar=a
+PATH=a: command not found
+
+So what does not happen is a form of piping. That is, myvar is interpolated, and then together is passed to bash.
+Aha! What happens is that this entire line is considered a command. This is "PATH=a" is read as a COMMAND, and
+not as an assignment. This is because the entire expression is now passed. Note that assignment only makes sence
+if we're on the shell itself. Now with this interpolation, we're passing "PATH=a" to the shell, which is the same
+notion as that of a command. It's not an assignment.
+With the PATH=/:aa, because of the forward slash, bash would think that we're passing it a path, and that's why 
+it says no file or directory.
+
+Here's a funny trick to make this work, so that we now know that after evaluation (including $ and =) everything
+is passed as an string:
+
+$ mkdir PATH=a
+$ myvar=PATH
+$ cd $mayvar=a  # evaluated as a single string cd PATH=a
+Goes to the folder
+
+Now, we also understand the use of the eval command. It's there to evaluate a command from a string. A single
+string, after all interpolation and what not has been performed.
+
+$ myvar="cd .."
+$ eval $myvar   # Ok. Goes back one folder. No "" on the inside
+$ eval \"$myvar\"   # Error. "cd ..." command not found
+
+The same thing happens in the following as well.
+$ ps -u $(id -u)

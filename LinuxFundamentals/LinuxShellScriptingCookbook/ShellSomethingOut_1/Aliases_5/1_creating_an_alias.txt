@@ -1,0 +1,12 @@
+We can create an alias for a command using the command alias:
+
+$ alias alias_name="command_string" 
+
+$ alias install='sudo apt-get install'
+
+Notice that like variables, aliases are defined per shell instance. Think before reading the following line,
+but how do we make them present in the shell upon each execution?
+
+Answer: Using the .bashrc file. We can in fact stream our command to .bashrc directly:
+
+$ echo 'alias alias_name="command sequence"' >> ~/.bashrc

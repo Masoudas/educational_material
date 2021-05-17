@@ -1,0 +1,17 @@
+Imagine we want to remove a line from a file that has regex as an expression. How do we go about that?
+Think before you read the answer!
+
+Answer:
+First, we search the grep, to ensure that there's only one instance of it:
+
+$ grep regex file
+# Only one instance exists
+
+Now, getting the reverse of the expression gives us all the lines excluding that line:
+$ grep -v regex file
+
+Now, streaming this to the file saves the job. The problem is that we can't both open a file with grep and 
+then write to it at the same time. Hence, we copy the result to a temp, and then mv that temp into the 
+actual file!
+
+$ grep -v regex file > temp | mv temp file  # Replacing | with && does not work!

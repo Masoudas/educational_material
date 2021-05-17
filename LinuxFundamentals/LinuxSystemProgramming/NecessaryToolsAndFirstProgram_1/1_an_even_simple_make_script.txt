@@ -1,0 +1,9 @@
+The simplest Make script we can write has the following simple line:
+
+%%%%%%%%%%%%%
+cc program.c -o program
+%%%%%%%%%%%%%
+
+As we may recall, cc and c++ are two link files that refer to our compliers for c and c++. 
+
+The rule have here is the rule to create program.

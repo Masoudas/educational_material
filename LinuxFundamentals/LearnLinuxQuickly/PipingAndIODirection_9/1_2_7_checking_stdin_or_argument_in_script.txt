@@ -1,0 +1,19 @@
+We can check whether a script is being piped, or is being supplied arguments directly as follows:
+
+#!/bin/bash
+
+if [ -t 0 ]; then
+  echo stdin coming from keyboard
+else
+  echo stdin coming from a pipe or a file
+fi
+
+The clever part is the test within the square brackets. The -t (terminal) option returns true (0) if the file 
+associated with the file descriptor terminates in the terminal window. We’ve used the file descriptor 0 as 
+the argument to the test, which represents stdin.
+
+If stdin is connected to a terminal window the test will prove true. If stdin is connected to a file or a pipe, 
+the test will fail.
+
+Equivalently, on the command line I can write:
+$ if [ -t 0 ]; then echo here; fi

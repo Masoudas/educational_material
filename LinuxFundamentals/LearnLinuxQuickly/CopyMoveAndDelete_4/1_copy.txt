@@ -12,3 +12,9 @@ the command line warns about it, and only the files will be copied.
 
 Note that same as with files, we can copy multiple directories or their content into a new one.
 We can't copy into multiple destinations however.
+
+Note: We can supply the target with -t. Note however the point is that we can list as many files as we want,
+but so long as the destination is a folder, we're fine:
+
+$ cp file1 file2 file3 folder   # If last argument is a folder, we're file.
+

@@ -1,0 +1,9 @@
+The Bash shell performs basic arithmetic operations using the let, (( )), and [] commands. The expr and bc 
+utilities are used to perform advanced operations.
+
+Note that a numeric value is assigned to a variable the same way strings are assigned. The value will be 
+treated as a number by the methods that access it:
+
+#!/bin/bash
+no1=4;
+no2=5;

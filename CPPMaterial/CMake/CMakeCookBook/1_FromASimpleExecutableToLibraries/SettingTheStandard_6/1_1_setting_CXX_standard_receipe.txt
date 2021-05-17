@@ -1,0 +1,46 @@
+Imagine we want to assign the standard of C++. We can of course use the -libstd for gcc compilers and pass it
+as a flag in target_compile_options. However, we can use the following more sophisticated approach as well.
+
+The standard is considered a target property rather than a target_compile_option. As such, we use the function
+set_target_properties to set the standard and other properties of the target:
+
+set_target_properties(
+    target
+    PROPERTIES
+    CXX_STANDARD 
+    CXX_EXTENSIONS
+    ...
+)
+
+Hence, we have the receipe down below:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+cmake_minimum_required(VERSION 3.18.0 ERROR_FATAL)
+project(recipe-09 LANGUAGES CXX)
+
+add_library(animals SHARED Animal.cpp Animal.hpp Cat.cpp
+    Cat.hpp  Dog.cpp    Dog.hpp    Factory.hpp)
+
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+# See the next file for CMAKE docs on these properties.
+set_target_properties(
+    animals
+    Properties
+    CXX_STANDARD 11
+    CXX_EXTENTIONS OFF
+    CXX_STANDARD_REQUIRED ON
+    POSITION_INDEPENDENT_CODE 1
+)
+
+add_executable(animal-farm animal-farm.cpp)
+
+set_target_properties(
+    animal_farm
+    PROPERTIES
+    CXX_STANDARD 11
+    CXX_EXTENSIONS OFF
+    CXX_STANDARD_REQUIRED ON
+)
+
+target_link_libraries(animal-farm animals)

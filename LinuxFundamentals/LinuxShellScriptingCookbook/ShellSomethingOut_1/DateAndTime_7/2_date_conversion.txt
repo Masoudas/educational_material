@@ -1,0 +1,34 @@
+We can for example convert a particular date to a format we want, to get for example the weekday that day 
+corresponds to using the date command:
+
+Note that when creating a format for data, the first placeholder always requires a +, even inside a string.
+
+$ date --date "Jan 20 2001" +%A     # Get this particular date and print, but print only the COMPLETE weekday
+$ date --date "May 9 1990" +%a      # Short for weekday
+$ date --date "May 9 1990" "+%a %B" 
+$ data "+%H:%M:%S"
+
+We have the following placement chars:
+
+Weekday             %a (for example, Sat)
+                    %A (for example, Saturday)
+
+Month               %b (for example, Nov)
+                    %B (for example, November)
+
+Day                 %d (for example, 31)
+
+Date in format (mm/dd/yy) %D (for example, 10/18/10)
+
+Year                %y (for example, 10)
+                    %Y (for example, 2010)
+
+Hour                %I or %H (For example, 08)
+
+Minute              %M (for example, 33)
+
+Second              %S (for example, 10)
+
+Nano second         %N (for example, 695208515)
+
+Epoch Unix time in seconds  %s (for example, 1290049486)

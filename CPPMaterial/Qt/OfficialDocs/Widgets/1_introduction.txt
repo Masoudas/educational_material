@@ -1,0 +1,4 @@
+Here, I shall combine the documentations of the Qt components together with those found in some books to have
+a full grasp them.
+
+In particular, we're discussing the widgets here, which can be found under the QWidgets header file.

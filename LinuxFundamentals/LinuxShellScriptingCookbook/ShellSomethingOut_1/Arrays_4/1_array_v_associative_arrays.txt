@@ -1,0 +1,2 @@
+Shell scripts allow definition of arrays and associate arrays. Associate arrays as we may recall associate
+two objects together (like a string and a value.)

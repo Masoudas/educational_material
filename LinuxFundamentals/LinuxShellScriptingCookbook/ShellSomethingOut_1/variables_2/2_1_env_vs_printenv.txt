@@ -1,8 +1,0 @@
-To see the difference between the content of the env and print env file, one has to do the following famous 
-piping:
-
-$ env > 1
-$ printenv | diff 1 -   # Send the result of the previous command.
-
-Note that we can't use the famous $(), as this will return the first line of the env as a result, which is
-not what we seek (indeed, the $() returns the result of the command, for example $(ls) returns 0 or 1.)

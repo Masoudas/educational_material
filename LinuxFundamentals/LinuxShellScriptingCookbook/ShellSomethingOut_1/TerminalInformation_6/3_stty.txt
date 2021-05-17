@@ -1,0 +1,19 @@
+Allows some additional setting on the terminal. Famously, if we have an script in which we want the user to
+put in their password, but not echo it on the command line, we can do as follows:
+
+#!/bin/bash
+
+#!/bin/sh
+#Filename: password.sh
+
+echo -e "Enter password: "
+
+# disable echo before reading password
+stty -echo
+read password
+
+# re-enable echo
+stty echo
+
+echo
+echo Password read.

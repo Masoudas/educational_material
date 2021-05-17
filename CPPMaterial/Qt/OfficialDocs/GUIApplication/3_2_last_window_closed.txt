@@ -1,0 +1,38 @@
+This signal is probably the most important signal of the lot. Sometimes, we want to ensure that an application
+is handled gracefully or what not. For such situations, we can use this signal.
+
+The official docs say:
+
+This signal is emitted from exec() when the last visible primary window (i.e. window with no parent) is closed.
+
+By default, QGuiApplication quits after this signal is emitted. This feature can be turned off by setting 
+quitOnLastWindowClosed to false.
+
+See also QWindow::close() and QWindow::isTopLevel().
+
+In the following example, I print something on the command line saying the application is closing. Note that
+I get an instance of the QGuiApplication pointer class in the constructor to register with this signal my
+slot.
+
+Note that to build this class, because it needs to have slots, I created a normal C++ class and header, and
+requested Qt add QObject and Q_OBJECT macros for me.
+
+class WindowClosed : public QObject
+{
+    Q_OBJECT
+public:
+    WindowClosed(QGuiApplication*);
+
+private slots:
+    void closing();
+};
+
+WindowClosed::WindowClosed(QGuiApplication* p)
+{
+    QObject::connect(p, &QGuiApplication::lastWindowClosed, this, &WindowClosed::closing); // Connection
+
+}
+
+void WindowClosed::closing(){
+    qDebug() << "Closing the GUI application signal handling";
+}

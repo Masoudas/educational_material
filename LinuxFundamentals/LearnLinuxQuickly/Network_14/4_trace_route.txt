@@ -1,0 +1,6 @@
+The traceroute traces the route it takes from this machine, through the (default) gateway to the destination.
+
+For example, if I write:
+
+$ traceroute asroma27.com
+# Goes through 30 channels to get there!

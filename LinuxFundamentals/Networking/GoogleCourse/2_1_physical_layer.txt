@@ -1,0 +1,11 @@
+This is my domain of expertise, using coding etc. It moves around bits. They form packets or data frames.
+They contain the physical devices like cards as well as information theory, modulation, etc.
+
+Duplex communication means transmission of data in both directions. Simples means in one direction, like a
+baby monitor. Full duplex means communication at the exact same time on the two sides of a network. Half
+duplex means one device can communicate at the time, but communication is possible from both ends.
+
+RJ45 or Registered Jack 45 is the most common type of cable. It's the one we use that contains two LEDs, one
+for indicating a connection has been made (yellow light) and one for showing actuall transmission of data
+(green light.) Green light shows blinks with each transmission. Yellow is linked light, green is activity light.
+

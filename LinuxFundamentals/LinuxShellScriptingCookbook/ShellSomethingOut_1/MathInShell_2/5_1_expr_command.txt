@@ -1,0 +1,8 @@
+expr is a command that can be used to calculate mathematical expression.
+
+Note that because it's a command, it has to be used with the famous $() notation. Alternatively, we can use it
+` apparently:
+Note that because expr is a command and we're passing to it, we have to use interpolation.
+
+result=`expr 3 + 4`
+result=$(expr $no1 + 5)

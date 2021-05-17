@@ -1,0 +1,31 @@
+So, we can conclude the previous discussion as such:
+
+    -   I guess, the shell itself polls the stdin when we write a command with the keyboard. It then prints
+        out whatever appears on stdout, which could be what we're currently typing on the keyboard, or what
+        is remaining on the shell after pressing enter. Using < points the stdin to the streams read from a 
+        file. Meaning now, stdin is pointing to a file, and reading streams from it line by line, and not
+        from the keyboard. 
+    -   Some programs don't want to deal with with stdin. They rather deal with what's typed in the shell.
+    -   Without the use of < or >, the arguments are passed to shell programs as arrays (normal shellscript)
+
+Hence for example the following pipe:
+
+echo "/" | ls 
+
+is not piped, because ls does not read from stdin (which is what is passed in a pipe,) but rather strictly
+from the command line arguments.
+
+Question: How can I see the content of stdout? Everytime something is printed on the shell, it's on std 
+out. 
+
+Question: How can I redirect stdin to something other than the keyboard? We can redirect it to a file using
+the '<' of course. We can then connect it to the stdout using cat command.
+
+Question: How can I link stdin to stdout directly? I don't know the answer to this question. But we can
+use the input command for an intermediary step.
+
+Bonus point for this question: What's the effect of echo in the middle of a pipe?
+
+$ ... | echo xargs | ...
+
+Answer: Nothing, because the result is piped to the next command!

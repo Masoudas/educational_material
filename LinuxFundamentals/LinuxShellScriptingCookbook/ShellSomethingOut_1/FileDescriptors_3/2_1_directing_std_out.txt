@@ -1,0 +1,24 @@
+Use the > to direct stdout to a file and override the file. Use >> to append to the file.
+
+echo "Streaming to a file" > f
+echo "Appending to a file" >> f
+
+Append a 2 to > or >> to direct stderr to a file.
+
+ls + 2> error_file
+ls - 2>> error_file
+
+Of course, we can stream both outputs to a file
+ls + 2>> error_file 1>>f
+
+And the famous command to redirect stderr to stdout.
+ls . 1>all 2>&1
+
+Notice that famously, writing 2>1 means write everything to file 1. Using &1 implies get a reference to output
+1.
+
+We can alternatively write:
+command 2>&1 alloutput.txt
+
+Or:
+cmd &> output.txt

@@ -1,0 +1,3 @@
+Paranthesis can also be used like brackets for math operations:
+
+result=$(( no1 + 50 ))

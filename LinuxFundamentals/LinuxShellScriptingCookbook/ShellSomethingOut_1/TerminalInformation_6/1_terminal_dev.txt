@@ -1,0 +1,3 @@
+As we may recall, we can get which (pseudo) terminal we're using by typing the tty command:
+
+$ tty

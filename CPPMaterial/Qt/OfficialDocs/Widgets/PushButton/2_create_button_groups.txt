@@ -1,0 +1,2 @@
+Note that for example radio button choices are not given as one object. We have to create a container that
+holds these together, and then add it to the buttons. This could be a QGroupBox, QFrame or a QDialogButtonBox.

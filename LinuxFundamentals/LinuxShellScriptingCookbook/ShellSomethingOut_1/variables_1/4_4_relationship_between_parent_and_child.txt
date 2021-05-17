@@ -1,0 +1,24 @@
+Where as variables are passed from parent to child process, it's not possible to pass variables from child to
+parent process. In other words, whatever we do inside a shellscript will remain inside the shellscript, or is
+passed to the processes that run as children of it. But nothing is reflected on the outside.
+
+As a more concrete example, consider the following simple script
+
+%%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash
+GREP_OPTIONS=-v
+
+export GREP_OPTIONS     # Now, this variable is passed to every grep command we run here.
+grep "export" $0    # Print the reverse of every instance of export in this file!
+%%%%%%%%%%%%%%%%%%%%%%
+
+Now consider running this script:
+$ script 
+#!/bin/bash
+GREP_OPTIONS=-v
+
+$ echo $GREP_OPTIONS    # Prints nothing
+
+Note that the GREP_OPTIONS prints nothing, because GREP_OPTIONS is only valid inside the shell script, and because
+we exported it, to all processes that are run inside this script. On the other hand, in the parent process, which
+is the pseude-terminal that ran this, we can't see this variable.

@@ -1,0 +1,22 @@
+The list of signals associated are:
+
+    -   void 	changed()
+        This signal is emitted when an action has changed. If you are only interested in actions in a given 
+        widget, you can watch for QWidget::actionEvent() sent with an QEvent::ActionChanged.
+
+        When a change happens to enable/disable menu
+
+    -   void 	hovered()
+        This signal is emitted when an action is highlighted by the user; for example, when the user pauses 
+        with the cursor over a menu option, toolbar button, or presses an action's shortcut key combination.
+        This is a convenience slot that calls activate(Hover).
+
+    -   void 	toggled(bool checked)
+        This signal is emitted whenever a checkable action changes its isChecked() status. This can be the 
+        result of a user interaction, or because setChecked() was called. As setChecked() changes the QAction, 
+        it emits changed() in addition to toggled().
+
+    -   void 	triggered(bool checked = false)
+        This signal is emitted when an action is activated by the user; for example, when the user clicks a menu 
+        option, toolbar button, or presses an action's shortcut key combination, or when trigger() was called. 
+        Notably, it is not emitted when setChecked() or toggle() is called.
