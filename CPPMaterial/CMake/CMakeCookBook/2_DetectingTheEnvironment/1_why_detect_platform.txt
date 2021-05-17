@@ -1,0 +1,7 @@
+Although CMake is cross-platform and in our projects we strive for the source code to be portable across 
+platforms, operating systems, and compilers, sometimes the source code is not fully portable; for example, 
+when using vendor-dependent extensions, we may find it necessary to configure and/or build code slightly 
+differently depending on the platform. This is particularly relevant for legacy code or when cross-compiling. 
+It can also be advantageous to know the processor instruction set to optimize performance for a specific 
+target platform. This chapter presents recipes to detect such environments and provides recommendations for 
+how to implement such solutions.
