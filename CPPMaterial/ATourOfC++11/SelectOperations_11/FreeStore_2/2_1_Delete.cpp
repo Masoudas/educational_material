@@ -6,6 +6,10 @@
  * that's already been deleted, throws an exception (Me: Question is, how does it know that the memory
  * does not belong to C++? Because C++ objects put header information on the memory. Hence for example,
  * if I have a pointer and try to delete ptr++, and exception is thrown, because that's not my memory)
+ * 
+ * Me: A reminder that I once tried to delete memory from in the middle of the array, and it wasn't possible!
+ * Me: Note finally that we can't delete stack objects too, so this would be a fourth problem in memory
+ * management.
  */
 #include <iostream>
 
@@ -25,6 +29,10 @@ void examples(){
     //*p2 = 999; // this may cause trouble
 
     std::cout << *p2 << '\n'; // Does not print 99, because its location is not in use.
+
+    // Me: can't delete stack objects.
+    int y{};
+    delete &y;  // Ooops!
 }
 
 /**
@@ -67,4 +75,5 @@ void sloppy() // very bad code
  *      -   std::weak_ptr: I'm not the owner of the resource but I may become temporary the shared owner 
  *          of the resource by using the method std::weak_ptr::lock.
  */ 
+
 

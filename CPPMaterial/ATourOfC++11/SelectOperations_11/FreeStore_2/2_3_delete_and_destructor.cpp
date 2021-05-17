@@ -3,10 +3,14 @@
 * object's destructor is called before the object's memory is deallocated (if the object has a destructor)."
 * 
 * In other words, calling the destructor does not dellocate memory. It just destructs the internal of the 
-* object. Therefore, delete is an ESSENTIAL part of dellocating memory. In otherwise, delete is not just a
+* object. Therefore, delete is an ESSENTIAL part of dellocating memory. In other words, delete is not just a
 * wrapper for destructor (which it would have been had we not needed to call delete!) As we may recall, the
 * same scenraio happens with memory allocators when we allocated memory. First, memory is located, THEN, that
 * memory is filled with the construction of object.
+* 
+* A destructor is a nice unified way to clean up the internal memory of the class (like if it has a pointer)
+* before the class itself is destroyed. Hence, a destructed object is a null state, waiting to be removed
+* from memory, on that in C++ we have to delete it ourselves. Hence, the following paragraph:
 * 
 * That being said, note that delete itself calls the destructor. Hence, indeed, it's wrong to call the destructor
 * before calling delete. There's however a tiny exception. If the class has a default destructor, we can call

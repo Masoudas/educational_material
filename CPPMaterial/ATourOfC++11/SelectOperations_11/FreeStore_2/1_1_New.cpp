@@ -3,15 +3,15 @@
  * memory is not initialized, unless we initialize it (for example in the new operator using the bracket
  * operator).
  * 
- * Often, we want to create objects independently of the scope they're defined in. 
- * This can be done using new. These objects are said to be on the heap, or free store,
- * or dynamic memory.
+ * 
+ * Often, we want to create objects independently of the scope they're defined in. This can be done using 
+ * new. These objects are said to be on the heap, or free store, or dynamic memory.
  * 
  * Note that new throws bad_alloc exception if memory does not exist.
  * 
  * Also don't forget that Dynamically allocating arrays is required when your dimensions are given at runtime.
- * As we remember, for example the array size on the stack must be a constant (or constant expression?).
- * (Memory allocated to pointer is stored on the heap).
+ * As we remember, for example the array size on the stack must be a constant. (Memory allocated to 
+ * pointer is stored on the heap).
  * 
  * How does one create the built-in types on the heap? Using the new operator
  * hence an expression like this:
@@ -24,7 +24,7 @@
  * 
  * int* ptr1 = new int{};
  * 
- * Note that we would use the default constructor if the type is user defined.
+ * Note that we would use the default constructor if the type is user defined. (See next discussion.)
  * 
  * Naturally, we can use auto in this situation as well.
  */

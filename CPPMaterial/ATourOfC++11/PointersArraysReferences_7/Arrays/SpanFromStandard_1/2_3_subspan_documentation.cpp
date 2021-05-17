@@ -34,8 +34,9 @@
 #include <span>
 #include <string_view>
  
+/*
 void print_first(std::string_view const title, 
-           /* std::ranges::forward_range */ const auto& container) {
+           // std::ranges::forward_range // const auto& container) {
     std::cout << title << "[" << std::size(container) << "]{ ";
     for (auto const& elem : container)
         std::cout << elem << ", ";
@@ -52,7 +53,7 @@ void run_game(std::span<const int> span)
     std::span<const int, std::dynamic_extent> span_first_dynamic = span.first(4);
     print_first("span.first(4):   ", span_first_dynamic);
 }
- 
+*/
 //int main()
 //{
 //    int a[8]{ 1, 2, 3, 4, 5, 6, 7, 8, };

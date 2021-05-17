@@ -9,9 +9,13 @@
 * Note: For an empty collection, returns true, because no element in the range returns true.
 * 
 * Note on how we pass the predicate with bind:
-* bind, binds functions together. So, we need to pass modululs(value, mod), but mode need to be passed
+* bind, binds functions together. So, we need to pass modulus(value, mod), but mode need to be passed
 * beforehand, so we give a placeholder_1 for argument (meaning don't put anything there), and then 2
-* for the second argument (meaning place_holder_1 is mod 2).)
+* for the second argument (meaning place_holder_1 is mod 2).) When the predicate is called, bind only
+* uses the first argument, meaning the generated operator is modulus(value) rather than 
+* modulus(value, mod). Just note that place_holder does not indicate position of the argument, rather just
+* the argument number that should be placed. Which is why in Divisible by, we use place_holder::_1, even
+* though second argument is passed.
 */
 
 #include <vector>
@@ -36,6 +40,12 @@ void checking_empty_collection() {
 	std::cout << "\nnone_of returns true: " << noneof;
 }
 
+ // Immitating modules to show the function of bind.
+    template <typename t>
+    struct DivisibleBy
+    {
+        bool operator()(t mod, t n) const { return n % mod == 0; }
+    };
 void checking_various_divisions() {
     std::vector<int> v(10, 2);
     std::partial_sum(v.cbegin(), v.cend(), v.begin());
@@ -48,23 +58,23 @@ void checking_various_divisions() {
         std::cout << "All numbers are even\n";
     }
 
-    // This was indeed cool!
+    // This was indeed cool! Note that we say for none of the (val % 2) returns 0. modulus is like plus,
+    // and returns a value, not a bool!
     if (std::none_of(v.cbegin(), v.cend(), std::bind(std::modulus<int>(), std::placeholders::_1, 2))) {
         std::cout << "None of them are odd\n";
     }
-
+    
+    // Immitating modules to show the function of bind.
     struct DivisibleBy
     {
-        const int d;
-        DivisibleBy(int n) : d(n) {}
-        bool operator()(int n) const { return n % d == 0; }
+        bool operator()(int mod, int n) const { return n % mod == 0; }
     };
 
-    if (std::any_of(v.cbegin(), v.cend(), DivisibleBy{7})) {
+    if (std::any_of(v.cbegin(), v.cend(), std::bind(DivisibleBy(), 7, std::placeholders::_1))) {
         std::cout << "At least one number is divisible by 7\n";
     }
 }
 
 //int main() {
-//	checking_empty_collection();
+//    checking_various_divisions();
 //}
