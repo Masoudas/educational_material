@@ -1,0 +1,24 @@
+function inside bracket. BEGIN, END outside bracket, inside quotation. Inside bracket always a function.
+
+awk '{print}' file    
+awk '{print $1}' file   # $0
+awk '{print $1$2$3}' file
+awk '{print $1,3}' file
+awk '{print -$1}' file
+
+awk -F' ' '{print $1,3} file # Or colon or whatever
+
+awk -F' ' '{print $1; print $2} file
+
+awk 'BEGIN {print "q w e r"}' file
+
+awk 'BEGIN {print "q w e r"}  {print $0}' space # Print qwer, then print file, 
+
+awk 'BEGIN {print "q w e r"} {print $0} END {print "q w e r"}'
+
+% Inside bracket
+RS  Row Seperator 
+FS  Field Seperator
+ORS Input ...
+OFS Output ...
+

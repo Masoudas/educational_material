@@ -1,0 +1,17 @@
+Hub: A physical layer device, which is the simplest of them all. IT doesn't do anything and has no protocols.
+Propagates data to all connected devices, and they have to determine if the data was meant for them or not!
+It causes a collision domain. A collision domain is a situation where a single device can talk over the net.
+Because of collision domain, there are many quiet domains. Hubs are depracated.
+
+Network switch: Came in place of hubs. It has data processing for sending data to particular clients. Switch
+is a layer 2 device. The size of collision reduces with this device. A LAN (or local area network) is a
+combination of switches and computers.
+
+Routers: Routers connect independent networks. Therefore, routers work on layer 3, allowing connection of 
+various IP addresses. They do this by storing internal tables for routing data. We have small network or office
+routers as well of course. ISPs (Internet Service Providers) have very sophisticated routers. Border Gateway
+Protocol is the protocol used for sharing data among large routers. It lets them know about the most optimal
+path to tranport data.
+
+Patch pannel: Contains many ports, but does no other work. We usually see these on the wall, and they connect
+to switches and routers.

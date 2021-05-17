@@ -1,8 +1,0 @@
-It's fourty eight bits, or 6 octets (8 bits).
-
-The first twenty four identify the manufacturer (vendor) of the device.
-
-If the least significant bit in the first octet of a destination address is zero, it means that ethernet frame is intended for
-only the destination address.
-
-If the least significant bit in the first octet of a destination address is set to one, it means we're dealing with a multicast frame.

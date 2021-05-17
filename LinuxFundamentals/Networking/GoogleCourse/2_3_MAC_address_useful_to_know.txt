@@ -1,0 +1,26 @@
+Ethernet is the most common method of sending and receiving data on the data link layer. Ethernet is a fairly
+old technology, and is the same from the 80s. 
+
+Ethernet for reducing collision domain uses CMA/CD for checking the network, seeing the network is empty, tries
+to send the data. Yet, all devices on the network yet access the same data. This is where the Media Access Control
+(or MAC) address came to play, allowing to determine the receiver of data in a collision domain.
+(Me: WIFI uses MAC too I guess. They have one as well)
+
+It's fourty eight bits, or 6 octets (8 bits). Hence, two hexadecimals represent one octet. MAC addresses are 
+globally unique, among all manufacturers.
+
+The first twenty four (3 octets) identify the manufacturer (vendor) of the device. The second three determines
+the device number.
+
+Unicast: Transmitting to only one receiver.
+Multicast: Transmitting to many receivers.
+Broadcast: Transmitting to all receivers.
+
+If the least significant bit in the first octet of a destination address is zero, it means that ethernet (data) 
+frame is intended for only the destination address. (Huh?) So the frame is received only by the intended destination.
+
+If the least significant bit in the first octet of a destination address is set to one, it means we're dealing with a 
+multicast frame. (Huh?) A multicast frame is sent to all devices, but is received or discarded by each device 
+based on their criteria. 
+
+A broadcast address is all ones, so that devices can learn more about each other.
