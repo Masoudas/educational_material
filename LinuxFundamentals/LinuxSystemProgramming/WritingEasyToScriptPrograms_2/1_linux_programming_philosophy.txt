@@ -1,0 +1,6 @@
+Linux and other Unix systems have strong scripting support. The whole idea of Unix, from the very beginning, 
+was to make a system easy to develop on. One of these features is to take the output of one program and make 
+it the input of another program—hence building new tools with existing programs. We should always keep this in 
+mind when creating programs for Linux. The Unix philosophy is to make small programs that do one thing only—and 
+do it well. By having many small programs that do only one thing, we can freely choose how to combine them. 
+And by combining small programs, we can write shell scripts—a common task in Unix and Linux. 
