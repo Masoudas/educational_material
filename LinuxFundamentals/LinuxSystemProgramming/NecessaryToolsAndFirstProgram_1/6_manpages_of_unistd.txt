@@ -1,0 +1,13 @@
+So apparently, there's a manpage associated with unistd, which oddly enough can't be found on the manpages of
+mu Ubuntu machine. In either case, we read about this header:
+
+    -   unistd.h — standard symbolic constants and types
+The <unistd.h> header defines miscellaneous symbolic constants and types, and declares miscellaneous functions. 
+The actual values of the constants are unspecified except as shown.
+
+Some examples of the fields contained are:
+    _POSIX_VERSION
+    int          setuid(uid_t);
+    etc ...
+
+I also would like to remind that this header is in the /usr/include/ folder (and not in the x86_64_gnu ones!)

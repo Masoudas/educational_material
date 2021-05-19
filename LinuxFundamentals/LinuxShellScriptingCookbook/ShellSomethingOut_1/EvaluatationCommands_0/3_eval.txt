@@ -2,3 +2,9 @@ eval as we may recall computes the command from a string, which is useful for fo
 
 $ folder=.
 $ eval "ls ${folder}"   # Equivalen to "ls ${folder}"
+
+One thing to note about the eval command is that single quotation is not escaped as part of a string. Hence,
+it can be used to escape characters:
+
+$ eval "ls '$'1"    # ls the first argument. '' Does not appear in final evaluation. Everything inside of it
+                    # is kept as is.
