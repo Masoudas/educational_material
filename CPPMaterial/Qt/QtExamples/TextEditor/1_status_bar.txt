@@ -1,0 +1,5 @@
+Each main window comes with a status bar. We can use this status bar to show messages and other things at the
+buttom of the window. 
+
+Note as well that each button or action has a status tip field. If we write a text in it, it will show in
+the status bar when we hover over it. We may as well add other things like a progress bar to this bar as well.

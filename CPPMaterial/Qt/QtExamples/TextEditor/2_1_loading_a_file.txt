@@ -1,0 +1,28 @@
+Say we wanted to load a text file, and then stream its content into a text editor. How does one go about that?
+
+The answer is simple, and none of this is done by hand.
+
+First, there's the QFile class that's responsible for checking the existence of a file, and openning and closing
+it. Second, we need an streaming object to stream the content of the file. Since we're talking about text files
+here, there's a class called QTextStream, that has a method called readAll, which just streams the content of
+the file. 
+
+Last, in QPlainTextEditor, we have setPlainText method, which is used for setting the text content of the editor.
+In that regard, a simple method for reading, streaming and showing the content of a file looks something like
+what's shown below. Of course, as a side note, notice how we set the status bar, saying the file has been
+loaded (the 2000 means the message will be shown and then removed after that:)
+
+void openFile(const QString & fileName){
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)){
+        QMessageBox::warning(this, tr("Application"),
+                             tr("Cannot read file %1:\n%2.")
+                             .arg(QDir::toNativeSeparators(fileName), file.errorString()));
+        return;
+    }
+
+    QTextStream in{&file};
+
+    ui->plainTextEdit->setPlainText(in.readAll());
+    ui->statusbar->showMessage("Text file has been loaded", 2000);
+}

@@ -6,7 +6,7 @@ Note that we need gui added in the .pro file of the project.
 In fact, we don't directly use this class to jump start a QTGuiApplication, but a QApplication class can be
 converted to a REFRENCE of this class (don't forget not to slice.)
 
-For example, in the following small snippet, we get the pid of the GUI applicatin using this class:
+For example, in the following small snippet, we get the pid of the GUI application using this class:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 #include "mainwindow.h"

@@ -1,0 +1,8 @@
+Making a file dialog actually turned out to be quite easy. I just needed to make a predefined QFileDialog as
+follows as the slot I wanted:
+
+// This is a slot
+void open(){
+    QString fileName = QFileDialog::getOpenFileName(this);
+    // Work with the file name
+}
