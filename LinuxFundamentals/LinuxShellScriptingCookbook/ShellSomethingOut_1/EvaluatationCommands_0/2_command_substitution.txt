@@ -1,0 +1,10 @@
+Command substitution or $() allows the output of a command to replace the command itself. Command substitution 
+occurs when a command is enclosed as follows:
+
+$ $(command)    # Like openning a new command line, and then returning its result to this line
+
+This is equivalent to the `` then:
+$ `command`
+
+$ var=$(expr 2 + 2)
+$ var1=`expr 2 + 2`

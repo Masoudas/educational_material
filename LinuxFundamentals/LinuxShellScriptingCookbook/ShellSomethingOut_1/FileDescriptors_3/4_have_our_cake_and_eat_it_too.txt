@@ -3,9 +3,11 @@ write the result to a file, and then also pass it on to the next command?
 
 One solution would be to write to the file, then open that file in the next command. Hence something like:
 
-$ ls > file | cat file | grep regex
+$ ls > temp | cat temp | grep regex
 
-But we can have our cake and eat it too, using the tee command. tee writes stdout to a file, and the hands
+But this solution creates a temporary file
+
+But we can have our cake and eat it too, using the tee command! tee writes stdout to a file, and the hands
 out the content of stdout intact to the next command:
 
 $ ls | tee file file2 | grep regex    

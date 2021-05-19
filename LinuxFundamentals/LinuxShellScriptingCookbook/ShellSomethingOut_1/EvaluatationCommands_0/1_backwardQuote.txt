@@ -1,0 +1,11 @@
+We have the following three uses of quotes:
+
+    * Double quote ("):   Variables are expanded when enclosed in double quotes
+    * Single quote ('):   Variables within single quotes are not expanded
+    * Backward quote (`): Commands within backward quotes are executed and their output substituted into that 
+                          location
+        
+Consider the following example:
+$ var=`expr 2 + 2`
+$ echo "$var"
+4

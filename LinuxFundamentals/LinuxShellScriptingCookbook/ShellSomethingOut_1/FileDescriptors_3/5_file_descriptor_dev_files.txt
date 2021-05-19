@@ -2,7 +2,6 @@ Alternately, we can use /dev/stdin as the output filename to use stdin.Similarly
 error and /dev/stdout for standard output. These are special device files that correspond to stdin, stderr, and 
 stdout.
 
-
 The redirection operators (> and >>) send output to a file instead of the terminal. The > and >> operators 
 behave slightly differently. Both redirect output to a file, but the single greater-than symbol (>) empties 
 the file and then writes to it, whereas the double greater-than symbol (>>) adds the output to the end of the 

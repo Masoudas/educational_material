@@ -5,3 +5,5 @@ The following example aliases the rm command, so that whenever we remove a file,
 folder, before being totally eliminated.
 
 $ alias rm="cp $@ ~/backup && rm $@'
+
+Note: However, as we shall discuss later on, we can't put this in the bashrc file.

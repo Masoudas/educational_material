@@ -1,0 +1,9 @@
+Logical operators work on booleans:
+
+v1="s"
+v2="w"
+v3="s"
+
+    -   !       :   [ ! false ] # Returns true
+    -   -a      :   [ $v1 -a $v1 != $v2  ]
+    -   -o      :   [ $v1 == $v2 -o $v1 = $v3 ]
