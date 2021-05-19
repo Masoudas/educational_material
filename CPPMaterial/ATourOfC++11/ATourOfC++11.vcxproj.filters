@@ -406,6 +406,18 @@
     <Filter Include="Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard">
       <UniqueIdentifier>{bd3342c5-f0cc-4704-80f3-387bceb9da99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Expressions_10">
+      <UniqueIdentifier>{530ab612-1858-49b5-95d0-8e16c29f3283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expressions_10\OperatorSummary_3">
+      <UniqueIdentifier>{65fa0c5d-3c7b-4b90-8d56-4d03f288e077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expressions_10\DeskCalculator_1">
+      <UniqueIdentifier>{e3227183-aaf7-49aa-a6e1-f112eb36b512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps">
+      <UniqueIdentifier>{934aceb0-08b4-4024-82e7-880713cd92a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2517,13 +2529,7 @@
     <ClCompile Include="SelectOperations_11\Operators_1\TheInequalOperator.cpp">
       <Filter>Source Files\SelectOperations_11\Operators_1</Filter>
     </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\Arrays_4.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
     <ClCompile Include="SelectOperations_11\FreeStore_2\NewWithArrays_02.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\NoNakedNewOrDelete_3.cpp">
       <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
     </ClCompile>
     <ClCompile Include="SelectOperations_11\FreeStore_2\NoThrowNew_6.cpp">
@@ -2556,15 +2562,6 @@
     <ClCompile Include="Concurrency_41\LocksFromStandard_2\1_2_standard_documentation.cpp">
       <Filter>Source Files\Concurrency_41\LocksFromStandard_2</Filter>
     </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\FactoriesAndResourceManagement_2_2.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\Delete_2_1.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\New_1.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
     <ClCompile Include="SelectOperations_11\FreeStore_2\new_header_5_1.cpp">
       <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
     </ClCompile>
@@ -2581,9 +2578,6 @@
       <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
     </ClCompile>
     <ClCompile Include="SelectOperations_11\FreeStore_2\rare_occassion_of_calling_destructor_5_5_2.cpp">
-      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectOperations_11\FreeStore_2\delete_and_destructor_2_3.cpp">
       <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
     </ClCompile>
     <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\1_motivation.cpp">
@@ -2637,6 +2631,108 @@
     <ClCompile Include="PointersArraysReferences_7\Arrays\SpanFromStandard_1\2_3_subspan_documentation.cpp">
       <Filter>Source Files\PointersArraysReferences_7\Arrays\SpanFromStandard</Filter>
     </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\1_2_built_in_v_custom_new.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\1_1_New.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\2_1_Delete.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\2_2_FactoriesAndResourceManagement.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\2_3_delete_and_destructor.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\3_NoNakedNewOrDelete.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\2_4_deleting_array_with_simple_delete.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectOperations_11\FreeStore_2\4_Arrays.cpp">
+      <Filter>Source Files\SelectOperations_11\FreeStore_2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionCleanupCopyMove_17\0_2_always_initialize_every_member.cpp">
+      <Filter>Source Files\ConstructionCleanupCopyMove_17</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\OperatorSummary_3\PrecedenceAndSuch_1.cpp">
+      <Filter>Source Files\Expressions_10\OperatorSummary_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\OperatorSummary_3\TildeVersusExcailmationMark_2.cpp">
+      <Filter>Source Files\Expressions_10\OperatorSummary_3</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\DeskCalculator_1\1_1_application_overview.cpp">
+      <Filter>Source Files\Expressions_10\DeskCalculator_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\DeskCalculator_1\1_2_token_stream_concept.cpp">
+      <Filter>Source Files\Expressions_10\DeskCalculator_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\DeskCalculator_1\2_implementing_token_stream.cpp">
+      <Filter>Source Files\Expressions_10\DeskCalculator_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\DeskCalculator_1\3_1_parsing_expression.cpp">
+      <Filter>Source Files\Expressions_10\DeskCalculator_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\DeskCalculator_1\3_2_term_and_primary_parser.cpp">
+      <Filter>Source Files\Expressions_10\DeskCalculator_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\1_command_line_arguments.cpp">
+      <Filter>Source Files\Expressions_10</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_overview.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_1_execution_policy.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_2_1_execution_policies.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_2_2_notes_on_execution_policies.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_3_alises_for_policies.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_4_comparing_parallel_versions.cpp">
+      <Filter>Source Files\STLAlgorithms_32</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\1_2_ranges_allof_noneof_anyof.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\1_1_allof_noneof_anyof.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\2_1_for_each.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\2_2_for_each_n.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\3_1_count.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\4_2_find_mirror_ends_of_string.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\4_1_mismatch.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_1_find.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_2_find_end.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_3_find_first_of.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_4_find_adjacent.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="SelectOperations_11\Operators_1\Modulo.txt">
@@ -2656,6 +2752,9 @@
     </Text>
     <Text Include="SelectOperations_11\ExplicitConversion_5\StaticCast_3.txt">
       <Filter>Source Files\SelectOperations_11\ExplicitConversion_5</Filter>
+    </Text>
+    <Text Include="Expressions_10\Basics_1.txt">
+      <Filter>Source Files\Expressions_10</Filter>
     </Text>
   </ItemGroup>
 </Project>
