@@ -1,0 +1,20 @@
+The man pages of rsync say:
+    rsync - a fast, versatile, remote (and local) file-copying tool.
+    It is famous for its delta-transfer  algorithm,  which  reduces the  amount  of  data  sent over the 
+    network by sending only the differences between the source files and the existing files in the destination.  
+    Rsync is widely used for backups and  mirroring and as an improved copy command for everyday use.
+
+And it has the following synopsis:
+       Local:  rsync [OPTION...] SRC... [DEST]
+
+       Access via remote shell:
+         Pull: rsync [OPTION...] [USER@]HOST:SRC... [DEST]
+         Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
+
+       Access via rsync daemon:
+         Pull: rsync [OPTION...] [USER@]HOST::SRC... [DEST]
+               rsync [OPTION...] rsync://[USER@]HOST[:PORT]/SRC... [DEST]
+         Push: rsync [OPTION...] SRC... [USER@]HOST::DEST
+               rsync [OPTION...] SRC... rsync://[USER@]HOST[:PORT]/DEST
+
+Therefor, aside from copying local files on the system, it can be used with secure shell to transfer files.
