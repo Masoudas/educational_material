@@ -1,0 +1,24 @@
+    -   Smoothing filters:
+GaussianBlur, MedianBlur, Averaging.
+Bilateral filters:  Used for blurring while keeping the edges sharp.
+    
+    -   Derivate filters
+        -   Sobel derivative:
+    Determines the derivative of the image in x or y direction using the Sobel filter. Note that Sobel 
+    derivatives are of course positive and negative. See Filters_4, 1_1_Sobel_Derivative_filter.cpp.
+        -   Scharr derivates:
+
+    -   Pyramid filters:
+        - Gaussian filter:
+    The Gaussian pyramid generation is done by starting with an initial image g_0 and then lowpass filtering 
+    this image to obtain a "reduced" image g_1. The image is "reduced" in the sense that both spatial density 
+    and resolution are decreased. This operation can be continued to obtain a set of images {g_0,g_1,g_2, ...,
+    g_n} that form the pyramid image structure. The low pass filtering is done by a procedure equivalent to 
+    convolution by a set of local symmetric weighting functions (for example a Gaussian distribution). A fast 
+    algorithm for generating such a Gaussian pyramid structure. Along with the Gaussian pyramid generation, 
+    there is also an approximate reverse process of the pyramid generation that tries to expand a reduced image 
+    to its original scale. The same algorithm that is used to form the pyramid can also be used to perform the 
+    expansion operation.
+
+
+     
