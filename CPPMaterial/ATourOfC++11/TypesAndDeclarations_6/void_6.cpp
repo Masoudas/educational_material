@@ -6,4 +6,6 @@
   * 
  * (Me: Reference to void is meaningless and is not allowed. It does appear to make sense, because it could
  * perhaps allow us to pass a general reference, and then recast it. But for that we use generics).
+ * 
+ * Note also that we have a pointer to void pointer. Almost nothing can be cast to this type.
  */

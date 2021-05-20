@@ -61,9 +61,6 @@
     <Filter Include="Source Files\TypesAndDeclarations_6\CStyleStrings">
       <UniqueIdentifier>{89b4f3ee-5cf9-471f-b7af-9259a9d8cda2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TypesAndDeclarations_6\DoubleArithmetic">
-      <UniqueIdentifier>{00508a7a-4fbb-41e9-9a02-0e80473c7432}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic">
       <UniqueIdentifier>{b9f33ef7-3903-4008-824a-99a720a184a8}</UniqueIdentifier>
     </Filter>
@@ -421,6 +418,12 @@
     <Filter Include="Source Files\STLAlgorithms_32\2_ModifyingSequenceOps">
       <UniqueIdentifier>{a918564d-3226-4094-a933-28b0629fb8b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\Chars">
+      <UniqueIdentifier>{8b30fb6d-c469-4328-a47e-ecf81c2b5a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\Double">
+      <UniqueIdentifier>{00508a7a-4fbb-41e9-9a02-0e80473c7432}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -630,16 +633,7 @@
     <ClCompile Include="TypesAndDeclarations_6\2_1_AssigningLiteralsToTypes.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\3_1_wchar_t.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\AutoAndDecltype_10.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\Basics_1.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\char_3.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\Declarations_8.cpp">
@@ -657,9 +651,6 @@
     <ClCompile Include="TypesAndDeclarations_6\InitializationOfClasses_9_2.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\integers_4.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\LvaluesAndRvalues_12.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
@@ -673,12 +664,6 @@
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\TypeAliasing.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\Types_2.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\TypesInOneLook_0.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\void_6.cpp">
@@ -782,9 +767,6 @@
     </ClCompile>
     <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\8_Virtual_Destructors.cpp">
       <Filter>Source Files\ConstructionCleanupCopyMove_17\ConstructorsDestructors_2</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\4_1_Integer_Literals.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\1_0_Negating_An_Unsigned_Type.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
@@ -1152,9 +1134,6 @@
     <ClCompile Include="PointersArraysReferences_7\Pointers\2_mixing_two_pointers_and_ptrdiff_t.cpp">
       <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
     </ClCompile>
-    <ClCompile Include="PointersArraysReferences_7\Pointers\3_size_t_VS_ptrdiff_t.cpp">
-      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
-    </ClCompile>
     <ClCompile Include="PointersArraysReferences_7\Pointers\4_beware_of_comparing_sizet_and_ptrdiff.cpp">
       <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
     </ClCompile>
@@ -1400,9 +1379,6 @@
     </ClCompile>
     <ClCompile Include="Namespaces_14\0_2_aliasing_templated_types.cpp">
       <Filter>Source Files\Namespaces_14</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\5_1_floatType.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_2_rfind.cpp">
       <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
@@ -1806,17 +1782,11 @@
     <ClCompile Include="TypesAndDeclarations_6\IntegerTypeArithmetic\6_should_I_use_U_after_hex.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\IntegerTypeArithmetic</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\3_a_not_so_important_point.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
-    </ClCompile>
     <ClCompile Include="Templates_23\Exercises_9\1.cpp">
       <Filter>Source Files\Templates_23\Exercises_9</Filter>
     </ClCompile>
     <ClCompile Include="Templates_23\0_9_cant_assign_derived_to_base_in_templated_types.cpp">
       <Filter>Source Files\Templates_23</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\4_nan_inf_and_float_types.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
     </ClCompile>
     <ClCompile Include="GenericProgramming_24\1_why_template_programming.cpp">
       <Filter>Source Files\GenericProgramming_24</Filter>
@@ -1952,12 +1922,6 @@
     </ClCompile>
     <ClCompile Include="PointersArraysReferences_7\Pointers\1_mixing_ptrdiff_and_pointers.cpp">
       <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\2_AVeryCommonPitfall.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\DoubleArithmetic\1_FundamentalRules.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\DoubleArithmetic</Filter>
     </ClCompile>
     <ClCompile Include="Functions_12\ConstexprFunctions_5\0_a_major_difference_between_const_and_constexpr_functions.cpp">
       <Filter>Source Files\Functions_12\ConstexprFunctions_5</Filter>
@@ -2779,6 +2743,81 @@
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\7_2_swap_ranges.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\1_Basics.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\0_1_single_quote_inside_double_quotes.cpp">
+      <Filter>Source Files\STLStrings_36</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\2_Types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\3_char.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\x_2_a_note_on_size_of.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\1_converstion_to_int.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\2_conversion_from_int.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\3_initial_value.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\4_wchar_t.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\3_1_size_t_VS_ptrdiff_t.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\3_1_size_t.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\4_1_integers.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\4_2_Integer_Literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\0_TypesInOneLook.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\5_1_floatType.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Double\1_FundamentalRules.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Double</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Double\2_AVeryCommonPitfall.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Double</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Double\3_a_not_so_important_point.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Double</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Double\4_1_special_values.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Double</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Double\4_2_nan_inf_and_float_types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Double</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\7_3_iter_swap.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\8_1_reverse.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\8_2_reverse_copy.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_2_rotate_reverse.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_1_rotate.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
   </ItemGroup>

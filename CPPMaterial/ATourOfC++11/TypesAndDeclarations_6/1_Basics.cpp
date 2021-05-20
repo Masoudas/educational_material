@@ -1,6 +1,6 @@
 /**
- * As we know, not all machines comply with the same rules. Hence, for example,  a char is at least
- * 8 bit in all machines, but it may be 16 bits as well. Hence, the following:
+ * As we know, not all machines comply with the same rules. Hence, for example, a char is at least 8 bit in 
+ * all machines, but it may be 16 bits as well. Hence, the following:
  * char c = 64; // This is well defined in all machines.
  * char c1 = 1256;  // In some machines this may be truncated, in others it will be ok.
  * 

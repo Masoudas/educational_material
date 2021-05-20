@@ -23,8 +23,8 @@
 #include <iostream>
 
 void infinity_vs_maximum_float() {
-    double max = std::numeric_limits<double>::max();
-    double inf = std::numeric_limits<double>::infinity();
+    constexpr double max = std::numeric_limits<double>::max();
+    constexpr double inf = std::numeric_limits<double>::infinity();
 
     if (inf > max)
         std::cout << inf << " is greater than " << max << '\n';
