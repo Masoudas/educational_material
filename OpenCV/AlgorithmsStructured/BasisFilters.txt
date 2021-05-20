@@ -1,3 +1,0 @@
-    -   Sobel derivative:
-Determines the derivative of the image in x or y direction using the Sobel filter. Note that Sobel derivatives
-are of course positive and negative. See Filters_4, 1_1_Sobel_Derivative_filter.cpp.

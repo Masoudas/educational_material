@@ -1,0 +1,31 @@
+I recall using thinning morphological filters for our tortuosity project.
+
+Morphological transformations are some simple operations based on the image shape. It is normally performed on 
+binary images. It needs two inputs, one is our original image, second one is called structuring element or 
+kernel which decides the nature of operation. Two basic morphological operators are Erosion and Dilation. Then 
+its variant forms like Opening, Closing, Gradient etc also comes into play. 
+
+-   Erosion (me: Thinning)
+The basic idea of erosion is just like soil erosion only, it erodes away the boundaries of foreground object 
+(Always try to keep foreground in white).
+
+-   Dilation (me: Thickenning)
+It is just opposite of erosion. Here, a pixel element is '1' if atleast one pixel under the kernel is '1'. So 
+it increases the white region in the image or size of foreground object increases. 
+
+-   Openning
+Opening is just another name of erosion followed by dilation. It is useful in removing noise,
+
+-   Closing
+Closing is reverse of Opening, Dilation followed by Erosion. It is useful in closing small holes inside the 
+foreground objects, or small black points on the object. 
+
+-   Morphological Gradient
+It is the difference between dilation and erosion of an image. (Me: So if we stretch the shape a bit and then
+remove a thinned version of it. we almost get the boundary of the shape.)
+
+-   Top Hat
+The difference between the image and its openning
+
+-   Bottom Hat
+The difference between the image and its closing.
