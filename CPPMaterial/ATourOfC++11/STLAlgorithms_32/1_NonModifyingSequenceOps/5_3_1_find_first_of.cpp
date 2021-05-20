@@ -5,6 +5,8 @@
 * 
 * Searches the range [first, last) for any of the elements in the range [s_first, s_last). Otherwise, it's the
 * same as a normal find.
+* 
+* Note that copy_n copies exactly n values from the beginning.
 */
 
 #include <algorithm>

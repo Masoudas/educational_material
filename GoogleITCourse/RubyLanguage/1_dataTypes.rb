@@ -1,0 +1,1 @@
+# We have boolean, integer, float, and strings as basics types.

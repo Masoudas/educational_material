@@ -418,6 +418,9 @@
     <Filter Include="Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps">
       <UniqueIdentifier>{934aceb0-08b4-4024-82e7-880713cd92a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\STLAlgorithms_32\2_ModifyingSequenceOps">
+      <UniqueIdentifier>{a918564d-3226-4094-a933-28b0629fb8b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -1400,9 +1403,6 @@
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\5_1_floatType.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="STLStrings_36\StringClass_2\0_separating_an_string.cpp">
-      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
     </ClCompile>
     <ClCompile Include="STLStrings_36\StringClass_2\Operations\11_2_rfind.cpp">
       <Filter>Source Files\STLStrings_36\StringClass_2\Operations</Filter>
@@ -2727,11 +2727,59 @@
     <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_2_find_end.cpp">
       <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
     </ClCompile>
-    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_3_find_first_of.cpp">
-      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
-    </ClCompile>
     <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_4_find_adjacent.cpp">
       <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\0_1_separating_an_string.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLStrings_36\StringClass_2\0_2_small_string_optimization.cpp">
+      <Filter>Source Files\STLStrings_36\StringClass_2</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_3_1_find_first_of.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_3_2_search.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\5_3_3_search_n.cpp">
+      <Filter>Source Files\STLAlgorithms_32\1_NonModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_1_copy.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_2_copy_backward.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_3_move.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\2_fill.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\3_transform.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\4_generate.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\5_1_remove.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\5_2_remove_copy.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\6_1_remove.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\6_2_replace_copy.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\7_1_swap.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\7_2_swap_ranges.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

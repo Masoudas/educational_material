@@ -35,6 +35,6 @@ void find_adjacent()
     }
 }
 
-int main() {
-    find_adjacent();
-}
+//int main() {
+//    find_adjacent();
+//}

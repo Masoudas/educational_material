@@ -61,6 +61,9 @@
     <Filter Include="Source Files\Ep262_StringsConfusingConstructors">
       <UniqueIdentifier>{5a92129d-fc14-4474-8a2f-18647ee6a01e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Ep271_StringClearVStringDoubleQuote">
+      <UniqueIdentifier>{3bd51f98-98a7-4d78-8a97-5ea61af4e27d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_0_builtin_types_and_destruction.cpp">
@@ -252,9 +255,6 @@
     <ClCompile Include="..\..\src\Ep238_ConstMutableLambdas\4_cost_of_making_lambda_const.cpp">
       <Filter>Source Files\Ep238_ConstMutableLambdas</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Ep157_NeverOverloadOperator&amp;&amp;or\1_NoShortCircuitingTakesPlace.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\E260_CPPsMostVexingParsingProblem\1_paranthesis_initialization_of_classes.cpp">
       <Filter>Source Files\Ep260_CPPsMostVexingParsingProblem</Filter>
     </ClCompile>
@@ -272,6 +272,12 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\3_resolving_ambiguity_in_cpp20.cpp">
       <Filter>Source Files\Ep262_StringsConfusingConstructors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep157_NeverOverloadOperator&amp;&amp;or\1_NoShortCircuitingTakesPlace.cpp">
+      <Filter>Source Files\Ep157_NeverOverloadOperator&amp;&amp;or||</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep271_StringClearVStringDoubleQuote\1_clearing_string.cpp">
+      <Filter>Source Files\Ep271_StringClearVStringDoubleQuote</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
