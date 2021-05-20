@@ -1,7 +1,7 @@
 As an example, in this receipe we try and set the optimization flag for some of the files in this project.
 
 Notice that in this recipe, the flags are added ON TOP OF the original flags. Therefore, files are compiled
-with flags O2 and O3 being supplied together! Which takes effect God only knows.
+with flags O2 and O3 being supplied together! Which God only knows what sort of effect it will have
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
 

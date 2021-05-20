@@ -1,0 +1,22 @@
+Based on this code, here's the proposed receipe:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 ERROR_FATAL)
+
+project(flags LANGUAGES CXX)
+
+add_executable(compiler-flags 2_code.cpp)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    target_compile_definitions(compiler_flags PRIVATE "IS_GNU_CXX_COMPILER")
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "INTEL")
+    target_compile_definitions(compiler_flags PRIVATE "IS_INTEL_CXX_COMPILER")
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "PGI")
+    target_compile_definitions(compiler_flags PRIVATE "IS_PGI_CXX_COMPILER")
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "XL")
+    target_compile_definitions(compiler_flags PRIVATE "IS_XL_CXX_COMPILER")
+endif()
+
+# Alternatively, we could have written:
+target_compile_definitions(compiler_flags PRIVATE IS_${CMAKE_CXX_COMPILER_ID}_CXX_COMPILER)
+# however, note that CMAKE_<LANG>_COMPILER_ID is not guaranteed to be defined for all compilers or language.

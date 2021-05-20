@@ -1,0 +1,3 @@
+As we may recall, we could determine the compiler id using the CMAKE variable CMAKE_CXX_COMPILER_ID. Sometimes, when a compiler 
+belongs to a particular entity (like Intel, GNU, Microsoft, etc) we need certain definitions activated in our code. That's where
+we can use this flag to activate those flags.

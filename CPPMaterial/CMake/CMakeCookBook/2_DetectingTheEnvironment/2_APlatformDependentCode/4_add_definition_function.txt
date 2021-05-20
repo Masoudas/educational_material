@@ -1,0 +1,7 @@
+So note that just like compile flags that can be supported for all targets with CMAKE_CXX_FLAGS or its children, we can add 
+compile flags for all targets using the add_definitions function:
+
+add_definitions(-DIS_WINDOWS)
+
+However, this is not fine grained for individual targets. Therefore, if we want fine grained definitions, we better use 
+target_compile_definitions(), which has the PRIVATE, PUBLIC and INTERFACE property as well.

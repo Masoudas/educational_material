@@ -3,3 +3,5 @@ source file as well. The function for this end is called set_source_file_propert
 
 set_source_file_properties(source_file PROPERTIES prop1 val1 ...)
 get_source_file_properties(_property source_file prop ) # Sets the value of the property inside _property
+
+Note: I assume we can activate certain defintions for a particular file as well, using the -D option.

@@ -1,7 +1,8 @@
 /**
  * Consider the following example, where the source code we've provided is actually platform dependent.
  * 
- * Notice that IS_WINODWS and IS_LINUX macros, ... are in the cstdlib header.
+ * As we discussed in the previous file, the IS_WINDOWS, IS_LINUX or IS_MACOS are definitions we provide. Note that EXIT_SUCCESS
+ * is part of cstdlib.
  */
 
 #include <cstdlib>
