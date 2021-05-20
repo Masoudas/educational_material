@@ -21,7 +21,9 @@
  *          std::vector<std::vector<KeyPoint>>& keypoints, InputArrayOfArrays masks = noArray())
  *          For detecting an array of images. Note that we should pass a container (like a vector.) 	 	 
  * 
- * Note interestingly the drawKeyPoints method and how it's used.
+ * Note interestingly the drawKeyPoints method and how it's used. 
+ * 
+ * As another side note, see how we add noise to the image.
  */
 
 
@@ -77,10 +79,18 @@ int main(){
     std::uniform_int_distribution<> dis(2, 512);
     for (int i = 0; i < 10; i++){
         auto center_x = dis(rand), center_y = dis(rand);
-        circle(img, {center_x, center_y}, 10, Scalar{255, 255, 255}, -1);   // White circles
+        circle(img, {center_x, center_y}, 10, Scalar{128, 128, 128}, -1);   // White circles
     }
 
+    // Add noise to the image
+    cv::RNG rng{};
+    cv::Mat noise{512, 512, CV_8UC3, Scalar(0,0,0)};
+    rng.fill(noise, cv::RNG::NORMAL, cv::Scalar(0), cv::Scalar(100));
+    img = img + noise;
+
+    // Detecting blobs
     auto pts = detect_blobs(img);    
+    
     auto img_cp = cv::Mat{};
     drawKeypoints(img, pts, img_cp, Scalar(0,0,200), DrawMatchesFlags::DEFAULT);
     

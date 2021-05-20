@@ -1,0 +1,5 @@
+From the get go, we should note the difference between when a shell variable contains a string, or an integer
+value (possibly as string.)
+
+Either of these require a set of operators to work with. Moreover, once we have true or falses, we require 
+BOOLEAN operators to work with those as well.

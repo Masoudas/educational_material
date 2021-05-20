@@ -1,0 +1,2 @@
+I also bring your attention to the fact that $i, i=0,.. correspond to the arguments of main, and so does $#
+to argc. This is why $0 returns the program name.

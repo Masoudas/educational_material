@@ -9,3 +9,15 @@ $ echo $weather
 
 Note that the stream from the keyboard is read AS LONG AS we don't hit enter. So, if we hit enter before typing in
 any other char, the variable content would be null.
+
+We also have the following:
+
+$ read name1 name2
+Terry Clark
+$ echo $name2
+Clark
+
+$ read -p "Enter full name: " name
+Enter full name: Terry Clark
+$ echo $name
+Terry Clark

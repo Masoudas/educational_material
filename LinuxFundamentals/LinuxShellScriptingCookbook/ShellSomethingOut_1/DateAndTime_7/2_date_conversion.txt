@@ -6,7 +6,7 @@ Note that when creating a format for data, the first placeholder always requires
 $ date --date "Jan 20 2001" +%A     # Get this particular date and print, but print only the COMPLETE weekday
 $ date --date "May 9 1990" +%a      # Short for weekday
 $ date --date "May 9 1990" "+%a %B" 
-$ data "+%H:%M:%S"
+$ date "+%H:%M:%S"
 
 We have the following placement chars:
 

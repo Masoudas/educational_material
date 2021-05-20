@@ -1,0 +1,14 @@
+Note that when we type crontab -e, we're actually defining tasks for the root user. Therefore, any task will
+be run with the user privileges. 
+
+Now, we can either explicitly define some users are allowed and others are not allowed to define crontabs, which
+is through the /etc/cron.deny and /etc/cron.allow files.
+
+Beside that, we need to open crontab with a particular user name with the -u option to define tasks as such:
+$ crontab -u $USERNAME -e
+
+Note that in Ubuntu at least, running the following command means creating tabs for current user
+$ crontab -e
+
+And we actually better be specific for root user jobs:
+$ crontab -u root -e

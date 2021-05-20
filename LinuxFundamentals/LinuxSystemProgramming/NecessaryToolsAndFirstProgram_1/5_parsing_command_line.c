@@ -17,7 +17,7 @@
  * 
  */
 
-#define _XOPEN_SOURCE 500 // We better include it!
+#define _XOPEN_SOURCE 500 // We better define it!
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

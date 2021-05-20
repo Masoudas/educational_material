@@ -1,7 +1,8 @@
 #!/bin/bash
 
+v1="s"
+v2="w"
 
-no=1
-ls + 2>errors 
-result=`echo "$no * 1.5" | bc`
-echo $result
+if [ $v1 -a $v1 != $v2  ] ; then
+    echo "Length is zero"
+fi

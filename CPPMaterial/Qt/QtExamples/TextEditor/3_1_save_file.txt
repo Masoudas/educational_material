@@ -1,0 +1,24 @@
+Let's start from the basics. Assume that the text has been modified, and we just want to write the plain text
+content into a file. How do we go about that?
+
+Well, first of all, we need to open the file (assuming it exists.) Then, we need to get the text from our plain
+text editor. Finally, we need to stream it into the file.
+
+Well, like before, we can open a TEXT file for WriteOnly mode using the QFile object. Then, we can once again
+use the QTextStream to stream text to the file, and then directly stream the text into the file.
+
+void saveFile(const QString& fileName){
+    QFile file(fileName);
+    if(!file.open(QFile::WriteOnly | QFile::TextFile)){
+        QMessageBox::warning(this, tr("Application"),
+                        tr("Cannot write file %1:\n%2.")
+                        .arg(QDir::toNativeSeparators(fileName),
+                            file.errorString()));
+    }
+
+    QTextStream out(&file);
+
+    out << ui->plainTextEditor->toPlainText();
+
+
+}

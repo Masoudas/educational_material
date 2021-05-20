@@ -1,0 +1,12 @@
+Instead of adding a resource file for every inidividual action or button, sometimes it's useful to just use 
+predefined theme icons in Qt. Some examples include:
+
+    -   document
+    -   document-open
+    -   document-save
+    ...
+
+So, I can actually add these directly in the GUI design menu. Another option would be to use the QIcon class
+directly, and in particular its static fromTheme menu:
+
+QIcon::fromTheme("document-new", QIcon(":/images/new.png"));

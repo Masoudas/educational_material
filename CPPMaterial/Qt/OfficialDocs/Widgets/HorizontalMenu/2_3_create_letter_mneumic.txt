@@ -1,0 +1,4 @@
+To create letter mneumic for actions or for buttons (they're underlined and can be accessed therefore by
+pressing the corresponding key,) we just need to prepend the letter we want underlined with & in the name
+of the action or button.
+

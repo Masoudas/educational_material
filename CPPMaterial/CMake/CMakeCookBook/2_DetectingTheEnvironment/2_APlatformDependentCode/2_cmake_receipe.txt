@@ -1,0 +1,16 @@
+Accordingly, we provide the following cmake receipe. Notice that we let the compiler know which system
+we're compiling for, by setting (defining) the proper make for the pre-processor.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
+project(cross LANGUAGES CXX)
+
+add_executable(cross-code main.cpp)
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_compile_definitions(cross-code PUBLIC "IS_LINUX")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    target_compile_definitions(cross-code PUBLIC "IS_WINDOWS")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    target_compile_definitions(cross-code PUBLIC "IS_MACOS")
+endif()

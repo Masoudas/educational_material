@@ -1,0 +1,26 @@
+Here's a simple example for just determining the platform. Notice that we say the language of the project is
+none!
+
+On systems that have the uname command, the CMAKE_SYSTEM_NAME is set to the output of uname -s.
+
+To minimize trouble when moving from one platform to another, you should avoid using Shell commands directly 
+and also avoid explicit path delimiters (forward slashes on Linux and macOS and backward slashes on Windows). 
+Only use forward slashes in CMake code as path delimiters and CMake will automatically translate them for the 
+OS environment in question.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
+
+project(platform LANGUAGES NONE)
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    message(STATUS "Configuring on/for Linux")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    message(STATUS "Configuring on/for macos")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    message(STATUS "Configuring on/for Windows")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "AIX")
+  message(STATUS "Configuring on/for IBM AIX")
+else()
+  message(STATUS "Configuring on/for ${CMAKE_SYSTEM_NAME}")
+endif()

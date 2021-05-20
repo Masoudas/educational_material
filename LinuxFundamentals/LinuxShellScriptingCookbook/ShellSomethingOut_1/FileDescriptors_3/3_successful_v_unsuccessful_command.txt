@@ -10,3 +10,5 @@ $ echo $?
 $ ls 
 $ echo $?
 0
+
+Finally, after all these years, I undestand why we return from int main!
