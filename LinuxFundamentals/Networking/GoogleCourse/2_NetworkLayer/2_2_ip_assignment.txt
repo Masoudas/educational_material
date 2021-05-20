@@ -1,0 +1,4 @@
+Dynamic Host Control Protocol is the method by which ip addresses are assigned to devices on a dynamic fashion. We also
+may have static ip addresses. 
+
+static ip addresses are reserved for servers and network devices. dynamic ip addresses for clients.

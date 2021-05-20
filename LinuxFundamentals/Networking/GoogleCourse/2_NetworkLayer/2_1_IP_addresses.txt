@@ -1,0 +1,10 @@
+Four octets of binaries. 12.34.56.88 is valid, but 123.456.789.100 is not.
+
+IP addresses are distributed to companies, etc, instead of being determined like MAC addresses by companies.
+For example, IBM has every single ip address that starts with 9! So each destination ip that s
+starts with 9 must be routed to IBM routes.
+
+Note that IP addresses belong to networks, not to the devices attached to them. Hence, if I have a server at the university
+and want to ssh to it remotely, I just need to know the network address to that, and once I know it, that address is unique (for sometime at least)
+Or for example, my laptop would have a different ip address 
+anywhere I connect (me: but probably this is unique in the world, so that I can ssh to it anywhere I want.)

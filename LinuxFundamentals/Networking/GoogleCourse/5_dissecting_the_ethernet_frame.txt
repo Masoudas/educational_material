@@ -1,0 +1,14 @@
+As we know, a data packet is a set of binary data (any kind, any technology)
+
+Data packets at the ethernet level are known as ethernet frames.
+
+There's:
+    -   Preamble: A buffer between frames, for synchronization
+    -   Destination MAC address:
+    -   Source MAC address:
+    -   Ether-type (or VLAN type on virtual local access network): 16 bits, describing the protocol
+    -   Payload: The actual data being transported. From 46 to 1500 bytes.
+    -   Frame check sequence: For checksum value of the frame.
+
+Me: I think this frame goes into an ip datagram, then ethernet frame is formed from it.
+

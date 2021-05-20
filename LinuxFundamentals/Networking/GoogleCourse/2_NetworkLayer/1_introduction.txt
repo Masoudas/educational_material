@@ -1,0 +1,5 @@
+Technology to let data go across multiple networks, using ip and subnets, and ARP (address resolution protocol)
+
+On a LAN, we can communicate with LAN addresses. But it does not scale well. We can't know where on the planet a MAC
+address resides. 
+
