@@ -1,0 +1,11 @@
+To achieve this task, we define a non configured header file, which we say "arbitrarily has the .in" extension. Then we define our
+macros, and set their values to a bogus string.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// config.h.in
+#pragme once    // Don't forget the guard.
+
+#define CXX_STANDARD @CXX_STANDARD@     // Use @ as delimiter
+#define USE_GPU @USE_GPU@
+#define NUMBER_OF_LOGICAL_CORES @NUMBER_OF_LOGICAL_CORES@
+#define NUMBER_OF_PHYSICAL_CORES @NUMBER_OF_PHYSICAL_CORES@

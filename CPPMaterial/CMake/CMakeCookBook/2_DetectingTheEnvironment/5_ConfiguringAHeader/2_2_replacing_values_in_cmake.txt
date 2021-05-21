@@ -1,0 +1,11 @@
+So now, suppose we want to configure this header file by replacing values. How do we go about that? The answer is that we define
+variables inside CMAKE and set them to the values we want. Then, using the configure_file function, CMAKE automatically fills 
+those fields for us.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+set(CXX_STANDARD "C++20")
+set(USE_GPU "TRUE")
+set(NUMBER_OF_LOGICAL_CORES "16")
+set(NUMBER_OF_PHYSICAL_CORES "8")
+
+configure_file(config.h.in config.h @ONLY)
