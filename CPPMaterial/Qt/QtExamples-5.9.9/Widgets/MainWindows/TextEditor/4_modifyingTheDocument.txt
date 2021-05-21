@@ -1,0 +1,32 @@
+So, imagine a text document has never been modified. In such a case, we never need to save it. However, if
+the document has been modified, before the user changes document or creates a new one, we need to prompt them
+if they want to save it.
+
+We use a method here called maybeSave. It goes to the PlainTextEditr.document().isModified(). If there's a
+change, it prompts the user to ask for saving the changes in the current file, and if they say yes, it should
+open the saveAs dialog, or just save the file.
+
+Now, to create the dialog, we use a QMessageBox. The messageBox has a standard Save, Discard, Cancel button.
+The interesting thing here is that the box can be directly cast to an integer value, corresponding to either
+of these values. 
+
+So we devise the maybeSave method to return false or true based on the value supplied by each of these
+methods. Moreover, if the user clicks the save button, we call the save method.
+
+bool maybeSave(){
+    if (!*textEditor->document()->isModified())      // Our instance of text editor indicates no change.
+        return false;   // No need to save.
+
+    const auto ret = QMessageBox::warning(this, tr("Application"),
+        "The document has been modified.\nDo you want to save your changes?",
+        QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+    
+    switch(ret){
+        case QMessageBox::Save:
+            return save();
+        case QMessageBox::Cancel:
+            return false;
+        case QMesssageBox::Discard:
+            return false;
+    }
+}

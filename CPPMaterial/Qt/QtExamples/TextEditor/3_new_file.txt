@@ -1,2 +1,0 @@
-So imagine the new action has been triggered. What we want to do is to prompt the user to save as the current
-file, or just save it. Then, we want to clean the screen for the user to restart typing. 

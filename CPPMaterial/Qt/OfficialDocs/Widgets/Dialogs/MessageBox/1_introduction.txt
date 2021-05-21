@@ -1,0 +1,55 @@
+A message box displays a primary text to alert the user to a situation, an informative text to further explain 
+the alert or to ask the user a question, and an optional detailed text to provide even more data if the user 
+requests it. A message box can also display an icon and standard buttons for accepting a user response.
+
+Two APIs for using QMessageBox are provided, the property-based API, and the static functions. Calling one of 
+the static functions is the simpler approach, but it is less flexible than using the property-based API, and 
+the result is less informative. Using the property-based API is recommended.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Property-based API:
+In this approach, we set the text, the informative text, the buttons, and the default button. As always, we
+use the OR approach to supply as many buttons as we desire.
+
+QMessageBox message{};
+message.setText("Here's the notification");
+message.setInformativeText("What do you want to do about it?");
+message.setStandardButtons(QMessageBox::OK | QMessageBox::Discard | QMessageBox::Cancel);
+message.setDefaultButton(QMessageBox::Discard);
+message.exec();
+
+For example, the discard buttom shows the message "Close without saving" with a nice icon, as well as others.
+
+The point here is that the messageBox can be directly cast to the int values corresponding to either of these
+buttons, to see which one the user has pressed:
+switch (message){   // Similarly, message.exec returns this value.
+    case QMessageBox::Ok:
+        //..
+        break;
+    case QMessageBox.Discard:
+    ...
+}
+
+There's another button here called show details, which shows more detail using a new window as well.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Static functions are available for creating information(), question(), warning(), and critical() message boxes.
+These methods are less flexible of course.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Define custom buttons using the addButton method. Then, check out which button has been clicked using the 
+buttonClicked method:
+
+QMessageBox msgBox;
+QPushButton *connectButton = msgBox.addButton(tr("Connect"), QMessageBox::ActionRole);
+QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
+
+msgBox.exec();
+
+if (msgBox.clickedButton() == connectButton) {
+    // connect
+} else if (msgBox.clickedButton() == abortButton) {
+    // abort
+}
+
+Finally, note that if enter is pressed, default button is executed. Set escape button using setEscapeButton.

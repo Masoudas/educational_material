@@ -1,0 +1,2 @@
+It appears that the example files are installed as we install Qt. For my Ubuntu installation, the examples were
+on the ~/Qt/Examples folder.
