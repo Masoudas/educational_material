@@ -6,4 +6,17 @@ v3="s"
 
     -   !       :   [ ! false ] # Returns true
     -   -a      :   [ $v1 -a $v1 != $v2  ]
-    -   -o      :   [ $v1 == $v2 -o $v1 = $v3 ]
+    -   -o      :   [ ! $v1 = $v2 -o $v1 = $v3 ]
+
+We also have the usual logical operators &&, ||.
+
+What's the difference between the two? Well, for one thing, I couldn't use them inside an if expression. I
+searched over the internet for answers, nothing! So -a, -o and ! seem to work inside the if statement, and 
+the && and || are for logical operations in a single line.
+
+Note that && looks at the return value of the command. If it's zero, then it evaluates the next command, otherwise
+it does not. This would be the difference between command1 && command2, and, command1; command2;
+
+As another side note, note that writing the following command
+$ qtcreator & qtcreator $ qtcreator $
+Causes three instances of qt creator to run in the background.

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-v1="s"
-v2="w"
+if [ -e /  -a -r / -a ! -w / -a -x / -a -s / -a -d / -a ! -f / ]; then
+    printf "Root exits, is readable, not writable, but executable (can be lsed), and its size is non zero"
+    printf "\nand is a directory and not a file\n"
+fi
 
-if [ $v1 -a $v1 != $v2  ] ; then
-    echo "Length is zero"
+if [ -u "super.sh" -a -g "super.sh" ]; then
+    echo "The current file has its uid bit and its gid bits set"
 fi

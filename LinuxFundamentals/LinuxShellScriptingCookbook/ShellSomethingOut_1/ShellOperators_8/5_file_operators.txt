@@ -1,0 +1,17 @@
+A file operator can check the properties of a file and return booleans accordingly. Recall that testing for the
+existence of a file (or folder) can also be done with the test command, we have the following:
+
+    -   -b  :   This is a block file or not.
+    -   -c  :   This is a char file or not.
+    -   -d  :   This is a directory or not.
+    -   -c  :   Checks whether this is an ordinary file. If not, it's a directory, or block file, etc.
+    -   -g  :   Checks if the file has the group id bit set or not
+    -   -k  :   Checks if it has the sticky bit set or not.
+    -   -p  :   Checks if the file is a named pipe.
+    -   -t  :   Checks if the file descriptor is open and is associated with a terminal
+    -   -u  :   Checks if the uid bit is set.
+    -   -r  :   Checks if the file is readable.
+    -   -w  :   Checks if writable
+    -   -x  :   Checks if executable
+    -   -s  :   Checks if file size is non-zero
+    -   -e  :   Checks if exist (as directory or file. Equivalent to test)
