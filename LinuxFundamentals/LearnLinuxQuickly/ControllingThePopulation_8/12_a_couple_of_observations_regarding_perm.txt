@@ -1,0 +1,23 @@
+So first note that if a folder has zero permissions, we can't execute it. However, if I list the folder that
+it's part of, its properties will be shown!
+
+$ mkdir f
+$ chmod 000 f
+$ ls -l f
+error permision denied
+
+$ ls -l
+...
+d---------  ... f
+
+
+Moreover, if the parent folder has not enough permissions, I can't read the content of it. Hence, if a folder
+inside has all the permissions, I can't access it through a parent folder that doesn't have enough permissions.
+
+The permissions of what's created inside a folder however have nothing to do with the parent folder.
+
+Something that I hadn't paid attention to so far! is that a non-owner even if it has all the permissions, is
+unable to change the owner or permissions of a file. This is because they'd just be able to make themselves 
+the owner, and set all the permisssions for themselves. This breaks down the entire permission system, and is
+not allowed.
+

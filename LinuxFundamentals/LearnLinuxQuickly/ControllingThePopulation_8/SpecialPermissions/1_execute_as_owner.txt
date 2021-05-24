@@ -1,0 +1,22 @@
+This means if the file is executable, when another user executes it, it would be as if they're the owner of
+this file. A famous example of this would be the passwd file, where this is good because changing password
+requires writing to the shadow file for example:
+
+$ ls -l /usr/bin/passwd
+-rwsr-xr-x 1 root root 68208 mai   28  2020 /usr/bin/passwd
+
+This is called the suid bit of the file. When the SUID bit is set on an executable file, this means that the 
+file will be executed with the same permissions as the owner of the executable file.
+
+To set the suid, we can do either of the following (octal notation is discussed later:)
+$ chmod u+s file
+
+Note: If the file does not have x permission by itself and we try and set it to s, we get a capital S indicating
+an error, which we need to attend to.
+
+Speaking of the password file, note that a user cannot change the password of other users because upon execution
+the id is checked against the root (or if sudo.)
+
+We can list all files with suid bit set as follows:
+$ find / -perm /4000    (Note that not 4000, meaning has s. Could have also said -perm u=s)
+

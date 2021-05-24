@@ -1,0 +1,6 @@
+So imagine there's a separate octal associated with uid, gid and sticky bit. This one comes as the first bit.
+Hence, 1 sets the sticky bit, 2 sets the gid, 4 sets the uid bit. Hence for example, 7 sets all, 6 sets uid
+and gid.
+
+$ chmod 7777 file   # All permissions
+$ chmod 6777 file   # No sticky

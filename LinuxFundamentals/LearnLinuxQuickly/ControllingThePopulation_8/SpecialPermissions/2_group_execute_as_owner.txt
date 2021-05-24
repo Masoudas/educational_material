@@ -1,0 +1,15 @@
+SGID is similar to SUID. With the SGID bit set, any user executing the file will have same permissions as the 
+group owner of the file.
+
+It’s benefit is in handling the directory. When SGID permission is applied to a directory, all sub directories 
+and files created inside this directory will get the same group ownership as main directory (not the group 
+ownership of the user that created the files and directories.)
+
+In fact, whenever a user creates a file and a folder, they're the owner of it (and their default gid is the
+group.) Giving the group permission ensures that whenever they create another file or folder inside, the gid
+is set to the group of the folder, not the user that created it. Note that this not the case with SUID however.
+
+$ ls -ld /var/local
+
+Set permission with g+s
+
