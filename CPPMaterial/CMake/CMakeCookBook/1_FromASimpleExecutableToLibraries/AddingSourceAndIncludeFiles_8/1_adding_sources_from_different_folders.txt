@@ -1,0 +1,14 @@
+So imagine a project has multiple sub-folders, and it has respective include subfolders as well. To include each one of them for 
+a particular target, we use two functions, one is to add sources to the target, one is to add include directories to the folder:
+
+target_sources(target_name      # Note that the target must have already been made
+    PRIVATE     # What is the point of having private here?
+        source1.cpp     # If relative path is given, computes from this dir.
+        source2.cpp
+)
+
+target_include_directories(target_name # To add include directories. Note that as the name suggests, it includes directories, and
+                                       # and not particular include files! 
+    PRIVATE     # Again, why we need it? 
+    dir # If relative path is given, computes from this dir   
+)

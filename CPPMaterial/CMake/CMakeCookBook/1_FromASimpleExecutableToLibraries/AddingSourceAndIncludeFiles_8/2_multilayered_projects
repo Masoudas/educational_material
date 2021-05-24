@@ -1,0 +1,2 @@
+Of course, now we can see how to make targets from multi-layered projects. That is, use these two commands to add files to the 
+target, by noting that each subfolder cmake file can be added using either the include or add_subdirectory method.
