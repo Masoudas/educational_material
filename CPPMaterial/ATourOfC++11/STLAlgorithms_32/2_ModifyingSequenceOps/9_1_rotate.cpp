@@ -8,6 +8,7 @@
 * n_first - 1 becomes the last element.
 * A precondition of this function is that [first, n_first) and [n_first, last) are valid ranges.
 * 
+See below:
 
 template<class ForwardIt>
 ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
@@ -29,6 +30,12 @@ ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
    return write;
 }
 
+Explainantion: The rotation becomes a cyclic affair once n_first until last has been moved to its location,
+in that whereever old first goes, we have to start from there and change from the element after the last
+changed value.
+Or, imagine  k < N/2. Then the first cyclic shift leads to:
+x_k,...,x_(2k-2),x_(2k-1),...,x_N,x_(l+1),...x_k-1,x_1,...,x_l
+And we can see that we need another cyclic shoft from new position of x_1 with x_(l+1) which was the last read.
+
 *
 */
-???

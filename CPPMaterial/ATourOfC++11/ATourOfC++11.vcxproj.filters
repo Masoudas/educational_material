@@ -2781,9 +2781,6 @@
     <ClCompile Include="TypesAndDeclarations_6\4_1_integers.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\4_2_Integer_Literals.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\0_TypesInOneLook.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
@@ -2819,6 +2816,21 @@
     </ClCompile>
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_1_rotate.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\4_2_a_note_on_range_of_integers.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\4_3_Integer_Literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\5_1_char_literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\Chars\5_2_unsigend_chars.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\Chars</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\5_2_float_literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -884,7 +884,9 @@
     <ClCompile Include="Templates_23\x_x_UseOfNesting\0_associated_nested_type.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\0_1_implicit_conversion_to_bool.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\2_1_AssigningLiteralsToTypes.cpp" />
-    <ClCompile Include="TypesAndDeclarations_6\4_2_Integer_Literals.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\4_2_a_note_on_range_of_integers.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\4_3_Integer_Literals.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\5_2_float_literals.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\1_aliasing_according_to_standard.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_1_syntax_according_to_standard.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_2_cyclic_aliasing_is_not_allowed.cpp" />
@@ -900,6 +902,8 @@
     <ClCompile Include="TypesAndDeclarations_6\Chars\2_conversion_from_int.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Chars\3_initial_value.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Chars\4_wchar_t.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\Chars\5_1_char_literals.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\Chars\5_2_unsigend_chars.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\1_ArraysOfStrings.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\2_sorting_c_style_string.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\CStyleStrings\3_sorting_array_of_strings.cpp" />
