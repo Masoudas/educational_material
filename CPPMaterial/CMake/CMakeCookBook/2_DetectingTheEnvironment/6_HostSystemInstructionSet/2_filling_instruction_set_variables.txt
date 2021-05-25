@@ -1,0 +1,13 @@
+To fill the instruction set variables, we use the cmake_host_system_information function. Imagine we wanted the number of physical cores.
+We then write something like:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(info LANGUAGES NONE)
+
+set(n_cores "")
+cmake_host_system_information(RESULT n_cores QUERY NUMBER_OF_PHYSICAL_CORES)    % Again, on my intel processor, half number of logical cores.
+message(STATUS ${n_cores})
+
+
+

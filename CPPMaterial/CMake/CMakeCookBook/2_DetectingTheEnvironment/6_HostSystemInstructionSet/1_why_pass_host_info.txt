@@ -1,0 +1,24 @@
+Note that for certain hosts, we want to acquire as many information about the system as possible. Moreover, in the code we usually have a header
+file defined with these properties, which we can of course config to ensure that these system instructions are known by the code, which it 
+then can use to compile the code. 
+
+These information may include trivial things like available memory, available virtual memory, number of logical and physical cores, etc. 
+
+Thankfully, at least CMake has made these information universal, by providing particular names for them:
+    -   NUMBER_OF_LOGICAL_CORES
+    -   NUMBER_OF_PHYSICAL_CORES
+    -   TOTAL_VIRTUAL_MEMORY
+    -   AVAILABLE_VIRTUAL_MEMORY
+    -   TOTAL_PHYSICAL_MEMORY
+    -   AVAILABLE_PHYSICAL_MEMORY
+    -   IS_64BIT
+    -   HAS_FPU
+    -   HAS_MMX
+    -   HAS_MMX_PLUS
+    -   HAS_SSE
+    -   HAS_SSE2
+    -   HAS_SSE_FP
+    -   HAS_SSE_MMX
+    -   HAS_AMD_3DNOW
+    -   ...
+

@@ -8,4 +8,4 @@ set(USE_GPU "TRUE")
 set(NUMBER_OF_LOGICAL_CORES "16")
 set(NUMBER_OF_PHYSICAL_CORES "8")
 
-configure_file(config.h.in config.h @ONLY)
+configure_file(config.h.in config.h @ONLY)      # Note that as such, the header is configured inside the binary folder.

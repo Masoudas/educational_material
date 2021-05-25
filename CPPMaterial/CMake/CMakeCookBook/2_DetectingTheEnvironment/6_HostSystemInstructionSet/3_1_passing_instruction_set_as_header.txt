@@ -1,0 +1,13 @@
+What we normally like to do is to create a configurable header (see section 5,) and then config it using these information. So imagine that 
+header is called config.hpp.in, the content of it may look something like this:
+
+#define NUMBER_OF_LOGICAL_CORES @_NUMBER_OF_LOGICAL_CORES@
+#define NUMBER_OF_PHYSICAL_CORES @_NUMBER_OF_PHYSICAL_CORES@
+...
+
+Now, here's the other important part. Once this header is configured, where do we put it? And how do we include it inside the desired target 
+include path?
+The answer is that where ever we put it, and it should be among the first things we build, the path to it should be declared for the target that
+requires it using target_include_directories().
+
+For example, some people choose to configure this header inside the build folder, in which case the inclusion path must be the binary folder.
