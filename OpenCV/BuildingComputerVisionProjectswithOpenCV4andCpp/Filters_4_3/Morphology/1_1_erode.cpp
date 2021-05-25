@@ -2,6 +2,9 @@
  * Note: Erosion can be done in place.
  * Important note: Parts to be eroded MUST BE in white, and not in black.
  * 
+ * As we can see blow, the idea behind erosion filter is simple as well. That is, get in a neighbor, chose the
+ * minimum or maximum.
+ * 
  *  -   void cv::erode(InputArray src, OutputArray dst, InputArray kernel, Point anchor = Point(-1,-1),
  *  		int iterations = 1, int	borderType = BORDER_CONSTANT, 
  *          const Scalar & borderValue = morphologyDefaultBorderValue())

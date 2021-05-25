@@ -1,0 +1,3 @@
+Denoising involves removing noise using a series of images. In particular, it relies on the fact that the 
+average of noise is zero in the relation p = p_0 + n for most of the noises we know. Hence, averaging an image
+would normally lead to less or no noise.

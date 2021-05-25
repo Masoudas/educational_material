@@ -1,6 +1,7 @@
     -   Smoothing filters:
-GaussianBlur, MedianBlur, Averaging.
-Bilateral filters:  Used for blurring while keeping the edges sharp.
+    GaussianBlur, MedianBlur, Averaging.
+    Bilateral filters:  Used for blurring while keeping the edges sharp.
+    See Also denoising filters in computational photogrammetry.
     
     -   Derivate filters
         -   Sobel derivative:
@@ -20,5 +21,7 @@ Bilateral filters:  Used for blurring while keeping the edges sharp.
     to its original scale. The same algorithm that is used to form the pyramid can also be used to perform the 
     expansion operation.
 
+    -   Morphological filters:
+    For thinning (erosion), thickenning (dilation) and many other functions on an image. See the section
 
      

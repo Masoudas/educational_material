@@ -1,0 +1,22 @@
+    -   BRG:    
+    The most frequent version. Too much redundancy, not good for denoising
+
+    -   HSI or HSV
+    Stand for Hue, Saturation and Intensity or Value. They are more natural in describing color spaces. 
+    HSV is like a cylinder, with hue being the circular values changing over all colors, saturation on the
+    radius axis making colors more saturated, and intensity being the z-axis, indicating surge towards white
+    from black.
+    For example with histogram equalization, we may use HSI or HSV to only equalize the intensity values.
+
+    -   YCrCb 
+    Used by the popular JPEG image format. Contains shades of blue and red (CbCr) and luma represents luminance.
+    Another space used for histogram equalization.
+
+    -   CIELAB
+    The three coordinates of CIELAB represent the lightness of the color (L* = 0 yields black and L* = 100 
+    indicates diffuse white; specular white may be higher), its position between red and green (a*, where 
+    negative values indicate green and positive values indicate red) and its position between yellow and blue 
+    (b*, where negative values indicate blue and positive values indicate yellow). The asterisks (*) after L*, 
+    a*, and b* are pronounced star and are part of the full name to distinguish L*a*b*, from Hunter's Lab.
+    
+    
