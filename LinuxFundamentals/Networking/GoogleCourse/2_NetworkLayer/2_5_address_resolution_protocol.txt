@@ -1,0 +1,8 @@
+ARP or address resolution protocol, is the protocol used to discover the ip address of a node with a certain ip address. 
+
+ARP table connects the two in the server.
+
+It may happen that there's no entry for this field. In this case, a broadcast message with the ip address is transmitted (broadcast ARP message.) The node with this ip on the network sends back and ARP response showing 
+its mac address.  The transmitting machine then puts it in the ethernet frame and sends it.
+
+ARP tables expire, and are updated.

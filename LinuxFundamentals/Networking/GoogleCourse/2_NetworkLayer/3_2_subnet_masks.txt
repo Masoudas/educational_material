@@ -1,0 +1,16 @@
+With subnets, some bits that are used for host ids are in fact used for subnet ids. 
+
+At the network level, core routers only care about network ids. They use them to forward the packets to the 
+gateway routers. The gateway router has additional info to send the data into the destination machine or the next
+router. 
+
+Subnet ids are calculated using subnet masks. These are 4 octets as well.  
+
+Consider 9.100.100.100 ip addresses. A subnet masks has two sections. The beginning part  which is a mask itself
+is a string of ones, 255.255.255.0. The part with zeros tell us what to keep. The purpose of the mask is to tell the
+router which part is the subnet id. Here' it's the first three here. We know that for class A, the first octet is the
+network id. So, consider the last three. The numbers that are remainging that correspond to ones are the subnet id,
+so 100.100 part is the subnet id. So the last 100 is the host id.
+
+Usually, a subent can use two less than the number of host ids avaialable. So, here we have 256, meaning we usually have 
+at most 254 ips for the subnet mask. (zero usually is not used and 255 is reserved for broadcasting.)

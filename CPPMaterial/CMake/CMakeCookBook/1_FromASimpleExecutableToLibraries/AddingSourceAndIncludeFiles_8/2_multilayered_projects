@@ -1,0 +1,11 @@
+Of course, now we can see how to make targets from multi-layered projects. That is, use these two commands to add files to the 
+target, by noting that each subfolder cmake file can be added using either the include or add_subdirectory method.
+
+Note: I need to check this out further, but I save that the path to target sources need to be set ralative to the parent folder inside a 
+subfolder, and not from the subfolder itself. Although this can be changed based on the policies I guess.
+
+Imagine:
+    -   src -- main.cpp
+         |
+         - hello  -- hello.cpp      --> target_sources(target src/hello.cpp)
+

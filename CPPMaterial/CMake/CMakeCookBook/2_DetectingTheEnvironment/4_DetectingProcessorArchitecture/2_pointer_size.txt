@@ -1,0 +1,11 @@
+We can determine the size of pointer in the architecture by checking out the CMAKE_SIZEOF_VOID_P variable. This variable returns
+the size of the void pointer. Note that Using CMAKE_SIZEOF_VOID_P is the only truly portable way of checking whether the CPU at 
+hand has a 32- or 64-bit architecture.
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+  target_compile_definitions(arch-dependent PUBLIC "IS_64_BIT_ARCH")
+  message(STATUS "Target is 64 bits")
+else()
+  target_compile_definitions(arch-dependent PUBLIC "IS_32_BIT_ARCH")
+  message(STATUS "Target is 32 bits")
+endif()

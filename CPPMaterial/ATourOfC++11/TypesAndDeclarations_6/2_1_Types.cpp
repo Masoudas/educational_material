@@ -5,10 +5,12 @@
  * int x {10};  // x is an int with value  10.
  * bool b1 {true};
  * 
- * a bool can be assigned to int. In that case, false would be zero, and true would be one.
- * On the other hand, a zero is assigned to false, and any non-zero int is assigned to true.
+ * A bool can be assigned to int. In that case, false would be zero, and true would be one (like an electrical
+ * signal.) On the other hand, a zero is assigned to false, and any non-zero int is assigned to true.
+ * 
  * int i2 {true};//i2 becomes 1
  * bool b {10}; // b would be true.
+ * bool b2 {-10}; // True again.	
  * 
  * A pointer can also be converted to bool. A nullptr is false, and other values are true.
  * Though we prefer explicit comparison (although Mr. Bjarne doesn't!)

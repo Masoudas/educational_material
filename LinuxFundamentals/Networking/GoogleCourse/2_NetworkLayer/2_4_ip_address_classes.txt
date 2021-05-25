@@ -1,0 +1,18 @@
+They can be divided into two sections:
+    -   Network id
+    -   Host id
+
+9.100.100.100 shows an IBM ip address (9,) and the next three octets indicate a host.
+
+Address class system indicates how an ip address is constituted:
+    -   Class A: First octet is used for network id. The last three for host.
+        - Range of networks is 0-127. Range of hosts is ~16
+    -   Class B: First two octet ..
+        - Range of networks is 128-191. Range of hosts is 64000.
+    -   Class C: First three octet ..
+        - Range of networks is 192-224. Range of hosts is 254.
+
+If the first bit is zero, it's class A. If first bits are 10, then its class B. 110 first bits means class C.
+Hence, Class A has 0-127 as first octent. Class B has 128-191 as first, and class C 192-224 as first.
+
+Class D starts with 1110, from 224-239, used for multi-casting. There's class E as well, but these two are not important.

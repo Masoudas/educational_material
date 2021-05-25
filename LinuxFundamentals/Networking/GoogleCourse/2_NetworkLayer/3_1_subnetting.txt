@@ -1,0 +1,8 @@
+The process of breaking a large network and breaking it into many smaller ones. 
+
+Gateway routers are entries to a particular part of the network (like the ones for class A 9.x.x.x ip addresses.)
+Core routers on the other hand only speak to other core routers. 
+
+So note that a class A has 16 million addresses. To many for a single server to handle. Subnetting then is used break down
+ips into smaller ones, having their own gateways for them.
+

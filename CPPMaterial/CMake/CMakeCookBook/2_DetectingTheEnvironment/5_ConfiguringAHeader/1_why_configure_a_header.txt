@@ -1,0 +1,5 @@
+Sometimes we have a header file, and we want to set its definition values to a particular value. This would be useful, so that one
+header file would be responsible contain all our definitions. For example, we might want to know about the standard, or whether
+to compile a certain algorithm based on CPU or GPU or many other things.
+
+
