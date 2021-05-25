@@ -424,6 +424,9 @@
     <Filter Include="Source Files\TypesAndDeclarations_6\Double">
       <UniqueIdentifier>{00508a7a-4fbb-41e9-9a02-0e80473c7432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\ImplicitConversions">
+      <UniqueIdentifier>{81ccfd7d-f4f4-43bf-a6cb-1767e10e21c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -629,9 +632,6 @@
     </ClCompile>
     <ClCompile Include="Functions_12\Overloading_10\4_Manually_Overloaded_Resolution.cpp">
       <Filter>Source Files\Functions_12\Overloading_10</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\2_1_AssigningLiteralsToTypes.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\AutoAndDecltype_10.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
@@ -1514,9 +1514,6 @@
     </ClCompile>
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\0_type_conversion_and_static_cast.cpp">
       <Filter>Source Files\OperatorOverloading_18\TypeConversion_3</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\0_1_implicit_conversion_to_bool.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="SpecialOperators_19\Friends_4\1_defining_friendship.cpp">
       <Filter>Source Files\SpecialOperators_19\Friends_4</Filter>
@@ -2751,9 +2748,6 @@
     <ClCompile Include="STLStrings_36\0_1_single_quote_inside_double_quotes.cpp">
       <Filter>Source Files\STLStrings_36</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\2_Types.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\3_char.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
@@ -2779,9 +2773,6 @@
       <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\4_1_integers.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\0_TypesInOneLook.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\5_1_floatType.cpp">
@@ -2831,6 +2822,54 @@
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\5_2_float_literals.cpp">
       <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\0_0_TypesInOneLook.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\2_1_Types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\2_2_AssigningLiteralsToTypes.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\2_3_boolean_literals.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\1_definition.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\2_order_of_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_1_contextual_conversion_to_bool.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_2_implicit_conversion_to_bool.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_3_contextually_implicit_conversion.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_4_value_transformations.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_5_array_to_pointer_conversion.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\4_1_numerical_promotions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\4_2_integral_values.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\4_3_float_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_1_numeric_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_2_integral_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

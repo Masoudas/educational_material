@@ -6,7 +6,7 @@
  * 
  * For example, if I say char c = 255, this is assigning a literal int to a char. Here, a cast from int to
  * char takes place. If char is unsigned, it will be 255, otherwise it will be -1. What about char c = 256.
- * Here, we're not facing overflow, but rather an assignment. The bits are copied one by one , so this would 
+ * Here, we're not facing overflow, but rather an assignment. The bits are copied one by one, so this would 
  * be zero, regardless of signed or unsigned.
  * 
  * How about char c = 255; c++; Here, we have an overflow, and people say overflow is undefined for signed entities.

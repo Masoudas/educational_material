@@ -1,6 +1,8 @@
 A packet on the network layer is called an ip datagram.
 
-It has two sections, header and payload. First section indicates version (ipv4, ipv6). Then, there's header. There's a QoS
+It has two sections, header and payload. First section of header indicates version (ipv4, ipv6). Then, there's header. There's a QoS
 field then. There's a TTL or time to live field. Everytime a router gets the frame, it reduces TTL, so that there's no cyclic loop indicates
 routers.
+
+
 

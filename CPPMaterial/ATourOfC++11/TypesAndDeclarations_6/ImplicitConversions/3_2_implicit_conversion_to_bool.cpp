@@ -1,6 +1,8 @@
 /**
-* In some contexts, regardless of whether or not a type a type is define to have explicit or implicit conversion to
-* bool, it is converted to bool. 
+* This is from another part of the standard:
+* 
+* In some contexts, regardless of whether or not a type a type is defined to have explicit or implicit 
+* conversion to bool, it is converted to bool. 
 * 
 * In fact, the standard says there are four places where a value may be "contextually converted to bool". They fall into
 * four main groups:
@@ -16,7 +18,7 @@
 *	- t ? "true" : "false"
 * 
 * 3- Compile-time tests
-*	- static_assert(t);
+*	- static_assert(t);		// Me: Not run-time asserts! Pay attention!
 *	- noexcept(t)
 *	- if constexpr (t)
 *	
@@ -27,7 +29,7 @@
 *	- In any algorithm with a template parameter called Predicate or BinaryPredicate, the predicate argument can 
 *	  return a T, like, std::sort(first, last, [&](auto){ return t; })
 * 
-* For example, a unique_ptr does not an implict conversion to bool, it's explicit. However, we can say 
+* For example, a unique_ptr does not have an implict conversion to bool, it's explicit. However, we can say 
 * if (uniqe_ptr(x)) because explicit version is used in this case. See Chapter 18, TypeConversion_3, 
 * 6_explicit_type_conversion for a particular example of this.
 */
