@@ -212,6 +212,9 @@
     <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\2_ambiguous_string_ctors_cpp17.cpp" />
     <ClCompile Include="..\..\src\Ep262_StringsConfusingConstructors\3_resolving_ambiguity_in_cpp20.cpp" />
     <ClCompile Include="..\..\src\Ep271_StringClearVStringDoubleQuote\1_clearing_string.cpp" />
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\1_setting_parameters_in_capture.cpp" />
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\2_making_lambdas_mutable_to_change_capture.cpp" />
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\3_further_simplification.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -36,8 +36,6 @@ void conversion_among_lower_signed_and_higher_unsigned() {
 	constexpr signed char sc = -255;	// Again -255 % 2^8
 	static_assert(sc != -255 % 256, "Nope");	// Verfies the above!
 
+	auto ll = 128ll;
+	unsigned u2 = ll;	// Again, note that ll%2^32 is assigned here.
 }
-???https://en.cppreference.com/w/cpp/language/implicit_conversion#cite_note-1
-//int main() {
-//	conversion_among_lower_signed_and_higher_unsigned();
-//}

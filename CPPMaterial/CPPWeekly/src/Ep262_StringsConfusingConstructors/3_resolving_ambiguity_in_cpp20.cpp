@@ -9,4 +9,4 @@
 * 
 * First, notice that the ctor is now constexpr. Second, notice that count is now not optional, and we have to
 * hand write it, which would make us remember that there's an interval notion involved here.
-* 
+*/ 
