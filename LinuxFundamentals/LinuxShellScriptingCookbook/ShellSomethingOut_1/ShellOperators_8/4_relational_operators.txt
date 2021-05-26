@@ -1,0 +1,12 @@
+Relational operators work on a variable that has either 10 inside it or "10".
+
+Imagine a=10 and b=20:
+    -   -le :   Less than equal, [ $a -le $b ]
+    -   -ge :   Greater than equal, [ $a -ge $b ]
+    -   -eq :   Equal to, [ $a -eq $b ]
+    -   -ne :   Not equal,  [ $a -ne $b ]
+    -   -gt :   Greater than, [ $a -gt $b ]
+    -   -lt :   Less than, [ $a -lt $b ]
+
+
+Note also that the two operators == and != work on numbers as well.

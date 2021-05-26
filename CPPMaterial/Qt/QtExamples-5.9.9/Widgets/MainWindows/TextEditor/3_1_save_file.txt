@@ -17,8 +17,5 @@ void saveFile(const QString& fileName){
     }
 
     QTextStream out(&file);
-
     out << ui->plainTextEditor->toPlainText();
-
-
 }

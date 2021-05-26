@@ -1,0 +1,8 @@
+Of course, we need to save the geometry for the next use of the application. This can be done by writing the
+settings, by querrying the geometry from the QApplication method of course:
+
+void MainWindow::writeSettings()
+{
+    QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
+    settings.setValue("geometry", saveGeometry());
+}

@@ -1,0 +1,46 @@
+It's in the QFileDialog header. Note that unless we want to open multiple files, we usually open and save to
+one file. The other challenge is to whether allow the window to pass a non-existent name or not.
+
+The QFileDialog class enables a user to traverse the file system in order to select one or many files or a 
+directory.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To create a simple open dialog that accepts png and jpg files and opens in the /home folder and whose name
+is open image, use the static getOpenFileName method:
+
+QFileDialog::getOpenFileName(this,
+    tr("Open Image"), "/home/jana", tr("Image Files (*.png *.jpg *.bmp)"));
+
+To pass multiple file filters, add two semi-colons between them:
+Images (*.png *.xpm *.jpg);;Text files (*.txt);;XML files (*.xml)"
+
+Note that this method directly returns a string. Hence, we get the name selected.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The same method exists for save as well. Note that we can define a non-existent file inside, but the file is
+not created and we have to create it ourselves.
+QString file = QFileDialog::getSaveFileName(&w, "Save", "/", "Text file (*.txt)");
+
+Note that in this mode, we can only select one file as well, which is further indicated by the fact that we
+return a single string.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To create a custom dialog, construct it, and then set the additional parameters. We usually set the following:
+    -   directory:  Where we want it to open, using setDirectory.
+    -   filter: Which file names to be shown or selected. setNameFilter is the method for this end.
+    -   file mode:  If we want to define a file for saveas for example, we set the file mode to AnyFile in the
+                    setFileMode. Otherwise, we can set it to ExistingFile. The other options are of course
+                    ExistingFiles for many files and Directory for directories (and files.)
+    -   viewMode:   We can decide to show files as a list or with detail using setViewMode method.
+
+Of course, everytime we use such a dialog, we need to get the names of the files the user has selected. To that
+end, we can use the selectedFiles() method, which in and of itself is a class. Then we can filter the files
+selected, or get the first, etc.
+
+QDialogBox saveAs{this};
+saveAs.setFileMode(QDialogBox::AnyFile);
+saveAs.setNameFilter("Text files (*.txt)")
+saveAs.setDirectory("/");
+dialog.setViewMode(QFileDialog::Detail);
+
+

@@ -1,0 +1,24 @@
+When the user presses the save as shortcut, we expect to open a file dialog, and then get a file name from the
+user. After that of course, we can pass it to the save method and save it from there.
+
+There are two points that remain here:
+    -   If the user does not give any file name or cancels, we must return from this method.
+    -   After the user gives the file name, we shall save it in the currentFile string in the class.
+
+Note that the saveAs method is called when the fileName string is empty. This process is controled by a super
+method called save, which we discuss later.
+
+void MainWindow::saveAs(){
+    QFileDialog saveDialog(this);   // Passing this window as parent.
+
+    // In user interface design for computer applications, a modal window is a graphical control element subordinate 
+    // to an application's main window. It creates a mode that disables the main window but keeps it visible
+    saveDialog.setWindowModality(Qt::WindowModal);  // Passing a modal window.
+    saveDialog.setAcceptMode(AcceptSave);    
+
+    if (saveDialog.exec() != QFileDialog::Accepted){
+        return;
+    }
+
+    saveFile(saveDialog.selectedFiles().first); // Return first selected file.
+}

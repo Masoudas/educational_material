@@ -1,4 +1,4 @@
-Imagine variable a contains "abc" and variable b contains "cde". Then, we can compare the two strings using
+Imagine variable 'a' contains "abc" and variable 'b' contains "cde". Then, we can compare the two strings using
 the following operators:
 
     -   Equality        :   [ $a = $b ]

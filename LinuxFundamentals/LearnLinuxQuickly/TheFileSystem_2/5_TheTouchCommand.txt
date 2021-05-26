@@ -7,3 +7,13 @@ Consequently, 'touch folder_path' is an example of the first, and 'touch file.tx
 
 Note that touch naturally changes the access time of a file as well. To only change the modification time, we can pass the -m
 option. To change the access time only, use the 'a' option.
+
+We can get more adventurous with the touch command as well.
+
+$ touch {mama,papa}_file.txt   # Interpolates with these two. Note that a space would imply a new line, making
+                               # files  {mama, papa}_file.txt LoL!
+$ touch file_{a...z}.txt       # Creates files a through z
+$ touch {00..99..10}.txt       # Start, stop (inclusive), step formula. 
+$ touch {000..100..2}.txt
+
+Note that these are the magic of curly braces. We can use them with other commands as well.

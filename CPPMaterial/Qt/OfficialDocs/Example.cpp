@@ -1,1 +1,0 @@
-https://doc.qt.io/qt-5/qtwidgets-mainwindows-application-example.html
