@@ -20,6 +20,7 @@ const QByteArray geometry = settings.value("geometry", QByteArray()).toByteArray
 Now, we can check whether this bytearray is empty, and if so, we can set the size based on our method discussed
 above. The full method is as follows. Note that the method maybe called in the constructor:
 
+Note: This method does not seem to work for Qt6 versions! My God, I've been shot!
 
 void MainWindow::readSettings()
 {
