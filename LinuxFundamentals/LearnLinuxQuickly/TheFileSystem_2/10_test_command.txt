@@ -1,7 +1,10 @@
 The test command is a simple utility for checking whether or not a variable is empty and a file or a folder
 exists.
 
-$ test -f file  # The file exists (in this folder)
+Note that the test command does not print anything to stdout. It rather returns a value 0 or 1 after checking
+the condition. Therefore, we can use it particularly in && or || expressions.
+
+$ test -f file  # The file exists (in this folder). If file exists, $? returns 0.
 $ test -d folder    # The directory exists or not
 $ test -e file_or_folder    # Checks either exists as a file or a folder.
 $ test -z $VAR  # Tests whether the given variable is empty (like a string zero test in shell)
@@ -9,3 +12,8 @@ $ test ! -d folder  # Test folder does not exist
 $ test -f file && echo "exist" || echo "Does not exist" # If returns true, and is not short-circuited and
                                                         # execute exists and short circuit or. Otherwise,
                                                         # execute does not exist
+
+Me: I think test is the equivalent of [ ]. In there, we use all sorts of options to check for existence of
+numbers and files and strings, which are the same here:
+$ test "abc" == "abc"
+$ test 5 -le 4
