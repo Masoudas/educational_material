@@ -15,7 +15,7 @@
    if [ $? -eq 3 ]; then echo "That doesn't exist"; fi 
 
 Finally, note that we put $@ inside a string. This is to ensure that if it contains a space, it will still
-be considered as a complete string.
+be considered as a complete string (why?).
 
 I also bring your attention to the fact that $i, i=0,.. correspond to the arguments of main, and so does $#
 to argc. This is why $0 returns the program name.
@@ -36,10 +36,10 @@ fi
 
 
 for filename in "$@"; do
-    test ! -f ${filename} && exit 3
+    test ! -f ${filename} && exit 3     # Test if exists as file and if not, return
 done
 
-## A bizzare alternative!
+## A bizzare alternative from me!
 for filename in {1..$#}; do
     echo "Here"
     eval "test ! -f '$'${filename}" && exit 3
