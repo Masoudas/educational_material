@@ -64,6 +64,9 @@
     <Filter Include="Source Files\Ep271_StringClearVStringDoubleQuote">
       <UniqueIdentifier>{3bd51f98-98a7-4d78-8a97-5ea61af4e27d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Ep273_LambdaSimplification">
+      <UniqueIdentifier>{4fb24c9e-e88a-4b27-b54f-fa89b72fbc9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Ep231_MultipleDestructorsInCpp20\0_0_builtin_types_and_destruction.cpp">
@@ -278,6 +281,15 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Ep271_StringClearVStringDoubleQuote\1_clearing_string.cpp">
       <Filter>Source Files\Ep271_StringClearVStringDoubleQuote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\1_setting_parameters_in_capture.cpp">
+      <Filter>Source Files\Ep273_LambdaSimplification</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\2_making_lambdas_mutable_to_change_capture.cpp">
+      <Filter>Source Files\Ep273_LambdaSimplification</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Ep273_LambdaSimplification\3_further_simplification.cpp">
+      <Filter>Source Files\Ep273_LambdaSimplification</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

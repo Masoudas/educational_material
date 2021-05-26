@@ -7,8 +7,7 @@
 * [first, last) in such a way that the element n_first becomes the first element of the new range and 
 * n_first - 1 becomes the last element.
 * A precondition of this function is that [first, n_first) and [n_first, last) are valid ranges.
-* 
-See below:
+* The algorithm is particularly interesting. See below:
 
 template<class ForwardIt>
 ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)
@@ -36,6 +35,9 @@ changed value.
 Or, imagine  k < N/2. Then the first cyclic shift leads to:
 x_k,...,x_(2k-2),x_(2k-1),...,x_N,x_(l+1),...x_k-1,x_1,...,x_l
 And we can see that we need another cyclic shoft from new position of x_1 with x_(l+1) which was the last read.
+
+The challenge of understanding these algorithms is to understand the indirection to the underlying element.
+We swap elements, and not iterators. 
 
 *
 */

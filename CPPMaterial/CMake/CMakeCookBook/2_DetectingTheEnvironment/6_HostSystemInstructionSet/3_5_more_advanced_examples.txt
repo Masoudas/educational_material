@@ -1,0 +1,7 @@
+For a more fine-grained processor instruction set detection, consider this module: 
+https://github.com/VcDevel/Vc/blob/master/cmake/OptimizeForArchitecture.cmake. Sometimes, the host building the code may not be the same as the 
+host running the code. This is often the case on compute clusters where the login node architecture may differ from the architecture found on 
+compute nodes. One way to solve this is to submit the configuration and compilation as a computation step and deploy it to the compute nodes.
+
+Moreover, see all keys available in cmake_host_system_information in 
+https://cmake.org/cmake/help/latest/command/cmake_host_system_information.html.

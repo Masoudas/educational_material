@@ -506,6 +506,7 @@
     <ClCompile Include="PointersArraysReferences_7\Nullptr_2_2.cpp" />
     <ClCompile Include="PointersArraysReferences_7\PointerArithmetic_2_1.cpp" />
     <ClCompile Include="PointersArraysReferences_7\PointersAndConstant_4.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Pointers\0_1_array_of_pointers_reminder.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\1_mixing_ptrdiff_and_pointers.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\2_3_no_assignment_of_derived_to_base_array.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\2_mixing_two_pointers_and_ptrdiff_t.cpp" />
@@ -658,6 +659,7 @@
     <ClCompile Include="STLAlgorithms_32\2_2_2_notes_on_execution_policies.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_3_alises_for_policies.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_4_comparing_parallel_versions.cpp" />
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\10_shuffle_and_perms.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_1_copy.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_2_copy_backward.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\1_3_move.cpp" />
@@ -674,7 +676,8 @@
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\8_1_reverse.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\8_2_reverse_copy.cpp" />
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_1_rotate.cpp" />
-    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_2_rotate_reverse.cpp" />
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_2_rotate_copy.cpp" />
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_3_shift_left_right.cpp" />
     <ClCompile Include="STLAlgorithms_32\Sort\0_sorting_user_defined_type.cpp" />
     <ClCompile Include="STLFileSystem_41\1_a_note_on_experimental_headers.cpp" />
     <ClCompile Include="STLFileSystem_41\2_overview_of_filesystem_classes.cpp" />
@@ -927,6 +930,11 @@
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\4_3_float_conversions.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_1_numeric_conversions.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_2_integral_conversions.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_3_float_conversions.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_4_float_integral_conversion.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_5_pointer_conversion.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_6_boolean_conversions.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_7_pointer_to_member_function.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\InitializationListType_9_1.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\InitializationOfClasses_9_2.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Initialization_9.cpp" />

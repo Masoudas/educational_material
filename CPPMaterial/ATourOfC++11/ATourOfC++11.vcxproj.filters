@@ -2802,9 +2802,6 @@
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\8_2_reverse_copy.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
-    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_2_rotate_reverse.cpp">
-      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
-    </ClCompile>
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_1_rotate.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
@@ -2869,6 +2866,33 @@
       <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_2_integral_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Pointers\0_1_array_of_pointers_reminder.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_2_rotate_copy.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\9_3_shift_left_right.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\10_shuffle_and_perms.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_3_float_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_4_float_integral_conversion.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_5_pointer_conversion.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_6_boolean_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_7_pointer_to_member_function.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,0 +1,14 @@
+Sometimes, we don't know wether a compiler provides a certain flag for us. Hence, before applying it and using it to compile the code, we need
+to ensure that it actually exists and work, so that we could apply it. 
+
+But apart from the complicated discussions, suppose that we want to check whether our compiler provides certain obvious flags, like "WPedantic"
+or "O3" optimization flags. For CXX compilers, the "check_cxx_compiler_flag" is the method we seek:
+
+include(CheckCXXCompilerFlag)   # The module that contains this variable
+
+check_cxx_compiler_flag("-WPedantic" _Has_Pedantic)
+check_cxx_compiler_flag("-O3" _Has_O3)
+check_cxx_compiler_flag("-march=native" _march_native_works)    # Has native architecture
+check_cxx_compiler_flag("-xHost" _xHost_works)
+
+?????????????????
