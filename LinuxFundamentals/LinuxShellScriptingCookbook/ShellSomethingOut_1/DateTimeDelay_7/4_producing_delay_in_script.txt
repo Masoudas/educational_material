@@ -1,0 +1,20 @@
+Producing time intervals is essential when writing monitoring scripts that execute in a loop. The following 
+examples show how to generate time delays:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash 
+#Filename: sleep.sh 
+
+echo Count: 
+tput sc 
+
+# Loop for 40 seconds 
+for count in `seq 0 40`     # Alternatively, {1..40..1}
+do 
+  tput rc 
+  tput ed 
+  echo -n $count    # Why not go to next line? Because the position of the cursor would change. Although
+                    # This is fine I guess, because sc has the original position.
+  sleep 1 
+done
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

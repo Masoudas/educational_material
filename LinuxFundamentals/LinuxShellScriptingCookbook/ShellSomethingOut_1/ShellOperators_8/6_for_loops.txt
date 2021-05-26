@@ -1,0 +1,17 @@
+The structure is:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for variable in condition
+do
+    ..
+done
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Note that if we bring do to the for line, we need to terminate the loop statement with ; (just like we do with
+a an if then loop:)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for variable in condition; do
+    ..
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

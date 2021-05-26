@@ -1,0 +1,26 @@
+Imagine we're printing something to the terminal, and then we want to clear the terminal output and print on
+the same line. How do we go about that?
+
+The answer is in using the tput command.
+The gnu documentation says "The tput command allows shell scripts to do things like clear the screen, 
+underline text, and center text no matter how wide the screen is. To do these things, it translates the 
+terminal-independent name of a terminal capability into its actual value for the terminal type being used."
+
+It apparently connects to some database.
+
+There are several thousand options, but the ones that are most widely used are:
+    -    sc      Save cursor position
+    -    rc      Restore cursor to position of last `sc'
+    -    ed      Clear to end of display (*)
+
+%%%%%%%%%%%%%%
+#!/bin/bash
+tput sc # Save position of line, which is the new line position
+echo "This line is printed ..."
+
+sleep 1
+
+tput rc # Go back to previous position
+tput ed # Clear till the end of display
+
+echo "Now, a new line is printed in the same place"

@@ -1,0 +1,17 @@
+So when we want to debug a script, we can set +x or -x around a porition of the code we want to debug, to
+debug only that porition and end.
+
+    *   -x  Start debugging
+    *   +x  End debugging
+
+for i in {1..6}; 
+    do 
+        set -x 
+        echo $i 
+        set +x 
+    done 
+echo "Script executed"
+
+We can do the same thing with -v and +v options:
+    -   set -v: This displays input when they are read
+    -   set +v: This disables printing input

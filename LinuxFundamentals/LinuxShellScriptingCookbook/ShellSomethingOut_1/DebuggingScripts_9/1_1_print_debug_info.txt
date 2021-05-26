@@ -1,0 +1,7 @@
+We can print the debug information using the -x option when we pass the script name to bash. It prints a nice
+ornamented version of which line is being executed and what's going on.
+
+$ bash -x script
+
+Another option is to pass the -v option. This displays input when they are read. But I didn't understand 
+what it does!
