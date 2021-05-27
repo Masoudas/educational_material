@@ -1,5 +1,5 @@
 /**
- * In this receipe, we shall print messages to stdout and std errro.
+ * In this receipe, we shall print messages to stdout and std error.
  * 
  * Now, note that printf prints to stdout. However, fprintf can be directed to stream to either stdout or
  * stderror, because it takes an streaming source.

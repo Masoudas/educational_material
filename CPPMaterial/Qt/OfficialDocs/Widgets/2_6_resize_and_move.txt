@@ -1,1 +1,32 @@
-????
+    -   resize(const QSize &)
+This sets the property that holds the size of the widget excluding any window frame.
+If the widget is visible when it is being resized, it receives a resize event (resizeEvent()) immediately. If 
+the widget is not currently visible, it is guaranteed to receive an event before it is shown.
+
+The size is adjusted if it lies outside the range defined by minimumSize() and maximumSize().
+By default, this property contains a value that depends on the user's platform and screen geometry.
+
+Note: Because a main window is another widget, we can use this method to sets its size.
+
+    -   move(int x, int y)
+This property holds the position of the widget within its parent widget.
+
+If the widget is a window, the position is that of the widget on the desktop, including its frame.
+When changing the position, the widget, if visible, receives a move event (moveEvent()) immediately. If the 
+widget is not currently visible, it is guaranteed to receive an event before it is shown.
+
+By default, this property contains a position that refers to the origin.
+
+% Here's an example code below for a main function. Imagine we have MainWindow that has a simple label inside:
+#include <QApplication>
+#include <main_window.hpp>
+
+int main(){
+    QApplication app;
+    MainWindow w;
+
+    w.resize({200, 200});   // Resizing the window
+    w.move({10, 10});
+}
+
+

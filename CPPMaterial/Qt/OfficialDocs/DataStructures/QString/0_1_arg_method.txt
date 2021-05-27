@@ -1,0 +1,6 @@
+An interesting property of the QString method is the string interpolation method. We can interpolate using
+the %n and the arg method. For example:
+
+int todoCount = 1;
+int completedCount = 4;
+QString("Status: %1 todo / %2 completed").arg(todoCount).arg(completedCount); 

@@ -1,0 +1,17 @@
+As only one instance of QApplication is allowed to be constructed, we can access this instance using the instance
+method of the class. 
+
+In the following snippet, we connect a signal of our UI class called clicked to the quit slot of the QApplication
+class:
+
+class UI : QObject
+{
+Q_Object
+    UI(QWidget* parent = nullptr){
+        QObject::Connect(this, &UI::clicked, QApplication::instance(), &QApplication::quit);
+    }
+...
+
+
+...
+}

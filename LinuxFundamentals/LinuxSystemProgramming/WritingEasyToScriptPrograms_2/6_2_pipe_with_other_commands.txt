@@ -1,0 +1,5 @@
+Note that the program we just wrote actually reads from stdin. Hence, we can easily pipe it with another
+program:
+
+$ ls / | ./program
+$ man ls | egrep "^[A-Z]+$" | ./program

@@ -1,5 +1,31 @@
 The sticky bit works on the directory. With sticky bit set on a directory, all the files in the directory can 
-only be deleted or renamed by the file owners only or the root.
+only be deleted or renamed by the file owners only or the root (meaning even the owners of files can't delete
+or remove them. They can create them, but not remove them!)
 
 Set it using +t:
 $ chmod +t folder
+
+A bit more discussion: Say I create a folder. Now, becasue I'm the owner of this folder, I can give myself
+any permissions I want and execute all sorts of operations on it. In particular, I can create and delete files
+in this folder. Now, when it comes to world permissions, if I give them x permission, they can all delete or
+remove files from this folder. However, by setting the sticky bit for the folder, I only let each person
+who creates a file to delete it (apart from me of course, who's the owner of this folder.) So either I, root,
+or someone who owns the file can delete or rename in the folder. Otherwise, giving execution permission means
+anyone can change the content of the folder.
+
+As a side note, recall that execution permission of a FILE has nothing to do with being able to delete or
+rename it. That's just for execution of binary or bash files. Hence, even though I may not have any permissions
+on a file, I'm still able to delete or rename it. This is a good thing, because imagine a file that had no
+permissions could not also be moved around. We wouldn't be able to do anything with it. We could in fact write
+a virus that would create a file somewhere with no permissions to anyone else but the owner. In that way, no
+one would be able to remove it!
+
+Also note that just setting the sticky bit without actually giving execution permission only allows the world
+to list and cd to this folder. Hence, we need both x and t for them to be able to create and remove files, etc.
+
+A final note is that as soon as we enter a new folder, the permissions of the parent folder are irrelevant. This
+is why for example we're able to create a folder with particular permissions and play inside it on the root.
+Note, however, that outside that folder, we're under the restrictions put by the parent folder for the subfolder
+(root in this case.)
+
+Hence, we now distinguish between folder and file permissions more clearly!

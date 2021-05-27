@@ -6,7 +6,7 @@
  * with exit function or with return value from func1 and 2. Note that of course if the code is compiled with
  * the EXIT flag (gcc -DEXIT ...) the code exits from nested functions with the given return value. 
  * 
- * We however don't exit from intermediary functions because we're not crazy.
+ * We however don't exit from intermediary functions of a code because we're not crazy!
  */
 
 #include <stdlib.h>

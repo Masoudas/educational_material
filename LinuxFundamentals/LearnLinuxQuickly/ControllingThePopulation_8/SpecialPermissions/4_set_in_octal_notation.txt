@@ -4,3 +4,10 @@ and gid.
 
 $ chmod 7777 file   # All permissions
 $ chmod 6777 file   # No sticky
+
+Now, to remove suid or guid or sticky bit, we need to append as many zeroes, which is kind of odd! Otherwise,
+we can use the "ug-s -t" flag:
+
+$ chmod 00755 file  # Remove the flags guid and sticky bit.
+$ chmod 000755 file # Remove all flags
+$ chmod 0755 file # Only the sticky bit.
