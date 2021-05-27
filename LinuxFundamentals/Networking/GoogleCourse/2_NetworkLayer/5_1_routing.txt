@@ -1,0 +1,19 @@
+A router is a network device that forwards traffic depending on the destination address of that traffic.
+
+Basic routing is simple:
+    -   A data packet is received.
+    -   The router examines the ip address of the destination
+    -   The router looks for the destination network in the routing table.
+    -   The router forwards the traffic to the closest destination network possible.
+
+
+Say two networks A of 192.168.1.0/24 and B of 10.0.0.0/24 are connected to a router. The router on network A has ip of 192.168.1.1 and of 
+10.0.0.254 on network B. Remember that ip addresses belong to networks, not individual nodes on the network.
+
+So let's say a computer with address of 192.168.1.100 sends a packet to 10.0.0.10. The computer knows this ip is not on its network, so it
+sends it to the mac address of its gateway (the router.)
+
+See figure 1. So the router takes the ip datagram from the ethernet frame, and sees the destination ip address. Then, it sees the network is
+the one right away after it. Even, the router has the MAC address of the node in its ARP table. The router then forms a new data packet, 
+sending all the data to that destination. It decrements the TTL by the way. It also changes the source ip address to itself, rather than the 
+actuall sender. 
