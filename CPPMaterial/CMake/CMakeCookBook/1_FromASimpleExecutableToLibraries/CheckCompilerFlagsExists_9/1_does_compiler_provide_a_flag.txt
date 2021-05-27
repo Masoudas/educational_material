@@ -1,14 +1,30 @@
 Sometimes, we don't know wether a compiler provides a certain flag for us. Hence, before applying it and using it to compile the code, we need
-to ensure that it actually exists and work, so that we could apply it. 
+to ensure that it actually exists and work, so that we could apply it. This is particularly important for architecture related code, such as 
+intel related or AMD related, etc.
 
 But apart from the complicated discussions, suppose that we want to check whether our compiler provides certain obvious flags, like "WPedantic"
-or "O3" optimization flags. For CXX compilers, the "check_cxx_compiler_flag" is the method we seek:
+and "Wall" optimization flags. For CXX compilers, the "check_cxx_compiler_flag" is the method we seek:
 
-include(CheckCXXCompilerFlag)   # The module that contains this variable
+Notice two thinks:
+    -   We can't check linker flags with this.
+    -   Options in MSVC compiler (cl) are provided with / and with - for GNU compilers.
+    -   I couldn't get the optimization flags to work with this example.
 
-check_cxx_compiler_flag("-WPedantic" _Has_Pedantic)
-check_cxx_compiler_flag("-O3" _Has_O3)
-check_cxx_compiler_flag("-march=native" _march_native_works)    # Has native architecture
-check_cxx_compiler_flag("-xHost" _xHost_works)
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project("myProj")
 
-?????????????????
+include(CheckCXXCompilerFlag)
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    check_cxx_compiler_flag("/Wall" _Has_Wall)
+    check_cxx_compiler_flag("/WPedantic" _Has_WPedantic)
+    check_cxx_compiler_flag("/std:c++2a" _Has_O1)
+    check_cxx_compiler_flag("/QxHost" _xHost_works)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    check_cxx_compiler_flag("-Wall" _Has_Wall)
+    check_cxx_compiler_flag("-WPedantic" _Has_WPedantic)
+    check_cxx_compiler_flag("-std=c++2a" _Has_O1)
+    check_cxx_compiler_flag("-QxHost" _xHost_works)
+endif()
+
+
