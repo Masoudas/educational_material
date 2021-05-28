@@ -480,6 +480,7 @@
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\4_type_conversion_with_cin_class.cpp" />
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\5_avoid_overuse_of_implicit_conversions.cpp" />
     <ClCompile Include="OperatorOverloading_18\TypeConversion_3\6_explicit_type_conversion_operator.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\Arrays\0_1_array_acquisition_is_initialization.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\3_10_deleting_from_array.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\3_11_ArraysAndReferences.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Arrays\3_12_swapping_array_element.cpp" />
@@ -519,6 +520,7 @@
     <ClCompile Include="PointersArraysReferences_7\Pointers\7_constexpr_pointer.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers\8_a_cool_trick_regarding_conversion.cpp" />
     <ClCompile Include="PointersArraysReferences_7\Pointers_2.cpp" />
+    <ClCompile Include="PointersArraysReferences_7\References_5\0_1_assigning_rvalue_to_const_lvalue_ref.cpp" />
     <ClCompile Include="PointersArraysReferences_7\References_5\5_2_5_function_returning_rvalue.cpp" />
     <ClCompile Include="PointersArraysReferences_7\References_5\7_2_auto_and_references.cpp" />
     <ClCompile Include="PointersArraysReferences_7\References_5\5_1_1_LValueRef_Initialization.cpp" />
@@ -640,6 +642,9 @@
     <ClCompile Include="Statements_9\HOWISTHISPOSSIBLE.cpp" />
     <ClCompile Include="Statements_9\SwitchStatement.cpp" />
     <ClCompile Include="Statements_9\TheIfStatement.cpp" />
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\2_accumulate.cpp" />
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\6_1_reduce.cpp" />
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\6_2_transform_reduce.cpp" />
     <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\1_1_allof_noneof_anyof.cpp" />
     <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\1_2_ranges_allof_noneof_anyof.cpp" />
     <ClCompile Include="STLAlgorithms_32\1_NonModifyingSequenceOps\2_1_for_each.cpp" />
@@ -895,6 +900,9 @@
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_2_cyclic_aliasing_is_not_allowed.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\2_3_specialization_and_template_id.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\3_increment_and_decrement_operator.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_1_arithmetic_operators.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_built_in_types.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_conversions.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoAndDecltype_10.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\1_auto_as_template.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_return_type_deduction_from_lambda_.cpp" />
@@ -918,6 +926,7 @@
     <ClCompile Include="TypesAndDeclarations_6\Double\3_a_not_so_important_point.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Double\4_2_nan_inf_and_float_types.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Double\4_1_special_values.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\0_1_should_conversion_to_bool_be_explicit.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\1_definition.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\2_order_of_conversions.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\3_1_contextual_conversion_to_bool.cpp" />
@@ -935,6 +944,10 @@
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_5_pointer_conversion.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_6_boolean_conversions.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_7_pointer_to_member_function.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_1_qualification_conversions.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_2_multi_level_pointers.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_3_throwing_functions.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\7_safe_bool_problem.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\InitializationListType_9_1.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\InitializationOfClasses_9_2.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\Initialization_9.cpp" />

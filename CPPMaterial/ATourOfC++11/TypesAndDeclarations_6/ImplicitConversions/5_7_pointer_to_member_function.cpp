@@ -9,6 +9,8 @@
 * base of some intermediate virtual base of D, the conversion is ill-formed (won't compile). The resulting 
 * pointer can be dereferenced with a D object, and it will access the member within the B base subobject of 
 * that D object. The null pointer value is converted to the null pointer value of the destination type.
+* 
+* Me: Recall that pointers to virtual members are resolved, but pointers to non-virtual members are literal,
+* and resolve to what they refer (in base or derived) not what the object contains.
 */
 
-??????

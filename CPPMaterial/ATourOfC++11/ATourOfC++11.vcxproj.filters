@@ -427,6 +427,12 @@
     <Filter Include="Source Files\TypesAndDeclarations_6\ImplicitConversions">
       <UniqueIdentifier>{81ccfd7d-f4f4-43bf-a6cb-1767e10e21c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\STLAlgorithms_32\12_NumericOperations">
+      <UniqueIdentifier>{e8a3632a-8789-4fae-bbad-6073c3c75ba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\ArithmeticOperators">
+      <UniqueIdentifier>{31addee5-79a7-42b5-81e5-43f34a83fb3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2894,6 +2900,45 @@
     </ClCompile>
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\5_7_pointer_to_member_function.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\Arrays\0_1_array_acquisition_is_initialization.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\Arrays</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\6_1_reduce.cpp">
+      <Filter>Source Files\STLAlgorithms_32\12_NumericOperations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\2_accumulate.cpp">
+      <Filter>Source Files\STLAlgorithms_32\12_NumericOperations</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\12_NumericOperations\6_2_transform_reduce.cpp">
+      <Filter>Source Files\STLAlgorithms_32\12_NumericOperations</Filter>
+    </ClCompile>
+    <ClCompile Include="PointersArraysReferences_7\References_5\0_1_assigning_rvalue_to_const_lvalue_ref.cpp">
+      <Filter>Source Files\PointersArraysReferences_7\References_5</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_1_qualification_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_2_multi_level_pointers.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\6_3_throwing_functions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\7_safe_bool_problem.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\0_1_should_conversion_to_bool_be_explicit.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_1_arithmetic_operators.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_conversions.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_built_in_types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
