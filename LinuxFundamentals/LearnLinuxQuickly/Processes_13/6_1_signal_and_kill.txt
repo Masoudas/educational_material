@@ -21,6 +21,6 @@ As an exercise, we can open a terminal, and then freeze it as follows:
 $ kill -19 $(pgrep terminal)    # Freezes
 
 Then, to unfreeze it, we can either look for pts with a grep command, or we can do as follows:
-$ ps -fp &(pgrep bash)
+$ ps -fp $(pgrep bash)
 
 Then we can unfreeze the terminal that's the parent of each.
