@@ -1,0 +1,28 @@
+QApplication is a very important class. It takes care of input arguments, but also a lot of other things, and most notably, the event loop. 
+The event loop is a loop that waits for user input in GUI applications.
+
+#include <QApplication>
+
+int main(){
+    QApplication app;
+    app.exec();
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Me: Now, every widget it seems can be presented as part of the GUI, not necessarily the main window.
+
+In this application, we add something to be displayed:
+
+#include <QApplication>
+#include <QPushButton>
+
+int main(){
+    QApplication app;
+    QPushButton button("Hello World");
+
+    button.show();  // Show the button.
+    app.exec();
+}
+
+

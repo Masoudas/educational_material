@@ -1,0 +1,33 @@
+Qt objects have a lot of attributes that can be modified using getters and setters. In Qt, if an attribute is called foo, the associated getter 
+and setter will have these signatures:
+
+T foo() const;
+void setFoo(const T);
+
+In fact, Qt extends this system of attributes and getters and setters to something called property. A property is a value of any type that can 
+be accessed, be modified or constant, and can notify a change. The property system is useful, especially in the third part (QML). For now, we 
+will use "attribute" or "property" to do the same thing.
+
+A QPushButton has plenty of properties:
+    -   text
+    -   font
+    -   tooltip     # A help text that appears when we push a button.
+    -   icon
+    -   ...
+
+For example, in our previous simple example, we can set the text and tooltip as follows:
+
+#include <QApplication>
+#include <QPushButton>
+
+int main(){
+    QApplication app;
+
+    QPushButton button;
+    button.setText("Hello World");
+    button.setToolTip("A simple push button");
+    button.show();
+    
+    app.exec();
+}
+

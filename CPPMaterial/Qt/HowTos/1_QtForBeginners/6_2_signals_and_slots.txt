@@ -1,0 +1,30 @@
+Instead of having observable objects and observers, and registering them, Qt provides two high level concepts: signals and slots.
+
+    -   A signal is a message that an object can send, most of the time to inform of a status change.
+    -   A slot is a function that is used to accept and respond to a signal.
+
+Here are some examples of signals and slots from our well known QPushButton class.
+
+    -   clicked
+    -   pressed
+    -   released
+
+As you can see, their names are quite explicit. These signals are sent when the user clicked (pressed then released), pressed or released the 
+button.
+
+Here are some slots, from different classes
+    -   QApplication::quit
+    -   QWidget::setEnabled
+    -   QPushButton::setText
+
+In order to respond to a signal, a slot must be connected to a signal. Qt provides the method QObject::connect. It is used this way, with the 
+two macros SIGNAL and SLOT:
+
+FooObjectA *fooA = new FooObjectA();
+FooObjectB *fooB = new FooObjectB();
+
+QObject::connect(fooA, SIGNAL (bared()), fooB, SLOT (baz()));
+
+Remark : Basically, signals and slots are methods, that might or might not have arguments, but that never return anything. While the notion of 
+a signal as a method is unusual, a slot is actually a real method, and can be called as usual in other methods, or whilst responding to a 
+signal.

@@ -1,0 +1,4 @@
+Say we both have a signal and a slot in the current class. We can connect these two using the connect function. To denote the signal and the 
+slot, we can use the SIGNAL and SLOT macros.
+
+QObject::connect(this, SIGNAL(signal), this, SLOT(slot));

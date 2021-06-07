@@ -1,0 +1,20 @@
+To set the font properties, we need to pass a QFont object.
+
+The documentation provides a lot of information. We are especially concerned here with one of the constructors of QFont:
+QFont(const QString & family, int pointSize = –1, int weight = -1, bool italic = false)
+
+For example, a font name is "Courier". Hence, we set the font of the button as follows:
+
+QFont font("Courier");
+
+QPushButton button;
+button.setFont(font);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We can also set the icon of the button either from a path, or from a resource file, or from default path:
+
+QIcon icon("path_to_icon");
+QIcon icon(":/resource_file");
+QIcon icon = QIcon::fromTheme(const QString &name, const QIcon &fallback = QIcon());    // Fallback is in case the theme is not found.
+
+button.setIcon(icon);

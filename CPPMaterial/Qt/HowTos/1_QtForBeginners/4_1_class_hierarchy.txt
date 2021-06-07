@@ -1,0 +1,9 @@
+The class hierarchy of Qt is shown. It's interesting to note that QWidget is the parent level of all (let's say things.) 
+
+QMainWindow as an example inherits from QWidget. 
+
+Widgets are able to respond to events and use parenting system and signals and slots mechanism. All widgets inherit from QObject. The most 
+basic widget is the QWidget. QWidget contains most properties that are used to describe a window, or a widget, like position and size, mouse 
+cursor, tooltips, etc.
+
+Above all, however, the fact that everything inherits from QObject is the most important point of figure1.
