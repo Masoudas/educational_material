@@ -6,3 +6,4 @@ require_relative "anotherScript"    # Look for it in the current directory
 # Load method loads the code and reprocesses it inside the current script. require however only imports code once, and processes it once.
 # Hence, if there's a print expression in the loaded file, it will be printed twice, once loaded and once executed. 
 
+

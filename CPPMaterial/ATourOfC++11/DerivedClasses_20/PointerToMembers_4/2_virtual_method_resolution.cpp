@@ -9,6 +9,7 @@
 * virtual methods however, the pointer acts literally. i.e, if the pointer points to the base class method, it
 * calls the base class method, otherwise it calls the derived class method.
 * 
+* This is a very good reasonable behavior on the part of C++.
 */
 #include <iostream>
 

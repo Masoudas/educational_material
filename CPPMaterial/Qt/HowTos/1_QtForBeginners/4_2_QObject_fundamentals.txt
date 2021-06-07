@@ -1,0 +1,9 @@
+QObject is the most basic class in Qt. Most of classes in Qt inherit from this class. QObject provides some very powerful capabilities like:
+
+    -   object name : you can set a name, as a string, to an object and search for objects by names.
+    -   parenting system (described later)
+    -   signals and slots (described later)
+    -   event management
+
+Remark : in Qt, a widget can also be a window. In the previous section, we displayed a button that is a widget, but it appears directly as a 
+window. There is no need for a "QWindow" class.

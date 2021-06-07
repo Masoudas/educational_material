@@ -1,0 +1,7 @@
+Traditional subnetting was not enough, so CIDR came along. Especially, the number of host ips were either too large, or too small.
+
+Class-less Inter Domain Routing (CIDR) is more flexible, and useful for demarcation, that is to distinguish, or to set things off. 
+Demarcation means to describe where one network ends and another one begins. With CIDR, the network ID and subnet ID are combined into one.
+
+The slash notation we used "ip_address/n" comes from CIDR, allowing us to express id with two numbers. Now, we can change n, to be class-less.
+For example, ip_address/23. With 23, we'd have 9 host ips, which 2^9 (usually minus 2 as we said) hosts. 

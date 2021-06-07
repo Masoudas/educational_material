@@ -1,0 +1,23 @@
+Parenting system is a convenient way of dealing with objects in Qt, especially widgets. Any object that inherits from QObject can have a parent 
+and children. This hierarchy tree makes many things convenient:
+
+    -   When an object is destroyed, all of its children are destroyed as well. So, calling delete becomes optional in certain cases.
+    -   All QObjects have findChild and findChildren methods that can be used to search for children of a given object.
+    -   Child widgets in a QWidget automatically appear inside the parent widget.
+
+The following snippet that creates a QPushButton inside a QPushButton. It's interesting to note that Qt object management system detects that 
+the object is on the stack, and does not call delete on it.
+
+#include <QApplication>
+#include <QPushButton>
+
+int main(){
+    QApplication app;
+
+    QPushButton parent("Parent");
+    QPushButton child("Child", &parent);    // Now, child is a child of parent. It will appear as part of the parent. It will be destroyed 
+                                            // from parent in many cases.
+    parent.show();
+
+    app.exec();
+}

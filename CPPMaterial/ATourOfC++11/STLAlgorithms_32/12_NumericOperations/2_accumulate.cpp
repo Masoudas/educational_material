@@ -1,0 +1,3 @@
+/**
+* Prefer reduce over accumulation.
+*/

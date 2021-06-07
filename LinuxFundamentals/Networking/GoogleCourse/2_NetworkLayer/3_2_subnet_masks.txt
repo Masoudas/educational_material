@@ -14,3 +14,6 @@ so 100.100 part is the subnet id. So the last 100 is the host id.
 
 Usually, a subent can use two less than the number of host ids avaialable. So, here we have 256, meaning we usually have 
 at most 254 ips for the subnet mask. (zero usually is not used and 255 is reserved for broadcasting.)
+
+Consider subnet mask 255.255.255.224. This is 27 ones followed by 5 zeros. This means that we have 5 bits of host ips. Now, a quick hand
+of writing this subnet mask is to write ip_address/27. This implies 27 bits for mask. 

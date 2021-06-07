@@ -1,0 +1,13 @@
+In this example, we try and load the opencv package for our project, and to checkout whether or not it has been done. Note that OpenCV lies
+on the c:\opencv-4.5.1 on my current Windows machine, so it's not on the default search path. Hence, I need to explicitly define it.
+Notice that the actuall package file is called OpenCVConfig.cmake, but we drop the config part.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+
+project(include-opencv LANGUAGES CXX)
+
+find_package(OpenCV PATHS "C:/opencv-4.5.1" REQUIRED NO_DEFAULT_PATH)
+if (OpenCV_FOUND)   # Checking the successful loading of the package.
+    message(STATUS found_opencv)        
+endif()

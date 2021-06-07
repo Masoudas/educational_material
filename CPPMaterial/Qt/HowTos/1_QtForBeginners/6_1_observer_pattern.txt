@@ -1,0 +1,12 @@
+Nearly all UI toolkits have a mechanism to detect a user action, and respond to this action. Some of them use callbacks, others use listeners, 
+but basically, all of them are inspired by the observer pattern.
+
+Observer pattern is used when an observable object wants to notify other observers objects about a state change. Here are some concrete 
+examples:
+
+    -   A user has clicked on a button, and a menu should be displayed.
+    -   A web page just finished loading, and a process should extract some information from this loaded page.
+    -   An user is scrolling through a list of items (in an app store for example), and reached the end, so other items should be loaded.
+
+Observer pattern is used everywhere in GUI applications, and often leads to some boilerplate code. Qt was created with the idea of removing 
+this boilerplate code and providing a nice and clean syntax, and the signal and slots mechanism is the answer.

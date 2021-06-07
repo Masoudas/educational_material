@@ -1,6 +1,6 @@
 /**
-* Me: I don't think these should be confused with arithmetic rules. This is because in those, we don't have a 
-* destination type. These rules are for the case when we say for example unsigned x = 12;
+* Me: Always recall that unsigned x = -1 is the greatest unsigned int, and that signed x = MAX_UNSIGNED_INT used to be
+* undefined, but now is again module 2^n.
 * 
 * A prvalue of an integer type or of an unscoped enumeration type can be converted to any other integer type. 
 * If the conversion is listed under integral promotions, it is a promotion and not a conversion.
@@ -19,16 +19,16 @@
 *		promotion, not an integer conversion).
 *	-	If the destination type is bool, this is a boolean conversion (discussed next).
 * 
-* Me: In the expression 12u < 12 who determines what the destination type is? I think because 12l is potentially
-* larger in range, it would be the one. Whereas in 12u < 13l, the destination type is ul (and not l apparently), 
-* rather than unsigned. Note that this is not promotion by the way, because there's no promotion to long.
+* Me: Don't confuse assignment rules with arithmetic rules. Arithmetic rules apply to 5 + 2. But this about saying what
+* happens when we say short x = 2 + 5;
 */
 
 //Me:
 void conversion_among_lower_signed_and_higher_unsigned() {
+	unsigned u = -12;	// -12 % 2^32 = A very large number! 
 	unsigned l = 12l;	// Module 2^32 is set here (first rule.)
 
-	signed u = 12u;	// Fine. No conversion
+	signed s = 12u;	// Fine. No conversion
 
 	int v = true;	// Promoted to int as 1.
 	int x = false;	// int as 0.

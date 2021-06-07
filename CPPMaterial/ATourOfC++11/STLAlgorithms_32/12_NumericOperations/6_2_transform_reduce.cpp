@@ -37,42 +37,6 @@
 #include <iomanip>
 
 using std::vector;
-
-void count_collection() {
-	vector<int> v{ 1, 2, 3, 4 };
-
-	int c = std::count(v.begin(), v.end(), 2);
-
-	//std::count_if()
-}
-
-void accumulate_and_transform() {
-	vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-	// lambda signature could be(const string&, const int&), but the following creates a copy of init,
-	// then move assign it into init. (Is it better than saying std::string& a, then move it into init,
-	// which would avoid a copy too? Well, it wouldn't work without const, because it passes as const (more
-	// precisely, and rvalue). Now, with const, we can't move (technically). This is the reason why we use copy
-	// What if we used rvalue to begin with? Again, because const is passed, we likewise use copy constructor.
-	auto dash_fold = [](std::string a, int b) {
-		return std::move(a) + '-' + std::to_string(b);
-	};
-
-	// This one uses reduce
-	std::string s = std::reduce(std::next(v.begin()), v.end(),
-		std::to_string(v[0]), // start with first element
-		dash_fold);
-
-	// Right fold using reverse iterators, using accumulate
-	std::string rs = std::accumulate(std::next(v.rbegin()), v.rend(),
-		std::to_string(v.back()), // start with last element
-		dash_fold);
-
-	std::cout << "dash-separated string: " << s << '\n'
-		<< "dash-separated string (right-folded): " << rs << '\n';
-
-}
-
 void transform_reduce() {
 	vector<int> v{ 1, 2 };
 	vector<int> v2{ 1, 2 };
