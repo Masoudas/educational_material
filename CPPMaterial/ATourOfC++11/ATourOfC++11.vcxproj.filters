@@ -2937,8 +2937,35 @@
     <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_conversions.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_built_in_types.cpp">
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_4_overflows.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_3_built_in_types.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\2_unary_arithmetic_ops.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_1_additive_operators.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_2_floating_point.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_3_pointers.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_4_overload_resolution_participation.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_5_example.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\11_sample.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\12_unique.cpp">
+      <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

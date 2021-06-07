@@ -1,4 +1,6 @@
 /**
+* Me: Again, don't pass over these function easily. These are very important for swapping two ranges with one another.
+* 
 *	-	constexpr ForwardIt2 swap_ranges( ForwardIt1 first1, ForwardIt1 last1, ForwardIt2 first2 );
 * Exchanges elements between range [first1, last1) and another range starting at first2. 
 * Precondition: the two ranges [first1, last1) and [first2, last2) do not overlap, where 

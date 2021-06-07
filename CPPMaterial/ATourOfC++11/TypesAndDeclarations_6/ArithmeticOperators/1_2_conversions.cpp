@@ -24,7 +24,7 @@
 namespace enums {
 
 	enum c_enum : char { a, b };
-	enum i_enum : int { a, b };
+	enum i_enum : int { c, d };
 
 	void ops_on_enums() {
 		auto c_result1 = c_enum::a | c_enum::b;	

@@ -63,7 +63,6 @@ void accumulate_and_reduce() {
 
 }
 
-
-int main() {
-	accumulate_and_reduce();
-}
+//int main() {
+//	accumulate_and_reduce();
+//}

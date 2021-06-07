@@ -1,4 +1,7 @@
 /**
+* Me: What's not here is the most important thing, which are the unary increment and decrement operators, as well as 
+* comparison operators.
+* 
 * Arithemtic operators involve all the usual bit-wise or binary or unary operators that we know of:
 * 
 *	-	unary plus	+a	
