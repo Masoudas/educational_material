@@ -1,0 +1,5 @@
+Bash shell executes the content of the PROMPT_COMMAND just before displaying the PS1 variable. Hence, the 
+content of this variable must be a command.
+
+$PS4="date +%k:%m:%S"   # Show date by the end of executed command in h:m:s format.
+

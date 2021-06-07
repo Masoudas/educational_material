@@ -1,0 +1,12 @@
+This is what is shown behind each line when we debug a shell.
+
+%%%%%%%%%%%%%%%%%%
+#/bin/bash
+
+export PS4='$0.$LINENO+ '
+
+set -x
+# command
+set +x
+
+%%%%%%%%%%%%%%%%%%

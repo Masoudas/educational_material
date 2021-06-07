@@ -1,0 +1,11 @@
+Apparently, the debug output is sent to stderr instead of stdout. We can then redirect it as such, particularly
+if it's part of 'set -x' and 'set +x' error:
+
+$ ./script_that_has_set_x 2> debug.txt
+
+From Bash 4, there's a variable called BASH_XTRACEFD which determines which stream is used bash debugging.
+We can then use this one to set our debugging stream.
+
+$ exec 6> debug.txt
+$ BASH_XTRACEFD=6
+$ ./script_that_has_set_x

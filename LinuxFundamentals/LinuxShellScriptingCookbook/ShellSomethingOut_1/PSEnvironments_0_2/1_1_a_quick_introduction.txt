@@ -1,0 +1,13 @@
+PS stands for Prompt Statement. These variables determine how the shell interacts with us, the most important
+of which we're aware of is PS1, which is what's shown on every new line.
+
+The variables associated are:
+    -   PS1: The default interactive prompt on Linux (on pseudo terminals of course.)
+    -   PS2: The interactive prompt for a multi-line command
+    -   PS3: The prompt for the select loop inside a shell script
+    -   PS4: The prompt that gets displayed, when we execute a shell script in debug mode
+    -   COMMAND_PROMPT: Bash shell executes the content of the PROMPT_COMMAND just before displaying the PS1 
+        variable (meaning by the time execution of a command ends)
+
+Note: I personally think one should not export these variables, but rather set them in the .bashrc file. Make
+of that what you will though.

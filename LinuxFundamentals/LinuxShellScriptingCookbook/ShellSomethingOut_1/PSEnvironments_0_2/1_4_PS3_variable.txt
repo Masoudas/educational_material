@@ -1,0 +1,18 @@
+You can define a custom prompt for the select loop inside a shell script, using the PS3 environment variable, 
+as explained below.
+
+Consider the following select statement:
+
+
+PS3="Choose day (1-4): "
+select i in mon tue wed exit    # This is the select command printed on the command line.
+do
+  case $i in
+    mon) echo "Monday";;
+    tue) echo "Tuesday";;
+    wed) echo "Wednesday";;
+    exit) exit;;
+  esac
+done
+
+What's printed to select one of the statements is #? by default. Thus, we can change it using the PS3 variable:

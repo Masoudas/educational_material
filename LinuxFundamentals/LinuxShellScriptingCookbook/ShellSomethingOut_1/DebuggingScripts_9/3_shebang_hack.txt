@@ -1,0 +1,10 @@
+So as we may recall, the shebang line determines when we execute the script as ./script, which bash is going
+to be used. 
+
+We can pass the debug flags directly in the shebang line. Don't as always forget to give yourself the execution
+previliges.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#/bin/bash -xv
+# .. rest of the script.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

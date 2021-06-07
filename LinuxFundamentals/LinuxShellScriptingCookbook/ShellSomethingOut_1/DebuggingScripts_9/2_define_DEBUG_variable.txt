@@ -2,17 +2,20 @@ So now, this one is a quite interesting way of setting debug flags inside the co
 
 We define a DEBUG method inside our script. It checks the content of a variable named _DEBUG and if its string
 content is on, then it prints '$@' to the terminal, which is equivalent to executing the varaibles passed to
-it. Otherwise, it prints ':' to the terminal, which is code word for "do nothing".
+it. Otherwise, it prints ':' to the terminal, which is code word for "do nothing."
 
 Now, imagine in the example below, we say DEBUG echo "I is i". Now if we execute this script as follows:
 $ _DEBUG=on ./script
+
 Now, when we reach the DEBUG function, because the variable _DEBUG is set to on, "echo \"I is $i\"" is passed
 to the command line, and we execute it. (Question: Wouldn't it be better to have an evaluate preceding $@?)
 
 #!/bin/bash 
 function DEBUG() 
 { 
-    [ "$_DEBUG" == "on" ] && $@ || : 
+    [ "$_DEBUG" == "on" ] && $@ || :    # Don't forget the [], because otherwise it would not be a true 
+                                        # false statement, but rather prints the statement to command line
+                                        # which "on" == "on", which is incorrect, because "on" is not a command.
 }
 
 for i in {1..10} 
