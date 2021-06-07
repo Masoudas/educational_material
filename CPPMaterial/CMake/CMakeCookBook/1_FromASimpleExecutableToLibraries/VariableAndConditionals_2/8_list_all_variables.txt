@@ -1,0 +1,13 @@
+As variables are properties of CMake (and not a particular Target,) we use the get_cmake_propery to list the name of all variables of CMake.
+
+The documentation specifies:
+This read-only property specifies the list of CMake variables currently defined. It is intended for debugging purposes.
+
+As such, here's a macro for printing all the variables:
+
+macro(print_vars)
+    get_cmake_propery(_varNames VARIABLES)
+    foreach(var IN LISTS VARIABLES)
+        message(STATUS "Variable ${var} is ${${var}})
+    endforeach()
+endmacro(print_vars)

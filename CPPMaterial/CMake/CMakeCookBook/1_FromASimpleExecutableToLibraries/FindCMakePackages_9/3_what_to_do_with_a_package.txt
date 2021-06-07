@@ -9,7 +9,6 @@ Take for instance our OpenCV. After finding the package, two variables provide t
     -   OpenCV_LIBS
     -   OpenCV_INCLUDE_DIRS
 
-Question is, how can I list these variables?
-
-
-??????
+Question is, how can I list these variables, to use them for inclusion and addition? The answer is that we can list all variables as 
+discussed in VariablesAndConditionals_2 (using get_cmake_propery method of course.) As such, we can find the name we look for somewhere in 
+there.
