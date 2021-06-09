@@ -1,0 +1,26 @@
+So, if we punch in the following command, we see the basic help results:
+
+$ cmake --help
+
+Notice that the printed info has a couple of sections:
+Options
+  -S <path-to-source>          = Explicitly specify a source directory.
+  -B <path-to-build>           = Explicitly specify a build directory.
+  -C <initial-cache>           = Pre-load a script to populate the cache.
+  ...
+  --help-command <cmd> [<f>]   = Print help for one command and exit.
+  --help-command-list [<f>]    = List commands with help available and exit.
+  --help-commands [<f>]        = Print cmake-commands manual and exit.
+  --help-module <mod> [<f>]    = Print help for one module and exit.
+  ...
+  Generators
+
+  The following generators are available on this platform (* marks default):
+  * Visual Studio 16 2019        = Generates Visual Studio 2019 project files.
+                                   Use -A option to specify architecture.
+    Visual Studio 15 2017 [arch] = Generates Visual Studio 2017 project files.
+                                 Optional [arch] can be "Win64" or "ARM".
+  ...
+
+We can see that in particular, there's command line help provided for various commands, and modules etc. We shall explore each help command 
+further next.
