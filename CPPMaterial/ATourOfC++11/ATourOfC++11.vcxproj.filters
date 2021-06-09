@@ -2967,6 +2967,9 @@
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\12_unique.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="SelectOperations_11\Operators_1\Modulo.txt">

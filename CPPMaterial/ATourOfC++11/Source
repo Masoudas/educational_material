@@ -1,6 +1,0 @@
-template<typename T>
-void flan(T t) {
-
-}
-
-void flan(int){}
