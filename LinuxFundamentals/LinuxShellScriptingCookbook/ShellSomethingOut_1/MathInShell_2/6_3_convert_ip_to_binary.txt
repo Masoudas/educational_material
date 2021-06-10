@@ -1,0 +1,26 @@
+So, let's write a shell script that would convert a given shell script to binary representation. Now, we know 
+how to convert individual numbers to binary. So in an ip address like 192.168.1.1, what we can do possibly is
+to find each digit group and then represent them as binary. Now, because the number of digits is not always
+the same, we can use regex to extract digits as follows:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+read ip
+
+oldIFS=$IFS	# IFS affects the echo output, so we should keep the old one.
+IFS='.'
+tokens=($ip)
+IFS=$oldIFS
+
+for word in ${tokens[*]}; do
+	octet=$(bc <<< "obase=2; $word")
+
+	# A very bizzare way of making sure the output has exactly eight digits!
+	octet=$(bc <<< "obase=2; ibase=2; $octet + 100000000")
+	octet=$(expr substr $octet 2 8)
+
+	# Concatenating ip.
+	binary_ip+="$octet."
+done
+
+binary_ip=$(expr substr $binary_ip 1 35)	# Remove the final dot!
+echo $binary_ip

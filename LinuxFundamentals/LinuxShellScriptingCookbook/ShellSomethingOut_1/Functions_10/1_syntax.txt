@@ -6,16 +6,18 @@ function(){
 
 function(){ statement; }    # Mind the spaces.
 
+$ function 
+
 A function is invoked by its name and can be passed arguments too. Arguments accessed positionally, with $1
 being the first argument. (Note that $0 inside a function in a script still shows script name)
-$ function 
 
 Note that:
     -   $1 is the first argument
     -   $2 is the second argument
     -   $n is the nth argument
     -   "$@" expands as "$1" "$2" "$3" and so on
-    -   "$*" expands as "$1c$2c$3", where c is the first character of IFS
+    -   "$*" expands as "$1c$2c$3", where c is the first character of IFS (Internal Field Separator, set normally
+                                    to space. See string tokenization in StringsInShell_0_3)
 "$@" is used more often than $*, since the former provides all arguments as a single string
 
 A more elaborate example is:

@@ -1,0 +1,25 @@
+Most applications accept arguments in different formats. Suppose -p and -v are the options available, and -k N is 
+another option that takes a number. Also, the command requires a filename as argument. This application can be 
+executed in multiple ways:
+
+$ command -p -v -k 1 file
+$ command -pv -k 1 file
+$ command -vpk 1 file
+$ command file -pvk 1
+
+Within a script, the command-line arguments can be accessed by their position in the command line. The first 
+argument will be $1, the second $2, and so on.This script will display the first three command line arguments:
+
+echo $1 $2 $3
+
+However, we prefer to shift each argument to the first argument and then process them that way. The command shift
+will do that for us:
+
+%%%%%%%%%%%%%%%%%%
+for i in `seq 1 $#` 
+do
+	echo "Argument $i is $1"
+	shift
+done
+
+echo "Just showing that actuall arguments WILL shift after this: $2"
