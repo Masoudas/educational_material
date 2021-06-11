@@ -1,10 +1,15 @@
 /**
+* Me: I tend to sometimes think of these promotion rules as char is converted to int etc. I shouldn't. Lower rank is compared
+* to higher rank etc. Hence for example if uint8_t and uint16_t are participating in some operation, think of them in
+* terms of rank (more explicitly I might add) and not char vs short.
+* 
 * Me: So floats are the commanders, and everything is converted to them. Otherwise, everything including char
 * types are converted to ints.
 * 
 * Me: For integers, everything is promoted to int first.
 * Me: When two operands of same signedness are operated on, the higher rank is chosen.
-* Me: Then rank contest. Unsigned considered first, then signed, then unsigend version of signed.
+* Me: Then rank contest. Unsigned considered first, then signed, then unsigend version of signed (because it has higher
+* rank.)
 * 
 * Now, considering other built-in types:
 * 

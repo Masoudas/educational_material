@@ -1,0 +1,23 @@
+/**
+* Me: What's not here is the most important thing, which are the unary increment and decrement operators, as well as 
+* comparison operators.
+* 
+* Arithemtic operators involve all the usual bit-wise or binary or unary operators that we know of. We also put the in
+* class and out of class definitions as well:
+* 
+* Me: The unary plus and minus are bizarre definitely!
+* 
+*	-	unary plus			+a;			T operator+() const;				T operator+(const T&);	
+*	-	unary minus			-a;			...
+*	-	addition			a + b;		T operator+(const T&) const;		T operator+(const T&, const T&);	
+*	-	subtraction			a - b;		...	
+*	-	multiplication		a * b;		...	
+*	-	division			a / b;		...	
+*	-	modulo				a % b;		...	
+*	-	bitwise NOT			~a;			T operator~() const;				T operator~(const T&);	
+*	-	bitwise AND			a & b;		T operator&(const T&) const;		T operator&(const T&, const T&);
+*	-	bitwise OR			a | b;		...	
+*	-	bitwise XOR			a ^ b;		...	
+*	-	bitwise left shift	a << b;		T operator>>(const T&) const;		T operator>>(const T&, const T&);
+*	-	bitwise right shift	a >> b;	
+*/

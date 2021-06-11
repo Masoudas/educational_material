@@ -13,11 +13,9 @@
 * If either operand has scoped enumeration type, no conversion is performed: the other operand and the return 
 * type must have the same type.
 * 
-* Me: What does this mean? Let's just for argument's sake note that we can't possibly have enums of greater
-* than int. We see that all our normal operations which we normally see done on enums as bit fields end up
-* in enum. Then, we know that a comparison is always possible because enums (of at most int) can be implicitly
-* converted to ints. Note however that this is for unscoped enums (ones without enum class.) For enum classes,
-* we don't have any implicit conversion to integral types, and we need explicit conversions.
+* Me: What does this mean? One thing is that bit fields less than equal int always are converted to int after ops.
+* However, greater ones are converted to THEMSELVES! which is very good news indeed!
+* 
 * 
 */
 
@@ -25,10 +23,13 @@ namespace enums {
 
 	enum c_enum : char { a, b };
 	enum i_enum : int { c, d };
+	enum ul_enum: unsigned long long {e, f};
 
 	void ops_on_enums() {
-		auto c_result1 = c_enum::a | c_enum::b;	
-		auto c_result2 = c_enum::a + 1;
+		auto c_result1 = c_enum::a | c_enum::b;		// Result is at least int!
+		auto c_result2 = c_enum::a + 1;				// Result is at least int!
+		
+		auto anding_ul = e & f;		// Result is unsigned long long, thankfully!
 
 		switch (c_result1) {
 		case c_enum::a:
@@ -37,5 +38,6 @@ namespace enums {
 			return;
 		}
 	}
+
 
 }
