@@ -1,0 +1,4 @@
+Functions and aliases appear similar at a casual glance, but behave slightly differently. The big difference 
+is that function arguments can be used anywhere within the body of the function, while an alias simply appends 
+arguments to the end of the command.
+

@@ -1,0 +1,5 @@
+A very long unix command can be broken down to multiple line by giving \ at the end of the line. The default 
+interactive prompt for a multi-line command is “> “.  Let us change this default behavior to display 
+“continue->” by using PS3 environment variable as shown below.
+
+Me: I personally added this to my .bashrc file.

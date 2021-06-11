@@ -1,0 +1,7 @@
+As we may have noticed by now, when the debugger prints messages, it puts a plus before it. What is used for
+debugging is the PS4 envirnoment. Read about in the PS environment variables.
+
+(I must admit it didn't work on my Ubuntu machine:)
+
+PS4='$LINENO: '
+$ ./script_in_debug_mode

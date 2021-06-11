@@ -51,7 +51,7 @@ int main(void)
         for(i=0; i <= sizeof(c); i++)
         {
             /* Upper case to lower case */
-            if ( (c[i] >= 65) && (c[i] <= 90) ) // We should and here!
+            if ( (c[i] >= 65) && (c[i] <= 90) ) // We should && here!
             {
                 newcase[i] = c[i] + 32;
             }
@@ -70,8 +70,7 @@ int main(void)
                                                 // enough chars.
     //    fprintf(stdout, c);
     
-        /* zero out the arrays so there are no
-           left-overs in the next run */
+        /* zero out the arrays so there are no left-overs in the next run */
         memset(c, 0, sizeof(c));
         memset(newcase, 0, sizeof(newcase));
     }

@@ -1,0 +1,7 @@
+We can generate the checksum for a (iso package) and compare it with what it should be, usually on the pages
+of the distributor. That way, we can check whether a package version is authentic or not.
+
+The command we look for is sha256checksum:
+
+$ sha256sum package
+
