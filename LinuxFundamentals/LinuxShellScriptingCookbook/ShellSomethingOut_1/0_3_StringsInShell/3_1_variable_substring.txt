@@ -1,5 +1,5 @@
 Beside the expr command, we can actually get a substring from a variable by noting that ${var:pos:len} is the
-substring:
+substring. Notice that positions start with zero, and not one:
 
 $ var=This
 $ echo ${var:0:2} # prints Th

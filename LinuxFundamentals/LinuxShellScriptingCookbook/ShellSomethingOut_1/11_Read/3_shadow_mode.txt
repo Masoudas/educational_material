@@ -1,0 +1,3 @@
+The shadow mode is useful for reading passwords.
+
+$ read -s pass && echo $pass

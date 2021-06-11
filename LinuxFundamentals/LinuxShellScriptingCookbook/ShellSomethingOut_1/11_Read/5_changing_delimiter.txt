@@ -1,0 +1,17 @@
+We can change the delimiter for read from '\n' to anything else with the -d option". The delimiter of course is
+not included.
+
+$ read -d ' ' var
+
+Question: What's the effect of changing Internal Field Separator (IFS) variable on read? Well, there doesn't 
+seem to be any effect. However, say I change the IFS to 'a' instead of default space. Then, it would print 
+space in place of a when I echo:
+
+$ IFS=a
+$ read x
+mama
+
+$ echo $x
+m m 
+
+

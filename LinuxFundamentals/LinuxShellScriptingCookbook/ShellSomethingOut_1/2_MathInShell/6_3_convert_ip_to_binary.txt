@@ -16,11 +16,12 @@ for word in ${tokens[*]}; do
 
 	# A very bizzare way of making sure the output has exactly eight digits!
 	octet=$(bc <<< "obase=2; ibase=2; $octet + 100000000")
-	octet=$(expr substr $octet 2 8)
+	octet=${octet:2:8}	# Alternatively, octet=$(expr substr $octet 2 8)
 
 	# Concatenating ip.
 	binary_ip+="$octet."
 done
 
-binary_ip=$(expr substr $binary_ip 1 35)	# Remove the final dot!
+binary_ip=${binary_ip:1:35} # Remove final dot.	
+# Alternatively, binary_ip=$(expr substr $binary_ip 1 35)
 echo $binary_ip

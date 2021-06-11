@@ -1,0 +1,10 @@
+Read command is used for interactively getting an input from the keyboard or standard in and putting it inside
+a variable.
+
+Most input libraries in any programming language read the input from the keyboard and terminate the string when 
+return is pressed. There are certain situations when return cannot be pressed and string termination is done based 
+on a number of characters received (perhaps a single character). For example, in an interactive game, a ball is 
+moved upward when + is pressed. Pressing + and then pressing return to acknowledge the + press is not efficient.
+
+
+

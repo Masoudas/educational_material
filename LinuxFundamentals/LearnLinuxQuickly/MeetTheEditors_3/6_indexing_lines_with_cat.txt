@@ -1,0 +1,6 @@
+Cat with option -n is used for indexing the lines of file:
+
+ls | cat -n > output.txt
+
+Here's some food for thought. ls prints multiple columns in a single line. So then why did we see several lines
+as a result of executing this command?

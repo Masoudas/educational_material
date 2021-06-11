@@ -2,7 +2,8 @@ So now, this one is a quite interesting way of setting debug flags inside the co
 
 We define a DEBUG method inside our script. It checks the content of a variable named _DEBUG and if its string
 content is on, then it prints '$@' to the terminal, which is equivalent to executing the varaibles passed to
-it. Otherwise, it prints ':' to the terminal, which is code word for "do nothing."
+it. Otherwise, it prints ':' to the terminal, which is code word for "do nothing." (Me: Actually : means do
+nothing and return 0)
 
 Now, imagine in the example below, we say DEBUG echo "I is i". Now if we execute this script as follows:
 $ _DEBUG=on ./script

@@ -1,0 +1,5 @@
+Read can read only n chars, and at the same time print a message before reading the input. The former is done with
+the 'n' option, while the latter is done with p. The good thing is that read snaps the command line as soon as
+that number of chars are pressed, and does not wait for more chars:
+
+$ read -p "Please enter something. Or don't. whateves!\n" -n 2 var

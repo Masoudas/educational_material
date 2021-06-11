@@ -1,0 +1,16 @@
+The first kind is 
+
+for item in $var
+do
+//...
+done
+
+Note that in this construction, the IFS is very important, and determines where the next item starts and current
+ends. Hence, we can change it from any kind of space to ',' or ';', etc.
+
+There's also the following two versions:
+for i in {1..10}
+for i in `seq 1 10`
+
+And finally, we have the standard for loop, which is written with two paranthesis:
+for((i=0;i<=10;++i))

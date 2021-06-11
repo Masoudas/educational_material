@@ -1,0 +1,17 @@
+Sometimes, we want to run a command till it succeeds. An interesting suggestion is the followin:
+
+repeat(){
+	while true
+	do
+		$@ && return
+	done
+}
+
+repeat() { while true; do $@ && return; done }	# One liner equivalent.
+
+What it does is quite genious and very clear of course.
+
+We can also add a delay so that we wait for a certain amount time:
+
+repeat() { while true; $@ && return || sleep 30; done }	# Recall that short-circuit or short-circuits if other
+							# side is true.

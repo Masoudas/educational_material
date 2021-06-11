@@ -1,8 +1,0 @@
-Imagine variable 'a' contains "abc" and variable 'b' contains "cde". Then, we can compare the two strings using
-the following operators:
-
-    -   Equality        :   [ $a = $b ]
-    -   Inequality      :   [ $a != $b ]
-    -   Nonempty        :   [ $a ]  # Checks if the variable is non-empty
-    -   Non-zero        :   [ -n $a ]   # Checks variable length is non-zero
-    -   Zero            :   [ -z $a ]   # Checks variable length is zero
