@@ -1,0 +1,15 @@
+So here's the deal. Apparently, in the same manner that OpenCV has a FindOpenCV.cmake file associated with it, cmake provides some predefined
+modules that can be used to detect other software packages, in this case python.
+
+In the list of modules (using the --help-module-list) we see there are a couple of such 'Find' modules associated with python. One of them is
+called FindPython. So just like we add OpenCV to our current project using find_package, we can do the same with python:
+
+find_package(Python COMPONENTS Interpreter Environment Development) 
+
+Now, the same way as OpenCV, and supposing python is in the standard path, this package will provide us with inclusion path and lib path of
+python. Some variables according to the command line documentation are:
+
+    -   Python_FOUND
+    -   Python_Interpreter_FOUND
+    -   Python_EXECUTABLE
+    -   ...

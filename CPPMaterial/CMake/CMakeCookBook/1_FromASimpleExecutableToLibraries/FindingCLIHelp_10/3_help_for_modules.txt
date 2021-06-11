@@ -1,0 +1,8 @@
+Same as with commands, we can list all the available modules in cmake. Note that these would be the default modules of cmake, not for example 
+the OpenCV module which we may have installed:
+
+$ cmake --help-module-list
+
+For example, we can check for "FindPython3" help as follows:
+
+$ cmake --help-module-FindPython3
