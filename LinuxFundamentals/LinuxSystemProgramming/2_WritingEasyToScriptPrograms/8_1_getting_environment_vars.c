@@ -36,8 +36,7 @@ int main(void)
    }
    else
    {
-      printf("Your terminal doesn't support" 
-         " colors\n");
+      printf("Your terminal doesn't support colors\n");
    }
 
    return 0;
