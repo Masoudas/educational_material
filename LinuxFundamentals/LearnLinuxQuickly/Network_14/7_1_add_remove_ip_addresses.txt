@@ -1,0 +1,10 @@
+To add an ip address to a particular dev, well, we need to use the addr suite, and then call the dev we intend, and
+finally use add to add our new address. The stipulation is that dev must be after the ip address we want to add:
+Note that if an ip address already exists for this device, it will be added, which is kind of odd I must admit
+for me!
+
+$ ip addr add 192.168.1.1 dev eth0
+
+To remove an ip, we simply replace it with del:
+
+$ ip addr add 192.168.1.1 dev eth0
