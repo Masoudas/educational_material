@@ -1,0 +1,4 @@
+There are several scripts available that print the name of the maintainers of various parts of the Linux kernel. We can run them on the command
+line as follows. The -f and the rest determines which portition of the source tree we seek to look at:
+
+$ scripts/get_maintainer.pl -f drivers/android/

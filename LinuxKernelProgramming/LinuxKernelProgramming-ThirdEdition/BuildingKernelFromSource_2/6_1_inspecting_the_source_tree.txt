@@ -1,0 +1,58 @@
+A du -h reveals that the source tree is about yay big (1GiB)
+
+How do we get the kernel version if not from the clone name? We can simply head the root folder make file:
+$ tail -n 5 MakeFile
+# SPDX-License-Identifier: GPL-2.0
+VERSION = 5
+PATCHLEVEL = 12
+SUBLEVEL = 10
+EXTRAVERSION =
+NAME = Frozen Wasteland
+
+Then, we have the following folder and file structure:
+
+    -   README:     The project's README file. It informs us as to where the kernel documentation is kept – spoiler, it's in the directory 
+                    called Documentation – and how to begin using it. The documentation is really important; it's the authentic thing, written 
+                    by the kernel developers themselves.
+    -   COPYING     Licensing terms.
+    -   Makefile    This is the kernel's top-level Makefile; the kbuild kernel build system as well as kernel modules use this Makefile (at 
+                    least initially) for the build.
+        
+// Subfolders:
+    -   kernel      Core kernel subsystem: the code here deals with process/thread life cycle, CPU scheduling, locking, cgroups, timers, 
+                    interrupts, signaling, modules, tracing, and more.
+    -   mm          The bulk of the memory management (mm) code lives here.
+    -   fs          The code here implements two key filesystem features: the abstraction layer – the kernel Virtual Filesystem Switch (VFS), 
+                    and the individual filesystem drivers (for example, ext[2|4], btrfs, nfs, ntfs, overlayfs, squashfs, jffs2, fat, f2fs, and 
+                    so on).
+    -   block       The underlying (to the VFS/FS) block I/O code path. It includes the code implementing the page cache, a generic block IO 
+                    layer, IO schedulers, and so on.
+    -   net         Network protocols, including TCP, IP, UDP protocol implementation.
+    -   ipc         The Inter-Process Communication (IPC) subsystem code; covers IPC mechanisms such as (both SysV and POSIX) message queues, 
+                    shared memory, semaphores, and so on.
+    -   sound       Audio subsystem
+    -   virt        The virtualization (hypervisor) code; the popular and powerful Kernel Virtual Machine (KVM) is implemented here.
+
+// Infrastructure:
+    -   arch        List of archs (CPUs) on which Linux can be implemented.
+    -   crypto      This directory contains the kernel-level implementation of ciphers (encryption/decryption algorithms, aka transformations) 
+                    and kernel APIs to serve consumers that require cryptographic services.
+    -   include     This directory contains the arch-independent kernel headers (there are also some arch-specific ones under 
+                    arch/<cpu>/include/...)
+    -   init        The arch-independent kernel initialization code; perhaps the closest we get to the kernel's main function (remember, the 
+                    kernel is not an application) is here: init/main.c:start_kernel(), with the start_kernel() function within it considered 
+                    the early C entry point during kernel initialization
+    -   lib         The closest equivalent to a library for the kernel. It's important to understand that the kernel does not support shared 
+                    libraries as userspace apps do. The code here is auto-linked into the kernel image file and hence available to the kernel 
+                    at runtime (various useful components exist within /lib: [un]compression, checksum, bitmap, math, string routines, tree 
+                    algos, and so on).
+    -   scripts     Various scripts are housed here, some of which are used during kernel build, many for other purposes (like static/dynamic 
+                    analysis, and so on; mostly Bash and Perl).
+    -   security    Houses the kernel's Linux Security Module (LSM), a Mandatory Access Control (MAC) framework that aims at imposing stricter 
+                    access control of user apps to kernel space than the default kernel does (the default model is called Discretionary Access 
+                    Control (DAC)). Currently, Linux supports several LSMs; well-known ones are SELinux, AppArmor, Smack, Tomoyo, Integrity, 
+                    and Yama (note that LSMs are "off" by default).
+    -   tools       Various tools are housed here, mostly userspace applications (or scripts) that have a "tight coupling" with the kernel 
+                    (perf, the modern profiling tool, serves as an excellent example).
+
+
