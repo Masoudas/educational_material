@@ -1,0 +1,30 @@
+We can use cat to direct multiple files to stdout.
+
+$ cat file1 file 2
+$ cat < file1 file2
+
+We can also use this command to concatenate a file with stdout directly. This is because cat is one of those
+commands that can read stdout (in a pipe:)
+
+$ echo "This is my file" | cat - file	# As we may recall, - stands for stdout.
+
+cat also is able to squeeze a file together, meaning remove multiple blank lines in a file:
+
+$ echo -s file
+
+Moreover, we can replace tabs with ^I when displaying a file (same as translate of course:)
+
+$ cat -vt file	# Doesn't work on my machine!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider the following example, and recall that we don't want to use a file as both input and output with a cat
+command:
+
+$> echo "This will vanish" > myfile
+$> cat -n myfile >myfile
+cat: myfile: input file is output file
+$> cat myfile | cat -n >myfile		# Tricking it with a pipe
+$> ls -l myfile
+-rw-rw-rw-. 1 user user 0 Aug 24 00:14 myfile   ;# myfile has 0bytes
+
+In general, don't try and write the changes made by cat to a file.
