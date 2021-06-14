@@ -1,0 +1,15 @@
+Note that the path to a non-standard python path can be passed to the module using the variable 'PYTHON_EXECUTABLE' from the command line 
+or otherwise by setting it directly:
+
+$ cmake -S. -B. -DPYTHON_EXECUTABLE=/custom/location/python
+
+or custom location:
+
+set(PYTHON_EXECUTABLE "/custom/location")
+
+PYTHONINTERP_FOUND, a Boolean signaling whether the interpreter was found
+PYTHON_EXECUTABLE, the path to the executable for the Python interpreter
+PYTHON_VERSION_STRING, the full version of the Python interpreter
+PYTHON_VERSION_MAJOR, the major version of the Python interpreter
+PYTHON_VERSION_MINOR, the minor version of the Python interpreter
+PYTHON_VERSION_PATCH, the patch number of the Python interpreter

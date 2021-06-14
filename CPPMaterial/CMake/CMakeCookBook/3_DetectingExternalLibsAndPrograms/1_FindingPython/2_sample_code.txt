@@ -2,6 +2,8 @@ In this receipe, we use the module FindPython to find the python interpreter. Mo
 For a documentation of this command, well, see the documentation. But note that this is like executing a process, not a language command.
 It would be like writing a command in shell.
 
+Note that if python is in a non-standard path, we can pass the 
+
 %%%%%%%%%%%%%%%%%%
 cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
 project(python)
