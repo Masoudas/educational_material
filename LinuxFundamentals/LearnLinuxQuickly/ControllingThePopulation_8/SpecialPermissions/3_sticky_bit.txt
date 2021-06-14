@@ -1,6 +1,5 @@
 The sticky bit works on the directory. With sticky bit set on a directory, all the files in the directory can 
-only be deleted or renamed by the file owners only or the root (meaning even the owners of files can't delete
-or remove them. They can create them, but not remove them!)
+only be deleted or renamed by the file owners only or the root:
 
 Set it using +t:
 $ chmod +t folder

@@ -1,0 +1,24 @@
+Each process has its own 'Process credentials' which include attributes like PID, the PPID, PGID, session ID and 
+also the real and effective user and group IDs: RUID, EUID, RGID, EGID.
+
+We can see the process uid and gid of a process by looking into the proc folder (pid is also printed by ps as
+well:)
+$ stat -c "%u %g" /proc/$pid
+
+Now, euid and egid are associated with execute as owner and group execute as owner. When we start a process 
+specified with such bits as a different user, "the process changes its Effective User ID (EUID) from the default 
+RUID (Real User ID) to the owner of this special binary executable file. The kernel makes the decision whether 
+this process has the privilege by looking on the EUID of the process. Because now the EUID points to root, 
+the operation won't be rejected by the kernel"
+
+Me: I guess the reason EUID is introduced over RUID is because the real user MUST NOT change. Therefore, they 
+added this variable for kernel to check. Hence, kernel always checks EUID.
+
+Hence, if I'm executing the ls command, the RUID is me, but UID is root.
+
+The Saved user ID (SUID) is being used when a privileged process is running (as root for example) and it needs to 
+do some unprivileged tasks.
+
+In that case, the effective UID (EUID) from before will be saved inside SUID and then changed to an unprivileged 
+task. When the unprivileged task is completed, the EUID will be taken from the value of SUID and switch back to 
+privileged account.
