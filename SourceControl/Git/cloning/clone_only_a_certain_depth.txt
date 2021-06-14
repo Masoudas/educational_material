@@ -1,0 +1,3 @@
+If we want to limit the git history to a particular depth when cloning, we use the --depth option:
+
+$ git clone depth address
