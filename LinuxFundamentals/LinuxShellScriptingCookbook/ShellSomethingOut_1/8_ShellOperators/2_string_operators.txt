@@ -1,0 +1,18 @@
+Imagine variable 'a' contains "abc" and variable 'b' contains "cde". Then, we can compare the two strings using
+the following operators:
+
+    -   Equality        :   [ $a = $b ] OR [[ $a = $b ]] OR [[ $a == $b ]]
+    -   Inequality      :   [ $a != $b ]
+    -   Nonempty        :   [ $a ]  # Checks if the variable is non-empty
+    -   Non-zero        :   [ -n $a ]   # Checks variable length is non-zero
+    -   Zero            :   [ -z $a ]   # Checks variable length is zero
+    -   Comparison      :   [ $a < $b ]     # Compares ASCII values. Hence, A < a and AAA < AAa
+                                            # This is equivalent to C++ lexicographical comparison
+                            [ $a > $b ]                                     
+
+It's been suggested to use double bracket for string comparison as opposed to single bracket, which lessens the
+possibility of error.
+
+if [[ $a == $b ]] && [[ $b == $c ]] 
+...
+

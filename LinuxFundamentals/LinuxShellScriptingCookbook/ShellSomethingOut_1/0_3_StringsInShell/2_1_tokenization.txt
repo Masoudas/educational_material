@@ -1,0 +1,39 @@
+Tokenization in the shell depends on a variable called IFS or The Internal Field Separator. The default value is
+space, tab, newline. IFS variable is commonly used with read command, parameter expansions and command substitution.
+
+From the bash man page:
+
+The shell treats each character of IFS as a delimiter, and splits the results of the other expansions into words 
+on these characters. If IFS is unset, or its value is exactly <space><tab><newline>, the default, then sequences 
+of <space>, <tab>, and <newline> at the beginning and end of the results of the previous expansions are ignored, 
+and any sequence of IFS characters not at the beginning or end serves to delimit words. If IFS has a value other
+than the default, then sequences of the whitespace characters space and tab are ignored at the beginning and end 
+of the word, as long as the whitespace character is in the value of IFS (an IFS whitespace character). Any 
+character in IFS that is not IFS whitespace, along with any adjacent IFS whitespace characters, delimits a field. 
+A sequence of IFS whitespace characters is also treated as a delimiter. If the value of IFS is null, no word 
+splitting occurs.
+
+Now, note that tokenization simply takes place with () around the variable! Note that if we have repeated tokens,
+or we have tokens in the beginning of the sentence, a space is returned. So we might want to check for that with
+a regex for example. 
+
+$$$$$$$$$$$$$$$$$$$$$$
+var=" This is tokenized by space"
+tokens=($var)
+
+for word in ${tokens[*]}; do
+	echo $word
+done
+
+
+$$$$$$$$$$$$$$$$$$$$$$$
+oldIFS=$IFS	# Return it to the old one, otherwise echo does not echo the separator for example!
+IFS="/"
+var="/This/is/separated"
+tokens=($var)
+echo ${tokens[*]}
+
+for word in ${tokens[*]}; do
+	echo ${word}	
+done
+

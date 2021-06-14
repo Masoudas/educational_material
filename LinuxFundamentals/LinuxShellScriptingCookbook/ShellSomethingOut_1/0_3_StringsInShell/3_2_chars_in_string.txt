@@ -1,0 +1,8 @@
+We can use the substring method to access the characters constituting a string:
+
+%%%%%%%%%
+var="Why does the old woman in front of me want to kill me?"
+for i in `seq 0 ${#var}`; do
+	echo  ${var:$i:1}
+done
+%%%%%%%%%

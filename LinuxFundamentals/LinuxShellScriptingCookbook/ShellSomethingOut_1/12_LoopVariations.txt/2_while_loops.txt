@@ -1,0 +1,11 @@
+While loops use a condition (or as we now know, the return value of the condition, i.e, $?)
+
+while condition
+do
+
+done.
+
+while true	# An infinite loop
+...
+
+while :	# Another infinite loop

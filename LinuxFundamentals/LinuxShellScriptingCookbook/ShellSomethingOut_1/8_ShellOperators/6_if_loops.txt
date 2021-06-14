@@ -1,0 +1,26 @@
+Version I:
+
+if condition; 
+then 
+	commands; 
+fi
+
+Version II:
+if condition
+then
+	commands;
+else
+	commands;
+done
+
+
+Version III:
+if condition
+then
+	commands;
+else if condition
+then
+	commands;
+else
+	commands;
+done

@@ -1,0 +1,24 @@
+Bash function support recursion (me: This is because once the name is defined, the function is present. In 
+particular, if my function has the same name as a built-in bash command, it will take precedence over it:)
+
+Below, we implement an example of a factorial function. Notice that because functions don't return, we need to
+actually define a global variable.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+result=1
+Factorial() {
+	if [ $1 -le 1 ];
+	then
+	    echo $result
+	    result=1
+	else
+	    arg=$1;
+	    result=$(bc <<< "$result * $arg")
+	   
+	    let --arg;
+	    Factorial $arg
+	fi
+}
+
+Factorial 4
+Factorial 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

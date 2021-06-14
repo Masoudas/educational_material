@@ -1,0 +1,12 @@
+The function: :(){ :|:& };: spawns processes forever and ends up in a denial-of-service attack. The & character is 
+postfixed with the function call to bring the subprocess into the background. This dangerous code forks processes 
+forever and is called a fork bomb.
+
+You may find it difficult to interpret the preceding code. Refer to the Wikipedia page 
+http://en.wikipedia.org/wiki/Fork_bomb for more details and interpretation of the fork bomb.Prevent this attack by
+restricting the maximum number of processes that can be spawned by defining the nproc value in 
+/etc/security/limits.conf.
+
+This line will limit all users to 100 processes:
+
+hard nproc 100

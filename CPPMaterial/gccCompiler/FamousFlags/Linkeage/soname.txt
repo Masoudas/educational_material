@@ -1,0 +1,14 @@
+The -soname option to the linker names the soname of the library.
+
+According to Wikipedia:
+
+In Unix and Unix-like operating systems, a soname is a field of data in a shared object file.[1] The soname is a 
+string, which is used as a "logical name" describing the functionality of the object. Typically, that name is 
+equal to the filename of the library, or to a prefix thereof, e.g. libc.so.6.
+
+Example:
+
+$ gcc -fPIC -c -Wall -g mod1.c mod2.c mod3.c 	# Create PIC object files.
+$ gcc -shared -Wl,-soname,libbar.so -o libfoo.so \	# set soname as libbar.
+           mod1.o mod2.o mod3.o
+

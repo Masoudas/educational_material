@@ -1,0 +1,18 @@
+I think the least painful way to get a substring from a string is to use egrep -o, which would return only the
+matching part, instead of the whole line. Of course, we need to either pass our string as a file, or pass it to
+stdout, so that grep can catch it from there:
+
+$ echo $var | egrep -o regex	# Equivalently --only-matching
+
+Now, the possible problem with this approach is that we might want to access a specific group in the regex. So,
+what we can do is to use our friend sed for this. sed with the -E option searches and replaces using expanded
+regex. Hence, we define a regular expression, we can replace it in place with a group inside of it. Consider the 
+following example. Notice that the challenge is to capture the ENTIRE line with grep, for it to be replaced with the
+group:
+
+$ echo $var | sed -E 's/^.*regex_with_group.*$/\1/g'	# The stars are there to capture entire sentence
+
+Example:
+var="Mama mia"
+echo $var | sed -E "s/^.*(Ma)ma.*$/\1/g"	
+Ma

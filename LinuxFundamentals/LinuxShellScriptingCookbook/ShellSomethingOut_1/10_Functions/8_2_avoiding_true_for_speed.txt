@@ -1,0 +1,15 @@
+In most implementations, true is actually a binary, which is under the bin folder:
+$ find /bin/ -name true
+
+So, we can avoid calling true which would require opening a subprocess and thus increasing the required time of
+our package by using the ':' (do nothing) command. Why does it work? do nothing returns zero, and apparently
+what the while condition works with without the [] is the return value of the script. In fact. I think they
+ONLY work with return values, and [] for example actually returns 0 or 1 based on the conditions. Ok, now I
+understand how && and || work as well.
+
+repeat(){
+	while :
+	do 
+	   $@ && return || sleep 30
+	done
+}

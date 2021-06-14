@@ -1,0 +1,21 @@
+On my machine, if I list the ip address, I see the following three UPs:
+
+wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+
+	-	First UP indicate that the network is physically up (me: probably the network as well as my card)
+	-	Second UP indicate that the cable is connected and up
+	-	Third UP after state indicate the network is up software-wise
+
+Now, to bring the software aspect up or down, we need to work with the network interface, which is the link
+suite of the ip command (where can also get the MAC address.) To do so, we just need to write the name of the
+device, and then down or up:
+
+$ ip link set dev wlp0s20f3 down
+
+Then we see in address section:
+
+wlp0s20f3: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+...
+
+which makes you wonder whther the three UPs are actually useful, because all of them went down together when we
+just turned off the software part!

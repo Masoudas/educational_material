@@ -1,6 +1,13 @@
+To trace route using ip command, we can use the route suite:
+$ ip route get address
+
+Notice that for example if I type 127.0.0.1 (which is the loopback address of this machie) I get:
+$ ip route get 127.0.0.1
+
 The traceroute traces the route it takes from this machine, through the (default) gateway to the destination.
 
 For example, if I write:
 
 $ traceroute asroma27.com
 # Goes through 30 channels to get there!
+

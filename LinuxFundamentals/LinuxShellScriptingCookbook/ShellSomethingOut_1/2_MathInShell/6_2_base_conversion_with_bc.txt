@@ -1,0 +1,20 @@
+bc is a command line calculator. We can go to the interactive mode by typing the following command:
+
+$ bc -l
+
+Now, we can do many calculations including floating point math. However, one thing that interests us is the input
+base and the output base. These two can be defined as obase and ibase. So imagine we're inside the interactive
+mode, type the following:
+
+$ bc -l
+! ibase=10	# Set input base to 10
+! obase=2	# Set output base to 2
+! 2 + 2		# Result of this summation?
+100
+
+Now, of course, we generally like to use this command as a single command inside the shell. We need then to do two
+things, one is to define an output direction, and second is to pass commands as strings to bc with comma separation.
+Therefore:
+
+$ bc <<< "obase=2; 2 + 2" 
+100

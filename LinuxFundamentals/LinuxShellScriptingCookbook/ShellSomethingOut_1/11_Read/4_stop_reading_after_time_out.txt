@@ -1,0 +1,4 @@
+We can supply a timeout to read so that user can type until a certain amount of time, after which read is 
+terminated:
+
+$ read -t 5 var	# After five seconds

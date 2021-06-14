@@ -1,0 +1,22 @@
+Functions and aliases appear similar at a casual glance, but behave slightly differently. The big difference 
+is that function arguments can be used anywhere within the body of the function, while an alias simply appends 
+arguments to the end of the command. This is fairly trivial, so don't be baffled by the following example!
+
+Consider for example:
+$ alias lsg='ls | grep' 
+$ lsg txt 
+   file1.txt 
+   file2.txt 
+   file3.txt
+
+Now, imagine we wanted to get the inet address. So, if we aliased the grep together with ifconfig as follows,
+it won't work. Because we need to pass eth0 after ifconfig, and not grep!
+
+$ alias wontWork='ifconfig | grep'
+$ wontWork eth0
+eth0  Link  encap:Ethernet  HWaddr 00:11::22::33::44:55
+
+However, if we defined a function, we could put the variable everywhere:
+$ getIP() { ifconfig $1 | grep 'inet; }
+$ getIp eth0
+

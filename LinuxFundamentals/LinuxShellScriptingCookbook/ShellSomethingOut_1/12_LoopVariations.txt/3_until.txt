@@ -1,0 +1,7 @@
+Until is sort of a converse of while. In until we execute the loop until the condition is satisfied. 
+
+x=0; 
+until [ $x -eq 9 ]; # [ $x -eq 9 ] is the condition. This loop is repeated until this condition is satisfied. 
+do 
+	let x++; echo $x; 
+done

@@ -1,0 +1,7 @@
+As we may recall, we get our default and other gateways with the 'ip route' command. We can use also set a 
+gateway for a particular ip using this command. In fact, this is done like defining an IP for a device:
+
+$ ip route add ip_address via gateway_ip dev dev_name
+$ ip route add 172.16.0.0/12 via 192.168.33.11 dev wlp0s20f3	# Go to 172.16.0.0/12 via 192.168.33.11 
+
+Of course, don't forget that everything is logged in the /var/log/syslog

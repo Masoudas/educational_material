@@ -1,0 +1,3 @@
+The ldd program helps us determine which libraries our program depend upon:
+
+ldd program_binary

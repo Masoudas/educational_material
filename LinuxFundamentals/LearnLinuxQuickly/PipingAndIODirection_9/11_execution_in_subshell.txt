@@ -1,0 +1,14 @@
+We know that if a command is surrounded by $(), then it's result is placed in the current line and then it's 
+executed. So we can assign to a variable with it:
+
+var=$(ls -l)
+
+Now, without the $, only the command is executed in a subshell and no replacemet in the current shell occurs. 
+Moreover, the subshell changes are not reflected in the original shell.
+
+$ pwd
+/
+$ (cd /bin ; ls -la)
+...
+$ pwd
+/	# no changes

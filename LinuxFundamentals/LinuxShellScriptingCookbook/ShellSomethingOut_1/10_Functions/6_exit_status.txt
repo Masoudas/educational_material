@@ -1,0 +1,10 @@
+Just like a normal script, a function has an exit status, which can be read with $?. Note that inside a shell,
+we use return, but inside a script we use exit. Note that the exit status of a function does not affect the exit
+status of a script.
+
+%%%%%%%%
+function () { return 1 }
+
+function
+echo "Status was $?"
+%%%%%%%%

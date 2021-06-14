@@ -1,0 +1,21 @@
+Essentially, the if conditions work return value, not true or false. Hence, if a condition returns 0 with $?,
+then the loop condition checks are executed, otherwise, they're halted:
+
+Consider for example:
+$ if true && false	
+Here, both true and false are scripts in /bin, returning 0 and 1. Hence, if sees 0 first, continues, sees 1 and
+then stops. Now, consider:
+
+$ if [ true ]
+Again, [] is a script that returns 0 or 1 based on the false and trueness of its condition. Hence, it returns 0
+here, which means the if loop continues when it checks $?
+
+This is the reason why we can shorten conditions in a loop as follows:
+
+if [] && [] || ...
+
+Because at each stage, if checks the value of $? and if it sees success, it continues.
+
+Note, however, that inside a [], we use -a, -o to and and or booleans:
+
+if [ -a ] && [ -o ] || ..

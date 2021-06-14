@@ -1,0 +1,3 @@
+Just like variables, functions can be exported to subprocesses, using the export -f command:
+
+$ export -f name

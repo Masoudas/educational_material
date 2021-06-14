@@ -1,0 +1,15 @@
+In this example, we tokenize a csv file entry, then simply print its result. Notice that here, we use the for
+loop, which just stops at each IFS:
+
+%%%%%%%%%%%
+line="Rambo,JohnJ,Commando,35"
+oldIFS=$IFS
+IFS=','
+
+for item in $line
+do
+	echo "Item is $item"
+done
+
+IFS=$oldIFS
+%%%%%%%%%%%

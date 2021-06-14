@@ -2,3 +2,9 @@ The substitution command $() acts in the same manner as xargs:
 
 $ ls $(echo "/")    # lists /. Equivalent to echo "/" | ls
 $ echo $(ls /)      # Echos the result of the list.
+
+When performing substitution, it's important to note that if we have a new line or space, then the string to be
+substituted will have a problem. Hence, we better surround the substitution expression with quotes (although I
+must admit this has no effect in my Linux Bash, and everything is preserved and no errors are thrown!)
+
+$ var="$(ls /)"

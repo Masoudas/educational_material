@@ -1,5 +1,8 @@
 As we may recall, we can set the DNS server using the /etc/resolv.conf file.
 
+We can get our gateway using the route suite of the ip address, which shows our route:
+$ ip route
+
 There's a command called nslookup that will give us the ip address of a particular name:
 
 $ nslookup asroma27.com
