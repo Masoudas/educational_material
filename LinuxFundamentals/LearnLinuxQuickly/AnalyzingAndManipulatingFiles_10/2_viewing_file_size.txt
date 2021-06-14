@@ -12,4 +12,8 @@ Finally, note that this command is recursive:
 $ du -h dir     # Prints the size of every file and subfolder in dir, including dir. dir would be last output
 $ du -h dir/*   # Prints the disk usage of every file, including dir.   
 
-Note that du is recursie, and ig you type it on the root folder, it will show the space of all files there.
+Note that du is recursie, and ig you type it on the root folder, it will show the space of all files there. We can pass a depth option then 
+not to measure the sub-folders:
+
+$ du -h --max-depth=0   .   # Only the current folder.
+
