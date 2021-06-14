@@ -1,7 +1,6 @@
 Here's the question: What does an included package provide for us? Aside from other possible useful information, a package provides two things
 for us:
-    -   A library (target) name, which we can link against using target link libraries. This variable is usually called 
-        "PACKAGENAME_LIBS"
+    -   A library (target) name, which we can link against using target link libraries. This variable is usually called "PACKAGENAME_LIBS"
     -   An inclusion path, which can use with target_include_directories to include against. This variable is usually called
         "PACKAGENAME_INCLUDE_DIRS"
 

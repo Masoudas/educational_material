@@ -1,5 +1,5 @@
 ﻿/**
-* Me: An easy way to recall overflow rules is that -1 always becomes INT_MAX for unsigned.
+* Me: An easy way to recall overflow rules is that -1 always becomes INT_MAX for unsigned. Signed is undefined.
 * 
 * Unsigned integer arithmetic is always performed modulo 2^n where n is the number of bits in that particular integer. E.g. 
 * for unsigned int, adding one to UINT_MAX gives ​0​, and subtracting one from ​0​ gives UINT_MAX.

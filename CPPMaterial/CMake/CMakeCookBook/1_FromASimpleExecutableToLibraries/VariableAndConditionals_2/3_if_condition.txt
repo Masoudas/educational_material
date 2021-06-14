@@ -9,3 +9,19 @@ Recall that:
     -   A logical variable is false if it is set to any of the following: 
         0, OFF, NO, FALSE, N, IGNORE, NOTFOUND, an empty string, or it ends in the suffix -NOTFOUND
         A raw string is false. A variable set to a non-empty string is true.
+
+
+if("This is false")
+endif()
+
+set(var "something")
+if(${var} AND var)  # This is true
+endif()
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that if we're dealing with booleans, we can just put then inside the if condition:
+option(BoolVar "" TRUE)
+
+if(BoolVar)
+    // Do something ...
+endif()

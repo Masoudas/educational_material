@@ -430,8 +430,17 @@
     <Filter Include="Source Files\STLAlgorithms_32\12_NumericOperations">
       <UniqueIdentifier>{e8a3632a-8789-4fae-bbad-6073c3c75ba3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TypesAndDeclarations_6\ArithmeticOperators">
-      <UniqueIdentifier>{31addee5-79a7-42b5-81e5-43f34a83fb3d}</UniqueIdentifier>
+    <Filter Include="Source Files\Expressions_10\ExpressionsFromStandard_4">
+      <UniqueIdentifier>{f102d489-dbd1-440f-b806-4024b31ae037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators">
+      <UniqueIdentifier>{cbd14628-d43c-41b6-916d-5f080332c6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expressions_10\ExpressionsFromStandard_4\IncrementDecrement">
+      <UniqueIdentifier>{91488015-2a94-4f0c-b551-b2321194444b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence">
+      <UniqueIdentifier>{2e0261ac-05f3-4833-a67f-fbe9c4388c0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -2931,41 +2940,80 @@
     <ClCompile Include="TypesAndDeclarations_6\ImplicitConversions\0_1_should_conversion_to_bool_be_explicit.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\ImplicitConversions</Filter>
     </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_1_arithmetic_operators.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_2_conversions.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_4_overflows.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\1_3_built_in_types.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\2_unary_arithmetic_ops.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_1_additive_operators.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_2_floating_point.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_3_pointers.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_4_overload_resolution_participation.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
-    <ClCompile Include="TypesAndDeclarations_6\ArithmeticOperators\3_5_example.cpp">
-      <Filter>Source Files\TypesAndDeclarations_6\ArithmeticOperators</Filter>
-    </ClCompile>
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\11_sample.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\12_unique.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\1_definition_of_expression.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\2_1_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\2_2_special_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\3_1_primary_expressions.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\3_2_literals.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\3_3_unevaluated_expressions.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\3_4_discarded_expressions.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\1_1_arithmetic_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\1_2_conversions.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\1_3_built_in_types.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\1_4_overflows.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\2_unary_arithmetic_ops.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\3_1_additive_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\3_2_floating_point.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\3_3_pointers.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\3_4_overload_resolution_participation.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\3_5_example.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\IncrementDecrement\1_definition.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\IncrementDecrement</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\IncrementDecrement\2_1_built_in_prefix_ops.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\IncrementDecrement</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\IncrementDecrement\2_2_built_in_postfix_ops.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\IncrementDecrement</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\IncrementDecrement\3_notes_on_the_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\IncrementDecrement</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence\1_definition.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

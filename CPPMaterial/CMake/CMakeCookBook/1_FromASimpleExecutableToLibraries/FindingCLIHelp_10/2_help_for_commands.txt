@@ -1,0 +1,7 @@
+First of all, note that by simply typing the --help-command-list, we get a list of commands available in cmake:
+
+$ cmake --help-command-list
+
+Take for instance the documentation on target_compile_definitions. We can see the documentation on this command using:
+
+$ cmake --help-command target_compile_definitions

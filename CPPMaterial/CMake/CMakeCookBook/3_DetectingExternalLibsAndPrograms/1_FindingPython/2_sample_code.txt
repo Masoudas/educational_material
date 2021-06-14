@@ -1,0 +1,27 @@
+In this receipe, we use the module FindPython to find the python interpreter. Moreover, we execute a simple command using this command.
+For a documentation of this command, well, see the documentation. But note that this is like executing a process, not a language command.
+It would be like writing a command in shell.
+
+%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(python)
+
+find_package(PythonInterp)
+
+# Note that output_variable is what's written on the standard output, or result of pipe.
+# results_variable is the return value of the child processes (like for example the result of executing a shell script.)
+if(PYTHONINTERP_FOUND)
+execute_process(
+        COMMAND ${PYTHON_EXECUTABLE} "-c" "print('Hello, world!')" 
+        OUTPUT_VARIABLE output RESULTS_VARIABLE result_variable
+        ERROR_QUIET
+        OUTPUT_STRIP_TRAILING_WHITESPACE)
+endif()
+
+message(STATUS "RESULT_VARIABLE is: ${PYTHON_EXECUTABLE}")
+message(STATUS "RESULT_VARIABLE is: ${result_variable}")
+message(STATUS "OUTPUT_VARIABLE is: ${output}")
+%%%%%%%%%%%%%%%%%
+
+Note that this program always has 0 in the result_variable, because we first check for existence of Python. However, without that, if python 
+can't be found, then result_variable will have a non-zero value, indicating the process has failed.
