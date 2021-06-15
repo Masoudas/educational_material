@@ -1,0 +1,19 @@
+For a developer like working on and looking to contribute code upstream, you must work on the very latest version of the Linux kernel code 
+base. Well, there are fine gradations of the latest version within the kernel community. As mentioned earlier, the linux-next tree, and 
+some specific branch or tag within it, is the one to work on for this purpose.
+
+The nlink to this tree can be found on the Linux website, where we click on browse, and it takes us to the git log. There, we can just download
+the repo by clicking on the url of the page and then just git cloning it:
+
+$ git clone https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/
+
+The difference between this tree and that of Linus Tarvold's is that this tree is closer to the bleeding-edge (allegedly)
+
+Here's how to download from his source tree:
+
+$ git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+
+As the Linux repo is giant, we might want to limit it to a particular history depth when cloning:
+
+$ git clone --depth n https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+

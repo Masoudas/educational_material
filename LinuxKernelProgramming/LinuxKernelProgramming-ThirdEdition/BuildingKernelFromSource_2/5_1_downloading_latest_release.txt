@@ -1,0 +1,11 @@
+We can now download the latest release using for example wget, or directly from the website:
+
+$ wget --https-only -O Downloads/linux-5.12.10.tar.xz  https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.10.tar.xz
+
+Once downloaded in the downloads folder,  we can unzip it with the tar command, recalling that this is not a tar.gz file:
+
+$ tar -xf linux-5.12.10.tar.xz -C .
+
+For convenience, we define the following environment_variable for our thing:
+
+$ export LLKD_KSRC=${HOME}/kernels/linux-5.4

@@ -1,0 +1,8 @@
+The following defines the path (object file) for the downloaded object:
+
+$ wget -https-only -O path_including_file address
+
+For example, to download a kernel, we can write:
+
+$ wget --https-only -O Downloads/linux-5.12.10.tar.xz  https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.12.10.tar.xz, and then choose a
+version we want, and after that, we find the version we seek.

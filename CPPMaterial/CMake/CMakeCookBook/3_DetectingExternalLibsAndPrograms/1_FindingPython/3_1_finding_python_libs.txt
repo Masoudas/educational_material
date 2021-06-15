@@ -1,0 +1,20 @@
+Me: Apparently, python has an include and a dynamic library, which can be used directly inside a C++ code. In the following code for example,
+we include this libray, and then use a couple of functions in a C++ context. 
+
+This sort of mixed language code is particularly interesting in embedded contexts. It's interesting to note that there's no namespace that's
+associated with python functions (which of course is the case!)
+
+#include <Python.h>
+
+int main(int argc, char* argv[]){
+    Py_SetProgramName(argv[0]);     // This is optional, but is recommended.
+
+    Py_Initialize();    // Initializing the Python context.
+    PyRun_SimpleString("from time import time, ctime\n"
+                        " print('Today is', ctime(time())) \n" );   // Run these strings as Python commands.
+    Py_Finalize();
+    return 0;
+}
+
+Note that it's a fun exercise to this inclusion by hand as well. Otherwise, as we shall show, this is a matter of doing the right inclusion and
+linkeage with a proper module and our usual target_include_directories and target_link_libraries.
