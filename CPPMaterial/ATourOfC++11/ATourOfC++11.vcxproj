@@ -115,7 +115,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
@@ -608,7 +608,6 @@
     <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\1_motivation.cpp" />
     <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\2_standard_definition.cpp" />
     <ClCompile Include="SelectOperations_11\RAIIFromStandard_6\3_std_and_RAII.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="SourceFilesAndPrograms_15\0_0_precompiled_headers.cpp" />
     <ClCompile Include="SourceFilesAndPrograms_15\Linkage_2\0_0_include.cpp" />
     <ClCompile Include="SourceFilesAndPrograms_15\Linkage_2\0_1_double_inclusion.cpp" />
@@ -989,6 +988,7 @@
     <ClCompile Include="TypesAndDeclarations_6\0_0_TypesInOneLook.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\2_1_Types.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\void_6.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\WorkingWithByteStreams\1_printing_ip_range.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\x_2_a_note_on_size_of.cpp" />
     <ClCompile Include="Utilities_35\MinorUtilities_\1_2_forward_does_not_deduce.cpp" />
     <ClCompile Include="Utilities_35\MinorUtilities_\1_1_forward.cpp" />

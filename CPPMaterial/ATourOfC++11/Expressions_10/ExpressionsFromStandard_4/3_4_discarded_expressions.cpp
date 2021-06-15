@@ -20,3 +20,4 @@
 * 
 * In addition, if the lvalue is of volatile-qualified class type, a volatile copy-constructor is required to initialize 
 * the resulting rvalue temporary. (Me: a class can be volatile?!)
+*/
