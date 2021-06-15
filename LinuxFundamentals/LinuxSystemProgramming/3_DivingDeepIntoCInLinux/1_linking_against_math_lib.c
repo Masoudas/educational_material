@@ -1,6 +1,6 @@
 /**
  * Here, we link against the math library. Note that linkeage during compilation is done using '-lm' 
- * (in /usr/lib/x86_64-linux-gnu/libm.so) against the math library.
+ * (in /usr/lib/x86_64-linux-gnu/libm.so) against the math library (why is this library here?).
  * 
  * As a reminder, note that libc.so contains the standard functions, and we always link against it, whereas 
  * libm.so is not part of the standard, which is why we have to specifically link against it.
