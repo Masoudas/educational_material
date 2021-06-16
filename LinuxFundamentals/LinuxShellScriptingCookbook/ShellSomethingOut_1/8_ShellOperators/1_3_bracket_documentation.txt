@@ -1,0 +1,19 @@
+The following is taken from 'man bash', section 'CONDITIONAL EXPRESSIONS':
+
+Conditional  expressions  are  used  by the [[ compound command and the test and [ builtin commands to test file 
+attributes and perform string and arithmetic comparisons. The test abd [ commands determine their behavior based 
+on the number of  arguments;  see  the  descriptions  of those commands for any other command-specific actions.
+
+Expressions are formed from the following unary or binary primaries (me: the ones I list later). Bash handles 
+several filenames specially when they are used in expressions.  If the operating system on which bash is running 
+provides these special files, bash will use them; otherwise it will emulate them internally  with  this  behavior: 
+If any file argument to one of the primaries is of the form /dev/fd/n, then file descriptor n is checked. If
+the  file  argument  to  one  of  the  primaries  is one of /dev/stdin, /dev/stdout, or /dev/stderr, file 
+descriptor 0, 1, or 2,  respectively, is checked.
+
+Unless otherwise specified, primaries that operate on files follow symbolic links and operate on the target of the 
+link, rather than the link itself.
+When  used  with [[, the < and > operators sort lexicographically using the current locale.  The test command sorts 
+using ASCII ordering (me: Both of which are the same for an 8 bit char set. Note that this is the reason why we
+better use [[ for string comparisons rather than <.) 
+

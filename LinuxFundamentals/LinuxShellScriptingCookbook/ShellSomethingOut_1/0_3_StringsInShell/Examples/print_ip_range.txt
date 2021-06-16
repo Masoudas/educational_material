@@ -1,0 +1,36 @@
+Suppose we're given an ip stem such as 255.10.10.0/24. The goal of this script is to print the ip range for this
+base stem.
+
+I'd strongly recommend using a C code for this end. But, suppose we want to use a shell program. We can tokenize
+the string and get each octet separately. Then, we can form a separate variable that would contain the ip range.
+We increment that variable, and then we or each byte with our ip presentation.
+
+Side note: Proud of myself for having figured out how to write this :D!
+
+Alternative shell approaches:
+$ seq -f "10.20.30.%g" 40 50
+$ prips 10.0.0.0/23		# Has to be installed.
+
+%%%%%%%%%%%%%%%%
+#!/bin/bash
+#Filename: sleep.sh 
+oldIFS=$IFS;
+IFS="/"
+tokens=($1)
+
+# Determine the ip range
+range=$(((2 << ( 32 - ${tokens[1]} - 1)) - 1 ))	# Range of ips.
+
+IFS='.'
+ip_tokens=(${tokens[0]})	# Tokenize the ip segment range.
+
+IFS=$oldIFS
+for i in `seq 0 ${range}`
+do
+	let octet_1=${ip_tokens[3]}+$((0xFF&i))
+	let octet_2=${ip_tokens[2]}+$((0xFF&(i>>8)))
+	let octet_3=${ip_tokens[1]}+$((0xFF&(i>>16)))
+	let octet_4=${ip_tokens[0]}+$((0xFF&(i>>24)))
+
+	echo "${octet_4}.${octet_3}.${octet_2}.${octet_1}"
+done

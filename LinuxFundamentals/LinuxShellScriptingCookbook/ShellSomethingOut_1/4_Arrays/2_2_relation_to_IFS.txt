@@ -1,0 +1,12 @@
+An interesting question that arises here is would chaning IFS affect the way an array is declared? The answer is
+no. Only the space char is considered when parsing the array.
+
+$ oldIFS=$IFS
+$ IFS=';'
+$ arr=(a;b c)	# This is two keys. a,b c.
+
+$ IFS=$oldIFS
+$ echo 
+
+
+

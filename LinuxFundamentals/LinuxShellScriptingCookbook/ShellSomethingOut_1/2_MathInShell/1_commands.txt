@@ -7,3 +7,8 @@ treated as a number by the methods that access it:
 #!/bin/bash
 no1=4;
 no2=5;
+
+Now, there are three ways to do math in shell:
+	-	Using $(()) command
+	-	Using let command
+	-	Using bc <<< '( )'	
