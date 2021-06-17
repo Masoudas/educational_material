@@ -1,5 +1,5 @@
 To search using regex, it's always recommended to supply the type of regular expression, which can be done using
-the regextype option.
+the regextype option. Note that -iregex looks for patterns in a case insensitive manner.
 
 To search for reqular expressions, we need to supply the type of regex, together with the regex. The subtle point
 here is that find searches for files based on pwd, hence the normal outcome of a find starts with the '.', as

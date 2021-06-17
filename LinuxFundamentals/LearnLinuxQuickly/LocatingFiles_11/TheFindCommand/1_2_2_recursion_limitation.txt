@@ -1,0 +1,45 @@
+To find a particular name, we use the following command:
+
+$ find . [-name|iname] name [-print]
+
+Note that this command now finds anything that matches this name in this folder and its children. Hence, for 
+example if name=file_name and there's a folder and a file named file_name, both of them will be found, which 
+is good, because we want to find everything. use full paths to avoid this,
+
+Note that the file or folder name HAS to contain the name. Hence, for example if I have subfolder named 'f' and I
+search for '*f*', not every file such as f/s.txt is returned (because they pass through the f folder.) Find is not a 
+simple regex search on paths (Thankfully :D)
+
+To set the depth of search, use the -maxdepth option, where 1 means only the current folder.
+
+$ find . -maxdepth 1 -name expression     # Search only in the current folder.
+
+To search for files or folders, use the -type option together with f or d
+$ find . -type f -maxdepth 1 -name expression
+
+Note that when passing wild-cards for names, we want to put it inside a single quote. If there's no quote or a 
+double quote, the shell expands the wild-card. The single quotes prevent the shell from expanding the *.txt and 
+passes that string to the find command. Now, what does this mean? 
+
+$ find . -name '*.txt'
+$ find . -name *.txt
+
+When we say *.txt, what the shell does is that it resolves the glob * IN THE CURRENT FOLDER. This implies that it
+searches for all files and folders in the current path that satisfy the *.txt, and it puts them as argument to
+the find command (relative path to them of course). Hence, find will just return those paths, because there's 
+only one corresponding match for them. On the other hand, if we pass '*.txt' to shell, this string is passed to
+the command, and it's expanded in the file, and it implies every file that ends with text. Consider this:
+(Note: It's been said that quotes both single and double supress wildcard. So, there's a slight diff here.)
+
+./
+  f1.txt
+  d1/
+	f2.txt
+
+$ find . -name *.txt | wc -l	# *.txt is expanded by shell to ./f1.txt, and this is passed to find. 1 is
+								# returned.
+$ find . -name '*.txt' | wc -l	# *.txt is passed to the find command. Result would be 2.
+
+$ find . -name "*.txt" | wc -l	# Same as '' example. 
+
+

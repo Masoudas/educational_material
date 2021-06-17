@@ -1,0 +1,13 @@
+find has the following operators listed in order of precedence (highest -> lowest)
+
+	-	()
+	-	!|-not
+	-	-a|-and
+	-	-o|-or
+
+Note that () has higher precedence than !, and not higher than and, and and higher than or. We're allowed to use 
+paranthesis to mess with the precedence of operators:
+
+$ find . \( -name '*.txt' -o -name '*.pdf' \) -print
+$ find . \( -name '*e*' -and -name 's*' \) 
+$ find . ! -name "*.txt" -print		# Not ending in txt"

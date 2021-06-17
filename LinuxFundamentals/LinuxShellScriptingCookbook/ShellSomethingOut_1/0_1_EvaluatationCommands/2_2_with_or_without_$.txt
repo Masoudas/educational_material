@@ -1,0 +1,19 @@
+By now, we know that () means open a new shell and run the command in there. Now, we know that as such, the ONLY return 
+value of that command is passed to current shell.
+
+$ (ls *@) || echo $?	# Prints 2
+
+Now, what's the difference if I put $ here? In that case, the result of the command will be substituted, and by that I
+don't mean the return value of the command. Note that at the same time, the return value is also passed to the 
+current shell For example, but if something else happens along the way, that return value naturally superces it:
+
+$ a=$(ls .) && echo $?  && echo $a	# Prints 0, then prints the content of the current folder.
+$ $(ls . ) || echo $?	#  First the current location is listed. Then, it's substituted in the current shell. Then,
+						# because the command is not found, 127 is set to $? (even though 0 was returned by ls,) then
+						# because of 127, we execute the other part of or.
+
+Now, in the same manner, note that (()) is a mathematical operation. If we don't use the $, only its return value is 
+used, otherwise $(()) means also substitute the result here.
+
+$ (( 2 < 4 )) && echo $?
+$ $(( 2 < 4 )) # 1: no command found!
