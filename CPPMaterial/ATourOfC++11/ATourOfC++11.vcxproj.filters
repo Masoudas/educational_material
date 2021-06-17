@@ -442,6 +442,9 @@
     <Filter Include="Source Files\Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence">
       <UniqueIdentifier>{2e0261ac-05f3-4833-a67f-fbe9c4388c0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TypesAndDeclarations_6\WorkingWithByteStreams">
+      <UniqueIdentifier>{20e2dc94-ef8b-42af-b9d4-b08cdb415a59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -2946,9 +2949,6 @@
     <ClCompile Include="STLAlgorithms_32\2_ModifyingSequenceOps\12_unique.cpp">
       <Filter>Source Files\STLAlgorithms_32\2_ModifyingSequenceOps</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\1_definition_of_expression.cpp">
       <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4</Filter>
     </ClCompile>
@@ -3014,6 +3014,9 @@
     </ClCompile>
     <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence\1_definition.cpp">
       <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\OperatorPrecedence</Filter>
+    </ClCompile>
+    <ClCompile Include="TypesAndDeclarations_6\WorkingWithByteStreams\1_printing_ip_range.cpp">
+      <Filter>Source Files\TypesAndDeclarations_6\WorkingWithByteStreams</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

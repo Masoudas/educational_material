@@ -1,0 +1,7 @@
+Now, consider the three network example of Fig. 3, and assume that 192.168.1.100 wants to send to 172.16.1.100.
+
+So it sees that it's not on it's local network based on ARP table, so it sends to the router. Router sees that it's not on its
+table, so it sends a broadcast message, and router B responds. Router B then forwards it to the MAC address of 172.16.1.100.
+
+Note that routers are usually connected to many networks. Use traceroute to determine which path is taken to send data to a certain
+ip.

@@ -1,0 +1,7 @@
+They are tables that contain ip address together with the network they belong to. They usually contain four columns:
+    -   Destination network: This would be the CIDR of the network, like 192.168.1.1/24
+    -   Next hop: The next router that the data should be sent to, or just the network itself, which we then can use to
+        send data to.
+    -   Total hops: Total hops to get to destination point. This may change over time, because for example routers may go
+        down, traffic, etc. 
+    -   Interface: Which interface it should forward the traffic from to reach the destination.

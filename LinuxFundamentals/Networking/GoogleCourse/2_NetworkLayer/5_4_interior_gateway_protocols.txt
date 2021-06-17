@@ -1,0 +1,9 @@
+Routing tables should be updated all the time. Routing protocls are used to share information among routers all throughout the world.
+
+    -   Interior gateway protocols: Used to share info in a single autonomous system (i.e, a collection of networks that all fall under 
+        the control of a single network operator. Like a company.)
+        -   Link state routing protocols: Info i shared among all routers on the system. Algorithms are used to determine the shortest path 
+            on each router by the router itself.
+        -   Distance-vector protocols: Older standard. Just takes its table, and sends it to every router connected to it. As such, each router 
+            would not know that much about the entire state of the system.
+    -   Exterior gateway protocols: For exchange of info between independent networks
