@@ -1,4 +1,5 @@
-A router is a network device that forwards traffic depending on the destination address of that traffic.
+A router is a network device that forwards traffic depending on the destination address of that traffic. A router has at least to network 
+interfaces, because it has to stand between to networks. (Me: The thing we call the default gateway for example is an example of a router)
 
 Basic routing is simple:
     -   A data packet is received.
@@ -8,12 +9,20 @@ Basic routing is simple:
 
 
 Say two networks A of 192.168.1.0/24 and B of 10.0.0.0/24 are connected to a router. The router on network A has ip of 192.168.1.1 and of 
-10.0.0.254 on network B. Remember that ip addresses belong to networks, not individual nodes on the network.
+10.0.0.254 on network B (This is what we call the router interface). Remember that ip addresses belong to networks, not individual nodes on 
+the network (See Figure 1).
 
-So let's say a computer with address of 192.168.1.100 sends a packet to 10.0.0.10. The computer knows this ip is not on its network, so it
-sends it to the mac address of its gateway (the router.)
+So let's say a computer with address of 192.168.1.100 sends a packet to 10.0.0.10. The computer knows this ip is not on its network (via its
+ARP table), so it sends it to the mac address of its gateway (the router.) (Actually, it sends a broadcast message, and then the router says
+send it to me by giving its MAC address to put in the table. Hence, the ip address 10.0.0.10 now is synonimous with the router for this node.)
 
-See figure 1. So the router takes the ip datagram from the ethernet frame, and sees the destination ip address. Then, it sees the network is
+See figure 2. So the router takes the ip datagram from the ethernet frame, and sees the destination ip address. Then, it sees the network is
 the one right away after it. Even, the router has the MAC address of the node in its ARP table. The router then forms a new data packet, 
 sending all the data to that destination. It decrements the TTL by the way. It also changes the source ip address to itself, rather than the 
 actuall sender. 
+
+Note that from this figure it's clear that an ethernet frame is the larget frame, then inside the network frame, then the transport frame,
+and inside of that the application frame (or payload.) This is to be expected, because the network frame is what's needed to send data over 
+the Internet, and that needs to be modulated with Ethernet, and to connect to a particular port, we need the TCP frame. Whenever a router 
+receives an ethernet frame, naturally it just keeps the network layer data and then modulates it with the protocol it sees fit and resends it
+as well.
