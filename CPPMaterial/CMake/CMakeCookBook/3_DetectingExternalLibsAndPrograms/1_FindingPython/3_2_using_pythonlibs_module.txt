@@ -1,0 +1,40 @@
+In what follows, we shall use the FindPythonLibs to link and include the modules. Note that we could achieve the 
+same task using the FindPython module, but we use this one.
+
+Now, there are a couple of points and challenges:
+	-	The FindPython3 module did not work for me, so I better not use that.
+	-	Note that we need a python interpreter to run the code at run time. Hence, we need to ensure that our 
+		library and our interpreter match at compile time. This is why in this receipe, we first find the python
+		interpreter, and then feed the version of that into our PythonLibs module. Of course, there's always the
+		option to specify the version.
+	-	Note that the problem with specifying the version is that that version is the minimum version, and if
+		that version is not found, possibly a greater version would be chosen. Hence, be cautious if you set
+		the version.
+
+How do we make sure that the Python header and libraries are correctly located even when they are not in a standard 
+installation directory? For the Python interpreter, it is possible to force CMake to look in specific directories 
+by passing the PYTHON_LIBRARY and PYTHON_INCLUDE_DIR options via the -D option to the CLI. These options specify 
+the following:
+	-	PYTHON_LIBRARY, the path to the Python library
+	-	PYTHON_INCLUDE_DIR, the path to where Python.h is located
+
+%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(pythonInterModule LANGUAGES C)
+
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
+find_package(PythonInterp REQUIRED)
+find_package(PythonLibs ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR} EXACT REQUIRED)
+
+# find_package(PythonLibs 3.8.5 REQUIRED)
+
+add_executable(pythonCode main.c)
+
+message(STATUS ${PYTHON_LIBRARY} ${PYTHON_INCLUDE_DIR})
+
+target_include_directories(pythonCode PRIVATE ${PYTHON_INCLUDE_DIR})
+target_link_libraries(pythonCode PRIVATE ${PYTHON_LIBRARY})
+%%%%%%%%%%%%%%%%%%%

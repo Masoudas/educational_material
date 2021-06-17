@@ -1,9 +1,12 @@
 Me: Apparently, python has an include and a dynamic library, which can be used directly inside a C++ code. In the following code for example,
-we include this libray, and then use a couple of functions in a C++ context. 
+we include this libray, and then use a couple of functions in a C (or C++) context. 
 
 This sort of mixed language code is particularly interesting in embedded contexts. It's interesting to note that there's no namespace that's
 associated with python functions (which of course is the case!)
 
+Note: On linux, you might want to install the pythonx.x-dev package for headers and libraries.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #include <Python.h>
 
 int main(int argc, char* argv[]){
@@ -15,6 +18,8 @@ int main(int argc, char* argv[]){
     Py_Finalize();
     return 0;
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Note that it's a fun exercise to this inclusion by hand as well. Otherwise, as we shall show, this is a matter of doing the right inclusion and
-linkeage with a proper module and our usual target_include_directories and target_link_libraries.
+Note that it's a fun exercise to compile this code by hand as well. Otherwise, as we shall show, this is a matter of 
+doing the right inclusion and linkeage with a proper module and our usual target_include_directories and 
+target_link_libraries.
