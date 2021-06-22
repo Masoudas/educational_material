@@ -1,0 +1,23 @@
+In this cheat-sheet file, I shall summarize all linux and C-headers that we encounter:
+
+	-	unistd.h
+Contains standard symbolic constants and types in Linux, such as mod_t (file mode,) _POSIX_VERSION, functions for getting
+uid, pid, etc, setsid, setuid, fchown, etc. Many of the standard tasks of Linux are done using this header file.
+
+	-	sys
+The sys header contains information that can be extracted about the underlying machine, like RAM, n-Cores, etc.  
+man pages are syscalls.
+	--	sys/types.h
+	The types used be the sys functions.
+
+	-	linux
+Contains a series of subheaders related to the current linux system:
+	--	linux/limits.h
+	Limits on many Linux related entities, like PATH_MAX, etc
+
+	-	fcntl.h
+file control options. Functions like 'creat' for making a file, or open for establishing a relationship between a file and
+file descriptor, ...
+
+	-	errno.h
+Contains errno variable and the associated error macros (like EACCESS, etc.) 
