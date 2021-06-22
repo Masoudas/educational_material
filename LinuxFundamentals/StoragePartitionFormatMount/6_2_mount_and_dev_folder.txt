@@ -1,6 +1,6 @@
-As it appears, when we write the mount or mount, we're in fact mounting one of these files. Consider wanting
+As it appears, when we write the mount or umount, we're in fact mounting one of these files. Consider wanting
 to mount something that appears at /dev/sda1 on -df -h. What I write usually is:
 
 $ sudo mount /dev/sda1
 
-What I'm mounting here is this char special file inside the dev folder associated with the disk.
+What I'm mounting here is this special block file inside the dev folder associated with the disk.

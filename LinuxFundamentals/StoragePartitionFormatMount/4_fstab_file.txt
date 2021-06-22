@@ -26,7 +26,7 @@ fstab will still find that partition and mount it correctly, avoiding a failed b
 stuck using) the old method of using device identifiers to select partitions (i.e. /dev/sda1), this advantage 
 disappears because hard drives and partitions are counted by their controllers, and can thus change.
 
-The following the choices for options. Note that options are separated by a comma:
+The following are choices for options. Note that options are separated by a comma:
     -   auto/noauto:  Specify whether the partition should be automatically mounted on boot. You can block 
         specific partitions from mounting at boot-up by using “noauto”.
     -   exec/noexec:  Specifies whether the partition can execute binaries.  If you have a scratch partition 
@@ -37,7 +37,7 @@ The following the choices for options. Note that options are separated by a comm
     -   sync/async:  This one is interesting.  “sync” forces writing to occur immediately on execution of the 
         command, which is ideal for floppies (how much of a geek are you?) and USB drives, but isn’t entirely 
         necessary for internal hard disks.  What “async” does is allow the command to execute over an elapsed 
-        time period, perhaps when user activity dies down and the like.  Ever get a message asking to your 
+        time period, perhaps when user activity dies down and the like.  Ever get a message asking
         “wait while changes are being written to the drive?”  This is usually why.
     -   nouser/user:  This allows the user to have mounting and unmounting privileges.  An important note is 
         that “user” automatically implies “noexec” so if you need to execute binaries and still mount as a 
@@ -54,5 +54,3 @@ like an NTFS-formatted storage drives. The root file system should always be “
 afterward. This works best for journaling file systems like ext3/4 and ReiserFS. Older file systems like 
 FAT16/32 and ext2 can take a while, so it’s better to turn their fscking off and do it periodically yourself.
 
-
-5f3b9afc-01

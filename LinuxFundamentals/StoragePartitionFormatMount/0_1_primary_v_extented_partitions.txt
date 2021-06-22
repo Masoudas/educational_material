@@ -36,7 +36,7 @@ An HDD may contain only one extended partition, but that extended partition can 
 logical partitions. DOS/Windows systems may then assign a unique drive letter to each logical partition. GUID 
 partition table (GPT) only has the primary partition, doesn't have the extended partition and the logical 
 partition. (me: which is why the boot window that appear on for example a multiboot system only shows the possible
-boot partitions, line linux boot or safe boot, EFI Windows boot, and nothing else, like for example my drive C)
+boot partitions, like linux boot or safe boot, EFI Windows boot, and nothing else, like for example my drive C)
 
 Partitioning schemes:
     - Windows

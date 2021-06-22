@@ -22,7 +22,7 @@ essentially doubling the space used.
 
 We tend to place the partitions that are boot related in the beginning, to allow easy access and fast boot.
 
-Formatting disk involves clearing a partition of information. 
+Formatting disk involves clearing a partition of information (by making a new file system "mkfs"). 
 
 In linux word, mounting a file system involves assigning a directory name to a particular partition in the file 
 system, allowing it to be visualized (like say a partition is often assigned to /, and one to root, etc.)

@@ -5,7 +5,7 @@ dev/loopX are virtual devices to mount image files, these are -read only- so do 
 they are when created.
 
 
-    -   ramfs or tmpfs (See the Mater Embedded Linux Program, chapter two as well)
+    -   ramfs or tmpfs (See Master Embedded Linux Program, chapter two as well)
 tmpfs is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to 
 appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. 
 A similar construction is a RAM disk, which appears as a virtual disk drive and hosts a disk file system. 
