@@ -1,0 +1,2 @@
+Recall that as a reminder, in a lexicographical comparison, A compares less than a, because the ASCII value of
+A is less than a. Hence, APPLE < apple because of the first A.

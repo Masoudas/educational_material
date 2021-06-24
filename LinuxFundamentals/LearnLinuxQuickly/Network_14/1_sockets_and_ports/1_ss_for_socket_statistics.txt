@@ -1,0 +1,17 @@
+The old 'netstat -tunlp' is out of date, and as of now, we use the newer ss command.
+
+Essentially, ss works with the same options:
+$ ss -tunlp		# Show tcp, udp, don't resolve service names and show them numerically, show listening devices
+				# (otherwise, they won't be shown), and show processes using the socket.
+				# Without l, only the established processes will be shown.
+
+Netid    State     Recv-Q    Send-Q       Local Address:Port         Peer Address:Port    Process  
+udp UNCONN 0 0 224.0.0.251:5353 0.0.0.0:* users:(("chrome",pid=2913,fd=140))
+
+So now, let's say I don't use the -n option, and drop -p and -l, and instead use -a instead, to show all sockets.
+I get the following:
+$ ss -tua
+tcp LISTEN 0 128 [::]:ssh [::]:*  
+tcp ESTAB  0 0   192.168.43.158:33290 35.174.127.31:https
+
+In particular, what's interesting is the name of the port (22 for example), which is resolved to ssh.

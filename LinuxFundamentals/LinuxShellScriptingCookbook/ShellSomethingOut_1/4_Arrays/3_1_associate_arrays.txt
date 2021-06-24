@@ -6,11 +6,15 @@ To declare associate arrays, whose keys for example could be website names, use 
 
 #!/bin/bash
 
-declare -A ass_array
+declare -A ass_array	# ass stands for associative of course!
 ass_array["ass_key"]="ass_val"
 ass_array["key_ass]="key_ass"
 
 $ echo ${ass_array[key_ass]}    # Don't forget that everything goes inside {}
 
-Alternatively, we can define key value pairs as:
+Note that, alternatively, we can define key value pairs as a chunck when declaring arrays:
+$ declare -A ass_array=([index1]=val1 [index2]=val2)
+
+Or, we can use this notation to add to the array later on:
+$ declare -A ass_array
 $ ass_array=([index1]=val1 [index2]=val2)

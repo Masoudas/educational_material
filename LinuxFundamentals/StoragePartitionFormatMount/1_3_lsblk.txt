@@ -1,0 +1,6 @@
+lsblk trumps the lot actually, in the sense that it shows the disk paritions together with their mount points in a
+very appealing manner.
+
+As the man pages say, "lsblk - list block devices. The lsblk command reads the sysfs filesystem and udev db to gather  
+information."
+

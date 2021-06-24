@@ -11,8 +11,8 @@ $ ls /dev
 sda1    sda2
 ...
 
-In fact, here's how we check whether these devices have been recognized by the machine in this rather crammed
-folder. We get an ls, and store it in a file. Then we get another ls, and then we compare the diff of the two,
+In fact, here's how we check whether these devices have been recognized by the machine in this rather complicated
+way. We get an ls, and store it in a file. Then we get another ls, and then we compare the diff of the two,
 to see if any new files have been added. Note that we use ls -l to have one line per folder, to use diff
 a bit more effectively.
 

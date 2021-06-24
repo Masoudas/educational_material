@@ -1,0 +1,2 @@
+The 'man bash' command contains many of the usuall bash syntax info we use on a daily basis. Use it to get the
+info you seek on many things.

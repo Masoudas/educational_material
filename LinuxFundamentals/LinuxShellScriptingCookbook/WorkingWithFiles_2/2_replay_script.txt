@@ -1,0 +1,20 @@
+This is one of the coolest things I've seen in shell. It allows for replaying the command written on the shell.
+It actually types and executes the commands on the shell.
+
+The script and scriptreplay commands are available in most GNU/Linux distributions. You can create tutorials of 
+command-line hacks and tricks by recording the terminal sessions. You can also share the recorded files for others 
+to playback and see how to perform a particular task with the command line. You can even invoke other interpreters 
+and record the keystrokes sent to that interpreter. You cannot record vi, emacs, or other applications that map 
+characters to particular locations on the screen
+
+$ script -t 2>timing.log -a session.output
+// Now, type in the commands
+$ exit	# To terminate the script.
+
+$ scriptreplay timing.log session.output
+
+The script command accepts a filename as an argument. This file will hold the keystrokes and the command results. 
+When you use the -t option, the script command sends timing data to stdout. The timing data can be redirected to a 
+file (timing.log), which records the timing info for each keystroke and output. The previous example used 2> to 
+redirect stderr to timing.log (Me: the script command sends the keystrokes to second file descriptor, which is
+why we redirect it to the timing file. The commands are directed to stdout however.)

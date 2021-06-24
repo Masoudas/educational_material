@@ -1,0 +1,23 @@
+It's been recommended to use the new FindPython module the purposes discussed. It's shown below. Note that 
+according to the docmunetation, we better try and find the Development and Interpreter components together, so 
+that there's no mismatch between them (see 3_3).
+
+Also optionally, we enforce the c99 standard.
+
+%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(pythonInterModule LANGUAGES C)
+
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
+find_package(Python 3.8.5 REQUIRED COMPONENTS Development Interpreter)
+
+add_executable(pythonCode main.cpp)
+
+message(STATUS ${Python_LIBRARY} ${Python_INCLUDE_DIRS})
+
+target_include_directories(pythonCode PRIVATE ${Python_INCLUDE_DIRS})
+target_link_libraries(pythonCode PRIVATE ${Python_LIBRARY})
+%%%%%%%%%%%%%%%%%%%

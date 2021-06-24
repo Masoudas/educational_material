@@ -25,7 +25,7 @@ tmpfs           1,6G   32K  1,6G   1% /run/user/1000
 We notice above that the root file system (/) has 59G of space, and the name of the corresponding partition is
 /dev/nvme0n1p5. Also notice that the Windows EFI is located at /dev/nvme0n1p1. What's interesting is that the
 partition for the Windows drives are not shown in this list, because the computer I'm working on at this point
-has a dualboot linux and Windows.
+has a dualboot linux and Windows (I think this is because this command only shows mounted partition's free disk.)
 
 Note that we can use df with a particular destination to see the amount of space available for that file system
 as well.

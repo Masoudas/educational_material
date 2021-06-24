@@ -1,6 +1,6 @@
 We saw already how to print the values associated with an array. The question is, how can we get the indexes
 of the same array?
 
-The ${ass_arr[@]} part remains the same of course, we just need to negative this to get the indexes:
+The ${ass_arr[@]} part remains the same of course, we just need to negate this to get the indexes:
 
 $ echo ${!ass_arr[@]}

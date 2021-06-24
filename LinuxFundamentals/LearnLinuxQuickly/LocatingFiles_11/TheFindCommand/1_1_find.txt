@@ -1,21 +1,16 @@
 The find command is useful for performing several operations on files and folders, including search for a particular
 pattern, replace the pattern, etc.
 
-The basic syntax is:
+The find command uses the following strategy:  find descends through a hierarchy of files, matches files that meet 
+the specified criteria, and performs some actions. The default action is to print the names of files and folders, 
+which can be specified with the -print option.
 
-$ find . -name name
+To print all the paths descending from a folder then, use the following, which will print all the paths and 
+folders:
 
-This exprssion looks for the given expression RECUSIVELY from this location to all subfolders, among files and
-folders. Note the recursiveness. Especially if we're thinking about changing file names in the current folder,
-we'd be screwed!
-Also note that we used the -name. To use regular expression, we need to supply -regex.
+$ find path [-print|print0]
 
+Note that -print separates each path with '\n'. To separate with a '\0', we can use the -print0 option:
 
-To set the depth of search, use the -maxdepth option
-
-$ find . -maxdepth 1 -name expression     # Search only in the current folder.
-
-To search for files or folders, use the -type option together with f or d
-$ find . -type f -maxdepth 0 -name expression
-
-
+Note that as such, we can pass the resulting files to the xargs command to perform some action on them:
+$ find path [-print|print0] | xargs ls -l 

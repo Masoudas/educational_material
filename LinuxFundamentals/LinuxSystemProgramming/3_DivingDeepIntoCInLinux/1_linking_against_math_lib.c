@@ -14,8 +14,8 @@
 int main(void)
 {
     int years = 15; /* The number of years you will 
-                     * keep the money in the bank 
-                     * account */
+                     * keep the money in the bank 
+                     * account */
     int savings = 99000; /* The inital amount */
     float interest = 1.5; /* The interest in % */
     printf(

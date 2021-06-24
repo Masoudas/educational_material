@@ -1,0 +1,9 @@
+Paranthesis can also be used like brackets for math operations:
+
+result=$(( no1 + 50 ))
+
+The paranthesis is very interesting, because we can do many operations like bit shift, defining hex or binary
+values, binary ops, etc:
+
+$ and=$((0xFF & (0x01<<1)))	# Don't forget that this is a variable declaration :D
+$ or=$((010 | 07))	# Octal or, result is 15.

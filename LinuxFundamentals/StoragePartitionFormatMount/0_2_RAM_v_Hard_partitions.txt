@@ -1,5 +1,6 @@
-A question that may arise is that are RAMs partitioned like Hard drives, where har drives are partitioned for
-management of data, and ease of access, and nothing further? Also see this article "https://en.wikipedia.org/wiki/Memory_management"
+A question that may arise is that are RAMs partitioned like Hard drives, where hard drives are partitioned for
+management of data, and ease of access, and nothing further? Also see this article 
+"https://en.wikipedia.org/wiki/Memory_management"
 
 Internally, RAM is arranged as a matrix of "memory cells" laid out in rows and columns, like a spreadsheet. Each 
 memory cell is used to store a bit of data, which can be instantaneously retrieved by indicating the row and 
@@ -19,7 +20,7 @@ single drawer. I can put anything there and it will be easy to reach and access.
 
 On a large computer system, such as today's desktop computers, software is a product of work of thousands of 
 programmers working separately. They need to have some way of storing data and that's why we need files and 
-partitions. When we have them, programmer can focus only on data he needs to work with and doesn't need to worry 
+partitions. When we have them, programmers can focus only on data he needs to work with and doesn't need to worry 
 about damaging other data. He can let programmers working on filesystem programming worry about physical storage 
 of data. To continue my drawer example, that's like having a system of warehouses and trying to find one single 
 item if you have hundreds of thousands of items in stock. So while you could just reach into the simple drawer 
@@ -47,7 +48,11 @@ that it doesn't bring entire system into danger. So basically on Windows and man
 systems each program gets its own partition of RAM. It's also interesting to note that on 32bit systems, each 
 program could take only up to 2 GiB of RAM, because that was the upper limit of the "partition"'s size.
 
-I'd like to make a small digression here. There are some programs which are hurt by partitions in RAM. For example, there were programs called trainers which would allow cheating in computer games. They worked by finding memory location where game stores its data on for example number of lives or health and then they would directly access the data and change it. On the other hand we also had viruses which worked by trying to access memory used by important system services and corrupting it to enable them to do their nefarious deeds.
+I'd like to make a small digression here. There are some programs which are hurt by partitions in RAM. For example, 
+there were programs called trainers which would allow cheating in computer games. They worked by finding memory 
+location where game stores its data on for example number of lives or health and then they would directly access the 
+data and change it. On the other hand we also had viruses which worked by trying to access memory used by important 
+system services and corrupting it to enable them to do their nefarious deeds.
 
 Another thing worth brining up is pagefile or swap partition. To a programmer writing an application, it's not 
 important if the program is in pagefile or if it is in RAM, because kernel takes care of that. On my ATmega 162, 

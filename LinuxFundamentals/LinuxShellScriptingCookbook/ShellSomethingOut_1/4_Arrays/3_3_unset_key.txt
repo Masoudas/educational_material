@@ -1,0 +1,5 @@
+How can we remove a key from the associate array? The answer is that we can use the unset method. Notice that 
+there's no ${} surrounding ass_arr when unsetting it:
+
+$ declare -A ass_arr=([key1]=val1 [key2]=val2)
+$ unset ass_arr[key1]
