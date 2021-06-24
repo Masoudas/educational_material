@@ -1,0 +1,22 @@
+The kernel will handle the details, giving us a default configuration. The downside is that the default config is really pretty 
+large (here, we mean with reference to building Linux for an x86-based desktop or server-type system) – a huge number of options are 
+turned on, just in case, which can make the build time very long and kernel image size very large. Of course, you are then expected 
+to manually configure the kernel to the desired settings.
+
+This brings up the question, where is the default kernel config stored? (Me: Because the default parameters need to have been written
+somewhere on the kernel folder to be retrieved.) The kbuild system uses a priority list fallback scheme to retrieve a default 
+configuration. The priority list and its order (first being highest priority) are specified within init/Kconfig:DEFCONFIG_LIST (Me:
+This means the symbols are inside the Kconfig file:)
+
+$ cat init/Kconfig
+config DEFCONFIG_LIST
+    string
+    depends on !UML 
+    option defconfig_list
+    default "/lib/modules/$(shell,uname -r)/.config"
+    default "/etc/kernel-config"
+    default "/boot/config-$(shell,uname -r)"
+    default ARCH_DEFCONFIG
+    default "arch/$(ARCH)/defconfig"
+config CC_IS_GCC
+[...]
