@@ -26,6 +26,7 @@
 void reminder_on_increment_ops() {
 	int x = 10;
 	int &y  = ++x;	// Pre-increment, and return a reference. Both x and y refer to x, and have the same value!
+	int w = ++x;	// Note: A copy takes place here.
 
 	//int& z = x++; Error! Assigning rvalue to lvalue.
 }

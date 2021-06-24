@@ -3018,6 +3018,27 @@
     <ClCompile Include="TypesAndDeclarations_6\WorkingWithByteStreams\1_printing_ip_range.cpp">
       <Filter>Source Files\TypesAndDeclarations_6\WorkingWithByteStreams</Filter>
     </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\4_1_multiplicative_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\4_2_multiplication_involving_inf_and_nan.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\4_3_division_and_nan_and_inf.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\4_3_remainder.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\4_4_summary_example.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\5_bitwise_logic_operators.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\6_1_bitwise_shift.cpp">
+      <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="SelectOperations_11\Operators_1\Modulo.txt">
