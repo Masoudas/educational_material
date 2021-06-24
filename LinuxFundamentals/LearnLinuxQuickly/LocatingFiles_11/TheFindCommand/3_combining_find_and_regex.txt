@@ -1,3 +1,39 @@
-ls -l | find ./ -type f -name "*.txt" -exec grep "program" {} \;
+$ find ./ -type f -name "*.txt" -exec grep "program" {} \;
 
-This command as a pipe finds text files, and then inside each one greps the regular expression "program"
+Notice that semicolon must be escaped, otherwise it's grabbed by current shell as end for this command. The find command
+sort of executes the command by replacing {} with the file name it finds. Notice that as such, where ever we place the
+{}, it will be placed with the file name.
+
+Note the difference between this code line and this code line:
+
+$ find . -name *.txt | grep Linux -
+This one works with what's printed on stdout, which is the name of the files. This is because grep with stdout as entry
+does not consider it like a path, much line typing:
+
+$ echo "Mamma mia" | grep "Ma" -
+
+Now, another way which is quite interesting is the following:
+
+$ find . -name *.txt | xargs grep "Linux" -
+Now, because xargs allows the previous command's output to be printed as well, then we can see the name of the file 
+before the line being grabbed is printed in front of it, which is quite interesting. Contrast this to the first version,
+where the name of the file does not appear before the line.
+
+Here's another example of replacement:
+$ find . -type f -name "*.txt" -exec printf "Text file: %s\n" {} \;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that if we terminate the command with a plus rather than a semicolon, then, instead of executing the command with
+each file once, find gathers all the files, and then executes them once with the command. This is useful when the command
+can be executed with a list of file names of course, such as chown
+
+$ find . -name . -exec chown {} +
+$ find . -type f -name '*.c' -exec cat {} >all_c_files.txt + # Cat all files together and put them in this file.
+$ find . -type f -name '*.c' -exec cat {} > all_c_files.txt \; 
+
+Question: Why don't we need a >> in the second version? Because find writes all execution as a whole to stdout, and not
+execute each cat once, and then give back control to shell. Point is that all results of cat are appended after one another
+even though they're executed one by one! This is the case for the grep command we used above as well.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that we can't execute multiple commands with find. However, we can pass a shell script to it to that end.

@@ -14,6 +14,12 @@ To set the depth of search, use the -maxdepth option, where 1 means only the cur
 
 $ find . -maxdepth 1 -name expression     # Search only in the current folder.
 
+Note: The -maxdepth and -mindepth option should be early in the find command. If they are specified as later arguments, it 
+may affect the efficiency of find as it has to do unnecessary checks. For example, if -maxdepth is specified after a -type 
+argument, the find command will first find the files having the specified -type and then filter out the files that don't 
+match the proper depth. However, if the depth was specified before the -type, find will collect the files having the 
+specified depth and then check for the file type, which is the most efficient way to search.
+
 To search for files or folders, use the -type option together with f or d
 $ find . -type f -maxdepth 1 -name expression
 
