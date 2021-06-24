@@ -1,0 +1,27 @@
+The typical target system for using this approach is a small embedded Linux system. The goal here is to begin with a proven – a 
+known, tested, and working – kernel configuration for our embedded Linux project. How exactly can we achieve this?
+
+The answer is that the kernel provides such cases, which are by themselves tested. We merely have to select the one that matches 
+(or is the nearest match to) our embedded target board. These kernel config files are present within the kernel source tree in 
+the arch folder to that end. Hence, we should look inside the configs folders in the arch folder.
+
+As an example, consider the case of a arm architecture, and in particular a rasberry pie embedded system. Inside the arms folder, 
+we find the following: 
+
+$ arch/arm/configs ls
+bcm2835_defconfig         lpc32xx_defconfig        rpc_defconfig
+cerfcube_defconfig        lpd270_defconfig         s3c2410_defconfig
+clps711x_defconfig        lubbock_defconfig        s3c6400_defconfig
+cm_x300_defconfig         magician_defconfig       s5pv210_defconfig
+cns3420vb_defconfig       mainstone_defconfig      sama5_defconfig
+...
+davinci_all_defconfig     mps2_defconfig           spear13xx_defconfig
+...
+
+We find bcm2835_defconfig to be the perfect choice here. What should we do then? We just have to copy it onto our kernel root folder 
+under the name .config. Therefore, a good default config is ready for us to start (see also 
+https://www.raspberrypi.org/documentation/linux/kernel/building.md.)
+
+Reminder: Note that beside the configuration, we also need a compiler suitable for the target architecture. Hence, we're not done 
+yet!
+

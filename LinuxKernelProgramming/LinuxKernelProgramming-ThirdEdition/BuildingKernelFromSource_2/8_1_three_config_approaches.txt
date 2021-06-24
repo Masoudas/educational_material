@@ -1,0 +1,26 @@
+There are three ways through which we can generate a configuration for our kernel:
+    -   Use the default configuration shipped with the kernel
+    -   Use the configuration of the existing kernel
+    -   Specify a configuration 
+
+Interestingly, the latter makes an interesting exercise, but often when working on a production line, we have a specific need for 
+kernel, hence, it's not often used.
+
+Now, consider the init/Kconfig file we showed in the previous file.
+From the list, you can see that the kbuild system first checks for the presence of a .config file in the "/lib/modules/$(uname -r)" 
+folder. If found, the values there will be used as the defaults. If not found, it next checks for the presence of a 
+/etc/kernel-config file. If found, the values there will be used as defaults, and if not found it moves on to the next option in 
+the preceding priority list, and so on. The last option as is seen is to use the .config file in the current architecture.
+
+Note, though, that the presence of a .config file in the root of the kernel source tree overrides all of this!
+
+Take for instance my current Laptop. Using the hardware listing command and specifying the CPU class:
+$ lshw -C CPU
+I see that I have a Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz, which in Layman's words is a x86_x64 CPU. Therefore, if I look up 
+inside the arch folder, I see a x86 CPU, under which I can find a def_config (default configuration) file. As such, this would be 
+the default config file used if I don't specify a default condif file (or create one.)
+
+Me: The folder /lib/modules/$(uname -r) does exist on my current linux version! But it has no .config file. However, the folder 
+/boot has what we seek, which we discuss later.
+
+Note: Use 'make help' to see a list of all possible approaches to configuration.

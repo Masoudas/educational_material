@@ -1,0 +1,19 @@
+Here, we examine how to create a kernel using the discussed localmodconfig approach.
+
+Reminder: This approach is good for desktop and server, and not embedded systems. 
+Now, something to understand: when we perform the actual 'make [...] localmodconfig' command, it's entirely possible, indeed even 
+probable, that there will be a difference in the configuration options between the kernel you are currently building (version 5.4) 
+and the kernel you are currently actually running the build on ($(uname -r) = 5.0.0-36-generic, here). In these cases, the kbuild 
+system will display every single new config option and the available values you can set it to, on the console (terminal) window. 
+Then, it will prompt the user to select the value of any new config options it encounters in the kernel being built. You will see 
+this as a series of questions and a prompt to answer them on the command line.
+
+First, we shall create our list of modules:
+$ lsmod > /temp/modules.now
+$ make LSMOD=/temp/modules.now localmodconfig
+
+Now, when we press enter, we're asked many questions, and after answer so many question, we finally come to a point where a new 
+.config file is created for us.
+
+Reminder: Always run 'make mrproper' before generating a new configuration to clean any previous files. Read the 'make help' command 
+on the difference between 'make clean' and 'make mrproper'

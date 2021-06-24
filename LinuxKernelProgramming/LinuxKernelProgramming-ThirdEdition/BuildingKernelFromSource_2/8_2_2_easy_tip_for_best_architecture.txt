@@ -1,0 +1,15 @@
+If we run the 'make help' command on the target architecture, we'll find the best matching default configuration. The only issue 
+is that my CPU is x86_x64 (Intel) and this command is meant for foreign CPUs. However, running the commands gives an interesting 
+option:
+
+$ make help
+...
+  i386_defconfig              - Build for i386
+  x86_64_defconfig            - Build for x86_64
+...
+
+Hence, we can use these options to build the kernel for x86_64.
+
+
+
+
