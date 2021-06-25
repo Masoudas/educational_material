@@ -1,0 +1,11 @@
+If we checkout the boot folder of the current running kernel, we find the configuration file of the current kernel. We can copy 
+it just like before. On my current machine:
+
+$ ls /boot
+...
+-rw-r--r-- 1 root root   248245 avril 12 20:47 config-5.8.0-50-generic
+...
+
+Note that we can have the following generic command to directly copy the kernel file:
+
+$ cp /boot/config-$(uname -r) path/to/kernel/root/.config

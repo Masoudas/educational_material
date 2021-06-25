@@ -1,0 +1,27 @@
+The typical target system for using this approach is a desktop or server Linux system. So, this is NOT a suitable approach for an 
+embedded Linux system.
+
+This third approach we consider is a good one to use when the goal is to begin with a kernel config that is based on your existing 
+system and is thus (usually) relatively compact compared to the typical default config on a desktop or server Linux system.
+
+%%%%%%%%%%%%%%%%%%%%%
+Before we begin, we should recall that there's a ls command for everything in Linux. Including now, there's an lsmod command, 
+which lists all the modules currently working on out Linux system:
+
+$ lsmod 
+Module                  Size  Used by
+nls_utf8               16384  1
+isofs                  49152  1
+vboxvideo              36864  0
+snd_intel8x0           45056  4
+...
+%%%%%%%%%%%%%%%%%%%%%
+
+Now, we take a snapshot of the currently running modules:
+
+$ lsmod > /tmp/lsmod.now
+$ make LSMOD=/tmp/lsmod.now localmodconfig
+
+The job of this target is to configure the kernel in a manner as to only include the base functionality plus the functionality  
+provided by these kernel modules and leave out the rest, in effect giving us a reasonable facsimile of the current kernel (or of 
+whichever kernel the lsmod output represents). 

@@ -1,0 +1,41 @@
+Naturally, kbuild stands for Kernel build. The kbuild system ties together the complex kernel configuration and build process via 
+four key components:
+    -   The Config_<X> symbols, where X is a symbol name.
+    -   The menu specification file(s), called Kconfig  (which we do using make menuconfig)
+    -   The Makefile(s)
+    -   The overall kernel config file itself
+
+    - What is a Config_<X> symbol:
+Every kernel configurable X is represented by a CONFIG_X macro. Depending on the user's choice, the macro will resolve to one of y, 
+m, or n:
+    - y=yes: Implying to build the feature into the kernel image itself
+    - m=module: Implying to build it as a separate object, a kernel module
+    - n=no: Implying not to build the feature
+
+Note that CONFIG_X is an alphanumeric string (as we will soon see, you can look up the precise config option name by using the make 
+menuconfig option, navigating to a config option, and selecting the < Help > button).
+
+Me: Note that these are the options we provide in the config menu, precisely as y, m or n. The interesting about m is that it's 
+compiled as a separate module.
+
+    - What is Kconfig
+This is where the CONFIG_FOO symbol is defined. The kbuild syntax specifies its type (Boolean, tristate, [alpha]numeric, and so on) 
+and dependency tree. Furthermore, for the menu-based config UI (invoked via one of make [menu|g|x]config), it specifies the menu 
+entries themselves. The docs can be found at https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt
+
+Me: If we cat the Kconfig on the root menu, we see that it points to various subfolder Kconfig files. Those subfolder files are the 
+ones that determine how the kernel is configured and contain the symbols discussed above. For example, the net or mm folder contain 
+one Kconfig file themselves.
+
+    - What are Make files 
+The kbuild system uses a recursive Makefile approach. The Makefile under the kernel source tree root folder is called the top-level 
+Makefile, with a Makefile within each sub-folder to build the source there. The 5.4 vanilla kernel source has over 2,500 Makefiles 
+in all.
+
+    - What is The .config file
+Ultimately, the essence of it – the actual kernel configuration – is generated and stored within the kernel source tree root folder 
+in an ASCII text file called .config. Keep this file safe, it's a key part of your product.
+
+Note: If we specify a kernel with menuconfig, when saving or exiting, it will ask us to put the configuration in this file. As the 
+book says, the key thing is to get ourselves a working .config file.
+

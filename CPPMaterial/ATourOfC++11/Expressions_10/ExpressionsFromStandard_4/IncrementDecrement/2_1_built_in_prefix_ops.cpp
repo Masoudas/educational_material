@@ -1,6 +1,7 @@
 /**
 * Note: Essentially, don't increment bool. Why would you? Even though promotion to int occurs, but why do it! Also note 
-* that increment ops work on lvalues. Hence, we can't apply them to rvalues.
+* that increment ops work on lvalues. Hence, we can't apply them to rvalues. That is, the return value of a function
+* can't be incremented.
 * 
 * The prefix increment and decrement expressions have the form:
 *	-	++ expr		
