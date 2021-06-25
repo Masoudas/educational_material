@@ -1,4 +1,7 @@
-In this cheat-sheet file, I shall summarize all linux and C-headers that we encounter:
+Where are the headers?
+Some are in /usr/include/x86_64-linux-gnu. Others are in the actual /usr/include. sys headers are in
+/usr/include/sys. They're scattered is what I'm ready to say.
+
 
 	-	unistd.h
 Contains standard symbolic constants and types in Linux, such as mod_t (file mode,) _POSIX_VERSION, functions for getting
@@ -9,6 +12,8 @@ The sys header contains information that can be extracted about the underlying m
 man pages are syscalls.
 	--	sys/types.h
 	The types used be the sys functions.
+	--	sys/stat
+	The stat of a file (except for link info, which is in unistd.)
 
 	-	linux
 Contains a series of subheaders related to the current linux system:
