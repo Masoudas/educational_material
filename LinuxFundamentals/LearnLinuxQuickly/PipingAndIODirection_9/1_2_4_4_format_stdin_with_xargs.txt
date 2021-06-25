@@ -1,0 +1,34 @@
+Say we' have the following shell script:
+
+%%%%%
+#!/bin/bash
+echo $*'#'
+%%%%%
+This script prints all the arguments and a # after them.
+
+Now, say we wanted to use the arguments to format them, to execute a command as follows, once by all args,
+once by only two, and once one by one:
+
+%% one by one
+./script arg1 
+./script arg2 
+./script arg3
+
+%% at most two 
+./script arg1 arg2 
+./script arg3
+
+%% all together
+./script arg1 arg2 arg3
+
+Moreover, suppose that all the arguments are in a file. So how to de we go about supplying them to our
+script as we just said?
+
+The first thing that I always forget is that there's no such thing as fstream in shell, and a cat command
+is enough to read a file and print it ont stdout. As such, we can use xargs to format our text:
+
+$ cat arguments_file | xargs ./script	# Makes all arguments into one line and passes it.
+$ cat arguments_file | xargs -n 2 ./script	# At most two per execution
+$ cat arguments_file | xargs -n 1 ./script
+
+Especially, if we substitute script with the tiny script we showed above, we will see the effect.
