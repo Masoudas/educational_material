@@ -1,13 +1,62 @@
-The translate command is used to change one character form into another. We can for example change all characters
-to lower case or upper case.
+The translate command is used to change one character form into another. The general form of the command
+is as follows, and note that it can't read from argments (we can't pass a file name to it:)
+
+$ tr option set1 set2
+
+We can for example change all characters to lower case or upper case.
 
 $ ls -lha | tr [:lower:] [:upper:]   # Translate lower cases to upper cases of the result of the list command.
+$ ls -lha | tr 'a-z' 'A-Z'
+
+Note that 'ABD-}', 'aA.,', 'a-ce-x', 'a-c0-9', and so on are valid sets. Here's an interesting encryption
+decryption using tr command:
+
+$ tr 12345 | tr '0-9' '9876543210'
+87654 #Encrypted
+
+$ echo 87654 | tr '9876543210' '0-9'
+12345 #Decrypted
+
+The tr command can be used to encrypt text. ROT13 is a well-known encryption algorithm. In the ROT13 scheme, 
+characters are shifted by 13 positions, thus the same function can encrypt and decrypt text:
+
+$ echo "tr came, tr saw, tr conquered." | tr 'a-zA-Z' 'n-za-mN-ZA-M'
 
 We can also use the -d option to remove certain characters, like for example white space:
 
 $ ls -lha | tr -d ' '
+$ ls -lha | tr -d '\t'	# Remove tabs
 
 Note that if we apply such changes to a file, the result is not overriden, or are not in place. Hence, we need
 to stream the content.
 
 $ less file.txt | tr -d ' ' > no_space.txt
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+Complementing and squeezing:
+$ tr -d -c set1
+$ tr -c set1 set2
+The -c option means complement, meaning it will delete anything not in set1. If set2 is present, it will
+replace them with set2.
+
+$ echo hello 1 char 2 next 4 | tr -d -c '0-9 \n' # Prints 124
+$ echo hello 1 char 2 next 4 | tr -c '0-9' ' ' # Prints 1      2     4
+
+Squeezing squeezes repetitive chars into one char. This is particularly useful for example if we have
+multiple empty lines in a file:
+
+$ cat file | tr -s '\n'
+$ echo "GNU is       not     UNIX.  Recursive   right ?" | tr -s ' ' # GNU is not UNIX. Recursive right ?
+
+%%%%%%%%%%%%%%%%
+An ultimate hack:
+
+$ cat sum.txt
+1
+2
+3
+4
+5
+
+$ cat sum.txt | echo $[ $(tr '\n' '+' ) 0 ]
+15
