@@ -22,7 +22,20 @@
        S_IFCHR    0020000   character device
        S_IFIFO    0010000   FIFO
 
+ * Note: The first values of the file_mode are further discussed in "man 7 inode." For example, 100775 means a
+ * folder (10,) with 0755 permission. In fact, here's the table:
+ 
+ 14   socket
+ 12   symbolic link
+ 10   regular file
+ 06   block device
+ 04   directory
+ 02   character device
+ 01   FIFO
+ 
+ * 
  * Below for example, I used the lstat function to make sure that links are not followed (joone ammam!)
+ * 
  */
 
 #include <sys/stat.h>
