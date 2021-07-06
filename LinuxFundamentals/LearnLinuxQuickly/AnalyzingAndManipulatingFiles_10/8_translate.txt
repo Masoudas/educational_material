@@ -1,5 +1,6 @@
 The translate command is used to change one character form into another. The general form of the command
-is as follows, and note that it can't read from argments (we can't pass a file name to it:)
+is as follows, and note that it can't read from arguments (we can't pass a file name to it.) It only reads from
+stdout:
 
 $ tr option set1 set2
 
@@ -11,7 +12,7 @@ $ ls -lha | tr 'a-z' 'A-Z'
 Note that 'ABD-}', 'aA.,', 'a-ce-x', 'a-c0-9', and so on are valid sets. Here's an interesting encryption
 decryption using tr command:
 
-$ tr 12345 | tr '0-9' '9876543210'
+$ echo 12345 | tr '0-9' '9876543210'
 87654 #Encrypted
 
 $ echo 87654 | tr '9876543210' '0-9'
@@ -60,3 +61,16 @@ $ cat sum.txt
 
 $ cat sum.txt | echo $[ $(tr '\n' '+' ) 0 ]
 15
+
+How does it work? Well, we know that the following summation works:
+$ echo $((1+2+3+4+5))
+
+So, the challenge would be to translate the file into a single string, and then pass it ot the command. Note that
+this is simple, that is:
+$ cat sum.txt | tr '\n' '+'
+
+The problem with this particular case is that it would be 1+...5+, with an extra + at the end. Hence, we need to
+add an additional zero. Now, regarding the outside $[], it's apparently the same as $(()). Hence, we're good to
+go. Also, note that the order of how the commands are executed is quite interesting. First, the command before
+the pipe is executed, then, $() is executed and formats the entire stdout into a single string, and replaces it
+for the inner $[] (or $(())) to execute.

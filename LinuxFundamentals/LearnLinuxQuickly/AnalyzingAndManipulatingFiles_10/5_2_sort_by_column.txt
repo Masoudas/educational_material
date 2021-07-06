@@ -1,0 +1,9 @@
+We can use the -k option to sort based on columns, assuming there's a separator (or we can translate a csv like
+file to have space.)
+
+$ sort -k 1 file	# Sort based on column one
+
+Hence, a more complicated version reads:
+$ sort -Ckrn 1 file	# Check whether sorted using first column, reverse, and numeric.
+
+We can specify which character group to use from a column as well.

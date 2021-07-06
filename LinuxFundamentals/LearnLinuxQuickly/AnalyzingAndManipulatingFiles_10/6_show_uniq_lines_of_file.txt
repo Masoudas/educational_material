@@ -2,4 +2,18 @@ To show the unique lines of files, we can use the unique command. Note however t
 lines that are unique. If a file has repeated lines, we have to sort it first, then show the unique lines.
 
 $ unique file
+
+As such, it's common to use sort and uniq together:
 $ sort file | unique
+
+Notice that the -u does not show the duplicated lines at all
+
+$ echo -e "1\n2\n2\n3" | unique -u	 # Shows no 2.
+1 
+3	
+
+The -c option shows how many times a line has appeared:
+$ echo -e "1\n2\n2\n3" | unique -c	 # Shows no 2.
+1 1
+2 2
+1 3

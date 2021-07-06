@@ -1,7 +1,0 @@
-The sort command can be used to sort the content of a file line by line. It does not care about capital or small
-letters by default.
-
-$ sort file
-$ sort -r file  # Sorts in reverse order
-$ sort -n file  # Sort using numerical values rather than literal values.
-
