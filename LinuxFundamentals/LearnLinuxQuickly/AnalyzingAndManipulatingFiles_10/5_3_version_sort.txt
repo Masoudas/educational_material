@@ -1,0 +1,28 @@
+Consider the following table:
+1	abc_1	Linux
+3	abc_10	Mac
+four	cde_11	RTOS
+2	abc_2	Windows
+Five	cde_1	RedHat
+
+So here's some questions:
+How can we sort based on the numeric values, so that abc_10 is below abc_1? Note that a sort with no option puts
+abc_10 before abc_2 and even before abc_1:
+
+$ sort -k 2 table
+3	abc_10	Mac
+1	abc_1	Linux
+2	abc_2	Windows
+four	cde_11	RTOS
+five	cde_1	RedHat
+
+Note that with a numeric sort, this problem disappears, and we get 10 after 2. Also notice that in both cases,
+cde appears after abc.
+$ sort -nk 2 table
+1	abc_1	Linux
+2	abc_2	Windows
+3	abc_10	Mac
+five	cde_1	RedHat
+four	cde_11	RTOS
+
+
