@@ -7,3 +7,8 @@ folder.
     (2): group id
 
 A file has a group id, because it must have been made by a particular user, which has a primary group.
+
+Note: File ownership can only be changed by the super user (or using sudo,) because a user may not be able to
+change the ownership of other files, and also if a user wants to change the ownership of his files to super user
+for example, he won't be able to do that.
+A user however may change the permissions of his files, naturally to grant himself or others access to the file.
