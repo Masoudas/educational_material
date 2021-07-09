@@ -1,0 +1,14 @@
+The location of the kernel modules is in the famous /usr/lib/modules/$(uname -r).
+
+To actually install them in this path, one needs to, well, run the specific install command of make for modules, which in this case 
+is make modules_install.
+
+$ sudo make modules_install
+
+As soon as we do so, we'll see a new folder has been built with our modules inside of it. Incidentally, the 
+/lib/modules/<kernel-ver>/modules.builtin file has the list of all installed kernel modules 
+(under /lib/modules/<kernel-ver>/kernel/).
+
+If we wanted to install modules in another location, we need to pass the INSTALL_MOD_PATH to the make command with the corresponding 
+desired path. Why would we want this? In the case of cross compilation for example, we want to explicitly specify the path:
+$ make INSTALL_MOD_PATH=/ modules_install
