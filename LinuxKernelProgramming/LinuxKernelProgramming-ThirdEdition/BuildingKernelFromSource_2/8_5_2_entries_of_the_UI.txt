@@ -1,0 +1,27 @@
+If we consider the entries of the menuconfig UI, we see the following:
+
+[.]: In-kernel feature, Boolean option (it's either on or off):
+
+    [*]: On, feature compiled and built in (compiled in) to the kernel image (y)
+    [ ]: Off, not built at all (n)
+
+<.>: A feature that could be in one of three states (tristate):
+    <*>: On, feature compiled and built in (compiled in) the kernel image (y)
+    <M>: Module, feature compiled and built as a kernel module (an LKM) (m)
+    < >: Off, not built at all (n)
+
+{.}: A dependency exists for this config option; hence, it's required to be built (compiled) as either a module (m) or built in 
+(compiled in) to the kernel image (y).
+-*-: A dependency requires this item to be compiled in (y).
+(...): Prompt: an alphanumeric input is required (press the [Enter] key while on this option and a prompt appears).
+
+<Menu entry>  --->: A sub-menu follows (press [Enter] on this item to navigate to the sub-menu)
+
+----------------------------
+Notice that once a property is added, then the .config file will have its value set. For example, if we choose the "Local version"
+property in the "General Setup / Local version" menu, and set its value to a value (in this case, we can define a custom string), 
+then the value CONFIG_LOCALVERSION appears in the .config file, which would allow to show the extraversion of the kernel (the last 
+two digits in the kernel version, using $(uname -r)). 
+
+
+

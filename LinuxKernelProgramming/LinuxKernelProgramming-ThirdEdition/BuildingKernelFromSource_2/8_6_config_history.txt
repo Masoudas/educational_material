@@ -1,0 +1,27 @@
+Everytime we make changes to our config file, the previous version is stored in a file on the same path called .config.old. So,
+we can compare the differences using for example the diff tool.
+
+However, diff tool is hard to use generally, and the kernel provides a script in scripts/diffconfig to this end. If we just type 
+it out with help, we get:
+$ ./scripts/diffconfig --help
+...
+Diffconfig is a simple utility for comparing two .config file
+...
+Added and removed items are shown with a leading plus or minus, respectively.
+Changed items show the old and new values on a single line.
+
+If -m is specified, then output will be in "merge" style, which has the
+changed and new values in kernel config option format.
+...
+If no config files are specified, .config and .config.old are used.
+
+Example usage:
+ $ diffconfig .config config-with-some-changes
+-EXT2_FS_XATTR  n
+ CRAMFS  n -> y
+ EXT2_FS  y -> n
+ LOG_BUF_SHIFT  14 -> 16
+ PRINTK_TIME  n -> y
+
+
+

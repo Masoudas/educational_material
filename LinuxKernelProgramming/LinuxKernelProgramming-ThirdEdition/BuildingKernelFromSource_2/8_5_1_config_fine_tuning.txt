@@ -1,0 +1,22 @@
+After acquiring a basic kernel configuration, it's possible to fine tune it, in particular using menuconfig. The target that's 
+created with 'make menuconfig' is in 'scripts/kconfig/mconf'.
+
+Sometimes, weird errors are printed, so that we won't be able to run the menuconfig. For example, consider running menuconfig for 
+the first time:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$ make menuconfig
+UPD     scripts/kconfig/.mconf-cfg
+ HOSTCC  scripts/kconfig/mconf.o
+ YACC    scripts/kconfig/zconf.tab.c
+/bin/sh: 1: bison: not found
+scripts/Makefile.lib:196: recipe for target 'scripts/kconfig/zconf.tab.c' failed
+make[1]: *** [scripts/kconfig/zconf.tab.c] Error 127
+Makefile:539: recipe for target 'menuconfig' failed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We see here for example that the bison package does not exist, and we need to just install it. Then it may ask for 'sudo apt-get 
+install flex', and then 'sudo apt-get install libncurses5-dev' package.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
+Note: It's usually not recommended to directly edit the .config file, as we're not aware of all subdependencies, and just setting
+one property to true might not set the subproperties to true as well.

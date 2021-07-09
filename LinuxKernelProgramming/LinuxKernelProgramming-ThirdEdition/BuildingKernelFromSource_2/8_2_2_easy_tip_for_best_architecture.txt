@@ -10,6 +10,13 @@ $ make help
 
 Hence, we can use these options to build the kernel for x86_64.
 
+Note: Notice the difference between the following two commands:
+$ make --help
+$ make help
+
+The first one is the help of the make command, which is written for Linux. The second one on the other hand is the help target 
+designed for the Kernel. It's the latter that has the information we seek.
+
 
 
 

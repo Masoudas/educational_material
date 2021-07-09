@@ -1,0 +1,22 @@
+As we may have noticed, it's hard to search for items by hand. So instead what we can do is to search for them with forward slash,
+just like in vim.
+
+So, when we search for an item (like procfs,) then the following menu will appear:
+...
+Symbol: SND_VERBOSE_PROCFS [=y]                                         │  
+  │ Type  : bool                                                            │  
+  │ Defined at sound/core/Kconfig:139                                       │  
+  │   Prompt: Verbose procfs contents                                       │  
+  │   Depends on: SOUND [=y] && !UML && SND [=y] && SND_PROC_FS [=y]        │  
+  │   Location:                                                             │
+  │     -> Device Drivers                                                   │  
+  │       -> Sound card support (SOUND [=y])                                │  
+  │         -> Advanced Linux Sound Architecture (SND [=y])                 │  
+  │ (3)       -> Sound Proc FS Support (SND_PROC_FS [=y])  
+...
+
+As we can see, it will first write a symbol that matches what we seek. Then, it will show the type, where in the kernel code base 
+it's defined, and finally the location in the menuconfig. Notice that it also shows the dependencies.
+
+Note: This information is found inside the Kconfig files in the source code, which are actually the files that are used for generating
+the menuconfig itself. Notice that for example in above, it says that the symbol is defined at sound/core/Kconfig

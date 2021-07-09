@@ -1,0 +1,42 @@
+As we already mentioned, the menuconfig is compiled with the help of kconfig files. Hence, it's natural to assume that we can add 
+or remove items to the kernel using this file. And why would we want to do this? Suppose for example we develop some device driver,
+then we can use this feature to add it to menuconfig.
+
+Notice in the following table, the location of the kconfig file for each submenu:
+The main menu, the initial screen                                   Kconfig
+General setup
++ Enable loadable module support                                    init/Kconfig
+
+Processor types and features
++ Bus options 
++ Binary Emulations (arch-specific; above the menu title is for 
+x86; in general, the Kconfig file is here: arch/<arch>/Kconfig)     arch/<arch>/Kconfig
+
+Power management                                                    kernel/power/Kconfig
+
+Firmware drivers                                                    drivers/firmware/Kconfig
+
+Virtualization                                                      arch/<arch>/kvm/Kconfig
+
+General architecture-dependent options                              arch/Kconfig
+
+Enable the block layer
++ IO Schedulers                                                     block/Kconfig
+
+Executable file formats                                             fs/Kconfig.binfmt
+
+Memory Management options                                           mm/Kconfig
+
+Networking support                                                  net/Kconfig, net/*/Kconfig
+
+Device Drivers                                                      drivers/Kconfig, drivers/*/Kconfig
+
+File systems                                                        fs/Kconfig, fs/*/Kconfig
+
+Security options                                                    security/Kconfig, security/*/Kconfig*
+
+Cryptographic API                                                   crypto/Kconfig, crypto/*/Kconfig
+
+Library routines                                                    lib/Kconfig, lib/*/Kconfig
+
+Kernel hacking                                                      lib/Kconfig.debug, lib/Kconfig.*

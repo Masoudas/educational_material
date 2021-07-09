@@ -1,0 +1,15 @@
+As an example, here we add an optional menu in the main menu, using the kconfig file. 
+
+#1: Always get a backup file:
+$ cp init/Kconfig init/Kconfig.old
+$ vi init/Kconfig
+...
+config DEFCONFIG_ASS
+        bool "This is my property"      
+        default n
+        help
+                Thus, Masoud was able to define a property for menuconfig all by
+        himself.
+...
+Note that we've defined a by state property here as such, and that the default is set to n. If we set our option to y, then we'll 
+see it in the .config file under the property DEFCONFIG_ASS.

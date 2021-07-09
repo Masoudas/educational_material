@@ -1,0 +1,36 @@
+When we add a property as such to the menuitem, it has not been added to kernel header files. In fact, we can check that it's 
+NOT been added by the following simple grep:
+
+$ grep "DEFCONFIG_ASS" include/generated/autoconf.h
+
+Note: This header file is generated once we run the kernel configuration:
+$ make -j4
+
+Once we run this command, then we can check this autoconf.h to see that our symbol has been generated:
+#define DEFCONFIG_ASS 1
+
+%%%%%%%%%%%%%%%%%%%%
+# Note: Ok!!! Now we understand the need for these symbols. These are just definitions used to turn some functions inside the 
+autoconf header on/off. Hence, if we want to use our own property, we need to have it defined somewhere inside the header! Then 
+we use this definition to define a function for example or use it:
+
+#ifdef DEFCONFIG_ASS
+my_kernel_function();
+#endif
+
+Note that the Linux community has certain restrictive conditions on how to write code for kernel in the following link:
+https://www.kernel.org/doc/html/latest/process/coding-style.html. For example, the above piece of code should in fact be replaced 
+by the following line:
+
+if (IS_ENABLED(DEFCONFIG_ASS)){
+    my_kernel_function();
+}
+
+%%%%%%%%%%%%%%%%
+
+Now, so far, we've only defined our header. But the actuall object file that contains the code need to be put somewhere. This is 
+where the Makefile comes in. Say our code is in a file defconfig_ass.c, then we add the following like to the Makefile (of any
+folder where the code exists:)
+
+obj-${CONFIG_DEFCONFIG_ASS}  +=  defconfig_ass.o    # Add this object file to linker path. Recall that make finds the file and 
+                                                    # compiles it.
