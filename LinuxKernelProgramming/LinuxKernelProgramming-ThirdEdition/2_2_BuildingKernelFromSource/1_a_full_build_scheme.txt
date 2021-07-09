@@ -1,0 +1,34 @@
+Essentially, we first clean the folder:
+
+$ clean mrproper
+
+Then, we derive a suitable configuration file. which in the case of my already installed kernel was to just copy
+it from the /boot/config-$(uname -r). Copy it as the .config file into the kernel source folder.
+
+Finally, build the kernel using the make command, or make all, which will you give:
+	- The kernel image as a tar file, 
+	- Possibly a device tree,
+	- vmlinux actually matches the name of the uncompressed kernel image. The uncompressed can be very large, 
+	  and it's usually useful for debuggin purposes.
+	- The modules target implies that all kernel config options marked as m (for module) will be built as kernel 
+	  modules (.ko files) within the kernel source tree.
+	 
+
+Now, because the kernel image in a normal fs resides in the boot folder, we expect to find the compiled kernel
+in the same boot folder of the architecture folder, which in the case of my intel processor is arch/x86/boot.
+In the mean time, any corresponding built modules and other things are found in the corresponding folders.
+
+Note on the j parameter of make: We can check the number of cores on our machine using either the nproc or the
+lscpu or lshw -C cpu command.
+
+It would be interesting to time the make command as well:
+$ time make 
+
+A better tool to actually profile the timing is called perf. For example, using the following command:
+$ perf stat make -j4
+
+A final side note, if we want to ensure that the kernel image is for the architecture we seek, we can use the
+famous file command to check the architecture of the kernel:
+$ file vmlinux
+arch/x86/boot/bzImage: Linux kernel x86 boot executable bzImage, version 5.4.0-llkd01 
+...
