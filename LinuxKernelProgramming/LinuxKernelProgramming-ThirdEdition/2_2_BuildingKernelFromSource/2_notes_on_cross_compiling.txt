@@ -1,0 +1,2 @@
+The variables CROSS_COMPILE and ARCH are used for passing a cross compiler and an architecture when building the
+kernel. Make sure to use this for your ends.
