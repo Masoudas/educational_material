@@ -1,0 +1,3 @@
+Note that we can escape some directories using the -prune option:
+
+$ find devel/source_path  -name '.git' -prune -o -type f -print

@@ -1,0 +1,29 @@
+First off, note that a combination of read and stdout possibly with a while loop does the same job as a
+read command:
+
+$ cat file | while read arg; do echo $arg; done	# Prints the file line by line
+
+Now, note that xargs places arguments at the end of ONE command. Hence, we cannot use it to put info at 
+the end of multiple commands. We can use a subshell to execute multiple commands however:
+
+$ cat files.txt  | ( while read arg; do cat $arg; done ) 
+# Equivalent to cat files.txt | xargs -I {} cat {}
+
+The point is that with the help of this simple while loop, we can now use $arg with as many commands as
+we like, making possible what was impossible with xargs. The use of a subshell helps keep the current
+shell clean, if we want to have no side-effect on the current shell instance.
+
+$ cmd0 | ( cmd1;cmd2;cmd3) | cmd4
+
+For example, if cmd is 'cd /', we should note that cmd4 does not see the new path.
+
+As a second method, we can use the 'sh -c' command to have multiple substitutions with the xargs command
+itself! That is, we can pass a string to the sh -c command to be executed. Hence, together with the -I
+option of xargs, we can have many subsitutions! Consider the following example then:
+
+$ find . -name '*.c' | xargs -I ^ sh -c "echo -ne '\n ^: '; grep main ^"
+Here, we substitute ^ twice with the command we pass to sh. Hence, for a file named program.c, it runs
+the following command:
+$ echo -ne '\n ^:; grep main ^
+that is, it first echoes the file name, then searches for the word main inside of it.
+

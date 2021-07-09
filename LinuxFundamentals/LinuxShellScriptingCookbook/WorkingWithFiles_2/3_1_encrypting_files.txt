@@ -1,0 +1,19 @@
+As opposed to calculating the checksum of a file, the idea behind encryption is, well, encryption. A tool that's
+commonly used is gpg. tldr reveals the following versions:
+
+- Encrypt doc.txt with only a passphrase (output to doc.txt.gpg):
+   gpg --symmetric {{doc.txt}}	# Or equivalently, with -c.
+
+- Decrypt doc.txt.gpg (output to stdout):
+   gpg --decrypt {{doc.txt.gpg}}
+
+- Encrypt doc.txt for alice@example.com (output to doc.txt.gpg):
+   gpg --encrypt --recipient {{alice@example.com}} {{doc.txt}}
+
+ 
+Another command used is base64, which is essentially the same as gpg:
+- Encode the contents of a file as base64 and write the result to stdout:
+   base64 {{filename}}
+
+- Encode from stdin:
+   {{somecommand}} | base64

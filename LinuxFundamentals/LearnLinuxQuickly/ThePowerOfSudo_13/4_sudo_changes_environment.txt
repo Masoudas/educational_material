@@ -1,0 +1,38 @@
+How does sudo or switching user affect the current environment?
+
+Well, at least in Ubuntu, switching user implies reloading the .bashrc for that user. Consequently, the definition
+of variables or anything else is lost.
+
+Consider:
+$ var=Val
+$ su another_user
+$ echo $var	# Prints empty string.
+
+Now what about sudo? sudo does not seem to have the same effect of reloading the .bashrc and reloading the env.
+Therefore, the same procedure still keeps the variable:
+
+$ var=Val
+$ sudo echo $var
+Val
+$ sudo -u root echo $var
+Val
+
+Now, here's the interesting part. Define a script, with a single line echoing $var. Now, consider the following:
+$ sudo bash script # Recall that sudo ./script is not defined, because the dot operator must always start the
+				   # command line.
+
+This line prints nothing, unless we pass the variable (even exporting it does not help!)
+$ sudo var=Val bash script
+Val
+
+I specifically ran into this problem when I was using make in a root owned folder and files, and I had to use sudo 
+to execute the make command. There, I saw that the CC compiler that I had defined wasn't passed to the script. Why?
+
+This is because as the man pages say, sudo drops the environment variables:
+-E, --preserve-env
+	Indicates to the security policy that the user wishes to preserve their existing environment variables. The 
+	security policy may return an error if the user does not have permission to preserve the environment.
+
+Hence, the following works perfectly:
+$ sudo -E bash script
+

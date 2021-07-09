@@ -1,0 +1,43 @@
+The xargs command supplies arguments to a target command by reformatting the data received through stdin. 
+By default, xargs will execute the echo command. In many respects, the xargs command is similar to the 
+actions performed by the find command's -exec option. 
+
+By default, we can use it to concatenate multiple lines of stdout into a single line:
+$ cat example.txt # Example file
+1 2 3 4 5 6 
+7 8 9 10 
+11 12
+
+$ cat example.txt | xargs
+1 2 3 4 5 6 7 8 9 10 11 12
+
+The -n argument to xargs limits the number of elements placed on each command line invocation:
+$ cat example.txt | xargs -n 3
+
+We can also define the delimiter (with -d or just -delimiter_char in case of '0' as we discussed)
+$ echo "split1Xsplit2Xsplit3Xsplit4" | xargs -d X
+split1 split2 split3 split4
+
+Finally, using the -I option, we can place stdout anywhere we want and then pass information after stdout
+(so, not just the last argument.) Notice that we need to define what should be replaced, that is, the {}
+here:
+$ echo "-la" | xargs -I {} ls {} /  # equivalent to ls -la /
+$ echo "-la" | xargs -I % ls % /	# So, you see that I can potentially change the interpolation string!
+
+The only difference here is that the command is executed as loop this time around, meaning each line of
+stdout is executed once! This is because by formatting the text, we have actually taken away that property
+of xargs to print everything into one line.
+
+Contradiction: Why is the following then said to be faster? Because afterall, we're passing all arguments
+in one line to xargs?
+$ find . -name '*.txt' -print0 | xargs -0 grep stream
+I think the answer lies in find rather than xargs. That is, if we don't use print0, then every line would
+be printed one time on the command line. Then all of those would be gathered with xargs. So, the issue is
+not xargs but find. And after we use print0, what other choise we have but to use -0 for xargs?
+
+Note: If file names have space in the above format, then we run into a problem!!! Why? because the delimiter
+of xargs by default is space. So say I have a file name file/fil e1.txt. Then, this is passed as two args
+to xargs!!! So, that's another very useful point regarding the use of -0 as delimiter. It tells xargs NOT
+to use space as delimiter, which is good news! In fact, using find with xargs as such could possibly be
+dangerous, and it may delete unexpected files, so be careful!
+

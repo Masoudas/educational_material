@@ -1,0 +1,15 @@
+We can use the -k option to sort based on columns, assuming there's a separator (or we can translate a csv like
+file to have space.)
+
+$ sort -k 1 file	# Sort based on column one
+
+Hence, a more complicated version reads:
+$ sort -Ckrn 1 file	# Check whether sorted using first column, reverse, and numeric.
+
+We can specify which character group to use from a column as well. Say we wanted to sort based on chars 4 to 5
+of column two. We'd go as follows (starting from 0:)
+
+$ sort -k 2.3,2.4 file
+
+To make sort's output xargs compatible, we can use the -z option, which terminates each line with a null char:
+$ sort -z file | xargs -0

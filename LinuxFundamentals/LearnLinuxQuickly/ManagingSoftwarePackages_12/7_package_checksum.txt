@@ -5,3 +5,23 @@ The command we look for is sha256checksum:
 
 $ sha256sum package
 
+There's also similar commands that can be found as well:
+$ sha1sum file1 file2 ...
+$ md5sum file1 file2 ...
+
+The integrity of a file can be verified as follows:
+$ md5sum filename > file_sum.md5	# First calculating the checksum at some point
+$ md5sum -c file_sum.md5	# Now, comparing the result.
+
+We can also use sha1deep and md5deep commands to recursively calculate the sha of an entire directory, though
+these commands have to be installed:
+$ sha1deep -rl directory_path > directory.md5	# -r is for recursive, and l is to set relative path rather than
+												# absolute paths inside the file names.		
+
+Here's something a bit more complicated using find, for calculating sha of all folders:
+$ find directory_path -type f -print0 | xargs -0 md5sum >> directory.md5
+
+Another algorithm which is stronger is openssl hashing together with SALTing, which is a string added to further
+obfuscate the password:
+$ opensslpasswd -1 -salt SALT_STRING PASSWORD
+$1$SALT_STRING$323VkWkSLHuhbt1zkSsUG.

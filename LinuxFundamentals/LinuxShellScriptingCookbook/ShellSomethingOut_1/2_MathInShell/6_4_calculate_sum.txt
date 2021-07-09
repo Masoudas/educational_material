@@ -1,0 +1,30 @@
+Calculate the sum of the sum.txt file, where the content of the file is:
+#####
+1 
+2
+3
+4
+5
+#####
+
+Solution I: We can use the translate command to translate every \n into +, and then because we have 1+...+5+, we
+add an additional zero to the end, and then use $(()) to finish it off.
+
+$ cat sum.txt | echo $(($(tr '\n' '+') 0 ))
+
+Solution II: In this solution, we read the file with cat and then loop over each line. Now, note that with a
+command like $(cat sum.txt), then each '\n' is replaced with a ' ', because string replacement can't have new
+lines (naturally.) Hence, every new line is like a space, and as such, it would essentially be like we have an
+array. Thus, we can iterate over it like an array:
+
+sum=0
+for line in $(cat sum.txt); do
+	let sum=sum+line
+done
+echo sum
+
+#####
+Now, what if we wanted to go over the second column? Possibly, awk is going to be very useful. Now, if we were
+crazy, we could read with $(), then we go over element 2, 4, .... Now, how would we know the total length? Note
+that because as we said, the file is read like an array, then ${#file_var} would indicate the total number of
+columns inside the file.

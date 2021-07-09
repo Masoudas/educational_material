@@ -7,3 +7,5 @@ values, binary ops, etc:
 
 $ and=$((0xFF & (0x01<<1)))	# Don't forget that this is a variable declaration :D
 $ or=$((010 | 07))	# Octal or, result is 15.
+
+Note: $[] is also used for numeric calculations in the shell as well.

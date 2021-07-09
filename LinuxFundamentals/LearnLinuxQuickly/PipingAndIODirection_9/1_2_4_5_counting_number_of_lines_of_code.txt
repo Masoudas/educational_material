@@ -1,0 +1,19 @@
+So, in this very interesting example, we count the number of lines of code in a repository (say all c
+files:)
+
+$ find . -name '*.c' -print0 | xargs -0 wc -l
+
+Again, remember why we use 0. Also, recall that we could have used ls here as well.
+
+Note: This would count the number of white space lines as well. Could we do something about it? Well, one
+solution I find over the Internet was to use sed to replace the lines:
+$ sed -s '%s/^$//g'
+
+Unfortunately, uniq does not work! Aha! tr is the solution here. We can squeeze together multiple \n
+together with -s option:
+$ tr -s '\n' file_name
+
+
+Note:
+If you want more statistics about your source code, a utility called SLOCCount, is very useful.
+

@@ -1,0 +1,18 @@
+The join command is used for joining two files based on a common field (much like an SQL table.)
+
+# Table 1
+1	Iran
+2	Uk
+3	Germany
+
+# Table 2
+1	Tehran
+2	London
+3	Berlin
+
+$ join table1 table2
+1 Iran Tehran
+2 Uk London
+3 Germany Berlin
+
+Of course, there are options and other things on how to join the two, but we shall skip them for now.

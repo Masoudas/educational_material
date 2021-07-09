@@ -1,0 +1,35 @@
+What is numerical sort? I have no idea! In particular, in the following table:
+
+abc10
+cde2
+abc2
+cde1
+cde0
+
+A numerical sort and a sort with no option gives the same result! That is, they're like a normal sort for all
+intents and purposes. That is, either of them sort as follows:
+
+$ sort table # or $ sort -n table
+abc10
+abc2
+cde0
+cde1
+cde2
+
+What's different is sort -V, which actually compares versions as the manpage says. Hence, it will put abc2 
+before. Notice that even version sort keeps the abc cde order. So, we can't purely sort based on numbers.
+abc10, etc:
+$ sort table
+abc2
+abc10
+cde0
+cde1
+cde2
+
+Another interesting option however is -h, which can sort human numeric values (like 1K and 2G.) So, I can sort
+based on the size of files:
+
+$ ls /usr | sort -hk 5 -	# Don't forget that we need to indicate which key (column) need to be sorted.
+
+Finally, don't forget that we can sort based on months as well, using the -M.
+

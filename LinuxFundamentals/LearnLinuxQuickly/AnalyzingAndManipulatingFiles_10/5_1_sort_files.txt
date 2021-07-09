@@ -1,0 +1,48 @@
+The sort command can be used to sort the content of a file line by line. The rules for default is that numbers
+before small letters, and small letters before capital letters (where the latter contradicts ASCII numerics.) 
+Note that a char is given lower order than null char as well. Hence, 10 is in a higher row by default that 1.
+But note that for example B or b appears before C in the following table sort:
+
+$ sort table
+a	a
+B	A
+A	B
+c	c
+C	C
+
+Hence, a sort actually sorts like a human, and not lexicographically like C++ for example. Of course, we can 
+change this by setting the local properly.
+
+***  WARNING  ***  The locale specified by the environment affects sort order. Set LC_ALL=C to get the traditional 
+sort order that uses native byte values.
+
+$ sort file1 file2 ...
+$ sort file1 file2 -o sorted # Equivalently, sort file1 file2 > sorted
+$ sort -r file  # Sorts in reverse order
+$ sort -n file  # Sort using numerical values rather than literal values.
+
+To merge sort two files (like the merge sort algorithm,) use the -m option:
+
+$ sort -m sorted1 sorted2
+
+Question: How do we check whether a file is already sorted? Possibly, we can write a loop to read the file line
+by line. But sort provides a -C option for us to check whether a file is sorted. The result is returned with the
+output variable ($?)
+
+$ sort -C file	# We can supply options as well. To check if reverse sorted, use sort -Cr file
+As such, here's a sample bash script:
+#!/bin/bash 
+#Desc: Sort 
+sort -C filename ; 
+if [ $? -eq 0 ]; then 	# Equivalently 'if sort -C filename
+	echo Sorted; 
+else 
+	echo Unsorted; 
+fi 
+
+%%%%%%%%%%%%%%%%%%%%%
+If lines contain unnecessary punctuation marks etc, use -d option, which sorts a file like a dictionary. Then
+also use -b option to not consider any leading blank chars:
+
+$ sort -bd file
+

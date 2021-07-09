@@ -1,0 +1,9 @@
+By passing the -L option, we force find to follow symbolic links (as well as of course checking the file itself.) If the
+link points to the original path, the command will be stuck.
+
+Consider the proc folder, wherein there are several symbolic links for each process, and consider the following command:
+
+$ find -L /proc -maxdepth 3 -name 'bundlemaker.def' 2>/dev/null
+
+This command finds all files as such, to a depth of tree (the current folder, children, and grandchildren folder.) Notice
+that we send error messages to the null sink hole. Those messages would be about recursive loops.
