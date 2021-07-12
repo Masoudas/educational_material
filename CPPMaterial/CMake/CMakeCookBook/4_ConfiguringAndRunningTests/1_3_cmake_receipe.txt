@@ -1,0 +1,59 @@
+First off, notice that the test target is like a normal executable. Second, notice that the bare-bone command for testing is 
+called add_test, to which we provide a test name and a command to be executed for the test.
+
+For the C++ test, having a run-time assertion inside a function does not yield function specific errors.
+
+Notice that the Python test's failure is reported if an (assertion) error is raised in the code. To execute the python test,
+we could have directly defined the command as "python ${CMAKE_SOURCE_DIR}/test.py --short $<TARGET_FILE:sum_up>". It's however
+safer to find the Python executable first for this end.
+
+The path to a particular target file (executable in this case) is given by the generator expression $<TARGET_FILE:target_name>.
+This is important, because a target is not necessarily in the build folder root itself. Of course, we could have directly used 
+the target name and the add_test command would have understood it, but this method allows the execution of the binary directly.
+
+Finally, notice how we first find the bash executable for the bash test using the find_program function. Once we do so, we then
+run the test using the bash executable. Again, note that this is not necessary as well. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+
+project(simpleTest LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+find_package(PythonInterp REQUIRED)
+#find_program(BASH_EXECUTABLE NAMES bash REQUIRED)  # For finding a program
+
+# example library
+add_library(sum_integers sum_integers.cpp)
+
+# main code
+add_executable(sum_up main.cpp)
+target_link_libraries(sum_up sum_integers)
+
+# testing binary
+add_executable(cpp_test test.cpp)
+target_link_libraries(cpp_test sum_integers)
+
+enable_testing()
+
+#[[add_test(
+  NAME bash_test
+  COMMAND ${BASH_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.sh $<TARGET_FILE:sum_up>
+)]]
+
+add_test(
+        NAME cpp_test
+        COMMAND $<TARGET_FILE:cpp_test> 
+)
+
+add_test(
+        NAME python_short
+        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.py --executable $<TARGET_FILE:sum_up>
+)
+
+add_test(
+        NAME python_long
+        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.py --executable $<TARGET_FILE:sum_up>
+)
