@@ -313,6 +313,8 @@
     <ClCompile Include="DerivedClasses_20\PointerToMembers_4\1_why_pointer_to_members.cpp" />
     <ClCompile Include="DerivedClasses_20\PointerToMembers_4\2_virtual_method_resolution.cpp" />
     <ClCompile Include="DerivedClasses_20\PointerToMembers_4\3_pointer_to_static_members.cpp" />
+    <ClCompile Include="ExceptionHandling_13\StandardAssertions_0\1_static_v_run_time_assertion.cpp" />
+    <ClCompile Include="ExceptionHandling_13\StandardAssertions_0\2_assert_macro.cpp" />
     <ClCompile Include="Expressions_10\1_command_line_arguments.cpp" />
     <ClCompile Include="Expressions_10\DeskCalculator_1\1_1_application_overview.cpp" />
     <ClCompile Include="Expressions_10\DeskCalculator_1\1_2_token_stream_concept.cpp" />

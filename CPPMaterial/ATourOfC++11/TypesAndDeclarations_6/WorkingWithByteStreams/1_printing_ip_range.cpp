@@ -76,10 +76,10 @@ void using_regex(const string& ip_base) {
 
 }
 
-int main() {
+//int main() {
 //	char ip_stem[] = { '1', '2', '8', '.', '1', '0', '.', '1', '0', '.', '0', '/', '2', '3' };
 	// use_strtok(ip_stem);
 
-	string ip_stem = "128.10.10.0/23";
-	using_regex(ip_stem);
-}
+//	string ip_stem = "128.10.10.0/23";
+//	using_regex(ip_stem);
+//}
