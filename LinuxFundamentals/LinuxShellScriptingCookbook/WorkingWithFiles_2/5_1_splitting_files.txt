@@ -1,0 +1,14 @@
+We can use the split command to split a file into smaller chunks for our purposes. The -b option can be used to
+pass byte size in K, M or G bytes, or KiB, MiB and GiB.
+
+$ split -b 10KiB filename
+
+Note the naming of the files as such starts with x and followed by other chars. We can use the -d option to use
+digits to name files. The additional option a determines the length of the suffixes, with default being 2.
+$ split -b 10KiB filename -d -a 4 
+
+We can provide a name pattern as well:
+$ split -b 10KiB filename -d -a 4 name_
+
+We can split based on the number of lines as well:
+$ split -l 10 filename -d -a 4 lines_
