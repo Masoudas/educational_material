@@ -1,0 +1,22 @@
+As such, note that we can extract URLS from a website name, and by this I mean a repetitive application of such
+operations:
+
+URL=www.google.com:
+
+$ echo ${URL%.*} # Remove rightmost .*
+www.google
+
+Or:
+$ domain_and_protocol=${URL%.*}; domain=${domain_and_protocol%.*}
+
+$ echo ${URL%%.*} # Remove right to leftmost  .* (Greedy operator)
+www
+
+$ echo ${URL#*.} # Remove leftmost  part before *.
+google.com
+
+$ echo ${URL##*.} # Remove left to rightmost  part before *.
+(Greedy operator) com
+
+
+

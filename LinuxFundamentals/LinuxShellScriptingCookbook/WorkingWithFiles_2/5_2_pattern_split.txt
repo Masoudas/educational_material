@@ -1,0 +1,38 @@
+The csplit can be used to split a file based on a pattern. Consider for example the log files that have a 
+repetitive pattern: 
+
+SERVER-1 
+[connection] 192.168.0.1 success 
+[connection] 192.168.0.2 failed 
+SERVER-2 
+[connection] 192.168.0.1 failed 
+[connection] 192.168.0.2 failed 
+SERVER-3 
+[connection] 192.168.0.1 pending 
+[connection] 192.168.0.2 pending 
+...
+
+The synopsis of the csplit command is:
+$ csplit [OPTION]... FILE PATTERN...
+
+So let's say we want to split this file in  server1.log, server2.log ... We can either split based on line number
+or based on the SERVER-\d pattern:
+
+	-	Line count break:
+We should be cautious that with this scheme, the line number must be divisible by the given number.
+$ csplit -k {{file}} 3 {*}	# Ignores exact division error. Star means every.
+As a matter of fact, we can see that the above file can't be broken with this scheme, because the lines with the
+word SERVER are not divisible by a common value.
+
+	-	Regext pattern split
+$ csplit {{file}} /{{regex}}/ {*}	# The {*} is very important if pattern is repeated. Otherwise, if no repeat,
+									# then the pattern is not required.
+Note that the line that contains the match is cut and put in the next file. Hence, we can have the following 
+split:
+
+$ csplit {{file}} /SERVER/ -n 2 {*} -f server -b "%02d.log" 
+Note that -n means number of digits in the output file pattern. f specifies the file prefix. The -b specifies the
+post-fix format, %02d is like that of printf. Finally, note that server00.log must be deleted, because our
+pattern starts with the first line, and that line is created into an empty file.
+We can also add the -s to make the command silent.
+
