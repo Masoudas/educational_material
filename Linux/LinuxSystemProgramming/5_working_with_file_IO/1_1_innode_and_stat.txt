@@ -1,0 +1,7 @@
+As we may recall, a file is simply a cover for innode of a particular file, where the innode points to the
+exact location of a file in memory (the inode number). More over several files may point to the same
+Inode (memory location) with hard links. On the other hand, we may have several shortcuts to the same
+file, or soft-links, whose innode would be a copy-paste of the original file (does not add to number of
+links.). Symbolic linkness appears as file name, and type of the file. (Me: although oddly enough,
+I found out that the number of blocks is not the same for a soft link stat compared to the original file.)
+

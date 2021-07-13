@@ -1,0 +1,5 @@
+POSIX is a set of standards specified by IEEE. The purpose of the standard is to have a common programming 
+interface among all POSIX operating systems (most Unix and Unix-like systems). If you only use POSIX functions and 
+POSIX header files in your program, it will be compatible with all other Unix and Unix-like systems out there. The 
+actual implementation can differ from system to system, but the overall functions should be the same.
+

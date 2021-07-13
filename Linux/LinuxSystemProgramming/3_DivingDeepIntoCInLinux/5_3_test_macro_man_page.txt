@@ -1,0 +1,8 @@
+The man page for the test macros is 'man feature_test_macros'. Essentially, we have the following:
+
+	-	man 7 feature_test_macros (Here, you can read all about which feature test macros correspond to which 
+		standard, such as POSIX, Single Unix Specification, XPG (X/Open Portability Guide), and so on.)
+	-	man 7 standards (Even more information about the standards)
+	-	man unistd.h
+	-	man 7 libc
+	-	man 7 posixoptions

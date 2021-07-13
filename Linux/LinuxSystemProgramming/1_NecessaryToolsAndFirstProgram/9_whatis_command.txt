@@ -1,0 +1,3 @@
+Of course, if we just wanted to know what a particular function or command does, we can always use whatis:
+
+$ whatis getopt

@@ -1,0 +1,3 @@
+To get help on make command, we can:
+$ man 1 make
+$ info make
