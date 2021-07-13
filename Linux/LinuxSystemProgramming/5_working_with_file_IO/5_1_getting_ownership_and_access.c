@@ -13,7 +13,8 @@
  *      gid_t    pw_gid    Numerical group ID.           
  *      char    *pw_dir    Initial working directory.           
  *      char    *pw_shell  Program to use as shell. 
- * Consequently, passwd contains user information.
+ * Consequently, passwd contains user information. It's called the password file because it corresponds to the
+ * fields in the /etc/passwd file.
  * 
  * getgrgid: Information regarding group as a group structure. This fields associated (according to the grp
  * header: man grp.h) are:

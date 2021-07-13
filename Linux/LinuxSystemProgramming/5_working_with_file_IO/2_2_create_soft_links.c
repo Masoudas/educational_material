@@ -1,4 +1,3 @@
 /**
- * To create soft links, we use the symlink method. 
- * 
+ * To create soft links, we use the symlink method. Next!
  */
