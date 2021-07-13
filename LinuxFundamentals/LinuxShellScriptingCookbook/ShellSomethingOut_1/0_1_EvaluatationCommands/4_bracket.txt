@@ -1,0 +1,4 @@
+As is suggested by the test command man page, brackets (or []) are in fact are an alias for the test command. Therefore, any 
+option that applies to the test command also applies to this command.
+
+Note that on the other hand $[] is the same as $(()).

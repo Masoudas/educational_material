@@ -445,6 +445,12 @@
     <Filter Include="Source Files\TypesAndDeclarations_6\WorkingWithByteStreams">
       <UniqueIdentifier>{20e2dc94-ef8b-42af-b9d4-b08cdb415a59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ExceptionHandling_13">
+      <UniqueIdentifier>{7d8dfe55-da8f-4ed7-a4ad-dc77abb03a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExceptionHandling_13\StandardAssertions_0">
+      <UniqueIdentifier>{c8fc2893-d7a7-4f6f-873a-3486da1fa503}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="STLStrings_36\CharacterClassification_2.cpp">
@@ -3038,6 +3044,12 @@
     </ClCompile>
     <ClCompile Include="Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators\6_1_bitwise_shift.cpp">
       <Filter>Source Files\Expressions_10\ExpressionsFromStandard_4\ArithmeticOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionHandling_13\StandardAssertions_0\1_static_v_run_time_assertion.cpp">
+      <Filter>Source Files\ExceptionHandling_13\StandardAssertions_0</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionHandling_13\StandardAssertions_0\2_assert_macro.cpp">
+      <Filter>Source Files\ExceptionHandling_13\StandardAssertions_0</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

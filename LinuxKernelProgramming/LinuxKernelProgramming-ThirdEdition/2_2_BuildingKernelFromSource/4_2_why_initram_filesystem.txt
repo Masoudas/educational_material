@@ -1,0 +1,28 @@
+Firstly, using this feature is a choice, and the config directive is called CONFIG_BLK_DEV_INITRD. It's on and hence set to y by 
+default. In brief, for systems that either do not know in advance certain things such as the boot disk host adapter or controller 
+type (SCSI, RAID, and so on), the exact filesystem type that the root filesystem is formatted as (is it ext2, ext3, ext4, btrfs, 
+reiserfs, f2fs, or another?), or for those systems where these functionalities are always built as kernel modules, we require the 
+initramfs capability.
+
+This filesystem type allows us to run applications before the file system is mounted.  The key point is that initramfs allows us to 
+run user mode apps that the kernel cannot normally run during boot time.
+
+Practically speaking, among various uses, this framework allows us to do things including the following:
+    -   Set up a console font.
+    -   Customize keyboard layout settings.
+    -   Print a custom welcome message on the console device.
+    -   Accept a password (for encrypted disks).
+    -   Load up kernel modules as required.
+    -   Spawn a "rescue" shell if something fails.
+    -   And many more!
+
+Why do we need the kernel image to be in this format? Suppose we have a particular filesystem. Then each time the system is booted 
+up, the boot program has to look for the kernel inside a particular folder. For example, if we had a reiserfs, then it would have 
+to look inside the ''/usr/lib/modules/kernel_version/fs/reiserfs/ directory. To avoid this problem, the cpio initramfs was created,
+and the boot program knows exactly where to look for it.
+
+To be more precise, note that if the fs is reiserfs, we need to load this file system module in the RAM to be able to work with the 
+file system of the disk. But this file itself is embedded inside such a reiserfs filesystem. So we have a chicken and egg problem,
+we need to know the file system to load the file system! This is why we've decided on the unified flat RAM file system. In fact,
+what is built is a minimal root filesystem containing the kernel modules as well as supporting infrastructure such as the /etc and 
+/lib folders in a simple cpio file format. (Now: I assume the bootloader knows the address for the boot folder directly.)

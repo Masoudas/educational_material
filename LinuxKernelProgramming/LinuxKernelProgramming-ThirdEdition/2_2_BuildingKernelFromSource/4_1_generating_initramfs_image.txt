@@ -1,0 +1,31 @@
+As we already know, the kernel is always loaded in the RAM for rapid access to it. As such, a general kernel image must be RAM 
+partition compatible. 
+
+How do we make sure this is the case? In an x86_64 system, after we build the kernel, we need not to take any further steps. In fact
+there are scripts that take care of this need for us. As such, once the kernel is build, we can just install it with the following
+command:
+$ sudo make install # Or possibly, "sudo make install INSTALL_PATH"
+
+In fact, it's through the executation of this command that we see the generation of the RAM image, as well as the needed GRUB 
+configuration. In fact, if we check the /boot folder, we don't see the raw image kernel file, but rather one preceded with a 
+initrd (like initrd.img-5.8.0-50-generic in my current kernel)
+
+Question: What does it mean when we say the kernel should be RAM parition compatible? Afterall, when I make a file on my FS, I never
+really care about the partition, or when I create a file directly on RAM on the /temp folder for example! Apparently, this is 
+something we specifically need for the kernel. As we show below, the mkinitramfs in fact only works with a kernel image, and not 
+with any ordinary file.
+
+Note: Apparently on Fedora 30 and above, the RAM image must be generated separately:
+$ sudo mkinitrd /boot/initramfs-KERNEL_VERSION.img KERNEL_VERSION (like for example 
+sudo mkinitrd /boot/initramfs-5.4.0-llkd01.img 5.4.0-llkd01)
+$ sudo make ARCH=x86_64 install
+
+Question: What is the script that's executed to generate the RAM comptable kernel and install it? When we run the install command,
+we can see which script this is:
+$ sudo make install
+sh ./arch/x86/boot/install.sh ... arch/x86/boot/bzImage \
+...
+If we check out this script, we in fact see that it's very easy and involves some checks together with some copying of files. An 
+important task of this script is to call the update-initramfs, which is itself a wrapper for the mkinitramfs. This command can be
+used to generate a ramfs image.
+Finally, another thing that happens as a result is updating the GRUB bootloader, which we discuss later.

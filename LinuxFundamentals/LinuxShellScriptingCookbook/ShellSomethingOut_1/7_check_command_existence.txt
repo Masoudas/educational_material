@@ -1,0 +1,10 @@
+Sometimes, we need to check that a command exists before we use it. The command that we use for this end is actually called 
+"command". The return value of this command would be 0 in case the command exists, otherwise 1.
+
+if command -v ls >/dev/null 2>&1 ; then 
+    echo "There's an ls command"
+else 
+    echo "There's no ls command"
+fi
+
+Note that we did not use the brackets here, because brackets are only a replacement for the test command.

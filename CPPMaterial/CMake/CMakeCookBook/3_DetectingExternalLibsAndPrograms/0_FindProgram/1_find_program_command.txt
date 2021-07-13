@@ -1,0 +1,11 @@
+The find_program command is used to find a program. The short signature is as follows:
+find_program (<VAR> name1 [path1 path2 ...])
+
+where VAR holds the path to the program we seek. A cache entry, or a normal variable if NO_CACHE is specified, named by <VAR> is 
+created to store the result of this command. If the program is found the result is stored in the variable and the search will not 
+be repeated unless the variable is cleared. If nothing is found, the result will be <VAR>-NOTFOUND.
+
+What do we mean by a program? It appears we mostly mean system binaries, such as sh, etc.
+
+Example:
+find_program(BASH_EXECUTABLE NAMES bash REQUIRED)

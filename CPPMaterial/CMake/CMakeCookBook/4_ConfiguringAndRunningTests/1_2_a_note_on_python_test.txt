@@ -1,0 +1,11 @@
+Before moving forward with the cmake receipe, it's actually quite interesting to checkout the python script.
+
+First off, note that we import the subprocess package for executing commands. Second, we import the argparse module, which would
+allow us to parse command line arguments. Now, an instance of the ArgumentParser class, we add two options to the command line,
+one of which has a default false value. The other one would be the path to the executable we want to run in the python project.
+Finally, we parse the command line, and get our variables, which are args.executable and args.short.
+
+Now, to run the executable, we need to pass a string to the check_out function in the subprocess module, which would return the 
+value of the result. Note that because the return value is a string, we convert it to an int using the int() type.
+
+Now, we're almost done, that is, we just pass our entires to the command, and we use an assert to make sure that the test succeeds.
