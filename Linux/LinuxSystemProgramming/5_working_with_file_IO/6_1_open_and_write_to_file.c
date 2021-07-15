@@ -18,12 +18,12 @@
  * 
  * head -n 5 other_file | xargs -0 ./our_program File
  * 
- * Question: Why do we need the -0? Well, the obvious reason based on our code is that so that the arguments 
- * are not passed line by line. AS the documentation says, -0 separates items by null and not white spaces, and 
- * it also disables quotes and backslashes, and logical EOF. So, if I pass the arguments as such, we'd have more
- * than three arguments! I wasn't actually aware of this. So if we don't use '\0', every white space or end of line 
- * would be like passing a new argument! \n is replaced by white space for example, and that would be passed as 
- * a new argument.
+ * Question: Why do we need the -0? Because we want whitespace and newlines to be passed as is to our program.
+ * As such, when our string buffer is formed, it will have our white space and new lines embedded it. So long as
+ * xargs does not reach '\0', it will keep everything. That way, new lines and spaces would be copied into the
+ * file we write to. Otherwise, white spaces and new lines would be like passing new arguments to our_program!
+ * 
+ * Note: Something interesting about passing a literal string is that '\n' is not interpreted as a new line!
  */
 
 #include <sys/stat.h>
@@ -34,11 +34,11 @@
 #include <string.h>
 
 int main(int argc, char* argv[]){
-	/*if (argc = 3)
+	if (argc != 3)
     {
        fprintf(stderr, "Usage: %s [path] [string]\n", argv[0]);
        return 1;
-    }*/
+    }
 
 	int fd = 0;
 	if ((fd = open(argv[1], O_CREAT | O_WRONLY | O_APPEND, 00644)) == -1){
