@@ -27,3 +27,27 @@ This obscure but rather interesting use is also mentioned in tldr:
 Execute the command once for each input line, replacing any occurrences of the placeholder (here marked as _) 
 with the input line:
 {{arguments_source}} | xargs -I _ {{command}} _ {{optional_extra_arguments}}
+
+Note: When using -0, the man pages says:
+    Input items are terminated by a null  character  instead  of by whitespace, and the quotes and backslash 
+    are not special (every character is taken literally).  Disables the end of file string, which is treated like  
+    any other argument. Useful when input items might contain white space, quote  marks,  or  backslashes.
+
+We can interpret -0 option as follows: Don't break the arguments until you haven't reached '\0'. This is the reason
+why this command works just fine with find -0. As such , it keeps the white space, newline, etc. Otherwise, those
+are lost when passing arguments to xargs's command. For example:
+
+$ cat file | xargs ./prog   # Every new line as passed as a new argument.
+$ cat file | xargs -0 ./prog    # Now the entire file is passed as one line, with -0 separating them!
+                                # But if there are null chars inside, they will be separated.
+
+We can simply prove this fact by checking out the result of these two arguments:
+$ echo -t "1\n2\n3" | xargs     # It would be 'echo 1 \ 2 \ 3'. Like putting \ when we continue the command.
+1 2 3
+
+$ echo -t "1\n2\n3" | xargs -0      # New line is not escaped, hence we print a new line every time.
+1
+2
+3
+
+$ echo -t "a\0b\0c" | xargs -0       # Like saying "echo a b c"
