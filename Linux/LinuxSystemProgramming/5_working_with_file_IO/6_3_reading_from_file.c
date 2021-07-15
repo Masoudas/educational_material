@@ -11,6 +11,7 @@
  * 
  * Note: Notice that du command actually does not reflect this, and it shows a range for file size. For example,
  * for a file with only one char, it shows 4! However, ls -l takes it home and shows how many chars there are!
+ * stat is another good command here, because it also shows exactly how many bytes there are in the command.
  */
 
 #include <stdio.h>
