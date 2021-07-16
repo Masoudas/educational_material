@@ -1,0 +1,48 @@
+Here are the steps taken to load the kernel and have it ready for use:
+
+Note: We can see that essentially, we have a three stage boot like an ARM system. Firmware, primary GRUB, then the actual GRUB,
+and finally the kernel is loaded.
+
+1-  Early boot, POST, BIOS initialization – the BIOS (short for Basic Input Output System; essentially, the firmware on the x86) 
+    loads up the first sector of the first bootable disk into RAM and jumps to its entry point. This forms what is often referred 
+    to as the stage one bootloader, whose main job is to load the stage two (larger) bootloader code into memory and jump to it.
+
+2-  Now the stage two bootloader code takes control. Its main job is to load the actual (stage three) GRUB bootloader into memory 
+    and jump to its entry point (GRUB is typically the bootloader employed on x86[-64] systems)
+
+3- The (GRUB) bootloader will be passed both the compressed kernel image file (/boot/vmlinuz-<kernel-ver>) as well as the compressed 
+   initramfs image file (/boot/initrd.img-<kernel-ver>) as parameters. The bootloader will (simplistically) do the following:
+
+    -   Perform low-level hardware initialization.
+    -   Load these images into RAM, uncompressing the kernel image to a certain extent.
+    -   It will jump to the kernel entry point.
+
+4-  The Linux kernel, now having control of the machine, will initialize the hardware and software environment. It makes no 
+    assumptions regarding the earlier work performed by the bootloader.
+
+5-  Upon completing the majority of hardware and software initialization, it notices that the initramfs feature is turned on 
+    (CONFIG_BLK_DEV_INITRD=y). It will thus locate (and if required, uncompress) the initramfs (initrd) image in RAM 
+    
+6-  It will then mount it as a temporary root filesystem in RAM itself, within a RAMdisk.
+
+7-  We now have a base, minimal root filesystem set up in memory. Thus, the initrd startup scripts now run, performing, among other 
+    tasks, the loading of the required kernel modules into RAM (in effect, loading the root filesystem drivers, and other .ko
+    modules).
+
+8-  The kernel then performs a pivot-root, un-mounting the temporary initrd root filesystem, freeing its memory, and mounting the 
+    real root filesystem; it's now possible because the kernel module providing that filesystem support is indeed available.
+
+9-  Once the (actual) root filesystem is successfully mounted, system initialization can proceed. The kernel continues, ultimately 
+    invoking the first user space process, typically /sbin/init PID 1.
+
+10- The SysV init framework now proceeds to initialize the system, bringing up system services as configured.
+
+A couple of things to note:
+    (a) On modern Linux systems, the traditional (read: old) SysV init framework has largely been replaced with a modern optimized 
+        framework called systemd. Thus, on many (if not most) modern Linux systems, including embedded ones, the traditional 
+        /sbin/init has been replaced with systemd (or is a symbolic link to its executable file). 
+
+    (b) FYI, the generation of the root filesystem itself is not covered in this book; as one simple example, I suggest you look at 
+        the code of the SEALS project (at https://github.com/kaiwan/seals) mentioned in Chapter 1; it has script that generates a 
+        very minimal, or "skeleton", root filesystem from scratch.
+

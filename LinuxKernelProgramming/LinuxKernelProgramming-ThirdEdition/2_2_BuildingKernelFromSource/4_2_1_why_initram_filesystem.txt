@@ -4,6 +4,10 @@ type (SCSI, RAID, and so on), the exact filesystem type that the root filesystem
 reiserfs, f2fs, or another?), or for those systems where these functionalities are always built as kernel modules, we require the 
 initramfs capability.
 
+Me: One thing that I forget is that when booting, everything must be reminded to the CPU by the boot program. Meaning, what was the
+size of disk, RAM size, everything, INCLUDING the partition of the disk. The disk partition can only be loaded from the kernel,
+and not for example from a device tree, which is the main source of the problem.
+
 This filesystem type allows us to run applications before the file system is mounted.  The key point is that initramfs allows us to 
 run user mode apps that the kernel cannot normally run during boot time.
 

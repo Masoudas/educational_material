@@ -1,0 +1,39 @@
+Another place where the initramfs framework helps is in bringing up computers whose disks are encrypted. Quite early in the boot 
+process, the kernel will have to query the user for the password, and if correct, proceed with mounting the disks, and so on. But,
+think about this: how can we run a C program executable that is, say, requesting a password without having a C runtime environment 
+in place – a root filesystem containing libraries, the loader program, required kernel modules (for the crypto support perhaps), and 
+so on?
+
+Remember, the kernel itself hasn't yet completed initialization; how can user space apps run? Again, the initramfs framework solves 
+this issue by indeed setting up a temporary user space runtime environment complete with the required root filesystem containing 
+libraries, the loader, kernel modules, and so on, in memory.
+
+Can we verify this? Yes we can! Let's take a peek into the initramfs image file. The lsinitramfs(8) script on Ubuntu serves exactly 
+this purpose (on Fedora the equivalent is called lsinitrd instead):
+
+$ lsinitramfs /boot/initrd.img-5.4.0-llkd01 | wc -l
+334
+
+$ lsinitramfs /boot/initrd.img-5.4.0-llkd01
+.
+kernel
+kernel/x86
+[...]
+lib
+lib/systemd
+lib/systemd/network
+lib/systemd/network/99-default.link
+lib/systemd/systemd-udevd
+.
+
+Note: Peek into these scripts to reveal their inner workings (on Ubuntu): /usr/sbin/update-initramfs, a wrapper script over the 
+/usr/sbin/mkinitramfs shell script. Do see the Further reading section for more.
+
+As a final note, the same way we make a raminitfs from a kernel image, we can unmake it as follows:
+$ TMPDIR=$(mktemp -d)   # A path in RAM.
+$ unmkinitramfs /boot/initrd.img-5.4.0-llkd01 ${TMPDIR}
+$ tree ${TMPDIR} | less
+
+Tweaking initramfs is a useful skill. As an example, with security being a key factor on modern systems, being able to encrypt a 
+disk at the block level is a powerful security feature; doing this very much involves tweaking the initramfs image. See 
+https://github.com/PacktPublishing/Linux-Kernel-Programming/blob/master/Further_Reading.md. for further reading sources
