@@ -1,0 +1,12 @@
+As we may recall, the apropos command searches inside the man pages for the keyword we have provided. If we
+wanted to confine the search to a particular section of the man pages, we can pass the "-s" option:
+
+$ apropos -s 3 getopt
+
+To search for two keywords, use the and option:
+
+$ apropos -a directory remove
+
+An of course, we can combine the options:
+
+$ apropos -s 3 -a directory remove

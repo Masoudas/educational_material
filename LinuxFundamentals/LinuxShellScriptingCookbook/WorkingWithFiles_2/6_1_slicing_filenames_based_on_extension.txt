@@ -1,0 +1,34 @@
+Note: Read the below, but always use ## and %% to make it like C++!
+
+Many shell scripts perform actions that involve modifying filenames. They may need to rename the files and 
+preserve the extension, or convert files from one format to another and change the extension, while preserving 
+the name, extracting a portion of the filename, and so on.
+
+Example: Say we wanted to keep part of the name of the file:
+$ name="sample.jpeg"; base=${name:0:6}; echo $base;
+
+We can directly extract the basename, using the % operator with the same scheme:
+$ file_jpg="sample.jpg"; base=${file_jpg%.*}; echo File name is: $base; 
+The pattern .* delete everything after. Now, when we use the % and then .*, we mean delete anything AFTER the 
+file name which includes the dot.
+
+On the other hand, the operator '#' extracts the extension, in the following bizzare manner:
+$ extension=${file_jpg#*.}; echo File extension is: $extension 
+As opposed to the above case, here we say *., which means delete everything before. Therefore, #*. altogether
+means delete everything before the extension.
+
+Note that % is a non-greedy operation, and it stops at a minimal match. On the other hand, the %% is a greedy
+operator, and finds the last dot (Me: This would then be the reverse of what you think :D, meaning that the 
+DELETION stops at a minimum or maximum number of dots. Hence, %.* starts deleting from the last dot, but %%.* 
+starts deleting from the first dot). For example:
+$ VAR=hack.fun.book.txt
+$ echo ${VAR%.*} # Prints hack
+$ echo ${VAR%%.*} % Prints hack.fun.book
+
+Equivalently, ## is the greedy version of #.
+$ VAR=hack.fun.book.txt
+$ echo ${VAR#*.} # Prints fun.book.txt
+$ echo ${VAR##*.} % Prints txt
+
+
+

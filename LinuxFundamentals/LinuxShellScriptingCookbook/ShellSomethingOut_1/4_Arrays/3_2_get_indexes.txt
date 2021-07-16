@@ -4,3 +4,24 @@ of the same array?
 The ${ass_arr[@]} part remains the same of course, we just need to negate this to get the indexes:
 
 $ echo ${!ass_arr[@]}
+
+Consider the following example:
+arr=([key1]="Val1" [key2]="Val2")
+
+# Looping over the array
+for pair in ${arr[@]};
+do
+	echo $pair	# Prints the key value pair as [key]:pair
+done
+
+# Printing the key and value separately:
+for key in "${!arr[@]}"	# The use of quotes is necessary!
+do
+	echo "Key is $key and value is ${arr[key]}"
+done
+
+Note: In case you're interested, the glob WORKS as part of the for loop, like for example:
+for file in /*;
+do 
+	echo Name is ${file%.*} and extension is ${file#*.}
+done

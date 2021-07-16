@@ -1,0 +1,11 @@
+Note that when compiling with gcc, a simple
+
+$ gcc file.c
+
+Generates the assembly output named a.out. Because this is the assembly output, we can just execute it then.
+On the other hand:
+
+$ gcc -c file.c
+
+ME: Compiles this file, but does not link it. Note that even without any explicit includes, the simplest 
+program requires linkeage to system libs for exit and what not, so we have to always pass it through linker.

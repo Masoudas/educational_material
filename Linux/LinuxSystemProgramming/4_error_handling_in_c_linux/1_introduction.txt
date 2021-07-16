@@ -1,0 +1,2 @@
+There's a system variable called errno, which is in the errno header. We can use this variable to determine the last error
+that has occured on the system, and print messages, etc. We shall explore this variable in action next.

@@ -1,0 +1,26 @@
+As we already know, the best place for temporary files is in the /tmp folder, as it's cleaned up after reboot.
+Now, aside from being able to create a file there using the touch command, we can use the mktemp command to
+create such a file. Note that maketemp chooses the file name for us, and we can use shell interpolation ops to
+just get the file name back as follows:
+
+$ filename=`mktemp`
+$ echo $filename
+
+And to make a temporary folder, use the -d option:
+
+$ dirname=`mktemp -d`
+$ echo $dirname
+
+We can just generate a file name with this command as well:
+
+$ name=`mktemp -u`
+$ echo $name
+
+Finally, we can supply a pattern name, so that name is done according to the pattern. However, with patterns,
+files are created in place, and not in temp:
+$ filename=`mktemp test.XXX'
+test.cUM
+test.IMR
+
+AS we can see, which ever file that's created has XXX as part of its name, and then XXX is replaced by something 
+random.
