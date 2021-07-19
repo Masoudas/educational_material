@@ -1,0 +1,10 @@
+Using the scripts provided by the kernel source files, we can check the kernel properties and parameters we setup from a built 
+kernel. The script is tree_source/scripts/extract-ikconfig:
+
+$ tree_source/scripts/extract-ikconfig /boot/vmlinuz-$(uname -r)
+
+Alternatively, if we set the CONFIG_IKCONFIG_PROC option (that is, see the configuration via the /proc/config.gz), we could have 
+achieved the same verification by looking up the kernel config via the (compressed) proc filesystem entry, /proc/config.gz, like 
+this:
+
+$ gunzip -c /proc/config.gz

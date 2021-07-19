@@ -13,3 +13,6 @@ As soon as we do so, we'll see a new folder has been built with our modules insi
 If we wanted to install modules in another location, we need to pass the INSTALL_MOD_PATH to the make command with the corresponding 
 desired path. Why would we want this? In the case of cross compilation for example, we want to explicitly specify the path:
 $ make INSTALL_MOD_PATH="OUR_CUSTOM_PATH" modules_install
+
+Note: Once a kernel is setup, ideally we can remove all the kernel image of the previous version and other map file from the boot 
+folder. However, we should be cautious and delete it after we're certain of the boot, to have a fallback point.
