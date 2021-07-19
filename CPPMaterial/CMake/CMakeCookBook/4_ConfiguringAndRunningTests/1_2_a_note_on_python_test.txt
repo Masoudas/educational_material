@@ -9,3 +9,6 @@ Now, to run the executable, we need to pass a string to the check_out function i
 value of the result. Note that because the return value is a string, we convert it to an int using the int() type.
 
 Now, we're almost done, that is, we just pass our entires to the command, and we use an assert to make sure that the test succeeds.
+
+Another thing to notice is that the python check_out routine actually reads stdout, and that's why we need to convert the result 
+to int from string. Notice that what's passed is NOT the library function, but rather an executable.

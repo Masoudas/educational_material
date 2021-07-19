@@ -1,0 +1,39 @@
+Note that using generator expressions is very useful in this receipe, because otherwise we'd have to hardwire the path to the 
+executable, plus the extension type (.exe in Windows) etc. However, using the simple generator expression 
+$<TARGET_FILE:target_name> does the placement at generation time.
+
+Another point is that the tests here are run sequentially one after another. It's possible to run tests in parallel, which we shall
+discuss late on.
+
+Notice that the only thing CTests care about are the return values of the test functions (like main in our C++ test, etc.) As always,
+a zero return value means success, and a non-zero one means failure.
+
+%%%%%%%%%%%%%%%%
+In case of failure, if we wish to learn more, we can inspect the file Testing/Temporary/LastTestsFailed.log. This file contains the 
+full output of the test commands, and is the first place to look during a postmortem analysis. It is possible to obtain more verbose 
+test output from CTest by using the following CLI switches
+
+    - V: verbose results
+    - VV: Even more verbose results
+    - --output-on-failure: Will print to the screen anything that the test program produces, in case the test fails.
+
+Moreover, the rerun-failed option only runs the tests that have failed.
+%%%%%%%%%%%%%%%%%
+
+We should also mention that the name of tests can contain a forward slash, which is good for grouping a couple of tests together:
+add_test(
+    NAME python/long    ## Notice the naming here
+    COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.py --executable $<TARGET_FILE:sum_up> 
+)
+
+%%%%%%%%%%%%%%%%%
+By defining the working directory of the tests, we can use the resources that are inside a particular directory for the tests. For
+example, in the above we used ${CMAKE_CURRENT_SOURCE_DIR} to indicate the location of the test file. However, we could instead 
+write:
+
+add_test(
+    NAME python/long 
+    COMMAND ${PYTHON_EXECUTABLE} test.py --executable $<TARGET_FILE:sum_up>
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
