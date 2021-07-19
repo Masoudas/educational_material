@@ -18,5 +18,10 @@ google.com
 $ echo ${URL##*.} # Remove left to rightmost  part before *.
 (Greedy operator) com
 
+Question: How would you determine the domain name if you were given the following address?
+URL=www.google.com/index/page.php
 
+Well, we can use grep to just get the part before slash:
+$ echo $URL | grep "^[a-zA-Z0-9.]+"		# The dot is actually important, and is a literal dot
+www.google.com
 

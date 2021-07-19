@@ -1,0 +1,19 @@
+Recall that *, ? and other versions of globe can be used to expand and then use for move, cp or etc.
+
+$ rename *.JPG *.jpg	# Should we pass this with quotation not to be expanded? Well, if we did it, *.JPG would 
+						# be a literal string, like saying change the fine *.JPG, whose name is *.
+
+Notice that this does not work with mv:
+$ mv *.JPG *.jpg
+mv: target '*.jpg' is not a directory.
+
+Say we wanted to replace any space in file names with _. We can do as follows with the rename command:
+$ rename 's/ /_/g' *
+
+We can convert cases with the rename command in either of the following fashions:
+$ rename 'y/A-Z/a-z/' *	# Captial to small
+$ rename 'y/a-z/A-Z/' * # Small to capital
+
+Here's an example of moving all mp3 files inside recursive folders into another folder:
+$ find path -type f -name "*.mp3" -exec mv {} target_dir \;
+

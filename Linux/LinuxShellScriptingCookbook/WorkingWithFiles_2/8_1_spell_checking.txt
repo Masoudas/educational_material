@@ -1,0 +1,23 @@
+If we checkout inside the /usr/share/dict, we find that there are a number of dictionaries in there:
+
+$ ls /usr/share/dict
+american-english	british-english	cracklib-small	README.select-wordlist	words	words.pre-dictionaries-common
+
+We can use these to check for the spell of any word. Consider this script:
+
+#!/bin/bash 
+#Filename: checkword.sh 
+word=$1 
+grep "^$1$" /usr/share/dict/british-english -q  
+if [ $? -eq 0 ]; then 
+  echo $word is a dictionary word; 
+else 
+  echo $word is not a dictionary word; 
+fi 
+
+Then, we can see that:
+$ ./checkword.sh ful 
+ful is not a dictionary word 
+
+$ ./checkword.sh fool 
+fool is a dictionary word

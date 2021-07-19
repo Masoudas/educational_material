@@ -1,0 +1,21 @@
+Frequently, we need to work with a mass of files. We can use as an example a combination of a for loop and find
+
+In the following example, we find every jpg or png file and then name them from 1 as "image-1.jpg" or 
+"image-1.png"
+
+%%%%%%%%%%%%%
+#!/bin/bash 
+#Filename: rename.sh 
+#Desc: Rename jpg and png files 
+
+count=1; 
+for img in `find . -maxdepth 1 -iname '*.png' -o -iname '*.jpg' -type f ` 	# The use of iname is unnecessary!
+do 
+  new="image-$count.${img##*.}" 	# Forming an string for the filename
+
+  echo "Renaming $img to $new" 
+  mv "$img" "$new" 
+  let count++ 
+
+done  
+%%%%%%%%%%%%%
