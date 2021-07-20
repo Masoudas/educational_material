@@ -1,0 +1,1 @@
+Checkout https://www.gnu.org/software/libc/manual/ for the official documentation of libc files.
