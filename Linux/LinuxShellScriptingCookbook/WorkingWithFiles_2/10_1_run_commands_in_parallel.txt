@@ -1,0 +1,36 @@
+As we may recall, we can send a process to the background to be performed using the & at the end of the command.
+Note that it creates a new process, and then returns the result to the current shell. Hence, we can parallelize
+using & (Me: Note that we can't do this with (), because with this one we have to wait for the subshell to finish
+its work)
+
+Now, if we use the ampersand without waiting for the subprocesses to finish, then the current script finishes while
+processes are still running. This is why there's a wait command which accepts the process id and waits for it to
+finish.
+
+Now, note that we can get the id of the last process sent to background using the $! syntax. 
+
+Another point is that if we're creating several processes and threads, we want to wait on all of them. Hence, we 
+need to create an array of all process ids. A simple way is to use the famous 'arr=(), arr+=()' syntax we discussed
+in chapter 1.
+
+Finally, note that this is not the best approach possibly to create threads, because making more threads than there
+are CPUs may actually slow down our work. Specially because some processes may use swap for memory, which is not
+nice.
+
+%%%%% Not using parallel:
+for file in `find . "*" -type f -print`
+do
+	md5sum $file 	# Process finishes, we go to the next one.
+done
+
+%%%%% Using parallelization
+PIDARR=()	# Create an array of process ids.
+for file in `find . "*" -type f -print`
+do 
+	md5sum $file &	# Notice '&', which sends the process to the background
+	PIDARR+=("$!")	# Keep process id
+done
+
+wait ${PIDARR[@]} # Wait on all of the processes
+
+Now, we can use the time command to compare the two scripts.

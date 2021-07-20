@@ -41,6 +41,18 @@ Example 2:
 echo "This one\t does not escape"
 echo -e "This one\t does \nescape"
 
+Note that even hex or octal digits can be supplied as such to echo. But importantly, note that they're interpreted
+as their corresponding values in the ASCII table (same way \n would be interpreted for example:)
+$ echo -e "\x55"
+U
+
+When is this useful? When we want to pass some weird char to a program, like for example a square, for which there's 
+no corresponding key on the keyboard, but we can say:
+$ echo -e "\xFE"
+
+Of course, if we wanted to pass an actual hex string, we'd use the normal hex typing:
+$ echo "xa1214fe"
+
 -   Printing a colored output
 A script can use escape sequences to produce colored text on the terminal.
 Colors for text are represented by color codes, including, reset = 0, black = 30, red = 31, green = 32, 

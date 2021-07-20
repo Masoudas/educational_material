@@ -26,3 +26,11 @@ val1 val2 val3
 We can also print the number of elements, using a combination of # and @:
 $ echo ${#arr[@]}
 
+Also, note that ${#arr} gives the total length of array in chars. Hence, an array like "a b" has in fact three chars.
+
+%%%%%%%%%%%%%%%%
+The second approach to filling an array is by using the += operand together with the initialization (), like so:
+$ arr=(); arr+=(v1); arr+=("v2" "v3")
+
+The good thing about this method is that we don't have to index the elements with [], and the array is filled 
+naturally.

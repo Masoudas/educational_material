@@ -1,14 +1,4 @@
-declare -A arr
-arr["a"]="abadsa"
-arr["Aa"]="cd"
-
-for key in "${!arr[@]}"	# The use of quotes is necessary!
+for file in `find . "*" -type f -print`
 do
-	echo  Key is $key and value is ${arr[$key]}
+	md5sum $file # Notice the use of $ to send the new process to background
 done
-
-for pair in ${arr[@]};
-do
-	echo $pair	# Prints the key value pair as [key]:pair
-done
-

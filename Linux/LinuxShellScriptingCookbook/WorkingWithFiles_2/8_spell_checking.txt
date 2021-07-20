@@ -8,7 +8,7 @@ We can use these to check for the spell of any word. Consider this script:
 #!/bin/bash 
 #Filename: checkword.sh 
 word=$1 
-grep "^$1$" /usr/share/dict/british-english -q  
+grep "^$1$" /usr/share/dict/british-english -q    # q for being quiet.
 if [ $? -eq 0 ]; then 
   echo $word is a dictionary word; 
 else 

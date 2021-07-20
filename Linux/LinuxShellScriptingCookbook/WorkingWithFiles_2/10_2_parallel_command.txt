@@ -1,0 +1,13 @@
+The parallel command is a tool that usually does not come as a package and needs to be installed, but is good for
+making enough processes parallel.
+
+Note: Apparently, parallel only works with file names, but I think it works with stdout rather!
+
+The syntax of this command is pretty much like exec of find, which means we have a replacement {} for the result
+of the previous command. Consider for example:
+
+ls *.txt | parallel grep "pattern" {}
+
+Here's another example of using this command. Notice that {.} means file name without the extension. Also note that
+convert is a command from ImageMagic's suite.
+ls *jpg | parallel convert {} -geometry 50x50 {.}Small.jpg
