@@ -1,0 +1,43 @@
+When we create the test files, we first need a definition telling the compiler to create a main function, which should be configured
+in one file only. Then, we write a test case (essentially like a test class for a function.) using the keyword TEST_CASE. Notice 
+that we can add documentation to the test in front of this definition, which is in fact quite good, together with a name for the
+tests (I guess) as a second parameter. The check happens with the keyword REQUIRE, wherein we type our test criteria. Note also 
+that inside the body of a test, we essentially have a function like entity, where we can define variables, classes, etc.
+
+Imagine for example we want to test the following simple sum function:
+
+## sum_integers.cpp
+# include "sum_integers.hpp"
+
+int sum_integers(const std::vector<int> v){
+    auto sum = 0;
+    for (auto val : v){
+        sum += val;
+    }
+    return sum;
+}
+
+Now, we can define our test code as follows:
+%%%%%%%%%%%%%%%%%%%%
+#include "catch.hpp"
+#include "sum_integers.hpp"
+
+// this tells catch to provide a main(). only do this in one cpp file
+#define CATCH_CONFIG_MAIN
+
+#include <vector>
+
+TEST_CASE("Sum of integers for a short vector", "[short]"){
+    // Body of the test just like a normal test function (like junit)
+    auto integers = {1, 2, 3, 4, 5};
+    REQUIRE(sum_integers(integers) == 15);      // Exactly like an assertion expression.
+}
+
+TEST_CASE("Sum of integers for a longer vector", "[long]") {
+    std::vector<int> integers;
+    for (int i = 1; i < 1001; ++i) {
+    integers.push_back(i);
+    }
+    
+    REQUIRE(sum_integers(integers) == 500500);
+}

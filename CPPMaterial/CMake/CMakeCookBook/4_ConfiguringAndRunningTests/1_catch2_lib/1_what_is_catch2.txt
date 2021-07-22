@@ -1,0 +1,10 @@
+Typically, we want more sophisticated tests where we can see the failure of a particular test, comparison with numerical tolerances,
+etc. For this end, we can use the catch2 library (See https://github.com/catchorg/Catch2).
+
+As the tutorials say, there are essentially two ways to integrate this library in our project:
+    -   Download the header and source file, and use them in our project.
+    -   Incorporate the project as a CMake module (using find_package)
+
+In the following example set, we use the first method. But keep in mind that this method is slower because the catch library has 
+to be compiled. Hence, the CMake version is better.
+
