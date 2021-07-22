@@ -1,0 +1,3 @@
+Passing the branch option to clone implies only cloning a particular branch of the code:
+
+$ git clone --branch Branch_Name git_source
