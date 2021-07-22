@@ -1,0 +1,13 @@
+As always of course, we need a proper compiler which would allow us to compile the kernel for an ARM architecture. We can build 
+a compiler using the famous xtools toolkit for the particular processor of raspberrypi. However, an easier option would be to 
+just install one on our system using the standard package manager, which in this case would be:
+$ sudo apt-get install ​crossbuild-essential-armhf      # For 32 bit architecture.
+$ sudo apt install ​crossbuild-essential-arm64          # For 64 bit architecture.
+
+Another method of getting a toolchain is to directly get one from the RaberryPi material and build it:
+$ git clone https://github.com/raspberrypi/tools
+
+As always, never forget to update the path variable to enable the compiler to be found.
+
+Another resource is to check the link https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads.
+to get a proper compiler from GNU resources.

@@ -1,0 +1,26 @@
+Say we want to build the kernel for a 32 bit Arm processor, belonging to the Pi 2 to 3+ range. Check the following link for better
+understanding and choosing the proper version and parameters:
+https://raspberrypi.stackexchange.com/questions/840/why-is-the-cpu-sometimes-referred-to-as-bcm2708-sometimes-bcm2835.
+
+To finally build the kernel, we need to pass the ARCH parameter and the CROSS_COMPILE parameters to the make command. Hence, a 
+typical build example looks like the following:
+
+$ make mrproper
+$ KERNEL=kernel7
+$ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig    # The proper target config for bcm2709_defconfig, for pi 2, 
+                                                                        # 3, 3+, etc
+$ make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs                                                                    
+
+Note that this particular architecture can be found in the arch/arm/configs folder, like always. Note that we also pass the 
+kernel17 parameter. The value is as such because the processor is ARMv7-based (actually, from the Raspberry Pi 3 onward, the SoC is 
+a 64-bit ARMv8, which is compatible with running in 32-bit ARMv7 mode; here, as we're building a 32-bit kernel for ARM32 (AArch32), 
+we specify KERNEL=kernel7).
+
+Note: Why don't we pass the full name of gcc compiler to CROSS_COMPILE, as "arm-linux-gnueabihf-gcc"? Because this parameter tells
+the make tools which suit of tools to use, and not just the gcc compiler.
+
+Note: With ARM 32 bit processors, we want to set ARCH to arm, with POWERPC to powerpc, arm64 for ARM64 and openrisc to OpenRISC 
+processors.
+
+Finally, consult the following link https://www.raspberrypi.org/documentation/linux/kernel/building.md. on how to place the kernel
+in the microSD card, etc.

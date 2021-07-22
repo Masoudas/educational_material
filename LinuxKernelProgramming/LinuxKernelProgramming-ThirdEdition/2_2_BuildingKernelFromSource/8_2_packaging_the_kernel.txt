@@ -1,0 +1,22 @@
+Essentially, if we build the kernel for a particular target platform, we want to package it in a certain easy way, so that the 
+customers of the built kernel can easily install it without any fuss. To that end, if we type "make help", we find the following 
+approaches:
+
+$ make help
+Kernel packaging:
+  rpm-pkg             - Build both source and binary RPM kernel packages
+  binrpm-pkg          - Build only the binary kernel RPM package
+  deb-pkg             - Build both source and binary deb kernel packages
+  bindeb-pkg          - Build only the binary kernel deb package
+  [...]
+  targz-pkg           - Build the kernel as a gzip compressed tarball
+  tarbz2-pkg          - Build the kernel as a bzip2 compressed tarball
+  tarxz-pkg           - Build the kernel as a xz compressed tarball
+  [...]
+
+Hence, for example typing the following command helps:
+$ sudo make bindeb-pkg     # Create a debian package!!!
+
+And as we know, we can now install the package on any other machine that's compatible as follows:
+$ dpkg -i <package-name>
+

@@ -1,0 +1,3 @@
+Intentially, there's a very loose coupling between the kernel and the file system. This would allow us to change the kernel version,
+and what's happenning under the hood, without having to change the file system, including applications, files, etc. 
+
