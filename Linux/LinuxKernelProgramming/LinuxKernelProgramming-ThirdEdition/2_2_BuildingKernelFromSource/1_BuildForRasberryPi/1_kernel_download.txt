@@ -1,0 +1,15 @@
+Well, to build for RaberryPi, we need to actually a proper kernel version for the product from the appropriate source, which is 
+https://github.com/raspberrypi/linux/. 
+
+Me: Why a particular kernel? I think because the mother of all kernels does not have a proper particular configuration for our 
+RaberryPi board, and we don't know that much at this point to properly configure the kernel for it!
+
+Note that in the particular
+
+To copy the git source code, it's been suggested to use the following version of the command:
+$ git clone --depth=1 --branch rpi-5.4.y https://github.com/raspberrypi/linux.git
+
+Another reason that occurs to me why we need to download the specific kernel for RaberryPi is that we require additional headers
+like openssl to build the kernel. Consequently, building directly from the kernel seems to present such issues, and which is why
+it's best to use this ad-hoc version of the kernel.
+

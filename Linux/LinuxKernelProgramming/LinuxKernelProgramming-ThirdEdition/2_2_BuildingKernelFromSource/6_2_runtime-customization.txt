@@ -1,0 +1,6 @@
+It's possible to customize the GRUB menu at run-time as well. For example, go to the "Advanced options for Ubuntu", and then go 
+on the kernel version that you desire. By pressing e, we enter the "edit" environment.
+
+After doing so, we can see several things, for example the parameters being passed to the linux kernel in front of the blinking
+'_'. For example, if we remove the words 'quite' or 'splash' from this entry, then all the messages and logs of the kernel would
+appear the next time we boot the kernel.

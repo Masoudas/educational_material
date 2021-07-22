@@ -1,0 +1,32 @@
+Modern microprocessors support a minimum of two privilege levels. As a real-world example, the Intel/AMD x86[-64] family supports 
+four privilege levels (they call them ring levels), and the ARM (32-bit) microprocessor family supports up to seven (ARM calls them 
+execution modes; six are privileged and one is non-privileged).
+
+The key point here is that for security and stability on the platform, all modern operating systems running on these processors will 
+make use of (at least) two of the privilege levels (or modes) (see Fig. 1): 
+
+    -   User space: For applications to run in unprivileged user mode
+    -   Kernel space: For the kernel (and all its components) to run in privileged mode – kernel mode
+
+User space applications often rely on Application Programming Interfaces (APIs) to perform their work. A library is essentially a 
+collection or archive of APIs, allowing you to use a standardized, well-written, and well-tested interface (and leverage the usual 
+benefits: not having to reinvent the wheel, portability, standardization, and so on). Linux systems have several libraries; even 
+hundreds on enterprise-class systems is not uncommon. Of these, all usermode Linux applications (executables) are "auto-linked" into 
+one important, always-used library: glibc – the GNU standard C library, as you shall learn. However, libraries are only ever available 
+in user mode; the kernel does not have libraries.
+
+Examples of library APIs are the well-known printf(3), scanf(3), strcmp(3), malloc(3), and free(3).
+
+Now, a key point: if user and kernel are separate address spaces and at differing privilege levels, how can a user process access the 
+kernel? The short answer is via system calls. A system call is a special API, in the sense that it is the only legal (synchronous) way 
+for user space processes to access the kernel. In other words, system calls are the only legal entry point into the kernel space. They 
+have the ability to switch from non-privileged user mode to privileged kernel mode.
+
+Examples of system calls include fork(2), execve(2), open(2),read(2), write(2), socket(2), accept(2), chmod(2), and so on. The point 
+being stressed here is that it's really only via system calls that user applications and the kernel communicate; that is the 
+interface.
+
+Look up all library and system call APIs in the man pages online:
+    - Library APIs, man section 3: https://linux.die.net/man/3/
+    - System call APIs, man section 2: https://linux.die.net/man/2/
+

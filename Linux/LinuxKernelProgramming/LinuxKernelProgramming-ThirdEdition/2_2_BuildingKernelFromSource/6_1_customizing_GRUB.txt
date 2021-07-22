@@ -1,0 +1,39 @@
+GRUB (Grand Unified Bootloader) is essentially modified when we build our kernel and install it, and we normally don't require 
+any further steps. However, we shall demonstrate how to further customize the GRUB.
+
+The grub settings are in the /etc/default folder.
+$ cat /etc/default/grub
+
+Remember to always keep a backup copy before tinkering with the file:
+$ cp /etc/default/grub /etc/default/grub.orig
+
+For example, to ensure that the GRUB boot menu always appears upon boot, we can setup the following option:
+## GRUB_HIDDEN_TIMEOUT_QUIET=false
+Note: On some Linux distros, you might instead have the GRUB_TIMEOUT_STYLE=hidden directive; simply change it to 
+GRUB_TIMEOUT_STYLE=menu to achieve the same effect.
+
+By setting the time out, we can set how long it takes to default boot the default OS. Note that 0 means boot right away, and -1 
+means wait indifintely.
+## GRUB_TIMEOUT=3   # Takes 3 seconds
+
+After having tinkered with grub, always update it as follows:
+$ sudo update-grub
+The preceding command will typically cause the initramfs image to be refreshed (regenerated). Once done, you're ready to reboot the 
+system.
+
+%%%%%%%%%%%
+The most important parameter here however is the GRUB_DEFAULT, which determines which kernel is going to be used by default. If 
+this is set to 0, the first kernel (i.e, the most recently added one) will be used to boot the system with. However, we can 
+change it as follows to be more specific about the kernel version:
+
+GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.0.0-36-generic"  # Adds our kernel to Advanced options for Ubuntu
+                                                                                # menu
+
+Again, don't forget to run:
+$ sudo grub-update
+
+%%%%%%%%%%%
+Change the background image using the following item:
+## BACKGROUND_IMAGE="<img_file>" 
+
+

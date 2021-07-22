@@ -1,0 +1,9 @@
+LKM or Loadable Kernel Module is what's used and written by a kernel module developer. 
+
+To develop such modules, we need to make sure that linux headers are installed properly, which we can check as follows:
+$ sudo apt-get install linux-headers-generic
+$ dpkg -l | grep linux headers | awk '{print $1, $2}'
+
+Note : This package may be named kernel-headers-<ver#> on some distributions. Also, for development directly on a Raspberry Pi, 
+install the relevant kernel headers package named raspberrypi-kernel-headers.
+
