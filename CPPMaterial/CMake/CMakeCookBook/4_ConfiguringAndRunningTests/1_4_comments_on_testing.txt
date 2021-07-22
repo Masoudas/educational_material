@@ -18,8 +18,8 @@ test output from CTest by using the following CLI switches
     - --output-on-failure: Will print to the screen anything that the test program produces, in case the test fails.
 
 Moreover, the rerun-failed option only runs the tests that have failed.
-%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%
 We should also mention that the name of tests can contain a forward slash, which is good for grouping a couple of tests together:
 add_test(
     NAME python/long    ## Notice the naming here
