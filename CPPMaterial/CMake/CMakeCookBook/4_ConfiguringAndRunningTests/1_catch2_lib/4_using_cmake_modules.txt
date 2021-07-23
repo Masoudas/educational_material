@@ -1,0 +1,2 @@
+In this example, we use the Catch2 CMake module using the find_module command of cmake to inlcude it in our porject, which would 
+mean that we don't have to compile it everytime we want to test a project.
