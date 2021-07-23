@@ -22,11 +22,21 @@ void strcp(char* s, char* d){
 }
 
 /* strcmp: return <0 if s<t, 0 if s==t, >0 if s>t */
-int strcmp(char *s, char *t)
+int strcmp_i(char *s, char *t)
 {
 	for ( ; *s == *t; s++, t++)
 		if (*s == '\0')
 			return 0;
 	
 	return *s - *t;
+}
+
+/* an implementation of strcat from yours truely */
+char* strcat_mine(char* s, char* t){
+	while(*s && ++s);	// Find the '\0' of s
+
+	// Note: Unitary op has highest priority. && higher than =, hence we need paranthesis.
+	while( *t && (*s++=*t++));	
+
+	return s;
 }
