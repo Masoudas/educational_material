@@ -1,0 +1,14 @@
+To generate a file of a particular size, use the dd command with a source:
+
+$ dd if=/dev/zero of=junk.data bs=1M count=1
+
+If the input parameter (if) is not specified, it will read the input from stdin by default. Similarly, if 
+the output parameter (of) is not specified, it will use stdout as the default output sink.
+
+Question: What's written inside the file? The device file generates '\0'. But of course, if we write this
+we'll get nothing inside the file. Essentially, what is generated is a binary file. So, we can hexdump it
+to see it's content. In any case, the file that's created is not a utf8 or ascii file.
+
+Notice that the dd command can also be used to measure the speed of memory operations by transferring a 
+large quantity of data and checking the command output (for example, 1048576 bytes (1.0 MB) copied, 
+0.00767266 s, 137 MB/s as seen in the previous example).

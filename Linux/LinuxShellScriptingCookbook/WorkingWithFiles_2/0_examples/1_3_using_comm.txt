@@ -1,0 +1,2 @@
+Using the comm command, we can find the intersection of two sets. Then again, it's necessary to sort the
+files before supplying them to comm, hence, it's not that different from diff.

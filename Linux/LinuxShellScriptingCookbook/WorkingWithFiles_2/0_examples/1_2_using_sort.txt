@@ -1,0 +1,21 @@
+Assuming we can pay the price for sort, we can sort the two files, and then compare them using diff. The
+return value of diff would be 0 if they're the same, and 1 if different, and 2 if there's trouble.
+
+Another problem with this approach is that at least from my point of view, we have to create a temp file.
+
+%%%%%%%
+#!/bin/bash
+
+cp $1 /var/f1
+cp $2 /var/f2
+
+sort /var/f1
+sort /var/f2
+
+diff /var/f1 /var/f2
+
+# This portion is not necessary, as we return the return value of the last function.
+if [ $? -ne 0 ]; then	
+	exit 1
+fi
+exit 0;

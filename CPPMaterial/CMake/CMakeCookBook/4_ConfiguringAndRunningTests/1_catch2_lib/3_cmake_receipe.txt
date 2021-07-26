@@ -1,0 +1,44 @@
+Note that essentially, we require that to create a target for catch (if we're using the header and the source file) directly, and 
+then we need to link it to our test target.
+
+Notice that the catch target can't be an interface library, because there's a source file involved. However, assuming there weren't
+any such source file, we could've built the header-only library as such:
+
+%%%%
+add_library(catch INTERFACE)
+target_include_directories(catch INTERFACE ${CATCH_SOURCE_DIR})
+%%%
+
+Moreover, once we've created our tests, we can run it in the same way as a ctest. That is, we'll 'enable_testing()', and then 
+'add_test()' same as before. 
+
+Also, notice the flag --success that we pass to the test command, which is I guess usefull. Finally, notice that when we run the 
+tests, we actually pass the -V flag, to allow a more verbose printing of messages:
+
+$ ctest -C Debug V
+
+%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+
+project(simpleTest LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CATCH_SOURCE_DIR ${CMAKE_SOURCE_DIR}/catch)
+
+# example library
+add_library(sum_integers sum_integers.cpp)
+
+# testing binary compilation
+add_library(catch_lib ${CATCH_SOURCE_DIR}/catch.cpp ${CATCH_SOURCE_DIR}/catch.hpp)
+
+add_executable(cpp_test catch_tests.cpp)
+target_link_libraries(cpp_test catch_lib sum_integers)
+target_include_directories(cpp_test PRIVATE catch)
+
+enable_testing()
+add_test(
+        NAME catch_test
+        COMMAND $<TARGET_FILE:cpp_test> --success
+)
