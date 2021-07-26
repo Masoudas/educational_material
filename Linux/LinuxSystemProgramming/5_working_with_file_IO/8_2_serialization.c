@@ -13,6 +13,9 @@
  * 
  * Remember: We can check whether a file is binary using the "file --mime-encoding" command.
  * 
+ * Note the use of scanf function, which would allow us to read from a file descriptor in a particular format. For example,
+ * we pass the formatting sequence "%f %f" to read two floats.
+ * 
  * As such, when we read this data back from memory, we copy the exact bits into memory, and then we'd have 
  * the same info as before.
  * 

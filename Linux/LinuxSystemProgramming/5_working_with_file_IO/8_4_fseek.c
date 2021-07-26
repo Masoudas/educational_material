@@ -4,11 +4,12 @@
  * 
  * Here's how to use this program:
  
- $ ./stream-seek /etc/passwd 2000 2100
+ $ ./stream-seek /etc/passwd 2000 2100    # First byte and last byte to read.
 
  * Notice the use of ftell. Because we read char by char, we use ftell to determine the current char position
  * of the cursor. If this position exceeds the char number, we exit. So essentially, we're not using a counter
- * to count the number of chars.
+ * to count the number of chars (but wouldn't that be far more economical?). Note that we do this and don't use a
+ * function like fgets to ensure we're reading the requested number of chars.
  */
 
 #include <stdio.h>
