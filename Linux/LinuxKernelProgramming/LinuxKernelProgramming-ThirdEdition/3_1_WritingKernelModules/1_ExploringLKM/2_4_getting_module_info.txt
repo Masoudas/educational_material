@@ -1,0 +1,19 @@
+To get information on an installed module, we can use the modinfo command:
+
+$ lsmod | grep e1000	# A particular network module.
+e1000 139264 0
+
+$ modinfo /lib/modules/5.0.0-36-generic/kernel/drivers/net/ethernet/intel/e1000/e1000.ko
+filename: /lib/modules/5.0.0-36-generic/kernel/drivers/net/ethernet/intel/e1000/e1000.ko
+version: 7.3.21-k8-NAPI
+[...]
+alias: pci:v00008086d00002E6Esv*sd*bc*sc*i*
+[...]
+name: e1000
+vermagic: 5.0.0-36-generic SMP mod_unload
+[...]
+parm: copybreak:Maximum size of packet that is copied to a new
+[...]
+
+Another useful tool is systool. 
+$ systool -m <module-name> -v

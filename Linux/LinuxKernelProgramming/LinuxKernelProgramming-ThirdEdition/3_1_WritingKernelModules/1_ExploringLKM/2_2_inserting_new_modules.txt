@@ -1,0 +1,19 @@
+How does one insert new modules in a working kernel?
+
+The answer is using the insmod command. So let's say we have a helloworld_LKM.c file. What will happen is:
+	-	We compile helloworld_LKM.c using make tools for example, into a .ko file.
+	-	We use insmod with this module as argument.
+
+The kernel module is loaded into and lives in kernel memory, that is, the kernel VAS (Virtual Address Space) in an area 
+of space allocated for it by the kernel. Make no mistake, it is kernel code and runs with kernel privileges.
+
+This way, you, the kernel (or driver) developer does not have to reconfigure, rebuild, and reboot the system each time. 
+All you have to do is edit the code of the kernel module, rebuild it, remove the old copy from memory (if it exists), 
+and insert the new version. It saves time, and it increases productivity.
+
+One reason that kernel modules are advantageous is that they lend themselves to dynamic product configuration. For example, 
+kernel modules can be designed to provide different features at differing price points; a script generating the final 
+image for an embedded product could install a given set of kernel modules depending on the price the customer is willing 
+to pay. Here's another example of how this technology is leveraged in a debug or troubleshooting scenario: a kernel module 
+could be used to dynamically generate diagnostics and debug logs on an existing product. Technologies such as kprobes and 
+the like allow just this.
