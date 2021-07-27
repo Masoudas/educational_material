@@ -28,3 +28,7 @@ Note that some of the virtual processes are run on tty0, others on pts (pseudo t
 
 And to print all processes of all users:
 $ ps -e
+
+
+Note that historically, the mother of all processes was init. But it has now been replaced with systemd. If I type in
+"ps -e" in my current bash, I get systemd as PID 1. On the other hand, with ps aux, I get /sbin/init as the first process.

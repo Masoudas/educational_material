@@ -1,0 +1,13 @@
+Historically, Linux has been managed with several smaller pieces. For example, init was the first process on the system, 
+which started other processes and daemons to bring up the system. System daemons were handled by shell scripts, also 
+called init scripts. Logging was done either by the daemon itself via files or syslog. Networking was also handled by 
+multiple scripts (and still is in some Linux distributions).
+
+Nowadays, though, the entire system is handled by systemd. For example, the first process on the system is now systemd 
+(which we have seen in previous chapters). Daemons are handled by something called unit files, which create a unified 
+way of controlling daemons on the system. Logging is handled by journald, systemd's logging daemon. But do note that 
+syslog is still used by many daemons to do extra logging. 
+
+Knowing how systemd works will enable you to use it properly when, for example, writing unit files for daemons. It will 
+also help you to write daemons in the "new" way, to make use of systemd's logging features. You will become a better 
+system administrator as well as a better Linux developer.

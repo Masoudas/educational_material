@@ -14,7 +14,7 @@ We can also set the niceness of a process using the nice command:
 $ nice -n -20 PROCESS_NAME    # Set it to -20. Note that this runs the command with the given priority.
                               # We can't reset the priority of current process with this commadn
 
-$ sudo ice -n -20 apt-get upgrade
+$ sudo nice -n -20 apt-get upgrade
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To reset the niceness of a process, use the renice command.
