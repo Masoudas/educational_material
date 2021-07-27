@@ -1,0 +1,6 @@
+A question that may arise here is that can we move the \ts and make everything into one column? The answer is that yes 
+we can, using a tool like sed or tr:
+
+$ comm A.txt B.txt -1 -2 | tr '\t' '\0'	# Note that we replace with '\0' and not with '\n', because there's nothing after
+										# after a '\t'. Otherwise, we would have used '\n'
+$ comm A.txt B.txt | sed -s 's/\t//'

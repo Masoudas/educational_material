@@ -1,0 +1,23 @@
+The comm command is the go to command the union and intersection of two files.
+
+Essentially as always, when it comes to doing such things, we know that the program is not going to compare every line
+of one file to another. Therefore, what we need is to ensure the files are SORTED first.
+
+A typical usage of the command comm involves the following example. Consider the file A.txt and B.txt
+A.txt		B.txt
+apple		apple
+carrot		banana
+
+
+$ comm A.txt -o A.txt; comm B.txt -o B.txt;
+$ comm A.txt B.txt
+                apple
+        banana
+carrot
+        cookies
+mellon
+
+We see that the content are printed in three columns. If the line is found in both files (not necessarily on the same
+line, but possibly in different lines,) then they're printed in column three. Otherwise, the next line in between the 
+two files with lowest sort order is printed, and if it belongs to file 1, it will be printed in column 2, and otherwise
+in column 2. Each of the columns are delimited using the tab (\t) character.
