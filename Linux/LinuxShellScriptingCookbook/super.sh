@@ -1,12 +1,13 @@
 #!/bin/bash
-sort $1 -o f1 
+ls -lS --time-style=long-iso WorkingWithFiles_2 | awk ' BEGIN { 
+		getline;	# Doing nothing with the first line. 
+		getline;	# Read the following line(s)
+		name=$8; size=$5 	#
+	} 
+	{
+		print name " " size
+		getline;
+		name=$8; size=$5 
 
-sort $2 | diff f1 - > /dev/null	# Saves the creation of one file
-
-result=$?
-rm f1
-
-if [ $result -ne 0 ]; then	
-	exit 1
-fi
-exit 0;
+	}
+	'

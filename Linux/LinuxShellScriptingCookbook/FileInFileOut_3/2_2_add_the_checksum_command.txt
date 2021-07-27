@@ -1,0 +1,1 @@
+First of all, notice that a variable is not interpolated in an awk function. We directly use it.
