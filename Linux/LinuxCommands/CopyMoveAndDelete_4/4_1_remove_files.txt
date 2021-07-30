@@ -3,5 +3,6 @@ rm.
 
 Note again that to remove the content of the directory, and not the directory itself, we need only to add the /*.
 
-To remove a particular set of files, use the 'find' command. An example is:
-find . -f -not -name'something.txt' -delete
+An interesting option in rm is -i, which makes the command interactive. rm -f forces remove of sensititve files.
+There's of course the recursive option -r for removing directories.
+
