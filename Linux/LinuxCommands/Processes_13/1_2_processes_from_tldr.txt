@@ -1,8 +1,8 @@
-Note that there's a difference between a and -a. We can not print processes associated with a terminal, or that are not
-session leaders. With a, we nullify this option. -e printa all processes.
+Note that there's a difference between a and -a. We can print processes 'not' associated with a terminal, or that 
+are not session leaders. With a, we nullify this option. -e prints all processes.
 
 u with no dash stands for user oriented format (shows parent, CPU and memory usage. command, start time, etc.) With a 
-dash, it implies a particular user name list. Another suggestion here would be to use f.
+dash, it implies a particular user name list. Another suggestion here would be to use f for full presentation
 
 x lifts the BDS restriction that the process should be associated with a terminal.
 

@@ -3,9 +3,13 @@ command to send a job to the background:
 
 $ bg    # Resume the most recently suspended job and run it in the background
 $ bg %{{job_id}}    # Resume a specific job (see below) in the background. See below on job_id.
+# bg 1  # Resume job number one in background.
 
 As we may already know, we can suspend a job using the kill command, together with SIGSTOP signal. Another way
-of course is to press CTRL+Z.
+of course is to press CTRL+Z. Note that some processes require a terminal for example. As such, sending them
+to background implies sending a stop signal to them.
+$ man ls $  # Needs a terminal. Hence, sending it to background stops it.
+$ bg 1  # Has no effect. Must use fg as discussed below.
 
 To list the background jobs, we can use a command named jobs to list all processes running in the background:
 

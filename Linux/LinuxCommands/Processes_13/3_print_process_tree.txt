@@ -11,3 +11,7 @@ To print a process tree:
         $  ps -ejH
         $  ps axjf
 %%%%%%%%
+
+Checkout the options on pstree as well. For example:
+$ pstree -h # Highlights parents of the current process
+$ 
