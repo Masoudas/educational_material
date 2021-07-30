@@ -1,5 +1,5 @@
-Essentially, like any other source code, we can add code for a device driver to the kernel source tree, and then build the
-kernel image with that. The problem is that in such a way, we'd need to rebuild to kernel every single time, which is
-time consuming.
+Essentially, like any other source code, we can add code for a device driver to the kernel source tree, and then build 
+the kernel image with that. The problem is that in such a way, we'd need to rebuild the kernel every single time, 
+which is time consuming.
 
-There must be a better way!
+There's got to be a better way!
