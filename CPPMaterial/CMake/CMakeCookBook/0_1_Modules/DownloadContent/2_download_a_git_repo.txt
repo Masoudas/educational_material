@@ -1,0 +1,26 @@
+Say for example we wanted to download a git repository, like for example catch2 or google test. The command would
+then look something like this:
+
+include(FetchContent)	# Well. Apparently this is an inclusion, and not a find_package. It does not have a 
+						# .cmake file associated with it.
+
+FetchContent_Declare(
+   googletest		# Name this target(ish), which can be used later on for our purposes.
+   GIT_REPOSITORY https://github.com/google/googletest.git
+   GIT_TAG        release-1.8.0
+)
+
+Note that fetching a content does not mean actually building it. To build the content, there's a command, which
+we shall discuss next. In reallity, fetching a content does not do anything special, and we indeed have to build
+it, as we shall discuss next.
+
+Note that we can do crazier stuff with this command as well, and for example download a set of logos from the
+internet:
+
+FetchContent_Declare(
+      myCompanyIcons
+      URL      https://intranet.mycompany.com/assets/iconset_1.12.tar.gz
+      URL_HASH 5588a7b18261c20068beabfb4f530b87
+    )
+
+
