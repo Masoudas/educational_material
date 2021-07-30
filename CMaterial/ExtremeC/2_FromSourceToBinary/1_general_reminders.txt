@@ -1,0 +1,38 @@
+Note that we never pass header files to be compiled to a compiler, because it's meaningless.
+
+Moreover, it's generally recommended to pass ONLY a single file to the compiler when compiling a file, because
+typically the options we pass are single file dependent.
+
+Also recall that by compilation of a translation unit we imply turning it into a set of assembly instructions.
+In gcc, this is done using the -S option.
+
+By the target architecture, we mean the hardware or CPU that the program is being compiled for and is eventually 
+to be run on. The target architecture is sometimes referred to as the host architecture. The build architecture 
+is the architecture that we are using to compile the source.
+
+By assembling, we mean creating a binary file from the assembly code. This is done after compilation. The result
+of this operation is an assembly file.
+
+The assembler we use in the gcc suite is called as. We pass the compiled file set to get the object file. The
+-c option does the same thing using this program.
+
+Recall finally that linkeage is done by not passing any options and just passing the object files. If there's a
+main function, it shall be used for execution.
+
+Recall that the famous linker program of gcc is ld. Note however that the use of linker is not as straight forward
+as that of assembler. For example, with a single project that contains the printf function, we get the following:
+
+$ ld impl.o main.o
+ld: warning: cannot find entry symbol _start; defaulting to 00000000004000e8
+main.o: In function 'main':
+ExtremeC_examples_chapter3_1_main.c:(.text+0x7a): undefined reference to 'printf'
+ExtremeC_examples_chapter3_1_main.c:(.text+0xb7): undefined reference to 'printf'
+ExtremeC_examples_chapter3_1_main.c:(.text+0xd0): undefined reference to '__stack_chk_fail'
+
+Note that __stack_chk_fail is netiher called by us nor stl, but rather a piece of code that has been placed by the
+assembler.
+
+Finally, recall that the cpp program is the preprocessor of the gcc suite, and not the cpp compiler (which is 
+g++.) Note that if we pass a file with the .i extension, it will pass the preprocessing step and assumes that it's
+a preprocessed file.
+

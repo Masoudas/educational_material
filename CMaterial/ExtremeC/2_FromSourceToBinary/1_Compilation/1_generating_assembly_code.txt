@@ -1,0 +1,13 @@
+One of the challenges in C compilation is to generate correct assembly instructions that can be accepted by the 
+target architecture. It is possible to use gcc to compile the same C code for various architectures such as ARM, 
+Intel x86, AMD, and many more. As we discussed before, each architecture has an instruction set that is accepted 
+by its processor, and gcc (or any C compiler) is the sole responsible entity that should generate correct assembly 
+code for a specific architecture.
+
+The way that gcc (or any other C compiler) overcomes this difficulty is to split the mission into two steps, first 
+parsing the translation unit into an relocatable and C-independent data structure called an Abstract Syntax Tree 
+(AST), and then using the created AST to generate the equivalent assembly instructions for the target architecture. 
+The first part is architecture-independent and can be done regardless of the target instruction set. But the second 
+step is architecture-dependent, and the compiler should be aware of the target instruction set. The subcomponent 
+that performs the first step is called a compiler frontend, and the subcomponent that performs the later step is 
+called a compiler backend.

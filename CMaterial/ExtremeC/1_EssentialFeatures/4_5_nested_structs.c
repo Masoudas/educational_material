@@ -16,4 +16,4 @@ typedef struct {
 typedef struct {
     point_t start;
     point_t end;
-} line_t
+} line_t;
