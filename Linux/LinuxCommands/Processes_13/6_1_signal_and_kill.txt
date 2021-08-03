@@ -24,3 +24,13 @@ Then, to unfreeze it, we can either look for pts with a grep command, or we can 
 $ ps -fp $(pgrep bash)
 
 Then we can unfreeze the terminal that's the parent of each.
+
+
+NOTE: Often, I wonder whether signals to a background job after I bring it to foreground or not. Because even after
+I terminate a background job, I still see it in the list of my jobs. The answer is that no, and I can think of
+cmake-gui that if I run it in the background, I can check by sending signals to it and see that it complies with
+the signals, and it does not matter whether it's still in the jobs list or not:
+
+$ jobs
+	[1]-  Running                 sleep 300 &
+	[2]+  Stopped                 man ls
