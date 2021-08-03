@@ -1,0 +1,15 @@
+Relocatable object files are the output of the assembly step in the C compilation pipeline. These files are 
+considered to be temporary products of a C project, and they are the main ingredients to produce further and 
+final products.
+
+We can find the following items in these object files:
+	-	The machine-level instructions produced for the functions found in the translation unit (code).
+	-	The values of the initialized global variables declared in the translation unit (data).
+	-	The symbol table containing all the defined and reference symbols found in the translation unit.
+
+Why are relocatable object files named as such? The reason comes from the process that a linker performs in order 
+to put some relocatable object files together and form a bigger object file – an executable object file or a 
+shared object file.	The machine-level instructions found in one relocatable object file should be put next to the 
+machine-level instructions coming from another relocatable object file. This means that the instructions should 
+be easily movable or relocatable. For this to happen, the instructions have no addresses in a relocatable object 
+file, and they obtain their addresses only after the linking step. 

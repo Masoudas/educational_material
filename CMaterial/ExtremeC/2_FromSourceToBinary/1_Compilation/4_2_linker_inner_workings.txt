@@ -1,0 +1,53 @@
+Note that in an object file, machine level instructions are grouped together in SYMBOLS to be arranged by the
+linker into executable files.
+
+Consider the following code:
+
+int average(int a, int b) {
+  ...
+}
+int sum(int* numbers, int count) {
+  ...
+}
+
+Now, if we just compile this file and not link, we get:
+$ gcc -c example.c -o target.o
+
+Then, we can use the nm utility to find out about the symbols inside this file:
+$ nm target.o
+0000000000000000 T average
+0000000000000021 T sum
+
+We can equivalently use the readelf utility together with the -s (see help) to only detect the symbols:
+$ readelf -s target.o
+Symbol table '.symtab' contains 11 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS example.c
+     2: 0000000000000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 0000000000000000     0 SECTION LOCAL  DEFAULT    2 
+     4: 0000000000000000     0 SECTION LOCAL  DEFAULT    3 
+     5: 0000000000000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 0000000000000000     0 SECTION LOCAL  DEFAULT    6 
+     7: 0000000000000000     0 SECTION LOCAL  DEFAULT    7 
+     8: 0000000000000000     0 SECTION LOCAL  DEFAULT    4 
+     9: 0000000000000000    33 FUNC    GLOBAL DEFAULT    1 average
+    10: 0000000000000021    73 FUNC    GLOBAL DEFAULT    1 sum
+
+We can also disassemble each section of the code, to see what happens under it. To that end, we must the -d flag
+to objdump:
+
+$ objdump -d target.o
+target.o:     file format elf64-x86-64
+Disassembly of section .text:
+0000000000000000 <average>:
+   0:   f3 0f 1e fa             endbr64 
+   4:   55                      push   %rbp
+   5:   48 89 e5                mov    %rsp,%rbp
+   ...
+0000000000000021 <sum>:
+  21:   f3 0f 1e fa             endbr64 
+  25:   55                      push   %rbp
+  26:   48 89 e5                mov    %rsp,%rbp
+
+  
