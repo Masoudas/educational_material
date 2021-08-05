@@ -13,3 +13,16 @@ if(NOT googletest_POPULATED)
 	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})	# Adds this subdirectory to out project,
 																		# which implies building it.
 endif()
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As such, an overall receipe would look something like this:
+
+FetchContent_MakeAvailable(googletest)
+
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+	FetchContent_Populate(googletest)	# Actual downloading takes place with this command.
+	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})	# Adds this subdirectory to out project,
+																		# which implies building it.
+endif()
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
