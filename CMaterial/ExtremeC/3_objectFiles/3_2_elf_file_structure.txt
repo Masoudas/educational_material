@@ -1,0 +1,44 @@
+Consider the following two files:
+
+%%%% max.c
+int max(int a, int b) {	return a > b ? a : b;	}
+int max_3(int a, int b, int c) {	int temp = max(a, b);	return c > temp ? c : temp;	}
+
+%%%% main.c
+int max(int, int);	int max_3(int, int, int);
+
+int a = 5;	int b = 10;
+
+int main(int argc, char** argv) {	int m1 = max(a, b);	int m2 = max_3(5, 8, -1);	return 0;	}
+%%%%%%
+
+We can compile them as follows:
+$ gcc -c max.c -o max.o
+$ gcc -c main.c -o main.o
+
+Now, notice the address to each of the valuable information inside the header file. Notice that the type of the
+object file is relocatable object file.
+
+$ readelf -hSl main.o
+ELF Header:
+     ...
+   Type:                 REL (Relocatable file)
+     ...
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .text             PROGBITS         0000000000000000  00000040  # The section with the machine code.
+       0000000000000049  0000000000000000  AX       0     0     1
+  [ 2] .rela.text        RELA             0000000000000000  000002b8
+       0000000000000060  0000000000000018   I      10     1     8
+  [ 3] .data             PROGBITS         0000000000000000  0000008c	# initialized data
+       0000000000000008  0000000000000000  WA       0     0     4
+  [ 4] .bss              NOBITS           0000000000000000  00000094	# uninitialized data
+  	   0000000000000000  0000000000000000  WA       0     0     1
+		...
+  [10] .symtab           SYMTAB           0000000000000000  00000118	# symbol table.
+       0000000000000168  0000000000000018          11     9     8
+	    ...

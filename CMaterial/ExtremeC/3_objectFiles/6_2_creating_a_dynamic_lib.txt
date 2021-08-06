@@ -1,0 +1,14 @@
+Here's how we create a dynamic library:
+
+$ gcc -c file1.m -fPIC -o file1.o
+...
+
+$ gcc -shared file1.o file2.o ... -o libdyn.so
+
+The fPIC option is mandatory and creates a Position Independent Code. This implies that instructions within the
+object file don't have fixed addresses, but relative addresses. Hence, they can obtain different addresses in 
+different processes. In fact, there's no guarantee that the shared library is loaded in the same spot of memory
+everytime, and as such the addresses must only be relative.
+
+See the following path as a further illustration:
+https://software.intel.com/sites/default/files/m/a/1/e/dsohowto.pdf
