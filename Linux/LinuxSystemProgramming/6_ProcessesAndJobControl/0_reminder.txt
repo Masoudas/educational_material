@@ -1,0 +1,9 @@
+Recall that every process on the Linux system has started it's existence by being forked from another process.
+
+Me: Indeed, when we start a new thread in C++ for example, we're doing the same thing as well.
+
+Also note that the parent of all processes (that is, systemd) has PID=1.
+
+As a final reminder, recall that signals are sent to the program via the kill program. So we can list them using
+$ kill -l
+and then send whichever one we desire to our program.

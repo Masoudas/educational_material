@@ -29,3 +29,6 @@ Contains errno variable and the associated error macros (like EACCESS, etc.)
 
 	-	utime.h
 See man 7 utime.h. Used for access and changing modification and access time.
+
+	-	signal.h
+The header that contains signal management information.
