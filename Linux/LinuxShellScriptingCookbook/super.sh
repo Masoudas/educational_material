@@ -5,9 +5,9 @@ ls -lS --time-style=long-iso WorkingWithFiles_2 | awk ' BEGIN {
 		name=$8; size=$5 	#
 	} 
 	{
-		print name " " size
 		getline;
 		name=$8; size=$5 
-
+		"cat super.sh " | getline; s=$1;
+		print s
 	}
 	'

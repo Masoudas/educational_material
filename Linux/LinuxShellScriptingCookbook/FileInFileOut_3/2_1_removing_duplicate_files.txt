@@ -1,45 +1,18 @@
-It's possible to find duplicate files and remove them, by which we mean files with equal content. 
+Strategy:
 
-Essentially, to avoid iterating over the file, or sort and then use comm, we can easily compute the checksum of the two
-files. The point is that essentially, we want to put as many criteria on two files as possible in a folder, so that
-we don't unnecessarily calculate the checksum for all files. A nice condition would be that the two files have the same
-size for example. As such, we can compare two files for equal size and create a list of such files. A problem we have
-here is that the result of ls has a first line that is redundant, and we need to remove it as well:
+It's possible to find duplicate files and remove them, by which we mean files with equal content. To avoid comparing
+each individual line inside of a file, a good solution would be to compute the checksum of files and compare them
+with one another to detect the duplicates. However, we can improve on this a bit and check the size of two files
+as well. 
 
-$ ls -lS --time-style=long-iso
-total 80
-drwxrwxr-x 2 masoudas masoudas 4096 2021-07-23 11:50 0_examples
+So here's a possible solution. We iterate over the files sorted based on their sizes. Then, we compare each file
+with next and if has equal size, we compare md5sum and if that one qualifies as well, we keep these two files as
+duplicates of one another. 
 
-Why did we want a standard time? Because in this way, the number of columns would be equal? Possibly.
+Now, in this way we have the list of all files that are duplicates of one another. We need to keep a unique one
+of them. As such, we go over the list of duplicate files by choosing a unique one with equivalent md5sum. Then,
+using comm, we find the difference of duplicates and uniques, and then remove all those files that are in the
+difference. So let's do this step by step.
 
-Now, we can use an awk function with BEGIN. The point of BEGIN is that BEGIN functions are executed before the stuff 
-are read from the command line. In comparison, a function annotated with END is executed after all the lines have been
-read. 
 
-$ ... | awk ' BEGIN{} END{} '
 
-The function we use to get a line from stream is getline. We can read a line, and if don't do anything with it, it gets
-dumped. For example:
-
-$ ls -lS --time-style=long-iso | awk ' BEGIN { 
-	getline;	# Doing nothing with the first line. 
-	getline;	# Read the following line(s)
-	name=$8; size=$5 	#
-	} '
-
-Notice that right now, we passed no print functions here. If we wanted to do that, then we can do it. Notice that
-aside from the BEGIN or END function, the function without them is repeated for each line. Hence, we need to read 
-a new line everytime new, and print it. Note that we couldn't use getline in this function, otherwise everytime a
-line would have been dropped.
-
-$ ls -lS --time-style=long-iso | awk ' BEGIN { 
-	getline;	# Doing nothing with the first line. 
-	getline;	# Read the first line.
-	name=$8; size=$5 	# Set these variables.
-	} 
-	{
-		print name " " size	# Print previous line values
-		getline;	# Read the following line
-		name=$8; size=$5 	# Set these variables. for the next iteration.
-	}
-	'

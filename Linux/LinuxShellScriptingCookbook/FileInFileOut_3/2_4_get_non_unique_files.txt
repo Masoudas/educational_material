@@ -1,0 +1,3 @@
+Finally, we get the non-unique files by using comm as follows:
+
+$ comm duplicate_files unique_files -3 | xargs rm
