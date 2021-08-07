@@ -1,0 +1,13 @@
+Note that whereas the method inside {} is executed for each individual line, and as such, we don't need to write
+getline inside of it, BEGIN and END method methods are executed before processing individual lines with awk.
+As such, we are allowed to do some preprocessing with BEGIN and END methods.
+
+For example, consider ls -l. We see that the result is the following:
+total 76
+drwxrwxr-x 2 masoudas masoudas 4096 août   7 13:35 10_awk
+drwxrwxr-x 2 masoudas masoudas 4096 juil. 27 15:47 11_intersection_and_difference
+
+Now, if we wanted to do some processing on the lines of ls, the problem remains that the line 'total 76' has no 
+valuable information. We can get read of it by reading a single line in BEGIN, and then dropping it out:
+
+$ ls -l | awk ' BEGIN { getline;	# Throw this line out! } { print $9 } '	# Prints file names

@@ -1,0 +1,16 @@
+So let's say we want to execute a shell command inside awk. The way to do it is to use double quotation around
+the command. The point however is that we need to usually read the result of the command. awk provides a piping
+fascility for us, allowing us to pipe the result. If we use get line in this fascility, it will read the first
+line of the result. Then, we can use $n to read the nth column of the result. Moreover, further lines can be
+read by using more getline commands.
+
+ls -lS --time-style=long-iso WorkingWithFiles_2 | awk ' BEGIN { 
+		getline;	# Doing nothing with the first line. 
+	} 
+	{
+		name=$8
+		"cat " name | getline; c11=$1; getline; c22=$2;		# Read row one, column one and row two column two
+		print c11 " " c22
+	}
+	'
+

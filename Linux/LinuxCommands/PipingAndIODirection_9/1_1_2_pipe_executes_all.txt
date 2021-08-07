@@ -1,0 +1,15 @@
+Here's something to note about piping. In a pipe, the previous command fully executes, then the entire result is
+passed to the next command in the pipe to be executed. In other words, it's not like a single line gets executed,
+then we pass it to the next line and so on and so forth. For example, consider the following command:
+
+$ ls -l --time-style=long-iso | awk ' BEGIN { getline; } { print $9 } ' | sort | xargs md5sum 	# Calculates md5
+# of all the files in this folder.
+
+Now, what happens here is that first, all the files are listed with ls. Then from all of that chunk of data, all
+of their ninth column is taken, then all of those ninth column are sorted, then the md5sum of all of those files
+are calculated. Then, from all those md5sums, the ones with unique first 32 letters are chosen.
+
+What does not happen here is that we print the first file line, then we pass that line to awk, then that line
+is passed to sort, etc.
+
+In a pipe, every command is fully executed before passing the result to the next line.
