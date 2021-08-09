@@ -18,25 +18,14 @@
  * These are in fact macros for specifying such points. Notice that we provide two function names for these, one that
  * acts upon entry, and one upon exit. Think of these two as constructors and destructors of a module!
  * 
- * Notice the decorative values __init and exit for the init and exit functions of the module. These decorators don't
+ * Notice the decorative values __init and __exit for the init and exit functions of the module. These decorators don't
  * have any effect on the code, and are just illustrative, but useful. 
  * 
  * Making both functions static implies that these are private to this kernel module, and that's what we seek.
- *
- * The return value of the functions is also important. We see that the exit function has no return value, unlike a 
- * userspace program! If we fail, we must return the negative of the value we like errno to be set! Note that errno 
- * resides in the VAS (virtual address space). Aside from using "man 3 errno.h", we can check inside 
- * include/uapi/asm-generic/(errno-base.h & errno.h) kernel source trees to see the table of values and messages. Hence
- * for example, we may return -ENOMEM  to indicate lack of memory on allocation. The layer to which this message is
- * returned is actually glibc, which has some glue code to multiply this value by -1 and then set the global errno.
- * Now, the [f]init_module(2) system call will return -1, indicating failure (this is because insmod(8) actually invokes 
- * this system call. errno will be set to ENOMEM, reflecting the fact that the kernel module insertion failed due to a 
- * failure to allocate memory.
  * 
- * Finally, note that not inserting an exit functions the module will never be unloaded, unless after a reboot.
+ * Finally, note that not inserting an exit function means the module will never be unloaded, unless after a reboot.
  * Of course, it's never that simple: this behavior preventing the unload is guaranteed only if the kernel is built with 
  * the CONFIG_MODULE_FORCE_UNLOAD flag set to Disabled (the default)
- * 
  * 
  */
 
