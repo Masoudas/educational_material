@@ -15,14 +15,14 @@
 * How do we remedy this? One great suggestion is to use a templated constructor, to let the compiler detect the type of the
 * class. What we do essentially with templated construction is that we take the first type deduction out of question, that
 * is converting from C-String to string_view. Of course, the cost of this method is that now the class can be constructed with
-* virtually any type.
+* virtually any type, and there's a code bloat problem as well.
 * 
 * Of course, note that the most natural solution here would be to use C-String as a constructor argument for the class, which
 * implies several overloads unfortunately. Note however this does not cause overload error with string view because overload
 * resolution would prefer const char*.
 * 
 * There's an interesting argument regarding the usage of optional arguments alongside these, for which I refer you to the C++
-* con talk "CppCon 2018: Nicolai Josuttis “The Nightmare of Initialization in C++".
+* con talk "CppCon 2018: Nicolai Josuttis ï¿½The Nightmare of Initialization in C++".
 */
 
 #include <string_view>
@@ -60,5 +60,5 @@ void doubly_implicit_construction() {
 void avoiding_doubly_implicit_construction() {
 	S1 s1 = "Hey hey";
 
-	S_natural s_n = "Hey hey";
+	S_natural s_n = "Hey hey";	// Uses const char* constructor.
 }

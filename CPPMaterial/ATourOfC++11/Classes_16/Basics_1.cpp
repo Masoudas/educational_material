@@ -18,11 +18,11 @@
  * A member class that is defined inside a class (not just declared) there, is considered inline. Hence,
  * only petite functions should be written there.
  * 
- */
-
-/** Bjarne says we can do the following, but I don't think it's a very good idea.
- * We can do the declaration in class definition (no implementation), 
- * and then just define the method. This seems to be fine too.
+ * Bjarne says we can do the following, but I don't think it's a very good idea. We can do the declaration in class 
+ * definition (no implementation), and then just define the method. This seems to be fine too.
+ * 
+ * Me: Never forget about the alignment of class data, and as such the order of definition of elements in the 
+ * class.
  */
 class Date {
 public:
@@ -38,9 +38,10 @@ private:
 
 
 /**
- * Can class members be references that can be assigned in 
- * constructors? Nope! Because initialization of references cannot be delayed.
- * Hence, if they're reference types, they need to be initialized at once.
+ * Can class members be references that can be assigned in constructors? Nope! Because initialization of references 
+ * cannot be delayed. Hence, if they're reference types, they need to be initialized at once! 
+ * 
+ * We don't use references (l-value or r-value) as class members.
  */
 
 
