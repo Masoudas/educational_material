@@ -1,24 +1,21 @@
 /**
- * A variable that is part of a class, yet is not part of an object of that class, 
- * is called astaticmember. There is exactly one copy of a static member instead 
- * of one copy per object, as for ordinary non-static members.
+ * A variable that is part of a class, yet is not part of an object of that class, is called a static member. There 
+ * is exactly one copy of a static member instead of one copy per object, as for ordinary non-static members.
  * 
- * Similarly,  a function  that  needs  access  to  members  of  a class, 
- * yet doesn’t need to be invoked for a particular object, is called 
- * a static member function.
+ * Similarly, a function  that  needs  access  to  members  of  a class, yet doesn’t need to be invoked for a 
+ * particular object, is called a static member function.
  * 
- * If a static member is defined, it has to be INITIALIZED for its memory
- * to be accessible elsewhere. Otherwise for example in the below class if we define
- * default_date and don't assign a default to it, we'll get an error. Hence,
- * DEFINITION OF STATIC IS NOT INITIALIZATION. 
- * The definition for a static data member shall appear in a namespace scope 
- * enclosing the member’s class definition (See _2 of here).
+ * If a static member is defined, it has to be INITIALIZED for its memory to be accessible elsewhere. Otherwise for 
+ * example in the below class if we define default_date and don't assign a default to it, we'll get an error. Hence,
+ * DEFINITION OF STATIC IS NOT INITIALIZATION.
+ *  
+ * The definition for a static data member shall appear in a namespace scope enclosing the member’s class 
+ * definition (See _2 of here).
  * 
- * We can access a static member or function using the object, or using the scope
- * operator (like Date::set_default). The latter is preferable.
+ * We can access a static member or function using the object, or using the scope operator (like Date::set_default). 
+ * The latter is preferable.
  * 
- * When defining a static member or function outside the class definition, the
- * keyword static should not be repeated.
+ * When defining a static member or function outside the class definition, the keyword static should not be repeated.
  */
 class Date {
     int d, m, y;
@@ -43,9 +40,9 @@ void g(){
 }
 
 /** 
- * Consequently, we don’t need a separate function for reading the default date.  
- * Furthermore, where the target type is unambiguously a Date, plain{} is sufficient.  
- * For example:*/
+ * Consequently, we don’t need a separate function for reading the default date. Furthermore, where the target type 
+ * is unambiguously a Date, plain{} is sufficient. For example:
+ */
 
  void f1(Date);
  void f2(Date);
@@ -58,6 +55,10 @@ void g(){
  }
 
  /**
-  * In  multi-threaded  code, static data  members  require  some  kind  of  locking  or  
-  * access  discipline  to avoid race conditions*/
+  * In multi-threaded code, static data members require some kind of locking or access discipline to avoid race 
+  * conditions. 
+  * 
+  * Me: Recall that using local_thread allows us to create a static member per thread at least in functions. 
+  * Then, who's to say we can't do it with classes!
+  */
  

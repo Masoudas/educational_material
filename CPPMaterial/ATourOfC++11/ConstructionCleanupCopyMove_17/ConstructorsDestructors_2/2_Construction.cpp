@@ -2,7 +2,7 @@
 * When consturction takes place, invariants are set. 
 * 
 * The important point here is that if construction is impossible, the class throws an exception, 
-* and we the writes of the class must ensure that the resource it has acquired is freed.
+* and we the writers of the class must ensure that the resource it has acquired is freed.
 * Of course the class releases the resources where it can.
 * 
 * If new fails, like the example below, a bad_all exception is thrown and the exception-handling 
@@ -10,6 +10,7 @@
 * is freed.
 */
 #include <iostream>
+#include <limits>
 using namespace std;
 
 struct string {

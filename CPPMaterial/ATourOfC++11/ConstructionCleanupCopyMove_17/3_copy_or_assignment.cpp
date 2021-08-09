@@ -9,7 +9,7 @@
  * we're creating a new copy. When we return an object from a function, the (copy)
  * constructor is called. Why? Because otherwise the value would be an auto variable
  * destroyed by the memory. (However, if we accept reference and return a reference, the content is
- * not copied, because we're returning an accepting the object as it is in the memory. In this case,
+ * not copied, because we're returning and accepting the object as it is in the memory. In this case,
  * we should be careful as to make something on the heap).
  *
  * And assignment operator is a bitwise operation. For this to occur, the object being
