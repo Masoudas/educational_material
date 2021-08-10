@@ -14,7 +14,8 @@
  * Note that both processes contain the same program code, and both processes are running, but only the specific 
  * parts in the if statements get executed, depending on whether the process is the parent or the child.
  * 
- * The program is given below. If we use pstree in another termina, we see that:
+ * The program is given below. If we use pstree in another termina, we see that the child process is made, and 
+ * its parent process is forkdemo. Notice that both processes are now executing forkdemo.
 
 pstree -A -p -s PID_OF_EXECUTABLE	
 systemd(1)---tmux(4050)---bash(18817)---forkdemo(21764)---forkdemo(21765)
