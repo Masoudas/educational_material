@@ -7,8 +7,8 @@ Note that we have three signals for killing a process:
 				the situation and other things, it may not behave as we like. Specially, because SIGINT is 
 				considered for users, the processes communicate with each other in different ways.
 	2)	SIGQUIT:	It generates a core dump, which is useful for debugging.
-	3)	SIGKILL:	Inferior over to SIGTERM (allegedly)
-	4)	SIGTERM:	SIGTERM is the preferred way as the process has the chance to terminate gracefully.
+	3)	SIGKILL:	Kills the process and does not let cleaning up.
+	4)	SIGTERM:	Allowes the process to clean up.
 
 Again, note that stopping a process (which is different than starting it in the background) is done using Ctrl+Z.
 
