@@ -1,0 +1,25 @@
+BSS stands for Block Started by Symbol. Historically, the name was used to denote reserved regions for uninitialized
+words. Basically, that's the purpose that we use the BSS segment for; either uninitialized global variables or 
+global variables set to zero.
+
+For example, consider:
+
+int global_var1;
+int global_var2;
+int global_var3 = 0;
+
+int main(int argc, char** argv) {
+	return 0;
+}
+
+A use of size reveals that:
+$ size main
+   text    data     bss     dec     hex filename
+   1418     544      16    1978     7ba program
+
+We see that the size of bss has increased (me: although interestingly enough, not 3*4=12 bytes, but rather 8 bytes
+only. Why is this the case? Apparently because memory is allocated in terms of required pages to cover our memory
+requirements, not in terms of the actual memory size required. So possibly of 16 bytes asked here, 3*4 + x number
+of bytes are used, so not all of the 16 bytes.)
+
+Finally, recall that uninitialized global variables are always set to zero (me: default constructed in C++?)

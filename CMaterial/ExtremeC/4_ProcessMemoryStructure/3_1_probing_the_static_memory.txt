@@ -1,0 +1,21 @@
+Consider the following simple function:
+
+int main(int argc, char** argv){
+	return 0;
+}
+
+If we compile it, we get the following:
+$ gcc main.c -o main.out
+
+The first tool we can use to determine the size of the static memory is actually called size! Consider:
+
+$ size main.out
+   text    data     bss     dec     hex filename
+   1418     544       8    1970     7b2 program
+
+As you see, we have Text, Data, and BSS segments as part of the static layout. The shown sizes are in bytes.
+The total sum is also given in decimal and hex.
+
+If on the other hand, we compiled this code in MacOS, we'd get:
+__TEXT __DATA __OBJC others dec hex
+4096 	0	0 4294971392 4294975488 100002000

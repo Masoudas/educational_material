@@ -1,0 +1,19 @@
+As we discussed in the previous section, an executable is a set of machine codes generetated by a compiler. However,
+a process is something allocated by the OS to load the executable in. 
+
+One of the first things a process is going to do is to allocate a portion of memory, and then apply a predefined
+memory layout, and this layout is more or less the same in varous OSes. 
+
+As we discussed in the previous section, The memory layout of an ordinary process is divided into multiple parts. 
+Each part is called a segment. Each segment is a region of memory which has a definite task and it is supposed to 
+store a specific type of data. You can see the following list of segments being part of the memory layout of a 
+running process:
+	*	Uninitialized data segment or Block Started by Symbol (BSS) segment
+	*	Data segment
+	*	Text segment or Code segment
+	*	Stack segment
+	*	Heap segment
+
+You learn in this section that some of these segments reside within the executable object file, and other segments 
+are created dynamically at runtime, when the process is spawned.
+

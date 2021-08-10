@@ -1,0 +1,17 @@
+It is true that in the memory layout of a running process, some segments come directly from the base executable 
+object file, and the rest are built dynamically at runtime while the process is being loaded. The former layout is 
+called the static memory layout, and the latter is called the dynamic memory layout.
+
+Static and dynamic memory layouts both have a predetermined set of segments. The content of the static memory layout 
+is prewritten into the executable object file by the compiler, when compiling the source code. On the other hand, 
+the content of the dynamic memory layout is written by the process instructions allocating memory for variables and 
+arrays, and modifying them according to the program's logic.
+
+Me: Essentially, we're talking about a memory allocated statically in the code for example versus a memory allocated
+by say malloc or new.
+
+With all that said, we can guess the content of the static memory layout either by just looking at the source code 
+or the compiled object file. But this is not that easy regarding the dynamic memory layout as it cannot be determined 
+without running the program. In addition, different runs of the same executable file can lead to different content 
+in the dynamic memory layout. In other words, the dynamic content of a process is unique to that process and it 
+should be investigated while the process is still running.
