@@ -1,0 +1,22 @@
+Another idea here is to use comm in various steps.
+	-	First, we print each file together withs size.
+	-	Then, we keep only files for which the size is the same. To that end, we first we keep only unique size
+		files, then use comm with the original list to remove the unique sizes.
+	-	Then we calculate the md5sum of all files.
+	-	Then, once again, we calculate the unique ones.
+	-	Then we get the difference between the original list, and the unique ones.
+	-	We have the duplicate files ready.
+
+The problem however with the above approach is that unique either compares the entire line, or we can say as 
+many chars. But because the file sizes are not equal, we can't get the unqiue file sizes. A dirty trick would
+be to give an equal offset to all file sizes which is greater than any possible file size :D. But this is too
+dangerous, so don't doo it!
+
+#!/bin/bash
+
+ls -lS --time-style=long-iso | awk 'BEGIN{ getline; } { size=$5+10^15 print $5 " " $8}' | sort -n > files
+cat files | uniq -u -w 15 | comm files - -2 -3 > dup_sizes	# These would be duplicate sizes 
+cat dup_sizes | awk '{ print $2 }' | xargs -I {} md5sum {} > md5s
+cat md5s | uniq -w 32 | comm md5s - -2 -3 | awk '{ print $2}'  > duplicate_files
+
+

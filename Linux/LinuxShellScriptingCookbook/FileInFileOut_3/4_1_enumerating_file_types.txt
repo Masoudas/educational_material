@@ -1,0 +1,26 @@
+Suppose we want to print the file type of all subfolders of a given path. A sample script then would look something
+like this:
+
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+	echo "One argument should be supplied. Others will be ignored"
+fi
+
+declare -A file_enum	# Associative array.
+
+while read line; do
+	type=`file -b "$line" | cut -d, -f1 `	# In quotation marks to keep the embedded space.
+											# Then cut the text with delimiter ',' and keep the first field!
+	file_enum[$line]=$type
+done < <(find $1 -type f -print)	# This baby serializes std to the read of th while loop. Putting the second <
+									# Makes it bash compatible, otherwise it's sh compatible.
+									# Note that we could put find in the argument of the for loop as well!
+# Better yet, we can use this version:
+# find $1 -type f -print | while read line; do
+#...
+
+echo ============ File types and counts =============
+for file in ${!file_enum[@]}; do
+	echo $file ":" ${file_enum["$file"]}
+done

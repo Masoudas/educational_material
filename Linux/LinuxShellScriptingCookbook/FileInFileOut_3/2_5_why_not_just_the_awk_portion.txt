@@ -1,0 +1,24 @@
+It occures to me that just using the awk portion of the code, we can get the duplicates. That is, we can compare
+each file with the previous entry and if they're the same, we add one of them as the duplicate of the other.
+
+As such, we only need the awk portion of the code. Then, we use xargs to convert all lines into a single row, and
+then pass those to the rm command. Nice and easy!
+
+ls -lS --time-style=long-iso | awk '
+    BEGIN {
+		getline; getline;
+		name1=$8; size1=$5;        
+    }
+    {
+		name2=$8; size2=$5;			
+		if (size2 == size1){
+			cmd1 = "md5sum " name1;	cmd2 = "md5sum " name2;
+			cmd1 | getline; hash1=$1;	cmd2 | getline; hash2=$1;
+			close(cmd1);	close(cmd2);
+			if (hash1==hash2){
+				print name2;
+			}
+		}
+		name1=name2; size1=size2;
+    }
+	' | xargs rm 

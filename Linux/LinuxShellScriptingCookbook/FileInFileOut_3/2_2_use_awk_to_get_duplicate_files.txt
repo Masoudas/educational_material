@@ -42,6 +42,9 @@ $ ls -lS --time-style=long-iso | awk ' BEGIN {
 So now the strategy would be to read the new line, compare it with the old one and if both size and md5sum are
 equal, print its name on stdout, to be used later on.
 
+Note: As such, executing the commands plainly causes some error in the printed results. Better check my own solution
+in 2_5, and recall we better close the command after executing it.
+
 #!/bin/bash
 
 ls -lS --time-style=long-iso | awk '

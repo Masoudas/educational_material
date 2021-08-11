@@ -1,0 +1,9 @@
+Using cut, we can easily tokenize a string, which is simpler than what we discussed before.
+
+In particular, the -d option defines the delimiter, and then -f defines which field to use:
+
+$ echo "my,brave,face" | cut -d',' -f1,3	# First and third field.
+
+We can also cut a set of chars
+
+$ cut -c 1-16 [files]
