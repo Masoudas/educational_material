@@ -1,0 +1,12 @@
+All the permissions including the uid, gid, and sticky bit are common among all file systems.
+
+There's another set of permissions that are present with ext2, 3 and 4 file systems. These are called extended
+attributes.
+
+An important extended attribute is 'i', which makes the file immutable. If the file is immutable, its content
+cannot change. We use chattr command to do so:
+
+$ chattr +i	file_name	# Set the attribute
+$ chattr -i	file_name	# Unset the attribute.
+
+When a file is immutable, essentially its like x=0 and w=0, and we can't write to it or change it.

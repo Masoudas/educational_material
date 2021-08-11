@@ -1,0 +1,9 @@
+To check the type of the file system, we can use for example the df command with the -T option:
+
+$ df -T
+...
+tmpfs          tmpfs      1615360     2384   1612976   1% /run
+/dev/nvme0n1p5 ext4      61663148 46812108  11688932  81% /
+...
+
+Moreover, the /etc/mtab file contains the same stuff.
