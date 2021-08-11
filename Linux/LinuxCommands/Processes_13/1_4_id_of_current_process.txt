@@ -18,3 +18,6 @@ systemd(1)---systemd(1559)---gnome-shell(1841)---code(4630)---code(4764)---code(
 
 Note that there's a concept that says processes are spawned from a parent concept. That is, no process can exist
 independently of a parent process.
+
+--------------------------
+Moreover, to get the id of the last process sent to the background, we use $!.
