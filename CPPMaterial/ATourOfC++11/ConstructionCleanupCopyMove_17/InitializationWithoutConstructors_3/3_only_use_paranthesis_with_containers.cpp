@@ -5,7 +5,8 @@
 * with single element, and not initializer list. Why? Because if we wanted to use the initilizer_list
 * with paranthesis, we have to write ({}), meaning use the brackets!
 *
-* (Me: Why would initializer list take precedence over a single element in overload resolution?)
+* Me: Why would initializer list take precedence over a single element in overload resolution? Well, it's the
+* rule.
 */
 #include <vector>
 #include <iostream>

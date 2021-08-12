@@ -1,6 +1,4 @@
 /**
-* (The follwing is not Bjarne)
-*
  * Question is, when is the copy constructor called? And when is the assignment operator called?
  *
  * Answer: When we create a new object, the copy constructor is called (or move, depending).

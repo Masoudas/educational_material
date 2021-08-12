@@ -1,7 +1,7 @@
 /**
 * Constructor builds a class from bottom-up:
 * 1-	It first invokes its base class constructor.
-* 2-	Second, it invokes the constructors of its members (didn't know that)
+* 2-	Second, it invokes the constructors of its members.
 * 3-	Finally, it executes its own body.
 * 
 * Question: If the constructors of members are called, why would an int get a random value

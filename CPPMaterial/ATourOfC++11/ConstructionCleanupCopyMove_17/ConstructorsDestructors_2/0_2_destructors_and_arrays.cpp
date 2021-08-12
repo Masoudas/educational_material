@@ -7,8 +7,8 @@
 * is why the destructor is called. (recall that T arr[] is like T arr1 = ..., T arr2 = ..., i.e, declaring
 * several variables.)
 * 
-* On the other hand, if we're on the heap, calling delete[] is like calling delete for evey single element. Hence,
-* every object is once again destroyed.
+* On the other hand, if we're on the heap, calling delete[] is like calling delete for every single element. 
+* Hence, every object is once again destroyed.
 * 
 * Note sometimes you think T* t = new T; arr[0] = *t  would mean an object from heap is allocated to memory. However,
 * we're just calling THE ASSIGNMENT operator here, which means the content of t would be assigned to the location

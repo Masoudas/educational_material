@@ -1,5 +1,5 @@
 /**
-* A destructor is called implicitly when the object goes out of scope is deleted.
+* A destructor is called implicitly when the object goes out of scope or is deleted.
 * 
 * In some cases however, we need to explicitly call the destructor to ensure that
 * loitering objects are deleted. Say for example in a container, when we remove some 

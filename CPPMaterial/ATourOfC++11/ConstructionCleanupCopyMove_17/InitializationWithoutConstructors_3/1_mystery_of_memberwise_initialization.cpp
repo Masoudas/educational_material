@@ -8,13 +8,12 @@
 * Note: When we say direct initilization is impossible, we're talking about the case where we actually
 * set the value of each parameter. The empty bracket situation should not be confused with this.
 * 
-* What about the order of parameters? This is why this method is awful, in the order defined
-* in the class.
+* What about the order of parameters? In the order defined in the class.
 * 
 * When we write empty {} bracket, if the class:
 * 1-	Has default constructor: Then all parameters are initialized with defualt constructor. Even array
 *	is initialized to (proper) zero.
-* 2-	Has non-default constructor: For this case, built-in types are randomly initialized. Othertypes
+* 2-	Has non-default constructor: For this case, built-in types are randomly initialized. Other types
 *	are initialized using their default values. This includes the array.
 * 
 */
