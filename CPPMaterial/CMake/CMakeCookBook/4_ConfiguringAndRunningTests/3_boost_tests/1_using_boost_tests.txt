@@ -1,4 +1,20 @@
 Using boost tests is essentially like linking against boost libraries. Therefore, we can use the package (module)
 FindBoost to detect our boost libraries, and then work from there.
 
-The 
+The only point is the downloading and installation of boos libraries. Notice that the boost libraries must be
+installed on the system, and just downloading them is not enough.
+
+Here's a sample boost test for our sum_up library:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#include "sum_integers.hpp"
+#include <vector>
+
+#define BOOST_TEST_MODULE example_test_suite
+#include <boost/test/unit_test.hpp>
+
+BOOST_AUTO_TEST_CASE(add_example) {
+	auto integers = {1, 2, 3, 4, 5};
+	auto result = sum_integers(integers);
+	BOOST_REQUIRE(result == 15);
+}
