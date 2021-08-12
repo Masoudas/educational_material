@@ -1,0 +1,35 @@
+As discussed before, to keep kernel log messages, they're written to log files, which is /var/log/syslog in Ubuntu 
+or /var/log/messages in RedHat based systems.
+
+Recall that systemd is the first process in the tree of processes as we know (PID=1). Within the systemd framework, 
+logging is performed by a daemon process called systemd-journal, and the journalctl(1) utility is the user 
+interface to it.
+
+One key advantage of using the journal to retrieve and interpret logs is that all logs from applications, libraries, 
+system daemons, the kernel, drivers, and so on are written (merged) here.
+
+Below, we show some examples of aliases we may define for journalctl. Notice that not using the pager program (like
+man) allows us to use grep to extract information:
+
+$ alias jlog='/bin/journalctl -b --all --catalog --no-pager' # Use no pager, and show most recent boots, and every
+															 # information.
+$ alias jlogr='/bin/journalctl -b --all --catalog --no-pager --reverse'	# Only in reverse order.
+
+$ alias jlogall='/bin/journalctl --all --catalog --merge --no-pager' # Everything, all time, merge them as well.
+
+$ alias jlogf='/bin/journalctl -f'	# See only the tail
+
+alias jlogk='/bin/journalctl -b -k --no-pager'	# Only kernel, and from the last boot.
+
+Also, notice the structure of the journal entires:
+[timestamp] [hostname] [source] [user] [message]
+
+The non-volatile logging of kernel messages into files is very useful, of course. Note, though, that there exist 
+circumstances, often dictated by hardware constraints, that might render it impossible. For example, a tiny, highly 
+resource-constrained embedded Linux device might use a small internal flash chip as its storage medium. Now, not 
+only is it small and all the space is pretty much used up by the apps, libraries, kernel, and bootloader, it is 
+also a fact that flash-based chips have an effective limit on the number of erase-write cycles they can sustain 
+before wearing out. Thus, writing to it a few million times might finish it off! So, sometimes, system designers 
+deliberately and/or additionally use cheaper external flash memory such as (micro)SD/MMC cards (for non-critical 
+data) to mitigate this impact, as they're easily replaceable.
+

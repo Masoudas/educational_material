@@ -1,0 +1,50 @@
+In the following example, we write a simple script which installs a module by first removing it with rmmod, then
+make clean, then make, then installing the module, and then finally displaying the kernel log buffer. 
+
+We assume that only the module name is given to the following script, and we also check for it.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+run_cmd(){	# A helper function for running commands:
+
+[ $# -ne 0 ] && return
+
+local SEP=-------------------------------
+echo "
+	${SEP}
+	$*
+	${SEP}
+"
+eval "$@"	# I don't think we necessarily need to use eval here.
+[ $? -ne 0 ] && echo " ^--[FAILED]"
+}
+
+[ $# -ne 1 ] && {
+	echo "Not enough arguments are given"
+	exit 1
+}
+
+[[ $1 =~ .*[\.].* ]] && {
+	echo "Provide only the module name"
+	exit 1
+}
+
+echo "Version info:"
+which lsb_release >/dev/null 2>&1 && {
+	echo -n "Distro: "
+	lsb_release -a 2>/dev/null | grep "Description" | awk -F':' '{print $2}'	# Could have used cut instead of awk.
+}
+
+echo -n "Kernel: " ; uname -r
+runcmd "sudo rmmod $1 2> /dev/null"
+runcmd "make clean"
+runcmd "sudo dmesg -c > /dev/null"
+runcmd "make || exit 1"
+
+[ -f "$1.ko" ] && {
+	echo "[!] kernel not being built. Aborting ..."
+	exit 1
+}
+
+runcmd "sudo insmod ./$1.ko && lsmod|grep $1"
+runcmd dmesg
+exit 0
