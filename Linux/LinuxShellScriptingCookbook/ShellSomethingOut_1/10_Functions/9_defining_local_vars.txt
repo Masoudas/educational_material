@@ -1,0 +1,8 @@
+To define local variables, we can use local inside a function. Notice that whatever option declare gets, local
+will get it too.
+
+my_f(){
+	local -A ass_arr
+	local sep=-----------------
+	...
+}
