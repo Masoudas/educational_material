@@ -7,8 +7,8 @@ is prewritten into the executable object file by the compiler, when compiling th
 the content of the dynamic memory layout is written by the process instructions allocating memory for variables and 
 arrays, and modifying them according to the program's logic.
 
-Me: Essentially, we're talking about a memory allocated statically in the code for example versus a memory allocated
-by say malloc or new.
+Me: Essentially, when we say the static memory, we mean the global variables allocated in the code. When we say
+the dynamic memory, we mean the memory allocated to heap and the stack.
 
 With all that said, we can guess the content of the static memory layout either by just looking at the source code 
 or the compiled object file. But this is not that easy regarding the dynamic memory layout as it cannot be determined 
