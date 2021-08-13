@@ -1,0 +1,7 @@
+Recall that the operator # (or ## for greedy detection) is used for determining the extension of a file.
+Also recall that %(or %% for greedy detection) is used for determining the basename of a file. Recall that these
+two have to combined with either .* and *. to remover everything after, or everything before, respectively.
+
+$ filename=file.txt
+$ extension=${filename##*.}
+$ basename=${filename%%.*}
