@@ -1,0 +1,6 @@
+Here are three ways to only list directories:
+
+$ ls -d */	# Say whaat!
+$ ls -F | grep "/$"
+$ find . -type d -maxdepth=1
+$ ls | grep "^d"

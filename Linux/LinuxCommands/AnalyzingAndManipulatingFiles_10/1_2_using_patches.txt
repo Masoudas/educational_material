@@ -1,0 +1,8 @@
+The unified output of diff is called a patch file, and it can be used to make changes to either file of the diff
+command to update them. The command used to that end is patch:
+
+$ diff -u f1 f2 > patch
+$ diff -p1 f1 < patch
+
+We might as well revert the changes if not satisfied, by repeating the same command:
+$ diff -p1 f1 < path

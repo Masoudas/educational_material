@@ -1,0 +1,6 @@
+Since Bash 3, it's possible to use <<< to supply a string instead of a file:
+
+while read file; 
+do
+	echo $file
+done <<< "This string is supplied"

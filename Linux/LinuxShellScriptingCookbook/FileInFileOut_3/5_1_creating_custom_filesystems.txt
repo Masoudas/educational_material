@@ -1,0 +1,20 @@
+When we create and allocate space to a file, that space can be used to mount our own (even custom) file system.
+
+Consider the following example:
+$ dd if=/dev/random /of=~/loopbackfile.img fs=1GiB count=1
+$ mkfs.ext4 ~/loopbackfile.img
+
+Now, we mount this file system just like a normal file system:
+$ mkdir ~/loopback
+$ mount -o ~/loopbackfile.img ~/loopback	# The o option is used to mount loopback file systems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We can define a device file for our loopback image with the losetup command:
+$ losetup /dev/loop100 ~/loopbackfile.img
+
+As such, we can mount our device directly:
+$ mount /dev/loop100 ~/loopback
+
+We can also unmount using the path Or the device file:
+$ umount /dev/loop100 
+$ umount ~/loopback

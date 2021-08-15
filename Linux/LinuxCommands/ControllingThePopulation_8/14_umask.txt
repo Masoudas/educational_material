@@ -1,0 +1,18 @@
+On Linux and other Unix-like operating systems, new files are created with a default set of permissions. 
+Specifically, a new file's permissions may be restricted in a specific way by applying a permissions "mask" called 
+the umask. The umask command is used to set this mask, or to show you its current value.
+
+The mask is set just-line a normal mod, but its interpretation is inversed:
+$ umask 0002
+
+This implies that the write permission for others is masked. So when files are created, they have permissions 
+which allow write permission for the user (file owner). The rest of the file's permissions would be unchanged from 
+the operating system default. 
+
+As another example:
+$ umask 700
+$ touch file
+$ ls -l file
+----rw-rw- 1 masoudas masoudas 0 août  13 17:21 a
+
+Note that with no arguments, umask displays the current mask, or with -S as string.

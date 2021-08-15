@@ -1,0 +1,16 @@
+PGID stands for Process Group ID and is a way for the system to group processes. The PGID for the child process is 
+the PID of the parent process. In other words, this PGID was created to group the parent and child process since 
+they belong together. The system sets the PGID to the PID of the parent who created the group. We don't need to 
+create these groups ourselves; that is something the system does for us.
+
+SID stands for Session ID, and this is also a way for the system to group processes. However, a SID group is 
+usually bigger and contains more processes— often a whole "session," hence the name. For example, the SID could be
+the PID of the Bash shell. The same rules apply here; the SID number will be the same as the PID of the process 
+that started the session. This session consists of the user's shell and all the programs that start from it. That 
+way, the system can kill all the processes that belong to that session if we log off for example.
+
+So let's say we want to create a process that would live independently of a terminal (session.) One of the things
+that we need to do then is to change the session id, so that it would not be killed by that terminal disappearing
+(or that session for that matter.) We discuss this next.
+
+
