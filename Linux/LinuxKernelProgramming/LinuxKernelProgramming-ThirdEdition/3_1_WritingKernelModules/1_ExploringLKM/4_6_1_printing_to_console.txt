@@ -1,0 +1,34 @@
+So far, we've seen that we printk prints to the kernel message ring buffer, and the content of that buffer is
+what's copied inside /var/log/sys. The question is, is there a way to print our messages directly to the console,
+rather having to deal with dmesg for example?
+
+The answer is yes. Traditionally, the console device is a pure kernel feature, the initial Terminal window that 
+the superuser logs into (/dev/console) in a non-graphical environment. Interestingly, on Linux, we can define 
+several consoles – a teletype terminal (tty) window (such as /dev/console), a text-mode VGA, a framebuffer, or 
+even a serial port served over USB (this being common on embedded systems during development).
+
+The point here is that the console is often the target of important-enough log messages, including those originating 
+from deep within the kernel. Linux's printk uses a proc-based mechanism for conditionally delivering its data to 
+the console device. To understand this better, let's first check out the relevant proc pseudo-file:
+
+$ cat /proc/sys/kernel/printk
+4 4 1 7
+
+We interpret the preceding four numbers as printk log levels (with 0 being the highest and 7 the lowest in terms 
+of "urgency"). The preceding four-integer sequence's meaning is:
+
+	-	The current (console) log level     
+		The implication being that all messages less than this value will appear on the console device!
+	-	The default level for messages that lack an explicit log level
+	-	The minimum allowed log level
+	-	The boot-time default log level
+
+As such, we conclude that all messages with level less than 4 appear on the console device on top of the log file.
+
+Note that kernel messages at log level 0 [KERN_EMERG] are always printed to the console, and indeed to all Terminal 
+windows and the kernel log file, regardless of any settings. 
+
+Note that in embedded systems, we tend to set the first number to 8, ensuring that all kernel messages would be
+printed to the terminal. We can do this manually as follows, which would make printk act like a normal printf:
+$ sudo echo "8 4 1 7" > /proc/sys/kernel/printk
+

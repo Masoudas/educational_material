@@ -1,0 +1,27 @@
+There are certain convenience macros that would allow us to directly print messages on different log levels. These
+are macros that start with 'pr_':
+
+// include/linux/printk.h:
+[...]
+/*
+* These can be used to print at the various log levels.
+* All of these will print unconditionally, although note that pr_debug()
+* and other debug macros are compiled out unless either DEBUG is defined
+* or CONFIG_DYNAMIC_DEBUG is set.
+*/
+#define pr_emerg(fmt, ...) \
+	printk(KERN_EMERG pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_alert(fmt, ...) \
+	printk(KERN_ALERT pr_fmt(fmt), ##__VA_ARGS__)
+#define pr_crit(fmt, ...) \
+printk(KERN_CRIT pr_fmt(fmt), ##__VA_ARGS__)
+[...]
+
+
+So, for example:
+pr_emerg("This is a critical message");
+
+Note:
+	The kernel allows us to pass loglevel=n as a kernel command-line parameter, where n is an integer between 0 and 
+	7, corresponding to the eight log levels mentioned previously. As expected (as you shall soon learn), all printk 
+	instances with a log level less than that which was passed will be directed to the console device as well.

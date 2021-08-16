@@ -1,5 +1,27 @@
-???
-
 Me: Here's something to remember. Because there are no libraries in the kernel space, we actually needn't define
 linkeage to libraries when we compile our modules. There are no libraries to link to in the userspace that can
-be used in the kernel space in fact.
+be used in the kernel space in fact. As such, a normal attempt at building the project directly with gcc wouldn't
+work.
+
+To build a kernel module file, we can use make with -C option. We need to pass the path to the kernel module files
+as well (in /lib/modules/$(uname -r)/build), also the path to the kernel file, and possibly the output name.
+So, a typical compilation would look something like this:
+
+$ make -C /lib/modules/$(uname -r)/build M=`pwd` modules -o module_name.ko	# modules must not be replaced.
+
+A more sophisticated approach would be to use make files:
+
+""""""""""""""""""""""""
+# ch4/helloworld_lkm/Makefile
+# Simplest kernel module Makefile
+
+PWD   := $(shell pwd)
+obj-m += helloworld_lkm.o
+
+all:
+	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
+install:
+	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules_install
+clean:
+	make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) clean
+""""""""""""""""""""""""
