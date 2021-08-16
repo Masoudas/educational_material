@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -157,10 +157,12 @@
     <ClCompile Include="Classes_16\Constructors_4\MemberDefaultValues_0.cpp" />
     <ClCompile Include="Classes_16\MemberTypesOrInners_2.cpp" />
     <ClCompile Include="Classes_16\MethodPostModifiers_0\1_why_post_modifiers.cpp" />
-    <ClCompile Include="Classes_16\Mutability_5\ConstantMemberFunctions_2.cpp" />
-    <ClCompile Include="Classes_16\Mutability_5\MakingClassMembersImmutable_1.cpp" />
-    <ClCompile Include="Classes_16\Mutability_5\MutabilityThroughIndirection_4.cpp" />
-    <ClCompile Include="Classes_16\Mutability_5\MutableModifier_3.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\2_ConstantMemberFunctions.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\1_MakingClassMembersImmutable.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\4_MutabilityThroughIndirection.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\3_MutableModifier.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\5_1_const_does_not_propagate.cpp" />
+    <ClCompile Include="Classes_16\Mutability_5\5_2_propagating_constness.cpp" />
     <ClCompile Include="Classes_16\RulesToWriteAClass.cpp" />
     <ClCompile Include="Classes_16\SelfReference_6\ThisPointer_1.cpp" />
     <ClCompile Include="Classes_16\StaticKeyword_7\2_Static_Initialization_Is_Odd.cpp" />
@@ -211,9 +213,9 @@
     <ClCompile Include="Concurrency_41\ThreadClassFromStandard_1\3_use_move_to_avoid_copy_with_threads.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\0_1_just_how_bad_copies_can_get.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\0_2_always_initialize_every_member.cpp" />
+    <ClCompile Include="ConstructionCleanupCopyMove_17\0_3_copy_or_assignment.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\1_Understanding_Dynamics.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\2_When_Object_Is_Copied_Or_Moved.cpp" />
-    <ClCompile Include="ConstructionCleanupCopyMove_17\3_copy_or_assignment.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_1_when_class_default_operations_are_removed.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_2_what_defualt_operations_do.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\ClassDefaultOperations_11\0_3_new_operator.cpp" />
@@ -233,7 +235,6 @@
     <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\6_Calling_Destructors.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\7_Removing_Destructors.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\8_Virtual_Destructors.cpp" />
-    <ClCompile Include="ConstructionCleanupCopyMove_17\ConstructorsDestructors_2\9_destructors_and_arrays.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\0_2_stl_containers_and_copy.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\0_0_AnExample.cpp" />
     <ClCompile Include="ConstructionCleanupCopyMove_17\CopyConstructor_9\10_copy_on_demand.cpp" />
@@ -935,7 +936,9 @@
     <ClCompile Include="TypesAndDeclarations_6\Aliasing\3_increment_and_decrement_operator.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoAndDecltype_10.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\1_auto_as_template.cpp" />
-    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_return_type_deduction_from_lambda_.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_1_decltype_auto_deduction_.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_2_1_reusing_const_method.cpp" />
+    <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\2_2_2_reusing_const_method.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\AutoTypeDeduction\3_auto_and_cv_qualifiers.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\1_Basics.cpp" />
     <ClCompile Include="TypesAndDeclarations_6\3_char.cpp" />

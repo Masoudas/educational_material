@@ -1,0 +1,14 @@
+Valgrind is a tool (at least in Linux) to detect memory leaks. As such, we can easily use it as follows:
+
+$ valgrind ./program
+...
+
+And the output command shows whether a memory leak has occured or not. An interesting approach to detect if such a leak has occured
+automatically without having to manualy check the result is to use grep:
+
+$ valgrind ./program | grep "LEAK_REGEX" --quiet
+$ echo $?
+
+Other things valgrind can check is for example reading/writing out of memory bounds.
+
+Valgrind in Windows? It's complex, and requires MinGW.

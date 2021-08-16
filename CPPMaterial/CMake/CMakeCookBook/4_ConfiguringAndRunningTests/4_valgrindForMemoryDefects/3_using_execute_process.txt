@@ -1,0 +1,23 @@
+In this receipe, 'I' use the execute_process command to create a process and execute valgrind directly.
+
+cmake_minimum_required(VERSION 3.8.0 FATAL_ERROR)
+project(valgrind-execution)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(leaker main.cpp leaky_implementation.cpp)
+
+execute_process(
+        COMMAND "valgrind ${CMAKE_BINARY_DIR}/leaker"
+        OUTPUT_VARIABLE valgrind_output
+        RESULT_VARIABLE valgrind_result
+        ERROR_QUIET
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+string(REGEX MATCH "CAN'T_RECALL_RESULT_OF_VALGRIND_RIGHT_NOW!!" ${OUTPUT_VARIABLE})
+if(OUTPUT_VARIABLE)
+    message(FATAL_ERROR "memory leak detected in leaker")
+endif()

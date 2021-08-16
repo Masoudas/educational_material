@@ -1,0 +1,47 @@
+Here's a sample program with memory leaks:
+
+#include "leaky_implementation.hpp"
+int do_some_work() {
+    double *my_array = new double[1000];
+    
+    // we forget to deallocate it
+    // delete[] my_array;
+
+    return 0;
+}
+
+#include "leaky_implementation.hpp"
+
+int main() {
+    int return_code = do_some_work();
+    return return_code;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+So, CTest can be directly used with valgrind, so we don't have to use valgrind directly as a command. As such, we don't have to 
+check the result of the test with a regex like we discussed before. With that being said, we can do that if we wanted to, using
+the execute_process command. Here, however, we use the 'find_program' command to find the valgrind executable, then we just add 
+a normal CTest for checking memory leaks.
+
+cmake_minimum_required(VERSION 3.15.0 FATAL_ERROR)
+project(valgrind-example)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(leaker)
+target_sources(leaker PRIVATE leaky_implementation.cpp main.cpp)
+
+find_program(MEMORYCHECK_COMMAND NAMES valgrind)    # Recall that this is the way to find programs that are not modules
+set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
+
+# add memcheck test action
+include(CTest)
+
+enable_testing()
+
+add_test(
+    NAME cpp_test
+    COMMAND $<TARGET_FILE:cpp_test>
+)
