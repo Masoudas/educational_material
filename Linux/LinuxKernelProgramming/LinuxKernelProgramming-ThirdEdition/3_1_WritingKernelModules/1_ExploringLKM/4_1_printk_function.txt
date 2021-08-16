@@ -1,0 +1,28 @@
+printk can be used to emit a message. Note that in the kernel space, there are no libraries. As such, it's impossible
+to use printf or cout. Note that the actual location is "kernel/printk/printk.c:printk()"
+
+The key difference between printf and printk is this: the user space printf(3) library API works by formatting a 
+text string as requested and invoking the write(2) system call, which in turn actually performs a write to the 
+stdout device, which, by default, is the Terminal window (or console device). The kernel printk API also formats 
+its text string as requested, but its output destination differs. It writes to at least one place – the first one 
+in the following list – and possibly to a few more:
+
+	-	A kernel log buffer in RAM (volatile)
+	-	A log file, the kernel log file (non-volatile)
+	-	The console device
+
+When you emit a message via printk, it's guaranteed that the output goes into a log buffer in kernel memory (RAM).
+
+This, in effect, constitutes the kernel log. It's important to note that you will never see the printk output directly 
+when working in graphical mode with an X server process running (the default environment when working on a typical 
+Linux distro). So, the obvious question here is: how do you see the kernel log buffer content? There are a few ways
+
+By default, dmesg will dump the entire kernel log buffer content to stdout. Here, we look up the last two lines of 
+the kernel log buffer with it:
+
+$ dmesg | tail -n 2
+
+Within the kernel log, as displayed by the dmesg(1) utility, the numbers in the leftmost column are a simple 
+timestamp, in [seconds.microseconds] format, of time elapsed since system boot (it is not recommended to treat it 
+as being perfectly accurate, though). By the way, this timestamp is a Kconfig variable – a kernel config option – 
+named CONFIG_PRINTK_TIME; it can be overridden by the printk.time kernel parameter.

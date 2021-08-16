@@ -1,0 +1,21 @@
+Me: Note that linkeage against dynamic libraries (like static libraries or even a simple relocatable object file for
+that matter) can't be solved by just introducing the header files. This is because inside our final executable,
+we need to have the address of the dynamic symbols. That's why, we pass the lib address at linkeage time. However,
+recall that introducing the path at linkeage time is not the same as loading the library at run-time, which is
+a totally separate situation.
+
+When loading a process and about to be launched, a shared object file will be loaded and mapped to a memory region 
+accessible by the process. This procedure is done by a dynamic linker (or loader), which loads and executes an 
+executable file.
+
+Like we said in the section dedicated to executable object files, both ELF executable and shared object files have 
+segments in their ELF structure. Each segment has zero or more sections in them. There are two main differences
+between an ELF executable object file and an ELF shared object file. Firstly, the symbols have relative absolute 
+addresses that allow them to be loaded as part of many processes at the same time. This means that while the 
+address of each instruction is different in any process, the distance between two instructions remains fixed. In 
+other words, the addresses are fixed relative to an offset. This is because the relocatable object files are 
+position independent. 
+
+The second difference is that some segments related to loading an ELF executable object file are not present in 
+shared object files. This effectively means that shared object files cannot be executed.
+

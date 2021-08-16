@@ -1,0 +1,6 @@
+Note that changes to a mounted device are not written directly to the device, but rather we should wait for the
+buffer to be full (what buffer?)
+
+To flush changes immediately, use 'sync'
+
+$ sync

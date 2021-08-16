@@ -1,0 +1,14 @@
+The kpartx is tool for easily mounting all the devices inside the loopback system. kpartx is not usually installed
+and we have to do it manually.
+
+Note that what kpartx does it that it creates the device files for our partitions.
+
+$ kpartx -v -a diskimage.img 
+add map loop0p1 (252:0): 0 114688 linear /dev/loop0 8192
+add map loop0p2 (252:1): 0 15628288 linear /dev/loop0 122880
+
+Then, we can mount the devices:
+$ mount /dev/mapper/loop0p1 /mnt/disk1
+
+$ kpartx -d diskimage.img 
+loop deleted : /dev/loop0

@@ -1,0 +1,27 @@
+As we already know, the text segment inside the code contains the machine level instructions of the code. 
+
+Consider for example the following simple executable:
+
+int main(int argc, char** argv) {
+	return 0;	
+}
+
+Then, we can object dump the resulting executable and check various segments:
+
+$ objdump -S program	# Show only the symbols.
+
+program:     file format elf64-x86-64
+
+Disassembly of section .init:
+[...]	# various other functions.
+0000000000001129 <main>:
+    1129:       f3 0f 1e fa             endbr64 
+    112d:       55                      push   %rbp
+    112e:       48 89 e5                mov    %rsp,%rbp
+    1131:       89 7d fc                mov    %edi,-0x4(%rbp)
+    1134:       48 89 75 f0             mov    %rsi,-0x10(%rbp)
+    1138:       b8 00 00 00 00          mov    $0x0,%eax
+    113d:       5d                      pop    %rbp
+    113e:       c3                      retq   
+    113f:       90                      nop
+[...]

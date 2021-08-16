@@ -1,0 +1,10 @@
+It is a well-known fact that the Linux kernel follows the monolithic kernel architecture. Essentially, a monolithic design 
+is one in which all kernel components (that we mentioned in this section) live in and share the kernel address space (or 
+kernel segment). This can be clearly seen in Fig 2.
+
+Another fact you should be aware of is that these address spaces (for subsystems) are of course virtual address spaces and 
+not physical. The kernel will (leveraging hardware such as the MMU/TLB/caches) map, at the page granularity level, virtual 
+pages to physical page frames. It does this by using a master kernel paging table to map kernel virtual pages to physical 
+frames, and, for every single process that is alive, it maps the process's virtual pages to physical page frames via individual 
+paging tables for each process.
+

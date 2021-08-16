@@ -1,0 +1,23 @@
+We can use objdump in a Unix environment to directly check the content of the BSS and DATA sections.
+
+Consider for example:
+
+int	x = 33;	// 0x21;
+int	y = 0x12153467;
+char z[6] = "ABCDE";
+
+int main(int argc, char**argv) {
+	return 0;
+}
+
+Now, either by dumping the object directly or using the -s and -j options we get:
+$ objdump -s -j program
+ 4000 00000000 00000000 08400000 00000000  .........@......
+ 4010 21000000 67341512 41424344 4500      !...g4..ABCDE. 
+
+Notice that the first column here is the address column in hex, and the rest are the content of the address, again
+in Hex. Notice that on the right, we have the interpretation as chars. Notice also the value 21 which starts at
+address 4010. Notice that each line contains 16 bytes exactly.
+
+Also, notice the endianness of the data stored. The data 0x00000021 is stored as 21000000, which implies that our
+system is little indian.

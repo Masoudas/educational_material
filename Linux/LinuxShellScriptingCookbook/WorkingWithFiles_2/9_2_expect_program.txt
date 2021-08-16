@@ -1,0 +1,34 @@
+'expect' is a bizzare bizzare program, used for interacting with shell scripting automatically! To use this package,
+we need to install the expect package:
+
+$ sudo apt-get install expect.
+
+'expect' is based on the TCL language. We'll discuss the spawn, expect, and send commands for simple automation. With 
+the power of the TCL language behind it, expect can do much more complex tasks. See more about the TCL language at 
+the www.tcl.tk website.
+
+The three major commands are:
+	-	spawn	Runs the new target application.
+	-	expect	Watches for a pattern to be sent by the target application.
+	-	send	Sends a string to the target application.
+
+Consider the script we talked about in the previous example. We can now interact with it based on a pattern that 
+may be printed on stdout (such as "folder" or "file" as part of it,) and then write the following script to interact
+with it:
+
+%%%%%%%%
+#!/usr/bin/expect  
+#Filename: automate_expect.tcl 
+spawn ./backup .sh  
+expect { 
+  "*folder*" { 
+     send "notes\n" 	# Notice the \n
+     exp_continue 
+   } 
+  "*type*" { 
+     send "docx\n" 
+     exp_continue 
+  } 
+} 
+%%%%%%%
+And as such, when the patterns appear, the script interacts with them.

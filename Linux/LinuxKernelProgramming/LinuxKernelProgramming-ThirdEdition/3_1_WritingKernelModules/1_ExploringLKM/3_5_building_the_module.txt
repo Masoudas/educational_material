@@ -1,0 +1,5 @@
+???
+
+Me: Here's something to remember. Because there are no libraries in the kernel space, we actually needn't define
+linkeage to libraries when we compile our modules. There are no libraries to link to in the userspace that can
+be used in the kernel space in fact.

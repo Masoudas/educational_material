@@ -1,0 +1,4 @@
+Note that a cross-compiler (like any other compiler of course) must provide it's own assembly language compiler
+as well as machine code from assembly provider (or assembler!).
+
+Once these tools are ready, we can generate our ELF files, which are the object files.

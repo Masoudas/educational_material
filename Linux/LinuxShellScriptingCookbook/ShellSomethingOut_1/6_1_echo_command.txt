@@ -1,0 +1,62 @@
+We can print on the terminal console in three different ways:
+
+-   With double quotation:
+$ echo "Hello world!"
+Double quotes allow the shell to interpret special characters within the string. Single quotes disable this 
+interpretation.
+
+echo "cannot include exclamation - !within double quotes"
+
+This is reflected on the shell as (note: Not in my scripts though!):
+bash: !: event not found error
+
+If you need to print special characters such as !, you must either not use any quotes, use single quotes, or 
+escape the special characters with a backslash
+
+echo Hello World\!ad   # This prints fine. With quotes it prints \!
+
+
+-   With single quotation
+$ echo 'Hello world'
+Variable substitution, which is discussed in the next recipe, will not work within single quotes.
+
+-   With no quotation
+$ echo Hello world!
+When using echo without quotes, we cannot use a semicolon, as a semicolon is the delimiter between commands 
+in the Bash shell
+
+$ echo Hello; world # Interprets new command
+
+
+-   Escaping newline in echo
+By default, echo appends a newline to the end of its output text. Disable the newline with the -n flag. The 
+echo command accepts escape sequences in double-quoted strings as an argument. When using escape sequences, 
+use echo as echo -e "string containing escape sequences". Consider the following example:
+
+Example 1:
+echo -n "These two lines"
+echo " are printed on the same line"
+
+Example 2:
+echo "This one\t does not escape"
+echo -e "This one\t does \nescape"
+
+Note that even hex or octal digits can be supplied as such to echo. But importantly, note that they're interpreted
+as their corresponding values in the ASCII table (same way \n would be interpreted for example:)
+$ echo -e "\x55"
+U
+
+When is this useful? When we want to pass some weird char to a program, like for example a square, for which there's 
+no corresponding key on the keyboard, but we can say:
+$ echo -e "\xFE"
+
+Of course, if we wanted to pass an actual hex string, we'd use the normal hex typing:
+$ echo "xa1214fe"
+
+-   Printing a colored output
+A script can use escape sequences to produce colored text on the terminal.
+Colors for text are represented by color codes, including, reset = 0, black = 30, red = 31, green = 32, 
+yellow = 33, blue = 34, magenta = 35, cyan = 36, and white = 37.
+
+To print colored text, enter the following command:
+echo -e "\e[1;31m This is red text \e[0m"

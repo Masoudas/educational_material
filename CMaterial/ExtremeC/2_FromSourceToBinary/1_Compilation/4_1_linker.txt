@@ -1,0 +1,29 @@
+Essentially, a C/C++ project can have the following products (AKA artifacts:)
+
+	-	A number of executable files that usually have the .out extension in most Unix-like operating systems. 
+		These files usually have the .exe extension in Microsoft Windows.
+	-	A number of static libraries that usually have the .a extension in most Unix-like operating systems. 
+		These files have the .lib extension in Microsoft Windows.
+	-	A number of dynamic libraries or shared object files that usually have the .so extension in most Unix-like 
+		operating systems. These files have the .dylib extension in macOS, and .dll in Microsoft Windows.
+	
+Relocatable object files are not considered as one of these products; hence, you cannot find them in the preceding 
+list. 
+
+Note that an executable object file must have an entry point where the machine-level instructions are executed. While 
+the main function is the entry point of a C program, the entry point of an executable object file is platform-dependent, 
+and it is not the main function. The main function will eventually be called after some preparations made by a group 
+of platform-specific instructions, which have been added by the linker as the result of the linking step.
+
+A static library is nothing more than an archive file that contains several relocatable object files. Therefore, a 
+static library file is not produced by the linker directly. Instead, it is produced by the default archive program 
+of the system, which on a Unix-like system is the ar program. Static libraries are usually linked to other 
+executable files, and they then become part of those executable files. They are the simplest and easiest way to 
+encapsulate a piece of logic so that you can use it at a later point.
+
+Shared object files, which have a more complicated structure rather than simply being an archive, are created directly 
+by the linker. They are also used differently; namely, before they are used, they need to be loaded into a running 
+process at runtime.
+
+Static libraries are thus used at link-time, whereas shared libraries are used at run-time.
+

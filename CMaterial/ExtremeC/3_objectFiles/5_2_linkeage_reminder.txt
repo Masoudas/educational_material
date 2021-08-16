@@ -1,0 +1,20 @@
+Recall that the L option tells gcc to look in a new path. Moreover, -l tells the name of the library. Finally, recall
+that linkeage against some default libraries has shorthands, like m for the math library:
+
+$ gcc -L/path_folder -lmy_lib -lm main.o -o program
+
+Also, we may recall that for dynamic libraries, we drop the word lib from the name:
+
+# linkeage against libmine.so
+$ gcc ... -lmine main.o - program
+
+Note that in case both a static and a dynamic library with the same name exists, gcc prefers the dynamic one over
+the static one.
+
+Note that without defining the path to our shared library to be loaded at run-time (using the ld.so.conf.d/
+folder content and then the command that I don't recall right now to configure the dynamic library, or using the
+'$ export LD_LIBRARY_PATH=/opt/geometry' command) we get the following error:
+
+$ ./program
+./program: error while loading shared libraries: libmine.so:
+cannot open shared object file: No such file or directory

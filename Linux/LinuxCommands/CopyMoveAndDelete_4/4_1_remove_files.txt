@@ -1,0 +1,8 @@
+We can remove files using the rm command. For recursive removal (which involves the folders inside the given path), we need to use 
+rm.
+
+Note again that to remove the content of the directory, and not the directory itself, we need only to add the /*.
+
+An interesting option in rm is -i, which makes the command interactive. rm -f forces remove of sensititve files.
+There's of course the recursive option -r for removing directories.
+

@@ -1,0 +1,12 @@
+Note that static variables defined inside the functions will be stored in either bss or data section, depending
+on the OS as well as whether the variables are initialized or not.
+
+void func() {
+	static int i;
+	static int j = 1;
+}
+
+To elaborate more on how this is done, at runtime, the func function has access to these variables located in either 
+the Data segment or the BSS segment, which has a static lifetime. That's basically why these variables are called 
+static.
+

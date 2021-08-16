@@ -1,0 +1,27 @@
+A question that we always encounter is how can we remove all files except some? There are a couple of easy answers
+to this:
+
+	-	Using glob
+Normally, we first need to enable extra globe options (more than ?, * and [::].) To that end, what we can do is to
+use the following command:
+$ shopt -s extglob	# On my machine, however, extglob is on by default.
+
+Now, we these additional globs available:
+*(pattern-list) – matches zero or more occurrences of the specified patterns
+?(pattern-list) – matches zero or one occurrence of the specified patterns
++(pattern-list) – matches one or more occurrences of the specified patterns
+@(pattern-list) – matches one of the specified patterns
+!(pattern-list) – matches anything except one of the given patterns
+
+So now, let's say we wanted not remove CMakeLists.txt, but anything other than that.
+$ rm -rv !(CMakeLists.txt)	# Anything but.
+
+Now, it's suggested to turn extglob of after the given removal:
+$ shopt -s extglob
+
+
+	-	Using find:
+To remove a particular set of files, use the 'find' command. An example is:
+$ find . -f -not -name 'something.txt' -delete
+$ find . -type f -not \(-name '*gz' -or -name '*odt' -or -name '*.jpg' \) -delete
+

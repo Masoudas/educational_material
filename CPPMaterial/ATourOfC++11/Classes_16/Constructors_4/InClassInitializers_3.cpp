@@ -1,6 +1,6 @@
 /**
- * We can initialize each class member directly when declared. That way, each
- * constructor would be responsible for initializing a certain potion of the class.
+ * We can initialize each class member directly when declared. That way, each constructor would be responsible for 
+ * initializing a certain potion of the class.
  * 
  */
 class Date {

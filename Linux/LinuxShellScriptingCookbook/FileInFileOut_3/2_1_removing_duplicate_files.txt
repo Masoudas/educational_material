@@ -1,0 +1,18 @@
+Strategy:
+
+It's possible to find duplicate files and remove them, by which we mean files with equal content. To avoid comparing
+each individual line inside of a file, a good solution would be to compute the checksum of files and compare them
+with one another to detect the duplicates. However, we can improve on this a bit and check the size of two files
+as well. 
+
+So here's a possible solution. We iterate over the files sorted based on their sizes. Then, we compare each file
+with next and if has equal size, we compare md5sum and if that one qualifies as well, we keep these two files as
+duplicates of one another. 
+
+Now, in this way we have the list of all files that are duplicates of one another. We need to keep a unique one
+of them. As such, we go over the list of duplicate files by choosing a unique one with equivalent md5sum. Then,
+using comm, we find the difference of duplicates and uniques, and then remove all those files that are in the
+difference. So let's do this step by step.
+
+
+

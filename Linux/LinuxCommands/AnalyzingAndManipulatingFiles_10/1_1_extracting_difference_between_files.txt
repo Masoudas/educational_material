@@ -1,0 +1,33 @@
+We can use the diff command to compare the contents of two files and highlight the differences between them (just
+like the diff tool of git.)
+
+A sample output of this command is as follows:
+
+""""""""""""""""
+10c10
+< Pictures
+---
+> Pictures Difference.
+14a15
+> This is the different line.
+""""""""""""""""
+
+So, we can see that it says that in line 10 column, we have the given difference. Moreover, the second one says
+that first one has 14 lines, while the second has 15, and the difference line is shown.
+
+If the files completely differ from some point on, only the first difference line is indicated.
+
+A more readable way of generating the output is through patch files:
+""""""""""""""
+$ diff -u f1 f2
+--- f1  2021-08-14 15:30:06.239242043 +0200
++++ f2  2021-08-14 15:31:10.732149670 +0200
+@@ -1,3 +1,4 @@
+ line 1
+- line2
+  line3
++ line4
++ line5
+""""""""""""""
+So this says that f1 is 3 lines, while f2 is 4, and f1 was supplied as first argument (---). It alsy says that
+line2 is not in f2. Moreover, line4 and line5 are added in f2.

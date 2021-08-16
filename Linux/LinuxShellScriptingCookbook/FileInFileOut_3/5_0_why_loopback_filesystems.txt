@@ -1,0 +1,6 @@
+Loop back devices are essentially alternatives to an existing space on the system. As such, they allow us to have
+an alternative access point. For example, we can define root "/" to have been mounted on /mnt/root as well. 
+Therefore, we could have for example /home/masoudas as well as /mnt/root/masoudas.
+
+Moreover, we can create device files and associate them with our loopbacks. This is very useful. Finally, we 
+can make file systems, or even partition our space as well.

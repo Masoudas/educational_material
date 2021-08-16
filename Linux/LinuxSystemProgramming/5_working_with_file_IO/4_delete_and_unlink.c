@@ -3,6 +3,12 @@
  * The function is in the unistd header. If a symbolic link is passed to it, it does not follow it, but rather
  * removes the link file. Note that we can't use unlink for directories. For dirs we shall use rmdir. In the 
  * end, the file is deleted from memory once there are no hard links to it.
+<<<<<<< HEAD
+ * 
+ * Note: After searching the headers, I found that actually remove is a better method for our purposes, inside
+ * the stdio library.
+=======
+>>>>>>> ae969fceaab1f189dc0a477cc8c5052e108ba33b
  */
 
 #include <stdio.h>

@@ -1,3 +1,0 @@
-Note that the main difference between a program that sits on the $PATH and one that does not is that we need
-to execute the latter with the special ./, however the former can be executed directly by name (like all the
-shell commands we run.)

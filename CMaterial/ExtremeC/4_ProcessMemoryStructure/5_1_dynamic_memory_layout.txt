@@ -1,0 +1,26 @@
+The dynamic memory layout is actually the runtime memory of a process, and it exists as long as the process is 
+running. When you execute an executable object file, a program called loader takes care of the execution. It 
+spawns a new process and it creates the initial memory layout which is supposed to be dynamic. To form this 
+layout, the segments found in the static layout will be copied from the executable object file. More than that, 
+two new segments will also be added to it. Only then can the process proceed and become running.
+
+In short, we expect to have five segments in the memory of the process. Three are bss, data and text, and the
+next two are stack and heap, where the latter two as we said are dynamic and the former are static.
+
+The Stack segment is the default memory region where we allocate variables from. It is a limited region in terms of 
+size, and you cannot hold big objects in it. In contrast, the Heap segment is a bigger and adjustable region of 
+memory which can be used to hold big objects and huge arrays. Working with the Heap segment requires its own API 
+which we introduce as part of our discussion.
+
+Remember, dynamic memory layout is different from Dynamic Memory Allocation. You should not mix these two concepts, 
+since they refer to two different things! As we progress, we'll learn more about different types of memory 
+allocations, especially dynamic memory allocation.
+
+The five segments found in the dynamic memory of a process are referring to parts of the main memory that are 
+already allocated, dedicated, and private to a running process. These segments, excluding the Text segment, which 
+is literally static and constant, are dynamic in a sense that their contents are always changing at runtime. 
+That's due to the fact that these segments are constantly being modified by the algorithm that the process is 
+executing. (Me: Don't forget that the memory of a process is private to it. That is, no other process can access it,
+read from it or write to it.)
+
+Note that we can't access the dynamic memory of a process directly, and we need another program to inspect it.

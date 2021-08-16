@@ -1,0 +1,11 @@
+As we already know, when listing files, soft links are prepended with -l. So, we can use grep to list soft links
+like so:
+
+$ ls | grep "^l"
+
+We can also use the type in find to list only soft links:
+
+$ find . --max-depth=1 -type l (-maxdepth=1?)
+
+Finally, to show what a link refers to, we can either use ls -l, or readlink:
+$ readlink link_file

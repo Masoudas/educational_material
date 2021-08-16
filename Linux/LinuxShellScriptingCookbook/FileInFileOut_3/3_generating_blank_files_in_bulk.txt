@@ -1,0 +1,6 @@
+In the following example, we generate blank files in bulk, with our desired pattern:
+
+#!/bin/bash
+for name in {1..100}.txt; do
+ touch $name
+done;

@@ -1,0 +1,28 @@
+For most typical cases, populating the content can then be done with a single command like so:
+
+FetchContent_MakeAvailable(googletest)
+
+The above command not only populates the content, it also adds it to the main build (if possible) so that the main 
+build can use the populated project's targets, etc. In some cases, the main project may need to have more precise
+control over the population or may be required to explicitly define the population steps (e.g. if CMake versions 
+earlier than 3.14 need to be supported). The typical pattern of such custom steps looks like this:
+
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+	FetchContent_Populate(googletest)	# Actual downloading takes place with this command.
+	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})	# Adds this subdirectory to out project,
+																		# which implies building it.
+endif()
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As such, an overall receipe would look something like this:
+
+FetchContent_MakeAvailable(googletest)
+
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+	FetchContent_Populate(googletest)	# Actual downloading takes place with this command.
+	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})	# Adds this subdirectory to out project,
+																		# which implies building it.
+endif()
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

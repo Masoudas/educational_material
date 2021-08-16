@@ -1,0 +1,21 @@
+Question: What's the difference between the following two commands:
+
+$ find . -name *.txt | grep stream
+$ find . -name *.txt | xargs grep stream - # Or without the dash
+
+Answer:
+So note that the first one directly prints to stdout. Hence, we grep the string stream inside each line of 
+the output. Hence, it will find text files that have stream as part of their names.
+
+In the second one we say first, write the output string in xargs, then evaluate the result. This implies that
+the second command becomes something like:
+
+$ grep stream /path/file.txt
+Hence, it will actually look inside the content of the file! Cool.
+
+Note: Possibly, this version is a bit faster:
+$ find . -name *.txt -print0 | xargs -0 grep stream
+
+Note: We should once again be reminded here that without -0, each line of stdout is passed to xargs with a space,
+hence it would be interpreted as independent arguments. On the other hand, with -0, we pass all of stdout as a
+single argument, with -0 separating them.

@@ -1,0 +1,13 @@
+What are the init and exit macros exactly?
+
+The __init macro defines an init.text section for code (me: I assume we're talking about the structure of the ELF
+here?!). Similarly, any data declared with the __initdata attribute goes into an init.data section. The whole 
+point here is the code and data in the init function is used exactly once during initialization. Once it's invoked, 
+it will never be called again; so, once called, it is then freed up (via free_initmem()).
+
+Me: Does it mean the machine instructions are removed from the kernel? If so, then it's quite interesting. Also,
+the memory allocated possibly to our variables.
+
+The deal is similar with the __exit macro, though, of course, this only makes sense with kernel modules. Once the 
+cleanup function is called, all the memory is freed. If the code were instead part of the static kernel image (or 
+if module support were disabled), this macro would have no effect.

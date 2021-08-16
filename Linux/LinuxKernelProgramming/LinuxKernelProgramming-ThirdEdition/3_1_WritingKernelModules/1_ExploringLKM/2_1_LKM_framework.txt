@@ -1,0 +1,14 @@
+LKM is a means to compile a piece of kernel code outside the kernel tree and then add it to kernel! (Me: Essentially, it
+would be like adding a piece of binary code to an executable!)
+
+The end is to build a kernel module (a .ko file) from our C, header files and make files. Then this object file would
+be added to the kernel. Note that this would be a binary object file (and not an executable) (ME: Hence, it does not
+have a starting point, and as such can be set inside the kernel.)
+
+It's interesting to note that we can insert the code inside the kernel at run-time, and so we don't need to restart or
+anything (Though I didn't understand whether I need to add the module everytime I restart the kernel or not)!
+
+Note: Not all kernel functionality can be provided via the LKM framework. Several core features, such as the core CPU 
+scheduler code, memory manage the signaling, timer, interrupt management code paths, and so on, can only be developed 
+within the kernel itself. Similarly, a kernel module is only allowed access to a subset of the full kernel API; 
+

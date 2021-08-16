@@ -1,0 +1,23 @@
+As we already know, object files have their own structures (ELF in Unix systems.) Note that this is about the 
+structure of object files and this is different from the fact that each architecture has its own instruction set. 
+
+Notice different object file formats:
+	-	ELF used by Linux and many other Unix-like operating systems
+	-	Mach-O used in OS X (macOS and iOS) systems
+	-	PE used in Microsoft Windows
+
+Note that the term a.out (result of passing no output in gcc for example) stands for assembler output. Note also
+that the ELF file is the same for Unix, Linux and FreeBSD and BSD OS. This means that as long as the architecture 
+beneath them remains the same, an ELF object file created for one of these operating systems can be run and used 
+in others.
+
+Me: We said in chapter two that object files are not only CPU dependent, but also OS
+dependent. Doesn't this contradict that statement? Nope. Note that RELOCATABLE object files are the result of
+assembler, and as such, they're different. But wait a minute, aren't the object files that are made after compilation
+are the result of sticking these codes together? So shouldn't they be not portable also?
+The answer as the book says is that "Note that this is about the structure of object files and this is different 
+from the fact that each architecture has its own instruction set. As we know, these two variations are different 
+parts of the ABI in a platform; the object file format and the architecture's instruction set." What is implied
+here is that the content of the ELF file is architecture and Os independent (on Unix system,) and we can verify 
+this by looking inside the elf files. As such, if we take the ELF file of a relocatable object (and not the object 
+file itself) and take it to another unix system, we can use it on that system, but not the object file itself.

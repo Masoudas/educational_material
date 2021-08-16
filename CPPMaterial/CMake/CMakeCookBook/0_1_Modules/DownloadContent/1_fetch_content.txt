@@ -1,0 +1,12 @@
+So let's say we need to download a package, let's say the source tree of a project and build it from the command
+line. Actually, cmake allows us to do so, using an internal cmake module called FetchContent. 
+
+Now, if we get the help for this command, we get:
+$ cmake --help-module FetchContent
+This module enables populating content at configure time via any method supported by the ``ExternalProject`` module.  
+Whereas ``ExternalProject_Add()`` downloads at build time, the ``FetchContent`` module makes content available 
+immediately, allowing the configure step to use the content in commands like ``add_subdirectory()``, ``include()`` 
+or ``file()`` operations.
+
+Essentially, FetchCommand is like add_module, in the sense that once the thing is downloaded and built, we have
+it available as variables in our cmake project.

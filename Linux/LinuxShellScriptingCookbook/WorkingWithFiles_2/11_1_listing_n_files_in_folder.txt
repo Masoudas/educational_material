@@ -1,0 +1,6 @@
+Here's for example an script for showing the number of files in a particular folder:
+
+for d in `find . -type d`;  
+  do  
+  echo `find $d -type f | wc -l` files in $d;  
+done 

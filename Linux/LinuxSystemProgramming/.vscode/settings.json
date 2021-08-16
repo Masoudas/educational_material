@@ -9,6 +9,7 @@
         "cstdio": "c",
         "file.h": "c",
         "fcntl.h": "c",
-        "stat.h": "c"
+        "stat.h": "c",
+        "signal.h": "c"
     }
 }

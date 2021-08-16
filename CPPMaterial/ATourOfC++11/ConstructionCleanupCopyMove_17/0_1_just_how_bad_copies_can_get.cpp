@@ -1,10 +1,12 @@
 /**
 * As a thought experiment, consider the following:
+
 #include <iostream>
 struct S {
 	int x = 10;
 	S() {}
 	S(const S&) {}
+	S(S&&){}
 };
 
 struct X {
@@ -16,9 +18,8 @@ int main() {
 	X x{ S{} };
 }
 
-* In this program, a good compiler would make one copy of s for s1 (where as a bad one would make two!)
-* and one move.
-* Now consider, I change the constructor of s1 as follows:
+* In this program, a good compiler would make one copy of s for s1 (whereas a bad one would make two!)
+* and one move. Now, consider what happens if I change the constructor of S as follows:
 
 X(S s1) : s{ s1 } { s1.x++;}
 

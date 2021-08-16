@@ -1,0 +1,3 @@
+From version 3.9, CMake also offers a GoogleTest module (https://cmake.org/cmake/help/v3.9/module/GoogleTest.html), 
+which provides a gtest_add_tests function. This function can be used to automatically add tests, by scanning the 
+source code for Google Test macros.

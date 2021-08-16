@@ -1,0 +1,73 @@
+If we long list the files, we can get their sizes and compare them. Note that we don't use human readable format
+for comparison, to just compare numbers.
+
+$ ls -lS --time-style=long-iso
+total 80
+drwxrwxr-x 2 masoudas masoudas 4096 2021-07-23 11:50 0_examples
+
+Why did we want a standard time? Because in this way, the number of columns would be equal? Possibly.
+
+Now, we can use an awk function with BEGIN. The point of BEGIN is that BEGIN functions are executed before the stuff 
+are read from the command line. In comparison, a function annotated with END is executed after all the lines have been
+read. 
+
+$ ... | awk ' BEGIN{} END{} '
+
+The function we use to get a line from stream is getline. We can read a line, and if don't do anything with it, it gets
+dumped. For example:
+
+$ ls -lS --time-style=long-iso | awk ' BEGIN { 
+	getline;	# Doing nothing with the first line. 
+	getline;	# Read the following line(s)
+	name=$8; size=$5 	#
+	} '
+
+Notice that right now, we passed no print functions here. If we wanted to do that, then we can do it. Notice that
+aside from the BEGIN or END function, the function without them is repeated for each line. Hence, we need to read 
+a new line everytime new, and print it. Note that we couldn't use getline in this function, otherwise everytime a
+line would have been dropped. Also notice that the middle function is executed directly, and as such, we don't 
+need to get line there.
+
+$ ls -lS --time-style=long-iso | awk ' BEGIN { 
+	getline;	# Doing nothing with the first line. 
+	getline;	# Read the first line.
+	name=$8; size=$5 	# Set these variables.
+	} 
+	{
+		print name " " size	# Print previous line values
+		name=$8; size=$5 	# Set these variables. for the next iteration.
+	}
+	'
+
+So now the strategy would be to read the new line, compare it with the old one and if both size and md5sum are
+equal, print its name on stdout, to be used later on.
+
+Note: As such, executing the commands plainly causes some error in the printed results. Better check my own solution
+in 2_5, and recall we better close the command after executing it.
+
+#!/bin/bash
+
+ls -lS --time-style=long-iso | awk '
+	BEGIN {
+		getline;
+		getline;
+		name1=$8; size1=$5;
+	}
+	{
+		name2=$8;
+
+		if (size1=$5)	# New line has same size
+		{
+			"md5sum " name1 | getline; sum1=$1
+			"md5sum " name2 | getline; sum2=$1
+
+			if ( sum1==sum2 ){
+				print name1; print name2;	
+			}
+		}
+
+		name1=name2; size1=$5;
+	}
+	' sort -u > duplicate_files
+
+Note that the outside sort is fed here, because we want to use this file in comm.

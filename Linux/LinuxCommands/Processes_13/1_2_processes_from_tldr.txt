@@ -1,0 +1,30 @@
+Note that there's a difference between a and -a. We can print processes 'not' associated with a terminal, or that 
+are not session leaders. With a, we nullify this option. -e prints all processes.
+
+u with no dash stands for user oriented format (shows parent, CPU and memory usage. command, start time, etc.) With a 
+dash, it implies a particular user name list. Another suggestion here would be to use f for full presentation
+
+x lifts the BDS restriction that the process should be associated with a terminal.
+
+The tldr (The Linux Documentation PRoject) command gives us the following useful options on this command:
+
+    - List all running processes:
+    ps aux
+
+    - List all running processes including the full command string:
+    ps auxww
+
+    - Search for a process that matches a string:
+    ps aux | grep {{string}}
+
+    - List all processes of the current user in extra full format:
+    ps --user $(id -u) -F
+
+    - List all processes of the current user as a tree:
+    ps --user $(id -u) f
+
+    - Get the parent pid of a process:  # o means a user defined format, to which we pass ppid. Hence output is ppid.
+    ps -o ppid= -p {{pid}}
+
+    - Sort processes by memory consumption:
+    ps --sort size

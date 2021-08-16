@@ -1,0 +1,26 @@
+WHAT IS A TERMINAL EMULATOR? HENCEFORTH REFERRED TO AS TERMINAL
+
+A Terminal Emulator is a program that emulates (mimics) a physical Terminal (Console). The Terminal interacts with the Shell 
+(the Command Line Interface).
+
+WHAT IS A SHELL?
+
+The Shell is a command-line interpreter, that is to say, it is a program that processes and executes commands.
+
+
+So for example, the command 'date' prints the current date. This command is written in the terminal, and is interpreted by the
+shell, for which the kernel fetches the current date. 'date > today.txt' puts the result of the command in a file named today.txt
+
+
+You should also know that command options are either preceded by a single hyphen (-) or a double hyphen (--). You can use a single 
+hyphen if you are using the abbreviated name of the command option. On the other hand, if you are using the full name of the 
+command option, then you need to use a double hyphen.
+
+The complete list of shells on the system can be found on /etc/shells, which is a file containing the name of all the shells on 
+the linux distro.
+
+That process originally started out as getty, a process that manages TTYs on the system. TTY stands for Teletype. Normally, 
+a Linux computer has seven TTYs you can switch between by using the sequence Ctrl+Alt+F1, Ctrl+Alt+F2, and so on, 
+all the way up to Ctrl+Alt+F7.
+
+

@@ -1,0 +1,3 @@
+An ISO file, which is an archive of an optical media, can be mounted directly as well just like a loop device:
+
+$ mount -o loop ~/disk.iso /mnt/disk

@@ -1,0 +1,58 @@
+Consider the following simple program:
+
+#include <unistd.h> // Needed for sleep function
+int main(int argc, char** argv) {
+  while (1) {  sleep(1); };
+  return 0;
+}
+
+Now, if we start executing this process, a folder is allocated in the corresponding process in the /proc folder.
+$ ./program &
+[1] 402
+
+where 402 is the process id of this process.
+
+On a Linux machine, the information about a process can be found in files under the /proc directory. It uses a 
+special filesystem called procfs. This filesystem is not an ordinary filesystem meant for keeping actual files, 
+but it is more of a hierarchical interface to query about various properties of an individual process or the 
+system as a whole. Note that procfs is Unix universal, but for example MacOS does not use it.
+
+If we check inside the /proc/402 folder, we see the following:
+dr-xr-xr-x  2 root root 0 Jul 15 22:28 attr
+-rw-r--r--  1 root root 0 Jul 15 22:28 autogroup
+-r--------  1 root root 0 Jul 15 22:28 auxv
+-r--r--r--  1 root root 0 Jul 15 22:28 cgroup
+...
+
+So each file corresponds to a particular property of the process. If we cat the maps file, we can see how the 
+memory is located as well:
+$ cat /proc/402/maps
+00400000-00401000 r-xp 00000000 08:01 790655              .../extreme_c/4.6/ex4_6.out
+00600000-00601000 r--p 00000000 08:01 790655              .../extreme_c/4.6/ex4_6.out
+00601000-00602000 rw-p 00001000 08:01 790655              .../extreme_c/4.6/ex4_6.out
+7f4ee16cb000-7f4ee188a000 r-xp 00000000 08:01 787362      /lib/x86_64-linux-gnu/libc-2.23.so
+7f4ee188a000-7f4ee1a8a000 ---p 001bf000 08:01 787362      /lib/x86_64-linux-gnu/libc-2.23.so
+7f4ee1a8a000-7f4ee1a8e000 r--p 001bf000 08:01 787362      /lib/x86_64-linux-gnu/libc-2.23.so
+7f4ee1a8e000-7f4ee1a90000 rw-p 001c3000 08:01 787362      /lib/x86_64-linux-gnu/libc-2.23.so
+7f4ee1a90000-7f4ee1a94000 rw-p 00000000 00:00 0
+7f4ee1a94000-7f4ee1aba000 r-xp 00000000 08:01 787342      /lib/x86_64-linux-gnu/ld-2.23.so
+7f4ee1cab000-7f4ee1cae000 rw-p 00000000 00:00 0
+7f4ee1cb7000-7f4ee1cb9000 rw-p 00000000 00:00 0
+7f4ee1cb9000-7f4ee1cba000 r--p 00025000 08:01 787342      /lib/x86_64-linux-gnu/ld-2.23.so
+7f4ee1cba000-7f4ee1cbb000 rw-p 00026000 08:01 787342      /lib/x86_64-linux-gnu/ld-2.23.so
+7f4ee1cbb000-7f4ee1cbc000 rw-p 00000000 00:00 0
+7ffe94296000-7ffe942b7000 rw-p 00000000 00:00 0           [stack]
+7ffe943a0000-7ffe943a2000 r--p 00000000 00:00 0           [vvar]
+7ffe943a2000-7ffe943a4000 r-xp 00000000 00:00 0           [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0   [vsyscall]
+
+In the above file, we see the following structure:
+[memory region] [permissions and private or public] [offset] [device number] [innode] [path name or description]
+	offset: If the region is mapped to a file, the offset of that file
+	device number: The device number in the major:minor number. 
+	innode: Would correspond to the innode number of the device.
+	Pathname or description: If the region is mapped to a file, this would be the path to that file. Otherwise, it 
+	would be left empty, or it would describe the purpose of the region. For example, [stack] indicates that the 
+	region is actually the Stack segment.
+
+	

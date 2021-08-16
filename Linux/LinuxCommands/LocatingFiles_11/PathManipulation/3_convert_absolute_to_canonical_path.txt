@@ -1,0 +1,7 @@
+We can resolve absolute to canonical paths using realpath command:
+
+$ realpath ~
+/home/masoudas
+
+$ realpath .
+/current/path

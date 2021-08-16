@@ -1,0 +1,38 @@
+Bash does not support native regular expressions like some other standard programming languages. The Bash shell 
+feature that is used for matching or expanding specific types of patterns is called globbing. Globbing is mainly 
+used to match filenames or searching for content in a file (although for the latter, we use grep, technically.)
+
+Recall the famous uses of glob:
+	-	Star
+Means zero or one char.
+$ ls *.txt	# Apparently, expanded here to all files that end in txt in this folder, and then listed.
+
+	-	Question mark
+Means one character. 
+$ ls ???.txt	# Expands to all files with three chars that are text.
+
+	-	Famous bracket chars:
+Some examples include [:digit:], [:alpha:], [:alnum:], [:upper:], [:lower:], or for example [a-q] or [W-Z].
+Note that these can be combined with *, but it's not like a regular expression. Consider the examples below:
+$ ls [0-9]	# Find all files that are only one char from this set.
+$ ls [0-9]*.txt	# Start with this char, then have zero or more of any other char (not necessarily 0-9,)
+$ ls [0-9][:alnum:]	# Of course
+
+Now, aside from these, if we have extra glob options on, we can then do crazier stuff. To ensure that extglob
+is on, use the shopt command:
+$ shopt | grep extglob
+$ shopt -s extglob	# Set the option
+
+Now, we have the following additional patterns available that can be used together with |:
+	-	*(pattern-list) – matches zero or more occurrences of the specified patterns
+	-	?(pattern-list) – matches zero or one occurrence of the specified patterns
+	-	+(pattern-list) – matches one or more occurrences of the specified patterns
+	-	@(pattern-list) – matches one of the specified patterns
+	-	!(pattern-list) – matches anything except one of the given patterns
+
+As such we can use these patterns to do many crazy stuff (Notice that most of these can be replicated with the
+find command, using !, -or, -and, -not, but this is handier:)
+
+$ cp !(myFile) path	 # Copy everything except myFile into path
+$ ls @(*.txt|*.jpg)	 # Matches *.txt or (at sign, not the |) *.jpg
+$ ls +(*b.txt|*xt)	 # Matches one or more of these patterns. 

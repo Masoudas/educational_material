@@ -1,0 +1,28 @@
+Me: Notice that we're talking about manually loading dynamic libraries here, and not static libraries. Why you
+might ask? Mostly because a static library is not position independent, and as such can't be loaded in memory in
+run time. More so the fact that it doesn't have symbols that can be accessed with this method.
+
+The idea we have here is simple. We shall load a dynamic library inside our live code, rather than link it during
+link time. This would give us much freedom to choose a particular version of the library for example.
+
+How do we accomplish such a task? The answer is simple. Just like a normal file for example, we need to use headers
+to load the library, and then find the symbols in the code.
+
+In Unix systems, this is done using dlfcn (dynamic linking) header. It has the dlopen function, which requires:
+	-	The path to the library
+	-	Openning mode:
+		*	RTLD_LAZY:	Relocations are performed at an implementation-defined time.
+		*	RTLD_NOW:	Relocations are performed when the object is loaded.
+		*	RTLD_GLOBAL:	All symbols are available for relocation processing of other modules.
+		...
+This functions returns a void* to the library.
+
+Now, to extract a symbol from the library, we can use the dlsym function. It accepts two parameters. One would be
+the void* to the library. The second parameter would be the name of the symbol we seek. It then returns a pointer
+(to function) of type void*, which we can implictly cast to our pointer to function.
+
+Finally, there's the dlclose function which we can use to close the library.
+
+We normally call such method of loading a dynamic library as lazy loading.
+
+Another very interesting option is lderror, which prints the reason why a library could not be loaded.

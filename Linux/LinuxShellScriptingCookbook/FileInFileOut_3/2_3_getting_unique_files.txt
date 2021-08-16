@@ -1,0 +1,14 @@
+In the previous portion, we got the unqiue files. Now the challenge is to determine a unique file from that set,
+to not remove it later on. How do we go about this?
+
+The answer is that once again, we calculate the md5sum for each file in the list, and then sort it, and then 
+choose a unique one from them. With unique, we want to compare only the first 32 chars of each line, because after
+all, md5sum's output is something like this:
+
+$ md5sum super.sh
+359f856b10ba4aaa9f32e1430392f4a9  super.sh
+
+Hence, if we only compare the first 32 chars, we're fine. Finally, note that by keeping the second row in an awk,
+we'll keep the name of unique files. So, let's do this:
+
+cat duplicate_files | xargs -I {} md5sum {} | sort | unique -w 32 | awk ' { print $2} ' | sort -u > unique_files.

@@ -1,0 +1,27 @@
+In this script, I wanted to compare two files to see if one is contained in another or not. So what I did
+is to first the number of lines in the two files and return if they're not equal. Then, I read the first 
+file (all of it) and used grep to see if it exists in the second file.
+
+You could argue that a better approach is to read the file line by line, but I'm not sure that it would 
+actually be faster that way.
+
+%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash
+
+len1=$(wc -l $1)
+len2=$(wc -l $2)
+
+if [ len1 -ne len2 ]; then
+	exit 1
+fi
+
+for line in `cat $1`
+do 
+	grep $line $2
+
+	if [ $? -ne 0 ]; then 
+		exit 1
+	fi
+done 
+
+exit 0;

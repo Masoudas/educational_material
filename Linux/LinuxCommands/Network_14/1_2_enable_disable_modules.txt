@@ -1,0 +1,18 @@
+To enable or disable modules, we can use the nmcli toolset. We can indeed list our radio devices as such:
+
+$ nmcli radio
+
+Then for example to turn on/off the wifi module, we can write:
+
+$ nmcli radio wifi on # Oder off
+
+Another method is to turn down or up using the ip suite. But note that this does not shut down the device, but 
+rather shuts down the particular interface of the device (found it using tldr by the way:)
+
+$ ip link set DEVICE_NAME down	(For example eth, ...)
+
+Now finally, the lowest level form of this is to manage devices with unmanaged-devices feature in 
+/etc/NetworkManager/NetworkManager.conf. There are manpages on these stuff if we search for NetworkManager.
+
+
+

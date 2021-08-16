@@ -1,0 +1,27 @@
+When we build the kernel from source tree, we in fact have several .ko modules built within the source tree as well. What
+we did in chapter two was to install them using make install:
+
+$ make modules_install
+
+Modules are installed under the /lib/modules/$(uname -r) folder. To see for example what sort of modules already installed
+on the kernel, we can do as follows:
+
+$ lsb_release -a | grep Description		# The lsb_release command provides certain LSB (Linux Standard Base) and 
+										# distribution-specific information. We can't get this information with uname!
+Description:    Ubuntu 20.04.2 LTS
+
+$ uname -r
+5.0.0-36-generic
+
+$ find /lib/modules/$(uname -r)/ -name "*.ko" | wc -l
+5736
+
+We have 5736 modules currently installed on the kernel! It makes sense: distributors cannot know in advance exactly what 
+hardware peripherals a user will end up using (especially on generic computers like x86-based systems). Kernel modules 
+serve as a convenient means to support huge amounts of hardware without insanely bloating the kernel image file (bzImage 
+or zImage, for example).
+
+Most of the 5736 modules are device drivers, and in particular network drivers. That is, if we list them, we get:
+$ find /lib/modules/5.8.0-53-generic/kernel/drivers -name "*.ko" | wc -l
+4476
+

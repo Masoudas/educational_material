@@ -1,0 +1,44 @@
+Now consider the following simple project, that consists of a header file, two source files, and a main file.
+
+%%% header.h
+int add(int, int);
+int multiply(int, int);
+
+%%% add.c
+int add(int a, int b) {  return a + b;	}
+
+%%% multiply.c
+int multiply(int a, int b) {   return a * b;   }
+
+%%% main.c
+#include "header.h"
+int main(int argc, char** argv) {
+	// use add and multiply
+}
+
+Now, notice that we have the following symbols inside each file:
+$ nm add.o
+0000000000000000 T add
+
+$ nm multiply.o
+0000000000000000 T multiply
+
+$ nm main.o
+                 U add
+                 U _GLOBAL_OFFSET_TABLE_
+0000000000000000 T main
+                 U multiply
+
+Notice the difference in main. In that this file, the symbols that are undefined have no address. Note that U here 
+means unresolved. 
+
+However, when we present these three files together in the linker, we get the correct executable.
+$ gcc add.o main.o multiply.o. 
+
+Notice that if we supplied add.o and multiply.o without main.o, we get .... an error. This is because there's no
+main provided here:
+$ gcc add.o multiply.o
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function '_start':
+(.text+0x20): undefined reference to 'main'
+collect2: error: ld returned 1 exit status
+

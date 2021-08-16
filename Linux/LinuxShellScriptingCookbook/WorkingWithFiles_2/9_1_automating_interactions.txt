@@ -1,0 +1,34 @@
+Consider the following script for creating backups for a user:
+
+%%%%%%%%%%%%%%%%
+#!/bin/bash 
+# backup.sh 
+# Backup files with suffix. Do not backup temp files that start with ~ 
+read -p " What folder should be backed up: " folder 
+read -p " What type of files should be backed up: " suffix 
+find $folder -name "*.$suffix" -a ! -name '~*' -exec cp {} \   
+    $BACKUP/$LOGNAME/$folder 
+echo "Backed up files from $folder to $BACKUP/$LOGNAME/$folder" 
+%%%%%%%%%%%%%%%%
+
+So let's say we wanted to use this script, without having to interactively deal with it. How do we go about it?
+Say we want to backup the folder f, and all the .txt files?
+
+The answer that simply comes to mind is to use the echo command, together with the -e option. Notice that the 
+names with a return, hence we embedd one after each string:
+
+$ echo -e "f\ntxt\n" | ./backup.sh
+
+By why does it work? 'read' reads from stdin, which is now connected to stdout with the piping. Then again, pressing
+return ends reading from the command line, and so does '\n' in this scenario. (Me: never would have of thought of it
+in a million years :D)
+
+Apparently, we can further automate this task by just typing our command into a file, and then directly stream it to
+the program as follows. Note that in this case, each line must be one string to be read:
+# command.txt
+f
+txt
+
+Then:
+$ ./backup < command.txt
+

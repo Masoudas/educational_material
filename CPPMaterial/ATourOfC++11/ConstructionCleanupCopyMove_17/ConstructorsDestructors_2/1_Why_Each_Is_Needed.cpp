@@ -4,7 +4,7 @@
 * 
 * When destructor is called, every destructor that can be called is called. The resource that are not
 * destroyed are ones for which no destructor can be called directly (like a pointer. The class frees
-* the memory associated with the pointer, but not the content of the pointer).
+* the memory associated with the pointer, but not the content of the pointer itself).
 * This is shown in the follwing example. The destructor of both str and str_ptr are both called. 
 * However, the destructor of the pointer only removes the poiner, not its content, which 
 * is why we get only one destructor removing message. Note that when writing a destructor, we
@@ -19,7 +19,7 @@ struct string {
 };
 
 struct Dest_Call {
-	::string str{};
+	::string str{};	// string of this scope :D. No inclusion of the string header.
 	::string* str_ptr = new ::string;
 
 	~Dest_Call() { cout << "Initializing destruction" << endl; }

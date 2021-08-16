@@ -1,0 +1,44 @@
+The cmake recipe is pretty much like the one for catch2, and is as follows:
+
+Note: The use of the scope operator is quite interesting. It allows to access various components of a module,
+like for example below we only want to link against the unit_test_framework of boost.
+
+Note: The original receipe in the book did not have target include directories to find the inclusion path of the
+boost header files. I added it.
+
+%%%%%%%%%%%%%%%%%%%%%%
+cmake_minimum_required(VERSION 3.10.0 FATAL_ERROR)
+
+project(boost_test LANGUAGES CXX)
+
+# require C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_library(sum_up SHARED)
+target_sources(sum_up PUBLIC sum_integers.c)
+
+# main code
+add_executable(sum_up main.cpp)
+target_link_libraries(sum_up sum_integers)
+
+find_package(Boost 1.54 REQUIRED COMPONENTS unit_test_framework)
+
+add_executable(boost_test boost_test.cpp)
+target_link_libraries(boost_test PRIVATE sum_up Boost::unit_test_framework)
+
+# I added this to have the inclusion path of boost:
+target_include_directories(boost_test PRIVATE ${Boost_INCLUDE_DIRS})
+
+# avoid undefined reference to "main" in test.cpp
+target_compile_definitions(boost_test
+	PRIVATE
+	BOOST_TEST_DYN_LINK
+)
+
+enable_testing()
+add_test(
+	TEST_NAME boost_name
+	COMMAND $<TARGET_FILE:boost_test>
+)

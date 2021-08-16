@@ -1,0 +1,9 @@
+Interestingly enough, the object file machine instructions depend not only on the machine hardware, but also the
+OS as well. Normally, various OS form the machine code separately (like Windows and Linux, or even different
+versions of Linux.) As such, when we speak about the platform, we mean both the hardware and the OS (Me: which is
+why we have CMake for cross-platform compilation.)
+
+We usually say that object files, hence the assembler generating them, are platform-specific. In Linux, we use the 
+Executable and Linking Format (ELF). As the name implies, all executable files, object files, and shared libraries 
+should use this format. In other words, in Linux, the assembler produces ELF object files. In the upcoming chapter, 
+Object Files, we will discuss object files and their formats in greater detail.

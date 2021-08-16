@@ -1,0 +1,19 @@
+Let's compile the previous example, but in c++. Notice that we're not linking still (and in fact name mangling 
+can't happen at linkeage, because by then, the symbols have been formatted:)
+
+$ g++ -c add_1.cpp
+$ g++ -c add_2.cpp
+$ g++ -c main.cpp
+
+$ nm add_1.o
+0000000000000000 T _Z3addiiii
+
+$ nm add_2.o
+0000000000000000 T _Z3addii
+
+It's interesting to note that i indicates integer, and added to the name end as many times as the number of
+arguments. Now, overloading can be done with no problem, and name mangling allows us not to use the wrong symbol
+in linkeage. This wasn't possible in C, because:
+	-	If we had two files, then we'd get a linkeage error saying there are two linkeage possibilities, and as
+		such, overloading is not even possible.
+	-	If we had an error with function arguments, we never would have faced any compilation error.

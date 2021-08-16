@@ -1,0 +1,21 @@
+Consider the following command:
+
+$ cd /var/log
+$ find . -exec sh -c 'echo -n {} | tr -d "[:alnum:]_.\-" | tr "/" " "; basename {}' \;
+
+So, we find whatever is in this folder apparently, then using a sh example, we execute the following command
+as string: First, echo the file or folder name you've found, then using translate, delete any alpha numeric,
+_, ., \, or -, Then, translate each / into space. Finally, print the base name of the same file, using the 
+basename command.
+
+So for example, if we use this command on the log folder, we get:
+mail
+  statistics
+gdm
+  ::0.log
+  ::0.log.1
+cups
+      error_log
+      access_log
+  ... access_l
+    

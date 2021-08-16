@@ -1,0 +1,17 @@
+Now that we understand how the process works, we may wonder how we can see the process tree? 
+
+First, I recently encountered the command pstree:
+$ pstree $USERNAME
+
+prints the processes of a user.
+
+The man pages of ps also shows that (by a /tree search inside the manpage) that:
+%%%%%%%%
+To print a process tree:
+        $  ps -ejH
+        $  ps axjf
+%%%%%%%%
+
+Checkout the options on pstree as well. For example:
+$ pstree -h # Highlights parents of the current process
+$ 

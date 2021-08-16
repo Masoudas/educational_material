@@ -2,8 +2,15 @@
 * Bracketless initialization is possible when there are no constructors, or just an empty
 * constructor. By bracketless we mean something like "T v;". 
 * 
-* (Me: Note that no matter what happens, user-defined types are initialized with default constructor
-* in what follows. Our only fight is with built-in types and built-in arrays!)
+* Me: Note that no matter what happens, user-defined types are initialized with (default) constructors
+* in what follows. Our only fight is with built-in types and built-in arrays!
+*
+* Me: Recall that heap built-in and user defined types are always built with constructors. Hence:
+*	- An object built on heap, is built with member ctors (even built-in types declared with no ctors)
+*	- Stack objects are created randomly (memory allocated but content is random) if there's no default ctor for
+*	  the class. Otherwise, built with default ctor.
+* So, just think about whether memory is allocated on heap or stack! Of course, static objects are always built
+* cleanly.
 * 
 * We consider two situations:
 * 1-	There's an empty constructor (not the default one I mean): static objects initialize built-in and user
@@ -22,11 +29,11 @@
 * 
 * If object is built on heap, using bracket or not, the values would be random unless explicitly initialized.
 * 
-* (Me: Essentially, ROM is a very clean memory, and everything built there should be generated cleanly.
+* (Me: Essentially, globals are very clean, and everything built there should be generated cleanly.
 * Stack and heap are not very clean, and whatever built there takes what is already in memory).
 */
 #include <iostream>
-#define INITIALIZE_STATICS 0
+#define INITIALIZE_STATICS 
 using namespace std;
 
 struct only_empty_constructor {
@@ -34,10 +41,13 @@ struct only_empty_constructor {
 	char buf[10];
 	
 	only_empty_constructor() { 
-		cout << "Empty constructor" << endl;
+	};
+
+	void print(){
+		cout << "\nEmpty constructor" << endl;
 		cout << "Value of i is " << i << endl; 
 		cout << "buf elements are initialized to " << buf[0] << endl;
-	};
+	}
 };
 
 struct has_default_constructor {
@@ -45,7 +55,7 @@ struct has_default_constructor {
 	char buf[10];
 
 	void print() {
-		cout << "Has default constructor" << endl;
+		cout << "\nHas default constructor" << endl;
 		cout << "Value of i is " << i << endl;
 		cout << "buf elements are initialized to " << buf[0] << endl;
 	}
@@ -60,27 +70,31 @@ struct has_non_default_constructor {
 };
 
 
-#if INITIALIZE_STATICS
+#ifdef INITIALIZE_STATICS
 	only_empty_constructor c1;// evrything is initialized with empty constructor.
 	has_default_constructor d1;
 #endif
 void bracket_less_initialization() {
-	only_empty_constructor c2;
-	only_empty_constructor* c4 = new only_empty_constructor;	// random values.
+	only_empty_constructor c2;	// Worst kind! Everything to random!
+	only_empty_constructor* c4 = new only_empty_constructor;	// random values (me: but not in gcc!).
 	
 	// has_non_default_constructor c4;	This is not possible! Jesus. Imagine having to check for exception
 	// when opening a file or something!
 
-	has_default_constructor d2;
-	has_default_constructor* d4 = new has_default_constructor;	// random values
+	has_default_constructor d2;	// Everything is default initialized at least.
+	has_default_constructor* d4 = new has_default_constructor;	// Default construction of all elements.
 	
-#if INITIALIZE_STATICS
+#ifdef INITIALIZE_STATICS
+	c1.print();
 	d1.print();
 #endif
+	c2.print();
+	c4->print();
+
 	d2.print();
 	d4->print();
 }
 
-//int main() {
-//	bracket_less_initialization();
-//}
+int main() {
+	bracket_less_initialization();
+}

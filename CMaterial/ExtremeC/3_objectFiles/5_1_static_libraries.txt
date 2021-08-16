@@ -1,0 +1,19 @@
+Recall that static libraries are essentialy archives of relocatable object files. As such, there's no ELF associated
+with a static library. Also recall that to create a static library, we first assemble each object file, and then
+use the 'ar' archiver to archive the files:
+
+$ gcc -c file1.c -o file1.o
+...
+% ar rcs lib.a file1.o file2.o ...
+
+Note that ar does not necessarily create a compressed archive for us. However, we can use it to archive any sort
+of files.
+
+To see the content of an archive, use the 't' option:
+$ ar t lib.a
+file1.o
+file2.o
+...
+
+Recall also that to use this library, we need its header files separately to be used in the target project. Then
+in the link stage, we give the path tho this library.

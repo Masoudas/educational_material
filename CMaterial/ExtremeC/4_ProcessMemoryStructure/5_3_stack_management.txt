@@ -1,0 +1,45 @@
+Note that stack and heap exist on all structures, and their content is constantly changing.
+
+As pointed out before, the Stack segment is usually limited in size, and it is not a good place to store big 
+objects. If the Stack segment is full, the process cannot make any further function calls since the function call 
+mechanism relies heavily on the functionality of the Stack segment.
+
+If the Stack segment of a process becomes full, the process gets terminated by the operating system. Stack overflow 
+is a famous error that happens when the Stack segment becomes full. 
+
+Consider the following simple function:
+
+void func() {
+  int a; 
+}
+
+In the preceding function, while declaring the variable, we have not mentioned anything to let the compiler know 
+which segment the variable should be allocated from. Because of this, the compiler uses the Stack segment by 
+default. The Stack segment is the first place that allocations are made from.
+
+As its name implies, it is a stack. If you declare a local variable, it becomes allocated on top of the Stack 
+segment. When you're leaving the scope of the declared local variable, the compiler has to pop the local variables 
+first in order to bring up the local variables declared in the outer scope. Stack, in its abstract form, is a First 
+In, Last Out (FILO) or Last In, First Out (LIFO) data structure. Regardless of the implementation details, each 
+entry is stored (pushed) on top of the stack, and it will be buried by further entries. One entry cannot be popped 
+out without removing the above entries first.
+
+Variables are not the only entities that are stored in the Stack segment. Whenever you make a function call, a new 
+entry called a stack frame is placed on top of the Stack segment. Otherwise, you cannot return to the calling 
+function or return the result back to the caller.
+
+Having a healthy stacking mechanism is vital to have a working program. Since the size of the Stack is limited, it 
+is a good practice to declare small variables in it. Also, the Stack shouldn't be filled by too many stack frames 
+as a result of making infinite recursive calls or too many function calls.
+
+From a different perspective, the Stack segment is a region used by you, as a programmer, to keep your data and 
+declare the local variables used in your algorithms, and by the operating system, as the program runner, to keep 
+the data needed for its internal mechanisms to execute your program successfully.
+
+In this sense, you should be careful when working with this segment because misusing it or corrupting its data can 
+interrupt the running process or even make it crash. The Heap segment is the memory segment that is only managed 
+by the programmer. We will cover the Heap segment in the next section.
+
+Because the content of memory is private, we can't inspect the memory directly. Hence, we need a helper program 
+that attaches itself to the process. This would be something like gdb, which would allow us to see the variables.
+

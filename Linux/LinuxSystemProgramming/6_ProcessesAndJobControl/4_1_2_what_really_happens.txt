@@ -1,0 +1,10 @@
+The question here is that why are both sections of the if loop are executed?!
+
+The answer is that when the process is forked, the output of the fork command is going to be 0 in the child process,
+and pid of the child process in the parent process. 
+
+Now, notice that the same executable is being executed in both processes. In the parent process, the pid is 
+nonzero, hence when we reach the if loop, we take the branch that's dedicated to pid > 0. On the other hand, in
+the child process, we proceed with the 'pid == 0' branch of the loop!
+
+This is an extremely cool feature of the forking function!

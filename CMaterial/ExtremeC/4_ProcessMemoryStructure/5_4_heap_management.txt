@@ -1,0 +1,35 @@
+To work with heap, we need to use the proper heap interface to access the memory. This would be malloc, free
+and such functions in C. This would essentially be pointers.
+
+Recall: malloc just allocates memory in C, and the memory won't even have a type. It would be just raw memory 
+(meaning a raw void pointer.) This is unlike new in C++, which initializes memory.
+
+#include <unistd.h> // Needed for sleep function
+#include <stdlib.h> // Needed for malloc function
+#include <stdio.h> // Needed for printf
+int main(int argc, char** argv) {
+  void* ptr = malloc(1024); // Allocate 1KB from heap
+  printf("Address: %p\n", ptr);
+  fflush(stdout); // To force the print
+  while (1) {
+    sleep(1); // Sleep 1 second
+  };
+  return 0;
+}
+
+Notice that we've allocated only 1KiB of memory. However, checking the process memory map, we see that:
+$ cat /proc/3451/maps
+00400000-00401000 r-xp 00000000 00:2f 176521             .../extreme_c/4.7/ex4_7.out
+..
+01979000-0199a000 rw-p 00000000 00:00 0                  [heap]
+...
+7f7b33502000-7f7b33503000 rw-p 00000000 00:00 0 
+7ffdd63c2000-7ffdd63e3000 rw-p 00000000 00:00 0          [stack]
+7ffdd63e7000-7ffdd63ea000 r--p 00000000 00:00 0          [vvar]
+...
+
+We see that the memory allocated to the process is about 132KiB. This is because allocating memory is expensive
+and has so much overhead. As such, we allocate more than required (just like bss and data.)
+
+Note that the above function has no call to free, and as such, valgrind would detect memory leak in it! So,
+never forget to free the memory!

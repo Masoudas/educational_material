@@ -2,8 +2,9 @@
 * As Mr. Bjarne says, declaration of a static is NOT INITIALIZATION. We can't use the static unless it has been assigned
 * (unlike other class params).
 *
-* The static parameter has to be initialized in the same scope, but outside the class body.
-* If a class parameter to be initialized inside class body, it has to be declared constant!
+* The static parameter has to be initialized in the same scope, but OUTSIDE the class body. If a class parameter is 
+* to be initialized inside the class body, it has to be declared constant! Me: In other words, the static HAS to
+* be initialized outside the class scope! So, not even inside the constructor, nor anywhere else inside the class.
 * 
 * Note that constructor is inside the class body, hence a static parameter cannot be initialized there either.
 */

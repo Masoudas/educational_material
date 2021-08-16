@@ -1,0 +1,33 @@
+Linking a number of relocatable object files is actually to collect all similar sections from the given relocatable 
+object files and put them together to form a bigger section, and finally put the resulting section into the output 
+executable or the shared object file. Therefore, only after this step, the symbols can be finalized and obtain the 
+addresses that are not going to change. In executable object files, the addresses are absolute, while in shared 
+object files, the relative addresses are absolute. We will discuss this more in the section dedicated to dynamic 
+libraries.
+
+Now, if we draw the symbol table of this executable, we find the following:
+
+$ readelf -s program
+Symbol table '.dynsym' contains 6 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+   0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+   1: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTab
+   ...
+ 
+Symbol table '.symtab' contains 67 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+	...
+	48: 000000000000118c    51 FUNC    GLOBAL DEFAULT   14 max_3
+    49: 0000000000004014     4 OBJECT  GLOBAL DEFAULT   23 b
+	...
+	52: 0000000000001172    26 FUNC    GLOBAL DEFAULT   14 max
+	...
+	61: 0000000000004010     4 OBJECT  GLOBAL DEFAULT   23 a
+    ...
+    63: 0000000000001129    73 FUNC    GLOBAL DEFAULT   14 main
+	...
+
+It's interesting to note that now, we have two symbol tables, and the first one is called dynamic symbols. These
+are symbols to be find in dynamic libraries.
+
+Notice that the symbols are resolved (and interestingly enough main does not have address 0.)

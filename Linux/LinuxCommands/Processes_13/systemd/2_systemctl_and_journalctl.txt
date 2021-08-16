@@ -1,0 +1,16 @@
+Start by typing systemctl to see all active units on your machine right now. If you skim through the list, you'll notice 
+that a unit can be just about anything—hard drives, sound cards, mounted network drives, miscellaneous services, timers, 
+and so on.
+
+The list of all units reside in /etc/systemd/system and /lib/systemd/systemd. The latter is package unit files, 
+whereas the former is called local unit files. Local unit files mean unit files specific to this system, for example, 
+modified by the administrator or manually added for some program.
+
+Now, type journalctl to see the logging unit of systemctl.
+$ journalctl	# Type G to go to the end, otherwise it shows a long time back!
+
+Read the following man pages for more information:
+$ man systemd
+$ man systemctl
+$ man journalctl
+$ man systemd.unit

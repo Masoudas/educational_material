@@ -1,0 +1,28 @@
+Here's something interesting to notice regarding the addresses in the previous example. If we readelf only symbols,
+we get:
+
+%%% max.c
+Symbol table '.symtab' contains 11 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS max.c
+	 ...
+     9: 0000000000000000    26 FUNC    GLOBAL DEFAULT    1 max
+    10: 000000000000001a    51 FUNC    GLOBAL DEFAULT    1 max_3
+
+%%% main.c
+  Num:    Value          Size Type    Bind   Vis      Ndx Name
+    0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+    1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+	...
+	9: 0000000000000000     4 OBJECT  GLOBAL DEFAULT    3 a
+    10: 0000000000000004     4 OBJECT  GLOBAL DEFAULT    3 b
+    11: 0000000000000000    73 FUNC    GLOBAL DEFAULT    1 main
+    12: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _GLOBAL_OFFSET_TABLE_
+    13: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND max
+    14: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND max_3
+
+Notice that in the first file, max and max_3 have their own corresponding addresses. However, in main.o, the
+address of max and max_3 are both set to zero, implying that they should be replaced at some later point in time.
+(Me: By the way, I think these are not addresses, but rather offsets from the addresses we discussed in the 
+previous section. Which is why the address of both a and main is 0 as an example.)

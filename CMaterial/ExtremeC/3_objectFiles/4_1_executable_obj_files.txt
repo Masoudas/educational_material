@@ -1,0 +1,40 @@
+Consider the example in 3_2. We can generate the executable as follows:
+
+$ gcc main.o max.o -o program
+
+The corresponding ELF of an executable on top of sections will contain segments as well. This is the case for shared
+libs as well. Moreover, each segment contains subsegments as well, which we shall discuss. Consider the content of
+the ELF below:
+
+$ readelf -a program
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  ...
+  Type:                              DYN (Shared object file)
+  ...
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+   ....
+INTERP         0x0000000000000318 0x0000000000000318 0x0000000000000318
+                 0x000000000000001c 0x000000000000001c  R      0x1
+      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]
+   ...
+Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .interp 
+   02     .interp .note.gnu.property .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn 
+   03     .init .plt .plt.got .text .fini 
+   04     .rodata .eh_frame_hdr .eh_frame
+   ...
+  
+Notice that from the point of view of the ELF file, the type of the object file is a shared object file. The INTERP
+is what the loader program uses to load this object file and interpret it.
+
+Notice that we have four segments in this file. The first one refers to the INTERP segment. The second one is the 
+TEXT segment. It contains all the sections having machine-level instructions. The third one is the DATA segment 
+that contains all the values that should be used to initialize the global variables and other early structures. 
+The fourth segment refers to the section that dynamic linking related information can be found, for instance, the 
+shared object files that need to be loaded as part of the execution.
+  

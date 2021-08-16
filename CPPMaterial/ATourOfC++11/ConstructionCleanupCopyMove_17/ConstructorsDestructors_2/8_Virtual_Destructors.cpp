@@ -1,14 +1,14 @@
 /**
-* Destructor can be called virtual, and usually should be for a class with virtual method. This
+* Destructor can be called virtual, and usually should be for a class with virtual methods. This
 * is to allow the destructor of the derived class to be called from the base class reference.
 * We don't need to write override when writing destructor.
 * 
-* Note: We know that for a purely virtual this is definitely case. But what about a non-pure case?
+* Note: We know that for a purely virtual class this is definitely case. But what about a non-pure case?
 * I suppose this should again be the case. Presence of word virtual implies that we may use the 
 * base reference with derived class.
 * 
-* Note that in following, the destructor is called twice. Once, because we call it through the
-* reference, the other time because d goes out of scope! That is why we it's called twice, not
+* Note that in the following, the destructor is called twice. Once, because we call it through the
+* reference, the other time because d goes out of scope! That is why it's called twice, not
 * that by some magic destructor is called via the pointer.
 */
 #include <iostream>
@@ -30,7 +30,6 @@ void calling_derived_destructor_through_base_reference() {
 	derived d{};
 	virtual_distructor_base* b = &d;
 	b->~virtual_distructor_base();
-	
 }
 
 //int main() {

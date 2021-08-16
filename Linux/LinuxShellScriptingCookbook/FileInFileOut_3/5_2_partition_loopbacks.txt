@@ -1,0 +1,13 @@
+After creating our loopback file systems and loading them using losetup, we can partition it using fdisck.
+
+$ losetup /dev/loopback1 ~/loopsystem
+$ cfdisk /dev/loopback1
+
+To create a device for our newly created partition, we pass the offset flag -o with the number of bytes:
+# losetup -o 32256 /dev/loop2 loopback.img
+
+Then, we can like always mount our new device:
+# sudo mount /dev/loop2 Path
+
+
+

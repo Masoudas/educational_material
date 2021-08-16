@@ -1,0 +1,25 @@
+While we're on the subject, note that when ctrl+C is pressed, a kill signal (i.e, a SIGINT) is sent to the
+process. Ctrl+C also sends a kill signal to terminal in the same way if called in a process. Note, however, that 
+pressing ctrl+Z sends a stop signal to the process.
+
+Note that we have three signals for killing a process:
+	1)	SIGINT:	Interrupt signal sent by the user using Ctrl+C. We shouldn't count on it, because depending on
+				the situation and other things, it may not behave as we like. Specially, because SIGINT is 
+				considered for users, the processes communicate with each other in different ways.
+	2)	SIGQUIT:	It generates a core dump, which is useful for debugging.
+	3)	SIGKILL:	Kills the process and does not let cleaning up.
+	4)	SIGTERM:	Allowes the process to clean up.
+
+Again, note that stopping a process (which is different than starting it in the background) is done using Ctrl+Z.
+
+In 9_listing_background_jobs, we demonstrate a way to continue background processes that are frozen with 
+another tool other than sending a continue signal.
+
+Ctrl+D on the other hand is the EOF signal. It's not actually a signal, but rather what an input stream understands
+as the end of the stream (file.) Hence for example if we press with fscanf or with read in shell, the length of
+the returned stream would be zero (and not the number of chars punched in so far.) It's our way of closing an
+input stream without additional conditions. 
+
+Here's something quite odd about EOF. Say in a C file, I have several fscanf points. Then, if I send EOF to one
+instance, then the rest will automatically receive it, and in other words, I guess the stdin closes for the 
+current process, and we move on.

@@ -2,7 +2,7 @@
 * We use the ~ to mean complement (of construction) for destruction.
 * 
 * Destruction must guarantee that every resource not freed by the class destruction procedure
-* it self is destroyed.
+* itself is destroyed.
 * 
 * Destructors are called implicitly when an automatic variable goes out of scope, an object 
 * on the free store is deleted, etc. Only in very rare circumstances does the user need to 
@@ -14,7 +14,7 @@
 * This style of construction/destruction is known as RAII.
 * 
 * A programmer who declares a destructor for a class must also decide if objects of that class can
-* be copied or moved. Yet however, this is not enforced, or properly warned against, as is the case
+* be copied or moved. Yet, this is not enforced, or properly warned against, as is the case
 * here in Visual Studio. So, be careful! (Unless VS does it for us in any case!)
 * 
 * To avoid this case, we use the keyword default alongside the default stuff, to ensure that the

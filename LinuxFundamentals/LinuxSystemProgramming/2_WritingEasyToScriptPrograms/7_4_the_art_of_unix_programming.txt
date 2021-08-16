@@ -1,7 +1,0 @@
-Eric S. Raymond has written some excellent rules to stick to when developing software for Linux and Unix. They can 
-all be found in his book, The Art of Unix Programming. Two of the rules that apply to us in this recipe include 
-the Rule of Modularity, which says that we should write simple parts that are connected with clean interfaces. The 
-other rule that applies to us is the Rule of Composition, which says to write programs that will be connected to 
-other programs.
-
-His book is available for free online at http://www.catb.org/~esr/writings/taoup/html/.

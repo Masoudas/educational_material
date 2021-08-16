@@ -1,0 +1,19 @@
+Essentially, there's a space inside the kernel memory associated with the log messages, which is a ring buffer
+(i.e, it has a limited size and once we get to the end of it, we restart writing from the beginning of the buffer.)
+Because this is a kernel property, then its size can be determined using kernel (Kconfig) parameters. That 
+parameter is CONFIG_LOG_BUF_SHIFT. Indeed, if we look inside the definition of this ring in the kernel source tree,
+we see that:
+
+kernel/printk/printk.c:
+#define __LOG_BUF_LEN (1 << CONFIG_LOG_BUF_SHIFT)
+static char __log_buf[__LOG_BUF_LEN] __aligned(LOG_ALIGN);
+
+In other words, the amount shift we apply will translate into buffer size. Notice that as such, the buffer size
+is very small, and the modern kernels use systemd or journalctl to copy these log files into system files, as 
+we shall discuss later.
+
+Also never forget that the kernel messages (like everything else about the kernel) are in RAM, and as such, a
+restart will make everything disappear.
+
+Note that kernel parameters are useful, many, and varied, and are well worth checking out. See the official 
+documentation here: https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html. 

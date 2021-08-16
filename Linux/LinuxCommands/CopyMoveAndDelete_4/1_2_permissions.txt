@@ -1,0 +1,7 @@
+Before we start, note that if the destination file already exists, the copy command does not create a new file.
+Moreover, the permissions are not overridden. As such, if the destination file belongs to the root, we can't 
+copy to it with a normal user copy! In other words, the copy command does not copy or mess with the permissions
+if they already exist. Only when we create the new file that the permissions are copied.
+
+Moreover, recall that lack of execution permission implies not being able to copy a new file (or use it for 
+execution with any other command for that matter.)

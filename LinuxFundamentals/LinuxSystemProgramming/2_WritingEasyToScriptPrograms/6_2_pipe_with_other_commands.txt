@@ -1,6 +1,0 @@
-Note that the program we just wrote actually reads from stdin. Hence, we can easily pipe it with another
-program. Again, don't forget that the stdout is all the lines that are written to the output (for example, it
-doesn't send each single line of the ls command to ./program, then return, then send the other one, etc.):
-
-$ ls / | ./program
-$ man ls | egrep "^[A-Z]+$" | ./program

@@ -1,5 +1,7 @@
 /**
- * To be able to modify a class member inside a constant function, we use the modifiable keyword.
+ * To be able to modify a class member inside a constant function, we use the modifiable keyword. 
+ * 
+ * Me: Notice that just like many other function decorators, we don't repeat the keyword outside the function.
  */
 #include <string>
 

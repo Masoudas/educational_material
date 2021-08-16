@@ -1,0 +1,19 @@
+The commands basename and dirname can be used to determine the filename or the folder path from a given path as
+well.
+
+$ path=/etc/ld/ldconfig.d
+$ basename $path
+ldconfig.d
+
+$ basename -s.d $path	# Cut the extension as well.
+ldconfig
+
+$ dirname $path
+/etc/ld
+
+$ dirname $path $path
+/etc/ld
+/etc/ld
+
+$ dirname stdio.h
+'.'

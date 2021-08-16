@@ -1,0 +1,19 @@
+By now, we know most uses of head and tail:
+
+$ seq 10 | head -n 4	# Comapre to echo {1..10} | tail -n 4, where we print all 10, because no new line is added
+$ seq 10 | head -n -4	# This is negative 4, meaning don't print the LAST four lines.
+
+$ seq 10 | tail -n 4	# Last four
+$ seq 10 | tail -n -4	# Same as 4!
+$ seq 10 | tail -n +4	# Now, skip the first four, but print the rest!
+
+tail has an interesting property, allowing us to track changing files with the -f option. This is very good, when
+for example we want to check changing log files:
+
+$ tail -f /var/log/messages
+
+Another interesting case is to tail -f something till the dying of a process. This can be done as follows:
+$ PID=$(pidof FOO)	# Equivalent to pgrep
+$ tail -f --pid $PID
+
+So, this tail dies as soon as the attached process id dies.

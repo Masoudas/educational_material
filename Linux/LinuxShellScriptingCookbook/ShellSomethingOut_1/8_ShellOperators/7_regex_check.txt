@@ -1,0 +1,16 @@
+
+
+Say I wanted to check whether a string contains a certain regular expression. I'd simply use the echo grep pipe:
+
+$ echo $var | grep REG_EX && ...
+
+Or:
+
+$ if  echo $var | grep REG_EX ;  then ...
+
+Another useful expression is the =~, which is simply compare with a regular expression:
+$ [[ $var =~ REG_EX ]] && echo "true" || echo "false"
+
+I've also seen that we can directly compare with glob expressions:
+$ [[ $var = *'.'* ]] && echo true || echo false
+

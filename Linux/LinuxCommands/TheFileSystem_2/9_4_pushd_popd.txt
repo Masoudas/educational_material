@@ -1,0 +1,9 @@
+This is very interesting! There's a stack for keeping paths in the shell! We can push and pop in this stack with
+the pushd and popd commands, and use dirs to see the content of this stack.
+
+In fact popd, takes right there (it has a built in 'cd' inside of it!)
+
+We can use pushd as follows:
+$ pushd +3 	# Rotates the stack and brings n-th element to the top.
+
+We can use 'popd +n' to pop the n-th element of the stack.

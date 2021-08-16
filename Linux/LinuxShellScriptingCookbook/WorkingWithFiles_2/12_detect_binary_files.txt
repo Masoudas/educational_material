@@ -1,0 +1,5 @@
+Me: There's probably some header information in file, which would determine whether a file is binary, or
+ascii, or utf8, etc.
+
+You can use file --mime-encoding FILE | grep binary to detect if a file is a binary file. It works reliably 
+although it can get confused by a single invalid character in a long text file.
