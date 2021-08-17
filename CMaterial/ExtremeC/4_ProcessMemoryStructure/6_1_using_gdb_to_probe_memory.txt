@@ -1,0 +1,44 @@
+Using gdb, we're able to probe the memory directly. The trick is to first compile our code in the debug mode by
+passing the -g flag to gcc:
+
+$ gcc -g main.c -o main_debug
+
+Then we can pass the file that has debug symbols to the gdb program, which is the debugger program of the gcc
+suite:
+
+$ gdb main_debug
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later http://gnu.org/licenses/gpl.html
+...
+Reading symbols from main_debug...done
+
+To execute the object file, we can type r or run:
+(gdb) run
+Starting program: .../main
+[Inferior 1 (process 9742) exited normally]
+
+Note that we only ran the program and nothing happened, because we didn't define any breakpoints. We can define
+a break point using b:
+(gdb) break main
+Breakpoint 1 at 0x400555: file main.c, line 4.
+(gdb) run
+Starting program: .../main
+Breakpoint 1, main (argc=1, argv=0x7fffffffcbd8) at main.c:3
+3       int main(int argc, char** argv) {
+
+Now that we have our break point, we can run the next lines as follows:
+(gdb) n
+5         arr[0] = 'A';
+(gdb) n
+6         arr[1] = 'B';
+(gdb) next
+7        arr[2] = 'C';
+(gdb) next
+8        arr[3] = 'D';
+(gdb) next
+9        return 0;
+
+We can also print the content of a variabel with print:
+(gdb) print arr	# Print a variable named arr
+$1="ABCD"

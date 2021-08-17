@@ -1,0 +1,33 @@
+Using gdb, we can directly probe the stack memory. For example, in the previous example, we could write:
+
+$ x/4b arr	# Show four bytes of the arr address
+0x7fffffffcae0: 0x41    0x42    0x43    0x44
+
+Note that the Stack segment is filled in an opposite fashion in comparison to other segments. Other memory regions 
+are filled starting from the smaller addresses and they move forward to bigger addresses, but this is not the case 
+with the Stack segment.
+
+It's interesting to note that the address memory is in the region allocated to the stack memory in the maps file
+of the corresponding process (the gdb process here). We can see this by noting how to grab the child process id
+of this process:
+
+$ pstree -Asp $(pgrep gdb)
+# find the id of gdb child process
+$ cat /proc/id_above/maps
+
+Note that we can a bit further on the stack, despite the fact our original array has only four bytes. This is
+because we most often go beyond the current stack address into other stack frames:
+
+(gdb) x/8b arr
+0x7fffffffcae0: 0x41    0x42    0x43    0x44    0xff    0x7f    0x00    0x00
+
+Finally, we can change the content of stack using the set command:
+(gdb) set arr[1]='c'
+(gdb) print arr
+$1="AcCD"
+
+Note also that it's possible to change an address that's not in the proper region of the stack. So, we should be
+cautious not to do so. We can do something like:
+(gdb) set *(0x7fffffffcaed) = 0xff
+
+

@@ -1,0 +1,64 @@
+In C, we have the following functions for allocating memory on heap, which are in stdlib.h:
+
+malloc: Memory allocation. This is the fastest of the bunch. malloc does not fill the memory.
+calloc: Clear and allocate. This would clear the underlying memory (meaning set it to zero) and then returns the
+		pointer.
+realloc: The realloc function does not change the data in the old block and only expands an already allocated block 
+to a new one. If it cannot expand the currently allocated block because of fragmentation, it will find another 
+block that's large enough and copy the data from the old block to the new one. In this case, it will also free the 
+old block. As you can see, reallocation is not a cheap operation in some cases because it involves many steps, hence 
+it should be used with care. If the pointer passed to it is NULL, the call would be equivalent to malloc. 
+
+The sole function for freeing memory, which dellocates memory in chuncks or single entity is called free. Also
+recall the functions memset and memcpy for setting memory, or copying it.
+
+An example code is given below.
+
+""""
+#include <stdio.h>  // For printf function
+#include <stdlib.h> // For C library's heap memory functions
+
+void print_mem_maps() {
+#ifdef __linux__
+  FILE* fd = fopen("/proc/self/maps", "r");
+  if (!fd) {
+    printf("Could not open maps file.\n");
+    exit(1);
+  }
+  char line[1024];
+  while (!feof(fd)) {
+    fgets(line, 1024, fd);
+    printf("> %s", line);
+  }
+  fclose(fd);
+#endif
+}
+
+int main(int argc, char** argv) {
+  // Allocate 10 bytes without initialization
+  char* ptr1 = (char*)malloc(10 * sizeof(char));
+  printf("Address of ptr1: %p\n", (void*)&ptr1);
+  printf("Memory allocated by malloc at %p: ", (void*)ptr1);
+  
+  for (int i = 0; i < 10; i++) {
+    printf("0x%02x ", (unsigned char)ptr1[i]);
+  }
+  printf("\n");
+  
+  // Allocation 10 bytes all initialized to zero
+  char* ptr2 = (char*)calloc(10, sizeof(char));
+  printf("Address of ptr2: %p\n", (void*)&ptr2);
+  printf("Memory allocated by calloc at %p: ", (void*)ptr2);
+  
+  for (int i = 0; i < 10; i++) {
+    printf("0x%02x ", (unsigned char)ptr2[i]);
+  }
+
+  printf("\n");
+  print_mem_maps();
+
+  free(ptr1);
+  free(ptr2);
+  
+  return 0;
+}

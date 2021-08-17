@@ -2,13 +2,13 @@ To work with heap, we need to use the proper heap interface to access the memory
 and such functions in C. This would essentially be pointers.
 
 Recall: malloc just allocates memory in C, and the memory won't even have a type. It would be just raw memory 
-(meaning a raw void pointer.) This is unlike new in C++, which initializes memory.
+(meaning a raw void pointer.) This is unlike new in C++, which initializes memory with 'new'.
 
 #include <unistd.h> // Needed for sleep function
 #include <stdlib.h> // Needed for malloc function
-#include <stdio.h> // Needed for printf
+#include <stdio.h>  // Needed for printf
 int main(int argc, char** argv) {
-  void* ptr = malloc(1024); // Allocate 1KB from heap
+  void* ptr = malloc(1024); // Allocate 1KiB from heap
   printf("Address: %p\n", ptr);
   fflush(stdout); // To force the print
   while (1) {

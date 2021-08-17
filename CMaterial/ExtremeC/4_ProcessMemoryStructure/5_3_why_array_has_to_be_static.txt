@@ -1,0 +1,11 @@
+Here's a question: why can't we allocate an array of run-time size on the stack, but can allocate various number
+of variables, of course as long as they don't exceed stack memory boundaries?
+
+Well, for one thing, we don't have an interface to have access to stack memory and manage it (using something like
+new.) I guess having an interface to have access to it would slow down the stack.
+
+But in any case, what's odd is that stack is a dynamic memory, but we can't allocate a dynamic array in it. We can
+allocate large arrays, but we can't have dynamic arrays, whose size is determined at run-time. I guess the most
+important reason should be that allocating such an array may overtake the space allocated to function arguments,
+and may override them. Moreover, I guess having a small size stack makes it faster to access, and as such, we don't
+want to let the stack size grow so large to slow down the process of passing variables to our functions.

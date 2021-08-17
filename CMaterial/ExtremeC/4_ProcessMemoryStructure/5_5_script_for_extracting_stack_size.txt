@@ -1,0 +1,19 @@
+Here's a simple script for extracting the size of stack memory in a process:
+
+""""""""""""""
+[ $# -ne 1 ] && {
+	echo "Only the process number should be provided"
+	exit 1;
+}
+
+echo $1 | egrep --quiet "^\d+$" 
+[ $? -ne 0 ] && {
+	echo "Only the process number should be provided"
+	exit 1;
+}
+
+heap_line=$(cat /proc/$1/maps | grep heap)
+start=$(echo ${heap_line:0:12} | tr 'a-z' 'A-Z')	# Need this substitution, because bc won't understand lowercase.
+end=$(echo ${heap_line:13:12} | tr 'a-z' 'A-Z')
+
+bc <<< "ibase=16; $end - $start"
