@@ -1,0 +1,10 @@
+To write a single line comment in a shell script, we can use the pound sign.
+
+There's no clear cut way to write multi-line comments in a shell script. Instead, what we can do is to use the
+stream operator without anything to stream to. Moreover, we need a string token to determine the boundary of the
+comments. An example is shown below:
+
+<<comment
+This is the first line of my command.
+This is the second line.
+comment

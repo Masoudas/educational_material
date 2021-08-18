@@ -1,7 +1,10 @@
-     #!/bin/sh 
-     # Filename: filestat.sh 
+#!/bin/sh 
+# Filename: filestat.sh 
 
-while read file; 
-do
-	echo $file
-done <<< "This string is supplied"
+<< Comment
+This is the first line
+This is the second line.
+Comment
+
+
+echo Here
