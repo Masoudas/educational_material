@@ -1,0 +1,9 @@
+Apparently memory allocation is not just confined to malloc and free and calloc and etc. We can in fact use other
+librarious for more elaborate strategies. Some of these memory allocator libraries are ptmalloc, tcmalloc, Haord, 
+and dlmalloc.
+
+Essentially, however, we want to avoid allocating and delocating to the extent possible, or as frequently as
+possible.
+
+Uaing memory pools is another solution in this regard, and can be used through predefined APIs that take care of
+memory.

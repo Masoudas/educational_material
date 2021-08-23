@@ -1,0 +1,8 @@
+This is an effective technique, especially for programs working with a lot of textual data that should be kept 
+inside the memory. Textual data has a high compression ratio in comparison to binary data. This technique allows a 
+program to store the compressed form instead of the actual text data with a huge memory return.
+
+However, saving memory is not free; since compression algorithms are CPU-bound and computation-intensive, the 
+program would have worse performance in the end. This method is ideal for programs that keep textual data that is 
+not required often; otherwise, a lot of compression/decompression operations are needed, and the program would be 
+almost unusable eventually.

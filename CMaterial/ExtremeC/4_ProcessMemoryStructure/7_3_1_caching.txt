@@ -1,0 +1,2 @@
+Aside from using CPU caching, sometimes it's possible to use a slow memory together with a fast one, and then
+cache the data of the slow memory into the fast memory. As such, we can increase the speed of our algorithms.
