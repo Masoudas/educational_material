@@ -1,9 +1,14 @@
-Instead of using find and then comm to find the difference between two dir content, we can use diff. The options
-are as follows:
+Instead of using find and then comm to find the difference between two dir content, we can use diff. 
 
+Using diff directly with two files, well, shows the difference in their content. Using it with two directories
+on the other hand would show the difference in the content of the dirs:
+
+$ diff dir1 dir2
+
+The above would show the difference, and we can read it. However, we can create a unified output using the -u
+option as well. Moreover, if we wanted to recursively go through the content, we can supply the -r option. Also,
+by passing the a option, we can consider all files as text (is it necessary?).
+
+It has been suggested to pass the -N option as well, which would treat absent files as empty. In my experience,
+this option would ignore a file if it's empty:
 $ diff -Naur folder1 folder2
-where:
-	-	N: Treat missing files as empty
-	-	a: Consider all files as text file
-	-	u: To generate the unified outpu
-	-	r: To recursively go through files.

@@ -1,0 +1,19 @@
+Tree is a nice CLI tool for visualizing the folder structure of pass. It has to be installed however:
+
+$ tree PATH
+
+To display only files that match a pattern, use the -P option:
+$ tree path -P PATTERN # Pattern should be wildcard in single quotes
+
+To display only files that do not match a pattern, use the -I option.
+$ tree path -I PATTERN
+
+To print the size of the files, use the -h option:
+$ tree -h
+
+Use the -H command to generate the output in HTML!
+$ tree PATH -H http://localhost -o out.html	# the local host means the root directory. Nothing serious!
+
+
+
+

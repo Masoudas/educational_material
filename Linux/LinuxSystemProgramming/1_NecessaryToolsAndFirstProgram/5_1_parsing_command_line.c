@@ -12,6 +12,15 @@
  * it together with a switch case to parse the command line. Notice that only the option letter is parsed 
  * with this method. The getopt parses all argv to see if our option is present or not.
  * 
+ * The manpage of getops specifies that:
+ 
+ The getopt() function parses the command-line arguments. Its arguments argc and argv are the argument count and 
+ array as passed to the main() function on program invocation. An element of argv that starts with '-' (and is not 
+ exactly "-" or "--") is an option element. The characters of this element (aside from the initial '-') are option 
+ characters. If getopt() is called repeatedly, it returns successively each of the option characters from each of 
+ the option elements.
+
+ * 
  * Note that if we write '1 2 3 -m' instead of '-m 1 2 3', we get a zero everytime. This is because the 
  * program uses atoi with m, which returns 0 for case it's not an integer.
  * 

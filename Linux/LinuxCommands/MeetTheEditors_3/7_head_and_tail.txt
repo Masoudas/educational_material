@@ -5,7 +5,7 @@ $ seq 10 | head -n -4	# This is negative 4, meaning don't print the LAST four li
 
 $ seq 10 | tail -n 4	# Last four
 $ seq 10 | tail -n -4	# Same as 4!
-$ seq 10 | tail -n +4	# Now, skip the first four, but print the rest!
+$ seq 10 | tail -n +4	# Now, Skip till line 4. It would show line 4.
 
 tail has an interesting property, allowing us to track changing files with the -f option. This is very good, when
 for example we want to check changing log files:
