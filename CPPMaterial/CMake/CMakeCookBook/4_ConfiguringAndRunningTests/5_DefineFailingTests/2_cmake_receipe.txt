@@ -1,0 +1,22 @@
+The point here is that we can tell cmake whether a test has failed or not, using the set_test_properties() function. Note that in 
+what follows, we don't use any particular language, but rather we just find the python interpreter.
+
+Here's something that I found bizzare about running this test in Windows. If I write the test command as add_test(NAME ... COMMAND
+...), then it will fail. I've no idea why it fails, but the error that's shown is that no executable is found! This could be because
+COMMAND implies an executable, yet we're passing a python script. I don't know!
+
+""""""""
+cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
+project(failing_test LANGUAGES NONE)
+
+find_package(PythonInterpreter REQUIRED)
+
+include(CTest)
+enable_testing()
+add_test(
+    NAME failure_test
+    COMMAND "${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/failure_script.py" 
+)
+
+set_tests_properties(failure_test PROPERTIES WILL_FAIL true)
+""""""""

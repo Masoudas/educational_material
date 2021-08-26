@@ -1,6 +1,6 @@
 /**
- * To indicate to the compiler that the state of a class is not going to change inside the functio., we use the
- * const decorator after the class name.
+ * To indicate to the compiler that the state of a class is not going to change inside the function, we use the const decorator 
+ * after the class name.
  */
 
 #include <string>
@@ -10,7 +10,7 @@ class Date {
 public:
   int day() const { return d; }
   int month() const { return m; }
-  int year() const;
+  int year() const { return y; }
   
   void add_year(int n);//add n years//...
 

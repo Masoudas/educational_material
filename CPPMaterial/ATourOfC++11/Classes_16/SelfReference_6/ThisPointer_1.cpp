@@ -2,7 +2,10 @@
  * In non-static functions of the class, this is a POINTER that refers to the current instance (current memory) of 
  * the class. Hence, *this is the actual value of the class.
  * 
- * In the example below, we use this to allow method chaining:
+ * In the example below, we use this to allow method chaining.
+ * 
+ * Me: Why is this a method? Well, if it were an object, it would have contained a copy of the class. Moreover, because references
+ * were introduced later in C++, they couldn't define this as a reference. Hence, we're stuck with pointers.
  */
 
 class Date {//..
@@ -20,8 +23,8 @@ Date& Date::add_year(int n){
  * Note that this is an rvalue. This is because we cannot assign to it directly, (Me: because we may imagine that 
  * this is a read-only pointer. Quite interesting!)
  * 
- * In a const member function of class X, the type of this is const X∗, to prevent modification of the object 
- * itself.
+ * In a const member function of class X, the type of this is const X*, to prevent modification of the object 
+ * itself. (ME: Shouldn't we say const pointer to const X? This would have made more sense.)
  * 
  * We can actually say delete this. Here's an implementation of a Linked List that does so!
  * 

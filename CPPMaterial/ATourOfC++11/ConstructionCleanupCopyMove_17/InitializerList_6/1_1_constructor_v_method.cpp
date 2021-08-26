@@ -5,8 +5,8 @@
 * object construction, IF AND ONLY IF we have an initializer list in the constructor (and not any other
 * parameters).
 * 
-* Me: It's very important to stress that not any other parameters. See 5, mixing_init_list_with_other_arguments
-* and the examples below.
+* Me: It's very important to stress that not any other parameters exist together with the initializer list. 
+* See 5, mixing_init_list_with_other_arguments and the examples below.
 */
 #include <iostream>
 #include <string>

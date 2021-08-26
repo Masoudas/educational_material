@@ -20,8 +20,8 @@ private:
 // Now we can define string_rep() in the obvious way:
 std::string Date::string_rep() const{
     if (!cache_valid) {
-            compute_cache_value();
-            cache_valid = true;
+        compute_cache_value();
+        cache_valid = true;
     }
 	return cache;   // Copy constructor is called here!
 }

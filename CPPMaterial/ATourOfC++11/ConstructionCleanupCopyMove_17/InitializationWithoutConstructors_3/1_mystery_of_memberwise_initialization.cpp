@@ -5,6 +5,8 @@
 * If a class has NO CONSTRUCTORS (i.e, has only default constructors, even empty constructor
 * is not allowed here), and ALL invariants are PUBLIC, then we can initialize using bracket notion.
 * 
+* Me: As such, memberwise initialization is possible only for POD.
+* 
 * Note: When we say direct initilization is impossible, we're talking about the case where we actually
 * set the value of each parameter. The empty bracket situation should not be confused with this.
 * 

@@ -196,9 +196,6 @@
     <Filter Include="Source Files\Classes_16\SelfReference_6">
       <UniqueIdentifier>{a301b553-6ebf-4a87-a3e3-21434e73e5ea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Classes_16\ADiscussionOnMutability_0">
-      <UniqueIdentifier>{4adc39d8-f904-4050-a64f-aa0c04e91fd3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\OperatorOverloading_18">
       <UniqueIdentifier>{3d7685c8-cd6f-4afd-aea0-9043e0c641be}</UniqueIdentifier>
     </Filter>

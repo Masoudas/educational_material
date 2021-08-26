@@ -1,6 +1,8 @@
 /**
 * Just as a reminder, when a variable is not intialized, the = {} operation uses
-* the constructor. However, if initialized, it uses assignment operator.
+* the constructor (in particular an implicit conversion). However, if initialized, it uses assignment operator.
+* 
+* Note that T t = T{} uses a move (but I've read that some compilers optimize it.)
 */
 
 #include <iostream>
