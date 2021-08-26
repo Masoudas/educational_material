@@ -1,0 +1,14 @@
+Sometimes, we want to write tests that fail, to check a particular property of the function (for example, whether it throws or 
+not.)
+
+Often, we have fascilities to check inside the test module to check whether the test has failed or not. For example, we can check
+whether a particular exception has been thrown or not. However, sometimes we want the test to directly fail. For example, the 
+following is a Python test that fails:
+
+"""""""""""" failure_script.py
+import sys
+
+# Simulate a failing test.
+sys.exit(1);
+""""""""""""
+
