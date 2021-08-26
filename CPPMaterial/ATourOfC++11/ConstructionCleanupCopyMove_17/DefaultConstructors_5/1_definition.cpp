@@ -8,8 +8,9 @@
 * 
 * Note that a default argument can make a constructor with single argument into default constructor (
 * another reason why C++ supplied constructor cannot be mixed with user defined constructor).
+* 
 */
 struct MyStruct{
-	MyStruct(int j = 10){}	// Both a default and non-default constructor.
+	MyStruct(int j = 10){}	// Both a default and non-default constructor (me: Because of optional parameter).
 };
 

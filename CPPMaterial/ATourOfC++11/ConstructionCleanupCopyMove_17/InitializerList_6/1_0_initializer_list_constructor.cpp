@@ -1,8 +1,7 @@
 /**
 * It's used for passing a list of arguments to construct a class. 
 * 
-* Standard library containers mostly supply such constructor, and assignments with such
-* them.
+* Standard library containers mostly supply such constructor, and assignments with such items.
 */
 #include <vector>
 #include <iostream>

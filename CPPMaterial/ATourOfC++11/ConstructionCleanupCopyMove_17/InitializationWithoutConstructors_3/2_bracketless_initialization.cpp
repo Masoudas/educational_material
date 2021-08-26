@@ -2,10 +2,13 @@
 * Bracketless initialization is possible when there are no constructors, or just an empty
 * constructor. By bracketless we mean something like "T v;". 
 * 
-* Me: Note that no matter what happens, user-defined types are initialized with (default) constructors
-* in what follows. Our only fight is with built-in types and built-in arrays!
+* Me: Note that no matter what happens, user-defined types are initialized with (default) constructors. Our only 
+* fight is with built-in types and built-in arrays! A user-defined type CANNOT Be constructed without calling some 
+* form of ctor. This includes the bracketless initialization 'T t'
 *
-* Me: Recall that heap built-in and user defined types are always built with constructors. Hence:
+* Me: Note that an empty ctor initializes everything with empty ctor, both for built-in and custom types. So,
+* here, we're talking about situations where the default ctor has been overridden.
+* Recall that heap built-in and user defined types are always built with constructors. Hence:
 *	- An object built on heap, is built with member ctors (even built-in types declared with no ctors)
 *	- Stack objects are created randomly (memory allocated but content is random) if there's no default ctor for
 *	  the class. Otherwise, built with default ctor.
@@ -75,13 +78,14 @@ struct has_non_default_constructor {
 	has_default_constructor d1;
 #endif
 void bracket_less_initialization() {
-	only_empty_constructor c2;	// Worst kind! Everything to random!
-	only_empty_constructor* c4 = new only_empty_constructor;	// random values (me: but not in gcc!).
+	only_empty_constructor c2;	// Worst kind! Everything to random, because no default ctor
+	only_empty_constructor* c4 = new only_empty_constructor;	// random values (me: but not in gcc for
+																// example!).
 	
 	// has_non_default_constructor c4;	This is not possible! Jesus. Imagine having to check for exception
 	// when opening a file or something!
 
-	has_default_constructor d2;	// Everything is default initialized at least.
+	has_default_constructor d2;	// Everything is default initialized (default ctor)
 	has_default_constructor* d4 = new has_default_constructor;	// Default construction of all elements.
 	
 #ifdef INITIALIZE_STATICS
@@ -95,6 +99,6 @@ void bracket_less_initialization() {
 	d4->print();
 }
 
-int main() {
-	bracket_less_initialization();
-}
+//int main() {
+//	bracket_less_initialization();
+//}

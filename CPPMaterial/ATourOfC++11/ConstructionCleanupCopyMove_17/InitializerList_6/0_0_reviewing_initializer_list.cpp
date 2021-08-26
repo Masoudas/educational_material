@@ -12,7 +12,7 @@ using namespace std;
 
 void init_list_function(initializer_list<int> args) {
 	int* arr = new int[args.size()];
-
+	
 	// args[i] is not allowed.
 
 	int i = 0;
