@@ -1,0 +1,36 @@
+To show that printing to the console is possible, we can compile the following code:
+
+""""""""""""""
+static int __init printk_loglvl_init(void)
+{
+	pr_emerg ("Hello, world @ log-level KERN_EMERG [0]\n");
+	pr_alert ("Hello, world @ log-level KERN_ALERT [1]\n");
+	pr_crit ("Hello, world @ log-level KERN_CRIT [2]\n");
+	pr_err ("Hello, world @ log-level KERN_ERR [3]\n");
+	pr_warn ("Hello, world @ log-level KERN_WARNING [4]\n");
+	pr_notice("Hello, world @ log-level KERN_NOTICE [5]\n");
+	pr_info ("Hello, world @ log-level KERN_INFO [6]\n");
+	pr_debug ("Hello, world @ log-level KERN_DEBUG [7]\n");
+	pr_devel("Hello, world via the pr_devel() macro"
+	" (eff @KERN_DEBUG) [7]\n");
+	return 0; /* success */
+}
+static void __exit printk_loglvl_exit(void)
+{
+	pr_info("Goodbye, world @ log-level KERN_INFO [6]\n");
+}
+
+module_init(printk_loglvl_init);
+module_exit(printk_loglvl_exit);
+"""""""""""
+
+Notice two things:
+	-	First, the printing as we said is done to the console, which in our case is the tty terminals, and not
+		pseudo 'pts' terminals
+	-	We should ensure that the content of printk process file is as follows:
+		$ echo "8 1 4 7" > /proc/sys/kernel/printk
+
+So, log on to a terminal (alt+ctrl+F3) and then compile and execute the code.
+
+Note that all printk's instances – except the KERN_DEBUG ones – are seen as we are looking at the kernel log via 
+the dmesg utility. So, how do we get a debug message displayed? 

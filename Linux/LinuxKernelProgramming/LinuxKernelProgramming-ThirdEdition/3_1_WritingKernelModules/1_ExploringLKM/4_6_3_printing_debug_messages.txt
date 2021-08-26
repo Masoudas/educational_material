@@ -1,0 +1,9 @@
+To enable the printing of the debug messages, we need to pass the DEBUG flag when compiling our codes. We can
+do it in two ways (three ways):
+
+	1-	Add the following line to the make file:
+		CFLAGS_<filename>.o  :=  -DDEBUG
+	2-	Insert the following line:
+		EXTRA_CFLAGS += -DDEBUG
+
+Essentially, don't use pr_debug for printing debug messages. Instead, it's recommended to use dev_dbg() macro.
