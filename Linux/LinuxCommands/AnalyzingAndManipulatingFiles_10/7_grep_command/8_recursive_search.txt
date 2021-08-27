@@ -1,0 +1,15 @@
+Obviously, we can create the following command with a mixture of find and grep (and xargs). However, grep provides 
+a way to recursively look for a pattern inside a file. That is, we can provide a pattern, a path, recursion flag 
+and that's it. Note that -R is the same as -r:
+
+$ grep "test_function()" . -R -n
+./miscutils/test.c:16:test_function();
+
+This is equivalent to:
+
+$ find . -type f | xargs grep "test_function()"
+
+We can include and exclude files as well, using --include and --exclude:
+$ grep "main()" . -r  --include *.{c,cpp}
+$ grep "main()" . -r --exclude "README"
+$ grep main . -r -exclude-dir CVS

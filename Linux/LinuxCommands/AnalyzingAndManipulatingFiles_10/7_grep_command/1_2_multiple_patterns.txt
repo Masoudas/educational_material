@@ -1,0 +1,3 @@
+We can also look for multiple patterns by passing multiple -e options:
+
+$ grep -e "pattern1" -e "pattern2"

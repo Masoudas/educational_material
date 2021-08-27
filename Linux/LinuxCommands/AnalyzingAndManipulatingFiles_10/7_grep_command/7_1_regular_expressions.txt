@@ -1,0 +1,48 @@
+Here's a reminder of regular expressions here. What's not here is \s, \w, \B, \b, \W! Instead, we can use the
+glob expressions such as [[:alnum]], [[:digit:]], [[]]
+
+POSITION MARKERS:
+^	This specifies that the text that matches the regular expression must start at the beginning of the string
+	^tux matches a line that starts with tux
+
+$	This specifies that the text that matches the regular expression must end with the last character in the 
+	target string	tux$ matches a line that ends with tux.
+
+IDENTIFIERS:
+.	This matches any one character.
+	"Hack." matches Hack1, Hacki, but not Hack12 or Hackil; only one additional character matches
+
+[]	This matches any one of the characters enclosed in the brackets. The enclosed characters may be a set or a 
+	range. coo[kl] matches cook or cool; [0-9] matches any single digit
+
+[^]	This matches any one of the characters except those that are enclosed in square brackets. The enclosed 
+	characters may be a set or a range.	9[^01] matches 92 and 93, but not 91 and 90; A[^0-9] matches an A followed 
+	by anything except a digit
+
+COUNT MODIFIERS:
+?	This means that the preceding item must match one or zero times. colou?r matches color or colour, but not 
+	colouur
+
++	This means that the preceding item must match one or more times Rollno-9+ matches Rollno-99 and Rollno-9, but 
+	not Rollno-
+
+*	This means that the preceding item must match zero or more times co*l matches cl, col, and coool
+
+{n}	This means that the preceding item must match n times
+
+[0-9]{3} matches any three-digit number; [0-9]{3} can be expanded as [0-9][0-9][0-9]
+
+{n,}	This specifies the minimum number of times the preceding item should match [0-9]{2,} matches any number 
+		that is two digits or longer
+
+{n, m}	This specifies the minimum and maximum number of times the preceding item should match [0-9]{2,5} matches 
+		any number that has two digits to five digits
+
+OTHER:
+()	This treats the terms enclosed as one entity. ma(tri)?x matches max or matrix
+
+|	This specifies alternation-; one of the items on either of side of | should match. Oct (1st | 2nd) matches Oct 
+	1st or Oct 2nd
+
+\	This is the escape character for escaping any of the special characters mentioned previously. a\.b matches 
+	a.b, but not ajb; it ignores the special meaning of . because of \

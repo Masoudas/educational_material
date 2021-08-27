@@ -1,5 +1,0 @@
-$ grep "^[A-Z]" file
-$ grep "[^c]ode" file
-$ grep "t[wo]o" file
-$ grep "^[A-Z].*\.$" file
-

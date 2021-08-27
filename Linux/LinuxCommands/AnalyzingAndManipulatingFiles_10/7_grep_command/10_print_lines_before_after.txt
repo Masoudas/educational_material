@@ -1,0 +1,4 @@
+A nice feature of the grep command is that it can print the lines before and after the found pattern, using the
+-A and -B options:
+
+$ grep pattern file -B 2 -A 3	# Two lines before, one line after.

@@ -14,3 +14,7 @@ $ ls -lha  | cut -d ' ' -f1     # Shows only the permission part of the director
 The following version shows the first AND third word:
 
 $ cut -d ' ' -f1,3 file.txt
+
+Also note that the complement option --complement shows the complements of the fields:
+
+$ cut -f3 --complement student_data.txt

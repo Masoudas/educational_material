@@ -1,7 +1,0 @@
-The famous grep command (get regular expression) is the go to command to search for a regular expression in any
-context. We normally pipe it with the output of commands to search the std, or we can use it directly to search
-for a pattern.
-
-$ ls . | grep .txt  # look for txt files.
-$ grep -i my_pattern file   # Look for "my_pattern" in the txt file. -i stands for ignore case.
-

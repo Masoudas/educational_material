@@ -6,3 +6,16 @@ $ grep -vn "the" BSD
 Of course, -n by itself just gives the line numbers that contain the pattern:
 
 $ grep -n "the" BSD
+
+To count the number of LINES (not finds) found, we use the dash c option. We can of course, use wc with -c and
+-l to do the same.
+
+$ grep pattern file | wc -l
+$ grep pattern file | wc -c
+
+The -b option will print the offset of the line in which a match occurs. Adding the -o option will print the exact 
+character or byte offset where the pattern matches (note that both are from the beginning of the line):
+
+$ echo gnu is not unix | grep -b -o "not"
+7:not
+

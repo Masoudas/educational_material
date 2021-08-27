@@ -1,0 +1,7 @@
+Here are some examples:
+
+$	( +[a-zA-Z]+ +)		# Notice that it says one or more spaces in the beginning and in the end.
+$	[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} 	# 0-9 one to three times, followed by a dot, and repeat.
+$	[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3} # Same as above!
+$	
+
