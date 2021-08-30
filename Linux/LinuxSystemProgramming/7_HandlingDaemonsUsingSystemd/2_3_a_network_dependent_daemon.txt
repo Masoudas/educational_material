@@ -1,0 +1,21 @@
+It's also possible to have a daemon that's dependent on network, meaning it would start as soon as the there's a
+network connection:
+
+""""""""""""" my-daemon.service
+[Unit]
+After=network-online.target
+Wants=network-online.target
+[Service]
+...
+"""""""""""""
+
+There is also another dependency statement you can use, called Requires.
+
+The difference between After, Wants and Requires is that After specifies the order of the units. A unit with After 
+will wait to start after the unit required is started. Wants and Requires, however, only specify the dependency, 
+not the ordering. With Wants, a unit will still start even if the other unit required isn't started successfully. 
+But with Requires, the unit will fail to start if the required unit isn't started.
+
+In 'man systemd.unit' is a lot of information about the different sections of a unit file and which directives we 
+can use in each section.
+

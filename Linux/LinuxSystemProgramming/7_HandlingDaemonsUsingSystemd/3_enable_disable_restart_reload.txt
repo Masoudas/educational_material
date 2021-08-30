@@ -1,0 +1,41 @@
+To enable a service implies it will start automatically on boot (when the system enters multi-user mode). We must 
+issue this command as root since it's a command that modifies the system. Notice also what's happening when we 
+enable it. There's no arcane stuff going on; it just creates a symbolic link from our unit file to 
+/etc/systemd/system/multi-user.target.wants/my-daemon.service. Remember that multi-user.target was the target we 
+specified in the unit file. So when the system reaches the multi-user level, systemd will start all services in 
+that directory:
+
+$ systemctl enable my-daemon
+
+If we check out the status after enabling, we see that:
+
+$ systemctl status my-daemon
+my-daemon.service - A small daemon for testing
+   Loaded: loaded (/etc/systemd/system/my-daemon.service; enabled; vendor preset: enabled)
+   Active: inactive (dead)
+
+To disable the daemon from starting on boot, we can disable it:
+$ sudo disable my-daemon
+
+######################
+$ sudo systemctl start my-daemon	# Starting daemon
+
+If we check out the status after enabling and restarting, we see that we have more information:
+$ systemctl start my-daemon
+my-daemon.service - A small daemon for testing
+   Loaded: loaded (/etc/systemd/system/my-daemon.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2020-12-06 14:50:35 CET; 9s ago
+  Process: 29708 ExecStart=/usr/local/sbin/my-daemon-v2 (code=exited, status=0/SUCCESS)
+ Main PID: 29709 (my-daemon-v2)
+    Tasks: 1 (limit: 4915)
+   Memory: 152.0K
+   CGroup: /system.slice/my-daemon.service
+           └─29709 /usr/local/sbin/my-daemon-v2
+dec 06 14:50:35 red-dwarf systemd[1]: Starting A small daemon for testing...
+dec 06 14:50:35 red-dwarf systemd[1]: my-daemon.service: Can't open PID file /run/my-daemon.pid (yet?) after start
+dec 06 14:50:35 red-dwarf systemd[1]: Started A small daemon for testing.
+
+########################
+Finally, we can stop the service as well:
+
+$ systemctl stop my-daemon

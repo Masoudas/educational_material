@@ -1,0 +1,34 @@
+In this example, we'll add the code we discussed in chapter 6, section 5_4_3, and add it as a unit file using 
+systemctl.
+
+To do so, first create the executable we need. Then, we may add it to one of the standard locations for executable
+such as /usr/local/sbin. Say the executable is called 'my-daemon'
+
+Now, go to the unit file folders, and create the unit file as follows. Here's what the unit file looks like. We
+shall call it my-daemon.service. Note that the .service at the end is crucial:
+
+"""""""""""""""""""""""
+[Unit]	
+Description=A small daemon for testing
+[Service]
+ExecStart=/usr/local/sbin/my-daemon-v2
+Restart=on-failure
+Type=forking
+PIDFile=/var/run/my-daemon.pid
+[Install]
+WantedBy=multi-user.target
+"""""""""""""""""""""""
+
+Notice that:
+	Unit:	This is the description of the unit (or the service.)
+	Serivce: Describes what triggers and ends the service, and essentially, how the whole process is going to 
+			 work. As we can see:
+			-	ExecStart: Contains the path to the executable that starts the service (could it be a script?)
+			-	Restart: What happens on the failure of the service.
+			-	Type: We tell the type of the daemon so that systemd knows how to handle it. We set to type to
+					  forking to indicate that something is being forked inside.
+			-	PIDFile: Contains the path to our PIDFile, which systemd creates when the process starts.
+						 Systemd then uses the PID number from the PID file to track the daemon state. This way, 
+						 systemd can restart the daemon if it notices that the PID has disappeared from the system.
+			-	WantedBy: It's set to multi-user.target. What this means is that the service should be created
+						  as soon as systemd enters the multi-user mode.

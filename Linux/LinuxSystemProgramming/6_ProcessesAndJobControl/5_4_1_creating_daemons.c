@@ -31,4 +31,6 @@
  * 		close them.
  * 
  * Next, we shall implement the above mentioned strategy in practice.
+ * 
+ * Checkout 'man 7 daemon' for more information on daemons.
  */

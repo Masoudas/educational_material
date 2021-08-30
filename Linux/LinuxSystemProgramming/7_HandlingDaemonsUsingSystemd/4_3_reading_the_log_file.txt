@@ -1,0 +1,18 @@
+Now, just like printk in kernel programming, the logging occurs in the systemd logging journal, as opposed to our
+normal command line. To verify this, we can do as follows and check the instant updating of the journal:
+
+$ journalctl -u my-daemon -f	# f is seeing the updates, and u is for passing the daemon name.
+
+A note: Note that if we type the above command without sudo, it will say that only users who are in the and I quote
+"Users in groups 'adm', 'systemd-journal' " can see the journal without having to be sudo. So, we could add 
+ourselves to those groups. Let's recall that:
+
+$ cat /etc/group
+...
+systemd-journal:x:101:
+...
+
+So, in order to add ourselves to this group, we need to use the usermod command:
+$ usermod -a -G adm systemd-journal
+
+Allegedly, we should see the jouranlctl fields as such without having to be superuser.

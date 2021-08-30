@@ -1,0 +1,21 @@
+To add this service to our current daemons, we need to reload all unit files, which can be done as follows:
+
+$ systemctl daemon-reload	# Reloading all unit files.
+...
+
+And now, we can check on the status of our newly loaded service:
+
+$ systemctl status my-daemon
+● my-daemon.service - A small daemon for testing
+     Loaded: loaded (/lib/systemd/system/my-daemon.service; disabled; vendor preset: enabled)
+     Active: inactive (dead)
+
+Question: Why does it say our daemon is inactive, even though we're sure it's loggin right now?
+Disabled means that it won't start automatically when the system boots. Inactive means that it hasn't started yet.
+
+What happens after we activate the daemon? Well, just like we expect it, it will become part of the systemd child
+process. We can in fact check this as follows:
+
+$ cat /var/run/my-daemon.pid   # Or pgrep my-daemon
+$ pstree -Asp $(cat /var/run/my-daemon.pid)
+systemd(1)---my-daemon-v2(5136)
