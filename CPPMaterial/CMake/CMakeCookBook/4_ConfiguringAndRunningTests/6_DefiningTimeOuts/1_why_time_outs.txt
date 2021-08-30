@@ -1,0 +1,36 @@
+Ideally, the test set should take only a short time, in order to motivate developers to run the test set often, and 
+to make it possible (or easier) to test every commit (changeset).
+
+However, some tests might take longer or get stuck (for instance, due to a high file I/O load), and we may need to 
+implement timeouts to terminate tests that go overtime, before they pile up and delay the entire test and deploy 
+pipeline.
+
+Consider the following test. This test takes two seconds to execute, and as such, we want to define a timeout for
+it. Note that a test passing its timeout is considered a FAILURE.
+
+"""""""""
+import sys
+import time
+
+time.sleep(2)
+sys.exit(0)
+""""""""""
+
+A cmake recipe is essentially like the one in section 5, with the exception being that we define the timeout using
+(you guessed it) the TIMEOUT property of the test:
+
+"""""""""""
+cmake_minimum_required(VERSION 3.14.0 FATAL_ERROR)
+
+project(timeout LANGUAGES NONE)
+
+find_package(PythonInterp REQUIRED)
+
+enable_testing()
+add_test(
+    NAME timeout-test 
+    COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/failure_script.py
+)
+
+set_tests_properties(timeout-test PROPERTIES TIMEOUT 10)
+"""""""""""

@@ -1,0 +1,20 @@
+It's possible to run tests in parallel, by simply passing the --parallel command line option when executing the
+tests.
+
+$ ctest --parallel 4	# Number of cores to be used for testing.
+
+Here's something interesting to note. If we run the test sequentially, then cmake can determine which tests take
+longer and which take shorter. As such, if we run the tests in parallel the next time, it would know how to 
+effiecently allocate the tests to different cores. Hence, if a test takes longer, it will be allocated to one core,
+and the other tests together in another core, and so on.
+
+If we had started with the parallel test right after configuring the project, it would run the tests in the order 
+in which they were defined, and on four cores, the total test time would be noticeably longer. What does this mean 
+for us? Does it mean that we should order tests according to decreasing time costs? This is an option, but it 
+turns out that there is another way; we can indicate the time cost for each test by ourselves using set_tests_properties
+and the cost parameter:
+
+set_tests_properties(my-test PROPERTIES COST 0.5)	# Half a second for my test.
+
+Finally, note that instead of the --parallel option, we can the environment variable "CTEST_PARALLEL_LEVEL" and set
+it to the desired level.

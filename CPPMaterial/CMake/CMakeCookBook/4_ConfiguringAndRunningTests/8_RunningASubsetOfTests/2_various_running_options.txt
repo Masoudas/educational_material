@@ -1,0 +1,11 @@
+Notice that a simple run of the tests will run all the tests:
+
+$ ctest
+... running all tests
+
+$ ctest -L quick	# Running the set labelled quick
+$ ctest -L long 	# Running the set labelled long
+
+$ ctest -I 1,3,4	# Running the tests by index (indexes are the order of definition)
+
+$ ctest -R feature	# Running all tests that have the word feature in them.

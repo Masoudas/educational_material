@@ -1,0 +1,40 @@
+To run a particular subset of test, we need to group them together, so that we can run them together when desired.
+Labeling tests is done using (you guessed it) cmake_tests_properties and a property called LABEL. As such, when we
+run the tests, we'll run them together:
+
+""""""""""""""""""""""
+cmake_minimum_required(VERSION 3.14.0 FATAL_ERROR)
+
+project(timeout LANGUAGES NONE)
+
+find_package(PythonInterp REQUIRED)
+
+enable_testing()
+add_test(
+  NAME feature-a
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-a.py
+  )
+
+add_test(
+  NAME feature-b
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-b.py
+  )
+
+add_test(
+  NAME feature-c
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-c.py
+  )
+
+add_test(
+  NAME feature-d
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-d.py
+  )
+
+add_test(
+  NAME benchmark-a
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/benchmark-a.py
+  )
+
+set_tests_properties(feature-a feature-b feature-c PROPERTIES LABEL "quick")
+set_tests_properties(feature-d benchmark-a benchmark-b PROPERTIES LABELS "long")
+""""""""""""""""""""""
