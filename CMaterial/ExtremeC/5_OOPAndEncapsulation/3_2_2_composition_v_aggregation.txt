@@ -1,0 +1,4 @@
+Composition and aggregation both describe the possession of some objects. In other words, these relationships 
+describe a "to-have" or "has-a" situation; a player has a gun, or a car has an engine. Every time you feel that an 
+object possesses another one, it means there should either be a composition relationship or an aggregation 
+relationship between them (and their corresponding classes).
