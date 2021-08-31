@@ -12,6 +12,11 @@
  * Note that the clean-up we implement here involves removing the pid file, as well as closing the log file stream.
  * Other than that, note that we wrote an exit function, because if we didn't do this, the program would not exit
  * after signal handling is finished!
+ * 
+ * Remember that we had to flush the stream for the time and date to show up in /tmp/my-daemon-is-alive.txt? Since 
+ * we now close the file stream once the daemon exits, we don't need fflush() anymore. The data is written to the 
+ * file when it closes. However, then we can't see the time and date "live" while the daemon is running. That's why 
+ * we still have fflush() in the code.
  */
 
 #include <sys/types.h>
@@ -34,7 +39,7 @@ int main(void)
 {
    pid_t pid;
    time_t now; /* for the current time */
-   
+
    struct sigaction action; /* for sigaction */
    const char daemonfile[] = 
       "/tmp/my-daemon-is-alive.txt";
