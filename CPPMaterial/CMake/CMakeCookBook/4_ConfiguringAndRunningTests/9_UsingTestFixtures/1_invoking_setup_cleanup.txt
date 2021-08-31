@@ -1,0 +1,64 @@
+In certain situations, as we know, we want to perform some setup or cleanup for the test. It's possible to force
+ctests to run certain scripts before executing our tests, making it possible to do some setting up or some clean
+up, as shown below.
+
+Imagine we have scripts like setup.py and clean-up.py for clean up afterward. like before, we can use the 
+set_tests_properties function to set the properties of the tests, as shown below:
+
+	-	Setting a setup fixture: This property defined by FIXTURES_SETUP, defines the script as a setup script.
+		The name supplied after this property allows to use this fixture for setup.
+	-	Setting a clean fixture: This property defined by FIXTURES_CLEANUP, allows for cleaning up after execution
+		of tests. 
+	-	Setting a requirement fixture: Having defined setup and cleanup fixtures, this property allows us to
+		define either a setup or cleanup requirement for a test. The property is FIXTURES_REQUIRED.
+
+As such, in the example below, my-fixture setup is executed before all tests, and my-fixture clean up is executed
+after all.
+
+""""""""""""""""
+cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+project(test-fixtures LANGUAGES NONE)
+
+find_package(PythonInterp REQUIRED)
+
+enable_testing()
+
+add_test(
+  NAME setup
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/setup.py
+  )
+
+# Define the script as a setup fixture.
+set_tests_properties(
+  setup
+  PROPERTIES
+    FIXTURES_SETUP my-fixture
+)
+
+add_test(
+  NAME feature-a
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-a.py
+)
+
+add_test(
+  NAME feature-b
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/feature-b.py
+)
+
+set_tests_properties(
+  feature-a
+  feature-b
+  PROPERTIES
+    FIXTURES_REQUIRED my-fixture
+)
+
+add_test(
+  NAME cleanup
+  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/cleanup.py
+)
+
+set_tests_properties(
+  cleanup
+  PROPERTIES
+    FIXTURES_CLEANUP my-fixture
+)
