@@ -1,0 +1,30 @@
+The stream editor allows us to stream a file, and edit it at the same time. The command is sed (stream edittor.)
+The commands are pretty much like vim, in that for example, to replace a word in a file, we need only to supply
+the 's' tag (short for substitute) as follows:
+
+$ sed "s/search_pattern_or_regex/replacement" # Replace only the first occurance.
+
+$ sed -i 's/search_pattern/replace_word/g' file   # -i is used to write the replaced pattern. -i here implies
+                                                  # that the original file will be rewritten. Without it, it will
+                                                  # be printed on stdout.
+
+Note: It would be best to try sed without -i first, to ensure that the changes we make are Ok, and then overwrite
+everything.
+
+To make it as consistent with vim as possible, we can write:
+$ sed -i '1,$ s/search_pattern_replace_word/g' file     # g stands for global
+
+We also can replace from the nth occurance:
+$ sed -i 's/search_pattern/replace/#g' file
+
+Notice that whatever comes after s will be considered the delimiter string:
+
+$ sed -i 's:search_pattern:replacement:#g' file
+
+Note that:
+    -   The search is case sensitive (as always)
+    -   Note that -d is used for deleting.
+
+
+
+

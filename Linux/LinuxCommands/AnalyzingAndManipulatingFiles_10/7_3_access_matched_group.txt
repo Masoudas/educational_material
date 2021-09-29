@@ -1,0 +1,8 @@
+Note also that we can get the matched string with &:
+$ echo this is an example | sed 's/\w\+/[&]/g'  # Put every matched word inside a bracket. Notice the use of \+
+                                                # instead of \w+, because this would imply a normal string.
+[this] [is] [an] [example]
+
+To access a matched group, we use \ notation:
+
+$ echo seven EIGHT | sed "s/\([a-z]\+\) \([A-Z]\+\)/\2 \1/'

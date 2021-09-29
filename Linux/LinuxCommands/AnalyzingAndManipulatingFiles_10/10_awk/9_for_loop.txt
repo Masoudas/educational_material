@@ -1,0 +1,8 @@
+awk supports both c-style for loops, as well as for each style loops:
+
+$ echo "" | awk '{ for (i=0; i<10; i++) { arr[i]=i; } } END { for (item in arr) {print item;}}'
+
+The following is an example of using a for loop to print the login id of all users on the Linux system. Notice the
+redifinition of the IFS:
+
+$ awk -F: '{ arr[$1] = $5 } END { for (item in arr) {print item, arr[item];} }' /etc/passwd

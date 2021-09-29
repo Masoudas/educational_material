@@ -1,0 +1,8 @@
+When building a target, often we need to check-out for particular files, their existence, creating or executing an
+archive, etc. 
+
+With CMake, we are not only able to generate the build system on different platforms, we are also able to perform 
+these operations without complicated logic to abstract away the different operating systems.
+
+Next, we shall show how to extract the eigen library, which will then enable us to use the library file and the
+header files of it.

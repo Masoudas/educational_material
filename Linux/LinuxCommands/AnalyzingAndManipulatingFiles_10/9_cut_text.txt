@@ -18,3 +18,9 @@ $ cut -d ' ' -f1,3 file.txt
 Also note that the complement option --complement shows the complements of the fields:
 
 $ cut -f3 --complement student_data.txt
+
+Interestingly enough, we can define the output delimiter with cut:
+
+$ cut -f1,3,5 my_file.txt --output-delimiter ";"
+
+Also, don't forget that we can cut based on the number of chars, or bytes, etc, using -c, -b, etc.

@@ -1,0 +1,6 @@
+As we already know, with double quote, the expression is expanded in shell. But with single quotes, nothing is
+expanded. As such, we better use double quotes if we wanted to expand:
+
+$ text=hello
+$ echo hello world | sed "s/$text/HELLO/" 
+HELLO world 

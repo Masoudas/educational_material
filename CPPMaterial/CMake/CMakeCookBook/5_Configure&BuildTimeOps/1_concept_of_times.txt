@@ -1,0 +1,18 @@
+In CMake, we have the following concept of times:
+	-	Configure time
+		When CMake runs over our CMakeLists.txt file and processes it.
+	-	Generation time
+		When CMake generates the native build files, such as Make in Unix, VS project files in Windows, etc.
+	-	Build time
+		When we build our project using the build files, by running for example the wrapper command. This is the
+		point when the compiler will be invoked.
+
+The following times follow as well:
+	-	CTest time or test time: When we run the test suite to check whether the targets perform as intended.
+	-	CDash time or report time: When the results of testing the project are uploaded to a dashboard to be 
+		shared with other developers.
+	-	Install-time: When the targets, source files, executables, and libraries are installed from the build 
+		directory to an install location.
+	-	CPack time or packaging time: When we package our project for distribution, either as source code or 
+		binary.
+	-	Package install time: When the newly minted package is installed system-wide.

@@ -1,0 +1,7 @@
+We can pipe several seds together, or we can use the -e expression to combine these expressions:
+
+$ ... | sed "expression1" | sed "expression2" 
+
+or:
+
+$ ... | sed -e "expression1" -e "expression2"

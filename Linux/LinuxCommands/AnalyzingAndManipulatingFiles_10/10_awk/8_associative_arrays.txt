@@ -1,0 +1,3 @@
+awk supports associate arrays, which are defined simply by using the normal array notation.
+
+$ awk '{ arr[$0]="Found"}'

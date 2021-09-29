@@ -1,0 +1,7 @@
+Using sed, we can remove blank lines. Note that, however, this should not be done by substituting blank lines with
+nothing, because nothing is interpreted as a blank line for some unGodly reason.
+
+Instead, what we do is, we delete lines. Notice that we don't use s to start here:
+$ echo -e "Mom,\n\nI'm in the bill" | sed  '/^$/d' file
+or:
+$ sed -i '/^$/d' file

@@ -1,0 +1,8 @@
+Apparently we can customize behavior in two times:
+	-	Configuration time
+		Using 'execute_process' command, as we have done several times.
+	-	Build time
+		Using 'add_custom_targets'. (Me: I'm not sure this will be effective only if we run the build command
+		using the cmake --build, or in general!)
+		Another option is 'add_custom_command' to specify commands that have to be executed to generate files or 
+		at specific build events of other targets		

@@ -1,0 +1,5 @@
+To define delimiters in AWK, all we need to do is to pass the -F option as follows:
+
+$ awk -F: '{ print $NF }' /etc/passwd
+$ awk 'BEGIN { FS=":" } { print $NF }' /etc/passwd 		# Defining the separator as part of BEGIN using the FS
+														# field.

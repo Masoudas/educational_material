@@ -9,3 +9,13 @@ Note that we didn't specify the delimiter in this case, and in fact, it can be a
 example.) This however, wasn't the case with the cut command.
 
 $ ls lha | awk '{print $1, $2}'    # First and second words
+
+There are a couple of fields that are important inside awk:
+	-	NR: Current line number
+	-	NF: Current field number
+	-	$n:	nth field
+
+For example:
+$ awk 'NR < 5' # first four lines are processed only.
+$ awk '!/linux/'
+$ awk '/linux/' 
