@@ -10,7 +10,6 @@ We can also stack (merge) arrays:
 	-	np.column_stack: To stack 1-D arrays as columns into 2-D arrays.
 	-	np.concatenate: To stack arrays along specified axis (axis is passed as argument).
 
-https://www.geeksforgeeks.org/numpy-python-set-2-advanced/
 """
 import numpy as np
 
