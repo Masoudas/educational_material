@@ -3,6 +3,8 @@ We can justify a string from left or right (default char is space). The justify 
 Left justify add chars to the right, and right justify adds to left.
 
 This way, we can make sure that the string is streched to a particular position to left or right.
+
+We may also use the center method to center the text with respect to the number of spaces we provide.
 """
 
 left_just = "Left justify"

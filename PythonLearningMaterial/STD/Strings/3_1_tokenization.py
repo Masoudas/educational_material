@@ -4,7 +4,7 @@ To tokenize a string, we can use the split method of python.
 When tokenization occurs, the string is broken from the first char to the to token. If there are no tokens, then
 the entire string is returned.
 
-Below, we also have an example of csv file manipulation as well.
+Below, we also have an example of a csv file manipulation.
 """
 my_str = "This is my string"
 tokens = my_str.split(' ')

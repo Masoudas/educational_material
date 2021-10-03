@@ -1,9 +1,8 @@
 """
-The text type is one of the most common types out there and is often called string or, in Python, just str.
+The text type is one of the most common types out there and is often called string or, in Python, just 'str'.
 
 String concatenation is done using the + operator.
-To select a particular char, use the [] operator. To get the size of the string, use the len operator of the 
-string class.
+To select a particular char, use the [] operator. To get the size of the string, use the len operator.
 
 If we use the multiply operator, the string will be repeated, as shown below.
 """
