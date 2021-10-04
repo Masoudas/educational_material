@@ -1,7 +1,5 @@
 """
 This includes consice operations to create lists from a particular operation. Some examples are given below.
-
-https://docs.python.org/3/tutorial/datastructures.html#
 """
 
 my_list = list(map(lambda x : x**2, range(10)))	# Notice that is essentially a C++ for each.
