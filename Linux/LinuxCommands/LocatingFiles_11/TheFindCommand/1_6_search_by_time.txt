@@ -8,7 +8,11 @@ Finds all files on the home folder that have been modified over the past 24 hour
 $ find $HOME +atime 7
 Find those that have been accessed over seven days till now.
 
-There's also another version that gets time based on minute, with -amin, -cmin and -mmin are minute based options however.
+There's also another version that gets time based on minute, with -amin, -cmin and -mmin are minute based options 
+however. For these, we need to pass the minutes with another dash:
+$ find / -mmin -60	# Access
+$ find / -amin -60	# Modification
+$ find / -cmin -60  # Change
 
 This one is more interesting. It searches for a version that's modified after the given 'reference.txt' file. Meaning, if
 there's a version of it that has a more recent modification time, that one is returned, otherwise nothing is returned. It's
