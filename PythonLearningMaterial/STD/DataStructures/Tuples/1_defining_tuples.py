@@ -1,6 +1,8 @@
 """
-There are two ways of defining tuples, as shown below. Single item tuples can be made a comma. A single paranthesis
-would consider it as a nesting paranthesis, and as such, it's not Ok to use it.
+There are two ways of defining tuples, as shown below. 
+
+Single item tuples can be made a comma, or a paranthesis with comma. Note that a single paranthesis without 
+paranthesis is considered a nesting paranthesis, and as such, it's not Ok to use it.
 
 Me: I should not confuse the notion of sets with tuples. sets are not defined like tuples with paranthesis. Set
 are defined with brackets. 
