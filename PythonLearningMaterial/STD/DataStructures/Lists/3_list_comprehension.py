@@ -2,7 +2,9 @@
 This includes consice operations to create lists from a particular operation. Some examples are given below.
 """
 
-my_list = list(map(lambda x : x**2, range(10)))	# Notice that is essentially a C++ for each.
+my_list = list(map(lambda x : x**2, range(10)))	# Notice that a map is not a dictionary, but is essentially a C++ 
+                                                # for each. The syntax is __init__(callable, iterable), meaning 
+                                                # the mapping is done with callable on the range
 print(my_list)
 
 # Equivalently
@@ -22,5 +24,5 @@ for x in [1,2,3]:
 
 # We may also create nested lists as well:
 matrix = [[i for row in range(4)] for i in range(4)]
-transpose = [ [ x[i] for x in matrix ] for i in range(len(matrix)) ]
+transpose = [[x[i] for x in matrix] for i in range(len(matrix))]
 print(matrix, transpose)

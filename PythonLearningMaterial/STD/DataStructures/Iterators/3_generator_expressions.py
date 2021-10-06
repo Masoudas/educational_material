@@ -6,12 +6,10 @@ definitions and tend to be more memory friendly than equivalent list comprehensi
 """
 
 sum(i*i for i in range(10))                 # sum of squares
-285
 
 xvec = [10, 20, 30]
 yvec = [7, 5, 3]
 sum(x*y for x,y in zip(xvec, yvec))         # dot product
-260
 
 page = """This is the first line.
 This is the second line.
@@ -20,7 +18,6 @@ unique_words = set(word for line in page.splitlines() for word in line.split())
 print(unique_words)
 
 unique_words = set(word for line in open("text") for word in line.split())	# Assuming we have a file
-
 
 #valedictorian = max((student.gpa, student.name) for student in graduates)
 

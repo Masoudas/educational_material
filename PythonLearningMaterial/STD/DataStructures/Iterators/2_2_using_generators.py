@@ -5,7 +5,8 @@ The point is that we use the yield expression, which would yield the result in e
 below. Each time next() is called on it, the generator resumes where it left off (it remembers all the data values 
 and which statement was last executed).
 
-Note that as opposed to class iterators, generators have to be implemented as standalone methods.
+Note that as opposed to class iterators, generators have to be implemented as standalone methods. The next method
+can't return this iterator.
 """
 
 class c:
