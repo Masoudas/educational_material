@@ -33,9 +33,10 @@ Or, we can be specific about the package version:
 (env_name) $ python3 -m pip install requests>=2.0.0,<3.0.0
 
 %%%%%%%%%%%%%%%%%%
+Recall that freeze is related to pip, and not on venv, because it's a property of the pip packages.
 To use the requirements file, we can add the -r option:
 (env_name) $ python3 -m pip install -r requirements.txt
 
 And to freeze the environment, we can use the freeze option:
-(env_name) $ python3 -m pip freeze
+(env_name) $ python3 -m pip freeze > requirements.txt
 
