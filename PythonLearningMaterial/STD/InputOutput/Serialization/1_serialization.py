@@ -8,6 +8,8 @@ string directly into a json. The load method does the reverse.
 Note: Technically, we must dump only one object, and not as I do below, dump two different objects in one file!
 
 To dump classe, we need a little bit of extra effort. Another method is pickling.
+
+We can pretty print using sort_keys and indent options.
 """
 import json 
 
@@ -18,4 +20,4 @@ with open("objects.json", "w") as f:
 	json.dump(ls,f)
 	json.dump(dictionary, f)
 
-
+json.dump(dictionary, sort_keys=True, indent=4)
