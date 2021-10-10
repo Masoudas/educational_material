@@ -14,8 +14,8 @@ a set of properties.
 Note that a 1 dimensional array has exactly one dimension, and as such that axis is zero. As we move forward,
 the dimensions increase starting from column.
 
-Me: The default values of a numpy array is zero. Also, always recall that the right-most number is the number of
-columns.
+Me: The default values of a numpy array is zero it seems. Also, always recall that the right-most number is the 
+number of columns.
 
 """
 import numpy as np
@@ -24,7 +24,7 @@ import numpy as np
 arr = np.ndarray(shape=[3,2], dtype=float)
 print(arr)
 
-# From default values
+# From default values. Notice that array is a function that returns an ndarray
 arr2 = np.array([[1, 2, 3], [4, 5, 6]])
 print(arr2)
 

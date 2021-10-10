@@ -12,3 +12,4 @@ print(np.where(arr == 2))	# The where method returns the true indexes.
 arr = np.array([[1, 2], [3, 4]])
 loc = np.where(arr < 3)
 print(loc[0], loc[1])	# Returns [0, 0] and [0, 1]
+	
