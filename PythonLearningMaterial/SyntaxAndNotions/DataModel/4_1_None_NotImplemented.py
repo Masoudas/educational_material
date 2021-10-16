@@ -4,7 +4,8 @@ We consider some standard python types:
 	-	None
 This type has a single value. There is a single object with this value. This object is accessed through the built-in 
 name None. It is used to signify the absence of a value in many situations, e.g., it is returned from functions that 
-don’t explicitly return anything. Its truth value is false.
+don’t explicitly return anything. Its truth value is false. (Me: i.e, a check for none is done as 'if none', and we
+needn't write 'if none is None')
 
 	-	NotImplemented
 This type has a single value. There is a single object with this value. This object is accessed through the built-in 
@@ -25,7 +26,7 @@ class HasCompare:
 
 	def __eq__(self, other):
 		return NotImplemented # In this context, returns False, which is Ok, because the objects don't have an
-							  # equal method, and as such, are not equal!
+							  # equal method, and as such, are not equal! This appears to be going extince though.
 
 print(HasCompare() == HasCompare())	# For boolean, it evaluates to false!
 print(HasCompare() + HasCompare())

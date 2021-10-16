@@ -20,7 +20,8 @@ Me: Despite these being objects, they still behave as value types, because they'
 is copied into the function, but we can't change the address to the object.
 """
 def f(x):
-	x = 20
+	x = 20_122	# Use underscore as separator
+
 x = 10
 f(x)
 print(x)	# Still prints 10

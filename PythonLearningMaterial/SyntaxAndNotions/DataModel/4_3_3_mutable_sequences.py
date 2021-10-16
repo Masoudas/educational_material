@@ -17,3 +17,4 @@ There are currently two intrinsic mutable sequence types:
 
 The extension module array provides an additional example of a mutable sequence type, as does the collections module.
 """
+

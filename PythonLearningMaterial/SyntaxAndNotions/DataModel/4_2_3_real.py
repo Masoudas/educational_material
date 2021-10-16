@@ -6,3 +6,5 @@ does not support single-precision floating point numbers; the savings in process
 usually the reason for using these are dwarfed by the overhead of using objects in Python, so there is no 
 reason to complicate the language with two kinds of floating point numbers.
 """
+if type(12.1) is float:
+	print("This is a float type")

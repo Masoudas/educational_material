@@ -1,6 +1,6 @@
 """
 Looping directly over a dictionary provides the keys to that dictionary only. Looping with the items method provides 
-a iterator that returns the key and value pair as a tuple.
+an iterator that returns the key and value pair as a tuple.
 
 Use zip to iterate over multiple dicts directly.
 """
