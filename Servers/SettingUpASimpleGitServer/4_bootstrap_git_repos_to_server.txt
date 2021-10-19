@@ -1,0 +1,33 @@
+To bootstrap new repositories to our server, we create a simple script, which automates the task. We put this
+script in our /usr/local/bin in the script git-create-repo.sh. Notice that after, we need to give the execution
+privilege to our script.
+
+$ sudo chmod +x /usr/local/bin/git-create-repo.sh
+
+As such, we can create a new repo as follows:
+$ sudo git-create-repo.sh my_repo
+
+Notice in the script, we make www-date the group and the owner of the of the git repo.
+
+%%%%%%%%%%%%%%%%%%%%%
+#!/bin/bash
+ 
+GIT_DIR="PATH_TO_OUR_BASE_GIT_FOLDER"		
+REPO_NAME=$1
+ 
+mkdir -p "${GIT_DIR}/${REPO_NAME}.git"
+cd "${GIT_DIR}/${REPO_NAME}.git"
+ 
+git init --bare &> /dev/null
+touch git-daemon-export-ok
+cp hooks/post-update.sample hooks/post-update
+git config http.receivepack true
+git update-server-info
+chown -Rf www-data:www-data "${GIT_DIR}/${REPO_NAME}.git"
+echo "Git repository '${REPO_NAME}' created in ${GIT_DIR}/${REPO_NAME}.git"
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+Once this is done, we can connect to this repository and push to our repo, as follows:
+git clone http://192.168.21.208/git/my_repo.git

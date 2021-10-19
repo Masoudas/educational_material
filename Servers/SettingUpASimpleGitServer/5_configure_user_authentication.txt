@@ -1,0 +1,29 @@
+In the previous step, we setup the server. The problem, however, was that we didn't have any authentication,
+and essentially anyone from anywhere can access our repo. We can remedy it, by defining authentication for our
+website. 
+
+To add authentication, we need to add the following field to our configuration file. Notice the line git.passwd.
+This line, is the database our username-passwords.
+
+%%%%%%%%%%%%%%%%%%%	Add it above the ErrorLog line!
+<LocationMatch /git/.*\.git>
+	AuthType Basic
+	AuthName "Git Verification"
+	AuthUserFile /etc/apache2/MY_REPO.git.passwd	
+	Require valid-user
+</LocationMatch>
+%%%%%%%%%%%%%%%%%%%
+
+Let's create a new account as follows, which prompts us to enter a password as well.
+$ sudo htpasswd -c /etc/apache2/MY_REPO.git.passwd NEW_USER_NAME
+password:
+retype password:
+
+After this, restarting the apache daemon enables the password.
+
+Important:
+Notice the line /git/.*\.git. This implies that this password database is for all the git repos (recall that /git is
+the alias for our repo folder). We can easily specialize the file for a particular repo, by adding the path like
+/git/my_repo.git to this line. As such, note that it's best to use htppasswd command for this particular repo,
+and make a particular database for this repo.
+

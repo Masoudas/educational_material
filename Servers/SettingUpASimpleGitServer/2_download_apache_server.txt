@@ -1,0 +1,7 @@
+Download the apache server as follows:
+
+$ sudo apt install apache2 apache2-utils
+
+We can later check that the server daemon is up and running as follows:
+
+$ systemctl status apache2

@@ -1,0 +1,4 @@
+By creating our server over http, we a particular port to access our git repository, and as such, we restrict
+users to a particular part of our servers. 
+
+As such, we wouldn't have to create an ssh, allowing users to have full access to our entire setup.

@@ -1,0 +1,25 @@
+Creating a simple git server is actually easy. We need to understand that a git repository is just a git working
+tree, initialized with the bare option:
+
+$ mkdir my_repo.git	# The .git part is important here, otherwise the name is not accepted as a git repo when 
+					# pushing to a non-http.
+$ git init --bare
+
+Once this repo is built, we can push to it, even if it's on our own system. For example, I can say, in a working
+tree:
+
+$ cd my_working_tree
+$ git remote add local_server masoud@my_host:/home/masoud/my_repo.git	# This is the path.
+$ git push local_server main	# After this, I'm prompted for the password.
+
+As such, we're essentially ssh-ing to the folder. Hence, if this were on a remote server, then I could do the same
+thing, but with the ip address instead of the host name:
+
+$ git remote add user@ip_address:/home/user/my_repo.git
+
+Now, here's the problem. Notice that in both cases, we're ssh-ing to a USER. As such, when we push, we actually 
+ssh to an account, which is terrible. Why? Because then a user would be allowed to navigate inside our server,
+by logging in with its ssh. We may argue that we don't give him privileges, however, this is still a very dangerous
+enterprise. As such, we need to create a better alternative.
+
+The alternative would be to communicate over http, so that the user wouldn't be able to connect to our
