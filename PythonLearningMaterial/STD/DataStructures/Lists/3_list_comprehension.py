@@ -4,7 +4,8 @@ This includes consice operations to create lists from a particular operation. So
 
 my_list = list(map(lambda x : x**2, range(10)))	# Notice that a map is not a dictionary, but is essentially a C++ 
                                                 # for each. The syntax is __init__(callable, iterable), meaning 
-                                                # the mapping is done with callable on the range
+                                                # the mapping is done with callable on the range. Map returns an
+                                                # iterator, and to execute it, we must put it in a list or something.
 print(my_list)
 
 # Equivalently

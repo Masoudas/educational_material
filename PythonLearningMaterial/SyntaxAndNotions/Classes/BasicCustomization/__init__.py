@@ -5,6 +5,7 @@ __init__() method, if any, must explicitly call it to ensure proper initializati
 instance; for example: super().__init__([args...]).
 
 Me: As such, we notice that there's no implicit call to super.__init__ if we override the derived class __init__.
+In inheritance, we need to call the base class's del, init, etc.
 
 Because __new__() and __init__() work together in constructing objects (__new__() to create it, and __init__() to 
 customize it), no non-None value may be returned by __init__(); doing so will cause a TypeError to be raised at 
