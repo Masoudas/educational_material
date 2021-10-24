@@ -2,3 +2,7 @@ Begin 8:15
 End   16:15
 
 1 Hour break	
+
+Total: 8
+Net: 7
+Actual: 6.5
