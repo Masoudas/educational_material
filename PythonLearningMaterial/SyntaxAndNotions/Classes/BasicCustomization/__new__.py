@@ -31,6 +31,6 @@ class Derived(Base):
 		instance = super().__new__()	# Create the superclass part.
 		instance.__x = 20	# Customize it.
 
-		return instance # Return the super-class, to wrap the derived class around it.
+		return instance # Me: Return the super-class, to wrap the derived class around it.
 
 print(isinstance(Derived(), Base))
