@@ -16,7 +16,7 @@ then enable the git website as follows:
 
 $ sudo a2dissite 000-default.conf
 $ sudo a2ensite git.conf		# I think we should repeat this command everytime we change the .conf file.
-$ sudo apt-get restart apache2
+$ sudo systemctl restart apache2
 
 %%%%%%%%%%%%%%%%%%%%%%%
 <VirtualHost *:80>
