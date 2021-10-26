@@ -1,0 +1,12 @@
+A problem that I faced one time in Ubuntu was that the shortcut alt+ctrl+T did not create a terminal.
+
+As such I checked, and because Ubuntu uses gnome-terminal, I actually discovered a python script in /usr/bin
+called gnome-terminal, which was responsible for creating the terminal using the shortcut! Odd that a python
+script is responsible.
+
+The first line inside it is
+
+#!/bin/python3
+
+which indicates that it uses python3 to create terminals! I discovered later that the symbolic link to python3
+was missing.

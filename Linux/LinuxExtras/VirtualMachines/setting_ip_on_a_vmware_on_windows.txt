@@ -1,0 +1,12 @@
+A problem that I always encounter is, how do I define an ip address for a vmware virtual machine installed on
+Windows?
+
+The answer is that by creating a virtual network, we can indeed use the ip address of Windows (or I think an ip
+address allocated to a vmware machine.) The point is that once I've installed the Linux machine on it, I must
+then edit my netplan file to create an ip address for the Linux machine, whose value is equivalent to that of the
+Windows machine. As such, I can for example access this virtual machine remotely.
+
+I had this problem with the server of the distribution system of Mashhad, where they had installed a vmware on a
+Windows machine. They gave me an ip address, a NAT server, and a gateway ip, which made me wonder why that was the
+case. But then I saw that the vmware machine had a virtual network, and as soon as I defined the ip address, things
+were fine, and I could remote to the virtual machine.
