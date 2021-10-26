@@ -25,38 +25,32 @@ Note This method may still be bypassed when looking up special methods as the re
 language syntax or built-in functions. See Special method lookup.
 For certain sensitive attribute accesses, raises an auditing event object.__getattr__ with arguments obj and name.
 
-Some points from the Internet:
+Some points from the Internet and my tests:
+	-	getattribute is always called first, regardless of whether or not an attribute exists. The following test
+	clearly demonstrates that:
+
+#####
+class Foo:
+	def __init__(self) -> None:
+		self.b = 10
+
+	def __getattr__(self, name):
+		print("Inside __getattr__")
+	
+	def __getattribute__(self, name):
+		print("Inside __getattribute__")
+		raise AttributeError
+Foo().a
+Foo().b
+#####
+
 	-	__getattr__ and __getattribute__ are essentially used for overloading the dot operator. __getattr__ is
 		called only once all other methods have failed to return a value.
-
-	-	__getattr__ is used when a property does not exist, __getattribute__ is used when it does. 
-	__getattribute__ is similar to __getattr__, with the important difference that __getattribute__ will intercept 
-	EVERY attribute lookup, doesn’t matter if the attribute exists or not.
-
-#####
-class Dummy(object):
-	def __init__(self):
-		self.value = "Python"
-
-    def __getattr__(self, attr):
-        return attr.upper()	# Convert the name of the attribute to the uppercase.
-
-
-	#def __getattribute__(self, name): If this method were defined, every attribute would be reached through
-	# this, including even the internal ones.
-	#	print("Calling the attribute error")
-	#	raise AttributeError
-
-d = Dummy()
-d.does_not_exist # 'DOES_NOT_EXIST'
-d.what_about_this_one  # 'WHAT_ABOUT_THIS_ONE'
-d.value	# "Python"
-#####
 
 	-	Because __getattribute__ is the first method we go through to access a property, overloading it incorrectly
 	leads to infinite recursion. For example, below, we try to return self.__dict__[name]. But note that the dot
 	operator itself tries to access __dict__ using the __getattribute__ method. As such, we'd have an infinite
-	recursion here. 
+	recursion here. So __getattribute__ must not use any other property (or method of the object.)
 
 #####
 class Foo(object):
@@ -70,8 +64,6 @@ class Foo(object):
             return 'default'
 #####
 
-
 """
-class A:
-	pass
-print(isinstance(A(), object))
+
+
