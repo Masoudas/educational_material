@@ -23,14 +23,23 @@ class Right(Base):
 class Wrong(Base):
     __slots__ = 'foo', 'bar', 'baz'        # redundant foo and bar
 """
-
 class MyClass(object):
     def __init__(self, name, identifier):
         self.name = name
         self.identifier = identifier
 
-class MyClass(object):
+class MyClassWithSlots(object):
     __slots__ = ['name', 'identifier']
     def __init__(self, name, identifier):
         self.name = name
         self.identifier = identifier
+
+from sys import getsizeof
+
+print("Size of MyClass is:", getsizeof([MyClass("", "") for i in range(1000)]), 
+    "and size of MyClassWithSlots is:", getsizeof([MyClassWithSlots("", "") for i in range(1000)]))
+
+try:
+    MyClassWithSlots("","").__dict__
+except AttributeError:
+    print("Does not have a dictionary.")
