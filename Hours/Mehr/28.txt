@@ -1,8 +1,0 @@
-Begin  8:15
-End		16:10
-
-Break: 1.5 Hours
-
-Total: 8
-Net: 6.5
-Actual: 6.5

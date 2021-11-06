@@ -1,8 +1,0 @@
-Start 8:10
-End: 16:10
-
-35 min break
-
-Total: 8
-Raw: 7.5
-Net: 6.5

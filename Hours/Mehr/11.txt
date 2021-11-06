@@ -1,7 +1,0 @@
-Start 9:20
-End 16:50
-30 min break
-
-Total: 7.5
-Net: 7
-Actual: 6.5
