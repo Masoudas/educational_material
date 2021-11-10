@@ -2,7 +2,7 @@
 It's possible to use recursive models to compose pydantic data structures, as the following example
 demonstrates. Notice how the initialization of nested data structures take place.
 
-We see that the initialization syntax is hard.
+We see that the initialization syntax is hard without a static factory method.
 """
 
 from typing import List

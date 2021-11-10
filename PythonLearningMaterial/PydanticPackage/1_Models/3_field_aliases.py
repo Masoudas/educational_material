@@ -3,6 +3,9 @@ We can use alaises to rename a field, and give a field name in the background. T
 field should be accessed by our programs in one way, and for example by a database in another way, as the
 following example demonstrates.
 
+Note that when we do so, the field in the class initializer has the alias name, but it can be accessed and played
+with only with the original name. This is to allow construction by alias name in other classes.
+
 What we're doing is we're turning an SQL server field into a DataClass of our own.
 """
 
@@ -10,11 +13,16 @@ from pydantic import BaseModel
 from pydantic.fields import Field
 
 class Data(BaseModel):
-	name: str = Field(alias='name_')
+    name: str = Field(alias='name_')
+    
+    def using_name_(self):
+        print(self.name)
 
-Data(name="Masoud").name	# Property accessible by original name
-Data(name="masoud").dict(by_alias=True)	# Dictionary by alias names.
+data = Data(name_="Masoud") 
 
+print(data.name)	# Property accessible by original name
+data.dict(by_alias=True)	# Dictionary by alias names (so uses 'name_').
+data.using_name_()
 
 ## More complex example:
 import typing

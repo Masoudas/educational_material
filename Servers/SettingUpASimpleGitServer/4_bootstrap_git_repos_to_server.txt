@@ -30,4 +30,4 @@ echo "Git repository '${REPO_NAME}' created in ${GIT_DIR}/${REPO_NAME}.git"
 
 
 Once this is done, we can connect to this repository and push to our repo, as follows:
-git clone http://192.168.21.208/git/my_repo.git
+git clone http://server_ip/git/my_repo.git

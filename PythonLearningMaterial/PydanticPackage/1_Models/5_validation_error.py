@@ -8,7 +8,7 @@ populate ValidationError."
 One exception will be raised regardless of the number of errors found, that ValidationError will contain 
 information about all the errors and how they happened.
 
-Below is an example. Note that the exception class has a .json, or .errors itself.
+Below is an example. Note that the exception class has a .json, or .errors method of itself.
 """
 
 from pydantic import BaseModel, ValidationError, validator
