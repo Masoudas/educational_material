@@ -1,0 +1,17 @@
+	-	Well Formed XML Documents
+An XML document with correct syntax is called "Well Formed". The syntax rules were described in the previous 
+chapters:
+	-	XML documents must have a root element
+	-	XML elements must have a closing tag
+	-	XML tags are case sensitive
+	-	XML elements must be properly nested
+	-	XML attribute values must be quoted
+
+	-	Valid XML Documents
+A "well formed" XML document is not the same as a "valid" XML document. A "valid" XML document must be well 
+formed. In addition, it must conform to a document type definition.
+
+There are two different document type definitions that can be used with XML:
+	-	DTD - The original Document Type Definition
+	-	XML Schema - An XML-based alternative to DTD
+A document type definition defines the rules and the legal elements and attributes for an XML document.

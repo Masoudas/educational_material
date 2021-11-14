@@ -1,7 +1,0 @@
-2021-11-08 10:57:58,998 - example_logger - ERROR - There was an exception in  main
-Traceback (most recent call last):
-  File "STD/log/0_1_creating_an_exception_decorator.py", line 34, in wrapper
-    return function(*args, **kwargs)
-  File "STD/log/0_1_creating_an_exception_decorator.py", line 46, in main
-    raise Exception
-Exception

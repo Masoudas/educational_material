@@ -1,0 +1,7 @@
+Note that attribute values must always have quotation, and there does not exist any comma between them. 
+
+<note date="12/11/2007">
+  <to>Tove</to>
+  <from>Jani</from>
+</note>
+

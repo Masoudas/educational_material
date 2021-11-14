@@ -1,0 +1,39 @@
+	-	DTD
+DTD stands for Document Type Definition. A DTD defines the structure and the legal elements and attributes of an 
+XML document.
+
+The DOCTYPE declaration above an xml contains a reference to a DTD file. 
+
+	-	XML DTD
+The purpose of a DTD is to define the structure and the legal elements and attributes of an XML document. For
+example:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+The DTD above is interpreted like this:
+
+	-	!DOCTYPE note -  Defines that the root element of the document is note
+	-	!ELEMENT note - Defines that the note element must contain the elements: "to, from, heading, body"
+	-	!ELEMENT to - Defines the to element to be of type "#PCDATA"
+	-	!ELEMENT from - Defines the from element to be of type "#PCDATA"
+	-	!ELEMENT heading  - Defines the heading element to be of type "#PCDATA"
+	-	!ELEMENT body - Defines the body element to be of type "#PCDATA"
+
+
+With a DTD, independent groups of people can agree to use a standard DTD for interchanging data. With a DTD, you 
+can verify that the data you receive from the outside world is valid. You can also use a DTD to verify your own 
+data.
+
+XML does not require a DTD. When you are experimenting with XML, or when you are working with small XML files, 
+creating DTDs may be a waste of time.
+
+

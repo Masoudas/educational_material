@@ -1,0 +1,24 @@
+An XML element is everything from (including) the element's start tag to (including) the element's end tag.
+
+XML elements must follow these naming rules:
+	-	Element names are case-sensitive
+	-	Element names must start with a letter or underscore
+	-	Element names cannot start with the letters xml (or XML, or Xml, etc)
+	-	Element names can contain letters, digits, hyphens, underscores, and periods
+	-	Element names cannot contain spaces
+
+Note that elements are extensible (where the x comes from!) Consider the following element:
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <body>Don't forget me this weekend!</body>
+</note>
+
+Suppose an app works with this. Then, it must be able to work with the following as well:
+<note>
+  <date>2008-01-10</date>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>

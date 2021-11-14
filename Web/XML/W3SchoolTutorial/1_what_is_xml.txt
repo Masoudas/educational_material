@@ -1,0 +1,23 @@
+	-	XML stands for eXtensible Markup Language
+	-	XML is a markup language much like HTML
+	-	XML was designed to store and transport data
+	-	XML was designed to be self-descriptive
+	-	XML is a W3C Recommendation
+
+XML is different from HTML:
+XML and HTML were designed with different goals:
+	-	XML was designed to carry data - with focus on what data is
+	-	HTML was designed to display data - with focus on how data looks
+	-	XML tags are not predefined like HTML tags are
+
+The XML language has no predefined tags.
+The tags (like <to> and <from>) are not defined in any XML standard. These tags are "invented" by the author of 
+the XML document.
+
+HTML works with predefined tags like <p>, <h1>, <table>, etc.
+With XML, the author must define both the tags and the document structure.
+
+XML does not carry any information about how to be displayed. The same XML data can be used in many different 
+presentation scenarios. Because of this, with XML, there is a full separation between data and presentation.
+
+

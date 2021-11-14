@@ -1,0 +1,8 @@
+The attributes carry extra information:
+
+<person gender="female">
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person>
+
+No rules on whether we should define attributes or elements. Use attributes minimally.

@@ -1,0 +1,50 @@
+All major browsers have a built-in XML parser to access and manipulate XML.
+
+	-	XML Parser
+The XML DOM (Document Object Model) defines the properties and methods for accessing and editing XML. However, 
+before an XML document can be accessed, it must be loaded into an XML DOM object. All modern browsers have a 
+built-in XML parser that can convert text into an XML DOM object.
+
+	- DOM
+The DOM defines a standard for accessing and manipulating documents: "The W3C Document Object Model (DOM) is a 
+platform and language-neutral interface that allows programs and scripts to dynamically access and update the 
+content, structure, and style of a document."
+
+The HTML DOM defines a standard way for accessing and manipulating HTML documents. It presents an HTML document 
+as a tree-structure. The XML DOM defines a standard way for accessing and manipulating XML documents. It presents 
+an XML document as a tree-structure.
+
+All HTML elements can be accessed through the HTML DOM. This example changes the value of an HTML element with 
+id="demo":
+
+<h1 id="demo">This is a Heading</h1>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = 'Hello World!'">Click Me!
+</button>
+
+-----------------------------
+All XML elements can be accessed through the XML DOM:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+
+  <book category="cooking">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+
+  <book category="children">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+
+</bookstore>
+
+Accessing element:
+txt = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue
+

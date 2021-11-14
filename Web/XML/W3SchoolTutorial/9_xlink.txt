@@ -1,0 +1,46 @@
+In HTML, the <a> element defines a hyperlink. However, this is not how it works in XML. In XML documents, you can 
+use whatever element names you want - therefore it is impossible for browsers to predict what link elements will 
+be called in XML documents.
+
+Below is a simple example of how to use XLink to create links in an XML document:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<homepages xmlns:xlink="http://www.w3.org/1999/xlink">
+  <homepage xlink:type="simple" xlink:href="https://www.w3schools.com">Visit W3Schools</homepage>
+  <homepage xlink:type="simple" xlink:href="http://www.w3.org">Visit W3C</homepage>
+</homepages>
+
+To get access to the XLink features we must declare the XLink namespace. The XLink namespace is: 
+"http://www.w3.org/1999/xlink". The xlink:type and the xlink:href attributes in the <homepage> elements come from 
+the XLink namespace. The xlink:type="simple" creates a simple "HTML-like" link (means "click here to go there").
+
+The xlink:href attribute specifies the URL to link to.
+
+Consider the following example, where 'xlink:show="new"' means open a new window on click.
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<book title="Harry Potter">
+  <description
+  xlink:type="simple"
+  xlink:href="/images/HPotter.gif"
+  xlink:show="new">
+  As his fifth year at Hogwarts School of Witchcraft and
+  Wizardry approaches, 15-year-old Harry Potter is.......
+  </description>
+</book>
+
+<book title="XQuery Kick Start">
+  <description
+  xlink:type="simple"
+  xlink:href="/images/XQuery.gif"
+  xlink:show="new">
+  XQuery Kick Start delivers a concise introduction
+  to the XQuery standard.......
+  </description>
+</book>
+
+</bookstore>
