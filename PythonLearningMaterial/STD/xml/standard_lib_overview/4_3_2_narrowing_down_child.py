@@ -27,6 +27,9 @@ namespaces = {
 }
 element = element.find("inkspace:ellipse", namespaces)
 
+Note: Once over an element, we can never go over its siblings with the methods of the element class. As such,
+we need to keep the parent method alive to go over the siblings of the current method.
+
 Note: Once we're over an element, iterating over it does not move the cursor of the file or anything. When
 the element object is there, we can once again start working from there.
 

@@ -10,6 +10,7 @@ descendant			Selects all descendants (children, grandchildren, etc.) of the curr
 descendant-or-self	Selects all descendants (children, grandchildren, etc.) of the current node and the current node itself
 following			Selects everything in the document after the closing tag of the current node
 following-sibling	Selects all siblings after the current node
+preceding-sibling	Selects all preceding siblings
 namespace			Selects all namespace nodes of the current node
 parent				Selects the parent of the current node
 preceding			Selects all nodes that appear before the current node in the document, except ancestors, 
