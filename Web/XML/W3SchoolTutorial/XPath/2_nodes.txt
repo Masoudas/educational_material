@@ -1,0 +1,31 @@
+In XPath, there are seven kinds of nodes: element, attribute, text, namespace, processing-instruction, comment, 
+and document nodes. XML documents are treated as trees of nodes. The topmost element of the tree is called the 
+root element.
+
+Look at the following XML document:
+
+%%%%%%%%%%
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore>
+  <book>
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+</bookstore>
+%%%%%%%%%%
+
+Here are example nodes:
+
+<bookstore> (root element node)
+
+<author>J K. Rowling</author> (element node)
+
+lang="en" (attribute node)
+
+	-	Atomic values are nodes with no children or parent. Examples are "en", or J K. Rowling.
+	-	Items are atomic values or nodes.
+
+	

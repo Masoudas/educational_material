@@ -1,0 +1,11 @@
+XPath is a major element in the XSLT standard. XPath can be used to navigate through elements and attributes in 
+an XML document.
+
+XPath uses path expressions to select nodes or node-sets in an XML document. These path expressions look very 
+much like the path expressions you use with traditional computer file systems:
+
+/parent/child1/child2
+
+XPath includes over 200 built-in functions. There are functions for string values, numeric values, booleans, date 
+and time comparison, node manipulation, sequence manipulation, and much more.
+

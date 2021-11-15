@@ -1,0 +1,7 @@
+It's possible to pipe several paths together:
+
+Path 							Expression	Result
+//book/title | //book/price		Selects all the title AND price elements of all book elements
+//title | //price				Selects all the title AND price elements in the document
+/bookstore/book/title | //price	Selects all the title elements of the book element of the bookstore element AND 
+								all the price elements in the document

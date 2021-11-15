@@ -1,0 +1,12 @@
+XPath wildcards can be used to select unknown XML nodes.
+
+Wildcard		Description
+*				Matches any element node
+@*				Matches any attribute node
+node()			Matches any node of any kind
+
+In the table below we have listed some path expressions and the result of the expressions:
+Path 			Expression	Result
+/bookstore/*	Selects all the child element nodes of the bookstore element
+//*				Selects all elements in the document
+//title[@*]		Selects all title elements which have at least one attribute of any kind

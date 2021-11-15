@@ -1,5 +1,11 @@
 """
 We can work with elements directly, and iterate over them.
+
+With an element:
+    -   tag: We can get the tag using the tag property.
+    -   text: We can get the text using the text property of the element.
+    -   attribute: We can get an attribute using the get function of an element, or we can use the attrib
+                   property to get all the attributes of an element, and then check for existence, etc.
 """
 import xml.etree.ElementTree as ET
 tree = ET.parse("smiley.svg")
