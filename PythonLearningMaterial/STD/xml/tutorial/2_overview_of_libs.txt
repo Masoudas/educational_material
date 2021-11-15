@@ -1,0 +1,18 @@
+It’s worth noting that Python’s standard library defines abstract interfaces for parsing XML documents while 
+letting you supply concrete parser implementation. In practice, you rarely do that because Python bundles a 
+binding for the Expat library, which is a widely used open-source XML parser written in C. All of the following 
+Python modules in the standard library use Expat under the hood by default.
+
+Unfortunately, while the Expat parser can tell you if your document is well-formed, it can’t validate the 
+structure of your documents against an XML Schema Definition (XSD) or a Document Type Definition (DTD). For that, 
+you’ll have to use one of the third-party libraries discussed later.
+
+	-	xml.dom
+It has two packages:
+	-	xml.dom.minidom		# Very limited use.
+	-	xml.dom.pulldom
+	-	xml.sax: 
+
+The second module has a slightly misleading name because it defines a streaming pull parser, which can optionally 
+produce a DOM representation of the current node in the document tree.
+
