@@ -1,0 +1,5 @@
+HTTP is stateless: there is no link between two requests being successively carried out on the same connection. 
+This immediately has the prospect of being problematic for users attempting to interact with certain pages coherently, 
+for example, using e-commerce shopping baskets. But while the core of HTTP itself is stateless, HTTP cookies allow 
+the use of stateful sessions. Using header extensibility, HTTP Cookies are added to the workflow, allowing session 
+creation on each HTTP request to share the same context, or the same state.

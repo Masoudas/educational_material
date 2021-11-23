@@ -1,0 +1,27 @@
+HTTP is a client-server protocol: requests are sent by one entity, the user-agent (or a proxy on behalf of it). 
+Most of the time the user-agent is a Web browser, but it can be anything, for example, a robot that crawls the 
+Web to populate and maintain a search engine index.
+
+Each individual request is sent to a server, which handles it and provides an answer called the response. Between 
+the client and the server there are numerous entities, collectively called proxies, which perform different 
+operations and act as gateways or caches, for example.
+
+In reality, there are more computers between a browser and the server handling the request: there are routers, 
+modems, and more. Thanks to the layered design of the Web, these are hidden in the network and transport layers. 
+HTTP is on top, at the application layer. Although important for diagnosing network problems, the underlying 
+layers are mostly irrelevant to the description of HTTP.
+
+
+To display a Web page, the browser sends an original request to fetch the HTML document that represents the page. 
+It then parses this file, making additional requests corresponding to execution scripts, layout information (CSS) 
+to display, and sub-resources contained within the page (usually images and videos). The Web browser then combines 
+these resources to present the complete document, the Web page. Scripts executed by the browser can fetch more 
+resources in later phases and the browser updates the Web page accordingly.
+
+A Web page is a hypertext document. This means some parts of the displayed content are links, which can be 
+activated (usually by a click of the mouse) to fetch a new Web page, allowing the user to direct their user-agent 
+and navigate through the Web. The browser translates these directions into HTTP requests, and further interprets 
+the HTTP responses to present the user with a clear response.
+
+A server is not necessarily a single machine, but several server software instances can be hosted on the same 
+machine. With HTTP/1.1 and the Host header, they may even share the same IP address.

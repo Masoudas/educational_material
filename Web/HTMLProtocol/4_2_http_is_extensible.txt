@@ -1,0 +1,2 @@
+Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with. New functionality can 
+even be introduced by a simple agreement between a client and a server about a new header's semantics.
