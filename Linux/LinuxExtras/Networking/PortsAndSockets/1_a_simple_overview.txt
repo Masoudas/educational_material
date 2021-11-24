@@ -1,0 +1,11 @@
+Each particular protocol (such as Http or ftp, etc,) uses a particular port number to:
+	-	Ensure that the sender does not have to request the port every time
+	-	The traffic is not shared on a particular port.
+
+
+The ports from 0-1023 are allocated to particular protocls w(22 to ssh, 443 to https, 80 to http, etc.)
+Ports between 1024 to 49151 to registered port numbers. Then, ports from 49152 to 65535 are dynamically allocated.
+
+Note that (from my estimation) ports 0-1234 are listenning ports. When a browser for example sends an https 
+request, it does not use port 443. Rather, it creates a dynamic port number. Port 443 is only a listenning
+port. The protocol, however, is https on this randomly assigned port.

@@ -1,6 +1,8 @@
 """
 If we wanted to check the ensemble of parameters together, we can use the root validator. This validator gets
 the dictionary of the class, and must return it as well.
+
+NOTE that root validators throw ValidationError regardless of the exception we raise.
 """
 from pydantic import BaseModel, root_validator
 

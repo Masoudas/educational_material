@@ -19,6 +19,7 @@ class Book(pydantic.BaseModel):
 	@pydantic.validator("isbn_10")
 	@classmethod
 	def isbn_10_valid(cls, value):
+		# Custom exception is raised by this method, not ValidationError.
 		chars = [c for c in value if c in "123456789Xx"]	# List of chars inside the string with only digits and 
 															# Xx
 		if len(chars) != 10:
