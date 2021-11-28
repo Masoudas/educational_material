@@ -1,0 +1,11 @@
+We have four famous methods, which are also called verbs:
+	-	Get: Usually used to fetch data from a server.
+	-	Post: Updating resources or content usually.
+	-	Delete
+	-	Put: Create resources or content.
+
+The CRUD operations stand for create, read, update, delete.
+
+On the other hand:
+	-	Safe methods: Get, because fetching does not change data.
+	-	Unsafe methods: Put, Post, Delete are unsafe.
