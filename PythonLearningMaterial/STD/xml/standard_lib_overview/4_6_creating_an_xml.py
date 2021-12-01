@@ -7,6 +7,7 @@ Note that there's no pretty printing here. To that end, we must specify indentat
 """
 from os import write
 import xml.etree.ElementTree as ET
+import xml.dom.minidom as DOM
 
 def prettify(elem):
     """Return a pretty-printed XML string for the Element.
@@ -25,5 +26,6 @@ parent.insert(1, child)
 ###
 tree = ET.ElementTree(parent)
 ET.indent(tree, '\t')
-tree.write("myXML.xml", encoding="UTF-8", xml_declaration=True)
+ET.register_namespace('', "www.masoudas@github.com")
+tree.write("myXML.xml", encoding="UTF-8", xml_declaration=True, method = 'xml')
 
