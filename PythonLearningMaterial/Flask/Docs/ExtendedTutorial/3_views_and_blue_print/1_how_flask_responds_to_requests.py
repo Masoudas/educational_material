@@ -1,0 +1,8 @@
+"""
+Me: An essential task is to respond to requests sent from the html page.
+
+A view function is the code you write to respond to requests to your application. Flask uses patterns to match 
+the incoming request URL to the view that should handle it. The view returns data that Flask turns into an 
+outgoing response. Flask can also go the other direction and generate a URL to a view based on its name and 
+arguments.
+"""
