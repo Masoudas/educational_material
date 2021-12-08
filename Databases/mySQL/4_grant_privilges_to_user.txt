@@ -1,0 +1,14 @@
+We can great privileges to users to access certain tables, with all privileges:
+
+mysql> GRANT PRIVILEGE ON database.table TO 'username'@'host';
+mysql> FLUSH PRIVILEGES;
+
+The PRIVILEGE value in this example syntax defines what actions the user is allowed to perform on the specified database and table. You can grant multiple privileges to the same user in one command by separating each with a comma. You can also grant a user privileges globally by entering asterisks (*) in place of the database and table names. In SQL, asterisks are special characters used to represent “all” databases or tables.
+
+mysql> GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;
+
+To gran all privileges to a user (which is very dangerous,) use:
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;

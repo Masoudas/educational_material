@@ -7,8 +7,13 @@ To use the module, start by creating a Connection object that represents the dat
 
 Me: I don't think we need to install sqlite or anything with Python, because the C-library is just wrapped around python functions.
 
-The special path name :memory: can be provided to create a temporary database in RAM. :D
+The special path name ':memory:' can be provided to create a temporary database in RAM. :D
+
+Note that to connect to a uri, we need to set uri=True, and then give the URI.
 """
 import sqlite3
 
 con = sqlite3.connect('example.db')
+con = sqlite3.connect(':memory:.db')
+
+con = sqlite3.connect("file:path/to/database?mode=ro'", uri=True)

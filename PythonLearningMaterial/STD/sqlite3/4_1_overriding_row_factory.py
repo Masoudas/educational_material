@@ -14,13 +14,6 @@ def dict_factory(cursor, row):
     for idx, col in enumerate(cursor.description):
         d[col[0]] = row[idx]
 
-    #Me: Or equivalently I guess:
-    class obj: 
-        a: int
-        b: int 
-
-    o = obj()
-    o.a = row["a"]; o.b = row["b"]    
     return d
 
 con = sqlite3.connect(":memory:")

@@ -1,0 +1,17 @@
+Upon installation, MySQL creates a root user account which you can use to manage your database. This user has full privileges over the MySQL server, meaning it has complete control over every database, table, user, and so on. Because of this, it’s best to avoid using this account outside of administrative functions. This step outlines how to use the root MySQL user to create a new user account and grant it privileges.
+
+In Ubuntu systems running MySQL 5.7 (and later versions), the root MySQL user is set to authenticate using the auth_socket plugin by default rather than with a password. This plugin requires that the name of the operating system user that invokes the MySQL client matches the name of the MySQL user specified in the command, so you must invoke mysql with sudo privileges to gain access to the root MySQL user:
+
+Note: If you installed MySQL with another tutorial and enabled password authentication for root, you will need to use a different command to access the MySQL shell. The following will run your MySQL client with regular user privileges, and you will only gain administrator privileges within the database by authenticating:
+
+Once you have access to the MySQL prompt, you can create a new user with a CREATE USER statement. These follow this general syntax:
+
+mysql> CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+mysql> CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password'; # default
+
+As an alternative, you can leave out the WITH authentication_plugin portion of the syntax entirely to have the user authenticate with MySQL’s default plugin, caching_sha2_password. The MySQL documentation recommends this plugin for users who want to log in with a password due to its strong security features.
+
+After CREATE USER, you specify a username. This is immediately followed by an @ sign and then the hostname from which this user will connect. If you only plan to access this user locally from your Ubuntu server, you can specify localhost. Wrapping both the username and host in single quotes isn’t always necessary, but doing so can help to prevent errors.
+
+We can log in as new users as:
+$ mysql -u name -p password

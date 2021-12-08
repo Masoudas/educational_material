@@ -1,0 +1,5 @@
+$ systemctl status mysql.service
+
+For an additional check, you can try connecting to the database using the mysqladmin tool, which is a client that lets you run administrative commands. For example, this command says to connect as a MySQL user named sammy (-u sammy), prompt for a password (-p), and return the version. Be sure to change sammy to the name of your dedicated MySQL user, and enter that user’s password when prompted:
+
+sudo mysqladmin -p -u sammy version
