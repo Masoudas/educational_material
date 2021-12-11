@@ -1,0 +1,3 @@
+FOREIGN KEY:
+Foreign keys are the columns of a table that points to the primary key of another table. They act as a cross-reference between tables.
+

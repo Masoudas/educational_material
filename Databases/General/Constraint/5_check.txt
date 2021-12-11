@@ -1,0 +1,10 @@
+This constraint is used for specifying range of values for a particular column of a table. When this constraint is being set on a column, it ensures that the specified column must have the value falling in the specified range.
+
+CREATE TABLE STUDENT(
+    ROLL_NO   INT  NOT NULL CHECK(ROLL_NO >1000) ,
+    STU_NAME VARCHAR (35)  NOT NULL,
+    STU_AGE INT  NOT NULL,
+    EXAM_FEE INT DEFAULT 10000,
+    STU_ADDRESS VARCHAR (35) ,
+    PRIMARY KEY (ROLL_NO)
+);

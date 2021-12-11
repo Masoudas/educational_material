@@ -1,0 +1,10 @@
+UNIQUE:
+UNIQUE Constraint enforces a column or set of columns to have unique values. If a column has a unique constraint, it means that particular column cannot have duplicate values in a table.
+
+CREATE TABLE STUDENT(
+    ROLL_NO INT NOT NULL,
+    STU_NAME VARCHAR (35) NOT NULL UNIQUE,
+    STU_AGE INT NOT NULL,
+    STU_ADDRESS VARCHAR (35) UNIQUE,
+    PRIMARY KEY (ROLL_NO)
+);

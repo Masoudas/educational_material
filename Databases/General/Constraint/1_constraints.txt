@@ -1,0 +1,10 @@
+Constraints enforce limits to the data or type of data that can be inserted/updated/deleted from a table. The whole purpose of constraints is to maintain the data integrity during an update/delete/insert into a table. In this tutorial we will learn several types of constraints that can be created in RDBMS.
+
+Types of constraints
+    -   NOT NULL
+    -   UNIQUE
+    -   DEFAULT
+    -   CHECK
+    -   Key Constraints – PRIMARY KEY, FOREIGN KEY
+    -   Domain constraints
+    -   Mapping constraints

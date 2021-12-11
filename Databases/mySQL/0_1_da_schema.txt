@@ -1,0 +1,3 @@
+Note that essentially we have databases inside the database engine, and then those databases have tables.
+
+A user can have access to the entire database, or it can have access to certain tables inside the database.

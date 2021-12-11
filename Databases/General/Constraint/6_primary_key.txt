@@ -1,0 +1,9 @@
+Primary key uniquely identifies each record in a table. It must have unique values and cannot contain nulls. In the below example the ROLL_NO field is marked as primary key, that means the ROLL_NO field cannot have duplicate and null values.
+
+CREATE TABLE STUDENT(
+    ROLL_NO   INT  NOT NULL,
+    STU_NAME VARCHAR (35)  NOT NULL UNIQUE,
+    STU_AGE INT NOT NULL,
+    STU_ADDRESS VARCHAR (35) UNIQUE,
+    PRIMARY KEY (ROLL_NO)
+);

@@ -1,0 +1,11 @@
+To create a database (done as root, but uses can as well):
+
+mySQL> CREATE DATABASE my_db;
+
+To select a database, use the USE command
+
+mySQL> USE my_db
+
+To see which database is being used, use the following command:
+
+mySQL> SELECT DATABASE()

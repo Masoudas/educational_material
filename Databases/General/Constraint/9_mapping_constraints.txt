@@ -1,0 +1,30 @@
+Mapping constraints can be explained in terms of mapping cardinality:
+
+Mapping Cardinality:
+One to One: An entity of entity-set A can be associated with at most one entity of entity-set B and an entity in entity-set B can be associated with at most one entity of entity-set A.
+
+One to Many: An entity of entity-set A can be associated with any number of entities of entity-set B and an entity in entity-set B can be associated with at most one entity of entity-set A.
+
+Many to One: An entity of entity-set A can be associated with at most one entity of entity-set B and an entity in entity-set B can be associated with any number of entities of entity-set A.
+
+Many to Many: An entity of entity-set A can be associated with any number of entities of entity-set B and an entity in entity-set B can be associated with any number of entities of entity-set A.
+
+Example:
+
+CREATE TABLE Customer (
+    customer_id int PRIMARY KEY NOT NULL,
+    first_name varchar(20),
+    last_name varchar(20)
+);
+
+CREATE TABLE Order (
+    order_id int PRIMARY KEY NOT NULL,
+    customer_id int,
+    order_details varchar(50),
+    constraint fk_Customers foreign key (customer_id) 
+           references dbo.Customer
+);
+
+Assuming, that a customer orders more than once, the above relation represents one to many relation. Similarly we can achieve other mapping constraints based on the requirements.
+
+

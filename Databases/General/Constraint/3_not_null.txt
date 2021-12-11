@@ -1,0 +1,11 @@
+    NOT NULL:
+NOT NULL constraint makes sure that a column does not hold NULL value. When we don’t provide value for a particular column while inserting a record into a table, it takes NULL value by default. By 
+specifying NULL constraint, we can be sure that a particular column(s) cannot have NULL values.
+
+CREATE TABLE STUDENT(
+    ROLL_NO INT NOT NULL,
+    STU_NAME VARCHAR (35) NOT NULL,
+    STU_AGE INT NOT NULL,
+    STU_ADDRESS VARCHAR (235),
+    PRIMARY KEY (ROLL_NO)
+);

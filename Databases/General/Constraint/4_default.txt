@@ -1,0 +1,10 @@
+The DEFAULT constraint provides a default value to a column when there is no value provided while inserting a record into a table.
+
+CREATE TABLE STUDENT(
+    ROLL_NO   INT  NOT NULL,
+    STU_NAME VARCHAR (35) NOT NULL,
+    STU_AGE INT NOT NULL,
+    EXAM_FEE INT  DEFAULT 10000,
+    STU_ADDRESS VARCHAR (35) ,
+    PRIMARY KEY (ROLL_NO)
+);

@@ -1,0 +1,10 @@
+Normally, and this is the convention, that we want a unqiue primary key. However, as often is the case, we may have several columns that together form a key, as the following example demonstrates:
+
+cust_Id    order_Id    product_code    product_count
+--------   --------    ------------    -------------
+C01	   O001         P007           23
+C02	   O123	        P007           19
+C02	   O123	        P230           82
+C01	   O001	        P890           42
+
+As such, we have a case of composite primary key.

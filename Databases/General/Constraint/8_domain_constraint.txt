@@ -1,0 +1,28 @@
+Definition: Domain constraints are user defined data type and we can define them like this:
+Domain Constraint = data type + Constraints (NOT NULL / UNIQUE / PRIMARY KEY / FOREIGN KEY / CHECK / DEFAULT)
+
+Example:
+For example I want to create a table “student_info” with “stu_id” field having value greater than 100, I can create a domain and table like this:
+
+## This would be my domain (my custom type, with a contraint)
+create domain id_value int
+constraint id_test check(value > 100);
+
+create table student_info (
+stu_id id_value PRIMARY KEY,            # USING my custom type.
+stu_name varchar(30), 
+stu_age int
+);
+
+Another example:
+I want to create a table “bank_account” with “account_type” field having value either “checking” or “saving”:
+
+create domain account_type char(12)
+constraint acc_type_test
+check(value in ("Checking", "Saving"));
+
+create table bank_account (
+    account_nbr int PRIMARY KEY,
+    account_holder_name varchar(30),
+    account_type account_type
+);
