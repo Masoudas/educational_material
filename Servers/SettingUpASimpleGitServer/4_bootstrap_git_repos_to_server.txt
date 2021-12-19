@@ -1,6 +1,4 @@
-To bootstrap new repositories to our server, we create a simple script, which automates the task. We put this
-script in our /usr/local/bin in the script git-create-repo.sh. Notice that after, we need to give the execution
-privilege to our script.
+To bootstrap new repositories to our server, we create a simple script, which automates the task. We put this script in our /usr/local/bin in the script git-create-repo.sh. Notice that after, we need to give the execution privilege to our script.
 
 $ sudo chmod +x /usr/local/bin/git-create-repo.sh
 

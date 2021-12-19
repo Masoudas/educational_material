@@ -1,5 +1,5 @@
 """
-For optional arguments, we may use Optional annotation.
+For optional arguments, we may use Optional annotation. Optional implies Union[Type, None]
 """
 from typing import Optional
 

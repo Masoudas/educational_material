@@ -11,8 +11,7 @@ git.conf, which we put under the configuration files at etc/apache2/sites-availa
 
 $ sudo vim /etc/apache2/sites-available/git.conf
 
-We must enter the following configuration in this file. Then, disable the default configuration as follows, and
-then enable the git website as follows:
+We must enter the following configuration in this file. Then, disable the default configuration as follows, and then enable the git website as follows:
 
 $ sudo a2dissite 000-default.conf
 $ sudo a2ensite git.conf		# I think we should repeat this command everytime we change the .conf file.

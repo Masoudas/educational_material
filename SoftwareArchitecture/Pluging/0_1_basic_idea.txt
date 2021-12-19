@@ -1,0 +1,7 @@
+The basic idea behind the architecture is as follows:
+    -   We define new modules 
+    -   We define some outside file (a json for example,) that contains all the paths to newly added modules
+    -   Inside the code, we define proper mechanisms to load and register new architectures
+
+As such, we can add new functionality to our software without having to actually change our code.
+Next, we shall give 
