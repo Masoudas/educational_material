@@ -1,0 +1,6 @@
+Say we have a a GUI application that needs to run on a linux server machine. However, we want the GUI to appear on our current machine (say a Windows machine or a Linux machine with GUI.) What we can do is to forward the GUI part to the current machine, and let it render the graphics.
+
+The mechanism for this is called X11 forwarding.
+
+X11 forwarding is a mechanism that allows a user to start up remote applications but forward the application display to your local Windows machine.
+

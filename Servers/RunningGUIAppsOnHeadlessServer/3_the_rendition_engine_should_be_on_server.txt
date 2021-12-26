@@ -1,0 +1,6 @@
+Let's say I'm trying to run a tkinter application with XForwarding. The point is that the rendition engine must be on the server side, and having tkinter installed on the local machine is not going to cut it.
+
+So for example, I had to install tkinter on the server as follows:
+
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt-get install python3.6-tk

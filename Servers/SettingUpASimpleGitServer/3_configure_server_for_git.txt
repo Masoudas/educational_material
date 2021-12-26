@@ -6,8 +6,7 @@ $ sudo a2enmod env cgi alias rewrite
 We need to also create a folder to keep all our git repositories.
 
 
-The next step is to create a new apache website. For this, we need to create a configuration file, which we call
-git.conf, which we put under the configuration files at etc/apache2/sites-available/
+The next step is to create a new apache website. For this, we need to create a configuration file, which we call git.conf, which we put under the configuration files at etc/apache2/sites-available/
 
 $ sudo vim /etc/apache2/sites-available/git.conf
 
@@ -21,7 +20,7 @@ $ sudo systemctl restart apache2
 <VirtualHost *:80>
 ServerAdmin webmaster@localhost
  
-SetEnv GIT_PROJECT_ROOT PATH_TO_FOLDER
+SetEnv GIT_PROJECT_ROOT PATH_TO_FOLDER  # Root of where all projects would be.
 SetEnv GIT_HTTP_EXPORT_ALL
 ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
  

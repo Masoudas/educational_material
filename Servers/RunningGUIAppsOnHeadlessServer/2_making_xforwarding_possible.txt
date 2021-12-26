@@ -1,0 +1,14 @@
+There are a few minor changes needed on your Linux box to enable X11 forwarding. In this basic example I am using a standard CentOS 6.5 installation with GNOME installed. Other Linux distributions will have a very similar SSH daemon configuration. The SSH configuration file is located at /etc/ssh/sshd_config. 
+
+The setting we're looking for is X11Forwarding. If it has a comment (#) behind it, uncomment it:
+
+/etc/ssh/sshd_config
+...
+X11Forwarding yes
+...
+
+Once this is done, we can use X11 on the server side.
+
+The important thing is to SSH to the server using the -X option:
+
+@ ssh -X username@hostname
