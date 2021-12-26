@@ -1,0 +1,21 @@
+The other issue here is to define multiple ports for our server. Why do this? Because if all the users try and access the same port, we get a sever congestion at that port, which slows down the application.
+
+To do so, we need only to change the configure file of ssh, which is in the etc folder.
+
+$ sudo vi /etc/ssh/sshd_config
+
+# ...
+Port 22     # Default port Maybe commented with #
+Port 2022
+# ...
+
+Once we change the config, we of course need to restart the daemon (like we always do.) But, there's an extra step here. We need to change the firewall as well.
+
+# Ubuntu/Debian
+$ sudo ufw allow 2022/tcp 
+
+# CentOS / Red Hat
+$ sudo firewall-cmd --add-port=2022/tcp --permanent && sudo firewall-cmd --reload 
+
+Finally, restart the service:
+$ sudo systemctl restart sshd

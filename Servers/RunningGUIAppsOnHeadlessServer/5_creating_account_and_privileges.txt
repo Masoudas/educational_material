@@ -1,0 +1,5 @@
+The last part here is to create a proper user account, and allow access to the software application (only,) whilst not allowing it to be copied, deleted or etc.
+
+The only thing we need thus is to ensure that our GUI app has execution access, but it has no read access. That, even though the software can be executed, it can't be copied!
+
+For the user folder, however, we give him the permission to do whatever he wants with it, and we even make him the owner of that folder.

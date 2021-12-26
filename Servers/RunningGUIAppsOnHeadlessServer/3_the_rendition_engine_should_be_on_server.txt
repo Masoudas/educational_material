@@ -4,3 +4,5 @@ So for example, I had to install tkinter on the server as follows:
 
 $ sudo add-apt-repository ppa:deadsnakes/ppa
 $ sudo apt-get install python3.6-tk
+
+As such, when SSHing with the -X option, the graphics is forwarded to our local system.
