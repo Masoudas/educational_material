@@ -1,0 +1,9 @@
+Definition of schema: Design of a database is called the schema. Schema is of three types: Physical schema, logical schema and view schema.
+
+Schema is only a structural view(design) of a database.
+
+The design of a database at physical level is called physical schema, how the data stored in blocks of storage is described at this level.
+
+Design of database at logical level is called logical schema, programmers and database administrators work at this level, at this level data can be described as certain types of data records gets stored in data structures, however the internal details such as implementation of data structure is hidden at this level (available at physical level).
+
+Design of database at view level is called view schema. This generally describes end user interaction with database systems.

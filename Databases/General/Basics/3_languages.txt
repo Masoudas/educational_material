@@ -1,0 +1,34 @@
+Database languages are used to read, update and store data in a database. There are several such languages that can be used for this purpose; one of them is SQL (Structured Query Language).
+
+DDL is used for specifying the database schema. It is used for creating tables, schema, indexes, constraints etc. in database. Lets see the operations that we can perform on database using DDL:
+
+    -   To create the database instance – CREATE
+    -   To alter the structure of database – ALTER
+    -   To drop database instances – DROP
+    -   To delete tables in a database instance – TRUNCATE
+    -   To rename database instances – RENAME
+    -   To drop objects from database such as tables – DROP
+    -   To Comment – Comment
+
+
+Data Manipulation Language (DML)
+DML is used for accessing and manipulating data in a database. The following operations on database comes under DML:
+
+    -   To read records from table(s) – SELECT
+    -   To insert record(s) into the table(s) – INSERT
+    -   Update the data in table(s) – UPDATE
+    -   Delete all the records from the table – DELETE
+
+Data Control language (DCL)
+DCL is used for granting and revoking user access on a database –
+
+    -   To grant access to user – GRANT
+    -   To revoke access from user – REVOKE
+
+Transaction Control Language(TCL)
+The changes in the database that we made using DML commands are either performed or rollbacked using TCL.
+
+    -   To persist the changes made by DML commands in database – COMMIT
+    -   To rollback the changes made to the database – ROLLBACK
+
+https://beginnersbook.com/2015/04/data-models-in-dbms/

@@ -1,0 +1,9 @@
+To avoid the accidental deletion of records, many applications don’t allow deletions at all. Instead, the record has another column to indicate if it’s in use or not. This column might be named active and contain a value that evaluates to either True or False, indicating whether the record should be included when querying the database.
+
+For example, the SQL query below would get all columns for all active records in some_table:
+
+SELECT * 
+FROM some_table
+WHERE active = 1;
+
+SQLite doesn’t have a Boolean data type, so the active column is represented by an integer with a value of 0 or 1 to indicate the state of the record. Other database systems may or may not have native Boolean data types.

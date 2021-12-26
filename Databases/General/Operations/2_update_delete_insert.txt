@@ -1,0 +1,14 @@
+Recall that to update a record, one uses the update command:
+
+UPDATE author
+SET first_name = 'Richard', last_name = 'Bachman'
+WHERE first_name = 'Stephen' AND last_name = 'King';
+
+
+We can also delete data as follows:
+DELETE FROM author
+WHERE first_name = 'Paul'
+AND last_name = 'Mendez';
+
+And also, don't forget the famous insert method for setting records in a database:
+INSERT into TABLE VALUES(, , , )

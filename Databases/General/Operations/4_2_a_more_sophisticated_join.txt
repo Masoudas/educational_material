@@ -1,0 +1,19 @@
+Consider the following join query, and notice how we append the first name and last name together.
+
+sqlite> SELECT
+   ...> a.first_name || ' ' || a.last_name AS author_name,  # First row of the view
+   ...> b.title AS book_title       # Second row of the view
+   ...> FROM author a
+   ...> JOIN book b ON b.author_id = a.author_id
+   ...> ORDER BY a.last_name ASC;
+
+Isaac Asimov|Foundation
+Pearl Buck|The Good Earth
+Tom Clancy|The Hunt For Red October
+Tom Clancy|Patriot Games
+Stephen King|It
+Stephen King|Dead Zone
+Stephen King|The Shining
+John Le Carre|Tinker, Tailor, Soldier, Spy: A George Smiley Novel
+Alex Michaelides|The Silent Patient
+Carol Shaben|Into The Abyss
