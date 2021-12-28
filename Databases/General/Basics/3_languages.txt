@@ -1,6 +1,6 @@
 Database languages are used to read, update and store data in a database. There are several such languages that can be used for this purpose; one of them is SQL (Structured Query Language).
 
-DDL is used for specifying the database schema. It is used for creating tables, schema, indexes, constraints etc. in database. Lets see the operations that we can perform on database using DDL:
+DDL is used for specifying the database schema. It is used for creating tables, schema, indexes, constraints etc. in database. Letگs see the operations that we can perform on database using DDL:
 
     -   To create the database instance – CREATE
     -   To alter the structure of database – ALTER

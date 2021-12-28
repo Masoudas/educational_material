@@ -1,0 +1,16 @@
+An Entity–relationship model (ER model) describes the structure of a database with the help of a diagram, which is known as Entity Relationship Diagram (ER Diagram). An ER model is a design or blueprint of a database that can later be implemented as a database. The main components of E-R model are: entity set and relationship set.
+
+What is an Entity Relationship Diagram (ER Diagram)?
+An ER diagram shows the relationship among entity sets. An entity set is a group of similar entities and these entities can have attributes. In terms of DBMS, an entity is a table or attribute of a table in database, so by showing relationship among tables and their attributes, ER diagram shows the complete logical structure of a database. Lets have a look at a simple ER diagram to understand this concept (Figure1-ERModel).
+
+In the diagram we have two entities Student and College and their relationship. The relationship between Student and College is many to one as a college can have many students, however a student cannot study in multiple colleges at the same time. Student entity has attributes such as Stu_Id, Stu_Name & Stu_Addr and College entity has attributes such as Col_ID & Col_Name.
+
+Here are the entities:
+    -   Rectangle: Represents Entity sets.
+    -   Ellipses: Attributes
+    -   Diamonds: Relationship Set
+    -   Lines: They link attributes to Entity Sets and Entity sets to Relationship Set
+    -   Double Ellipses: Multivalued Attributes
+    -   Dashed Ellipses: Derived Attributes
+    -   Double Rectangles: Weak Entity Sets
+    -   Double Lines: Total participation of an entity in a relationship set

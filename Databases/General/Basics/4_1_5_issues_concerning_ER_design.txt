@@ -1,0 +1,25 @@
+We have already covered ER diagram in our previous article DBMS ER Model Concept. In this post, we will discuss the various issues that can arise while designing an ER diagram (Me: Also read the next file to understand this one better).
+
+Here are some of the issues that can occur while ER diagram design process:
+
+1. Choosing Entity Set vs Attributes
+Here we will discuss how choosing an entity set vs an attribute can change the whole ER design semantics. To understand this lets take an example, let’s say we have an entity set Student with attributes such as student-name and student-id. Now we can say that the student-id itself can be an entity with the attributes like student-class and student-section.
+
+Now if we compare the two cases we discussed above, in the first case we can say that the student can have only one student id, however in the second case when we chose student id as an entity it implied that a student can have more than one student id.
+
+2. Choosing Entity Set vs. Relationship Sets
+It is hard to decide that an object can be best represented by an entity set or relationship set. To comprehend and decide the perfect choice between these two (entity vs relationship), the user needs to understand whether the entity would need a new relationship if a requirement arise in future, if this is the case then it is better to choose entity set rather than relationship set.
+
+Let’s take an example to understand it better: A person takes a loan from a bank, here we have two entities person and bank and their relationship is loan. This is fine until there is a need to disburse a joint loan, in such case a new relationship needs to be created to define the relationship between the two individuals who have taken joint loan. In this scenario, it is better to choose loan as an entity set rather than a relationship set.
+
+3. Choosing Binary vs n-ary Relationship Sets
+In most cases, the relationships described in an ER diagrams are binary. The n-ary relationships are those where entity sets are more than two, if the entity sets are only two, their relationship can be termed as binary relationship.
+
+The n-ary relationships can make ER design complex, however the good news is that we can convert and represent any n-ary relationship using multiple binary relationships.
+
+This may sound confusing so lets take an example to understand how we can convert an n-ary relationship to multiple binary relationships. Now lets say we have to describe a relationship between four family members: father, mother, son and daughter. This can easily be represented in forms of multiple binary relationships, father-mother relationship as “spouse”, son and daughter relationship as “siblings” and father and mother relationship with their child as “child”.
+
+4. Placing Relationship Attributes
+The cardinality ratio in DBMS can help us determine in which scenarios we need to place relationship attributes. It is recommended to represent the attributes of one to one or one to many relationship sets with any participating entity sets rather than a relationship set.
+
+For example, if an entity cannot be determined as a separate entity rather it is represented by the combination of participating entity sets. In such case it is better to associate these entities to many-to-many relationship sets.

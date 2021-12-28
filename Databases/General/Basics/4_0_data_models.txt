@@ -1,0 +1,13 @@
+There are several types of data models in DBMS. 
+
+-   Object based logical Models – Describe data at the conceptual and view levels.
+        -   E-R Model (Entity-Relationship model)
+        -   Object oriented Model
+
+-   Record based logical Models – Like Object based model, they also describe data at the conceptual and view levels. These models specify logical structure of database with records, fields and attributes.
+
+    -   Relational Model
+    -   Hierarchical Model
+    -   Network Model – Network Model is same as hierarchical model except that it has graph-like structure rather than a tree-based structure. Unlike hierarchical model, this model allows each record to have more than one parent record.
+
+-   Physical Data Models – These models describe data at the lowest level of abstraction

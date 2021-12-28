@@ -1,0 +1,29 @@
+We have learned ER Diagram and ER design issues in previous articles. In this post, we will cover how to convert ER diagram into database tables.
+
+First we will convert simple ER diagrams to tables. In the end, we will take a complex ER diagram and then we will convert it into set of tables.
+
+1. Strong Entity set with Simple attributes
+The Strong Entity set becomes the table and the attributes of the Entity set becomes the table attributes. The key attribute of the entity set becomes the primary key of the table.
+
+Let’s take an example (Figure7): Here we have an entity set Employee with the attributes Name, Age, Emp_Id and Salary. When we convert this ER diagram to table, the entity set becomes table so we have a table named “Employee” as shown in the following diagram. The attributes of entity set becomes the attributes of the table.
+
+
+2. Strong Entity Set With Composite Attributes
+Now we will see how to convert Strong entity set with composite attributes ER to table. The conversion is fairly simple in this case as well. The entity set will be the table and the simple attributes of the composite attributes will become the attributes of the table while the composite attribute itself will be ignored during conversion.
+
+Let’s take an example (Figure 8). As you can see we have a composite attribute Name and this composite attribute has two simple attributes First_N and Last_N. While converting this ER to table we have not used the composite attribute itself in the table instead we have used the simple attributes of this composite attribute as table’s attributes.
+
+
+3. Strong Entity Set With Multi Valued Attributes
+(Me: Recall that multivalued attribute implies many values at once. For example, a person can have multiple phone numbers. The point is that we can't make a table with phone1, phone2, etc columns. Therefore, we create a second table, and I think this table has no primar keys. In this table, we define the phone numbers repeatedly on various rows. This is shown with the department example below, where an employee can appear on different rows of this table with different department ids.)
+Entity set with multi-valued attributes will require two tables in the relational model.
+
+We will understand this conversion with the help of a diagram (Figure9). Let’s take the same example that we have seen above, here we have added a new multi-valued attribute Dept. An employee can work in multiple department so we have this Dept attribute marked as multi-valued. Whenever we have a multi-valued attribute, there needs to be more than one table to represent the ER diagram. As you can see we have created two tables to represent this ER.
+
+
+4. Relationship Set to Table conversion
+While converting the relationship set to a table, the primary attributes of the two entity sets become the table attributes and if the relationship set has any attribute that also becomes the attribute of the table.
+
+In Figure 10, we have two entity sets Employee and Department. These entity sets are associated to each other using the Works relationship set. To convert this relationship set Works to the table, we take the primary attributes of each entity set, these are Emp_Id and Dept_Id and all the attributes of the relationship set and form a table.
+
+https://beginnersbook.com/2018/11/dbms-generalization/

@@ -1,0 +1,11 @@
+As shown in Figure2, an ER diagram has three main components:
+    -   1. Entity
+    -   2. Attribute
+    -   3. Relationship
+
+1. Entity
+An entity is an object or component of data. An entity is represented as rectangle in an ER diagram.
+For example: In Figure3 we have two entities Student and College and these two entities have many to one relationship as many students study in a single college. 
+
+2. Weak Entity:
+An entity that cannot be uniquely identified by its own attributes and relies on the relationship with other entity is called weak entity. The weak entity is represented by a double rectangle. For example – a bank account cannot be uniquely identified without knowing the bank to which the account belongs, so bank account is a weak entity.

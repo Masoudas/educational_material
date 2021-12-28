@@ -1,0 +1,4 @@
+The alias in SQL corresponds to a “renamed” version of a table or SELECT statement, which occurs anytime you say “SELECT * FROM table1 AS a”. The AS creates a new name for the table. Aliases allow any table or subquery to be referenced by a unique name.
+
+SELECT * FROM table1 AS a
+WHERE a.column < 5

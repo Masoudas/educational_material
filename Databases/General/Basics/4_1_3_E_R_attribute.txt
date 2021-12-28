@@ -1,0 +1,18 @@
+An attribute describes the property of an entity. An attribute is represented as Oval in an ER diagram. There are four types of attributes:
+
+    1. Key attribute
+    2. Composite attribute
+    3. Multivalued attribute
+    4. Derived attribute
+
+1. Key attribute:
+A key attribute can uniquely identify an entity from an entity set. For example (Figure4), student roll number can uniquely identify a student from a set of students. Key attribute is represented by oval same as other attributes however the text of key attribute is underlined.
+
+2. Composite attribute:
+An attribute that is a combination of other attributes is known as composite attribute. For example, In student entity, the student address is a composite attribute as an address is composed of other attributes such as pin code, state, country.
+
+3. Multivalued attribute:
+An attribute that can hold multiple values is known as multivalued attribute. It is represented with double ovals in an ER Diagram. For example – A person can have more than one phone numbers so the phone number attribute is multivalued.
+
+4. Derived attribute:
+A derived attribute is one whose value is dynamic and derived from another attribute. It is represented by dashed oval in an ER Diagram. For example – Person age is a derived attribute as it changes over time and can be derived from another attribute (Date of birth).

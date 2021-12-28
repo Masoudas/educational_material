@@ -1,0 +1,20 @@
+A relationship is represented by diamond shape in ER diagram, it shows the relationship among entities. There are four types of relationships:
+1. One to One
+2. One to Many
+3. Many to One
+4. Many to Many
+
+1. One to One Relationship
+When a single instance of an entity is associated with a single instance of another entity then it is called one to one relationship. For example, a person has only one passport and a passport is given to one person.
+
+2. One to Many Relationship
+When a single instance of an entity is associated with more than one instances of another entity then it is called one to many relationship. For example – a customer can place many orders but a order cannot be placed by many customers.
+
+3. Many to One Relationship
+When more than one instances of an entity is associated with a single instance of another entity then it is called many to one relationship. For example – many students can study in a single college but a student cannot study in many colleges at the same time.
+
+4. Many to Many Relationship
+When more than one instances of an entity is associated with more than one instances of another entity then it is called many to many relationship. For example, a can be assigned to many projects and a project can be assigned to many students.
+
+-   Total Participation of an Entity set
+A Total participation of an entity set represents that each entity in entity set must have at least one relationship in a relationship set. For example: In the below diagram each college must have at-least one associated Student.
