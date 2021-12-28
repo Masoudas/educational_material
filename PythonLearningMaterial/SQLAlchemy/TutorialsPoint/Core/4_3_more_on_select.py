@@ -24,8 +24,11 @@ students = Table(
 )
 
 conn = engine.connect()
+
+conn.execute(students.insert().values(name="Masoud", id=212, lastname="Sharbaf"))
+
 s = students.select()
 result = conn.execute(s)
-
+print(type(result))
 for row in result:
    print (row)
