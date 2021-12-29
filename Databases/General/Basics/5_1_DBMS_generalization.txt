@@ -1,0 +1,16 @@
+Generalization is a process in which the common attributes of more than one entities form a new entity. This newly formed entity is called generalized entity.
+
+-   Generalization Example
+Lets say we have two entities Student and Teacher.
+Attributes of Entity Student are: Name, Address & Grade
+Attributes of Entity Teacher are: Name, Address & Salary
+
+These two entities have two common attributes: Name and Address, we can make a generalized entity with these common attributes. Lets have a look at the ER model after generalization in figure 12.
+
+-   The ER diagram after generalization:
+We have created a new generalized entity Person and this entity has the common attributes of both the entities. As you can see in the following ER diagram that after the generalization process the entities Student and Teacher only has the specialized attributes Grade and Salary respectively and their common attributes (Name & Address) are now associated with a new entity Person which is in the relationship with both the entities (Student & Teacher).
+
+
+Note:
+1. Generalization uses bottom-up approach where two or more lower level entities combine together to form a higher level new entity.
+2. The new generalized entity can further combine together with lower level entity to create a further higher level generalized entity.

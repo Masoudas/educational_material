@@ -18,3 +18,5 @@ When more than one instances of an entity is associated with more than one insta
 
 -   Total Participation of an Entity set
 A Total participation of an entity set represents that each entity in entity set must have at least one relationship in a relationship set. For example: In the below diagram each college must have at-least one associated Student.
+
+ME: This implies a must relationship. That is, a student MUST belong to a college. This is shown in figure 11.
