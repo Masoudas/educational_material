@@ -1,3 +1,8 @@
 """
 $ apt-get install mysql-server
 """
+
+Very important note: For mysql to be bound to the ip of the machine, and not the loopback ip, we need to change the setting in /etc/mysql/mysql.conf.d/mysqld.cnf file:
+
+bind-address           = 0.0.0.0    # Bound to our ip.
+# skip-networking
