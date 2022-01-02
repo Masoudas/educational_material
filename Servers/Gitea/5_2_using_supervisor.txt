@@ -1,0 +1,33 @@
+Install supervisor by running below command in terminal:
+
+$ sudo apt install supervisor
+Create a log dir for the supervisor logs:
+
+# assuming Gitea is installed in /home/git/gitea/
+$ mkdir /home/gitea/gitea/log/supervisor
+
+Append the configuration from the sample supervisord config to /etc/supervisor/supervisord.conf.
+Lastly enable and start supervisor at boot:
+
+$ sudo systemctl enable supervisor
+$ sudo systemctl start supervisor
+
+
+%%%%%%%%%%%%%%%%
+[program:gitea]
+directory=/home/gitea/go/src/github.com/go-gitea/gitea/
+command=/home/gitea/go/src/github.com/go-gitea/gitea/gitea web
+autostart=true
+autorestart=true
+startsecs=10
+stdout_logfile=/var/log/gitea/stdout.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=10
+stdout_capture_maxbytes=1MB
+stderr_logfile=/var/log/gitea/stderr.log
+stderr_logfile_maxbytes=1MB
+stderr_logfile_backups=10
+stderr_capture_maxbytes=1MB
+user = gitea
+environment = HOME="/home/gitea", USER="gitea"
+%%%%%%%%%%%%%%%%

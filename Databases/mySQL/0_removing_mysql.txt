@@ -1,0 +1,19 @@
+I assume that you don't need MySQL anymore and you have already taken backup of your important databases. I suggest you to take backup of your important MySQL databases.
+
+Note: Your all mysql data will be lost.
+
+First make sure that MySQL service is stopped.
+
+sudo systemctl stop mysql
+Remove MySQL related all packages completely.
+
+sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+Remove MySQL configuration and data. If you have changed database location in your MySQL configuration, you need to replace /var/lib/mysql according to it.
+
+sudo rm -rf /etc/mysql /var/lib/mysql
+(Optional) Remove unnecessary packages.
+
+sudo apt autoremove
+(Optional) Remove apt cache.
+
+sudo apt autoclean

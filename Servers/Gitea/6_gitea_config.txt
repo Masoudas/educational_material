@@ -1,0 +1,40 @@
+Run:
+
+$ /usr/local/bin/gitea web -c /etc/gitea/app.ini
+
+If we get a port error, set it to a free port number as follows:
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+Database Type 
+Host             192.168.0.8:3306
+Username         gitea
+Password    
+Database Name    gitea
+ 
+General Settings
+Site Title  iSIRCO
+
+Repository Root Path        /home/git/
+Git LFS Root Path 
+Run As Username             git
+ Enter the operating system username that Gitea runs as. Note that this user must have access to the repository root path.
+SSH Server Domain           192.168.0.8
+SSH Server Port             22
+Gitea HTTP Listen Port      5000    # I set this myself. Could be changed.
+Port number the Giteas web server will listen on.
+Gitea Base URL http://192.168.0.8:5000/
+ Base address for HTTP(S) clone URLs and email notifications.
+Log Path                    /home/git/gitea/log
+ Log files will be written to this directory.
+Optional Settings
+Email Settings
+Server and Third-Party Service Settings
+Administrator Account Settings
+
+Creating an administrator account is optional. The first registered user will automatically become an administrator.
+
+Administrator Username  isirco
+Password                •••••••••••••••••••••
+Confirm Password        •••••••••••••••••••••
+Email Address           isirco@sircotech.ir

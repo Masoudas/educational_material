@@ -1,0 +1,17 @@
+The official docs have suggested creating folders in the var folder (which is not on RAM!)
+
+$ mkdir -p /var/lib/gitea/{custom,data,log}
+$ chown -R gitea:gitea /var/lib/gitea/
+$ chmod -R 750 /var/lib/gitea/
+$ mkdir /etc/gitea
+$ chown root:gitea /etc/gitea
+$ chmod 770 /etc/gitea
+
+Notice that the /etc/gitea folder has write permission for user gitea. We better change this after configration is complete.
+
+Lastly, we need to copy the executable into a proper location, which is. Make it executable as well:
+$ sudo chmod +x gitea
+$ cp gitea /usr/local/bin
+
+
+

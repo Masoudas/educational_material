@@ -1,0 +1,8 @@
+The owrking directory is where all the repos are created.
+
+This is a toughy! On the one hand, I believe we should set this to the homer folder of gitea. However, because we disable the password, then we may have access to it without password.
+
+The default option is to set it in /var/lib/gitea, which is root protected.
+
+Where can we define the working directory? In the service file, or simply when running gitea as:
+GITEA_WORK_DIR=/var/lib/gitea/ /usr/local/bin/gitea web -c /etc/gitea/app.ini

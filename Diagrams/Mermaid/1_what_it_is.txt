@@ -1,0 +1,5 @@
+It's a VS Code extension for drawing diagrams with text.
+
+It uses text, and can have state diagrams, flow charts, class diagrams, etc.
+
+The extensions are .md

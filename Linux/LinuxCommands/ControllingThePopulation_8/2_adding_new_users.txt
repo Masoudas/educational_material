@@ -1,20 +1,15 @@
-To add new user, we use the 'useradd -m user_name' command IN ROOT. This is because non-root users don't have the 
-permission to create users.
+To add new user, we use the 'useradd -m user_name' command IN ROOT. This is because non-root users don't have the permission to create users.
 
-After adding the new user, we can use the tail command in the psswd file to see that the new user has indeed been
-added:
+After adding the new user, we can use the tail command in the psswd file to see that the new user has indeed been added:
 
 """
 $ tail -1 /etc/passwrd
 tom:x:1001:1001::/home/tom:/bin/sh
 """
 
-Note that in my case, the original user had UID and GID of 1000, but now, it's 1001 for the new user, so increments 
-of one take place by default
+Note that in my case, the original user had UID and GID of 1000, but now, it's 1001 for the new user, so increments of one take place by default
 
-Note that we can change the default termianl from bin/sh for example to bin/bash, or change GID or many other things, 
-all of which are possible by checking out the options on this command. This can also be achieved using usermod after
-creating the user.
+Note that we can change the default termianl from bin/sh for example to bin/bash, or change GID or many other things, all of which are possible by checking out the options on this command. This can also be achieved using usermod after creating the user.
 
 """
 $usermod -gid 1002 masoud
@@ -22,8 +17,5 @@ $usermod -gid 1002 masoud
 
 %%%%%%%%%%%%%%%%%%%
 Very important note:
-    If we want the user to appear in the login window, particularly in ubuntu and debian, rather than using useradd, 
-    we should use adduser, which ensures that the skeloton folder is also copied. Otherwise, the user does not appear 
-    in the login window, and we have to do all the setting up manually. Note that the desktop folder for example is 
-    not in the skeleton folder, which is required to create a desktop, which only appears if we use the adduser 
+    If we want the user to appear in the login window, particularly in ubuntu and debian, rather than using useradd, we should use adduser, which ensures that the skeloton folder is also copied. Otherwise, the user does not appear in the login window, and we have to do all the setting up manually. Note that the desktop folder for example is not in the skeleton folder, which is required to create a desktop, which only appears if we use the adduser 
     command.
