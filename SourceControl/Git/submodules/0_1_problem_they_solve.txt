@@ -1,0 +1,43 @@
+Essentially, they allow us to create a sub-git repository inside a git repository. As such, we can separate the tracking of this sub-repo from our current project.
+
+This is good in two scenarios:
+    -   Either we want to share a particular part of a project (folder) with someone else.
+    -   We have a third-party library that changes fast. As such, we keep track of changes of that library.
+
+The premise is that we have a repo that is used by a group of people, etc, and then we add it as a submodule to our project. Let's say my project which is a git-repo itself, wants to add that module. Then I need to add it as a submodule.
+
+The problem however is this. If my project already has a folder with the name of that project, then I can't add it as a submodule. This is because that folder is indexed already by my own git repo. Hence, to do that, I need to remove it from my cache as follows:
+
+$ git rm -r --cache folder_of_interest. 
+
+NOTE: This whole process can be done for a file also. So, we make a single file a submodule I guess. But it may have some problems!
+
+So, let's say we do this. Now, I create a new remote repo, which we call folder_of_interest. Now, I need to first push the content of folder of interest to this new folder. I do so, by just making it a new git repo.
+
+$ git init
+$ git add ..
+$ git commit ...
+$ git remote add origin http://192.168.0.8:3000/masoudas/folder_of_interest.git
+$ git push 
+
+Now, I come back out if this folder to the root of my project, and make it a submodule, as follows:
+
+$ git submodule add http://192.168.0.8:3000/masoudas/folder_of_interest.git folder_of_interest
+
+The path is important to indicate which folder is a submodule. Now, this is all good and ready on the part of main repo.
+
+Now, once we do all of this, we just need to commit and push everything in the main repo:
+$ git add . # Includes submodule file
+$ git commit -m "Adding submodule"
+$ git push
+
+Note now, everthing in the submodule folders is like a normal subfolder. That is, if the remote is changed, we need to pull inside the folder.
+
+# The one working on the child
+They Just have to clone the child repository like a normal repo. They don't have to do anything special.
+
+# Cloning the main repo 
+Now, if we decide the clone the main repo, the problem that we'd face is that submodule folders would be empty. To remedy this, we need to initialize and update the the submodules. This is easy as pie:
+
+$ git submodule init
+$ git submodule update
