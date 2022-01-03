@@ -3,9 +3,9 @@ The sole purpose of the Engine object from a user-facing perspective is to provi
 
 Me: Where ever in Python there's a close method, we may use the with context manager.
 
-In the above example, the context manager provided for a database connection and also framed the operation inside of a transaction. The default behavior of the Python DBAPI includes that a transaction is always in progress; when the scope of the connection is released, a ROLLBACK is emitted to end the transaction. The transaction is not committed automatically; when we want to commit data we normally need to call Connection.commit() as we’ll see in the next section.
+In the above example, the context manager provided for a database connection and also framed the operation inside of a transaction. The default behavior of the Python DBAPI includes that a transaction is always in progress; when the scope of the connection is released, a ROLLBACK is emitted to end the transaction. The transaction is not committed automatically; when we want to commit data we normally need to call Connection.commit() as we'll see in the next section.
 
-The result of our SELECT was also returned in an object called Result that will be discussed later, however for the moment we’ll add that it’s best to ensure this object is consumed within the “connect” block, and is not passed along outside of the scope of our connection.
+The result of our SELECT was also returned in an object called Result that will be discussed later, however for the moment we'll add that it's best to ensure this object is consumed within the “connect” block, and is not passed along outside of the scope of our connection.
 """
 from sqlalchemy import text, create_engine
 

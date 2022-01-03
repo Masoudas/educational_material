@@ -1,6 +1,8 @@
 """
 Bundling Parameters with a Statement
 
+NOTE: Essentially, bundling is done for single params. For multiple params, we need to use the dictionary method.
+
 The two previous cases illustrate a series of parameters being passed to accompany a SQL statement. For single-parameter statement executions, SQLAlchemy’s use of parameters is in fact more often than not done by bundling the parameters with the statement itself, which is a primary feature of the SQL Expression Language and makes for queries that can be composed naturally while still making use of parameterization in all cases. This concept will be discussed in much more detail in the sections that follow; for a brief preview, the text() construct itself being part of the SQL Expression Language supports this feature by using the TextClause.bindparams() method; this is a generative method that returns a new copy of the SQL construct with additional state added, in this case the parameter values we want to pass along:
 
 >>> stmt = text("SELECT x, y FROM some_table WHERE y > :y ORDER BY x, y").bindparams(y=6)

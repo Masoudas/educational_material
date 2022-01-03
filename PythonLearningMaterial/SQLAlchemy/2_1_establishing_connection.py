@@ -31,5 +31,5 @@ The Engine, when first returned by create_engine(), has not actually tried to co
 
 We have also specified a parameter create_engine.echo, which will instruct the Engine to log all of the SQL it emits to a Python logger that will write to standard out. This flag is a shorthand way of setting up Python logging more formally and is useful for experimentation in scripts. Many of the SQL examples will include this SQL logging output beneath a [SQL] link that when clicked, will reveal the full SQL interaction.
 
-With the Engine object ready to go, we may now proceed to dive into the basic operation of an Engine and its primary interactive endpoints, the Connection and Result. We will additionally introduce the ORM’s facade for these objects, known as the Session.
+With the Engine object ready to go, we may now proceed to dive into the basic operation of an Engine and its primary interactive endpoints, the Connection and Result. We will additionally introduce the ORM's facade for these objects, known as the Session.
 """
