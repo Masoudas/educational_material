@@ -3,6 +3,7 @@ When using Core, a SQL INSERT statement is generated using the insert() function
 
 A simple example of Insert illustrating the target table and the VALUES clause at once.
 
+Note: Don't forget that we need to execute the command with the connection object. Just creating the insert statement is not enough.
 
 >>> print(stmt)
 INSERT INTO user_account (name, fullname) VALUES (:name, :fullname)
@@ -18,7 +19,6 @@ In its simple form below, the INSERT statement does not return any rows, and if 
 >>> result.inserted_primary_key
 (1,)
 
-https://docs.sqlalchemy.org/en/14/tutorial/data_insert.html
 """
 from sqlalchemy import insert, Table, MetaData, create_engine
 

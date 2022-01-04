@@ -1,19 +1,12 @@
-Github is also using the same ssh communication structure. Note that everytime we clone a repository, the
-clone Window actually says "Clone with SSH." This implies that once copying takes place, there's no further
-need to define an ssh key.
+Github is also using the same ssh communication structure. Note that everytime we clone a repository, the clone Window actually says "Clone with SSH." This implies that once copying takes place, there's no further need to define an ssh key.
 
 We can however set up an authorized key for a remote, by taking the following steps:
 
     -   Create an ssh key on the remote (using ssh-keygen -t rsa.) Name the file as ~/.ssh/id_rsa_git.
         Don't forget to change permission of the folder if it's with root as owner.
     -   Copy the PUBLIC key into the setting->SSH and GPG keys
-    -   Add the private key to your ssh, using the ssh-add ~/.ssh/id_rsa_git (don't forget we're adding the
-        private key here, not the public one)
-    -   Sometimes at this step, we get an error saying that "could not make a connection to your authentication
-        agent." I think this probably means that the process associated with ssh has not begun. What we need
-        to do then is to run the command 
-        $ eval `ssh-agent -s`
-        Why do we do this as an eval I've absolutely no idea! I guess running it directly on the command line
-        does the same thing too.
+    -   Add the private key to your ssh, using the ssh-add ~/.ssh/id_rsa_git (don't forget we're adding the private key here, not the public one)
+    -   Sometimes at this step, we get an error saying that "could not make a connection to your authentication agent." I think this probably means that the process associated with ssh has not begun. What we need to do then is to run the command 
+        $ eval `ssh-agent -s` Why do we do this as an eval I've absolutely no idea! I guess running it directly on the command line does the same thing too.
 
 We see that Github actually adds the public key into its authorized keys as such.
