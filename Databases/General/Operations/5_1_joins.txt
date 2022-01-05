@@ -1,0 +1,16 @@
+Joins are of a couple of types. Normally, when we write a join clause, we expect columns that are on both tables to be shown, and this is indeed the join method,. However, sometimes, we want the remaining rows to be also shown in either tables. This is where outer joins come in.
+
+In an inner join, only the related ones from both the tables are combined in a single result set. This is a default join in Access and the most frequently used one too. If you apply a join but do not explicitly specify what type of Join it is, then the Access assumes that it is an inner join.
+
+In outer joins, all the related data from both the tables are combined correctly, plus all the remaining rows from one table. In full outer joins, all data are combined wherever possible.
+
+Me: Seriously, if there's no data on either tables, then the joined rows would have null for those places where no data is found.
+
+Now then, comes left and right outer joins:
+The left outer joins puts the rows remaining from the left table, for which no match was found. However, right outer join puts rows of the right table.
+
+Now, this also depends on which table you define on the left or right of the join statement. As such, people mostly use left outer join.
+
+    -   FULL Joins
+
+The SQL FULL JOIN combines the results of both left and right outer joins. The joined table will contain all records from both the tables and fill in NULLs for missing matches on either side.

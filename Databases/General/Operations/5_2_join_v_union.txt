@@ -1,0 +1,23 @@
+In unions, we put two tables right after each other, whereas in unions, we just mix two tables.
+
+Consider the following example:
+
+SELECT 28 AS bah
+UNION
+SELECT 35 AS bah;
+
+  	Bah
+1	28
+2	35
+
+Now, consider the join:
+
+SELECT * FROM
+(SELECT 38 AS bah) AS foo
+JOIN
+(SELECT 35 AS bah) AS bar
+ON (55=55);
+
+	foo	Bar
+1	38	35
+
