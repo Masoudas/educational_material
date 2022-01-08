@@ -13,4 +13,4 @@ Now, this also depends on which table you define on the left or right of the joi
 
     -   FULL Joins
 
-The SQL FULL JOIN combines the results of both left and right outer joins. The joined table will contain all records from both the tables and fill in NULLs for missing matches on either side.
+The SQL FULL JOIN combines the results of both left and right outer joins. The joined table will contain all records from both the tables and fill in NULLs for missing matches on either side.p
