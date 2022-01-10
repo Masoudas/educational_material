@@ -14,8 +14,6 @@ Once we change the config, we of course need to restart the daemon (like we alwa
 # Ubuntu/Debian
 $ sudo ufw allow 2022/tcp 
 
-# CentOS / Red Hat
-$ sudo firewall-cmd --add-port=2022/tcp --permanent && sudo firewall-cmd --reload 
 
 Finally, restart the service:
 $ sudo systemctl restart sshd

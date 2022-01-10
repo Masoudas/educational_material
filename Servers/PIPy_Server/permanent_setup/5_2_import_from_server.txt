@@ -1,0 +1,5 @@
+If we want to install from the server, we need only to use the following command (that is, if we're not using something like python poetry:)
+
+$ pip3 install -i http://192.168.0.8:4040/sirco/dev/+simple/ package_name
+
+The +simple is apparently important, because this is where the packages are kept.

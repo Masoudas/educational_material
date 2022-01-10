@@ -1,0 +1,34 @@
+In this tutorial, we assume that the project and indexer are on the same machine. There was a way to upload a project without actually building it. But we're going to upload after a build.
+
+Consider the following project:
+
+    -   pysober.py The module to be released.
+    -   setup.py
+    -   MANIFEST.in
+    -   tox.ini Tox configuration file required by devpi test
+    -   ./test/conftest.py Adds a –project-version option
+    -   ./test/test_pysober.py
+    -   ./doc/Makefile The documentation project which looks like this Welcome to pysober’s documentation!
+    -   ./doc/source/overview.rst
+    -   ./doc/source/index.rst
+    -   ./doc/source/conf.py
+
+
+
+# Install a package from pypi
+$ devpi install lazy
+
+Now, say we wanted to upload our pysober project.
+$ cd pysober ; python setup.py sdist
+
+Here's our built project:
+$ ls pysober/dist
+pysober-0.2.0.tar.gz
+
+Finally, we do as follows:
+$ devpi upload --from-dir pysober/dist
+
+Now, to upload to a remote indexer, we just need to provide the url:
+
+To remove a package, we just need to do as follows:
+$ devpi remove -y package==version

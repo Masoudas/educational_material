@@ -1,0 +1,37 @@
+Install or upgrade devpi-server (I put the sudo myself, so that everything can be done as super user.):
+
+$ sudo pip install -U devpi-server
+$ sudo pip install -U devpi-web   
+
+Note that everything is installed under ~/.local/bin.
+
+If you intend to expose your server to the internet, you should read about securing it properly at 
+https://devpi.net/docs/devpi/devpi/latest/+doc/adminman/security.html
+
+First, I create a folder, say devpi-server in a suitable location (/var works if we run the above commands as root)
+
+$ mkdir devpi-server
+
+Then, I need to create the following yaml configuration file:
+# devpi-server.yaml
+devpi-server:
+  serverdir: /var/devpi-server/devpi-server
+#  secretfile: /var/devpi-server/secret
+  host: localhost
+  port: 8080
+
+This configuration file is used for every run of the project. Especially below, in the service file:
+
+Note: There's a program to generate secrets, called devpi-gen-secret. I guess we can use it to generate secrets. Otherwise, we need to comment the secret line.  
+
+Now, initialize the server INSIDE the devpi-server as follows:
+
+$ devpi-init -c devpi-server
+
+Then, run the server as follows:
+
+$ devpi-server -c devpi-server
+
+Finally, we may connect to the server as follows:
+
+$ devpi use http://localhost:4040

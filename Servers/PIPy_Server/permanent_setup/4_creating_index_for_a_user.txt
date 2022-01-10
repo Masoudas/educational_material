@@ -1,0 +1,28 @@
+An index is what is available for a user. It starts after /root/pypi
+
+Now, there are two concepts here, volatile and non-volatile indexes.
+    -   Volatile indexes are used for development, and they can change
+    -   non-Volatile are production indexes.
+
+Here's how to create both:
+
+$ devpi use http://localhost:4040
+$ devpi login sirco --password ...
+$ devpi index -c prod volatile=False
+$ devpi index -c dev bases=/sirco/prod volatile=True
+
+Now, we can get the json of what's going on:
+$ devpi getjson /sirco/dev
+
+
+Notice also that we can define mirros for our indexes as well.
+
+We can select an index as follows:
+$ devpi user /sirco/dev
+
+Finally, we must directly add the base to our indexes:
+$ devpi index sirco/prod bases+=root/pypi
+$ devpi index sirco/dev bases+=root/pypi
+
+More about indexes can be found here:
+https://devpi.net/docs/devpi/devpi/stable/+doc/userman/devpi_indices.html#creating-an-index

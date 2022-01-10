@@ -1,0 +1,19 @@
+Note that there are essentially four commands concerning devpi servers:
+
+    - devpi-config:   To configure the server according to our desires.
+    - devpi-init:   To initialize the server instance based on our requirements
+    - devpi-server: To run the server instance that we have configured
+    - devpi:    To work with our server instance.
+
+Notice that devpi is installed as local binaries for each user that wishes to install this product, in the .local/bin folder. If the root wants to implement it, then root must install it. This is completely different from the root command that is the root of our indexing.
+
+Whomever install it is the user for whom the service file must be defined.
+
+[Service]
+Restart=on-success
+# ExecStart:
+# - shall point to existing devpi-server executable
+# - shall not use the deprecated `--start`. We want the devpi-server to start in foreground
+ExecStart=/home/sirco/.local/bin/devpi-server -c /home/sirco/devpi-server/devpi-server.yaml
+# set User according to user which is able to run the devpi-server
+User=sirco      # Don't set this to root. Set it to the user that runs it.

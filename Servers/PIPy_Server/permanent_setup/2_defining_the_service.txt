@@ -1,0 +1,35 @@
+Now, Let's create our service file as follows:
+
+$ devpi-gen-config --port 4040 --serverdir ~/mydevpiserver
+...
+gen-config/devpi.service
+...
+
+Inside it, I instruct it to use our config file:
+
+############################
+[Unit]
+Description=Devpi Server
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-success
+# ExecStart:
+# - shall point to existing devpi-server executable
+# - shall not use the deprecated `--start`. We want the devpi-server to start in foreground
+ExecStart=/home/sirco/.local/bin/devpi-server -c /home/sirco/devpi-server/devpi-server.yaml
+# set User according to user which is able to run the devpi-server
+User=sirco      # Don't set this to root.
+
+[Install]
+WantedBy=multi-user.target
+#############################
+
+
+Recall that we just need to copy our service file in the proper folder, which is:
+$ cp devpi.service /etc/systemd/system/
+
+Now:
+$ systemctl restart devpi
+

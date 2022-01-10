@@ -1,0 +1,40 @@
+In order to manage users and indices on our fresh server let’s also install the devpi-client package:
+
+$ pip install -U --pre -q devpi-client
+
+Log as root:
+
+$ devpi login root --password ''
+logged in 'root', credentials valid for 10.00 hours
+
+$ devpi user -m root password=123
+/root changing password: ********
+user modified: root
+
+$ devpi user -l
+root
+
+$ devpi logoff
+login information deleted
+
+##########Registering a new user
+Let’s register ourselves a new regular non-root user:
+
+$ devpi user -c alicesirco password=456  email=alice@example.com
+user created: alice
+and then login:
+
+$ devpi login sirco --password=456
+logged in 'alice', credentials valid for 10.00 hours
+Alice can now create her new dev index:
+
+$ devpi index -c dev bases=root/pypi
+
+And use the index:
+$ devpi use sirco/dev
+urrent devpi index: http://localhost:4040/sirco/dev (logged in as sirco)
+supported features: server-keyvalue-parsing
+venv for install/set commands: /tmp/docenv
+only setting venv pip cfg, no global configuration changed
+/tmp/docenv/pip.conf: no config file exists
+always-set-cfg: no
