@@ -1,0 +1,10 @@
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions. This implies that we can't use functions in the where clause. 
+
+Consider the following example.
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+We need to count which countries have at least five customers. This is the perfect place to use databases.

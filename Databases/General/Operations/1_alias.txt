@@ -1,4 +1,25 @@
 The alias in SQL corresponds to a “renamed” version of a table or SELECT statement, which occurs anytime you say “SELECT * FROM table1 AS a”. The AS creates a new name for the table. Aliases allow any table or subquery to be referenced by a unique name.
 
-SELECT * FROM table1 AS a
+SELECT a.* FROM table1 AS a
 WHERE a.column < 5
+
+We may also rename columns with alises:
+# mySQL
+SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
+FROM Customers;
+
+# Other
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+FROM Customers;
+
+Or, we may user renaming for multiple tables:
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+
+Aliasing is especially helpful when for some reason we need to join a table to itself. Assume that we have a user account table, and we want to join it with itself:
+
+Me: This implies we want to find the first name whose id is greater than the id if this name I guess!
+SELECT user_account_1.name, user_account_2.name AS name_1
+FROM user_account AS user_account_1
+JOIN user_account AS user_account_2 ON user_account_1.id > user_account_2.id

@@ -6,7 +6,7 @@ If the left and right targets of the join do not have such a constraint, or ther
 >>> print(
 ...     select(address_table.c.email_address).
 ...     select_from(user_table).
-...     join(address_table, user_table.c.id == address_table.c.user_id)
+...     join(address_table, user_table.c.id == address_table.c.user_id) # Second is the ON clause.
 ... )
 
 SELECT address.email_address

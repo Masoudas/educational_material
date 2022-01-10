@@ -1,4 +1,6 @@
 """
+Me: Note that we generally don't want to fetch all the rows of the DB into memory. This is why we prefer to iterate over them. However, we may fetch them all after execution using the 'fetchall' function.
+
 We’ll first illustrate the Result object more closely by making use of the rows we’ve inserted previously, running a textual SELECT statement on the table we’ve created. The object returned is called Result and represents an iterable object of result rows.
 
 >>> with engine.connect() as conn:

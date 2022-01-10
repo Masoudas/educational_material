@@ -1,0 +1,3 @@
+Here's a count querry in mysql:
+
+SELECT COUNT(ProductID) AS NumberOfProducts FROM Products;

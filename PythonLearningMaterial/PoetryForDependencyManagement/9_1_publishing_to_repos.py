@@ -18,5 +18,9 @@ For that, you have to edit your pyproject.toml file, like so
 name = "foo"
 url = "https://foo.bar/simple/"
 
-Of course for this, I shall be using my own private pypi server.
+Now, to build your project, simply do:
+$ poetry build
+
+And then to publish it, simply use:
+$  poetry publish -r foo
 """
