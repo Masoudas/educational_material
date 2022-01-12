@@ -1,0 +1,26 @@
+Because many people are interested in various aspects of UML, different diagrams exist. 
+We have two different sorts of diagram:
+    -   Structrued diagrams:
+    Structure diagrams show the static structure of the system and its parts on different abstraction and implementation levels and how they are related to each other. The elements in a structure diagram represent the meaningful concepts of a system, and may include abstract, real world and implementation concepts, there are seven types of structure diagram as follows:
+        
+        *   Class Diagram
+        *   Component Diagram
+        *   Deployment Diagram
+        *   Object Diagram
+        *   Package Diagram
+        *   Composite Structure Diagram
+        *   Profile Diagram
+
+    -   Behavioral diagrams:
+    Behavior diagrams show the dynamic behavior of the objects in a system, which can be described as a series of changes to the system over time, there are seven types of behavior diagrams as follows:
+
+        *   Use Case Diagram
+        *   Activity Diagram
+        *   State Machine Diagram
+        *   Sequence Diagram
+        *   Communication Diagram
+        *   Interaction Overview Diagram
+        *   Timing Diagram
+
+
+
