@@ -1,7 +1,7 @@
 """
 To add the virtual env to this project, the best way right now it to define its path in 
 
-"python.venvPath"
+"python.defaultInterpreterPath"
 
 vs code settings. To get the path to the environment, recall that we can use:
 
