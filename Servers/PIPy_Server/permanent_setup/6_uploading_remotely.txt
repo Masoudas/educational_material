@@ -1,0 +1,18 @@
+Ok, this is the part which baffled me for a day.
+
+If we check out the urls for an index, we see that:
+$ devpi use sirco/dev
+$ devpi use --urls
+       index: http://192.168.0.8:4040/sirco/dev
+       simpleindex: http://192.168.0.8:4040/sirco/dev/+simple/
+       pypisubmit: http://192.168.0.8:4040/sirco/dev/
+       login: http://192.168.0.8:4040/+login
+/home/sirco/.pip/pip.conf: no config file exists
+~/.pydistutils.cfg     : no config file exists
+~/.buildout/default.cfg: no config file exists
+
+
+We see that to submit packages, we need to use the pypisubmit address. Otherwise, our packages will not be published there. As such, here's an example of how we publish a package using poetry:
+
+$ poetry config repositories.sirco http://192.168.0.8:4040/sirco/dev/
+$ poetry publish -r sirco

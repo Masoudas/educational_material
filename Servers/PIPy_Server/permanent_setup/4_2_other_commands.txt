@@ -1,0 +1,5 @@
+Making an index volatile after it's been created:
+$ devpi index <user>/<index> volatile=True
+
+Deleting a project from a list:
+$devpi remove -y project_name

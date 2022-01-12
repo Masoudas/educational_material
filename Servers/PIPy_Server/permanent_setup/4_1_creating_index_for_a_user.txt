@@ -22,7 +22,7 @@ $ devpi user /sirco/dev
 
 Finally, we must directly add the base to our indexes:
 $ devpi index sirco/prod bases+=root/pypi
-$ devpi index sirco/dev bases+=root/pypi
+$ devpi index sirco/dev bases+=root/pypi 
 
 More about indexes can be found here:
 https://devpi.net/docs/devpi/devpi/stable/+doc/userman/devpi_indices.html#creating-an-index

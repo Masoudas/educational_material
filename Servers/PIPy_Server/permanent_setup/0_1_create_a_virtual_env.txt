@@ -1,0 +1,12 @@
+We assume that we create a folder in the /home/sirco folder/ Question is, should I create a virtual environment for this? The answer is yes, I should.
+
+The only issue how I should activate my environment before calling 'devpi-server' from the service file. The solution is, we can supply that line:
+
+[Service]
+Restart=on-success
+# ExecStart:
+# - shall point to existing devpi-server executable
+# - shall not use the deprecated `--start`. We want the devpi-server to start in foreground
+ExecStart=source /home/sirco/devpi-server/env/bin/activate && /home/sirco/.local/bin/devpi-server -c /home/sirco/devpi-server/devpi-server.yaml
+# set User according to user which is able to run the devpi-server
+User=sirco      # Don't set this to root.
