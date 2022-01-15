@@ -1,4 +1,6 @@
 """
+Me: It's called a Common Table Expression because it defines an expression before defining the querry, which then can be used inside the table. For example below, anon_1 is the expression we define (WITH expression_name AS ...), which then use throught the actuall querry starting from the FROM expression. 
+
 Common Table Expression is pretty much like subquerry, and we need only to use the cte function to get it. However, the resulting expression is quite different from the a subquerry. We see that it introduces a WITH ... AS ... statement for us.
 
 >>> subq = select(

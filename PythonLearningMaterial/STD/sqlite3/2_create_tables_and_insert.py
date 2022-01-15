@@ -3,7 +3,7 @@ Once a connection to the database file is created, create tables inside of that 
 """
 import sqlite3
 
-con = sqlite3.connect(":memory:myDB.db")
+con = sqlite3.connect(":memory:")
 
 cur = con.cursor()
 
