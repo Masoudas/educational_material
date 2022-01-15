@@ -1,0 +1,44 @@
+Me: Here's a question. What does the following expression do:
+
+SELECT table1.id, table2.id 
+    FROM table1, table2 WHERE table1.id == table2.id
+
+Well. It does seem to take only the ids that are equal in both tables. So, how is this any different from a Cartesian product (a join)?
+
+SELECT table1.id, table2.id 
+    FROM table1 JOIN table2 WHERE table1.id == table2.id
+
+Well, I don't the answer to it. It seems that they don't differ.
+
+What's more important to note is that NULL rows don't come in either expression either. This is becuase it's assumed that two Nulls are not equivalent (how could we possibly know that they mean the same thing in a data sense.)
+
+""""""""""""""
+import sqlite3
+
+con = sqlite3.connect(":memory:")
+cur = con.cursor()
+cur.execute("""CREATE TABLE id1
+               (id text, trans text)""")
+cur.execute("""CREATE TABLE id2
+               (id text, trans text)""")
+cur.executemany("INSERT INTO id1 VALUES (?, ?)",
+                [("masoud", "agha"),
+                 ("navid", "yekta"),
+                 (None, None)
+                 ])
+cur.executemany("INSERT INTO id2 VALUES (?, ?)",
+                [("masoud", "agha"),
+                 ("mehdi",  "hekmar"),
+                 (None, None)
+                 ])
+rows = cur.execute(
+    "SELECT id1.id FROM id1").fetchall()
+print("Content of table 1", rows)
+rows = cur.execute(
+    "SELECT id1.id, id2.id FROM id1, id2 WHERE id1.id == id2.id").fetchall()
+print("No join statment", rows)
+
+rows = cur.execute(
+    "SELECT id1.id, id2.id FROM id1 JOIN id2 WHERE id1.id == id2.id").fetchall()
+print("With join statement", rows)
+"""""""""""""""

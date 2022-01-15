@@ -10,3 +10,12 @@ FROM Customers
 GROUP BY Country;
 
 Here, we group consumers based on their country, and then we count them.
+
+## A little note one group by.
+This is me:
+
+Conside we want the count of a table columns. So, this would be for example the count of repetitive ids in a table. I may write a querry like this:
+
+SELECT COUNT(table_id.id) AS count, table_id.id FROM table_id GROUP BY table_id
+
+Why is this the thing we seek? Because SQL (and we a priori!) understand that when we type this querry, we're actually counting the number of ids in THIS table, not the count of id in the original table_id (which is one for each row!) As such, we see that the counts are for this table, where the ids are grouped. Hence, this querry makes sense.

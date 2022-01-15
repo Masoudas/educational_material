@@ -1,0 +1,7 @@
+This is me:
+Subquerries can be formed justlike normal querries, for all intents and purposes, and they're mostly used inside FROM statements.
+
+# Just some nonsensical use of subquerry!
+SELECT subquerry.id FROM 
+SELECT table_id.id FROM table_id GROUP BY table_id.id AS subquerry
+
