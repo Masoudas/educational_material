@@ -1,3 +1,5 @@
+NOTE: Don't use secure copy to copy ssh-keys. For that, use the ssh-copy-id command
+
 To copy a file from the remote machine to the server machine, we can use the scp command:
 
 $ scp path_to_file username@ip_addr:path_in_dest
