@@ -1,0 +1,10 @@
+We first, need to create a new account for gitea, where gitea can have access to. This account must have no passowrd:
+
+$ sudo adduser \
+   --system \
+   --shell /bin/bash \
+   --gecos 'Git Version Control' \
+   --group \
+   --disabled-password \
+   --home /home/git \
+   git

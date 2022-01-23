@@ -1,3 +1,0 @@
-We first, need to create a new account for gitea, where gitea can have access to. This account must have no passowrd:
-
-$ addusr gitea --disabled-password

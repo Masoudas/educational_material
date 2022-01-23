@@ -1,3 +1,5 @@
+For small teams, simply use sqlite.
+
 To create a database and a user for gitea, first log into mysql as root, then ensure to write the local ip whenever creating dbs, or accounts, etc. This may cause problems when sshing to the server.
 
 $ sudo mysql -u root

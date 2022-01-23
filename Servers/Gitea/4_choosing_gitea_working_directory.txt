@@ -1,4 +1,4 @@
-The owrking directory is where all the repos are created.
+The working directory is where all the repos are created.
 
 This is a toughy! On the one hand, I believe we should set this to the homer folder of gitea. However, because we disable the password, then we may have access to it without password.
 

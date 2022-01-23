@@ -1,0 +1,5 @@
+SSL termination means that Nginx will acts as an intermediary point between the Gitea application and web clients so you can access Gitea via HTTPS.
+
+To use Nginx as a reverse proxy , you need to have a domain or subdomain pointing to your server’s public IP. In this example, we will use git.example.com.
+
+First, install Nginx and generate a free Let’s Encrypt SSL certificate, as discussed next.
