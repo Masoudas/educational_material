@@ -1,7 +1,7 @@
 """
 Me: Of course, all of this is possible once the application is setup and properly defined.
 
-As such, we have access to our database as an api. Consider the following chain of commands:
+As such, we have access to our database as an api. Consider the following chain of commands run inside the python shell:
 
 # Import the models we created from our "news" app
 >>> from news.models import Article, Reporter

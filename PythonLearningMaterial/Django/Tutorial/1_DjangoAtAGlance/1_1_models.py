@@ -9,7 +9,7 @@ Now, we can create our databases.
 $ python manage.py makemigrations
 $ python manage.py migrate
 
-The makemigrations command looks at all your available models and creates migrations for whichever tables don’t already exist. migrate runs the migrations and creates tables in your database, as well as optionally providing much richer schema control.
+The makemigrations command looks at all your available models and creates migrations for whichever tables that don’t already exist. migrate runs the migrations and creates tables in your database, as well as optionally providing much richer schema control.
 
 """
 # mysite/news/models
