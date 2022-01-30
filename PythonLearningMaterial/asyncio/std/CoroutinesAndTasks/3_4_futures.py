@@ -18,7 +18,7 @@ A good example of a low-level function that returns a Future object is loop.run_
 
 Me: Notice that even with gather, we have to await the execution of the coroutines inside the async function. So, what if I wanted to execute these two coroutines inside the function, and wait for their response in another place? I'll probably have to use tasks, and await their response there.
 
-Me: Note that gather must wait to gather all the results, but the methods are executed concurrently. As such, whichever method finished first, that's the method whose response we receive first.
+Me: Note that gather must wait to gather all the results, but the methods are executed concurrently. As such, whichever method finishes first, that's the method whose response we receive first.
 """
 # This is my example:
 import asyncio

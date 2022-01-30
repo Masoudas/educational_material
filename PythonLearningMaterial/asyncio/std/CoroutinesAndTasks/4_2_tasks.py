@@ -18,11 +18,6 @@ task = asyncio.create_task(coro())
 
 # This works in all Python versions but is less readable
 task = asyncio.ensure_future(coro())
-<<<<<<< HEAD
-
-https://docs.python.org/3/library/asyncio-task.html
-=======
->>>>>>> 070fb1dbef83abbaf47f50f083f3ab7b474f1a22
 """
 # The example is all me:
 import asyncio
