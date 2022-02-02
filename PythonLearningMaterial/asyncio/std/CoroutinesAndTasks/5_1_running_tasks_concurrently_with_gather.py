@@ -13,6 +13,8 @@ If gather() is cancelled, all submitted awaitables (that have not completed yet)
 If any Task or Future from the aws sequence is cancelled, it is treated as if it raised CancelledError – the gather() call is not cancelled in this case. This is to prevent the cancellation of one submitted Task/Future to cause other Tasks/Futures to be cancelled.
 
 Note: Deprecated since version 3.8, removed in version 3.10: The loop parameter. This function has been implicitly getting the current running loop since 3.7. See What’s New in 3.10’s Removed section for more information.
+
+ME: I think the fact that gather does not have to be awaited now (it can be run synchronously and we wait for it) is what's deprecated.
 """
 import asyncio
 
