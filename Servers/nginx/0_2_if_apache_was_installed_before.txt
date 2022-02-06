@@ -1,0 +1,1 @@
+If apache is installed before, then the html page in /var/www/html/index.html will be the default page of apache that will be shown. Remove it, and you shall see the nginx default page.

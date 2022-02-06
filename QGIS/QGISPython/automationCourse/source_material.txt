@@ -1,0 +1,2 @@
+The course material is taken from 
+https://automating-gis-processes.github.io/

@@ -1,0 +1,3 @@
+"""
+Shapefile: a vector data format for storing location information and related attributes. A shapefile consist of several files with a common prefix that need to be stored in the same directory. .shp, shx and .dbf are required file extensions in a shapefile. Other file extensions are not required, but for example the file extension .prj is often essential. More information about Shapefile file extensions in here. The shapefile format is developed by ESRI.
+"""

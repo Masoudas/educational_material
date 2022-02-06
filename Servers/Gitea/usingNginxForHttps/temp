@@ -1,0 +1,160 @@
+#!/bin/bash
+#this script sets up a git user, installs gitea, a systemd service, and an nginx subdomain redirect
+#inspired by https://golb.hplar.ch/2018/06/self-hosted-git-server.html
+DOMAIN=EXAMPLE.COM #Please put your actual domain here 
+GIT_HOME=/opt/git  #/home/git in the above tutorial
+GITEA_PORT=3000 #default, but you can change it
+
+if [[ $EUID -ne 0 ]]; then
+    echo "you need to be root"
+    exit 1
+fi
+
+function fatal() {
+    echo "$@" && exit 1
+}
+function binary_exists() {
+    if [[ $(which "$1") ]]; then return; else fatal "You need to install $1"; fi
+}
+
+function check_for_binaries() {
+    #Advise user to install binaries needed for this script
+    binaries=(adduser mkdir chown wget elinks grep sed systemctl ln mv echo cat fzf nginx sqlite3)
+    for binary in "${binaries[@]}"; do
+        binary_exists "$binary"
+    done
+}
+
+function setup_user() {
+    #adds a user, sets a home, and creates necessary directories
+    adduser --system --shell /bin/bash --gecos 'Gitea user' --group --disabled-password --home "$GIT_HOME" git
+    mkdir -p "$GIT_HOME"/gitea/{custom,data,indexers,public,log}
+    mkdir -p "$GIT_HOME"/gitea/custom/conf
+    chown git:git "$GIT_HOME"/gitea/{custom,data,indexers,public,log}
+    chown git:git "$GIT_HOME"/
+    chmod 750 "$GIT_HOME"/gitea/{custom,data,indexers,public,log}
+    chown git:git "$GIT_HOME"/gitea
+}
+
+function get_gitea_binary() {
+    #This uses wget and elinks to parse a website, and fzf to provide choices
+    #fzf is a fuzzy finder, so either type to find your version, or
+    #Use the arrow keys to navigate, press enter to confirm selection
+    cd "$GIT_HOME"/gitea || fatal "$GIT_HOME/gitea does not exist"
+    ALL_VERSIONS=$(wget -q -O- https://dl.gitea.io/gitea/ | elinks | grep "file:///" | sed "s|^.*file:///||g" | grep 'gitea/')
+    CHOSEN_VERSION=$(echo "$ALL_VERSIONS" | fzf --reverse --prompt "Choose a version of gitea to install")
+    ACTUAL_VERSION=$(wget -q -O- https://dl.gitea.io/"$CHOSEN_VERSION" | elinks |grep -vE 'sha256|asc|exe|docs|xz' | grep file | sed "s|^.*file:///||g" | grep 'gitea/')
+    REAL_FILE=$(echo "$ACTUAL_VERSION" | fzf --reverse --prompt "Choose your current architecture")
+    echo "Getting version:  $REAL_FILE"
+    wget https://dl.gitea.io/"$REAL_FILE" -O gitea
+    chmod +x gitea
+    #get the example ini
+    wget https://raw.githubusercontent.com/go-gitea/gitea/master/custom/conf/app.example.ini -O "$GIT_HOME"/gitea/custom/conf/app.ini
+    chown git:git "$GIT_HOME"/gitea/custom/conf/app.ini
+    sed -i "s|^HTTP_PORT.*|HTTP_PORT = $GITEA_PORT|g" "$GIT_HOME"/gitea/custom/conf/app.ini
+}
+
+function setup_systemd() {
+    #Gets and modifies a systemd service script to work in $GIT_HOME and always restart
+    cd "$GIT_HOME"/gitea || fatal "$GIT_HOME/gitea does not exist"
+    wget https://raw.githubusercontent.com/go-gitea/gitea/master/contrib/systemd/gitea.service
+    sed -i "s|^WorkingDirectory=.*|WorkingDirectory=$GIT_HOME/gitea/|g" gitea.service
+    sed -i "s|^ExecStart=/.*|ExecStart=$GIT_HOME/gitea/gitea web -c $GIT_HOME/gitea/custom/conf/app.ini|g" gitea.service
+    sed -i "s|^Restart=.*|Restart=always|g" gitea.service
+    sed -i "s|^Environment=USER=.*|Environment=USER=git HOME=$GIT_HOME GITEA_WORK_DIR=$GIT_HOME/gitea|g" gitea.service
+    #assumes debian:
+    ln -s "$GIT_HOME"/gitea/gitea.service /etc/systemd/system/gitea.service || fatal "Can't symlink to /etc/systemd/system/"
+    systemctl daemon-reload
+    systemctl start gitea
+}
+
+100.79.5.233	
+
+function setup_nginx() {
+    #Creates a conf for reverse proxying git.$DOMAIN to local gitea server
+    cd /etc/nginx/conf.d || fatal "/etc/nginx/conf.d does not exist"
+    #Be safe and clear the file
+    echo -ne > git.conf
+    cat >> git.conf << EOF
+server {
+    listen 80;
+    listen [::]:80;
+    server_name git.$DOMAIN;
+    client_max_body_size 500m;
+    location / {
+        proxy_pass http://localhost:$GITEA_PORT;
+    }
+}
+EOF
+    ln -s /etc/nginx/sites-available/git.conf /etc/nginx/sites-enabled/git.conf
+    systemctl restart nginx
+}
+
+function update_gitea() {
+    #Get new gitea binary and move current to gitea.old
+    systemctl stop gitea
+    cd "$GIT_HOME"/gitea || fatal "$GIT_HOME/gitea does not exist"
+    rm -rf gitea.old
+    mv gitea gitea.old
+    git_binary
+    chmod +x gitea
+    systemctl start gitea
+}
+
+function setup_nginx_https() {
+    #This sets up subdomain on your nginx to be forwarded to SSL
+    #Presumes you have added the subdomain to your DNS setting
+    #And it has propogated through the DNS resolvers
+
+    #sed -i "s|^PROTOCOL.*|PROTOCOL = https|g" "$GIT_HOME"/gitea/custom/conf/app.ini
+    #do we need to add the domain if we're proxy passing?
+    #sed -i "s|^DOMAIN.*|DOMAIN = $DOMAIN|g" "$GIT_HOME"/gitea/custom/conf/app.ini
+    cd /etc/nginx/conf.d || fatal "/etc/nginx/conf.d does not exist"
+    echo -ne > git.conf
+    cat >> git.conf << EOF
+server {
+    listen 80;
+    listen [::]:80;
+    server_name git.$DOMAIN;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl http2;
+    server_name git.$DOMAIN;
+    ssl_certificate         /etc/letsencrypt/live/$DOMAIN/fullchain.pem;
+    ssl_certificate_key     /etc/letsencrypt/live/$DOMAIN/privkey.pem;
+    include                 /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam             /etc/letsencrypt/ssl-dhparams.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/$DOMAIN/chain.pem;
+ 
+    client_max_body_size 500m;
+    location / {
+        proxy_pass              http://localhost:$GITEA_PORT;
+        proxy_set_header        Host $host;
+        proxy_set_header        X-Real-IP $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header        X-Forwarded-Proto $scheme;
+        proxy_set_header        X-Forwarded-Protocol $scheme;
+        proxy_set_header        X-Forwarded-Host $http_host;
+    }
+}
+EOF
+    #add --expand to make this automatic, no prompt
+    certbot --nginx --cert-name "$DOMAIN" -d "$DOMAIN" -d git."$DOMAIN"
+}
+
+check_for_binaries && echo "Found all necessary binaries"
+echo "Setting up user git in $GIT_HOME"
+setup_user
+get_gitea_binary
+echo "Setting up systemd service file"
+setup_systemd
+echo "Configuring nginx reverse proxy for git.$DOMAIN"
+setup_nginx
+
+#Untested code below, don't run it yet!
+#DO_SSL=$(echo -ne "No\nYes\n"  | fzf --reverse  --prompt "Do you want enable SSL for gitea and nginx?")
+#if [[ $DO_SSL == 'Yes' ]]; then
+#    binary_exists "certbot"
+#    setup_nginx_https
+#fi

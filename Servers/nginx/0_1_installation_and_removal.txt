@@ -1,0 +1,9 @@
+To fully remove, use:
+
+$ sudo apt-get purge nginx nginx-common nginx-full
+
+If the above does not work, try:
+$ sudo dpkg --force-confmiss -i /var/cache/apt/archives/nginx-common_*.deb 
+
+Then for installation, do:
+$ sudo apt-get install nginx
