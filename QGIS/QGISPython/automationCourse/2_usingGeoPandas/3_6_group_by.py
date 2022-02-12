@@ -13,7 +13,7 @@ unique_keys = data["TZID"].unique()
 grouped_df = data.groupby(by="TZID")
 
 print(unique_keys)
-# Another way of getting the keys. Note that this is the keys method of dictionary
+# Another way of getting the keys. Note that this is the keys method of a dictionary
 print(grouped_df.groups.keys())
 
 # Print the dataframe that corresponds to one of the groups.

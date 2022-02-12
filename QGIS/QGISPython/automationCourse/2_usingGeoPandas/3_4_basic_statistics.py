@@ -1,4 +1,3 @@
-from shapely.geometry import Polygon
 import geopandas as gpd
 
 # Importing the shape file

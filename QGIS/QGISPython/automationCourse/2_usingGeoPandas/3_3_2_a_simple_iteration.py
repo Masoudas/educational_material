@@ -11,5 +11,6 @@ data = gpd.read_file(
 for index, row in data[0:5].iterrows():
     print(row['geometry'])
 
-    polygon = Polygon(row['geometry'])
-    print(row['geometry'].area)
+    # Alternatively
+    #polygon = Polygon(row['geometry'])
+    # print(row['geometry'].area)
