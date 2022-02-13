@@ -11,4 +11,6 @@ Other interesting libraries for creating interactive visualizations from spatial
 We can also convert maptlotlib plots directly to interactive web maps using mllpleaflet. All you need to do is to:
     -   visualize your data using matplotlib (or geopandas plot())
     -   convert the plot into a webmap using mplleaflet
+
+Me: Well, mplleaflet has some compatibility issues with matplotlib. As such, I skipped to Bokeh, which is seem to work fine, and is compatible with webbrowsers.
 """
