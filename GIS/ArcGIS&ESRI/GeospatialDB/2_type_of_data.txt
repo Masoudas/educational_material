@@ -1,0 +1,5 @@
+Geodatabase storage includes both the schema and the rule base for each geographic dataset plus simple, tabular storage of the spatial and attribute data.
+
+The geodatabase schema includes the definitions, integrity rules, and behavior for each geographic dataset. These include properties for feature classes, topologies, networks, raster catalogs, relationships, domains, and so forth. The schema is persisted in a collection of geodatabase meta tables in the database that defines the integrity and behavior of the geographic information.
+
+ME: These tables are prepended with the name GDB.

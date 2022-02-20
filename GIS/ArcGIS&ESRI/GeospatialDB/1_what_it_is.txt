@@ -1,0 +1,3 @@
+This is the database used for handling geospatial databases. The enginte that is used is a normal database (for example Postgres, SQlite, etc.,) but it's just that the tables are special, and indexes are made, etc.
+
+The docs are at: https://desktop.arcgis.com/en/arcmap/latest/manage-data/gdb-architecture/the-geodatabase-is-object-relational.htm
