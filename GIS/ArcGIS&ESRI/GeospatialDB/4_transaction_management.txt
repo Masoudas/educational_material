@@ -1,0 +1,17 @@
+Transactions are packages of work that make changes to databases. Geographic information system (GIS) databases, like other database applications, must support update transactions that enforce data integrity and application behavior. In many cases, you can use the database management system's transaction framework for managing edits and updates to geodatabases.
+
+However, GIS users universally also have some specialized transactional requirements. For example:
+
+    -   Often, multiple records are updated in unison as a single transaction.
+    -   Numerous transactions must span long periods of time (sometimes days and months, not just seconds or minutes).
+
+Additionally, editors need to be able to undo and redo changes. Editing sessions can span several hours or even days. Often, the edits must be performed in a system that is disconnected from the central, shared database.
+
+Because GIS workflow processes may span days or months, the GIS database must remain continuously available for daily operations, where each person connecting to the data might have a personal view or state of the shared GIS database. In a multiuser database, the GIS transactions must be managed on the database management system's short transaction framework. The geodatabase plays a key role during these operations by managing the high-level, complex GIS transactions on the database management system transaction framework.
+
+In many cases, long transaction workflows are critical to a GIS. In most instances, these are made possible through the use of an enterprise geodatabase and ArcGIS to manage updates to the central GIS database using versioning, which you can read more about below.
+
+The following are examples of GIS data compilation workflows that require a version-based transaction model:
+
+
+Versioned geodatabases and datasets are used to manage long transactions in each database management system by leveraging the database's short transaction framework.

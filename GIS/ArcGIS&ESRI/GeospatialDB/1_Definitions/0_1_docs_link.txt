@@ -1,0 +1,1 @@
+See https://pro.arcgis.com/en/pro-app/2.9/help/data/geodatabases/overview/what-is-a-geodatabase-.htm

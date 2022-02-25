@@ -1,1 +1,35 @@
-Here's an example of a GIS database that we took from Khorasan's power distribution company. 
+Here's an example of a GIS database that we took from Khorasan's power distribution company (call it GIS.gdb, which essentially was a geospatial database that ends in gdb).
+
+We want to discuss what the following tables contain:
+
+# Metadata of the geospatial database.
+GDB_ColumnRegistry
+GDB_ItemRelationshipTypes
+GDB_ItemRelationships
+GDB_ItemTypes
+GDB_Items
+GDB_Layers
+GDB_Locators
+GDB_Metadata
+GDB_ReplicaLog
+GDB_RowidGenerators
+GDB_ServiceItems
+GDB_TableRegistry
+GDB_TablesModified
+GDB_Tables_Last_Modified
+GDB_Version
+
+# The actual layers that we defined
+lyr_a_meter
+lyr_auto_booster
+lyr_auto_switch
+...
+lyr_v_meter
+
+# Indexers, which are like the normal indexers in normal databases.
+sqlite_sequence
+st_aux_spatial_reference_systems
+st_geometry_columns
+st_spatial_reference_systems
+...
+st_vtspindex_interface

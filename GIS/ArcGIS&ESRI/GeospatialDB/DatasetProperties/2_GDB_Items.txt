@@ -1,0 +1,24 @@
+A geodatabase is a container of spatial and nonspatial items. These items include tabular datasets, such as feature classes and tables; dataset containers, such as feature datasets and topologies; datasets that control more advanced geodatabase behavior; and other items such as domains, toolboxes, and workspace extensions. All these items are stored within the geodatabase in the GDB_Items table, where each item is stored as a single row.
+
+The following seven attributes of an item are the ones you are most likely to access using SQL:
+
+    -   UUID: A unique identifier for the item
+    -   Name: The name of the item. Be aware that an item's name is not guaranteed to be unique; for example, a relationship class and feature class can have the same name. However, it is not recommended that you give items the same name, since item names should be descriptive enough to differentiate what the item contains.
+
+    -   Type: A UUID representing the type of item in the record; this corresponds with the unique identifier.
+    -   Definition: An XML document that defines the properties of an item; these properties and the XML schema vary based on item type. For example, the definition of an object class contains information such as subtypes, whereas the definition of a coded value domain contains code and value pairs, and the definition of a relationship class contains (among other things) relationship rules.
+    -   Documentation: An XML document storing the item's metadata
+    -   Properties: An integer value that can be used with bitmasks to retrieve several Boolean properties of the item. Currently, this is only used to indicate whether an item is visible in ArcGIS Desktop.
+    -   Shape: The extent of the dataset as a polygon if applicable (the data type depends on the underlying database management system).
+
+The attributes in the next list store information from an item's definition (such as a feature class's geometry type), which are duplicated outside the XML Definition to allow more efficient browsing of the geodatabase. Examples of these are the Dataset Subtype and Dataset Info properties. The codes for these attributes depend on the item's type. These attributes are described as follows:
+
+    -   Physical Name: The fully qualified name of the item
+    -   DatasetSubtype1: For feature classes and raster catalogs, DatasetSubtype1 stores the feature type of the table. For topologies, the topology ID is stored.
+    -   DatasetSubtype2: For feature classes and raster catalogs, DatasetSubtype2 stores the geometry type. For relationship classes, it stores a value indicating whether the relationship is attributed or nonattributed.
+    -   DatasetInfo1: Stores the name of the shape field for feature class items
+    -   DatasetInfo2: Stores information for feature classes that participate in topologies
+    -   Path: The unique relative path to the item
+    -   URL: The associated URL for the item; used with catalog services
+    -   Defaults: Item metadata; not used directly by the geodatabases, but used by other clients
+    -   ItemInfo: Storage information for the item, such as symbology, that is independent of the underlying dataset

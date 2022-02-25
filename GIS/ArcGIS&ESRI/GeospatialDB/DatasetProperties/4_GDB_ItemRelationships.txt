@@ -1,0 +1,15 @@
+Nearly all geodatabase items have relationships with at least one other geodatabase item. For example, a stand-alone table is related to the root folder of the geodatabase, a domain is related to the feature classes or tables that rely on it for validation, and feature classes are related to the topology in which they participate. The GDB_ItemRelationships table is used to track these relationships.
+
+Item relationships have the following attributes:
+You would likely only access the first five attributes using SQL.
+
+    -   UUID: A unique identifier of an item relationship
+    -   Type: A UUID representing the relationship's type; corresponds with the unique identifier of the item relationship's type
+    -   OriginID: The unique identifier of the relationship's origin item
+    -   DestinationID: The unique identifier of the relationship's destination item
+    -   Attributes: An XML document containing detailed information about the item relationship
+Many relationship types do not include attributes; they are only used in relationships between controller datasets and their controlled datasets.
+
+
+    -   ObjectID: Unique identifier
+    -   Properties: An integer value that can be used with bitmasks to retrieve several Boolean properties of the item. Currently, this is only used to indicate whether the items participating in the relationship are visible in an ArcGIS client.

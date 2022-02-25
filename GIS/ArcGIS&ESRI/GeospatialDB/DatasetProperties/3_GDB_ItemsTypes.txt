@@ -1,0 +1,12 @@
+The GDB_ItemTypes table contains a predefined set of recognized item types in the geodatabase. Item types are used to normalize the GDB_Items table (the type of an item in the GDB_Items table is represented as a UUID), to provide better support for future geodatabase functionality enhancements and define a type hierarchy. All parent types are abstract; therefore, parent items are not stored directly in the GDB_Items table.
+
+The contents of the GDB_ItemTypes table are not modified as items are created or deleted.
+
+An item type has the following attributes:
+
+    -   UUID: A unique identifier of an item type and the foreign key to the GDB_Item table's type column
+    -   ParentTypeID: The item type's parent type
+    In the case of the abstract item type (which has no parent), this is a null UUID.
+
+    -   Name: The name of an item type such as Feature Class or Range Domain
+    -   ObjectID: The unique identifier for the GDB_ItemTypes table

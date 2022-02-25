@@ -1,0 +1,10 @@
+An ObjectID is a unique, not null integer field used to uniquely identify rows in tables in a geodatabase. ObjectIDs are limited to 32-bit values, which store a maximum value of 2,147,483,647.
+
+Tables that are created through ArcGIS, or created outside ArcGIS then registered with the geodatabase, automatically have an ObjectID field added to them. The values in this field are maintained by ArcGIS. The ObjectID is used by ArcGIS to do such things as scroll, display selection sets, and perform identify operations on features.
+
+    -   When is an ObjectID added to a table?
+There are several ways an ObjectID is added to a table:
+
+    -   An ArcGIS-maintained ObjectID field is automatically added to any table created using ArcGIS.
+    -   If you register a table with the geodatabase that does not have a qualifying field, the geodatabase adds another field to the table that meets the requirements of an ObjectID and names it OBJECTID. If your table already contains a column that is named OBJECTID, the geodatabase adds a column named OBJECTID_1.
+    -   If you register a table with the geodatabase and the table does contain a qualifying field (integer, not null), the existing column can be used as the ObjectID.

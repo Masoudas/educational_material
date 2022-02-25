@@ -1,0 +1,16 @@
+    -   Tables
+
+Geodatabase storage in a database contains two types of tables—dataset tables (user-defined tables) and system tables.
+
+    -   Dataset tables—Each dataset in the geodatabase is stored in one or more tables. The dataset tables work with the system tables to manage data.
+    -   System tables—The geodatabase system tables keep track of the contents of each geodatabase. They essentially describe the geodatabase schema that specifies all dataset definitions, rules, and relationships. These system tables contain and manage all the metadata required to implement geodatabase properties, data validation rules, and behaviors.
+
+For example, a simple feature class stored in a geodatabase within a SQL Server database using binary geometry storage is made up of a business table, an associated feature (f) table, and a spatial index (s) table. These tables work with a set of system tables: the i table, the gdb_items, sde_table_registry, sde_layers, and sde_spatial_references system tables. These are used to track information about the feature class.
+
+Each DBMS has a slight variation in the set of tables and columns used to store and manage a geodatabase. The type of DBMS you are using to store your geodatabase impacts the physical storage schema.
+
+    -   Additional files
+
+Geodatabases also use triggers, functions, stored procedures, and user-defined types in the database to implement functionality and maintain consistency. A detailed discussion of these is not necessary, since you would not need to interact with most of these database objects.
+
+If you are interested in accessing the information in your geodatabase using SQL, see SQL and enterprise geodatabases to get started.

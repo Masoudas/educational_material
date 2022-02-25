@@ -3,3 +3,22 @@ Geodatabase storage includes both the schema and the rule base for each geograph
 The geodatabase schema includes the definitions, integrity rules, and behavior for each geographic dataset. These include properties for feature classes, topologies, networks, raster catalogs, relationships, domains, and so forth. The schema is persisted in a collection of geodatabase meta tables in the database that defines the integrity and behavior of the geographic information.
 
 ME: These tables are prepended with the name GDB.
+
+The spatial representations are most commonly stored as either vector features or raster datasets along with traditional tabular attributes. For example, a database table can be used to store a feature class where each row in the table represents a feature. A shape column in each row is used to hold the geometry or shape of the feature. The shape column holding the geometry is typically one of two column types:
+
+    -   A binary large object (BLOB) column type
+    -   A spatial column type, if the database management system supports it
+
+A homogeneous collection of common features, each having the same spatial representation, such as a point, line, or polygon, and a common set of attribute columns, is referred to as a feature class and is managed in a single table.
+
+Raster and imagery data types can be managed and stored in relational tables as well. Raster data is typically much larger in size and requires a side table for storage. For database storage and access, each raster is cut into smaller pieces, or blocks, and stored in individual rows in the separate block table.
+
+The column types that hold the vector and raster geometry can vary from database to database. Recently, most database management systems have added support for spatial type extensions, and the geodatabase can readily use them to hold the spatial geometry. Esri was closely involved in efforts to extend Structured Query Language (SQL) for spatial types as the primary author of the SQL/MM Part 3 Spatial and the Open Geospatial Consortium, Inc. (OGC) Simple Features SQL specifications. Esri has focused on support for these types, as well as the independent Oracle Spatial, PostGIS (in PostgreSQL), and Microsoft SQL Server spatial types, in the persistence of geodatabases using DBMS standards.
+
+The following database management systems include spatial type support for geodatabases:
+
+    -   Oracle using the ST_Geometry or, optionally, the Oracle Spatial type
+    -   IBM Db2 using the Spatial Extender Geometry Object (ST_Geometry)
+    -   Informix using the Spatial DataBlade Geometry Object (ST_Geometry)
+    -   PostgreSQL using the ST_Geometry or PostGIS geometry or geography
+    -   Microsoft SQL Server using Microsoft spatial types, geometry and geography

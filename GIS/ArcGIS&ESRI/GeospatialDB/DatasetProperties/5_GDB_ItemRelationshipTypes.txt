@@ -1,0 +1,11 @@
+In the same way that a static collection of item types is used to classify items, a static collection of item relationship types is used to classify item relationships. For example, DatasetInFeatureDataset—which indicates that a feature class, relationship class, or controller dataset exists inside of a feature dataset—and DomainInDataset—which indicates that a dataset uses a domain for class-level or subtype-level validation—are two types of item relationships. Unlike item types, item relationship types do not have a hierarchy concept with parent and child types.
+
+Item relationship types have the following attributes:
+
+    -   UUID: A unique identifier of an item relationship type and the primary key for the item relationship table's type column
+    -   Name: The name of the item relationship type, such as DatasetInFolder
+    -   Forward Label: A description of the relationship from the context of the origin item
+    -   Backward Label: A description of the relationship from the context of the destination item
+    -   Origin Item Type ID: The UUID of the item type that can act as the origin item in item relationships of this type
+    -   Destination Item Type ID: The UUID of the item type that can act as the destination item in item relationships of this type
+    -   Is Containment: Indicates whether the destination item can exist even if the origin item is deleted

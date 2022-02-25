@@ -1,0 +1,7 @@
+A spatial reference identifier (SRID) is a unique identifier associated with a specific coordinate system, tolerance, and resolution.
+
+How the SRID is populated or what it represents can vary depending on what database you use to store your data. There are various recognized standard SRIDs, such as those defined by the European Petroleum Survey Group (EPSG). Some databases and spatial types, such as PostGIS geometry and geography in PostgreSQL or the geography type in Microsoft SQL Server, use a predefined subset of EPSG codes, and only spatial references with those SRIDs can be used. Others, such as the ST_Geometry type in Oracle, PostgreSQL, IBM Db2, and IBM Informix, can use spatial references that have SRIDs defined by Esri.
+
+    -   How SRIDs are used in ArcGIS
+The following table lists what SRID is used in the target PostgreSQL, Oracle, or SQL Server database when importing or pasting spatial data. The words known or unknown indicate whether the spatial reference in the source data can be mapped to an existing spatial reference in the target database (see https://desktop.arcgis.com/en/arcmap/latest/manage-data/using-sql-with-gdbs/what-is-an-srid.htm).
+

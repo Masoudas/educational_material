@@ -1,0 +1,41 @@
+The best way to see how the system tables that track geodatabase functionality work together is to examine them using SQL. Select all rows and columns from the GDB_Items table to see its contents.
+
+The values in the Type column are stored as UUIDs, which are related to the UUID column in the GDB_ItemTypes table. Therefore, you can return the item type for each item using a SQL query similar to the following:
+
+SELECT gdb_items.UUID, gdb_itemtypes.name AS "Type", gdb_items.name
+   FROM gdb_items INNER JOIN gdb_itemtypes
+   ON gdb_items.type = gdb_itemtypes.UUID;
+
+UUID	                                Type	            Name
+DF7A67CF-D8B2-461C-A4BF-74AF52AF2BD3    Folder
+
+5E53E5C2-874E-4538-A6AB-1F0BBCABA885    Workspace           Workspace
+
+2AC65400-919D-4241-A1A5-83C219A8ACD0    Coded Value Domain  Material
+
+897D8FA2-BE31-4A5D-94A5-B93A32BF2146    Coded Value Domain  DitDiam
+
+B75E3FDF-F864-4FA1-A31A-A56716BBDEA7    Range Domain        RotAngle
+
+
+Similarly, the GDB_ItemRelationships table contains UUIDs that are key values from other tables. Each relationship contains two of the UUID values seen in the GDB_Items table above: one for the relationship's destination item and one for its origin item. To resolve these to human-readable strings, you must join the GDB_ItemRelationships table to the GDB_Items table twice. To see the relationship type, include a join with the GDB_ItemRelationshipTypes table, as shown in the following SQL examples:
+
+--SQL Server and PostgreSQL query
+SELECT reltypes.name AS type,
+   origin_items.name AS "Origin Name", dest_items.name AS "Dest Name"
+FROM gdb_items AS origin_items,
+   gdb_itemrelationships AS relationships,
+   gdb_items AS dest_items,
+   gdb_itemrelationshiptypes AS reltypes
+WHERE
+   origin_items.UUID = relationships.originid AND
+   dest_items.UUID = relationships.destid AND
+   relationships.type = reltypes.UUID;
+
+type	                     Origin Name	             Dest  Name
+DatasetInFeatureDataset   County.PW.Cadastre        County.PW.PrivRdName   
+DatasetInFeatureDataset   County.PW.Cadastre        County.PW.TaxParcelNo 
+DomainInDataset           County.PW.PIN             PINB                    
+FeatureClassInTopology  County.PW.Cadastre_Topology County.PW.TaxBlocks
+DatasetsRelatedThrough  County.PW.PIN_Condo         County.PW.PIN_Condo2Parcel
+
