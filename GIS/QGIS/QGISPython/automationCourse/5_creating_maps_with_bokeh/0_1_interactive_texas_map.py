@@ -34,7 +34,7 @@ p = figure(
     title="Texas Unemployment, 2009", tools=TOOLS,
     x_axis_location=None, y_axis_location=None,
     tooltips=[
-        ("Name", "@name"), ("Unemployment rate",
+        ("Name", "@name"), ("Loss percentage",
                             "@rate%"), ("(Long, Lat)", "($x, $y)")
     ])
 p.grid.grid_line_color = None
