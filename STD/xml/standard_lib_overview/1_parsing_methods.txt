@@ -1,0 +1,39 @@
+Several libraries exist that differ in their approach of parsing xml files. Especially, given that large xml
+files require large memories for parsing:
+
+In essence:
+	-	DOM based: Loads the entire object, and as such is fast, but consumes memory.
+	-	Simple API for XML (SAX): Event based and as such is slower (event is raised when reaches the expected
+		element,) but requires less memory.  The SAX model just allows for read-only parsing.
+	-	Streaming API for XML (StAX): On par with SAX. (I guess we can modify with this one!)
+
+The following is the discussion:
+
+	-	DOM (Document Object Model)
+Historically, the first and the most widespread model for parsing XML has been the DOM, or the Document Object 
+Model, originally defined by the World Wide Web Consortium (W3C).
+
+The DOM is arguably the most straightforward and versatile model to use. It defines a handful of standard 
+operations for traversing and modifying document elements arranged in a hierarchy of objects. An abstract 
+representation of the entire document tree is stored in memory, giving you random access to the individual 
+elements.
+
+	-	Simple API for XML (SAX)
+An event-based streaming API that operates sequentially on individual elements rather than the whole tree.
+Elements are processed from top to bottom in the same order they appear in the document. The parser triggers 
+user-defined callbacks to handle specific XML nodes as it finds them in the document. This approach is known 
+as “push” parsing because elements are pushed to your functions by the parser.
+
+SAX also lets you discard elements if you’re not interested in them. This means it has a much lower memory 
+footprint than DOM and can deal with arbitrarily large files, which is great for single-pass processing such as 
+indexing, conversion to other formats, and so on. Not good for random nodes, nested structures, etc.
+
+	-	Streaming API for XML (StAX):
+Although somewhat less popular in Python, this third approach to parsing XML builds on top of SAX. It extends 
+the idea of streaming but uses a “pull” parsing model instead, which gives you more control. You can think of 
+StAX as an iterator advancing a cursor object through an XML document, where custom handlers call the parser 
+on demand and not the other way around.
+
+
+
+

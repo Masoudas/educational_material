@@ -1,0 +1,42 @@
+To install pip, we use the module option of python:
+
+$ python3 -m pip install --user --upgrade pip 	# Only for this user.	Me: The first pip uses the python pip, and the
+																		second installs pip.
+
+Or, we can use the debian package manager to install python3-pip
+
+To create a virtual env, we need to install the virtualenv package:
+
+$ python3 -m pip install --user virtualenv
+
+To create a virtual environment, we now use the venv module:
+
+$ python3 -m venv env_name
+
+%%%%%%%%%%%%%%%%%%
+To activate the environment, use the source command:
+$ source env_path/bin/activate
+
+To check whether we're in the new environnment, check the python interpreter path inside the folder:
+(my_env) $ which python
+env_path/bin/python
+
+to deactivate the environment, use the deactivate command:
+$ deactivate
+
+%%%%%%%%%%%%%%%%%%
+Once the environment is installed, we can use pip to install any packages:
+(env_name) $ pip3 install package
+
+Or, we can be specific about the package version:
+(env_name) $ pip3 install package requests=2.8.2
+(env_name) $ python3 -m pip install requests>=2.0.0,<3.0.0
+
+%%%%%%%%%%%%%%%%%%
+Recall that freeze is related to pip, and not on venv, because it's a property of the pip packages.
+To use the requirements file, we can add the -r option:
+(env_name) $ python3 -m pip install -r requirements.txt
+
+And to freeze the environment, we can use the freeze option:
+(env_name) $ python3 -m pip freeze > requirements.txt
+

@@ -1,0 +1,6 @@
+Because normally we use different sets of packages for development and deployement, we must then create two different requirements file:
+	-	requirements.txt
+	This one is for the deployement mode.
+
+	-	requirements_dev.txt
+	This one is for the development mode, and contains certain packages like test libs, etc.
