@@ -9,10 +9,11 @@ from shapely.geometry import Polygon
 import geopandas as gpd
 
 # Importing the shape file
-data = gpd.read_file(
-    "QGISPython/automationCourse/2_usingGeoPandas/L2_data/Europe_borders.shp")
+data: gpd.GeoDataFrame = gpd.read_file(
+    "QGISPython/automationCourse/railroads north america/ne_10m_railroads_north_america.shp")
 
 # The geometry of objects must always be present
+data.to_csv("frame.csv")
 print(data['geometry'])
 
 # First polygon geometry.
