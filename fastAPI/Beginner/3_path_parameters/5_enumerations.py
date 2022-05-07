@@ -7,7 +7,8 @@ Then create class attributes with fixed values, which will be the available vali
 
 Notice that if we check the docs, we see that the enumeration values appear there, which is very cool!
 
-NOTE: You can return enum members from your path operation, even nested in a JSON body (e.g. a dict.) They will be converted to their corresponding values (strings in this case) before returning them to the client. This is what we've done in the return statement. (Me: And I assume if we do the same with pydantic classes, the same would happen there as well.)
+NOTE: You can return enum members from your path operation, even nested in a JSON body 
+(e.g. a dict.) They will be converted to their corresponding values (strings in this case) before returning them to the client. This is what we've done in the return statement. (Me: And I assume if we do the same with pydantic classes, the same would happen there as well.)
 """
 from enum import Enum
 from fastapi import FastAPI
