@@ -6,7 +6,7 @@ Notice the following queries:
 http://127.0.0.1:8000/items/foo?short=1
 http://127.0.0.1:8000/items/foo?short=true
 
-
+ME: So, what I was thinking about this morning is this. You mustn't check for existence of body params. If they don't have a default value, that means they have to be supplied and if not, then fastapi throws an error message.
 """
 from typing import Optional
 
