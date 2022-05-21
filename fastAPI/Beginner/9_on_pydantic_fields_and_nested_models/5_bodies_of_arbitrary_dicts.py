@@ -1,7 +1,7 @@
 """
 Recall that we may define dicts with arbitrary types as a body parameter. In this case, you would accept any dict as long as it has int keys with float values:
 
-Me: Here's something to think about. Why is this not a query param, but rather a body param? Just because the method is post? So, I added the q parameter to understand why fastapi considers weights to be a body parameter. This is because it's a DICTINARY. We see in the docs that q is considered a query parameter rather.
+Me: Here's something to think about. Why is this not a query param, but rather a body param? Just because the method is post? So, I added the q parameter to understand why fastapi considers weights to be a body parameter. This is because it's a DICTINARY, and if we define dictionary arguments, they're considered body params rather than query params. With all other types, it would be considered a query param (even a list for example.)
 
 Me: So, how can I understand this from the openapi docs? Simple. Notice that it shows both q, and then below it says 'Request body (required)'. Also notice that when sending the request, I have to use quotation marks when creating the json request. That is, I have to say:
 
