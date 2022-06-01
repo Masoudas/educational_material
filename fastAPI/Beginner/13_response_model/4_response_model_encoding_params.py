@@ -3,7 +3,7 @@ Our response model may have default values. For example, if you have models with
 
 You can set the path operation decorator parameter response_model_exclude_unset=True, and those default values won't be included in the response, only the values actually set.
 
-Me: What a weird name for the parameter! Exclude unset implies, I guess, exclude those parameters that are unset and return them as the response.
+Me: Exclude unset actualy excludes those values for which we did not set any data, but have a default value. Notice that we mean those parameters that have default, but are not set when we create the model. Notice that if we set a parameter to another value that's equal to its default, pydantic is smart enough to realize that we're resetting it. Then, it would include that parameter in the response.
 
 So, if you send a request to that path operation for the item with ID foo, the response (not including default values) will be:
 
