@@ -7,4 +7,7 @@ Otherwise, we can drop the uvicorn server:
 
 $ pip install fastapi
 $ pip install uvicorn[standard]
+
+Use the following to install forms:
+$ pip install python-multipart.
 """
