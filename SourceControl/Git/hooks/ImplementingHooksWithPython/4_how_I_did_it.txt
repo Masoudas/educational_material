@@ -1,0 +1,6 @@
+Essentially, I added the file to my .git/hooks folder, with the moment when I wanted the hook to execute. For example, I wanted to print hello world after commit, so I did as follows:
+
+$ cd .git/hooks
+$ vim post-commit
+
+
