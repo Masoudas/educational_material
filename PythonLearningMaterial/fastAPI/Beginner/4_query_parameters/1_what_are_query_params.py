@@ -5,7 +5,7 @@ The query is the set of key-value pairs that go after the ? in a URL, separated 
 
 $ http://127.0.0.1:8000/items/?skip=0&limit=10
 
-Note from me:  The order of parameters is not relevant here.
+Note from me: The order of parameters is not relevant here.
 
 """
 from fastapi import FastAPI

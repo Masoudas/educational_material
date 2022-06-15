@@ -1,0 +1,21 @@
+The default templates directory contains some examples. Each example script ends with the *.example extension. If you remove the extension they become executable git hooks.
+
+Since we are developing using Python lets create a new templates folder. Copy the templates into the python-templates folder.
+
+Erase the contents of the hooks folder, use the gist in this folder (under hook-gist) and extract it into the empty hooks folder.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!/usr/bin/env python
+
+import argparse
+
+def parse_args():
+  pass
+
+def main(args=None):
+  pass
+
+if __name__ == "__main__":
+  args = parse_args()
+  main(args)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,16 @@
+We have two directories that interest us:
+
+The '/usr/share/git-core/templates/' directory on Linux and 'C:/Program Files (x86)/Git/share/git-core/templates/' directory on Windows (Note that on 32bit machines msysGit is installed by default on 'C:/Program Files/…') in which the default hooks are being copied from. If you installed Git using another configuration the installation might reside in a different folder. Adjust the path accordingly.
+
+The '.git/hooks/' directory is the directory in which the hooks templates are being copied to.
+The hooked are being copied from the '[...]/share/git-core/templates/'  directory.  There are other types of templates but they are out of scope for this post.
+
+Note:  If you change the templates directory the hooks directory must be a subdirectory of the templates directory. Do not set the templates directory to the desired hooks directory instead.
+
+To change template directory, use:
+
+$ git config --global init.templatedir /path/to/your/templates/
+
+The global templates directory is exclusively for hook templates. Just as we usually don’t like to use site-packages for Python and therefore we set up a virtualenv for containment of each project/deployment/test suite we don’t want global business logic for our hooks, just framework code.
+
+The .git/hooks/ directory should contain the business logic of the hooks.

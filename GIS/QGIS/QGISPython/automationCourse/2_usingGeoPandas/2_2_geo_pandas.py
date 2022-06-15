@@ -7,9 +7,10 @@ import geopandas as gpd
 
 #!!!! Shape file
 # Read file from Shapefile
-fp = "L2_data/Finland.shp"
-data = gpd.read_file(fp)
+fp = "QGISPython/automationCourse/L2_data/Europe_borders.shp"
+data: gpd.GeoDataFrame = gpd.read_file(fp)
 
+print(data.head())
 
 # Write to Shapefile (just make a copy)
 outfp = "L2_data/Finland_copy.shp"

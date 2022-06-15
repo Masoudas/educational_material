@@ -1,0 +1,9 @@
+You can change the template directory when you git init or git clone using the --template option to the desired templates directory specifically for the newly created repository.
+
+For new repositories open the terminal and type:
+
+$ git init --template=/path/to/your/templates/directory/
+
+For cloned repositories open the terminal and type: 
+
+git clone https://url/to/your/repository --template=/path/to/your/templates/directory/

@@ -14,7 +14,10 @@ Using an option directly from Starlette you can declare a path parameter contain
 You can use it as the following code demonstrates.
 
 NOTE: You could need the parameter to contain /home/johndoe/myfile.txt, with a leading slash (/).
-In that case, the URL would be: /files//home/johndoe/myfile.txt, with a double slash (//) between files and home.
+In that case, the URL would be: /files//home/johndoe/myfile.txt, with a double slash (//) between files and home. 
+
+ME: Example
+http:/files//home/example.txt
 """
 from fastapi import FastAPI
 
