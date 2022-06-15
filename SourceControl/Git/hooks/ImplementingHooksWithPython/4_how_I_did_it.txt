@@ -1,11 +1,14 @@
 Essentially, I added the file to my .git/hooks folder, with the moment when I wanted the hook to execute. For example, I wanted to print hello world after commit, so I did as follows (note that I could have written a bash script as well):
 
+NOTE: The default shebang was:
+#!/usr/bin/env python
+
 $ cd .git/hooks
 $ touch post-commit
 $ chmod +x post-commit  # To make it executable.
 $ vim post-commit
 
-#!/usr/bin/python
+#!/usr/bin/python3  
 
 import argparse
 
