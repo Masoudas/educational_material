@@ -10,4 +10,10 @@ $ pip install uvicorn[standard]
 
 Use the following to install forms:
 $ pip install python-multipart.
+
+Use python-pose for jwt authentication:
+$ pip install "python-jose[cryptography]"
+
+Use passlib for authentication:
+$ pip install "passlib[bcrypt]"
 """
