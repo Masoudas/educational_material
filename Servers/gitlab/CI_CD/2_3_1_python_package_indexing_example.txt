@@ -1,0 +1,65 @@
+NOTE: Once you know it, it all makes sense.
+
+To build our package in the python indexer of gitlab, we use the dind technology. That is, we use the gitlab runner docker image, and we create another docker image in it that it creates a python environment that creates the package for us. This is called dind, or docker in docker technology.
+
+The problem is that sometimes, our projects depend on another projects in the same gitlab instance. To resolve this problem (especially because we're using poetry for package management,) we need to register those repositories, and also tell gitlab to login (to itself) using the user "gitlab-ci-token" and password variable "$CI_JOB_TOKEN", which is what we load when we register the runner. Of course, because we normally register the packages in their own git repos (for example, the build of repositroy 'a' is registered in the api http://$SERVER_IP/api/v4/projects/$CI_PROJECT_ID/packages/pypi, which is the package manager of this project,) we need to register each repository that we import separately. I recommend seeing 2_3_3 on downloading packages from gitlab.
+
+Here's the content of the '.gitlab-ci.yml' file in one look. The aim is to simply build the project, so we're building it: We want to define two stages. One stage is to test the project, and another is to build the project and send it to the indexer. Notice that we're using the indexer inside.
+
+###############################
+# Runner configuration: sudo docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register -n --url http://192.168.0.10/ --registration-token ???? --executor shell --description "Build runner"
+
+default:
+  image: python:3.9 # This is the docker image used as the runner environment (dind)
+
+before_script:
+  - SERVER_IP="5.202.248.81"
+  - pip install poetry
+
+  # Providing credentials to pip to access private GitLab PyPi index.
+  - poetry config repositories.MY_REPOSITROY http://${SERVER_IP}/api/v4/projects/PACKAGE_ID/packages/pypi/simple
+  - poetry config http-basic.MY_REPOSITROY gitlab-ci-token "$CI_JOB_TOKEN"
+
+  - poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi --no-root
+
+stages:
+  - test
+  - build
+
+testing:
+  stage: test
+ 
+  services:
+    - docker:dind
+ 
+  script:
+    - python3 -m unittest discovery -v -s ./src -p "test_*.py" # Running the tests
+
+  # Reporting the artifacts of the test.
+  artifacts:
+    when: always
+    artifacts:
+        when: always
+        reports:
+            junit: report.xml
+        expire_in: 2 weeks
+
+building:
+  stage: build
+
+  services:
+    - docker:dind
+ 
+  needs: [testing] # This could be commented if we want build not to be dependent on test.
+  script:
+    - poetry build
+    - poetry config repositories.gitlab "http://$SERVER_IP/api/v4/projects/$CI_PROJECT_ID/packages/pypi"
+    - poetry config http-basic.gitlab gitlab-ci-token "$CI_JOB_TOKEN"
+    - poetry publish --repository gitlab
+
+###############################
+
+Note the following:
+    -   The image we use for dind is python3.9
+    -   We have a before script to run in the dind, to install poetry. We also define the ip of the internal server.
+    -   We have two stages, test and build. Note that these tage either must be defined the same in the docker runner image using the --tags, or we better leave the tags alone when we're building the docker image.

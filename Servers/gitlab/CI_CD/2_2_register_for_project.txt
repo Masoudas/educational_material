@@ -1,0 +1,17 @@
+Apparently, we tell a specific project to use the runner for building the project. We don't the entire gitlab to use the runner!
+
+To define the runner for a project, open it's repo, then go to CI/CD > specific runner, get the url, and then get the token. In the terminal, run the following command:
+
+NOTE:  Because we're installing the runner in a docker image, we're actually using the terminal of the docker image. Otherwise, we'd be using gitlab-runner like a normal command in the shell.
+
+$ sudo docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register -n --url https://your_gitlab.com --registration-token project_token --executor docker --description "Deployment Runner" --docker-image "docker:stable" --tag-list deployment --docker-privileged
+
+Here are the options:
+    *   -n executes the register command non-interactively (we specify all parameters as command options).
+    *   --url is the GitLab URL you copied from the runners page in GitLab.
+    *   --registration-token is the token you copied from the runners page in GitLab.
+    *   --executor is the executor type. docker executes each CI/CD job in a Docker container (see GitLab’s documentation on executors).
+    *   --description is the runner’s description, which will show up in GitLab.
+    *   --docker-image is the default Docker image to use in CI/CD jobs, if not explicitly specified.
+    *   --tag-list is a list of tags assigned to the runner. Tags can be used in a pipeline configuration to select specific runners for a CI/CD job. The deployment tag will allow you to refer to this specific runner to execute the deployment job.
+    *   --docker-privileged executes the Docker container created for each CI/CD job in privileged mode. A privileged container has access to all devices on the host machine and has nearly the same access to the host as processes running outside containers (see Docker’s documentation about runtime privilege and Linux capabilities). The reason for running in privileged mode is so you can use Docker-in-Docker (dind) to build a Docker image in your CI/CD pipeline. It is good practice to give a container the minimum requirements it needs. For you it is a requirement to run in privileged mode in order to use Docker-in-Docker. Be aware, you registered the runner for this specific project only, where you are in control of the commands being executed in the privileged container.

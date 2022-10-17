@@ -1,0 +1,3 @@
+In many cases, we need to map particular ips to particular domain names. Why? So that we wouldn't have to enter or change the name of ip addresses in our projects for example. Here, we shall implement this.
+
+The source is "https://ubuntu.com/server/docs/service-domain-name-service-dns"

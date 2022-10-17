@@ -1,0 +1,11 @@
+In order to keep track of the environments that will have contact with the SSH private key, you’ll register your server as a GitLab runner.
+
+In your deployment pipeline you want to log in to your server using SSH. To achieve this, you’ll store the SSH private key in a GitLab CI/CD variable. Here the situation changes slightly: You want to grant an autonomous authority (GitLab CI/CD) access to your server to automate the deployment routine. Therefore the private key needs to leave the system it was generated on and be given in trust to GitLab and other involved parties. You never want your private key to enter an environment that is not either controlled or trusted by you.
+
+Besides GitLab, the GitLab runner is yet another system that your private key will enter. For each pipeline, GitLab uses runners to perform the heavy work, that is, execute the jobs you have specified in the CI/CD configuration. That means the deployment job will ultimately be executed on a GitLab runner, hence the private key will be copied to the runner such that it can log in to the server using SSH.
+
+To install the official gitlab runner, use the docker image (of course:)
+
+$ docker run -d --name gitlab-runner --restart always \ -v /srv/gitlab-runner/config:/etc/gitlab-runner \ -v /var/run/docker.sock:/var/run/docker.sock \     gitlab/gitlab-runner:latest
+
+$ docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register

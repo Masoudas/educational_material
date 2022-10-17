@@ -1,0 +1,24 @@
+NOTE: Once you know it, it all makes sense.
+
+To build the image and push it to the registery, we need to create a .gitlab-ci.yml file.
+
+GitLab provides a container registry for each project. You can explore the container registry by going to Packages & Registries > Container Registry in your GitLab project. The final step in your pipeline is to log in to your server, pull the latest Docker image, remove the old container, and start a new container.
+
+Here's the content of the '.gitlab-ci.yml' file in one look. The aim is to simply build the project, so we're building it:
+###################
+publish:
+  image: docker:latest
+  
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t $TAG_COMMIT -t $TAG_LATEST .
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push $TAG_COMMIT
+    - docker push $TAG_LATEST
+###################
+Next, we shall describe each line:
+
+    -   script: Where we actually build the repositry using the latest commit, and then log in and add to the image registery of the gitlab.
+

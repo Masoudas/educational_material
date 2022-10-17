@@ -1,0 +1,9 @@
+SOURCE:
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-continuous-deployment-pipeline-with-gitlab-ci-cd-on-ubuntu-18-04
+
+In this tutorial you’ll build a continuous deployment pipeline with GitLab. You will configure the pipeline to build a Docker image, push it to the GitLab container registry, and deploy it to your server using SSH. The pipeline will run for each commit pushed to the repository.
+
+NOTE: The distinction between building the docker image and sending it to the gitlab repo (its image registery) and then deploying it in the destination machine is crucial here.
+
+QUESTION: I wonder if we build the master branch, or we can build other branches as well.

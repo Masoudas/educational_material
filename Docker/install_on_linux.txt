@@ -1,0 +1,20 @@
+To install docker, we can simply use snap:
+
+$ sudo snap install docker
+
+The problem is that to add the "Pars Iran" docker proxy, we need to tweak the daemon config file. In aptitude versions, this file is in the /etc/docker folder. To find the location of the file in the snap version, we need to see which daeomon file is run for dockerd, for which we do:
+
+$ ps aux | grep dockerd
+.. --config-file=/var/snap/docker/1779/config/daemon.json
+
+Now that we have the path to the daemon.json, we add the pars proxy:
+
+$$$$$$$$$$$
+{
+    "registry-mirrors": ["https://registry.docker.ir"]
+}
+$$$$$$$$$4$
+
+Now, we need to reload the service, and docker as well:
+$ systemctl daemon-reload
+$ systemctl restart docker
