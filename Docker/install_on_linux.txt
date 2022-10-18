@@ -1,8 +1,17 @@
-To install docker, we can simply use snap:
+# Don't use snap to install docker, because we run into several problems!
 
-$ sudo snap install docker
+To install docker, we have to use the binaries as follows:
 
-The problem is that to add the "Pars Iran" docker proxy, we need to tweak the daemon config file. In aptitude versions, this file is in the /etc/docker folder. To find the location of the file in the snap version, we need to see which daeomon file is run for dockerd, for which we do:
+$ wget https://master.dockerproject.org/linux/x86_64/docker.tgz
+$ tar -xf docker.tgz
+$ sudo cp -R ./docker /usr/local/bin
+
+At this point, we need to confing the unit files to run the service of docker. To that end, just copy the service and socket file into /etc/systemd/system. These files are in https://github.com/moby/moby/tree/master/contrib/init/systemd.
+
+Once we do that, enable docker service:
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable docker
+
 
 $ ps aux | grep dockerd
 .. --config-file=/var/snap/docker/1779/config/daemon.json
@@ -17,4 +26,4 @@ $$$$$$$$$4$
 
 Now, we need to reload the service, and docker as well:
 $ systemctl daemon-reload
-$ systemctl restart docker
+$ snap restart docker

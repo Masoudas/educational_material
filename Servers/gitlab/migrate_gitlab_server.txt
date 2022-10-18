@@ -13,5 +13,8 @@ $ docker exec -it GITLAB_DOCKER gitlab-rake gitlab:backup:create
 $$$$$ Restore process
 The backup file must can be found in the backup path, which is defined in the configuration file /etc/gitlab/gitlab.rb by the key gitlab_rails['backup_path'].
 
+NOTE ON SETTING THE PATH: This should not be the path in the host system, because docker image looks for the image in its own file system. It should be the mapped path, meaning the folder in the docker image, which is mapped from the host os! For example, if I have mapped  when creating the image "$GITLAB_HOME/data:/var/opt/gitlab", then the path is "/var/opt/gitlab/data/backups" and not 
+"$GITLAB_HOME/data/backups"
+
 Rerun the gitlab instance. Next, run the following command:
-$ docker exec -it gitlab1083 gitlab-rake gitlab:backup:restore --trace
+$ docker exec -it GITLAB_INSTANCE gitlab-rake gitlab:backup:restore --trace
