@@ -1,0 +1,32 @@
+To clone a repository, we'd work as usual.
+
+The problem, however, shows itself if we try to build our environment, and it depends on other gitlab repos. Now, if we use ssh in the poetry config, and ask to build directly from our git repos, then once again we have no problem. However, if we try to to build using the built packages , then we run into a problem.
+
+To use the built packages, we have to download them from the api of gitlab. So, if we go into the "Packages and Registeries", we find the api link to do so. Say I want to add the dependency on repo "Sample_Python". Then, I should:
+
+1- Add the repo to my pyproject.toml file as follows:
+
+[tool.poetry.dependencies]
+Sample_Python = "^0.3.0.0"
+
+[[tool.poetry.source]]
+name = "Sample_Python"
+url = "http://http://git.sircotech.ir/api/v4/projects/29/packages/pypi/simple"
+
+
+2- The above is not going to work still. Because, we need an access token to access the api. Where do we define the access token? There's a pypoetry configuration file in ~/.config/pypoetry/config.toml and ~/.config/pypoetry/auth.toml. The first one keeps the configuration for http of repos, and the second one the secrets. To add the data to them, we work as follows:
+
+$  poetry config repositories.Sample_Python http://192.168.0.10/api/v4/projects/29/packages/pypi/simple
+$ poetry config http-basic.Sample_Python ${GITLAB_API_USER} ${GITLAB_API_PASSWORD}
+
+Some points here:
+    -   The variables ${GITLAB_API_USER} and ${GITLAB_API_PASSWORD} keep the password to the api token we create in gitlab (in the preferences > tokens).
+    -   The config can be local, by adding the --local to both. The problem is that if we define them locally for the current project, then everytime we we want to add this dependency, we have to do it locally for the new project. This way, we do it globally.
+    -   An issue may occur. Our KDE Wallet removes the password from the rings and keeps it in itself. Hence, we may need to actually manually add this password! Sorry!
+
+3- How about in the CI pipeline? There the job is easier. We simply use the CI/CD tokens. But we need to add the above two lines:
+
+$ poetry config http-basic.pahbar-models gitlab-ci-token "$CI_JOB_TOKEN"
+$ poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi --no-root
+
+Note that these two commands are exactly the ones we use to regiter our built package to the gitlab package indexer.
