@@ -1,0 +1,34 @@
+Essentially, docker compose is going to run a couple of docker commands in an isolated environment.
+Consider the following compose file:
+
+
+################
+version: '3.7'
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+################
+
+Apart from telling docker that this is version 3.7 of our app, we're telling it that the services are 'web', which uses an nginx image, exposes port 8000 of the host system (on 80 of the docker image,) and that we map the volume ./app of our host to "/usr/share/nginx/html". Simple as that our app is orchestrated.
+
+
+Now, to run this application, simply type:
+$ docker compose up -d
+
+We can check our docker compose environment as follows:
+$ docker compose ps
+
+We can also check the logs:
+$ docker compose logs
+
+We also have the following:
+$ docker compose pause
+$ docker compose unpause
+$ docker compose stop
+
+To entirely remove the environment, use:
+$ docker compose down
