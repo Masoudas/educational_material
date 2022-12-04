@@ -1,0 +1,11 @@
+An issue that I had one time was that I wanted to call another microservice from inside my docker ,container. To that end, I had to write "0.0.0.0:8000/microservice/..." inside my docker file. But this immediately raises the question "Does 0.0.0.0 point to my docker container or the host system?"
+
+Naturally, the answer would be the docker container.  But the question remains, can we somehow say to the container that 0.0.0.0 is the host ip?
+
+Solution I:
+The solution when we're about to run the docker container is to use the --network="host" option.
+
+$ sudo docker run --network="host"
+
+Such a container will share the network stack with the docker host and from the container point of view, localhost (or 127.0.0.1) will refer to the docker host. The problem, however, is that any port opened on the container will also be opened on the host (in my particular case, I had port 8001 opened in my app, which implied opening the same port on the host system.)
+

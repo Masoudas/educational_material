@@ -1,0 +1,5 @@
+Simply run:
+
+$ sudo apt list --installed.
+
+Also shows where the package is installed.

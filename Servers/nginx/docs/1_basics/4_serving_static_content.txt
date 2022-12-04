@@ -1,0 +1,30 @@
+ME: i.e, creating an http webserver!
+
+An important web server task is serving out files (such as images or static HTML pages). You will implement an example where, depending on the request, files will be served from different local directories: /data/www (which may contain HTML files) and /data/images (containing images). This will require editing of the configuration file and setting up of a server block inside the http block with two location blocks.
+
+First, create the /data/www directory and put an index.html file with any text content into it and create the /data/images directory and place some images in it.
+
+Next, open the configuration file. The default configuration file already includes several examples of the server block, mostly commented out. For now comment out all such blocks and start a new server block:
+
+Generally, the configuration file may include several server blocks distinguished by ports on which they listen to and by server names. Once nginx decides which server processes a request, it tests the URI specified in the request’s header against the parameters of the location directives defined inside the server block.
+
+The 'location' block specifies the “/” prefix compared with the URI from the request. For matching requests, the URI will be added to the path specified in the root directive, that is, to /data/www, to form the path to the requested file on the local file system. If there are several matching location blocks nginx selects the one with the longest prefix. The location block above provides the shortest prefix, of length one, and so only if all other location blocks fail to provide a match, this block will be used.
+
+ME: I think I get it. For example below, if the URI matches '/images', naturally I don't want to select '/' instead. I have to select '/images/'. This is why matching to the longest request does actually make sense. Note that because we didn't specify a port, this server will listen on port 80.
+
+NOTE: Once created, apply the new configuration as follows:
+$ nginx -s reload
+
+NOTE: In case something does not work as expected, you may try to find out the reason in access.log and error.log files in the directory /usr/local/nginx/logs or /var/log/nginx.
+
+http{
+    server{
+        location / {
+            root /data/www;
+        }
+
+        location /images/{
+            root /data/images
+        }
+    }
+}

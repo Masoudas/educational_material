@@ -1,0 +1,12 @@
+KVM hypervisor enables full virtualisation capabilities. It provides each VM with all typical services of the physical system, including virtual BIOS (basic input/output system) and virtual hardware, such as processor, memory, storage, network cards, etc. As a result, every VM completely simulates a physical machine.
+
+KVM is available as a Linux kernel module. It plugs directly into the kernel’s code and allows it to function as a hypervisor. Every VM runs as a separate Linux process under systemd, with dedicated virtual hardware resources attached.  KVM can only be used on a processor with hardware virtualisation extensions, such as Intel-VT or AMD-V.
+
+#####################################################
+The main benefit of the KVM hypervisor is its native availability on Linux. Since KVM is part of Linux, it installs natively, enabling straightforward user experience and smooth integration. But KVM brings more benefits compared to other virtualisation technologies. Those include:
+
+    -   Performance – One of the main drawbacks of traditional virtualisation technologies is performance degradation compared to physical machines. Since KVM is the type-1 hypervisor, it outperforms all type-2 hypervisors, ensuring near-metal performance. With KVM hypervisor VMs boot fast and achieve desired performance results.
+    -   Scalability – As a Linux kernel module, the KVM hypervisor automatically scales to respond to heavy loads once the number of VMs increases. The KVM hypervisor also enables clustering for thousands of nodes, laying the foundations for cloud infrastructure implementation.
+    -   Security – Since KVM is part of the Linux kernel source code, it benefits from the world’s biggest open source community collaboration, rigorous development and testing process as well as continuous security patching.
+    -   Maturity – KVM was first created in 2006 and has continued to be actively developed since then. It is a 15-year old project, presenting a high level of maturity. More than 1,000 developers around the world have contributed to KVM code.
+    -   Cost-efficiency – Last but not least, the cost is a driving factor for many organisations. Since KVM is open source and available as a Linux kernel module, it comes at zero cost out of the box. Businesses can optionally subscribe to various commercial programmes, such as UA-I (Ubuntu Advantage for Infrastructure) to receive enterprise support for their KVM-based virtualisation or cloud infrastructure.

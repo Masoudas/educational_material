@@ -1,0 +1,7 @@
+A signal may also be sent to nginx processes with the help of Unix tools such as the kill utility. In this case a signal is sent directly to a process with a given process ID. The process ID of the nginx master process is written, by default, to the nginx.pid in the directory /usr/local/nginx/logs or /var/run. For example, if the master process ID is 1628, to send the QUIT signal resulting in nginx’s graceful shutdown, execute:
+
+$ kill -s QUIT 1628
+
+For getting the list of all running nginx processes, the ps utility may be used, for example, in the following way:
+
+ps -ax | grep nginx

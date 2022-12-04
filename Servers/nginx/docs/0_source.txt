@@ -1,0 +1,1 @@
+Everything is taken from "https://nginx.org/en/docs".
