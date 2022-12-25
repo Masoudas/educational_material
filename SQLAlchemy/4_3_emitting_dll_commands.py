@@ -26,9 +26,11 @@ CREATE TABLE address (
 ...
 COMMIT
 
-Me: Do we need to commit with sqlite? No. As the above example shows, the COMMIT is generated automatically for us. But it's not quite clear to me whether this is just for sqlite or not. I do commit anyhow.
+Me: Do we need to commit with sqlite? Yes. We must commit transactions. But note that the create statement from metadata is auto commtted.
 
 Why do we use create all?
 The create process also takes care of emitting CREATE statements in the correct order; above, the FOREIGN KEY constraint is dependent on the user table existing, so the address table is created second. In more complicated dependency scenarios the FOREIGN KEY constraints may also be applied to tables after the fact using ALTER.
+
+Me: Ok. I see the point of creating all the tables using metadata. It takes care of dependencies among the tables. Otherwise, I have to take care of it myself!
 
 """

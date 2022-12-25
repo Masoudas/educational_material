@@ -27,7 +27,7 @@ Me: Recall that sqlite does not require username or password.
 
 Lazy Connecting
 
-The Engine, when first returned by create_engine(), has not actually tried to connect to the database yet (me: Very important to note that unless we connect, no exceptions will be raises); that happens only the first time it is asked to perform a task against the database. This is a software design pattern known as lazy initialization.
+The Engine, when first returned by create_engine(), has not actually tried to connect to the database yet (me: Very important to note that unless we connect, no exceptions will be raised); that happens only the first time it is asked to perform a task against the database. This is a software design pattern known as lazy initialization.
 
 We have also specified a parameter create_engine.echo, which will instruct the Engine to log all of the SQL it emits to a Python logger that will write to standard out. This flag is a shorthand way of setting up Python logging more formally and is useful for experimentation in scripts. Many of the SQL examples will include this SQL logging output beneath a [SQL] link that when clicked, will reveal the full SQL interaction.
 
