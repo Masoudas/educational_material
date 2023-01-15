@@ -1,4 +1,6 @@
 """
+ME: Essentially, we're going to discuss how we can have an engine that creates connections with default isolation_level, but give enough flexibility on connection level, to set different levels there.
+\
 The isolation level may also be set per engine, with a potentially greater level of flexibility, using either the create_engine.execution_options parameter to create_engine() or the Engine.execution_options() method, the latter of which will create a copy of the Engine that shares the dialect and connection pool of the original engine, but has its own per-connection isolation level setting:
 
 from sqlalchemy import create_engine
