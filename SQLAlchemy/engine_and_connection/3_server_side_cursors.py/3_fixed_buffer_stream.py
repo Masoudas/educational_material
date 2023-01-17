@@ -18,5 +18,5 @@ Using this option is equivalent to manually setting the Connection.execution_opt
 
     -   The default partition size used by the Result.partitions() method, if used, will be made equal to this integer size as well.
 
-The above example illustrates the combination of yield_per=100 along with using the Result.partitions() method to run processing on rows in batches that match the size fetched from the server. The use of Result.partitions() is optional, and if the Result is iterated directly, a new batch of rows will be buffered for each 100 rows fetched. Calling a method such as Result.all() should not be used, as this will fully fetch all remaining rows at once and defeat the purpose of using yield_per.
+The above example illustrates the combination of yield_per=100 along with using the Result.partitions() method to run processing on rows in batches that match the size fetched from the server. The use of Result.partitions() is optional, and if the Result is iterated directly, a new batch of rows will be buffered for each 100 rows fetched. Calling a method such as Result.all() should not be used, as this will fully fetch all remaining rows at once and defeat the purpose of using yield_per. 
 """
