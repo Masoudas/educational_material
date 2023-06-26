@@ -1,0 +1,5 @@
+"""
+Sockets and the socket API are used to send messages across a network. They provide a form of inter-process communication (IPC). The network can be a logical, local network to the computer, or one that’s physically connected to an external network, with its own connections to other networks. The obvious example is the Internet, which you connect to via your ISP.
+
+The most common type of socket applications are client-server applications, where one side acts as the server and waits for connections from clients. This is the type of application that you’ll be creating in this tutorial. More specifically, you’ll focus on the socket API for Internet sockets, sometimes called Berkeley or BSD sockets. There are also Unix domain sockets, which can only be used to communicate between processes on the same host.
+"""

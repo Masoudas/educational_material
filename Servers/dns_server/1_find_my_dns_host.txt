@@ -1,0 +1,11 @@
+Say I have a domain name, like sircotech.ir, and I want to figure out my dns host (who's the dns provider for my domain.) All I need to do is to go to who.is, and then type in my domain name, and then I can see it under label server:
+
+domain:		sircotech.ir
+ascii:		sircotech.ir
+nserver:	dns1.mizbanfadns.net
+nserver:	dns2.mizbanfadns.net
+nserver:	dns3.mizbanfadns.net
+nserver:	dns4.mizbanfadns.net
+source:		IRNIC # Filtered
+
+We see that it is `dns1.mizbanfadns.net` (I guess :D)

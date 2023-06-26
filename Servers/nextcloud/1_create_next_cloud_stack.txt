@@ -1,0 +1,1 @@
+Inside portainer, upload the docker compose file in this folder, together with the environment file. Note that in the compose file, we need to change the path for volumes to suitable folders if required.

@@ -1,0 +1,40 @@
+Here's the docker compose. A couple of things must be noted here
+1- There are no networks! Hence, every port has to be mapped manually.
+2- The volumes have to be mapped with absolute path, otherwise they're relative to where portainer runs them, which is not good!
+3- The env file is set to 'stack.env'. This is for portainer to see it. And that we need to load it in portainer as well.
+4- The first user password is "admin@example.com" and "changeme" as password. Change it.
+#################
+version: '3'
+
+volumes:
+  letsencrypt:
+
+services:
+  npm:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    
+    env_file:
+      - stack.env
+    
+    volumes:
+      - /root/nginx-proxy-manager/data:/data
+      - /root/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
+    
+    depends_on:
+      - npm-db
+
+  npm-db:
+    image: 'jc21/mariadb-aria:latest'
+    
+    restart: unless-stopped
+    
+    env_file:
+      - stack.env
+    
+    volumes:
+      - /root/nginx-proxy-manager/data/mysql:/var/lib/mysql

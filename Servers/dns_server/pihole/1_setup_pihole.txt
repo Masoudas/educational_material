@@ -1,0 +1,5 @@
+Pihole is a tool for setting up a local dns server. We need to do a couple of things:
+
+1- Setup the pihole docker image with proper ports.
+2- Define the local dns on the router.
+3- Setup the dns provider as the backup dns providers.

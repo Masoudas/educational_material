@@ -1,0 +1,12 @@
+Sometimes, we want to proxy to a subfolder. For example, for pihole, when the user enters:
+
+https://dns.sircotech.ir  ---> http://192.168.0.8:8100/admin/
+
+This can be done using the location section, by defining a root location for path. In essence, after creating a proxy host:
+
+
+    - On the details tab, enter any ip address and port, it's required for the form but it won't actually be used, so it can be anything
+
+    - On the Custom Locations tab, create a location with `/` as the location path and for the **Forward Hostname / IP** enter `http://192.168.0.8/admin/` making sure you have that trailing slash, it's important. Also, punch in the port.
+
+    - Save, and test.

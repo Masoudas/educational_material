@@ -1,0 +1,7 @@
+Just add the following line to the host systems' crontab, and you're good to go.
+
+$ crontab -e
+
+5 * * * * docker exec -u www-data nextcloud php /var/www/html/cron.php
+
+The job is run every five minutes.

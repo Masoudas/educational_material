@@ -1,0 +1,25 @@
+After the stack is up and running, first open an instance. They say we should use the ip+port combination, that is for example 192.168.0.8:8080. However, I saw that this didn't work, and in fact using the domain name directly (cloud.sircotech.ir) actually generates the config.php file in the config folder of the docker image. Just open the window, and then close it. Next, go to the docker volume where this file exists, and in there, add the following to the config.php file. Note that is should be added after the other lambads.
+
+IMPROTANT NOTE: Replace the redis password with the password chosen for redis in stack.env file. The password is defined in the redis image of docker compose 'requirepass' portion. Once this is over, restart the next cloud instance inside the docker image.
+
+
+#############
+
+'redis' =>
+   array (
+     'host' => 'redis',
+     'port' => 6379,
+     'password' => '{redis_password}',
+  ),
+  'filelocking.enabled' => true,
+  'memcache.locking' => '\OC\Memcache\Redis',
+  'default_phone_region' => 'IR',
+  'trashbin_retention_obligation' => '30, 60',
+  'overwriteprotocol' => 'https',
+  'default_language' => 'pt_BR',
+  'default_locale' => 'pt_BR',
+  'log_type' => 'file',
+  'logfile' => 'nextcloud.log',
+  'logdateformat' => 'F d, Y H:i:s',
+  'maintenance' => false,
+  'default_language' => 'en',

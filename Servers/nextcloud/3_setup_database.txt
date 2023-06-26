@@ -1,0 +1,7 @@
+We've installed a mariadb. At this point, we need to give its information to the next_cloud instance. This is also in the stack.env file. Note that:
+
+Database user -> MYSQL_USER
+Database password -> MYSQL_PASSWORD
+Database name -> MYSQL_DATABASE
+
+The ip of the mariadb is also important. The ip and the port of the container have to be supplied. The ip is of course the ip of the server, and the port is the port exposed, naturally.

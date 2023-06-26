@@ -1,0 +1,1 @@
+This whole installation process is taken from https://github.com/Rodrigolmti/self_hosted_stack. Before installation, it's important to setup both portainer, nginx proxy manager.

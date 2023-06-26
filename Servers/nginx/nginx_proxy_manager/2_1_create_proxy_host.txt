@@ -1,0 +1,2 @@
+Creating a proxy host is simple as py. Just create the domain names you want, and then add the local ip address and the local port.
+

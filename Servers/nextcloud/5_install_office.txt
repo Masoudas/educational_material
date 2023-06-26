@@ -1,0 +1,37 @@
+Add a new stack on portainer with the name onlyoffice and upload the docker-compose.yml. Open nextcloud with your admin account, add the onlyoffice plugin;
+
+    -   Open setting menu and click on onlyoffice option;
+    -   Add your domain to ONLYOFFICE Docs address (domain that you previously setup on network proxy manager, office.sircotech.ir);
+    - 
+    And to finish, you can change the configuration following the image only_office_example.png
+
+NOTE: Again, don't forget to change the mount folder.
+
+################
+version: '3'
+
+volumes:
+  onlyoffice-logs:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/isirco/next_cloud/only-office-logs'
+
+  onlyoffice-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/isirco/next_cloud/only-office-data'
+
+services:
+   onlyoffice:
+    container_name: onlyoffice
+    image: onlyoffice/documentserver:latest
+    restart: always
+    ports:
+      - 7070:80
+    volumes:
+      - onlyoffice-data:/var/www/onlyoffice/Data:rw
+      - onlyoffice-logs:/var/log/onlyoffice

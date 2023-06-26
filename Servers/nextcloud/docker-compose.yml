@@ -1,0 +1,51 @@
+# Note that the volumes are custom paths defined to keep the data of next-cloud. We used to have a separate hdd hard drive to keep the data of next cloud, and then a cache folder on the ssd drive
+version: '3'
+
+volumes:
+  nextcloud:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/isirco/next_cloud'
+
+  redis:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/root/next-cloud/'
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb-nextcloud
+    restart: always
+    ports:
+      - '3306:3306'
+    env_file:
+      - stack.env
+    volumes:
+      - nextcloud:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:alpine
+    container_name: redis-nextcloud
+    restart: unless-stopped
+    command: redis-server --requirepass "next_cloud_1402"
+    volumes:
+      - redis:/data
+
+  nextcloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    depends_on:
+      - redis
+      - mariadb
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - nextcloud:/var/www/html
+    env_file:
+      - stack.env

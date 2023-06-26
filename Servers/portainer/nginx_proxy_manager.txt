@@ -1,0 +1,1 @@
+One thing to note: In order to be able to open consoles, we have to enable websockes when we setup portainer in nginx proxy manager. Otherwise, the console wouldn't connect.

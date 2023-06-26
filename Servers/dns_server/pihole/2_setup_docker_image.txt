@@ -1,0 +1,30 @@
+Here's the docker container.  I suggest creating a folder ~/pihole, and then put the docker compose there. Note that the port 8000 is set as the ui of pihole. Once there, we need to go to 192.168.0.8:8000/admin, and the password is setup as shown below.
+
+Note that because we're not using pihole as our dhcp server, we needn't setup port 67. Don't forget to setup the password in the compose file. Once there, go to 192.168.0.8:8000/admin, and then define the isp dns server in settings->dns
+
+###############
+version: "3"
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8100:80/tcp"
+    environment:
+      TZ: 'Asia/Tehran'
+      WEBPASSWORD: ?????
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
+
+
