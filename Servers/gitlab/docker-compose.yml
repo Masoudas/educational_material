@@ -1,0 +1,29 @@
+version: '3'
+
+volumes:
+  gitlab:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/srv/gitlab/'
+
+web:
+  image: 'gitlab/gitlab-ee:latest'
+  restart: always
+  hostname: 'server.sircotech.ir'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://server.sircotech.ir:8300'
+      gitlab_rails['gitlab_shell_ssh_port'] = 22
+      gitlab_rails['backup_path'] = "/var/opt/gitlab/backups"
+      gitlab_rails['backup_gitaly_backup_path'] = "/opt/gitlab/embedded/bin/gitaly-backup"
+
+  ports:
+    - '8300:8300'
+    - '22:22'
+
+  volumes:
+    - 'gitlab/config:/etc/gitlab'
+    - 'gitlab/logs:/var/log/gitlab'
+    - 'gitlab/data:/var/opt/gitlab'
