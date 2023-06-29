@@ -1,0 +1,9 @@
+"""
+From this basic architecture it follows that a “server side cursor” is more memory efficient when fetching very large result sets, while at the same time may introduce more complexity in the client/server communication process and be less efficient for small result sets (typically less than 10000 rows).
+
+For those dialects that have conditional support for buffered or unbuffered results, there are usually caveats to the use of the “unbuffered”, or server side cursor mode. When using the psycopg2 dialect for example, an error is raised if a server side cursor is used with any kind of DML or DDL statement. When using MySQL drivers with a server side cursor, the DBAPI connection is in a more fragile state and does not recover as gracefully from error conditions nor will it allow a rollback to proceed until the cursor is fully closed.
+
+For this reason, SQLAlchemy’s dialects will always default to the less error prone version of a cursor, which means for PostgreSQL and MySQL dialects it defaults to a buffered, “client side” cursor where the full set of results is pulled into memory before any fetch methods are called from the cursor. This mode of operation is appropriate in the vast majority of cases; unbuffered cursors are not generally useful except in the uncommon case of an application fetching a very large number of rows in chunks, where the processing of these rows can be complete before more rows are fetched.
+
+For database drivers that provide client and server side cursor options, the Connection.execution_options.stream_results and Connection.execution_options.yield_per execution options provide access to “server side cursors” on a per-Connection or per-statement basis. Similar options exist when using an ORM Session as well.
+"""

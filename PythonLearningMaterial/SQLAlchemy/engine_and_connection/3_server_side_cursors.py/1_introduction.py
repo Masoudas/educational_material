@@ -1,0 +1,7 @@
+"""
+Some backends feature explicit support for the concept of “server side cursors” versus “client side cursors”. A client side cursor here means that the database driver fully fetches all rows from a result set into memory before returning from a statement execution. Drivers such as those of PostgreSQL and MySQL/MariaDB generally use client side cursors by default. A server side cursor, by contrast, indicates that result rows remain pending within the database server’s state as result rows are consumed by the client. The drivers for Oracle generally use a “server side” model, for example, and the SQLite dialect, while not using a real “client / server” architecture, still uses an unbuffered result fetching approach that will leave result rows outside of process memory before they are consumed.
+
+NOTE: What we really mean is “buffered” vs. “unbuffered” results
+
+Server side cursors also imply a wider set of features with relational databases, such as the ability to “scroll” a cursor forwards and backwards. SQLAlchemy does not include any explicit support for these behaviors; within SQLAlchemy itself, the general term “server side cursors” should be considered to mean “unbuffered results” and “client side cursors” means “result rows are buffered into memory before the first row is returned”. To work with a richer “server side cursor” featureset specific to a certain DBAPI driver, see the section on Working with the DBAPI cursor directly.
+"""

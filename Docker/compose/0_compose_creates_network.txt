@@ -1,0 +1,6 @@
+Docker compose by default creates a network between the images used in the stack. This is an important reason why we use docker compose. The name of the network by default is the name of the compose. 
+
+Now, each image in the compose is assigned an ip. We can extract the ip of the image using inspect command. The default network type of this stack is bridge. The bridge network works as a private network internal to the host so containers on it can communicate. External access is granted by exposing ports to containers. Bridge networks are used when your applications run in standalone containers that need to communicate. (Another example that comes to mind is the host network, where the container is placed on the host's network)
+
+Because we have a network, we have subnet mask of course. Usually Docker uses the default 172.17.0.0/16 subnet for container networking (Although I oddly found out that if the server has a static ip, then that ip is used as base). 
+
