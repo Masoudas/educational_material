@@ -1,0 +1,17 @@
+A direct way is as follows. The default postgres user and database are created in the entrypoint with initdb:
+
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+The postgres database is a default database meant for use by users, utilities and third party applications.
+
+
+To define the username and password for an account, we can do as follows: 
+
+$ docker run -it --rm --network some-network postgres psql -h some-postgres -U postgres
+
+postgres=# SELECT 1;
+ ?column? 
+----------
+        1
+(1 row)
+
