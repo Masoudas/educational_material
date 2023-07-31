@@ -1,0 +1,13 @@
+The UNION operator combines result sets of two or more SELECT statements into a single result set.
+
+The following illustrates the syntax of the UNION operator that combines result sets from two queries (ME: As we can see, we unionize two select stmts):
+
+$ SELECT select_list_1 FROM table_expresssion_1 UNION SELECT select_list_2 FROM table_expression_2
+
+To combine the result sets of two queries using the UNION operator, the queries must conform to the following rules:
+
+    -   The number and the order of the columns in the select list of both queries must be the same.
+    -   The data types must be compatible.
+
+The UNION operator removes all duplicate rows from the combined data set (meaning keeps only one of them). To retain the duplicate rows, you use the the UNION ALL instead.
+

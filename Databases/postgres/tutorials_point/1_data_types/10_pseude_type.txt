@@ -1,0 +1,43 @@
+The PostgreSQL type system contains a number of special-purpose entries that are collectively called pseudo-types. A pseudo-type cannot be used as a column data type, but it can be used to declare a function's argument or result type.
+
+The table given below lists the existing pseudo-types.
+
+S. No.	Name & Description
+1	any
+Indicates that a function accepts any input data type.
+
+2   anyelement
+Indicates that a function accepts any data type.
+
+3   anyarray
+Indicates that a function accepts any array data type.
+
+4   anynonarray
+Indicates that a function accepts any non-array data type.
+
+5   anyenum
+Indicates that a function accepts any enum data type.
+
+6   anyrange
+Indicates that a function accepts any range data type.
+
+7   cstring
+Indicates that a function accepts or returns a null-terminated C string.
+
+8   internal
+Indicates that a function accepts or returns a server-internal data type.
+
+9   language_handler
+A procedural language call handler is declared to return language_handler.
+
+10  fdw_handler
+A foreign-data wrapper handler is declared to return fdw_handler.
+
+11  record
+Identifies a function returning an unspecified row type.
+
+12  trigger
+A trigger function is declared to return trigger.
+
+13  void
+Indicates that a function returns no value.

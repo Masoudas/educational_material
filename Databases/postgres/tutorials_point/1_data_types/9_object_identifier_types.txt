@@ -1,0 +1,12 @@
+Object identifiers (OIDs) are used internally by PostgreSQL as primary keys for various system tables. If WITH OIDS is specified or default_with_oids configuration variable is enabled, only then, in such cases OIDs are added to user-created tables. The following table lists several alias types. The OID alias types have no operations of their own except for specialized input and output routines.
+
+Name	References	Description	Value Example
+oid	any	numeric object identifier	564182
+regproc	pg_proc	function name	sum
+regprocedure	pg_proc	function with argument types	sum(int4)
+regoper	pg_operator	operator name	+
+regoperator	pg_operator	operator with argument types	*(integer,integer) or -(NONE,integer)
+regclass	pg_class	relation name	pg_type
+regtype	pg_type	data type name	integer
+regconfig	pg_ts_config	text search configuration	English
+regdictionary	pg_ts_dict	text search dictionary	simple

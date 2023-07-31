@@ -1,0 +1,24 @@
+/* When ranging over a slice, two values are returned for each iteration. The first is the index, and the second is a copy of the element at that index.
+
+We may also skip either index or value.
+*/
+
+package main
+
+import "fmt"
+
+func main() {
+	var arr = [5]int{5, 4, 3, 2, 1}
+
+	for index, val := range arr {
+		fmt.Println(index, val)
+	}
+
+    pow := make([]int, 10)
+	for i := range pow {
+		pow[i] = 1 << uint(i) // == 2**i
+	}
+	for _, value := range pow {
+		fmt.Printf("%d\n", value)
+	}
+}

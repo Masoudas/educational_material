@@ -1,0 +1,16 @@
+This is the syntax:
+
+CREATE INDEX index_name ON table_name [USING method]
+(
+    column_name [ASC | DESC] [NULLS {FIRST | LAST }],
+    ...
+);
+
+In this syntax:
+
+    -   First, specify the index name after the CREATE INDEX clause. The index name should be meaningful and easy to remember.
+    -   Second, specify the name of the table to which the index belongs.
+    -   Third, specify the index method such as btree, hash, gist, spgist, gin, and brin. PostgreSQL uses btree by default.
+    -   Finally, list one or more columns of the index. The ASC and DESC specify the sort order. The default sort order is ASC.
+
+If a column contains NULL, you can specify NULLS FIRST or NULLS LAST option. The NULLS FIRST is the default when DESC is specified and NULLS LAST is the default when DESC is not specified.

@@ -1,0 +1,17 @@
+The following syntax shows how to create a multicolumn index:
+
+$ CREATE INDEX index_name ON table_name(a,b,c,...);
+
+When defining a multicolumn index, you should place the columns which are often used in the WHERE clause at the beginning of the column list and the columns that are less frequently used in the condition after. (ME: As such, any query that doesn't work on 'a' would not use this index. What about an index that has column 'a', but misses column 'b', but has column 'c'? Following the same logic, we have to assume that it uses index on 'a', then ignores columns 'b' and 'c'. As such, the index is used.).
+
+In the above syntax, the PostgreSQL optimizer will consider using the index in the following cases:
+
+$ WHERE a = v1 and b = v2 and c = v3;
+$ WHERE a = v1 and b = v2;
+$ WHERE a = v1;
+
+However, it will not consider using the index in the following cases:
+$ WHERE c = v3;
+$ WHERE a = v2 and c = v3;    
+
+

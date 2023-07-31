@@ -1,0 +1,39 @@
+The DISTINCT clause is used in the SELECT statement to remove duplicate rows from a result set. The DISTINCT clause keeps one row for each group of duplicates. The DISTINCT clause can be applied to one or more columns in the select list of the SELECT statement.
+
+The following illustrates the syntax of the DISTINCT clause:
+
+SELECT
+   DISTINCT column1
+FROM
+   table_name;
+
+This would only look for distinct column 1.
+
+SELECT
+   DISTINCT column1, column2
+FROM
+   table_name;
+
+This would look for pairs of column1 and column2 that are distinct. Question: does this mean that "m","a" is not distinct from "a","m"? The answer is no, of course. Because there are distinct tuples. What about nulls? null is distinct, of course.
+
+Consider the following table:
+INSERT INTO distinct_demo (bcolor, fcolor)
+VALUES
+	('red', 'red'),
+	('red', 'red'),
+	('red', NULL),
+	(NULL, 'red'),
+	('red', 'green'),
+	('red', 'blue'),
+	('green', 'red'),
+	('green', 'blue'),
+	('green', 'green'),
+	('blue', 'red'),
+	('blue', 'green'),
+	('blue', 'blue');
+
+Of course, this query 'SELECT DISTINCT bcolor FROM distinct_demo ORDER BY bcolor;' returns:
+"blue, green, red, null"
+
+Now with 'distinct rcolor, bcolor' it returns (essentially, ('red', 'red') column is removed):
+'('red', 'red'), ('red', NULL), (NULL, 'red'), ..."

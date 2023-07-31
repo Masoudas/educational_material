@@ -1,0 +1,20 @@
+Me: Except is like (A - B) for tables. 
+
+Like the UNION and INTERSECT operators, the EXCEPT operator returns rows by comparing the result sets of two or more queries.
+
+The EXCEPT operator returns distinct rows from the first (left) query that are not in the output of the second (right) query.
+
+The following illustrates the syntax of the EXCEPT operator. (Me: Again, note that just like union, things work on a select stmt.)
+
+$ SELECT * from table1 EXCEPT select * from table2
+
+The queries that involve in the EXCEPT need to follow these rules:
+
+The number of columns and their orders must be the same in the two queries.
+The data types of the respective columns must be compatible.
+
+We may also use an order by stmt:
+
+SELECT * FROM top_rated_films EXCEPT SELECT * FROM most_popular_films ORDER BY title;
+
+This would return the results sorted.

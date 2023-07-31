@@ -1,0 +1,42 @@
+In relational databases, the term upsert is referred to as merge. The idea is that when you insert a new row into the table, PostgreSQL will update the row if it already exists, otherwise, it will insert the new row. That is why we call the action is upsert (the combination of update or insert).To use the upsert feature in PostgreSQL, you use the INSERT ON CONFLICT statement as follows:
+
+$ INSERT INTO table_name(column_list) VALUES(value_list) ON CONFLICT target action;
+
+PostgreSQL added the ON CONFLICT target action clause to the INSERT statement to support the upsert feature.
+
+In this statement, the target can be one of the following:
+    -   (column_name) – a column name.
+    -   ON CONSTRAINT constraint_name – where the constraint name could be the name of the UNIQUE constraint.
+    -   WHERE predicate – a WHERE clause with a predicate.
+
+The action can be one of the following:
+    -   DO NOTHING – means do nothing if the row already exists in the table.
+    -   DO UPDATE SET column_1 = value_1, .. WHERE condition – update some fields in the table.
+
+#------------------
+Here's an upsert example. Imagine:
+
+DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers (
+	customer_id serial PRIMARY KEY,
+	name VARCHAR UNIQUE,
+	email VARCHAR NOT NULL,
+	active bool NOT NULL DEFAULT TRUE
+);
+
+The customers table consists of four columns: customer_id, name, email, and active. The name column has a unique constraint to guarantee the uniqueness of customer names. Here's an upsert example:
+(ME: 'customers_name_key' is some constraint that we've already defined)
+
+$ INSERT INTO customers (NAME, email) VALUES('Microsoft','hotline@microsoft.com') 
+ON CONFLICT ON CONSTRAINT customers_name_key DO NOTHING;
+
+The above statement is equivalent to the following:
+
+$ INSERT INTO customers (name, email) VALUES('Microsoft','hotline@microsoft.com') ON CONFLICT (name) DO NOTHING;
+
+Here's an example of where we actually update the row:
+
+$ INSERT INTO customers (name, email) VALUES('Microsoft','hotline@microsoft.com') ON CONFLICT (name) 
+DO UPDATE SET email = EXCLUDED.email || ';' || customers.email;
+

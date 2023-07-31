@@ -1,0 +1,6 @@
+// This is an array literal, apparently
+a1 := [5]int{5, 4, 3, 2, 1}
+
+// This is a slice to the same array, however! The difference is that we don't give the array size.
+a2 := []int{5, 4, 3, 2, 1}
+

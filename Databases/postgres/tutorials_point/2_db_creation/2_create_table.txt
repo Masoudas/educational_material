@@ -1,0 +1,16 @@
+We may create a table using the create statement:
+
+#postgres CREATE TABLE my_table(
+    ID int PRIMARY KEY NOT NULL,
+    ADDRESS        CHAR(50),
+    SALARY         REAL
+)
+
+Using the command \d describes an object:
+#postgres: \d my_table
+
+We may also drop a table as follows:
+$ DROP TABLE table_name;
+
+Or:
+#testdb=# drop table department, company;

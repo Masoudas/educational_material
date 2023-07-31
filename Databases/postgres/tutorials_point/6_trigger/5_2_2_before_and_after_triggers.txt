@@ -1,0 +1,13 @@
+ME: Something to note here. What if we said 'AFTER UPDATE' in the trigger statement? Would it not still be possible to get the old names and put them in the audit table? 
+
+ANSWER: Apparently, people used 'after' to run the same query to fill the audit table, as in the previous example. The following example is taken from:
+
+https://dba.stackexchange.com/questions/153525/what-is-the-difference-between-an-after-update-and-a-before-update-in-postgresql
+
+It feels like there isn't a great difference between the two. There is, however, one primary difference in a trigger that is AFTER from one that is BEFORE .. but both get executed regardless.
+
+In a BEFORE trigger, the trigger is executed BEFORE the DML statement is executed.. So you have a chance to modify the :NEW (old :OLD in case of DELETE) row BEFORE it is inserted/updated/deleted... But anything you want to do you can do (like check data in a separate table and issue an update/insert/whatever in that table, etc). If, for some reason, the trigger causes an EXCEPTION, then execution ceases and the DML statement is never executed. (ME: So, we can modify what is to be written I guess.)
+
+In an AFTER trigger, the trigger is executed AFTER the DML statement is executed. You have already lost any ability to modify the :NEW and :OLD records and have it actually mean anything. However, you can still do whatever you want in the trigger. If the trigger causes an exception, for PostgreSQL, this will cause a rollback of the original DML. 
+
+A common use of a BEFORE trigger is to set a timestamp column to "now" before the data has been inserted. A common use of an AFTER trigger is to populate an audit/history table with the changes.

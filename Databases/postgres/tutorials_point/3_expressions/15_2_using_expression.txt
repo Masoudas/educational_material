@@ -1,0 +1,12 @@
+If both tables have a column of the same name, then we can use a 'USING' expressin in join.
+
+SELECT
+	customer_id,
+	first_name,
+	last_name,
+	amount,
+	payment_date
+FROM
+	customer
+INNER JOIN payment USING(customer_id)
+ORDER BY payment_date;	

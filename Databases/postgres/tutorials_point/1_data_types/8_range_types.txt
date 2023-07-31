@@ -1,0 +1,11 @@
+Range types represent data types that uses a range of data. Range type can be discrete ranges (e.g., all integer values 1 to 10) or continuous ranges (e.g., any point in time between 10:00am and 11:00am).
+
+The built-in range types available include the following ranges (me: Of course, both ranges are inclusive here:)
+
+    int4range − Range of integer
+    int8range − Range of bigint
+    numrange − Range of numeric
+    tsrange − Range of timestamp without time zone
+    tstzrange − Range of timestamp with time zone
+    daterange − Range of date
+

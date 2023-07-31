@@ -1,0 +1,52 @@
+PostgreSQL also provides the DISTINCT ON (expression) to keep the “first” row of each group of duplicates using the following syntax (Me: this would be in junction with a order statement). Consider:
+
+CREATE TABLE distinct_demo (
+	id serial NOT NULL PRIMARY KEY,
+	bcolor VARCHAR,
+	fcolor VARCHAR
+);
+
+SELECT
+	DISTINCT ON (bcolor) bcolor,
+	fcolor
+FROM
+	distinct_demo 
+ORDER BY
+	bcolor,
+	fcolor;
+
+
+Then, it will return the first row with distinct bcolor. Hence, if we have:
+
+INSERT INTO distinct_demo (bcolor, fcolor)
+VALUES
+	('red', 'red'),
+	('red', 'red'),
+	('red', NULL),
+	(NULL, 'red'),
+	('red', 'green'),
+	('red', 'blue'),
+	('green', 'red'),
+	('green', 'blue'),
+	('green', 'green'),
+	('blue', 'red'),
+	('blue', 'green'),
+	('blue', 'blue');
+
+Then we get:
+blue, blue
+green, blue
+red, blue
+null, blue
+
+Me: What's the difference with the given expression:
+SELECT
+	DISTINCT bcolor,
+	fcolor
+FROM
+	distinct_demo 
+ORDER BY
+	bcolor,
+	fcolor;
+
+Fooled you! This expression means the pair (bcolor, fcolor) are distinct/

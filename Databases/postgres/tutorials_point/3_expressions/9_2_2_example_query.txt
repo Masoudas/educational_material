@@ -1,0 +1,42 @@
+We will create a new table to demonstrate the PostgreSQL recursive query.
+
+CREATE TABLE employees (
+	employee_id serial PRIMARY KEY,
+	full_name VARCHAR NOT NULL,
+	manager_id INT
+);
+
+Now, image that we want all the subordiates of manager with id=2. How would we have written this without a recursive query? (Note: This is specially crucial if we're checking the history of a call in our 121 app!) Here's how to write this with a recursive with query:
+
+WITH RECURSIVE subordinates AS (
+	SELECT
+		employee_id,
+		manager_id,
+		full_name
+	
+    FROM
+		employees
+	
+    WHERE
+		employee_id = 2
+
+	UNION
+	
+    	SELECT
+			e.employee_id,
+			e.manager_id,
+			e.full_name
+
+		FROM
+			employees e
+		
+        INNER JOIN subordinates s ON s.employee_id = e.manager_id
+) SELECT
+	*
+FROM
+	subordinates;
+
+Here's how this query is performed:
+    - First, we get the employee whose id is 2
+    - Then, the join statement, returns the employees whose manager is 2.
+    - Then over the next iteration, we have the previous table (the subordinates of 2,) so naturally, we join with the overall table to get the suboridantes of each of those rows. Note that the recursive part joins with the recursive term itself, to tell you that recursion is on the result of the previous iteration.

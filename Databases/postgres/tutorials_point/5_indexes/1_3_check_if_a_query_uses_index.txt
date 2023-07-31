@@ -1,0 +1,21 @@
+To check if a query uses an index or not, you use the EXPLAIN statement. The following query finds the address whose phone number is 223664661973:
+
+$ SELECT * FROM address WHERE phone = '223664661973';
+
+It is obvious that the database engine has to scan the whole address table to look for the address because there is no index available for the phone column. To show the query plan, you use the EXPLAIN statement as follows:
+
+$ EXPLAIN SELECT * FROM address WHERE phone = '223664661973';
+Seq Scan on Address (...)
+
+ME: I think the critical part in the explain is that it uses 'Sequential' search to find the row.
+
+To create an index for the values in the phone column of the address table, you use the following statement:
+
+$ CREATE INDEX idx_address_phone ON address(phone);
+
+Now, we can see that we're using the index:
+
+$ EXPLAIN SELECT * FROM address WHERE phone = '223664661973';
+Index Scan using idx_address_phone on address
+
+ME: It's interesting to note that the index is used, because we used 'phone' in the where constraint. Had we defined an index on something other than phone, or if the where clause was on another column, the index would not have been used.

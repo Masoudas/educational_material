@@ -1,0 +1,6 @@
+Triggers are useful in case the database is accessed by various applications, and you want to keep the cross-functionality within the database that runs automatically whenever the data of the table is modified. For example, if you want to keep the history of data without requiring the application to have logic to check for every event such as INSERT or UDPATE.
+
+Also, you can use triggers to maintain complex data integrity rules which cannot be implemented elsewhere except at the database level. For example, when a new row is added into the customer table, other rows must be also created in tables of banks and credits.
+
+The main drawback of using a trigger is that you must know the trigger exists and understand its logic to figure out the effects when data changes.
+

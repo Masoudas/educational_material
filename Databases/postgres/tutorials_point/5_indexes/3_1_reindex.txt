@@ -1,0 +1,19 @@
+In practice, an index can become corrupted and no longer contains valid data due to hardware failures or software bugs. To recover the index, you can use the REINDEX statement:
+
+$ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } name;
+
+In this syntax, the VERBOSE keyword is optional. When included, the statement displays a progress report when each index is reindexed. To recreate a single index, you specify the index name after REINDEX INDEX clause as follows:
+
+$ REINDEX INDEX index_name;
+
+To recreate all the indexes of a table, you use the TABLE keyword and specify the name of the table:
+
+$ REINDEX TABLE table_name
+
+And to recreate all the indices of a schema:
+
+$ REINDEX SCHEMA schema_name
+
+And for database:
+
+$ REINDEX DATABASE database_name;

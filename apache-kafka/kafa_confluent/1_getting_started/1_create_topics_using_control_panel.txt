@@ -1,0 +1,7 @@
+The topics are named pageviews and users. In later steps, you create data generators that produce data to these topics.
+
+Assuming installation from the official docker compose in this folder:
+    -   Navigate to Control Center at http://localhost:9021. It may take a minute or two for Control Center to start and load.
+    -   Click the controlcenter.cluster tile.
+
+In the navigation menu, click Topics to open the topics list. Click Add a topic to start creating the pageviews topic.

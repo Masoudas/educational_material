@@ -1,0 +1,27 @@
+Sometimes, you may want to remove an existing index from the database system. To do it, you use the DROP INDEX statement as follows:
+
+$ DROP INDEX  [ CONCURRENTLY] [ IF EXISTS ]  index_name [ CASCADE | RESTRICT ];
+
+In this syntax:
+
+    -   index_name: You specify the name of the index that you want to remove after the DROP INDEX clause.
+
+    -   IF EXISTS: Attempting to remove a non-existent index will result in an error. To avoid this, you can use the IF EXISTS option. In case you remove a non-existent index with IF EXISTS, PostgreSQL issues a notice instead.
+
+    -   CASCADE: If the index has dependent objects, you use the CASCADE option to automatically drop these objects and all objects that depend on those objects.
+
+    -   RESTRICT: The RESTRICT option instructs PostgreSQL to refuse to drop the index if any objects depend on it. The DROP INDEX uses RESTRICT by default.
+
+Note that you can drop multiple indexes at a time by separating the indexes by commas (,):
+
+$ DROP INDEX index_name, index_name2,... ;
+
+- CONCURRENTLY
+When you execute the DROP INDEX statement, PostgreSQL acquires an exclusive lock on the table and blocks other accesses until the index removal completes.
+
+To force the command waits until the conflicting transaction completes before removing the index, you can use the CONCURRENTLY option.
+
+The DROP INDEX CONCURRENTLY has some limitations:
+
+    -   First, the CASCADE option is not supported.
+    -   Second, executing in a transaction block is also not supported.

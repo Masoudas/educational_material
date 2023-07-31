@@ -1,0 +1,20 @@
+package main
+
+type T struct {
+	val int 
+	str string
+}
+
+func main() {
+	// Initialization is kind of odd. Whenever an initial value is not supplied, then it's initialized to its default.
+	t := T{} // {0,""}
+
+	// To initialize one argument, do as follows.
+	t1 := T{val:5}
+	t2 := T{str:"42"}
+
+	// Pointer to T initialization
+	t3 := &T{5, "sa"}
+
+}
+

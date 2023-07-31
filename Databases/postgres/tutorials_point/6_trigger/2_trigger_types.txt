@@ -1,0 +1,9 @@
+PostgreSQL provides two main types of triggers:
+    -   Row-level triggers
+    -   Statement-level triggers.
+    
+The differences between the two kinds are how many times the trigger is invoked and at what time.
+
+For example, if you issue an UPDATE statement that modifies 20 rows, the row-level trigger will be invoked 20 times, while the statement-level trigger will be invoked 1 time.
+
+You can specify whether the trigger is invoked before or after an event. If the trigger is invoked before an event, it can skip the operation for the current row or even change the row being updated or inserted. In case the trigger is invoked after the event, all changes are available to the trigger.

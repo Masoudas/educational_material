@@ -1,0 +1,12 @@
+Assume that variable a holds 2 and b holds 3:
+
++	Addition - Adds values on either side of the operator	a + b will give 5
+-	Subtraction - Subtracts right hand operand from left hand operand	a - b will give -1
+*	Multiplication - Multiplies values on either side of the operator	a * b will give 6
+/	Division - Divides left hand operand by right hand operand	b / a will give 1
+%	Modulus - Divides left hand operand by right hand operand and returns remainder	b % a will give 1
+^	Exponentiation - This gives the exponent value of the right hand operand	a ^ b will give 8
+|/	square root	|/ 25.0 will give 5
+||/	Cube root	||/ 27.0 will give 3
+!	factorial	5 ! will give 120
+!!	factorial (prefix operator)	!! 5 will give 120

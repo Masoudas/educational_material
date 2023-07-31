@@ -1,0 +1,1 @@
+Full outer join does a left and a right join. The only point is that if left and right joins have duplicate rows, then we would NOT have duplicate rows in the result.

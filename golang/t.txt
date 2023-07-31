@@ -1,0 +1,3 @@
+docker run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" -e "EMBEDDED_SUPERSET=True" -e "DASHBOARD_CROSS_FILTER=True" -e "DASHBOARD_CROSS_FILTERS=True" -e "DASHBOARD_NATIVE_FILTERS_SET=True" -e "DASHBOARD_RBAC=True" -e "DASHBOARD_FILTERS_EXPERIMENTAL=True" -e "ENABLE_TEMPLATE_PROCESSING=True" --name superset apache/superset
+
+docker exec -it superset superset fab create-admin --username masoud --firstname Masoud --lastname Aghamohamadian --email masoudas@hotmail.com --password m1369agha

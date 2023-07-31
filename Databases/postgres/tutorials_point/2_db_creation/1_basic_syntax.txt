@@ -1,0 +1,20 @@
+Postgres specifies two ways of creating a database (note that postgres is the root user of the db):
+
+$ CREATE DATABASE mydb;
+
+Or through the command line:
+
+$ psql createdb -h localhost -p 5432 -U postgres testdb
+
+ME: Does this mean this database is accessible on a different port? No, the host and port and U are where the postgres instance is running.
+
+Note that we can list the database using \l:
+
+#postgres: \l
+
+We can select a database using the \c command:
+
+#postgres:\c testdb;
+
+Then, we may omit it:
+#postgres: dropdb -h localhost -p 5432 -U postgress testdb

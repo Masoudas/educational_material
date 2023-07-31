@@ -1,0 +1,14 @@
+// An arrays size is part of type. Hence, we can't change the size of such array.
+// Hence, an array can't be resized.
+
+
+package main
+import "fmt"
+
+func main() {
+	// Array is initialized to default of its type
+	var my_arr [5]float64
+
+	fmt.Println(my_arr)
+}
+

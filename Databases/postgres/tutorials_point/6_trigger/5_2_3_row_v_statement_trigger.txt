@@ -1,0 +1,36 @@
+ME: What is the difference between triggers performed on each row, vs those on each statement?
+
+Apparently, statement level triggers are almost useless. But why? Here's an answer from 
+https://dba.stackexchange.com/questions/230500/what-is-a-practical-use-of-for-statement-triggers
+
+--------------------------------------------
+When a trigger is activated, it runs according to its level of granularity as follows:
+
+    -   FOR EACH ROW
+It runs as many times as the number of rows in the set of affected rows. If you need to refer to the specific rows affected by the triggered action, use FOR EACH ROW granularity. An example of this is the comparison of the new and old values of an updated row in an AFTER UPDATE trigger.
+
+    -   FOR EACH STATEMENT
+It runs once for the entire trigger event. If the set of affected rows is empty (that is, in the case of a searched UPDATE or DELETE in which the WHERE clause did not qualify any rows), a FOR EACH ROW trigger does not run. But a FOR EACH STATEMENT trigger still runs once (ME: So, in case the where clause is not satisfied for any row, the trigger is still run. So, we don't have OLD or NEW in this case. We can already see why this is probably going to be useless. As such, a use case that comes to mind is to for example keep a count of how many times a specific query is run on a table.)
+
+For example, keeping a count of number of employees can be done using FOR EACH ROW.
+
+CREATE TRIGGER NEW_HIRED 
+  AFTER INSERT ON EMPLOYEE 
+  FOR EACH ROW
+  UPDATE COMPANY_STATS SET NBEMP = NBEMP + 1 
+
+You can achieve the same affect with one update by using a granularity of FOR EACH STATEMENT.
+
+CREATE TRIGGER NEW_HIRED 
+  AFTER INSERT ON EMPLOYEE 
+  REFERENCING NEW_TABLE AS NEWEMPS 
+  FOR EACH STATEMENT
+  UPDATE COMPANY_STATS 
+  SET NBEMP = NBEMP + (SELECT COUNT(*) FROM NEWEMPS) 
+
+Some examples of why you might want to use a statement level trigger over a row level trigger:
+
+    -   You want to record how many rows were updated, but don't necessarily care about which rows were updated
+    -   You want to execute an action when a statement is made against a table, even if no rows are updated
+    -   Your table has 40 Billion rows and sometimes updates are made against 10% of the table. Recording an action for 4 Billion rows, one at a time, is not feasible due to resource constraints
+    -   You want to record any time any person makes an update to a table, but you don't care what the update was, and you don't care how many rows were affected.

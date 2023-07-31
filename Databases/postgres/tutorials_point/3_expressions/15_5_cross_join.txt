@@ -1,0 +1,13 @@
+Me: Not relevant I think
+
+A CROSS JOIN clause allows you to produce a Cartesian Product of rows in two or more tables. Different from other join clauses such as LEFT JOIN  or INNER JOIN, the CROSS JOIN clause does not have a join predicate.
+
+Suppose you have to perform a CROSS JOIN of two tables T1 and T2.
+
+If T1 has n rows and T2 has m rows, the result set will have nxm rows. For example, the T1 has 1,000 rows and T2 has 1,000 rows, the result set will have 1,000 x 1,000 = 1,000,000 rows.
+
+The following illustrates the syntax of the CROSS JOIN syntax:
+
+SELECT select_list
+FROM T1
+CROSS JOIN T2;

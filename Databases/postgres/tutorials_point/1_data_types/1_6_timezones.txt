@@ -1,0 +1,17 @@
+Time zones, and time-zone conventions, are influenced by political decisions, not just earth geometry. Time zones around the world became somewhat standardized during the 1900s, but continue to be prone to arbitrary changes, particularly with respect to daylight-savings rules. PostgreSQL uses the widely-used IANA (Olson) time zone database for information about historical time zone rules. For times in the future, the assumption is that the latest known rules for a given time zone will continue to be observed indefinitely far into the future.
+
+PostgreSQL endeavors to be compatible with the SQL standard definitions for typical usage. However, the SQL standard has an odd mix of date and time types and capabilities. Two obvious problems are:
+
+    -   Although the date type cannot have an associated time zone, the time type can. Time zones in the real world have little meaning unless associated with a date as well as a time, since the offset can vary through the year with daylight-saving time boundaries.
+
+    -   The default time zone is specified as a constant numeric offset from UTC. It is therefore impossible to adapt to daylight-saving time when doing date/time arithmetic across DST boundaries.
+
+To address these difficulties, we recommend using date/time types that contain both date and time when using time zones. We do not recommend using the type time with time zone (though it is supported by PostgreSQL for legacy applications and for compliance with the SQL standard). PostgreSQL assumes your local time zone for any type containing only date or time.
+
+All timezone-aware dates and times are stored internally in UTC. They are converted to local time in the zone specified by the TimeZone configuration parameter before being displayed to the client.
+
+ME: It's true that tz is only significant when it comes to time (and not date of course!) However, we musn't specify tz with time.
+
+ME: Should I be concerend with time zone in Iran? And daylight savings? Well, we normally store date and time in UTC in our databases. We needn't specify tz. Unless we change the daylight saving time every year. But then again, why should we care? If this year we're storing an event at 13h00, and next year we change time by an hour, we really needn't be concerned about setting time to 14h00. Even if we say time iz 2022-12-10 13:00:00+3h5, then it just complicates things.
+
+ME: Should I use epoch for date time? Say we store with respect to linux epoch. Then, if we change the daylight saving rules, we'll probably interpret the older hours incorrectly. As such, we better not store as epoch. In particular, date times are stored as big ints, and as such, don't use epoch.

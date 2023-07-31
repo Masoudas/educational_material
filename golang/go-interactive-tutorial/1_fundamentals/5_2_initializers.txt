@@ -1,0 +1,12 @@
+/*
+A var declaration can include initializers, one per variable.
+
+If an initializer is present, the type can be omitted; the variable will take the type of the initializer.
+*/
+package main
+
+var x, y int = 1, 2
+var some_struct S = S{1, 2}  
+
+var arr [5]int = [5]int{1, 2, 3, 4, 5}
+*/

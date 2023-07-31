@@ -1,0 +1,18 @@
+The time-of-day types are time [ (p) ] without time zone and time [ (p) ] with time zone. time alone is equivalent to time without time zone.
+
+Valid input for these types consists of a time of day followed by an optional time zone. If a time zone is specified in the input for time without time zone, it is silently ignored. You can also specify a date but it will be ignored, except when you use a time zone name that involves a daylight-savings rule, such as America/New_York. In this case specifying the date is required in order to determine whether standard or daylight-savings time applies. The appropriate time zone offset is recorded in the time with time zone value.
+
+04:05:06.789	        ISO 8601
+04:05:06	            ISO 8601
+04:05	                ISO 8601
+040506	                ISO 8601
+04:05 AM	            same as 04:05; AM does not affect value
+04:05 PM	            same as 16:05; input hour must be <= 12
+04:05:06.789-8	        ISO 8601, with time zone as UTC offset
+04:05:06-08:00	        ISO 8601, with time zone as UTC offset
+04:05-08:00	            ISO 8601, with time zone as UTC offset
+040506-08	            ISO 8601, with time zone as UTC offset
+040506+0730	            ISO 8601, with fractional-hour time zone as UTC offset
+040506+07:30:00	        UTC offset specified to seconds (not allowed in ISO 8601)
+04:05:06 PST	        time zone specified by abbreviation
+2003-04-12 04:05:06     America/New_York	

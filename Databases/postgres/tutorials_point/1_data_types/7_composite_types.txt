@@ -1,0 +1,32 @@
+Composite types are made up of different types. The definition and access is pretty much like classes:
+
+    -   Declaration of Composite Types
+The following example shows how to declare a composite type
+
+CREATE TYPE inventory_item AS (
+   name text,
+   supplier_id integer,
+   price numeric
+);
+
+This data type can be used in the create tables as below −
+
+CREATE TABLE on_hand (
+   item inventory_item,
+   count integer
+);
+
+    -   Composite Value Input
+Composite values can be inserted as a literal constant, enclosing the field values within parentheses and separating them by commas. An example is shown below −
+
+INSERT INTO on_hand VALUES (ROW('fuzzy dice', 42, 1.99), 1000);
+
+This is valid for the inventory_item defined above. The ROW keyword is actually optional as long as you have more than one field in the expression.
+
+    -   Accessing Composite Types
+To access a field of a composite column, use a dot followed by the field name, much like selecting a field from a table name. For example, to select some subfields from our on_hand example table, the query would be as shown below −
+
+SELECT (item).name FROM on_hand WHERE (item).price > 9.99;
+You can even use the table name as well (for instance in a multitable query), like this −
+
+SELECT (on_hand.item).name FROM on_hand WHERE (on_hand.item).price > 9.99;

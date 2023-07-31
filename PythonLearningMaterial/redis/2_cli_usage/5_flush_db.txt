@@ -1,0 +1,3 @@
+Flusing is done using the flush command:
+
+$ FLUSHDB

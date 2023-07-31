@@ -1,0 +1,28 @@
+The GROUPING() function accepts an argument which can be a column name or an expression:
+
+$ GROUPING( column_name | expression)
+
+The column_name or expression must match with the one specified in the GROUP BY clause. The GROUPING() function returns bit 0 if the argument is a member of the current grouping set and 1 otherwise.
+
+SELECT
+	GROUPING(brand) grouping_brand,
+	GROUPING(segment) grouping_segment,
+	brand,
+	segment,
+	SUM (quantity)
+
+FROM
+	sales
+
+GROUP BY
+	GROUPING SETS (
+		(brand),
+		(segment),
+		()
+	)
+
+ORDER BY
+	brand,
+	segment;
+
+It returns 1 if the group is in the 'brand' group in the grouping brand, and 0 if the group is in the 'segment' group. Of course '1,1' means it belongs to both groups.

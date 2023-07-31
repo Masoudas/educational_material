@@ -1,0 +1,3 @@
+The 'limit' expression, limits the number of rows returned from the table.
+
+SELECT col1, col2 FROM table1 LIMIT 5

@@ -1,0 +1,11 @@
+The PostgreSQL UNIQUE index enforces the uniqueness of values in one or multiple columns. To create a UNIQUE index, you can use the following syntax:
+
+$ CREATE UNIQUE INDEX index_name ON table_name(column_name, [...]);
+
+Note that only B-tree indexes can be declared as unique indexes. When you define an UNIQUE index for a column, the column cannot store multiple rows with the same values.
+
+If you define a UNIQUE index for two or more columns, the combined values in these columns cannot be duplicated in multiple rows. 
+
+NOTE: PostgreSQL treats NULLs as distinct values, therefore, you can have multiple NULL values in a column with a UNIQUE index. (ME: So, can we have multiple (Null, Null) in the unique rows?) The answer is yes, assuming each column accepts null. This is because a null is not equal to another null. Hence, we should be cautious as to not have a 'not null' constraint in unqiue column groups.
+
+When you define a primary key or a unique constraint for a table, PostgreSQL automatically creates a corresponding UNIQUE index (hence, no need to define an index on what's already unqiue).

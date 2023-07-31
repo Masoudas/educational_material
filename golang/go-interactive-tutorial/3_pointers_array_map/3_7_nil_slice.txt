@@ -1,0 +1,27 @@
+/*Question: Should we check for nil and zero length when we're checking empty array? No, because nil slice also has zero length.
+*/
+package main
+
+import "fmt"
+
+func main() {
+	// The zero value of a slice is nil.
+	// A nil slice has a length and capacity of 0 and has no underlying array.
+	// Me: I think they're trying to say that a zero slice is nil (with capacity zero of course), regardless of the type it has. But they're not equal to one another. That is, s1 is not the same type as s.
+	var s []int
+	var s1 []string
+
+	fmt.Println(s, len(s), cap(s))
+	if s == nil && s1 == nil {
+		fmt.Println("nil!")
+	}
+
+	// Note that this is not nil
+	var s3 [0]int
+	fmt.Println(s3, len(s3), cap(s3))
+	/* Error!
+	if s3 == nil {
+		fmt.Println("nil!")
+	}
+	*/
+}

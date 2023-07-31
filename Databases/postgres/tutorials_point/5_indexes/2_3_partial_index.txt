@@ -1,0 +1,9 @@
+So far you have learned how to add values of one or more columns to an index. PostgreSQL partial index even allows you to specify the rows of a table that should be indexed. This partial index helps speed up the query while reducing the size of the index.
+
+The partial index is useful in case you have commonly used WHERE conditions that use constant values as follows:
+
+$ SELECT * FROM table_name WHERE column_name = constant_value;
+
+ME: This is particularly useful if, for example, we're dealing with inactive clients or consumers.
+
+$ CREATE INDEX idx_customer_inactive ON customer(active) WHERE active = 0;

@@ -1,0 +1,21 @@
+A hash is a mapping of string:string, called field-value pairs, that sits under one top-level key:
+
+ME: Note that it's 'HSET key hash-key value'. We also get 'HGET key hash-key'
+
+127.0.0.1:6379> HSET realpython url "https://realpython.com/"
+(integer) 1
+127.0.0.1:6379> HSET realpython github realpython
+(integer) 1
+127.0.0.1:6379> HSET realpython fullname "Real Python"
+(integer) 1
+
+This sets three field-value pairs for one key, "realpython". If you’re used to Python’s terminology and objects, this can be confusing. A Redis hash is roughly analogous to a Python dict that is nested one level deep:
+
+data = {
+    "realpython": {
+        "url": "https://realpython.com/",
+        "github": "realpython",
+        "fullname": "Real Python",
+    }
+}
+Redis’ fields are akin to the Python keys of each nested key-value pair in the inner dictionary above. Redis reserves the term key for the top-level database key that holds the hash structure itself.

@@ -1,0 +1,23 @@
+Of course, when there's a pointer, passing to a function has to be done by pointer. Otherwise, we pass by value and changes to the argument is not reflected on the outside.
+
+package main
+
+import (
+	"fmt"
+)
+
+type T1 struct {
+	s int 
+}
+
+func WordCount(t T1) {
+	t.s = 10
+}
+
+func main() {
+	t := T1{5}
+
+	WordCount(t)
+
+	fmt.Println(t)
+}

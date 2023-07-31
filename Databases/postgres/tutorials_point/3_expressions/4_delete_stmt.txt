@@ -1,0 +1,3 @@
+We naturally have the delete stmt:
+
+# DELETE FROM my-table WHERE cond1;

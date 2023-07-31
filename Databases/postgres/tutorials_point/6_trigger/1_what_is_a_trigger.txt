@@ -1,0 +1,7 @@
+A PostgreSQL trigger is a function invoked automatically whenever an event associated with a table occurs. An event could be any of the following: INSERT, UPDATE, DELETE or TRUNCATE.
+
+A trigger is a special user-defined function associated with a table. To create a new trigger, you define a trigger function first, and then bind this trigger function to a table.
+
+The difference between a trigger and a user-defined function is that a trigger is automatically invoked when a triggering event occurs.
+
+

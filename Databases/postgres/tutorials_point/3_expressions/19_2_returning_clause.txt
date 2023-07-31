@@ -1,0 +1,9 @@
+The INSERT statement also has an optional RETURNING clause that returns the information of the inserted row. If you want to return the entire inserted row, you use an asterisk (*) after the RETURNING keyword:
+
+$ INSERT INTO table_name(column1, column2, …) VALUES (value1, value2, …) RETURNING *;
+
+If you want to return just some information of the inserted row, you can specify one or more columns after the RETURNING clause.
+
+To rename the returned value, you use the AS keyword followed by the name of the output. For example:
+
+$ INSERT INTO table_name(column1, column2, …) VALUES (value1, value2, …) RETURNING output_expression AS output_name;

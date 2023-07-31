@@ -1,0 +1,8 @@
+A column alias allows you to assign a column or an expression in the select list of a SELECT statement a temporary name. The column alias exists temporarily during the execution of the query.
+
+SELECT column_name AS alias_name
+FROM table_name;
+
+Note AS is optional:
+SELECT column_name alias_name
+FROM table_name;

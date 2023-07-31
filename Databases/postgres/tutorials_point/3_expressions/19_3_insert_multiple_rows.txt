@@ -1,0 +1,23 @@
+To insert multiple rows into a table using a single INSERT statement, you use the following syntax:
+
+INSERT INTO table_name (column_list)
+VALUES
+    (value_list_1),
+    (value_list_2),
+    ...
+    (value_list_n);
+
+In this syntax:
+
+    -   First, specify the name of the table that you want to insert data after the INSERT INTO keywords.
+    -   Second, list the required columns or all columns of the table in parentheses that follow the table name.
+    -   Third, supply a comma-separated list of rows after the VALUES keyword.
+
+$ INSERT INTO table_name (column_list)
+VALUES
+    (value_list_1),
+    (value_list_2),
+    ...
+    (value_list_n)
+RETURNING * | output_expression;
+

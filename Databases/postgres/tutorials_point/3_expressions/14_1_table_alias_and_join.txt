@@ -1,0 +1,26 @@
+As we may know, we use aliases for tables as well. The question is, where do we practically need it? An example is in join statements.
+
+Typically, you often use a join clause to query data from multiple tables that have the same column name. If you use the same column name that comes from multiple tables without fully qualifying them, you will get an error. To avoid this error, you need to qualify these columns using the following syntax:
+
+table_name.column_name
+
+To make the query shorter, you can use the table aliases for the table names listed on FROM and INNER JOIN clauses. For example:
+
+SELECT c.customer_id, first_name, amount, payment_date 
+FROM
+	customer c
+INNER JOIN payment p 
+    ON p.customer_id = c.customer_id
+ORDER BY 
+   payment_date DESC;
+
+For self joins, we may also use aliases:
+
+SELECT
+    e.first_name employee,
+    m .first_name manager
+FROM
+    employee e
+INNER JOIN employee m 
+    ON m.employee_id = e.manager_id
+ORDER BY manager;

@@ -1,0 +1,16 @@
+Postgres has:
+    BETWEEN:	Return true if a value is between a range of values
+    LIKE: LIKE	Return true if a value matches a pattern (used with tsvector type)
+
+An example of between (me: between shortens the need to write to comparison clauses):
+
+SELECT
+	first_name,
+	LENGTH(first_name) name_length
+FROM
+	customer
+WHERE 
+	first_name LIKE 'A%' AND
+	LENGTH(first_name) BETWEEN 3 AND 5
+ORDER BY
+	name_length;

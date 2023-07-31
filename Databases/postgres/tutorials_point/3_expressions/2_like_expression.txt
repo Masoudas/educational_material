@@ -1,0 +1,6 @@
+It's be like!
+
+As it appears, we can search for likeness in strings.
+
+
+SELECT * FROM COMPANY WHERE NAME LIKE 'Pa%';

@@ -1,0 +1,11 @@
+Good thing about postgres is that we can order by functions as well:
+
+$ SELECT 
+	first_name,
+	LENGTH(first_name) len
+FROM
+	customer
+ORDER BY 
+	len DESC;
+
+This query returns the names ordered by the length of the name. Notice the use of length function.

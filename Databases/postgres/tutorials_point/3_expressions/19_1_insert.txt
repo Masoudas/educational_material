@@ -1,0 +1,13 @@
+The PostgreSQL INSERT statement allows you to insert a new row into a table. The following illustrates the most basic syntax of the INSERT statement:
+
+$ INSERT INTO table_name(column1, column2, …) VALUES (value1, value2, …);
+
+In this syntax:
+    -   First, specify the name of the table (table_name) that you want to insert data after the INSERT INTO keywords and a list of comma-separated columns (colum1, column2, ....).
+    -   Second, supply a list of comma-separated values in a parentheses (value1, value2, ...) after the VALUES keyword. The columns and values in the column and value lists must be in the same order.
+
+The INSERT statement returns a command tag with the following form:
+
+$ INSERT oid count
+
+OID is an object identifier. PostgreSQL used the OID internally as a primary key for its system tables. Typically, the INSERT statement returns OID with value 0. The count is the number of rows that the INSERT statement inserted successfully.

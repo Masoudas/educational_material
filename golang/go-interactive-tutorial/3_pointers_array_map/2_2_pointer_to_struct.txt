@@ -1,0 +1,16 @@
+Odd thing abouts structs is that regardless of whether you pass them by pointer or value, access to them is still through the dot operator.
+
+package main
+
+import (
+	"fmt"
+)
+
+type T1 struct {
+	s int 
+}
+
+func WordCount(t *T1) {
+	t.s = 10
+}
+

@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+	a1 := [5]int{5, 4, 3, 2, 1}
+
+	// These would be elements 1 to 4
+	a2 := a1[1:5]
+
+	// Now, this is element 1 and 2 of a1, or 0 and 1 of a2
+	a3 := a2[0:2]
+	fmt.Println(a3)
+
+	// Note that an slice is a reference to the original array. Hence, changing the slice changes the array.
+	a3[0] = 42 // Changes element 1 of the array
+
+	fmt.Println(a1)
+
+}

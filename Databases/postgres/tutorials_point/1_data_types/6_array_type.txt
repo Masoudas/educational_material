@@ -1,0 +1,29 @@
+PostgreSQL gives the opportunity to define a column of a table as a variable length multidimensional array. Arrays of any built-in or user-defined base type, enum type, or composite type can be created.
+
+Declaration of Arrays
+Array type can be declared as
+
+CREATE TABLE monthly_savings (
+   name text,
+   saving_per_quarter integer[],
+   scheme text[][]
+);
+
+or by using the keyword "ARRAY" as
+
+CREATE TABLE monthly_savings (
+   name text,
+   saving_per_quarter integer ARRAY[4],
+   scheme text[][]
+);
+
+INSERT INTO monthly_savings values("Masoud", ‘{20000, 14600, 23500, 13250}’, 
+‘{{“FD”, “MF”}, {“FD”, “Property”}}’)
+
+Select is also interesting:
+
+SELECT name FROM monhly_savings WHERE saving_per_quarter[2] > saving_per_quarter[4];
+
+So is update:
+UPDATE monthly_savings SET saving_per_quarter = '{25000,25000,27000,27000}'
+WHERE name = 'Manisha';

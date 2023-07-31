@@ -1,0 +1,61 @@
+SELECT 
+   column_1, 
+   column_2,
+   ...,
+   aggregate_function(column_3)
+FROM 
+   table_name
+GROUP BY 
+   column_1,
+   column_2,
+   ...;
+
+In this syntax:
+
+First, select the columns that you want to group e.g., column1 and column2, and column that you want to apply an aggregate function (column3). Second, list the columns that you want to group in the GROUP BY clause. The statement clause divides the rows by the values of the columns specified in the GROUP BY clause and calculates a value for each group.
+
+It’s possible to use other clauses of the SELECT statement with the GROUP BY clause.
+
+PostgreSQL evaluates the GROUP BY clause after the FROM and WHERE clauses and before the HAVING SELECT, DISTINCT, ORDER BY and LIMIT clauses.
+
+
+-- Without aggregate functions:
+SELECT
+   customer_id
+FROM
+   payment
+GROUP BY
+   customer_id;
+
+
+In this case, the GROUP BY works like the DISTINCT clause that removes duplicate rows from the result set. So, only unique customer_ids are returned. Notice how we used the column alias in the group by statement, because it's evaluated after the select and where and from clause.
+
+---------------
+Consider the following use with join: 
+
+SELECT
+	first_name || ' ' || last_name full_name,
+	SUM (amount) amount
+
+FROM
+	payment
+
+INNER JOIN customer USING (customer_id)    	
+
+GROUP BY
+	full_name
+
+ORDER BY amount DESC;	
+
+---------------
+We may also apply a function in the group by statement.
+
+SELECT 
+	DATE(payment_date) paid_date, 
+	SUM(amount) sum
+
+FROM 
+	payment
+
+GROUP BY
+	DATE(payment_date);

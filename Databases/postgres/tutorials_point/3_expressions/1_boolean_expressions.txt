@@ -1,0 +1,18 @@
+An expression is a combination of one or more values, operators, and PostgresSQL functions that evaluate to a value.
+
+PostgreSQL EXPRESSIONS are like formulas and they are written in query language. You can also use to query the database for specific set of data.
+
+Syntax
+Consider the basic syntax of the SELECT statement as follows −
+
+    -- Boolean expression
+SELECT * FROM COMPANY WHERE SALARY = 10000;
+
+    -- Numeric expression
+SELECT (15 + 6) AS ADDITION;
+
+There's also built-in expressions:
+SELECT COUNT(*) AS "RECORDS" FROM COMPANY;
+
+    -- Date expressions
+SELECT CURRENT_TIMESTAMP;

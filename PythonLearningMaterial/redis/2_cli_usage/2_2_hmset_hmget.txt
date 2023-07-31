@@ -1,0 +1,15 @@
+Just like, there's also hmset and hmget, as the following example demonstrates (ME: We need to repeat the parent key everytime). 
+
+ME: With HMSET we have '$HMSET k1 k11 v1 k12 v2 k13 v3'
+
+$ HMSET pypa url "https://www.pypa.io/" github pypa fullname "Python Packaging Authority"
+OK
+
+There's also the 'HGETALL' command. This command shows all the key value pairs, where key is the odd number, and value is the even number:
+$ HGETALL pypa
+1) "url"
+2) "https://www.pypa.io/"
+3) "github"
+4) "pypa"
+5) "fullname"
+6) "Python Packaging Authority"

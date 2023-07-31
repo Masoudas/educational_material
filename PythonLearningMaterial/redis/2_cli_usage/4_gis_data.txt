@@ -1,0 +1,1 @@
+There's also a gis data type, but we shall skip it for now.

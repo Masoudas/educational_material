@@ -1,0 +1,23 @@
+Dates are counted according to the Gregorian calendar, even in years before that.
+
+The SQL standard requires that writing just timestamp be equivalent to timestamp without time zone, and PostgreSQL honors that behavior. timestamptz is accepted as an abbreviation for timestamp with time zone; this is a PostgreSQL extension.
+
+time, timestamp, and interval accept an optional precision value p which specifies the number of fractional digits retained in the seconds field. By default, there is no explicit bound on precision. The allowed range of p is from 0 to 6. (Me: Example is timestamp [ (p) ])
+
+Note that the interval type has an additional option, which is to restrict the set of stored fields by writing one of these phrases: (interval [ fields ] [ (p) ]):
+
+YEAR
+MONTH
+DAY
+HOUR
+MINUTE
+SECOND
+YEAR TO MONTH
+DAY TO HOUR
+DAY TO MINUTE
+DAY TO SECOND
+HOUR TO MINUTE
+HOUR TO SECOND
+MINUTE TO SECOND
+
+The type time with time zone is defined by the SQL standard, but the definition exhibits properties which lead to questionable usefulness. In most cases, a combination of date, time, timestamp without time zone, and timestamp with time zone should provide a complete range of date/time functionality required by any application.

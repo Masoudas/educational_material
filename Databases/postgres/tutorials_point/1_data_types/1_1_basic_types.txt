@@ -1,0 +1,33 @@
+Here are the data types:
+
+    -   smallint	2 bytes	    small-range integer	    -32768 to +32767
+    -   integer	    4 bytes	    typical choice for integer	-2147483648 to +2147483647
+    -   bigint	    8 bytes	    large-range integer	    -9223372036854775808 to 9223372036854775807
+    -   decimal	    variable	user-specified precision, exact	up to 131072 digits before the decimal point; up to 16383 digits after the decimal point
+    -   numeric	    variable	user-specified precision, exact	up to 131072 digits before the decimal point; up to 16383 digits after the decimal point
+    -   real	    4 bytes	    variable-precision, inexact	6 decimal digits precision
+    -   double precision    8 bytes	    variable-precision, inexact	15 decimal digits precision
+    -   smallserial	2 bytes	    small autoincrementing integer	1 to 32767
+    -   serial	    4 bytes	    autoincrementing integer	    1 to 2147483647
+    -   bigserial	8 bytes	    large autoincrementing integer	1 to 9223372036854775807
+
+Me: What's the difference between decimal, real, numeric and double precision? real and double precision are inexact, whereas decimal and numeric are exact. 
+
+Then there's the char types:
+
+1	character varying(n), varchar(n)    variable-length with limit
+
+2	character(n), char(n)   fixed-length, blank padded
+
+3	text    variable unlimited length
+
+There's the boolean type, 1 or 4 bytes plus the actual binary string.
+
+    -   timestamp [(p)] [without time zone ]	8 bytes	both date and time (no time zone)	4713 BC	294276 AD
+    -   TIMESTAMPTZ	8 bytes	both date and time, with time zone	4713 BC	294276 AD
+    -   date	4 bytes	date (no time of day)	4713 BC	5874897 AD
+    -   time [ (p)] [ without time zone ]	8 bytes	time of day (no date)	00:00:00	24:00:00
+    -   time [ (p)] with time zone	12 bytes	times of day only, with time zone	00:00:00+1459	24:00:00-1459
+    -   interval [fields ] [(p) ]	12 bytes	time interval	-178000000 years	178000000 years
+
+

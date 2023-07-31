@@ -1,0 +1,9 @@
+I think this is the date format we're going to mostly use:
+
+Example:
+1999-01-08	        ISO 8601; January 8 in any mode (recommended format)
+
+
+One thing to note is that for all types, the output (representation) of a type can be different from input.
+
+The date/time style can be selected by the user using the SET datestyle command, the DateStyle parameter in the postgresql.conf configuration file, or the PGDATESTYLE environment variable on the server or client.

@@ -1,0 +1,17 @@
+What if a table column has null? In that case (assuming we don't exclude null from the table,) we shall include null by saying whether it should come first or last.
+
+$ ORDER BY sort_expresssion [ASC | DESC] [NULLS FIRST | NULLS LAST]
+
+This expression:
+
+$ SELECT num FROM sort_demo ORDER BY num;
+
+returns the null columns last. Now, the following returns them first:
+
+$ SELECT num FROM sort_demo ORDER BY num NULLS FIRST;
+
+One thing to note is that we DESC, the nulls would come first. Apparently this is the default:
+
+$ SELECT num FROM sort_demo ORDER BY num DESC;
+
+We can change this, however, by adding the null last statement. I think the point is to be specific if there are nulls in the table, and null positions matter in the returned statement.

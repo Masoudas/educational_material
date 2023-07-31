@@ -1,0 +1,49 @@
+The docker compose is also as follows. Note the other env variables:
+
+-   POSTGRES_USER, POSTGRES_PASSWORD: 
+    to set a user and its password. This variable will create the specified user with superuser power and a database with the same name. If it is not specified, then the default user of postgres will be used.
+
+-   POSTGRES_DB
+    This optional environment variable can be used to define a different name for the default database that is created when the image is first started. If it is not specified, then the value of POSTGRES_USER will be used (And of course the default is postgres, as the name of admin).
+
+-   POSTGRES_HOST_AUTH_METHOD
+    If this is set to 'trust', then we can enter the database without password, which is perhaps good for the test environments.
+
+# Dock secrets:
+As an alternative to passing sensitive information via environment variables, _FILE may be appended to some of the previously listed environment variables, causing the initialization script to load the values for those variables from files present in the container. In particular, this can be used to load passwords from Docker secrets stored in /run/secrets/<secret_name> files. For example (Me: Of course, this is loaded from the host machine):
+
+$ docker run --name some-postgres -e POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd -d postgres
+
+Note that adminer is very simple (although it can be used for many databases, including oracle db), which is why we prefer to use pgadmin. Also note that pgadmin on its own right can be setup to run as https, and so does pstgres of course. But we naturally prefer to user reverse proxy.
+
+
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1234 # The super user password
+    ports:
+      - 5432:5432
+
+  #adminer:
+    #image: adminer
+    #restart: always
+    #ports:
+    #  - 8080:8080
+  
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: masoudas@hotmail.com
+      PGADMIN_DEFAULT_PASSWORD: PGADMINm1369agha?
+    
+    ports:
+      - "8400:80"
+    

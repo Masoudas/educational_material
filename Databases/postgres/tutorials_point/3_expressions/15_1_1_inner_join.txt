@@ -1,0 +1,44 @@
+Imagine a table has primary key (pk) and a foreign key (fk). Each row in the table A may have zero or many corresponding rows in the table B while each row in the table B has one and only one corresponding row in the table A. (For example, table A are the films, and table B is the inventory.)
+
+The LEFT JOIN clause starts selecting data from the left table. For each row in the left table, it compares the value in the pka column with the value of each row in the fka column in the right table. If these values are equal, the left join clause creates a new row that contains columns that appear in the SELECT clause and adds this row to the result set.
+
+In case these values are not equal, the left join clause also creates a new row that contains columns that appear in the SELECT clause. In addition, it fills the columns that come from the right table with NULL.
+
+ME: Notice that it's very simple. For each row:
+    - If an equal key is found, it's Ok. We set it in the result.
+    - If the key is not found in the right table, then a null is set in the JOIN ON column, and then ONLY FOR those rows in the right table for which we could not find an equal row, null is set.
+
+Note that if a pk equals multiple fks in the right table, then we shall have all those rows in the result table.
+
+Example:
+t1
+c1  c2
+4   null
+2   a
+
+t2
+c3  c2
+5   a
+6   a
+1   b
+2   c
+
+$ SELECT t1.c1, t1.c2, t2.c3 FROM t1 LEFT OUTER JOIN t2 ON t1.c2 = t2.c2
+
+Note that null does not have an equal row in table 1, so we set (note that we set null for the corresponding column in t2):
+4 null null
+
+for a, we have two equal keys, so we set:
+2 a 5
+2 a 6
+
+-------
+Similarly, if we were to write a right outer join, we would iterate over the rows of t2:
+SELECT t1.c1, t1.c2, t2.c3 FROM t1 RIGHT OUTER JOIN t2 ON t1.c2 = t2.c2
+2 a 5
+2 a 6
+null null 1
+null null 2 
+
+-----------------------
+In conclusion, depending on whether it's left or right join, we must iterate over the rows of the 'left' or 'right' table, and see whether we have a corresponding keys on the other table. Then, we shall set null for the rows of right table in left join, and null for left table in right join.

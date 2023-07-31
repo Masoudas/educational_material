@@ -1,0 +1,9 @@
+This type supports full text search, which is the activity of searching through a collection of natural-language documents to locate those that best match a query. There are two Data Types for this:
+
+1	tsvector
+
+This is a sorted list of distinct words that have been normalized to merge different variants of the same word, called as "lexemes".
+
+2	tsquery
+
+This stores lexemes that are to be searched for, and combines them honoring the Boolean operators & (AND), | (OR), and ! (NOT). Parentheses can be used to enforce grouping of the operators.

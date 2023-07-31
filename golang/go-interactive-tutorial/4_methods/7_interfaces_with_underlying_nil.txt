@@ -1,0 +1,46 @@
+/*
+If the concrete value inside the interface itself is nil, the method will be called with a nil receiver.
+
+In some languages this would trigger a null pointer exception, but in Go it is common to write methods that gracefully handle being called with a nil receiver (as with the method M in this example.)
+
+Note that an interface value that holds a nil concrete value is itself non-nil
+*/
+
+package main
+
+import "fmt"
+
+type I interface {
+	M()
+}
+
+type T struct {
+	S string
+}
+
+func (t *T) M() {
+	if t == nil {
+		fmt.Println("<nil>")
+		return
+	}
+	fmt.Println(t.S)
+}
+
+func main() {
+	var i I
+
+	var t *T
+
+	i = t // Again, weird thing of assigning pointer of type to interface.
+
+	describe(i)
+	i.M() // In here, the pointer is nil. So, when M is called, it is nill, so go to the if branch.
+
+	i = &T{"hello"} 
+	describe(i)
+	i.M() // Here, the underlying type is not nil. So, we get something in return.
+}
+
+func describe(i I) {
+	fmt.Printf("(%v, %T)\n", i, i)
+}

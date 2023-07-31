@@ -1,0 +1,8 @@
+If we place an order by in the union of tables, the result is that the rows of table1 comes first, and the rows of table 2 come second:
+
+SELECT * FROM top_rated_films
+UNION ALL
+SELECT * FROM most_popular_films
+ORDER BY title;
+
+This places the rows of 'most_popular_films' second.

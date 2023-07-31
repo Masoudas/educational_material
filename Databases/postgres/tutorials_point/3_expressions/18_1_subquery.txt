@@ -1,0 +1,25 @@
+A subquery is a query nested inside another query such as SELECT, INSERT, DELETE and UPDATE. In this tutorial, we are focusing on the SELECT statement only.
+
+To construct a subquery, we put the second query in brackets and use it in the WHERE clause as an expression (me: Note that the nested subquery is a scalar subquery, which is why we're allowed a direct comparison clause):
+
+SELECT
+	film_id,
+	title,
+	rental_rate
+FROM
+	film
+WHERE
+	rental_rate > (
+		SELECT
+			AVG (rental_rate)
+		FROM
+			film
+	);
+
+The query inside the brackets is called a subquery or an inner query. The query that contains the subquery is known as an outer query.
+
+PostgreSQL executes the query that contains a subquery in the following sequence:
+
+    -   First, executes the subquery.
+    -   Second, gets the result and passes it to the outer query.
+    -   Third, executes the outer query.

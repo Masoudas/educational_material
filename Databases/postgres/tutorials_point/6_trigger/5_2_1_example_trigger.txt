@@ -1,0 +1,45 @@
+Consider the following table:
+
+$ DROP TABLE IF EXISTS employees;
+  CREATE TABLE employees(
+     id INT GENERATED ALWAYS AS IDENTITY,
+     first_name VARCHAR(40) NOT NULL,
+     last_name VARCHAR(40) NOT NULL,
+     PRIMARY KEY(id)
+  );
+
+Suppose that when the name of an employee changes, you want to log the changes in a separate table called employee_audits:
+
+$ CREATE TABLE employee_audits (
+   id INT GENERATED ALWAYS AS IDENTITY,
+   employee_id INT NOT NULL,
+   last_name VARCHAR(40) NOT NULL,
+   changed_on TIMESTAMP(6) NOT NULL
+);
+
+First, create the trigger function:
+
+$ CREATE OR REPLACE FUNCTION log_last_name_changes()
+    RETURNS TRIGGER 
+    LANGUAGE PLPGSQL
+    AS
+  $$
+  BEGIN
+  	IF NEW.last_name <> OLD.last_name THEN
+  		 INSERT INTO employee_audits(employee_id,last_name,changed_on)
+  		 VALUES(OLD.id,OLD.last_name,now());
+  	END IF;
+  
+  	RETURN NEW;
+  END;
+  $$
+
+The function inserts the old last name into the employee_audits table including employee id, last name, and the time of change if the last name of an employee changes. The OLD represents the row before update while the NEW represents the new row that will be updated. The OLD.last_name returns the last name before the update and the NEW.last_name returns the new last name.
+
+Second, bind the trigger function to the employees table. The trigger name is last_name_changes. Before the value of the last_name column is updated, the trigger function is automatically invoked to log the changes.
+
+$ CREATE TRIGGER last_name_changes
+   BEFORE UPDATE
+   ON employees
+   FOR EACH ROW
+   EXECUTE PROCEDURE log_last_name_changes();

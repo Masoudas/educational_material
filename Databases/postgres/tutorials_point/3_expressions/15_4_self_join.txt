@@ -1,0 +1,17 @@
+A self-join is a regular join that joins a table to itself. In practice, you typically use a self-join to query hierarchical data or to compare rows within the same table.
+
+To form a self-join, you specify the same table twice with different table aliases and provide the join predicate after the ON keyword.
+
+The following example illustrates a particular self join:
+
+SELECT
+    f1.title,
+    f2.title,
+    f1.length
+FROM
+    film f1
+INNER JOIN film f2 
+    ON f1.film_id != f2.film_id AND 
+       f1.length = f2.length;
+
+This query would return movies that have equal length, whose names are not 

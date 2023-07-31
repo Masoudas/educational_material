@@ -1,0 +1,28 @@
+/*
+A map can be made with either make, or with the direct syntax.
+
+var m1 map[string]int
+
+Note that in both cases, it equals nil, which is the zero map.
+*/
+package main
+
+import "fmt"
+
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m map[string]Vertex
+
+func main() {
+	m = make(map[string]Vertex)
+    if m == nil {
+		fmt.Println("Right now it's nil")
+	}
+
+    m["Bell Labs"] = Vertex{
+		40.68433, -74.39967,
+	}
+	fmt.Println(m["Bell Labs"])
+}

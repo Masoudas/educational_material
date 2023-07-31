@@ -1,0 +1,17 @@
+Me: A partial index as opposed to a complete index is defined on partial data. For example, a complete index is defined as follows. Consider:
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE person (
+    id BIGSERIAL,
+    company_id BIGINT NOT NULL, -- ID of company the user belongs to
+    personnel_no BIGINT NOT NULL, -- an internal number for employees
+    name VARCHAR(32) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+$ CREATE UNIQUE INDEX uniq_idx_company_personnel ON person(company_id, personnel_no);
+
+This would be a complete (non-partial) index. However, suppose that in this table, company_id is not defined for all personnel. As such, when defining a unique constraint, we must define a partial constraint:
+
+$ CREATE UNIQUE INDEX uniq_idx_company_personnel ON person(company_id, personnel_no) where company_id > 0;
+

@@ -1,0 +1,14 @@
+The following query returns the full names of all customers. It constructs the full name by concatenating the first name, space, and the last name:
+
+SELECT 
+   first_name || ' ' || last_name AS full_name
+
+FROM 
+   customer;
+
+result:
+full_name
+Aaron Ramsy
+Roger Federer
+
+Note that in PostgreSQL, you use the || as the concatenating operator that concatenates one or more strings into a single string.

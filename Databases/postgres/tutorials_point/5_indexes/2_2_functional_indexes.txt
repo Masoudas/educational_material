@@ -1,0 +1,32 @@
+Normally, you create an index that references one or more columns of a table. But you can also create an index based on an expression that involves table columns. This index is called an index on expression. The indexes on expressions are also known as functional-based indexes. The syntax for creating an index on expression is as follows:
+
+$ CREATE INDEX index_name ON table_name (expression);
+
+In this statement:
+    -   First, specify the name of the index after the CREATE INDEX clause.
+    -   Then, form an expression that involves table columns of the table_name.
+    -   Once you define an index expression, PostgreSQL will consider using that index when the expression that defines the index appears in the WHERE clause or in the ORDER BY clause of the SQL statement.
+
+Note that indexes on expressions are quite expensive to maintain because PostgreSQL has to evaluate the expression for each row when it is inserted or updated and use the result for indexing. Therefore, you should use the indexes on expressions when retrieval speed is more critical than insertion and update speed.
+
+------------------------------------------------
+Example: Consider a customer table:
+
+$ CREATE TABLE CUSTOMER (
+    customer_id INT PRIMARY KEY,
+    store_id INT,
+    first_name VARCHAR,
+    last_name VARCHAR
+)
+
+The customer table has a B-Tree index defined for the first_name column. The following query finds customers whose last name is Purdy:
+
+$ SELECT customer_id, first_name, last_name  FROM customer WHERE last_name = 'Purdy';
+
+The following query, however, does not use the index:
+
+$ EXPLAIN SELECT  customer_id, first_name, last_name FROM customer WHERE LOWER(last_name) = 'purdy';
+
+Why? Because the constraint itself is an expression. To remedy this, we use an expression constraint:
+
+$ CREATE INDEX idx_ic_last_name ON customer(LOWER(last_name));

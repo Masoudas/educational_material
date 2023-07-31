@@ -1,0 +1,2 @@
+We can create enumerated types, but they require their own create type statement:
+CREATE TYPE week AS ENUM ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');

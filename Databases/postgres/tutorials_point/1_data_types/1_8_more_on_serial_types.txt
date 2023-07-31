@@ -1,0 +1,13 @@
+The data types smallserial, serial and bigserial are not true types, but merely a notational convenience for creating unique identifier columns (similar to the AUTO_INCREMENT property supported by some other databases). In the current implementation, specifying:
+
+CREATE TABLE tablename (
+    colname SERIAL
+);
+
+CREATE SEQUENCE tablename_colname_seq AS integer;
+CREATE TABLE tablename (
+    colname integer NOT NULL DEFAULT nextval('tablename_colname_seq')
+);
+ALTER SEQUENCE tablename_colname_seq OWNED BY tablename.colname;
+
+Thus, we have created an integer column and arranged for its default values to be assigned from a sequence generator. A NOT NULL constraint is applied to ensure that a null value cannot be inserted. (In most cases you would also want to attach a UNIQUE or PRIMARY KEY constraint to prevent duplicate values from being inserted by accident, but this is not automatic.) Lastly, the sequence is marked as “owned by” the column, so that it will be dropped if the column or table is dropped.

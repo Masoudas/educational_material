@@ -1,0 +1,3 @@
+In the postgres database, run the following query to get specific configuration infromation:
+
+#postgres: select name,setting,unit,context,source,sourcefile,pending_restart from pg_settings;

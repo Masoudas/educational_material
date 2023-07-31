@@ -1,0 +1,13 @@
+The HAVING clause specifies a search condition for a group or an aggregate. The HAVING clause is often used with the GROUP BY clause to filter groups or aggregates based on a specified condition.
+
+PostgreSQL evaluates the HAVING clause after the FROM, WHERE, GROUP BY, and before the SELECT, DISTINCT, ORDER BY and LIMIT clauses.
+
+SELECT
+	column1,
+	aggregate_function (column2)
+FROM
+	table_name
+GROUP BY
+	column1
+HAVING
+	condition;

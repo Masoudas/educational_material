@@ -1,0 +1,11 @@
+Geometric data types represent two-dimensional spatial objects. The most fundamental type, the point, forms the basis for all of the other types.
+
+Name	Storage Size	Representation	Description
+point	16 bytes	Point on a plane	(x,y)
+line	32 bytes	Infinite line (not fully implemented)	((x1,y1),(x2,y2))
+lseg	32 bytes	Finite line segment	((x1,y1),(x2,y2))
+box	32 bytes	Rectangular box	((x1,y1),(x2,y2))
+path	16+16n bytes	Closed path (similar to polygon)	((x1,y1),...)
+path	16+16n bytes	Open path	[(x1,y1),...]
+polygon	40+16n	Polygon (similar to closed path)	((x1,y1),...)
+circle	24 bytes	Circle	<(x,y),r> (center point and radius)

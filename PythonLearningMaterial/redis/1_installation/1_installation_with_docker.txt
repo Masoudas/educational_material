@@ -1,0 +1,19 @@
+Apparently, the best way to run the thing is to create using a Dockerfile. Then, we run the thing using the run command below. The whole purpose of this config is to copy the conf file when running the instance.
+
+NOTE: Of course, we have the choice to choose between a docker network, or exposing the port.
+
+There are several different persistence strategies to choose from. This one will save a snapshot of the DB every 60 seconds if at least 1 write operation was performed (it will also lead to more logs, so the loglevel option may be desirable). If persistence is enabled.
+
+# Path is /myredis/conf/redis.conf
+##################
+port              6379
+daemonize         yes
+save              60 1
+bind              127.0.0.1
+tcp-keepalive     300
+dbfilename        dump.rdb
+dir               ./
+loglevel          warning
+rdbcompression    yes
+requirepass       mypassword
+

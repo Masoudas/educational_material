@@ -1,0 +1,5 @@
+Even though PostgreSQL implements SQL standard, triggers in PostgreSQL has some specific features:
+
+    -   PostgreSQL fires trigger for the TRUNCATE event.
+    -   PostgreSQL allows you to define the statement-level trigger on views.
+    -   PostgreSQL requires you to define a user-defined function as the action of the trigger, while the SQL standard allows you to use any SQL commands.

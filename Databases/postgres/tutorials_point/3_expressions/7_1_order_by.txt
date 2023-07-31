@@ -1,0 +1,8 @@
+The 'ORDER BY' keyword orders by the given column name:
+
+$ SELECT col1, col2 FROM t1 WHERE col1=v1 ORDER BY col1 ASC col2 DESC 
+
+Note that the execution order of an expression with order by is:
+
+Select -> FROM -> Order by
+

@@ -1,0 +1,13 @@
+To return the deleted row(s) to the client, you use the RETURNING clause as follows:
+
+DELETE FROM table_name
+WHERE condition
+RETURNING (select_list | *)
+
+The asterisk (*) allows you to return all columns of the deleted row from the table_name. To return specific columns, you specify them after the RETURNING keyword.
+
+    -   Note that the DELETE statement only removes data from a table. It doesn’t modify the structure of the table. If you want to change the structure of a table such as removing a column, you should use the ALTER TABLE statement.
+
+Note that the following statement deletes all rows of the table:
+
+$ DELETE FROM links;

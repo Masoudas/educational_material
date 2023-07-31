@@ -1,0 +1,27 @@
+A subquery can be an input of the EXISTS operator. If the subquery returns any row, the EXISTS operator returns true. If the subquery returns no row, the result of EXISTS operator is false.
+
+The EXISTS operator only cares about the number of rows returned from the subquery, not the content of the rows, therefore, the common coding convention of EXISTS operator is as follows:
+
+EXISTS (SELECT 1 FROM tbl WHERE condition);
+
+See the following query:
+
+SELECT
+	first_name, last_name
+
+FROM
+	customer
+
+WHERE
+	EXISTS (
+		SELECT
+			1
+		
+        FROM
+			payment
+		
+        WHERE
+			payment.customer_id = customer.customer_id
+	);
+
+The query works like an inner join on the customer_id column. However, it returns at most one row for each row in the customer table even though there are some corresponding rows in the payment table. (Me: Notice that this is a related subquery nested, hence, a row is returned if it has a true in the inner join)

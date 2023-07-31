@@ -1,0 +1,9 @@
+The REINDEX statement rebuilds the index contents from the scratch, which has a similar effect as dropping and recreate of the index. However, the locking mechanisms between them are different.
+
+The REINDEX statement:
+    -   Locks writes but not reads from the table to which the index belongs.
+    -   Takes an exclusive lock on the index that is being processed, which blocks read that attempts to use the index.
+
+The DROP INDEX & CREATE INDEX statements:
+    -   First, the DROP INDEX locks both writes and reads of the table to which the index belongs by acquiring an exclusive lock on the table.
+    -   Then, the subsequent CREATE INDEX statement locks out writes but not reads from the index’s parent table. However, reads might be expensive during the creation of the index.

@@ -1,0 +1,12 @@
+// An array is initialized like a struct.
+
+package main
+
+import "fmt"
+
+func main() {
+	// Array is initialized to default of its type
+	a1 := [5]int{5, 2, 2, 1, 1}
+
+	fmt.Println(a1)
+}

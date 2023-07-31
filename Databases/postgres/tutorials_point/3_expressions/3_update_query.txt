@@ -1,0 +1,7 @@
+We may update a row in postgres as follows:
+
+#testdb: UPDATE my_table SET COL_1=val, COL_2=val WHERE COL_3=1000;
+
+Of course, without a where clause every single row in the database is updated.
+
+#testdb: UPDATE my_table SET COL_1=val, COL_2=val;

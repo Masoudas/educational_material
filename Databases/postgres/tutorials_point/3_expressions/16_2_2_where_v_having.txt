@@ -1,0 +1,26 @@
+The WHERE clause allows you to filter rows based on a specified condition. However, the HAVING clause allows you to filter groups of rows according to a specified condition.
+
+In other words, the WHERE clause is applied to rows while the HAVING clause is applied to groups of rows.
+
+Example:
+The following query uses the GROUP BY clause with the SUM() function to find the total amount of each customer:
+
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id;
+
+The following statement adds the HAVING clause to select the only customers who have been spending more than 200:
+
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+HAVING
+	SUM (amount) > 200;
