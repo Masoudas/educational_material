@@ -1,0 +1,15 @@
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/bin/Debug/net8.0/FirstApp
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/bin/Debug/net8.0/FirstApp.deps.json
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/bin/Debug/net8.0/FirstApp.runtimeconfig.json
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/bin/Debug/net8.0/FirstApp.dll
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/bin/Debug/net8.0/FirstApp.pdb
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.AssemblyInfoInputs.cache
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.AssemblyInfo.cs
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.csproj.CoreCompileInputs.cache
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.sourcelink.json
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.dll
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/refint/FirstApp.dll
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.pdb
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/FirstApp.genruntimeconfig.cache
+/home/masoud/Documents/OtherProjects/educational_material/dotnet/Blazor/ms-tutorials/FirstApp/obj/Debug/net8.0/ref/FirstApp.dll

@@ -1,0 +1,18 @@
+The create function statement allows you to define a new user-defined function. The following illustrates the syntax of the create function statement:
+
+# ME: The syntax is apparently ver easy. We just define the function name, its arguments, together with the return type. Once there, we need to also define the language, and then there remains the definition of internal variables, and the logic.
+"""""""""""""""""
+create [or replace] function function_name(param_list)
+   returns return_type 
+   language plpgsql
+  as
+$$
+declare 
+-- variable declaration
+begin
+ -- logic
+end;
+$$
+"""""""""""""""""
+
+ME: These functions are really just functions, like 'count', 'max', etc. The point is that they're custom defined. The interesting point is that they can accept arguments as well. For example, as we show in the next file, I can define a count function as count(from, to), which are arguments, so that I count between two particular things. You might at this point ask, where does the table (and its rows) come into action, because the function does not accept tables? The answer is that comes in the logic part. Moreover, with trigger functions, we can get the old and new row.

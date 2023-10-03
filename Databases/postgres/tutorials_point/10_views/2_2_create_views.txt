@@ -1,0 +1,54 @@
+To create a view, we use  CREATE VIEW statement. The simplest syntax of the CREATE VIEW statement is as follows:
+
+$ CREATE VIEW view_name AS query;
+
+First, you specify the name of the view after the CREATE VIEW clause, then you put a query after the AS keyword. A query can be a simple SELECT statement or a complex SELECT statement with joins.
+
+**   PostgreSQL CREATE VIEW example
+For example, in our sample database, we have four tables:
+    -   customer – stores all customer data
+    -   address – stores address of customers
+    -   city – stores city data
+    -   country– stores country data
+
+If you want to get complete customers data, you normally construct a join statement as follows:
+$ SELECT cu.customer_id AS id,
+    cu.first_name || ' ' || cu.last_name AS name,
+    a.address,
+    a.postal_code AS "zip code",
+    a.phone,
+    city.city,
+    country.country,
+        CASE
+            WHEN cu.activebool THEN 'active'
+            ELSE ''
+        END AS notes,
+    cu.store_id AS sid
+   FROM customer cu
+     INNER JOIN address a USING (address_id)
+     INNER JOIN city USING (city_id)
+     INNER JOIN country USING (country_id);
+
+This query is complex, and as such, we may convert it to a view:
+$ CREATE VIEW customer_master AS
+  SELECT cu.customer_id AS id,
+    cu.first_name || ' ' || cu.last_name AS name,
+    a.address,
+    a.postal_code AS "zip code",
+    a.phone,
+    city.city,
+    country.country,
+        CASE
+            WHEN cu.activebool THEN 'active'
+            ELSE ''
+        END AS notes,
+    cu.store_id AS sid
+   FROM customer cu
+     INNER JOIN address a USING (address_id)
+     INNER JOIN city USING (city_id)
+     INNER JOIN country USING (country_id);
+    
+From now on, whenever you need to get complete customer data, you just query it from the view by executing the following simple SELECT statement:
+
+$ SELECT * FROM customer_master;
+

@@ -1,0 +1,7 @@
+The point is that geometries have to be converted to other formats, to be used in them, for example, as wkt, etc. There are functions for that as well. It goes the other way around as well, meaning we can convert text (WKT) for example to postgis columns:
+    -   ST_AsText(geom) This would be WKT.
+    -   ST_GeomFromText(text, srid) returns geometry
+    -   ST_AsEWKT(geometry) returns text # EKWT because geometries can be 3 or 4 dimensional.
+
+There's also one that returns an SVG:
+    -   ST_AsSVG(geometry) returns text 

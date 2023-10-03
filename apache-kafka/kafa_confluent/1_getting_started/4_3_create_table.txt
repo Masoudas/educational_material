@@ -1,0 +1,29 @@
+ME: What is a table:
+
+    -   A table is a mutable collection that models change over time. It uses row keys to display the most recent data for each key. All but the newest rows for each key are deleted periodically. Also, each row has a timestamp, so you can define a windowed table which enables controlling how to group records that have the same key for stateful operations – like aggregations and joins – into time spans. Windows are tracked by record key.
+
+NOTE: A table requires you to specify a PRIMARY KEY when you register it. In ksqlDB, a table is similar to tables in other SQL systems: a table has zero or more rows, and each row is identified by its PRIMARY KEY.
+
+Consider the following syntax:
+
+$ CREATE TABLE users_table (
+    id VARCHAR PRIMARY KEY
+) WITH (
+    KAFKA_TOPIC='users', 
+    VALUE_FORMAT='AVRO'
+);
+
+ME: Naturally, we imagine that this table has only one column, namely id. However, it has more. It has all the fields of the users topic! Why that's the case I've no idea.
+
+
+Me: Another example, where we use the properties the event that are not part of the key-value properties (timestamp to be precise):
+
+$ CREATE TABLE users_table (
+    id VARCHAR PRIMARY KEY,
+    timestamp TIMESTAMP
+) WITH (
+    KAFKA_TOPIC='users', 
+    VALUE_FORMAT='AVRO'
+);
+
+ME: Note that we may see the schema of the streams and tables as well, that is by clicking on the table.

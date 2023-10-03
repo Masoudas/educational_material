@@ -1,0 +1,61 @@
+Imagine the table 'film' that has the fields 
+    -   *film_id
+    -   title
+    -   description
+    -   release_year
+    -   ...
+
+--- Example 1:
+Suppose you want to label the films by their length based on the following logic:
+
+    -   If the lengh is less than 50 minutes, the film is short.
+    -   If the length is greater than 50 minutes and less than or equal to 120 minutes, the film is medium.
+    -   If the length is greater than 120 minutes, the film is long.
+
+To apply this logic, you can use the CASE expression in the SELECT statement as follows (ME: Notice that duration is the name of the column):
+
+SELECT title,
+       length,
+       CASE
+           WHEN length> 0
+                AND length <= 50 THEN 'Short'
+           WHEN length > 50
+                AND length <= 120 THEN 'Medium'
+           WHEN length> 120 THEN 'Long'
+       END duration
+FROM film
+ORDER BY title;
+
+--- Example 2, using aggregate functions:
+ME: Recall that aggregate functions when not called with constraints return the aggregate over the table. This is why in the example below, we use the case, together with a sum function.
+
+Suppose that you want to assign price segments to films with the following logic:
+    -   If the rental rate is 0.99, the film is economic.
+    -   If the rental rate is 1.99, the film is mass.
+    -   If the rental rate is 4.99, the film is premium.
+
+And you want to know the number of films that belong to economy, mass, and premium. In this case, you can use the CASE expression to construct the query as follows:
+
+SELECT
+	SUM (
+        CASE
+        WHEN rental_rate = 0.99 THEN 1
+        ELSE 0
+        END
+	) AS "Economy",
+
+	SUM (
+		CASE
+		WHEN rental_rate = 2.99 THEN 1
+		ELSE 0
+		END
+	) AS "Mass",
+
+	SUM (
+		CASE
+		WHEN rental_rate = 4.99 THEN 1
+		ELSE 0
+		END
+	) AS "Premium"
+FROM
+	film;

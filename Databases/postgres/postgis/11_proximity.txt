@@ -1,0 +1,5 @@
+Say we want to find the streets that are in 10m of subway station. This is done with the ST_DWithin(). As such we can for example calculate the number of subway stations near a street.
+
+$ SELECT name FROM nyc_streets WHERE ST_DWithin(geom, ST_GeomFromText('POINT(583571 4506714)', 26918), 10);
+
+Later, we can use a spatial join for these kind of queries.

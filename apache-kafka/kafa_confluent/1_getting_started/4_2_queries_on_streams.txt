@@ -1,0 +1,24 @@
+In this step, you write SQL queries that inspect and process pageview and user rows. You can create different kinds of queries.
+
+    -   Transient query: a non-persistent, client-side query that you terminate manually or with a LIMIT clause. A transient query doesn’t create a new topic.
+    
+    -   Persistent query: a server-side query that outputs a new stream or table that’s backed by a new topic. It runs until you issue the TERMINATE statement. The syntax for a persistent query uses the CREATE STREAM AS SELECT or CREATE TABLE AS SELECT statements.
+    
+    -   Push query: A query that produces results continuously to a subscription. The syntax for a push query uses the EMIT CHANGES keyword. Push queries can be transient or persistent.
+    
+    -   Pull query: A query that gets a result as of “now”, like a query against a traditional relational database. A pull query runs once and returns the current state of a table. Tables are updated incrementally as new events arrive, so pull queries run with predictably low latency. Pull queries are always transient.
+
+We can see these streams in the stream window. We may also query the stream as follows (ME: According to docs, the result of this query is not persistent. Note that these queries are non-persistent.):
+
+$ select * from USERSTREAMCP EMIT CHANGES;
+
+What is the purpose of emit changes? According to docs:
+The EMIT clause lets you control the output refinement of your push query. The output refinement is how you would like to emit your results.
+
+ksqlDB supports the following output refinement types.
+
+    -   CHANGES
+This is the standard output refinement for push queries, for when you would like to see all changes happening.
+
+    -   FINAL
+Use the EMIT FINAL output refinement when you want to emit only the final result of a windowed aggregation and suppress the intermediate results until the window closes. This output refinement is supported only for windowed aggregations.

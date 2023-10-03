@@ -1,0 +1,25 @@
+The syntax of the COALESCE function is as follows:
+
+$ COALESCE (argument_1, argument_2, …);
+
+The COALESCE function accepts an unlimited number of arguments. It returns the first argument that is not null. If all arguments are null, the COALESCE function will return null.
+
+The COALESCE function evaluates arguments from left to right until it finds the first non-null argument. All the remaining arguments from the first non-null argument are not evaluated.
+
+The COALESCE function provides the same functionality as NVL or IFNULL function provided by SQL-standard. MySQL has IFNULL function, while Oracle provides NVL function.
+
+See the following examples:
+$ SELECT
+	COALESCE (1, 2);
+# Returns 1
+
+$ SELECT
+	COALESCE (NULL, 2 , 1);
+# Return 2
+
+We often use the COLAESCE function to substitute a default value for null values when we querying the data. For example, we want to display the excerpt from a blog post, if the excerpt is not provided, we can use the first 150 characters of the of the content of the post. To achieve this, we can use the COALESCE function as follows:
+
+$ SELECT
+	COALESCE (excerpt, LEFT(CONTENT, 150))
+FROM
+	posts;

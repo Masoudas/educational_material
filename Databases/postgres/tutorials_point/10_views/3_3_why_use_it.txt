@@ -1,0 +1,45 @@
+ME: First of all, because a view has a more strict access than the actual table, therefore it can only update certain rows of the table. 
+
+Second, updatabale views don't have any on conflict constraints. As such, violations of the underlying table can occur.
+
+Third, updatable views don't have default values.
+
+This got so complicated so fast, I wasn't able to follow it. Why is this so complicated?!
+
+----
+A more complex case is as follows, as given in "https://hasura.io/blog/the-pros-and-cons-of-updatable-views/". Consider the following, where we use the "instead of" keyword to handle particular actions with our own triggers. For example, here we are using the following trigger instead of the insert on the table:
+
+// This the table
+$ CREATE TABLE articles
+  ( id integer NOT NULL PRIMARY KEY
+  , title text NOT NULL
+  , description text
+  , public bool NOT NULL DEFAULT 'false'
+  );
+
+// This the view
+$ CREATE VIEW public_articles AS 
+  SELECT * FROM articles
+  WHERE public;
+
+// This one handles inserts on the view
+$ CREATE OR REPLACE FUNCTION public_article_on_insert() RETURNS trigger LANGUAGE plpgsql AS $$	
+  BEGIN	
+    IF NEW.public THEN	
+      INSERT INTO articles (id, title, description, public) VALUES 
+        ( NEW.id
+        , NEW.title
+        , NEW.description
+        , NEW.public
+        );
+      RETURN NEW;
+    ELSE
+      RAISE check_violation using message = 'article must be public'; 	
+    END IF;	
+  END $$;
+  
+$ CREATE TRIGGER public_article_on_insert_trigger 
+  INSTEAD OF INSERT ON public_articles 
+  FOR EACH ROW EXECUTE FUNCTION public_article_on_insert(); 
+
+The naïve approach to check Hasura permissions would be to add a trigger on the target table and rollback the current transaction if the desired constraint did not hold. However, we don’t want to add triggers to our users’ schemas in general, or any changes at all all in fact. So instead, we would create an updatable view inside the Hasura schema (hdb_catalog) and use a trigger there to check the constraint. Clever! And this avoided polluting the user's schema.

@@ -1,0 +1,3 @@
+These are the same functions, meaning they both check if one geometry is completely in another. The difference is that:
+    -   ST_Within(geometry A , geometry B): Checks whether A is within B
+    -   ST_Contains(geometry A, geometry B): Checks whether B is in A.

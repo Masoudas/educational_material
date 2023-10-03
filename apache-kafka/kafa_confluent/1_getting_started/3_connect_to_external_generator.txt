@@ -1,0 +1,24 @@
+ME: At this point, we're going to connect our apache kafka topic to a data generator source.
+
+In Confluent Platform, you get events from an external source by using a connector, which enables streaming large volumes of data to and from your Kafka cluster. Confluent publishes many connectors for integrating with external systems, like MongoDb and Elasticsearch. For more information, see the Kafka Connect Overview page.
+
+In this step, you run the Datagen Source Connector to generate mock data. The mock data is stored in the pageviews and users topics that you created previously. 
+
+    -   In the navigation menu, click Connect.
+    -   Click the connect-default cluster in the Connect clusters list.
+    -   Click Add connector to start creating a connector for pageviews data.
+    -   Select the DatagenConnector tile.
+    -   In the Name field, enter datagen-pageviews as the name of the connector.
+    -   Enter the following configuration values in the following sections:
+    -   Common section:
+        -   Key converter class: org.apache.kafka.connect.storage.StringConverter.
+    -   General section:
+        -   kafka.topic: pageviews. You can choose this from the dropdown.
+        -   max.interval: 100.
+        -   quickstart: pageviews.
+
+
+Click Next to review the connector configuration. When you’re satisfied with the settings, click Launch. We may repeat the above to run for users as well. Note that we may check the received messages of a topic in the 'topic' menu itself, under messages. We may also inspect the schema of a topic in the topic menu. 
+
+
+ME: One thing to note is that inside the schema of the topic, we can see the various fields of the topic. For example, we can see the partition, as well as timestamp, offset, etc for pageviews. These are together with the header params, which are the key-value types. For example, the key is "userid" and value is the value of this field.

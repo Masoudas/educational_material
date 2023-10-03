@@ -1,0 +1,27 @@
+The out parameters are defined as a part of the argument list and are returned back as a part of the result. The out parameters are very useful in functions that need to return multiple values.
+To define out parameters, you explicitly precede the parameter name with the out keyword as follows:
+
+""""""""""""""""""""""""""""""""""""""
+create or replace function get_film_stat(
+    out min_len int,
+    out max_len int,
+    out avg_len numeric) 
+language plpgsql
+as 
+$$
+begin  
+  select min(length),
+         max(length),
+		 avg(length)::numeric(5,1)  -- Notice the type cast syntax.
+  into min_len, max_len, avg_len
+  from film;
+
+end;
+$$
+""""""""""""""""""""""""""""""""""""""
+
+One thing to note about this function is that because the return has many values, we need to unpack it, which requires the following syntax:
+
+$ select * from get_film_stat();
+
+Which essentially is a select all syntax.

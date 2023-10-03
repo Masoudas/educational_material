@@ -1,0 +1,9 @@
+To join two streams, we can use a normal join statement:
+
+$ CREATE STREAM joinedStream AS
+    SELECT *
+    FROM leftStream AS l JOIN rightStream as r WITHIN 5 minutes ON l.id = r.id;
+
+Notice how we join only over the past five minutes. The joining rules can be complicated in terms of time. Because it depends on which record arrives when, and then when the join has started. Another complexity is that timestamps are set by producers. Moreover, what should be timestamp of the output record? The rule is that kafka sets it to the maximum of two timestamps.
+
+Because of the above reason, n-way joins (where we join multiple streams) are not equal to one another. For example s1 @ s2 @ s3 is not equal to s1 @ s3 @ s2 and so on.

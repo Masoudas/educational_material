@@ -1,0 +1,19 @@
+ME: As it appears, one cannot use messages directly, but rather we need streams or tables.
+
+Note that streams and tables are created in ksqldb, and by running the corresponding the queries in the editor window.
+
+What is a stream:
+    -   A stream is a an immutable, append-only collection that represents a series of historical facts, or events. After a row is inserted into a stream, the row can never change. You can append new rows at the end of the stream, but you can’t update or delete existing rows.
+
+Here are two examples of creating a topic:
+$ CREATE STREAM pageviews_stream
+  WITH (KAFKA_TOPIC='pageviews', VALUE_FORMAT='AVRO');
+
+This stream contains all the fields in this topic. ME: We may also use selected fields from this topic:
+
+$ CREATE STREAM pageviews_partial_stream (
+    VIEWTIME BIGINT, 
+    USERID STRING
+)
+  WITH (KAFKA_TOPIC='pageviews', VALUE_FORMAT='AVRO');
+

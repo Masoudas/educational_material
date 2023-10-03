@@ -1,0 +1,30 @@
+PostgreSQL provides you with three ways to call a user-defined function:
+    -   Using positional notation
+    -   Using named notation
+    -   Using the mixed notation.
+
+1) Using positional notation:
+In this case, we call the function inside a select statement:
+
+$ select get_film_count(40, 60)
+
+2) Using named notation:
+In the named notation, we use the arrow operator:
+
+$ select get_film_count(
+    from_len => 40, 
+    to_len => 60
+)
+
+3) Using mixed notation:
+The mixed notation is a combination of the two syntax:
+$ select get_film_count(
+    40, 
+    to_len => 60
+)
+
+Interestingly, like normal functions, we may not have named arguments before unnamed ones:
+$ select get_film_count(
+    from_len => 40, 
+    60
+)

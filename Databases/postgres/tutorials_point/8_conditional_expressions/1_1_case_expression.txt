@@ -1,0 +1,30 @@
+The PostgreSQL CASE expression is the same as IF/ELSE statement in other programming languages. It allows you to add if-else logic to the query to form a powerful query.
+
+Since CASE is an expression, you can use it in any places where an expression can be used e.g.,SELECT, WHERE, GROUP BY, and HAVING clause.
+
+The CASE expression has two forms: general and simple form.
+
+1) General PostgreSQL CASE expression:
+
+$ CASE 
+      WHEN condition_1  THEN result_1
+      WHEN condition_2  THEN result_2
+      [WHEN ...]
+      [ELSE else_result]
+END
+
+In case all conditions evaluate to false, the CASE expression returns the result (else_result) that follows the ELSE keyword. If you omit the ELSE clause, the CASE expression returns NULL.
+
+2) Simple PostgreSQL CASE expression
+PostgreSQL provides another form of the CASE expression called simple form as follows:
+
+$ CASE expression
+   WHEN value_1 THEN result_1
+   WHEN value_2 THEN result_2 
+   [WHEN ...]
+ELSE
+   else_result
+END
+
+The CASE first evaluates the expression and compares the result with each value( value_1, value_2, …) in the WHEN clauses sequentially until it finds the match. Once the result of the expression equals a value (value1, value2, etc.) in a WHEN clause, the CASE returns the corresponding result in the THEN clause. If CASE does not find any matches, it returns the else_result in that follows the ELSE, or NULL value if the ELSE is not available.
+

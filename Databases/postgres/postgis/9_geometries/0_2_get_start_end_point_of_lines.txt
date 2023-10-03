@@ -1,0 +1,6 @@
+Here's a query that would return the start and end point of a line. This a very good simplification model for a line, and converts it to another line. The function is 'ST_MakeLine'
+
+
+$ SELECT ST_MakeLine(ST_StartPoint(geom), ST_EndPoint(geom)) from table_name;
+
+And now that we're here, note that we can alsp

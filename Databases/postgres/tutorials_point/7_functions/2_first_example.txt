@@ -1,0 +1,29 @@
+Imagine the table 'film' that has the fields 
+    -   *film_id
+    -   title
+    -   description
+    -   release_year
+    -   ...
+
+Here's the syntax of a function that counts the films whose length between the len_from and len_to parameters.
+
+ME: Notice how the result of calculation is poured into another variable, namely fil_count.
+
+create function get_film_count(len_from int, len_to int)
+    returns int
+    language plpgsql
+    as
+$$
+declare
+   film_count integer;
+
+begin
+    select count(*)
+    into film_count -- ME: Output is mostly the result of a select
+    from film
+    where length between len_from and len_to;   # Notice that we need a semicolon here.
+    return film_count;  # Another semicolon here,
+end;    # Another semicolon here.
+$$
+
+select film_count(60, 90) as 'film_count', ...

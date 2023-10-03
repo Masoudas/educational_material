@@ -1,0 +1,24 @@
+Persistent continuous queries (CQ):
+    -   Take one or more input STREAMs/TABLEs and compute a result STREAM or TABLE
+    -   Deployed in the ksqlDB servers
+    -   Executed in a data-parallel manner
+        -   Scalable
+        -   Fault tolerant
+
+Transient queries:
+    -   CLI / Java client / etc.
+    -   Pull queries: Simple state lookups against TABLEs. These are equivalent to traditional queries.
+        -   "classic" queries
+        -   Limited in ksqlDB (no aggregations or joins)
+    -   Push queries: Subscription to a result STREAM.
+
+ME: The difference between the two has to do with the fact that transient queries are usually simpler, and more complex queries have to be defined as persistent queries.
+
+Syntax is:
+$ CREATE STREAM resultStream
+    AS SELECT ...
+
+$ CREATE TABLE resultTable
+    AS SELECT ...
+
+Notice that we may append streams and tables together. The video insists that these streams and tables are written back to kafka.

@@ -1,0 +1,17 @@
+Here's an interesting one. Let's say we want to find the racial groups along the line train 'A'. How do we do it?
+
+First, note that line 'A' stations. We can find all the stations of line 'A' by noting which rows have route 'A' in them?
+
+$ SELECT DISTINCT routes FROM nyc_subway_stations AS subways
+WHERE strpos(subways.routes,'A') > 0;
+
+Why use distinct? Because there are duplicate stations I guess. As such, we can run a spatial join to determine which stations are closest to each neighborhood, and that way determine the population of the neighborhoods. The complete query is below:
+
+$ SELECT 
+    100.0 * Sum(popn_white) / Sum(popn_total) AS white_pct,
+    100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct,
+Sum(popn_total) AS popn_total
+FROM nyc_census_blocks AS census
+JOIN nyc_subway_stations AS subways
+ON ST_DWithin(census.geom, subways.geom, 200)
+WHERE strpos(subways.routes,'A') > 0;

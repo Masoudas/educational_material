@@ -1,0 +1,15 @@
+This is the syntax:
+
+$ CAST ( expression AS target_type );
+
+In this syntax:
+    -   First, specify an expression that can be a constant, a table column, an expression that evaluates to a value.
+    -   Then, specify the target data type to which you want to convert the result of the expression.
+
+There's also a shorthand for this:
+$ expression::type
+
+For example: 
+$ SELECT
+  '100'::INTEGER,
+  '01-OCT-2015'::DATE;

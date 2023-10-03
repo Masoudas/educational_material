@@ -1,0 +1,68 @@
+Consider the following statement:
+
+$ CREATE TABLE members (
+	ID serial PRIMARY KEY,
+	first_name VARCHAR (50) NOT NULL,
+	last_name VARCHAR (50) NOT NULL,
+	gender SMALLINT NOT NULL -- 1: male, 2 female
+);
+
+Next, we place the following data in the table:
+
+$ INSERT INTO members (
+	first_name,
+	last_name,
+	gender
+)
+VALUES
+	('John', 'Doe', 1),
+	('David', 'Dave', 1),
+	('Bush', 'Lily', 2);
+
+
+Third, if we want to calculate the ratio between male and female members, we use the following query:
+
+$ SELECT
+	(SUM (
+		CASE
+		WHEN gender = 1 THEN
+			1
+		ELSE
+			0
+		END
+	) / SUM (
+		CASE
+		WHEN gender = 2 THEN
+			1
+		ELSE
+			0
+		END
+	) ) * 100 AS "Male/Female ratio"
+FROM
+	members;
+
+ME: Which is obviously calculating the sum of male and female in two separate (virtual) columns, then it calculates the ratio between the two. What if we didn't have any female players? Then, we could use a nullif function:
+
+$ SELECT
+	(
+		SUM (
+			CASE
+			WHEN gender = 1 THEN
+				1
+			ELSE
+				0
+			END
+		) / NULLIF (
+			SUM (
+				CASE
+				WHEN gender = 2 THEN
+					1
+				ELSE
+					0
+				END
+			),
+			0
+		)
+	) * 100 AS "Male/Female ratio"
+FROM
+	members;

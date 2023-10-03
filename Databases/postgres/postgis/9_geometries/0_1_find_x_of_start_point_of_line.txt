@@ -1,0 +1,3 @@
+The goal is to find the x-point of the starting point of a line. It works as follows:
+
+$ SELECT ST_X(ST_StartPoint(geom)) from table_name. 

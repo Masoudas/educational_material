@@ -1,0 +1,1 @@
+Overlap is used for two geometries that are of the same shape, as opposed to cross.

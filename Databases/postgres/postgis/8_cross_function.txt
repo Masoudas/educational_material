@@ -1,0 +1,7 @@
+This one is also interesting. It checks whether or not the intersection of a lesser shaper with a greater shape returns in a lesser shape. For example:
+    -   Point with polygon results in point
+    -   Point with line in line,
+    -   Line with polygon in line,
+    -   ...
+
+It only returns true or false. The point is that we can't use this function for two geoms that are not alike.

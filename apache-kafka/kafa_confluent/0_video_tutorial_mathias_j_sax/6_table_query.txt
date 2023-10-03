@@ -1,0 +1,5 @@
+We must not always think that it's a table we're querying. Rather, it's a changelog that we're querying. Filters, projections and aggregations are executed on changelog streams.
+
+We may also join a stream with a table. This is a data enrichment strategy via table lookup. This is for example the case where you have a credit card application. Somebody wants to buy something, then you use a table to lookup their current balance, and the stream shows their current transaction.
+
+Note that stream table join is a temporal join. At the same time, we should note that table-table joins are also temporal joins.

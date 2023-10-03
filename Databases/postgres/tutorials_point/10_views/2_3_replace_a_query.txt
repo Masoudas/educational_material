@@ -1,0 +1,25 @@
+Note also that we may replace (ME: Call it modify) a query as follows:
+$ CREATE OR REPLACE view_name AS query
+
+PostgreSQL does not support removing an existing column in the view, at least up to version 9.4. If you try to do it, you will get an error message: “[Err] ERROR:  cannot drop columns from view”. The query must generate the same columns that were generated when the view was created. To be more specific, the new columns must have the same names, the same data types, and in the same order as they were created. However, PostgreSQL allows you to append additional columns at the end of the column list.
+
+For example, you can add an email to the customer_master view as follows (ME: the original query is in the previous file):
+
+$ CREATE VIEW customer_master AS
+  SELECT cu.customer_id AS id,
+    cu.first_name || ' ' || cu.last_name AS name,
+    a.address,
+    a.postal_code AS "zip code",
+    a.phone,
+    city.city,
+    country.country,
+        CASE
+            WHEN cu.activebool THEN 'active'
+            ELSE ''
+        END AS notes,
+    cu.store_id AS sid,
+    cu.email
+   FROM customer cu
+     INNER JOIN address a USING (address_id)
+     INNER JOIN city USING (city_id)
+     INNER JOIN country USING (country_id);

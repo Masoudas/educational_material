@@ -1,0 +1,35 @@
+Here are two statements for creating a stream and a table:
+
+CREATE STREAM clickstream (
+    time    BIGINT,
+    url     VARCHAR,
+    status  INTEGER,
+    bytes   INTEGER,
+    user_id VARCHAR,
+    agent   VARCHAR
+) WITH (
+    kafka_topic = "cs_topic",
+    value_format = "JSON"
+)
+
+Notice that the output of the stream is in the json format. Now, consider a table:
+
+CREATE TABLE users (
+    user_id INTEGER PRIMARY KEY,
+    registered_at   LONG,
+    username    VARCHAR,
+    name    VARCHAR,
+    city    VARCHAR,
+    level   VARCHAR
+) WITH (
+    kafka_topic = "users_topic",
+    value_format = "AVRO"
+)
+
+What are the differences? 
+    -   The existence of primay key is important.
+    -   A table has a persistent set of records, and as such we can perform accumulative functions on it (like sum, etc.) But with streams, that's not possible.
+    -   How these are executed is also quite different as well.
+    -   The retention policy. With a stream, you keep the latest data (compaction,) whereas with tables, you may keep older messages (Retention). This is not that important
+    -   What matters is the execution policy, which we discuss later. In particular, in a table, a record is updated, whereas with streams, everything is append only.
+    -   What matters is that a topic is treated as a stream, or as a table.

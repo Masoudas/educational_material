@@ -1,0 +1,85 @@
+In the last section we saw that the A-train didn’t serve a population that differed much from the racial make-up of the rest of the city. Are there any trains that have a non-average racial make-up?
+
+Note: The percentage of white is 45, and black is 22. We're looking for trains that don't have such a make up.
+
+Solution: First, we can run the previous query, to get the percentage for all train lines. To do that, we need to change the where condition. But for that to happen, we may create a CTE to get distinct routes. Now, to do that, we need a function to get chars of a string. I had to search this, but I found the following query:
+
+$ select c
+from (
+  select distinct regexp_split_to_table(routes, ',') as c
+  from nyc_subway_stations
+) t
+
+Now, using this as our CTE, we can find the percentage around each line, we want to perform an (outer?) join with a function, where each row that has one of these chars, would appear in the route table. 
+
+$ WITH routes AS (select route
+from (
+  select distinct regexp_split_to_table(routes, ',') as route
+  from nyc_subway_stations
+) t ) 
+select  subways.gid, routes.route, subways.routes FROM nyc_subway_stations as subways JOIN routes ON strpos(subways.routes, routes.route) > 0;
+
+So now, we're good to go. We only need to determine the percentage on each line. Note here that we need to group by routes naturally.
+
+$ WITH lines AS (select route
+from (
+  select distinct regexp_split_to_table(routes, ',') as route
+  from nyc_subway_stations
+) t ) 
+SELECT
+    lines.route,
+    100.0 * Sum(popn_white) / Sum(popn_total) AS white_pct,
+    100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct,
+    Sum(popn_total) AS popn_total
+FROM nyc_census_blocks AS census
+JOIN nyc_subway_stations AS subways
+ON ST_DWithin(census.geom, subways.geom, 200)
+JOIN lines
+ON strpos(subways.routes, lines.route) > 0
+GROUP BY lines.route
+ORDER BY black_pct DESC;
+
+Now, let's take this up another notch. We know that we can calculate the percentage of blacks and whites as follows:
+
+$ SELECT
+100.0 * Sum(popn_white) / Sum(popn_total) AS white_pct,
+100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct,
+Sum(popn_total) AS popn_total
+FROM nyc_census_blocks;
+
+Now, we want those lines whose average differes from this by say plus minues 5 percent on either of the percentage. A very simple solution is to use this in another CTE:
+
+Two points to note:
+    -   One is that HAVING is used, instead of where. Notice that we have to use the exact expression of the aggregate function. We can't use the alias.
+    -   In the having clause, to use the CTE, we have to use a select statement. Why is the question!
+
+$ With percentage as (
+    	SELECT
+			100.0 * Sum(popn_white) / Sum(popn_total) AS white_pct,
+			100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct,
+			Sum(popn_total) AS popn_total
+		FROM nyc_census_blocks
+	), 
+	 lines AS (
+		 select route
+			from (
+			  select distinct regexp_split_to_table(routes, ',') as route
+			  from nyc_subway_stations
+			) t 
+	 )
+SELECT
+    lines.route,
+    100.0 * Sum(popn_white) / Sum(popn_total) AS white_pct,
+    100.0 * Sum(popn_black) / Sum(popn_total) AS black_pct,
+    Sum(popn_total) AS popn_total
+FROM nyc_census_blocks AS census
+JOIN nyc_subway_stations AS subways
+ON ST_DWithin(census.geom, subways.geom, 200)
+JOIN lines
+ON strpos(subways.routes, lines.route) > 0
+GROUP BY lines.route
+HAVING 100.0 * Sum(popn_white) / Sum(popn_total) 
+        BETWEEN (SELECT white_pct - 5 FROM percentage) AND (SELECT white_pct + 5 FROM percentage) 
+    OR 100.0 * Sum(popn_black) / Sum(popn_total) 
+        BETWEEN (SELECT black_pct - 5 FROM percentage) AND (SELECT black_pct + 5 FROM percentage);
+

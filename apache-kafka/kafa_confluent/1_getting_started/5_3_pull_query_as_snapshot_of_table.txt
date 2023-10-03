@@ -1,0 +1,8 @@
+You can get the current state of a table by using a pull query, which returns rows for a specific key at the time you issue the query. A pull query runs once and terminates. 
+
+In the step, you query the pageviews_per_region_89 table for all rows that have User_1 in Region_9.Copy the following SQL into the editor and click Run query.
+
+ME: So a pull query would be a normal select query.
+
+$ SELECT * FROM pageviews_per_region_89
+  WHERE userid = 'User_1' AND gender='FEMALE' AND regionid='Region_9';

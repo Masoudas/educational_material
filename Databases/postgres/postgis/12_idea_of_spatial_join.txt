@@ -1,0 +1,14 @@
+The idea of spatial join is that instead of using the equal operator, we shall use a gis function to join on. For example, we join on where a geometry contains another. Are these iiner join types? Apparently the answer is yes, because we're not looking for equal values in most cases.
+
+SELECT SELECT 
+    subways.name AS subway_name, 
+    neighborhoods.name AS neighborhood_name,
+    neighborhoods.boroname AS borough
+FROM nyc_neighborhoods AS neighborhoods
+JOIN nyc_subway_stations AS subways
+ON ST_Contains(neighborhoods.geom, subways.geom)
+WHERE subways.name = 'Broad St';
+
+As is stated, 'any function that provides a true/false relationship between two tables can be
+used to drive a spatial join, but the most commonly used ones are: ST_Intersects, ST_Contains,
+and ST_DWithin'.

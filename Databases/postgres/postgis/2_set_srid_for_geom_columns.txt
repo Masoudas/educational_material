@@ -1,0 +1,12 @@
+It's good practice to set an srid for a column. This can be done simply for an existing table, by just changing the geometry column definition. Consider a table, whose geometry column's name is geom. We do as follows:
+
+$ ALTER TABLE table name
+    ALTER COLUMN geom
+    TYPE Geometry(MultiPolygon, 26918) % (geom type, srid)
+    USING ST_SetSRID(geom, 26918); % (column name, srid)
+
+Here's a table create statement that takes care of setting the srid in the column type. Notice that the type is geometry, but its geometry is what we seek, together with its srid.
+
+$ CREATE TABLE t1 (
+    geom geometry(point, 4326)
+)

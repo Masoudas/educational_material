@@ -1,0 +1,1 @@
+ME: I often use coalese for type casting, and now, I know that we can force return something if type casting is not possible.

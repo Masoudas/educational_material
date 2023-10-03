@@ -1,0 +1,31 @@
+Streaming queries have temportal semantics based on event-time.
+
+TABLE queries:
+    -   Like regular SQL
+    -   However, TABLEs are treated as "versioned" tables that evolve over time.
+
+Temporal operators are event-time based. As such, they depend on the timestamp of events.
+
+ME: Essentially, the time aspect of Kafka is what's make it different.
+
+
+Can we query a stream? Consider the following stateless stream query:
+
+$ CREATE STREAM user_clicks AS
+    SELECT user_id, status, ucase(agent)
+    FROM clickstream
+    WHERE user_id = 'misax';
+
+Now, note that an stream is conceptually unbounded. As such, how can we aggregate an stream? The answer is 'Stream Aggregation'. In stream aggregation, which is windowed or non-windowed, we return a continously updating table:
+
+$ CREATE TABLE clicks AS
+    SELECT user_id, COUNT(url)
+    FROM clickstream
+        WHERE bytes > 1024
+        WINDOW TUMBLIND (size 30 seconds) 
+        GROUP BY user_id
+        HAVING COUNT(url) > 20;
+
+This query restarts the count every 30 seconds and then keeps on updating. Once the 30 sec limit is reached, then everything is restarted.
+
+Note: The result is stored in the actual ksqldb server, and the changelog topic is written into the kafka topic.

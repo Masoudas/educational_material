@@ -5,3 +5,5 @@ Assuming installation from the official docker compose in this folder:
     -   Click the controlcenter.cluster tile.
 
 In the navigation menu, click Topics to open the topics list. Click Add a topic to start creating the pageviews topic.
+
+ME: We should once again note that topics are created, but then are filled with upstream data sources.

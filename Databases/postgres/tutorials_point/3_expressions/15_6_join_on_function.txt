@@ -1,0 +1,1 @@
+ME: The 'ON' expression in join can be something other than equal. It could be anything, or even a function. In that sense, it's an inner join, rather than an outer join.

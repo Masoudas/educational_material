@@ -1,0 +1,10 @@
+The parameter modes determine the behaviors of parameters. PL/pgSQL supports three parameter modes: in, out, and inout. A parameter takes the in mode by default if you do not explicitly specify it.
+
+The following table illustrates the three parameter modes:
+    -   IN: The default, Pass a value to function, in parameters act like constants, Cannot be assigned a value
+    -   OUT: Explicitly specified, Return a value from a function, out parameters act like uninitialized variables, Must assign a value
+    -   INOUT: Explicitly specified, Pass a value to a function and return an updated value, inout parameters act like an initialized variables, Should be assigned a value
+		
+		
+		
+		

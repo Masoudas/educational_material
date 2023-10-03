@@ -1,0 +1,12 @@
+In this step, you create a stream, 'named pageviews_region_like_89', which is made of  user_pageviews rows that have a 'regionid' value that ends with 8 or 9. Results from this query are written to a new topic, named pageviews_filtered_r8_r9. The topic name is specified explicitly in the query by using the KAFKA_TOPIC keyword.
+
+ME: What makes this stream persistent. The fact that with have 'WITH' statement, and specify a name for the topic. The syntax in an abstract way is:
+
+$ CREATE STREAM name WITH (KAFKA_TOPIC='topic_name', VALUE_FORMAT='AVRO')
+    AS SELECT ... EMIT CHANGES;
+
+$ CREATE STREAM pageviews_region_like_89
+  WITH (KAFKA_TOPIC='pageviews_filtered_r8_r9', VALUE_FORMAT='AVRO')
+    AS SELECT * FROM user_pageviews
+    WHERE regionid LIKE '%_8' OR regionid LIKE '%_9'
+EMIT CHANGES;

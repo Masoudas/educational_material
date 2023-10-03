@@ -1,0 +1,16 @@
+Imagine writing the query to get the minimum of something, and you want to see all the columns of the row. Writing a simple "SELECT min(col1), col2 " is not going to work, because col2 is not grouped together with min (unless we actually use group, but here we want to just use min.) Instead, what we do is either of the following:
+
+-   Use a subquery: Like the following example, where we want the minimum x point:
+    $ SELECT ST_AsText(geom), name FROM nyc_subway_stations WHERE ST_X(geom) = (SELECT min(ST_X(geom)) FROM nyc_subway_stations);
+
+    This one knows how to perform the join.
+
+-   Another very interesting way is to use order by, and then limit to 1. Quite clever I have to add:
+    $ SELECT ST_AsText(geom), name FROM nyc_subway_stations ORDER BY ST_X(geom) LIMIT 1 
+
+Contrast this to this query, where have groups, and we keep th name of the group as column. Also notice that length is used in the order by funcion, which is allowed in sql.
+
+$ SELECT type, Sum(ST_Length(geom)) AS length
+FROM nyc_streets
+GROUP BY type
+ORDER BY length DESC;

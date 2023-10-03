@@ -1,0 +1,4 @@
+-   Closed: If start and end points are the same
+-   Simple: If it does not cross itself.
+
+Important functions are 

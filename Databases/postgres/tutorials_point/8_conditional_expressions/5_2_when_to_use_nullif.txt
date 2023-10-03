@@ -1,0 +1,54 @@
+Consider the following table:
+
+$ CREATE TABLE posts (
+  id serial primary key,
+	title VARCHAR (255) NOT NULL,
+	excerpt VARCHAR (150),
+	body TEXT,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP
+);
+
+Consider the following rows:
+
+$ INSERT INTO posts (title, excerpt, body) VALUES
+      ('test post 1','test post excerpt 1','test post body 1'),
+      ('test post 2','','test post body 2'),
+      ('test post 3', null ,'test post body 3');
+
+Third, our goal is to display the posts overview page that shows title and excerpt of each posts. In case the excerpt is not provided, we use the first 40 characters of the post body. We can simply use the following query to get all rows in the posts table.
+
+$ SELECT
+	ID,
+	title,
+	excerpt
+FROM
+	posts;
+
+Obviously, this returns a null value. To remedy this, we can use a coalese function:
+$ SELECT
+	id,
+	title,
+	COALESCE (excerpt, LEFT(body, 40))
+FROM
+	posts;
+
+
+Unfortunately, there is mix between null value and "" (empty) in the excerpt column. This is why we need to use the NULLIF function:
+
+$ SELECT
+	id,
+	title,
+	COALESCE (
+		NULLIF (excerpt, ''),
+		LEFT (body, 40)
+	)
+FROM
+	posts;
+
+As we can see, this query does two things:
+    -   The nullif part returns null of the excerpt is empty string.
+    -   Then, if this is null, we go to the second statement, where the first 40 chars of body is returned. Otherwise, by default, the excerpt itself is returned.
+
+
+

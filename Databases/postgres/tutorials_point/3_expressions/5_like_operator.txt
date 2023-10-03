@@ -36,3 +36,4 @@ NOTE: The ::text is the type cast. Hence, SALARY which is an integer column is c
 
 $ SELECT * FROM COMPANY WHERE AGE::text LIKE '2%';
 
+select 1 as literal, c1

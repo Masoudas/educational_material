@@ -1,0 +1,8 @@
+A view is a stored query. A view can be accessed as a virtual table in PostgreSQL. In other words, a PostgreSQL view is a logical table that represents data of one or more underlying tables through a SELECT statement.
+
+Note that a view does not store data physically like a table except for a materialized view.
+
+A view can be very useful in some cases such as:
+    -   A view helps simplify the complexity of a query because you can query a view, which is based on a complex query, using a simple SELECT statement.
+    -   Like a table, you can grant permission to users through a view that contains specific data that the users are authorized to see.
+    -   A view provides a consistent layer even if the columns of the underlying table change.

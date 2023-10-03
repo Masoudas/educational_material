@@ -1,0 +1,17 @@
+The inout mode is the combination in and out modes. It means that the caller can pass an argument to a function. The function changes the argument and returns the updated value.
+
+The following swap function accepts two integers and their values:
+
+""""""""""""""""""""""""""""""""""""""""""
+create or replace function swap(
+	inout x int,
+	inout y int
+) 
+language plpgsql	
+as 
+$$
+begin
+   select x,y into y,x;
+end; 
+$$;
+""""""""""""""""""""""""""""""""""""""""""

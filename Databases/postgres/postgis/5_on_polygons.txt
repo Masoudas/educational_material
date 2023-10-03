@@ -1,0 +1,6 @@
+The outer ring (booundary) is a simple closed line string and is called a ring. Holes within the polygon are also represented by rings.
+
+-   ST_NRings(geom): Returns the number of rings
+-   ST_ExteriorRing(geom): Returns the exterior ring
+-   ST_InteriorRingN(geometry, n): Returns a specified interior ring as a linestring
+-   ST_Area: The area of the polygon. What is the unit of this? In the corresponding srid for geometry types. For geography types, it's in  square meters.

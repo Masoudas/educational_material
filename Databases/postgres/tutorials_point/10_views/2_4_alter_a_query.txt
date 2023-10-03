@@ -1,0 +1,5 @@
+To change the definition of a view, you use the ALTER VIEW statement. For example, you can change the name of the view from customer_master to customer_info by using the following statement:
+
+$ ALTER VIEW customer_master RENAME TO customer_info;
+
+PostgreSQL allows you to set a default value for a column name, change the view’s schema, set or reset options of a view. 

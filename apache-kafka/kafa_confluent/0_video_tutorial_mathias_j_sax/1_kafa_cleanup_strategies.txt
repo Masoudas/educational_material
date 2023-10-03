@@ -1,0 +1,6 @@
+Note messages have keys and values. To delete old messages, we have to cleanup policies:
+
+    -   Retention: purge old messages (time or size based)
+    -   Compaction: Keep latest message per key
+
+Note also that the key is what is used for partitioning event messages. For example, we use hashes of keys to choose the partition to write messages.

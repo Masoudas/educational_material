@@ -1,0 +1,7 @@
+There are many strings that can be cast to something. For example, "2.1" could be cast to double, etc. There are also many other type casts: 
+
+$ SELECT 
+   CAST('true' AS BOOLEAN),
+   CAST('false' as BOOLEAN),
+   CAST('T' as BOOLEAN),
+   CAST('F' as BOOLEAN);

@@ -1,0 +1,2 @@
+Of course, when we want to check a geometry equals something, we can't simply use the '=' operator. we have to use, ST_Equal, as follows:
+    -   ST_Equal()

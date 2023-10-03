@@ -1,0 +1,24 @@
+ME: One thing to note is that aggregate function can be used directly without having to group by, in order to get some result. Consider the following table
+
+$ CREATE TABLE T1 (
+    price INT,
+    count INT
+)
+
+We can directly use the aggregate (SUM, COUNT, etc) functions to create aggregate rows. This would give us the aggregates in a new table:
+
+$ SELECT SUM(price), SUM(count) FROM T1;
+# 100, 5000     -- For example!
+
+However, if we were to use a value column together with aggregate functions, then we'd get an error yelling on us that we require a group by expression:
+
+$ select SUM(price), price from person;
+
+Why? Because it doesn't know which price goes with which sum. To remedy this, we need to use a group by:
+
+$ select SUM(price), price from person group by;
+
+In conclusion, when using aggregate function on the entire table, we'd get an aggregate and that's no problem. With value columns, however, we need to use group by.
+
+
+

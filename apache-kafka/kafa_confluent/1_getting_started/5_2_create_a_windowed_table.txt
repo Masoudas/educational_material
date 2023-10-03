@@ -1,0 +1,13 @@
+In this step, you create a table named pageviews_per_region_89 that counts the number of pageviews from regions 8 and 9 in a tumbling window with a SIZE of 30 seconds. The query result is an aggregation that counts and groups rows, so the result is a table, instead of a stream.
+
+ME: Notice that this table persists in the same topic as the topic of the 'pageviews_region_like_89', because with didn't specify a new topic for it. Also, recall the tumblind statement.
+
+CREATE TABLE pageviews_per_region_89 WITH (KEY_FORMAT='JSON')
+  AS SELECT userid, gender, regionid, COUNT(*) AS numusers
+    FROM pageviews_region_like_89
+    WINDOW TUMBLING (SIZE 30 SECOND)
+    GROUP BY userid, gender, regionid
+    HAVING COUNT(*) > 1
+EMIT CHANGES;
+
+ME: What does this query return? The number of viewers from regions 8 and 9, over the past 30 seconds. 

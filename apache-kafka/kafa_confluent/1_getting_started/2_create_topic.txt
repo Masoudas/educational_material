@@ -1,0 +1,2 @@
+-   Click the controlcenter.cluster box, to see inside of a healthy cluster.
+-   Once there, we can click 'Topics' and then 'Add a topic' to create a new topic. ME: The interesting thing to note is that we can either setup the content of the topic 'schema' ourselves, or use the data generator to get the content of the event. What I mean is that the event messages need not be defined when we define the topic.
